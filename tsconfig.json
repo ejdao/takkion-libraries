@@ -20,7 +20,10 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
-    "paths": {}
+    "paths": {
+      "@takkion/ng-material/*": ["libraries/material/*"],
+      "@takkion/ng-cdk/*": ["libraries/cdk/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
