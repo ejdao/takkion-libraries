@@ -23,53 +23,53 @@ import { UniqueSelectionDispatcher } from '@takkion/ng-cdk/collections';
 
 declare namespace i1 {
   export {
-    MAT_RADIO_DEFAULT_OPTIONS_FACTORY,
-    MatRadioDefaultOptions,
-    MAT_RADIO_DEFAULT_OPTIONS,
-    MAT_RADIO_GROUP_CONTROL_VALUE_ACCESSOR,
-    MatRadioChange,
-    MAT_RADIO_GROUP,
-    _MatRadioGroupBase,
-    MatRadioGroup,
-    _MatRadioButtonBase,
-    MatRadioButton,
+    TAK_RADIO_DEFAULT_OPTIONS_FACTORY,
+    TakRadioDefaultOptions,
+    TAK_RADIO_DEFAULT_OPTIONS,
+    TAK_RADIO_GROUP_CONTROL_VALUE_ACCESSOR,
+    TakRadioChange,
+    TAK_RADIO_GROUP,
+    _TakRadioGroupBase,
+    TakRadioGroup,
+    _TakRadioButtonBase,
+    TakRadioButton,
   };
 }
 
-export declare const MAT_RADIO_DEFAULT_OPTIONS: InjectionToken<MatRadioDefaultOptions>;
+export declare const TAK_RADIO_DEFAULT_OPTIONS: InjectionToken<TakRadioDefaultOptions>;
 
-export declare function MAT_RADIO_DEFAULT_OPTIONS_FACTORY(): MatRadioDefaultOptions;
+export declare function TAK_RADIO_DEFAULT_OPTIONS_FACTORY(): TakRadioDefaultOptions;
 
 /**
- * Injection token that can be used to inject instances of `MatRadioGroup`. It serves as
- * alternative token to the actual `MatRadioGroup` class which could cause unnecessary
+ * Injection token that can be used to inject instances of `TakRadioGroup`. It serves as
+ * alternative token to the actual `TakRadioGroup` class which could cause unnecessary
  * retention of the class and its component metadata.
  */
-export declare const MAT_RADIO_GROUP: InjectionToken<_MatRadioGroupBase<_MatRadioButtonBase>>;
+export declare const TAK_RADIO_GROUP: InjectionToken<_TakRadioGroupBase<_TakRadioButtonBase>>;
 
 /**
- * Provider Expression that allows mat-radio-group to register as a ControlValueAccessor. This
+ * Provider Expression that allows tak-radio-group to register as a ControlValueAccessor. This
  * allows it to support [(ngModel)] and ngControl.
  * @docs-private
  */
-export declare const MAT_RADIO_GROUP_CONTROL_VALUE_ACCESSOR: any;
+export declare const TAK_RADIO_GROUP_CONTROL_VALUE_ACCESSOR: any;
 
 /**
- * A Material design radio-button. Typically placed inside of `<mat-radio-group>` elements.
+ * A Material design radio-button. Typically placed inside of `<tak-radio-group>` elements.
  */
-export declare class MatRadioButton extends _MatRadioButtonBase {
+export declare class TakRadioButton extends _TakRadioButtonBase {
   constructor(
-    radioGroup: MatRadioGroup,
+    radioGroup: TakRadioGroup,
     elementRef: ElementRef,
     changeDetector: ChangeDetectorRef,
     focusMonitor: FocusMonitor,
     radioDispatcher: UniqueSelectionDispatcher,
     animationMode?: string,
-    providerOverride?: MatRadioDefaultOptions,
+    providerOverride?: TakRadioDefaultOptions,
     tabIndex?: string
   );
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatRadioButton,
+    TakRadioButton,
     [
       { optional: true },
       null,
@@ -82,9 +82,9 @@ export declare class MatRadioButton extends _MatRadioButtonBase {
     ]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatRadioButton,
-    'mat-radio-button',
-    ['matRadioButton'],
+    TakRadioButton,
+    'tak-radio-button',
+    ['takRadioButton'],
     { disableRipple: 'disableRipple'; tabIndex: 'tabIndex' },
     {},
     never,
@@ -94,18 +94,18 @@ export declare class MatRadioButton extends _MatRadioButtonBase {
 }
 
 /** @docs-private */
-declare abstract class MatRadioButtonBase {
+declare abstract class TakRadioButtonBase {
   _elementRef: ElementRef;
   abstract disabled: boolean;
   constructor(_elementRef: ElementRef);
 }
 
 /**
- * Base class with all of the `MatRadioButton` functionality.
+ * Base class with all of the `TakRadioButton` functionality.
  * @docs-private
  */
-export declare abstract class _MatRadioButtonBase
-  extends _MatRadioButtonMixinBase
+export declare abstract class _TakRadioButtonBase
+  extends _TakRadioButtonMixinBase
   implements OnInit, AfterViewInit, DoCheck, OnDestroy, CanDisableRipple, HasTabIndex
 {
   protected _changeDetector: ChangeDetectorRef;
@@ -148,10 +148,10 @@ export declare abstract class _MatRadioButtonBase
    * Change events are only emitted when the value changes due to user interaction with
    * the radio button (the same behavior as `<input type-"radio">`).
    */
-  readonly change: EventEmitter<MatRadioChange>;
+  readonly change: EventEmitter<TakRadioChange>;
   /** The parent radio group. May or may not be present. */
-  radioGroup: _MatRadioGroupBase<_MatRadioButtonBase>;
-  /** ID of the native input element inside `<mat-radio-button>` */
+  radioGroup: _TakRadioGroupBase<_TakRadioButtonBase>;
+  /** ID of the native input element inside `<tak-radio-button>` */
   get inputId(): string;
   /** Whether this radio is checked. */
   private _checked;
@@ -170,13 +170,13 @@ export declare abstract class _MatRadioButtonBase
   /** Whether animations are disabled. */
   _noopAnimations: boolean;
   constructor(
-    radioGroup: _MatRadioGroupBase<_MatRadioButtonBase>,
+    radioGroup: _TakRadioGroupBase<_TakRadioButtonBase>,
     elementRef: ElementRef,
     _changeDetector: ChangeDetectorRef,
     _focusMonitor: FocusMonitor,
     _radioDispatcher: UniqueSelectionDispatcher,
     animationMode?: string,
-    _providerOverride?: MatRadioDefaultOptions | undefined,
+    _providerOverride?: TakRadioDefaultOptions | undefined,
     tabIndex?: string
   );
   /** Focuses the radio button. */
@@ -201,9 +201,9 @@ export declare abstract class _MatRadioButtonBase
   protected _setDisabled(value: boolean): void;
   /** Gets the tabindex for the underlying input element. */
   private _updateTabIndex;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatRadioButtonBase, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakRadioButtonBase, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatRadioButtonBase,
+    _TakRadioButtonBase,
     never,
     never,
     {
@@ -226,40 +226,40 @@ export declare abstract class _MatRadioButtonBase
   >;
 }
 
-declare const _MatRadioButtonMixinBase: _Constructor<CanDisableRipple> &
+declare const _TakRadioButtonMixinBase: _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> &
   _Constructor<HasTabIndex> &
   _AbstractConstructor<HasTabIndex> &
-  typeof MatRadioButtonBase;
+  typeof TakRadioButtonBase;
 
-/** Change event object emitted by MatRadio and MatRadioGroup. */
-export declare class MatRadioChange {
-  /** The MatRadioButton that emits the change event. */
-  source: _MatRadioButtonBase;
-  /** The value of the MatRadioButton. */
+/** Change event object emitted by TakRadio and TakRadioGroup. */
+export declare class TakRadioChange {
+  /** The TakRadioButton that emits the change event. */
+  source: _TakRadioButtonBase;
+  /** The value of the TakRadioButton. */
   value: any;
   constructor(
-    /** The MatRadioButton that emits the change event. */
-    source: _MatRadioButtonBase,
-    /** The value of the MatRadioButton. */
+    /** The TakRadioButton that emits the change event. */
+    source: _TakRadioButtonBase,
+    /** The value of the TakRadioButton. */
     value: any
   );
 }
 
-export declare interface MatRadioDefaultOptions {
+export declare interface TakRadioDefaultOptions {
   color: ThemePalette;
 }
 
 /**
- * A group of radio buttons. May contain one or more `<mat-radio-button>` elements.
+ * A group of radio buttons. May contain one or more `<tak-radio-button>` elements.
  */
-export declare class MatRadioGroup extends _MatRadioGroupBase<MatRadioButton> {
-  _radios: QueryList<MatRadioButton>;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatRadioGroup, never>;
+export declare class TakRadioGroup extends _TakRadioGroupBase<TakRadioButton> {
+  _radios: QueryList<TakRadioButton>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakRadioGroup, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatRadioGroup,
-    'mat-radio-group',
-    ['matRadioGroup'],
+    TakRadioGroup,
+    'tak-radio-group',
+    ['takRadioGroup'],
     {},
     {},
     ['_radios'],
@@ -269,10 +269,10 @@ export declare class MatRadioGroup extends _MatRadioGroupBase<MatRadioButton> {
 }
 
 /**
- * Base class with all of the `MatRadioGroup` functionality.
+ * Base class with all of the `TakRadioGroup` functionality.
  * @docs-private
  */
-export declare abstract class _MatRadioGroupBase<T extends _MatRadioButtonBase>
+export declare abstract class _TakRadioGroupBase<T extends _TakRadioButtonBase>
   implements AfterContentInit, ControlValueAccessor
 {
   private _changeDetector;
@@ -302,7 +302,7 @@ export declare abstract class _MatRadioGroupBase<T extends _MatRadioButtonBase>
    * Change events are only emitted when the value changes due to user interaction with
    * a radio button (the same behavior as `<input type-"radio">`).
    */
-  readonly change: EventEmitter<MatRadioChange>;
+  readonly change: EventEmitter<TakRadioChange>;
   /** Child radio buttons. */
   abstract _radios: QueryList<T>;
   /** Theme color for all of the radio buttons in the group. */
@@ -373,9 +373,9 @@ export declare abstract class _MatRadioGroupBase<T extends _MatRadioButtonBase>
    * @param isDisabled Whether the control should be disabled.
    */
   setDisabledState(isDisabled: boolean): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatRadioGroupBase<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakRadioGroupBase<any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatRadioGroupBase<any>,
+    _TakRadioGroupBase<any>,
     never,
     never,
     {
@@ -394,15 +394,15 @@ export declare abstract class _MatRadioGroupBase<T extends _MatRadioButtonBase>
   >;
 }
 
-export declare class MatRadioModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatRadioModule, never>;
+export declare class TakRadioModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakRadioModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatRadioModule,
-    [typeof i1.MatRadioGroup, typeof i1.MatRadioButton],
-    [typeof i2.MatRippleModule, typeof i2.MatCommonModule],
-    [typeof i1.MatRadioGroup, typeof i1.MatRadioButton, typeof i2.MatCommonModule]
+    TakRadioModule,
+    [typeof i1.TakRadioGroup, typeof i1.TakRadioButton],
+    [typeof i2.TakRippleModule, typeof i2.TakCommonModule],
+    [typeof i1.TakRadioGroup, typeof i1.TakRadioButton, typeof i2.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatRadioModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakRadioModule>;
 }
 
 export {};

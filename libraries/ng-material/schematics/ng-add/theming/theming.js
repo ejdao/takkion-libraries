@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -40,7 +40,7 @@ function addTypographyClass(options) {
     }
     if (options.typography) {
       projectIndexFiles.forEach(path =>
-        (0, schematics_2.addBodyClass)(host, path, 'mat-typography')
+        (0, schematics_2.addBodyClass)(host, path, 'tak-typography')
       );
     }
   };

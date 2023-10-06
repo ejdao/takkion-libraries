@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -43,31 +43,31 @@ function addNavModulesToModule(options) {
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatToolbarModule',
+      'TakToolbarModule',
       '@takkion/ng-material/toolbar'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatButtonModule',
+      'TakButtonModule',
       '@takkion/ng-material/button'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatSidenavModule',
+      'TakSidenavModule',
       '@takkion/ng-material/sidenav'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatIconModule',
+      'TakIconModule',
       '@takkion/ng-material/icon'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatListModule',
+      'TakListModule',
       '@takkion/ng-material/list'
     );
   };

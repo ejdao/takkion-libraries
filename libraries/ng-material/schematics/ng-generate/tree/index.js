@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -37,19 +37,19 @@ function addTreeModulesToModule(options) {
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatTreeModule',
+      'TakTreeModule',
       '@takkion/ng-material/tree'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatIconModule',
+      'TakIconModule',
       '@takkion/ng-material/icon'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatButtonModule',
+      'TakButtonModule',
       '@takkion/ng-material/button'
     );
   };

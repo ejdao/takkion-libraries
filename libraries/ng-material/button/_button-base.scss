@@ -58,13 +58,13 @@ $mini-fab-padding: 8px !default;
   // on most browsers except on IE11 where it defaults to `hidden`.
   overflow: visible;
 
-  &.mat-button-disabled {
+  &.tak-button-disabled {
     cursor: default;
   }
 
   &.cdk-keyboard-focused,
   &.cdk-program-focused {
-    .mat-button-focus-overlay {
+    .tak-button-focus-overlay {
       opacity: 0.12;
     }
   }
@@ -102,7 +102,7 @@ $mini-fab-padding: 8px !default;
 
   flex-shrink: 0;
 
-  .mat-button-wrapper {
+  .tak-button-wrapper {
     padding: $padding 0;
     display: inline-block;
     line-height: $button-line-height;

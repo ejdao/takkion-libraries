@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -13,7 +13,7 @@ exports.elementSelectors = {
   [schematics_1.TargetVersion.V6]: [
     {
       pr: 'https://github.com/angular/components/pull/10297',
-      changes: [{ replace: 'mat-input-container', replaceWith: 'mat-form-field' }],
+      changes: [{ replace: 'tak-input-container', replaceWith: 'tak-form-field' }],
     },
   ],
 };

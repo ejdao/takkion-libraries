@@ -8,7 +8,7 @@
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-sort-header-arrow {
+  .tak-sort-header-arrow {
     $table-background: theming.get-color-from-palette($background, 'card');
     $text-color: theming.get-color-from-palette($foreground, secondary-text);
 
@@ -35,7 +35,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-sort') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-sort') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

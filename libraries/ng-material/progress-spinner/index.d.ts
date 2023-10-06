@@ -17,25 +17,25 @@ import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 
 declare namespace i1 {
   export {
-    MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS_FACTORY,
+    TAK_PROGRESS_SPINNER_DEFAULT_OPTIONS_FACTORY,
     ProgressSpinnerMode,
-    MatProgressSpinnerDefaultOptions,
-    MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS,
-    MatProgressSpinner,
+    TakProgressSpinnerDefaultOptions,
+    TAK_PROGRESS_SPINNER_DEFAULT_OPTIONS,
+    TakProgressSpinner,
   };
 }
 
-/** Injection token to be used to override the default options for `mat-progress-spinner`. */
-export declare const MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS: InjectionToken<MatProgressSpinnerDefaultOptions>;
+/** Injection token to be used to override the default options for `tak-progress-spinner`. */
+export declare const TAK_PROGRESS_SPINNER_DEFAULT_OPTIONS: InjectionToken<TakProgressSpinnerDefaultOptions>;
 
 /** @docs-private */
-export declare function MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS_FACTORY(): MatProgressSpinnerDefaultOptions;
+export declare function TAK_PROGRESS_SPINNER_DEFAULT_OPTIONS_FACTORY(): TakProgressSpinnerDefaultOptions;
 
 /**
- * `<mat-progress-spinner>` component.
+ * `<tak-progress-spinner>` component.
  */
-export declare class MatProgressSpinner
-  extends _MatProgressSpinnerBase
+export declare class TakProgressSpinner
+  extends _TakProgressSpinnerBase
   implements OnInit, OnDestroy, CanColor
 {
   private _document;
@@ -56,7 +56,7 @@ export declare class MatProgressSpinner
    * than the document head.
    */
   private static _diameters;
-  /** Whether the _mat-animation-noopable class should be applied, disabling animations.  */
+  /** Whether the _tak-animation-noopable class should be applied, disabling animations.  */
   _noopAnimations: boolean;
   /** A string that is used for setting the spinner animation-name CSS property */
   _spinnerAnimationLabel: string;
@@ -76,7 +76,7 @@ export declare class MatProgressSpinner
     _platform: Platform,
     _document: any,
     animationMode: string,
-    defaults?: MatProgressSpinnerDefaultOptions,
+    defaults?: TakProgressSpinnerDefaultOptions,
     /**
      * @deprecated `changeDetectorRef`, `viewportRuler` and `ngZone`
      * parameters to become required.
@@ -107,13 +107,13 @@ export declare class MatProgressSpinner
   /** Returns the circle diameter formatted for use with the animation-name CSS property. */
   private _getSpinnerAnimationLabel;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatProgressSpinner,
+    TakProgressSpinner,
     [null, null, { optional: true }, { optional: true }, null, null, null, null]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatProgressSpinner,
-    'mat-progress-spinner, mat-spinner',
-    ['matProgressSpinner'],
+    TakProgressSpinner,
+    'tak-progress-spinner, tak-spinner',
+    ['takProgressSpinner'],
     {
       color: 'color';
       diameter: 'diameter';
@@ -129,15 +129,15 @@ export declare class MatProgressSpinner
 }
 
 /** @docs-private */
-declare const _MatProgressSpinnerBase: _Constructor<CanColor> &
+declare const _TakProgressSpinnerBase: _Constructor<CanColor> &
   _AbstractConstructor<CanColor> & {
     new (_elementRef: ElementRef): {
       _elementRef: ElementRef;
     };
   };
 
-/** Default `mat-progress-spinner` options that can be overridden. */
-export declare interface MatProgressSpinnerDefaultOptions {
+/** Default `tak-progress-spinner` options that can be overridden. */
+export declare interface TakProgressSpinnerDefaultOptions {
   /** Default color of the spinner. */
   color?: ThemePalette;
   /** Diameter of the spinner. */
@@ -151,23 +151,23 @@ export declare interface MatProgressSpinnerDefaultOptions {
   _forceAnimations?: boolean;
 }
 
-export declare class MatProgressSpinnerModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatProgressSpinnerModule, never>;
+export declare class TakProgressSpinnerModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakProgressSpinnerModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatProgressSpinnerModule,
-    [typeof i1.MatProgressSpinner],
-    [typeof i2.MatCommonModule, typeof i3.CommonModule],
-    [typeof i1.MatProgressSpinner, typeof i2.MatCommonModule]
+    TakProgressSpinnerModule,
+    [typeof i1.TakProgressSpinner],
+    [typeof i2.TakCommonModule, typeof i3.CommonModule],
+    [typeof i1.TakProgressSpinner, typeof i2.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatProgressSpinnerModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakProgressSpinnerModule>;
 }
 
 /**
- * @deprecated Import `MatProgressSpinner` instead. Note that the
- *    `mat-spinner` selector isn't deprecated.
+ * @deprecated Import `TakProgressSpinner` instead. Note that the
+ *    `tak-spinner` selector isn't deprecated.
  * @breaking-change 8.0.0
  */
-export declare const MatSpinner: typeof MatProgressSpinner;
+export declare const TakSpinner: typeof TakProgressSpinner;
 
 /** Possible mode for a progress spinner. */
 export declare type ProgressSpinnerMode = 'determinate' | 'indeterminate';

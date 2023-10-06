@@ -9,18 +9,18 @@
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-card {
+  .tak-card {
     @include private.private-theme-overridable-elevation(1, $config);
     background: theming.get-color-from-palette($background, card);
     color: theming.get-color-from-palette($foreground, text);
 
     // Needs extra specificity to be able to override the elevation selectors.
-    &.mat-card-flat {
+    &.tak-card-flat {
       @include private.private-theme-overridable-elevation(0, $config);
     }
   }
 
-  .mat-card-subtitle {
+  .tak-card-subtitle {
     color: theming.get-color-from-palette($foreground, secondary-text);
   }
 }
@@ -29,23 +29,23 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-card {
+  .tak-card {
     font-family: typography-utils.font-family($config);
   }
 
-  .mat-card-title {
+  .tak-card-title {
     font: {
       size: typography-utils.font-size($config, headline);
       weight: typography-utils.font-weight($config, title);
     }
   }
 
-  .mat-card-header .mat-card-title {
+  .tak-card-header .tak-card-title {
     font-size: typography-utils.font-size($config, title);
   }
 
-  .mat-card-subtitle,
-  .mat-card-content {
+  .tak-card-subtitle,
+  .tak-card-content {
     font-size: typography-utils.font-size($config, body-1);
   }
 }
@@ -55,7 +55,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-card') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-card') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

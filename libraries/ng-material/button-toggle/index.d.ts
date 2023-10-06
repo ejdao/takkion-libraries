@@ -19,14 +19,14 @@ import { QueryList } from '@angular/core';
 declare namespace i1 {
   export {
     ToggleType,
-    MatButtonToggleAppearance,
-    MatButtonToggleDefaultOptions,
-    MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS,
-    MAT_BUTTON_TOGGLE_GROUP,
-    MAT_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR,
-    MatButtonToggleChange,
-    MatButtonToggleGroup,
-    MatButtonToggle,
+    TakButtonToggleAppearance,
+    TakButtonToggleDefaultOptions,
+    TAK_BUTTON_TOGGLE_DEFAULT_OPTIONS,
+    TAK_BUTTON_TOGGLE_GROUP,
+    TAK_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR,
+    TakButtonToggleChange,
+    TakButtonToggleGroup,
+    TakButtonToggle,
   };
 }
 
@@ -34,25 +34,25 @@ declare namespace i1 {
  * Injection token that can be used to configure the
  * default options for all button toggles within an app.
  */
-export declare const MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS: InjectionToken<MatButtonToggleDefaultOptions>;
+export declare const TAK_BUTTON_TOGGLE_DEFAULT_OPTIONS: InjectionToken<TakButtonToggleDefaultOptions>;
 
 /**
- * Injection token that can be used to reference instances of `MatButtonToggleGroup`.
- * It serves as alternative token to the actual `MatButtonToggleGroup` class which
+ * Injection token that can be used to reference instances of `TakButtonToggleGroup`.
+ * It serves as alternative token to the actual `TakButtonToggleGroup` class which
  * could cause unnecessary retention of the class and its component metadata.
  */
-export declare const MAT_BUTTON_TOGGLE_GROUP: InjectionToken<MatButtonToggleGroup>;
+export declare const TAK_BUTTON_TOGGLE_GROUP: InjectionToken<TakButtonToggleGroup>;
 
 /**
- * Provider Expression that allows mat-button-toggle-group to register as a ControlValueAccessor.
+ * Provider Expression that allows tak-button-toggle-group to register as a ControlValueAccessor.
  * This allows it to support [(ngModel)].
  * @docs-private
  */
-export declare const MAT_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR: any;
+export declare const TAK_BUTTON_TOGGLE_GROUP_VALUE_ACCESSOR: any;
 
 /** Single button inside of a toggle group. */
-export declare class MatButtonToggle
-  extends _MatButtonToggleBase
+export declare class TakButtonToggle
+  extends _TakButtonToggleBase
   implements OnInit, AfterViewInit, CanDisableRipple, OnDestroy
 {
   private _changeDetectorRef;
@@ -71,20 +71,20 @@ export declare class MatButtonToggle
   /** Underlying native `button` element. */
   _buttonElement: ElementRef<HTMLButtonElement>;
   /** The parent button toggle group (exclusive selection). Optional. */
-  buttonToggleGroup: MatButtonToggleGroup;
+  buttonToggleGroup: TakButtonToggleGroup;
   /** Unique ID for the underlying `button` element. */
   get buttonId(): string;
   /** The unique ID for this button toggle. */
   id: string;
   /** HTML's 'name' attribute used to group radios for unique selection. */
   name: string;
-  /** MatButtonToggleGroup reads this to assign its own value. */
+  /** TakButtonToggleGroup reads this to assign its own value. */
   value: any;
   /** Tabindex for the toggle. */
   tabIndex: number | null;
   /** The appearance style of the button. */
-  get appearance(): MatButtonToggleAppearance;
-  set appearance(value: MatButtonToggleAppearance);
+  get appearance(): TakButtonToggleAppearance;
+  set appearance(value: TakButtonToggleAppearance);
   private _appearance;
   /** Whether the button is checked. */
   get checked(): boolean;
@@ -94,14 +94,14 @@ export declare class MatButtonToggle
   set disabled(value: BooleanInput);
   private _disabled;
   /** Event emitted when the group value changes. */
-  readonly change: EventEmitter<MatButtonToggleChange>;
+  readonly change: EventEmitter<TakButtonToggleChange>;
   constructor(
-    toggleGroup: MatButtonToggleGroup,
+    toggleGroup: TakButtonToggleGroup,
     _changeDetectorRef: ChangeDetectorRef,
     _elementRef: ElementRef<HTMLElement>,
     _focusMonitor: FocusMonitor,
     defaultTabIndex: string,
-    defaultOptions?: MatButtonToggleDefaultOptions
+    defaultOptions?: TakButtonToggleDefaultOptions
   );
   ngOnInit(): void;
   ngAfterViewInit(): void;
@@ -121,13 +121,13 @@ export declare class MatButtonToggle
   /** Whether the toggle is in single selection mode. */
   private _isSingleSelector;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatButtonToggle,
+    TakButtonToggle,
     [{ optional: true }, null, null, null, { attribute: 'tabindex' }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatButtonToggle,
-    'mat-button-toggle',
-    ['matButtonToggle'],
+    TakButtonToggle,
+    'tak-button-toggle',
+    ['takButtonToggle'],
     {
       disableRipple: 'disableRipple';
       ariaLabel: 'aria-label';
@@ -148,42 +148,42 @@ export declare class MatButtonToggle
 }
 
 /** Possible appearance styles for the button toggle. */
-export declare type MatButtonToggleAppearance = 'legacy' | 'standard';
+export declare type TakButtonToggleAppearance = 'legacy' | 'standard';
 
 /** @docs-private */
-declare const _MatButtonToggleBase: _Constructor<CanDisableRipple> &
+declare const _TakButtonToggleBase: _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> & {
     new (): {};
   };
 
-/** Change event object emitted by MatButtonToggle. */
-export declare class MatButtonToggleChange {
-  /** The MatButtonToggle that emits the event. */
-  source: MatButtonToggle;
-  /** The value assigned to the MatButtonToggle. */
+/** Change event object emitted by TakButtonToggle. */
+export declare class TakButtonToggleChange {
+  /** The TakButtonToggle that emits the event. */
+  source: TakButtonToggle;
+  /** The value assigned to the TakButtonToggle. */
   value: any;
   constructor(
-    /** The MatButtonToggle that emits the event. */
-    source: MatButtonToggle,
-    /** The value assigned to the MatButtonToggle. */
+    /** The TakButtonToggle that emits the event. */
+    source: TakButtonToggle,
+    /** The value assigned to the TakButtonToggle. */
     value: any
   );
 }
 
 /**
  * Represents the default options for the button toggle that can be configured
- * using the `MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS` injection token.
+ * using the `TAK_BUTTON_TOGGLE_DEFAULT_OPTIONS` injection token.
  */
-export declare interface MatButtonToggleDefaultOptions {
+export declare interface TakButtonToggleDefaultOptions {
   /**
    * Default appearance to be used by button toggles. Can be overridden by explicitly
    * setting an appearance on a button toggle or group.
    */
-  appearance?: MatButtonToggleAppearance;
+  appearance?: TakButtonToggleAppearance;
 }
 
 /** Exclusive selection button toggle group that behaves like a radio-button group. */
-export declare class MatButtonToggleGroup
+export declare class TakButtonToggleGroup
   implements ControlValueAccessor, OnInit, AfterContentInit
 {
   private _changeDetector;
@@ -206,9 +206,9 @@ export declare class MatButtonToggleGroup
   /** onTouch function registered via registerOnTouch (ControlValueAccessor). */
   _onTouched: () => any;
   /** Child button toggle buttons. */
-  _buttonToggles: QueryList<MatButtonToggle>;
+  _buttonToggles: QueryList<TakButtonToggle>;
   /** The appearance for all the buttons in the group. */
-  appearance: MatButtonToggleAppearance;
+  appearance: TakButtonToggleAppearance;
   /** `name` attribute for the underlying `input` element. */
   get name(): string;
   set name(value: string);
@@ -226,7 +226,7 @@ export declare class MatButtonToggleGroup
    */
   readonly valueChange: EventEmitter<any>;
   /** Selected button toggles in the group. */
-  get selected(): MatButtonToggle | MatButtonToggle[];
+  get selected(): TakButtonToggle | TakButtonToggle[];
   /** Whether multiple button toggles can be selected. */
   get multiple(): boolean;
   set multiple(value: BooleanInput);
@@ -234,8 +234,8 @@ export declare class MatButtonToggleGroup
   get disabled(): boolean;
   set disabled(value: BooleanInput);
   /** Event emitted when the group's value changes. */
-  readonly change: EventEmitter<MatButtonToggleChange>;
-  constructor(_changeDetector: ChangeDetectorRef, defaultOptions?: MatButtonToggleDefaultOptions);
+  readonly change: EventEmitter<TakButtonToggleChange>;
+  constructor(_changeDetector: ChangeDetectorRef, defaultOptions?: TakButtonToggleDefaultOptions);
   ngOnInit(): void;
   ngAfterContentInit(): void;
   /**
@@ -247,7 +247,7 @@ export declare class MatButtonToggleGroup
   registerOnTouched(fn: any): void;
   setDisabledState(isDisabled: boolean): void;
   /** Dispatch change event with current selection and group value. */
-  _emitChangeEvent(toggle: MatButtonToggle): void;
+  _emitChangeEvent(toggle: TakButtonToggle): void;
   /**
    * Syncs a button toggle's selected state with the model value.
    * @param toggle Toggle to be synced.
@@ -256,15 +256,15 @@ export declare class MatButtonToggleGroup
    * @param deferEvents Whether to defer emitting the change events.
    */
   _syncButtonToggle(
-    toggle: MatButtonToggle,
+    toggle: TakButtonToggle,
     select: boolean,
     isUserInput?: boolean,
     deferEvents?: boolean
   ): void;
   /** Checks whether a button toggle is selected. */
-  _isSelected(toggle: MatButtonToggle): boolean;
+  _isSelected(toggle: TakButtonToggle): boolean;
   /** Determines whether a button toggle should be checked on init. */
-  _isPrechecked(toggle: MatButtonToggle): boolean;
+  _isPrechecked(toggle: TakButtonToggle): boolean;
   /** Updates the selection state of the toggles in the group based on a value. */
   private _setSelectionByValue;
   /** Clears the selected toggles. */
@@ -275,11 +275,11 @@ export declare class MatButtonToggleGroup
   private _updateModelValue;
   /** Marks all of the child button toggles to be checked. */
   private _markButtonsForCheck;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatButtonToggleGroup, [null, { optional: true }]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakButtonToggleGroup, [null, { optional: true }]>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatButtonToggleGroup,
-    'mat-button-toggle-group',
-    ['matButtonToggleGroup'],
+    TakButtonToggleGroup,
+    'tak-button-toggle-group',
+    ['takButtonToggleGroup'],
     {
       appearance: 'appearance';
       name: 'name';
@@ -295,15 +295,15 @@ export declare class MatButtonToggleGroup
   >;
 }
 
-export declare class MatButtonToggleModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatButtonToggleModule, never>;
+export declare class TakButtonToggleModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakButtonToggleModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatButtonToggleModule,
-    [typeof i1.MatButtonToggleGroup, typeof i1.MatButtonToggle],
-    [typeof i2.MatCommonModule, typeof i2.MatRippleModule],
-    [typeof i2.MatCommonModule, typeof i1.MatButtonToggleGroup, typeof i1.MatButtonToggle]
+    TakButtonToggleModule,
+    [typeof i1.TakButtonToggleGroup, typeof i1.TakButtonToggle],
+    [typeof i2.TakCommonModule, typeof i2.TakRippleModule],
+    [typeof i2.TakCommonModule, typeof i1.TakButtonToggleGroup, typeof i1.TakButtonToggle]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatButtonToggleModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakButtonToggleModule>;
 }
 
 /**

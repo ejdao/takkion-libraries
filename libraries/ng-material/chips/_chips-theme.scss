@@ -11,7 +11,7 @@ $chip-remove-font-size: 18px;
   background-color: $background;
   color: $foreground;
 
-  .mat-chip-remove {
+  .tak-chip-remove {
     color: $foreground;
     opacity: 0.4;
   }
@@ -36,7 +36,7 @@ $chip-remove-font-size: 18px;
     theming.get-color-from-palette($palette)
   );
 
-  .mat-ripple-element {
+  .tak-ripple-element {
     @include _ripple-background($palette, default-contrast, 0.1);
   }
 }
@@ -53,20 +53,20 @@ $chip-remove-font-size: 18px;
   $unselected-background: theming.get-color-from-palette($background, unselected-chip);
   $unselected-foreground: theming.get-color-from-palette($foreground, text);
 
-  .mat-chip.mat-standard-chip {
+  .tak-chip.tak-standard-chip {
     @include _element-color($unselected-foreground, $unselected-background);
 
-    &:not(.mat-chip-disabled) {
+    &:not(.tak-chip-disabled) {
       &:active {
         @include private.private-theme-elevation(3, $config);
       }
 
-      .mat-chip-remove:hover {
+      .tak-chip-remove:hover {
         opacity: 0.54;
       }
     }
 
-    &.mat-chip-disabled {
+    &.tak-chip-disabled {
       opacity: 0.4;
     }
 
@@ -75,16 +75,16 @@ $chip-remove-font-size: 18px;
     }
   }
 
-  .mat-chip.mat-standard-chip.mat-chip-selected {
-    &.mat-primary {
+  .tak-chip.tak-standard-chip.tak-chip-selected {
+    &.tak-primary {
       @include _palette-styles($primary);
     }
 
-    &.mat-warn {
+    &.tak-warn {
       @include _palette-styles($warn);
     }
 
-    &.mat-accent {
+    &.tak-accent {
       @include _palette-styles($accent);
     }
   }
@@ -94,12 +94,12 @@ $chip-remove-font-size: 18px;
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-chip {
+  .tak-chip {
     font-size: typography-utils.font-size($config, body-2);
     font-weight: typography-utils.font-weight($config, body-2);
 
-    .mat-chip-trailing-icon.mat-icon,
-    .mat-chip-remove.mat-icon {
+    .tak-chip-trailing-icon.tak-icon,
+    .tak-chip-remove.tak-icon {
       font-size: $chip-remove-font-size;
     }
   }
@@ -110,7 +110,7 @@ $chip-remove-font-size: 18px;
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-chips') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-chips') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

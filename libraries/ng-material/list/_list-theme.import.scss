@@ -2,7 +2,7 @@
 @forward '../core/typography/typography-utils.import';
 @forward '../core/style/list-common.import';
 @forward 'list-theme' hide color, theme, typography;
-@forward 'list-theme' as mat-list-* hide mat-list-density;
+@forward 'list-theme' as tak-list-* hide tak-list-density;
 
 @import '../core/theming/palette';
 @import '../core/theming/theming';

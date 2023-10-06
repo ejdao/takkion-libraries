@@ -23,32 +23,32 @@ import { ThemePalette } from '@takkion/ng-material/core';
 import { Type } from '@angular/core';
 
 declare namespace i1 {
-  export { MAT_SLIDE_TOGGLE_REQUIRED_VALIDATOR, MatSlideToggleRequiredValidator };
+  export { TAK_SLIDE_TOGGLE_REQUIRED_VALIDATOR, TakSlideToggleRequiredValidator };
 }
 
 declare namespace i2 {
   export {
-    MAT_SLIDE_TOGGLE_VALUE_ACCESSOR,
-    MatSlideToggleChange,
-    _MatSlideToggleBase,
-    MatSlideToggle,
+    TAK_SLIDE_TOGGLE_VALUE_ACCESSOR,
+    TakSlideToggleChange,
+    _TakSlideToggleBase,
+    TakSlideToggle,
   };
 }
 
-/** Injection token to be used to override the default options for `mat-slide-toggle`. */
-export declare const MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS: InjectionToken<MatSlideToggleDefaultOptions>;
+/** Injection token to be used to override the default options for `tak-slide-toggle`. */
+export declare const TAK_SLIDE_TOGGLE_DEFAULT_OPTIONS: InjectionToken<TakSlideToggleDefaultOptions>;
 
-export declare const MAT_SLIDE_TOGGLE_REQUIRED_VALIDATOR: Provider;
+export declare const TAK_SLIDE_TOGGLE_REQUIRED_VALIDATOR: Provider;
 
 /** @docs-private */
-export declare const MAT_SLIDE_TOGGLE_VALUE_ACCESSOR: {
+export declare const TAK_SLIDE_TOGGLE_VALUE_ACCESSOR: {
   provide: InjectionToken<readonly ControlValueAccessor[]>;
   useExisting: Type<any>;
   multi: boolean;
 };
 
 /** Represents a slidable "switch" toggle that can be moved between on and off. */
-export declare class MatSlideToggle extends _MatSlideToggleBase<MatSlideToggleChange> {
+export declare class TakSlideToggle extends _TakSlideToggleBase<TakSlideToggleChange> {
   /** Reference to the underlying input element. */
   _inputElement: ElementRef<HTMLInputElement>;
   constructor(
@@ -56,10 +56,10 @@ export declare class MatSlideToggle extends _MatSlideToggleBase<MatSlideToggleCh
     focusMonitor: FocusMonitor,
     changeDetectorRef: ChangeDetectorRef,
     tabIndex: string,
-    defaults: MatSlideToggleDefaultOptions,
+    defaults: TakSlideToggleDefaultOptions,
     animationMode?: string
   );
-  protected _createChangeEvent(isChecked: boolean): MatSlideToggleChange;
+  protected _createChangeEvent(isChecked: boolean): TakSlideToggleChange;
   /** Method being called whenever the underlying input emits a change event. */
   _onChangeEvent(event: Event): void;
   /** Method being called whenever the slide-toggle has been clicked. */
@@ -69,13 +69,13 @@ export declare class MatSlideToggle extends _MatSlideToggleBase<MatSlideToggleCh
   /** Method being called whenever the label text changes. */
   _onLabelTextChange(): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatSlideToggle,
+    TakSlideToggle,
     [null, null, null, { attribute: 'tabindex' }, null, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatSlideToggle,
-    'mat-slide-toggle',
-    ['matSlideToggle'],
+    TakSlideToggle,
+    'tak-slide-toggle',
+    ['takSlideToggle'],
     { disabled: 'disabled'; disableRipple: 'disableRipple'; color: 'color'; tabIndex: 'tabIndex' },
     {},
     never,
@@ -84,8 +84,8 @@ export declare class MatSlideToggle extends _MatSlideToggleBase<MatSlideToggleCh
   >;
 }
 
-export declare abstract class _MatSlideToggleBase<T>
-  extends _MatSlideToggleMixinBase
+export declare abstract class _TakSlideToggleBase<T>
+  extends _TakSlideToggleMixinBase
   implements
     OnDestroy,
     AfterContentInit,
@@ -97,7 +97,7 @@ export declare abstract class _MatSlideToggleBase<T>
 {
   protected _focusMonitor: FocusMonitor;
   protected _changeDetectorRef: ChangeDetectorRef;
-  defaults: MatSlideToggleDefaultOptions;
+  defaults: TakSlideToggleDefaultOptions;
   protected _onChange: (_: any) => void;
   private _onTouched;
   protected _uniqueId: string;
@@ -142,7 +142,7 @@ export declare abstract class _MatSlideToggleBase<T>
     _focusMonitor: FocusMonitor,
     _changeDetectorRef: ChangeDetectorRef,
     tabIndex: string,
-    defaults: MatSlideToggleDefaultOptions,
+    defaults: TakSlideToggleDefaultOptions,
     animationMode: string | undefined,
     idPrefix: string
   );
@@ -162,9 +162,9 @@ export declare abstract class _MatSlideToggleBase<T>
    * Emits a change event on the `change` output. Also notifies the FormControl about the change.
    */
   protected _emitChangeEvent(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatSlideToggleBase<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakSlideToggleBase<any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatSlideToggleBase<any>,
+    _TakSlideToggleBase<any>,
     never,
     never,
     {
@@ -184,22 +184,22 @@ export declare abstract class _MatSlideToggleBase<T>
   >;
 }
 
-/** Change event object emitted by a MatSlideToggle. */
-export declare class MatSlideToggleChange {
-  /** The source MatSlideToggle of the event. */
-  source: MatSlideToggle;
-  /** The new `checked` value of the MatSlideToggle. */
+/** Change event object emitted by a TakSlideToggle. */
+export declare class TakSlideToggleChange {
+  /** The source TakSlideToggle of the event. */
+  source: TakSlideToggle;
+  /** The new `checked` value of the TakSlideToggle. */
   checked: boolean;
   constructor(
-    /** The source MatSlideToggle of the event. */
-    source: MatSlideToggle,
-    /** The new `checked` value of the MatSlideToggle. */
+    /** The source TakSlideToggle of the event. */
+    source: TakSlideToggle,
+    /** The new `checked` value of the TakSlideToggle. */
     checked: boolean
   );
 }
 
-/** Default `mat-slide-toggle` options that can be overridden. */
-export declare interface MatSlideToggleDefaultOptions {
+/** Default `tak-slide-toggle` options that can be overridden. */
+export declare interface TakSlideToggleDefaultOptions {
   /** Whether toggle action triggers value changes in slide toggle. */
   disableToggleValue?: boolean;
   /** Default color for slide toggles. */
@@ -207,7 +207,7 @@ export declare interface MatSlideToggleDefaultOptions {
 }
 
 /** @docs-private */
-declare const _MatSlideToggleMixinBase: _Constructor<HasTabIndex> &
+declare const _TakSlideToggleMixinBase: _Constructor<HasTabIndex> &
   _AbstractConstructor<HasTabIndex> &
   _Constructor<CanColor> &
   _AbstractConstructor<CanColor> &
@@ -220,24 +220,24 @@ declare const _MatSlideToggleMixinBase: _Constructor<HasTabIndex> &
     };
   };
 
-export declare class MatSlideToggleModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSlideToggleModule, never>;
+export declare class TakSlideToggleModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSlideToggleModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatSlideToggleModule,
-    [typeof i2.MatSlideToggle],
+    TakSlideToggleModule,
+    [typeof i2.TakSlideToggle],
     [
-      typeof _MatSlideToggleRequiredValidatorModule,
-      typeof i3.MatRippleModule,
-      typeof i3.MatCommonModule,
+      typeof _TakSlideToggleRequiredValidatorModule,
+      typeof i3.TakRippleModule,
+      typeof i3.TakCommonModule,
       typeof i4.ObserversModule,
     ],
     [
-      typeof _MatSlideToggleRequiredValidatorModule,
-      typeof i2.MatSlideToggle,
-      typeof i3.MatCommonModule,
+      typeof _TakSlideToggleRequiredValidatorModule,
+      typeof i2.TakSlideToggle,
+      typeof i3.TakCommonModule,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatSlideToggleModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakSlideToggleModule>;
 }
 
 /**
@@ -248,11 +248,11 @@ export declare class MatSlideToggleModule {
  *
  * Required slide-toggle form controls are valid when checked.
  */
-export declare class MatSlideToggleRequiredValidator extends CheckboxRequiredValidator {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSlideToggleRequiredValidator, never>;
+export declare class TakSlideToggleRequiredValidator extends CheckboxRequiredValidator {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSlideToggleRequiredValidator, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatSlideToggleRequiredValidator,
-    'mat-slide-toggle[required][formControlName],             mat-slide-toggle[required][formControl], mat-slide-toggle[required][ngModel]',
+    TakSlideToggleRequiredValidator,
+    'tak-slide-toggle[required][formControlName],             tak-slide-toggle[required][formControl], tak-slide-toggle[required][ngModel]',
     never,
     {},
     {},
@@ -263,15 +263,15 @@ export declare class MatSlideToggleRequiredValidator extends CheckboxRequiredVal
 }
 
 /** This module is used by both original and MDC-based slide-toggle implementations. */
-export declare class _MatSlideToggleRequiredValidatorModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatSlideToggleRequiredValidatorModule, never>;
+export declare class _TakSlideToggleRequiredValidatorModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakSlideToggleRequiredValidatorModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    _MatSlideToggleRequiredValidatorModule,
-    [typeof i1.MatSlideToggleRequiredValidator],
+    _TakSlideToggleRequiredValidatorModule,
+    [typeof i1.TakSlideToggleRequiredValidator],
     never,
-    [typeof i1.MatSlideToggleRequiredValidator]
+    [typeof i1.TakSlideToggleRequiredValidator]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<_MatSlideToggleRequiredValidatorModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<_TakSlideToggleRequiredValidatorModule>;
 }
 
 export {};

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -21,7 +21,7 @@ export declare const cdkMixins: Record<string, string>;
  */
 export declare const removedMaterialVariables: Record<string, string>;
 /**
- * Material variables **without a `mat-` prefix** that have been removed from the public API
+ * Material variables **without a `tak-` prefix** that have been removed from the public API
  * and which should be replaced with their values. These should be migrated only when there's a
  * Material import, because their names could conflict with other variables in the user's app.
  */

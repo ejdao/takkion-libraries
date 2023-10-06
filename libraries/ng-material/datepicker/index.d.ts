@@ -31,10 +31,10 @@ import * as i19 from '@takkion/ng-material/core';
 import * as i20 from '@takkion/ng-cdk/scrolling';
 import { InjectionToken } from '@angular/core';
 import { Injector } from '@angular/core';
-import { MatButton } from '@takkion/ng-material/button';
-import { MatDateFormats } from '@takkion/ng-material/core';
-import { MatFormField } from '@takkion/ng-material/form-field';
-import { MatFormFieldControl } from '@takkion/ng-material/form-field';
+import { TakButton } from '@takkion/ng-material/button';
+import { TakDateFormats } from '@takkion/ng-material/core';
+import { TakFormField } from '@takkion/ng-material/form-field';
+import { TakFormFieldControl } from '@takkion/ng-material/form-field';
 import { NgControl } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { NgZone } from '@angular/core';
@@ -97,15 +97,15 @@ export declare interface DateSelectionModelChange<S> {
 }
 
 /** Provides the default date range selection behavior. */
-export declare class DefaultMatCalendarRangeStrategy<D>
-  implements MatDateRangeSelectionStrategy<D>
+export declare class DefaultTakCalendarRangeStrategy<D>
+  implements TakDateRangeSelectionStrategy<D>
 {
   private _dateAdapter;
   constructor(_dateAdapter: DateAdapter<D>);
   selectionFinished(date: D, currentRange: DateRange<D>): DateRange<D>;
   createPreview(activeDate: D | null, currentRange: DateRange<D>): DateRange<D>;
-  static ɵfac: i0.ɵɵFactoryDeclaration<DefaultMatCalendarRangeStrategy<any>, never>;
-  static ɵprov: i0.ɵɵInjectableDeclaration<DefaultMatCalendarRangeStrategy<any>>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<DefaultTakCalendarRangeStrategy<any>, never>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<DefaultTakCalendarRangeStrategy<any>>;
 }
 
 /**
@@ -129,71 +129,71 @@ declare function getActiveOffset<D>(
 ): number;
 
 declare namespace i1 {
-  export { MatCalendarView, MatCalendarHeader, MatCalendar };
+  export { TakCalendarView, TakCalendarHeader, TakCalendar };
 }
 
 declare namespace i10 {
-  export { MatDateRangeInput };
+  export { TakDateRangeInput };
 }
 
 declare namespace i11 {
-  export { MatDateRangeInputParent, MAT_DATE_RANGE_INPUT_PARENT, MatStartDate, MatEndDate };
+  export { TakDateRangeInputParent, TAK_DATE_RANGE_INPUT_PARENT, TakStartDate, TakEndDate };
 }
 
 declare namespace i12 {
-  export { MatDateRangePickerInput, MatDateRangePicker };
+  export { TakDateRangePickerInput, TakDateRangePicker };
 }
 
 declare namespace i13 {
-  export { MatDatepickerApply, MatDatepickerCancel, MatDatepickerActions };
+  export { TakDatepickerApply, TakDatepickerCancel, TakDatepickerActions };
 }
 
 declare namespace i2 {
   export {
-    MatCalendarCellCssClasses,
-    MatCalendarCellClassFunction,
-    MatCalendarCell,
-    MatCalendarUserEvent,
-    MatCalendarBody,
+    TakCalendarCellCssClasses,
+    TakCalendarCellClassFunction,
+    TakCalendarCell,
+    TakCalendarUserEvent,
+    TakCalendarBody,
   };
 }
 
 declare namespace i3 {
-  export { MatDatepicker };
+  export { TakDatepicker };
 }
 
 declare namespace i4 {
   export {
-    MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY,
-    MAT_DATEPICKER_SCROLL_STRATEGY,
+    TAK_DATEPICKER_SCROLL_STRATEGY_FACTORY,
+    TAK_DATEPICKER_SCROLL_STRATEGY,
     DatepickerDropdownPositionX,
     DatepickerDropdownPositionY,
-    MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER,
-    MatDatepickerContent,
-    MatDatepickerControl,
-    MatDatepickerPanel,
-    MatDatepickerBase,
+    TAK_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER,
+    TakDatepickerContent,
+    TakDatepickerControl,
+    TakDatepickerPanel,
+    TakDatepickerBase,
   };
 }
 
 declare namespace i5 {
-  export { MAT_DATEPICKER_VALUE_ACCESSOR, MAT_DATEPICKER_VALIDATORS, MatDatepickerInput };
+  export { TAK_DATEPICKER_VALUE_ACCESSOR, TAK_DATEPICKER_VALIDATORS, TakDatepickerInput };
 }
 
 declare namespace i6 {
-  export { MatDatepickerToggleIcon, MatDatepickerToggle };
+  export { TakDatepickerToggleIcon, TakDatepickerToggle };
 }
 
 declare namespace i7 {
-  export { MatMonthView };
+  export { TakMonthView };
 }
 
 declare namespace i8 {
-  export { MatYearView };
+  export { TakYearView };
 }
 
 declare namespace i9 {
-  export { isSameMultiYearView, getActiveOffset, yearsPerPage, yearsPerRow, MatMultiYearView };
+  export { isSameMultiYearView, getActiveOffset, yearsPerPage, yearsPerRow, TakMultiYearView };
 }
 
 declare function isSameMultiYearView<D>(
@@ -208,60 +208,60 @@ declare function isSameMultiYearView<D>(
  * Used to provide the date range input wrapper component
  * to the parts without circular dependencies.
  */
-declare const MAT_DATE_RANGE_INPUT_PARENT: InjectionToken<MatDateRangeInputParent<unknown>>;
+declare const TAK_DATE_RANGE_INPUT_PARENT: InjectionToken<TakDateRangeInputParent<unknown>>;
 
 /** Injection token used to customize the date range selection behavior. */
-export declare const MAT_DATE_RANGE_SELECTION_STRATEGY: InjectionToken<
-  MatDateRangeSelectionStrategy<any>
+export declare const TAK_DATE_RANGE_SELECTION_STRATEGY: InjectionToken<
+  TakDateRangeSelectionStrategy<any>
 >;
 
 /** Injection token that determines the scroll handling while the calendar is open. */
-export declare const MAT_DATEPICKER_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
+export declare const TAK_DATEPICKER_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
 
 /** @docs-private */
-export declare function MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY(
+export declare function TAK_DATEPICKER_SCROLL_STRATEGY_FACTORY(
   overlay: Overlay
 ): () => ScrollStrategy;
 
 /** @docs-private */
-export declare const MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER: {
+export declare const TAK_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER: {
   provide: InjectionToken<() => ScrollStrategy>;
   deps: (typeof Overlay)[];
-  useFactory: typeof MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY;
+  useFactory: typeof TAK_DATEPICKER_SCROLL_STRATEGY_FACTORY;
 };
 
 /** @docs-private */
-export declare const MAT_DATEPICKER_VALIDATORS: any;
+export declare const TAK_DATEPICKER_VALIDATORS: any;
 
 /** @docs-private */
-export declare const MAT_DATEPICKER_VALUE_ACCESSOR: any;
+export declare const TAK_DATEPICKER_VALUE_ACCESSOR: any;
 
 /** @docs-private */
-export declare function MAT_RANGE_DATE_SELECTION_MODEL_FACTORY(
-  parent: MatSingleDateSelectionModel<unknown>,
+export declare function TAK_RANGE_DATE_SELECTION_MODEL_FACTORY(
+  parent: TakSingleDateSelectionModel<unknown>,
   adapter: DateAdapter<unknown>
-): MatSingleDateSelectionModel<unknown>;
+): TakSingleDateSelectionModel<unknown>;
 
 /**
  * Used to provide a range selection model to a component.
  * @docs-private
  */
-export declare const MAT_RANGE_DATE_SELECTION_MODEL_PROVIDER: FactoryProvider;
+export declare const TAK_RANGE_DATE_SELECTION_MODEL_PROVIDER: FactoryProvider;
 
 /** @docs-private */
-export declare function MAT_SINGLE_DATE_SELECTION_MODEL_FACTORY(
-  parent: MatSingleDateSelectionModel<unknown>,
+export declare function TAK_SINGLE_DATE_SELECTION_MODEL_FACTORY(
+  parent: TakSingleDateSelectionModel<unknown>,
   adapter: DateAdapter<unknown>
-): MatSingleDateSelectionModel<unknown>;
+): TakSingleDateSelectionModel<unknown>;
 
 /**
  * Used to provide a single selection model to a component.
  * @docs-private
  */
-export declare const MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER: FactoryProvider;
+export declare const TAK_SINGLE_DATE_SELECTION_MODEL_PROVIDER: FactoryProvider;
 
 /** A calendar that is used as part of the datepicker. */
-export declare class MatCalendar<D>
+export declare class TakCalendar<D>
   implements AfterContentInit, AfterViewChecked, OnDestroy, OnChanges
 {
   private _dateAdapter;
@@ -283,7 +283,7 @@ export declare class MatCalendar<D>
   set startAt(value: D | null);
   private _startAt;
   /** Whether the calendar should be started in month or year view. */
-  startView: MatCalendarView;
+  startView: TakCalendarView;
   /** The currently selected date. */
   get selected(): DateRange<D> | D | null;
   set selected(value: DateRange<D> | D | null);
@@ -299,7 +299,7 @@ export declare class MatCalendar<D>
   /** Function used to filter which dates are selectable. */
   dateFilter: (date: D) => boolean;
   /** Function that can be used to add custom CSS classes to dates. */
-  dateClass: MatCalendarCellClassFunction<D>;
+  dateClass: TakCalendarCellClassFunction<D>;
   /** Start of the comparison range. */
   comparisonStart: D | null;
   /** End of the comparison range. */
@@ -319,15 +319,15 @@ export declare class MatCalendar<D>
   /**
    * Emits when the current view changes.
    */
-  readonly viewChanged: EventEmitter<MatCalendarView>;
+  readonly viewChanged: EventEmitter<TakCalendarView>;
   /** Emits when any date is selected. */
-  readonly _userSelection: EventEmitter<MatCalendarUserEvent<D | null>>;
+  readonly _userSelection: EventEmitter<TakCalendarUserEvent<D | null>>;
   /** Reference to the current month view component. */
-  monthView: MatMonthView<D>;
+  monthView: TakMonthView<D>;
   /** Reference to the current year view component. */
-  yearView: MatYearView<D>;
+  yearView: TakYearView<D>;
   /** Reference to the current multi-year view component. */
-  multiYearView: MatMultiYearView<D>;
+  multiYearView: TakMultiYearView<D>;
   /**
    * The current active date. This determines which time period is shown and which date is
    * highlighted when using keyboard navigation.
@@ -336,17 +336,17 @@ export declare class MatCalendar<D>
   set activeDate(value: D);
   private _clampedActiveDate;
   /** Whether the calendar is in month view. */
-  get currentView(): MatCalendarView;
-  set currentView(value: MatCalendarView);
+  get currentView(): TakCalendarView;
+  set currentView(value: TakCalendarView);
   private _currentView;
   /**
    * Emits whenever there is a state change that the header may need to respond to.
    */
   readonly stateChanges: Subject<void>;
   constructor(
-    _intl: MatDatepickerIntl,
+    _intl: TakDatepickerIntl,
     _dateAdapter: DateAdapter<D>,
-    _dateFormats: MatDateFormats,
+    _dateFormats: TakDateFormats,
     _changeDetectorRef: ChangeDetectorRef
   );
   ngAfterContentInit(): void;
@@ -358,7 +358,7 @@ export declare class MatCalendar<D>
   /** Updates today's date after an update of the active date */
   updateTodaysDate(): void;
   /** Handles date selection in the month view. */
-  _dateSelected(event: MatCalendarUserEvent<D | null>): void;
+  _dateSelected(event: TakCalendarUserEvent<D | null>): void;
   /** Handles year selection in the multiyear view. */
   _yearSelectedInMultiYearView(normalizedYear: D): void;
   /** Handles month selection in the year view. */
@@ -368,13 +368,13 @@ export declare class MatCalendar<D>
   /** Returns the component instance that corresponds to the current calendar view. */
   private _getCurrentViewComponent;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatCalendar<any>,
+    TakCalendar<any>,
     [null, { optional: true }, { optional: true }, null]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatCalendar<any>,
-    'mat-calendar',
-    ['matCalendar'],
+    TakCalendar<any>,
+    'tak-calendar',
+    ['takCalendar'],
     {
       headerComponent: 'headerComponent';
       startAt: 'startAt';
@@ -404,7 +404,7 @@ export declare class MatCalendar<D>
  * An internal component used to display calendar data in a table.
  * @docs-private
  */
-export declare class MatCalendarBody implements OnChanges, OnDestroy, AfterViewChecked {
+export declare class TakCalendarBody implements OnChanges, OnDestroy, AfterViewChecked {
   private _elementRef;
   private _ngZone;
   /**
@@ -419,7 +419,7 @@ export declare class MatCalendarBody implements OnChanges, OnDestroy, AfterViewC
   /** The label for the table. (e.g. "Jan 2017"). */
   label: string;
   /** The cells to display in the table. */
-  rows: MatCalendarCell[][];
+  rows: TakCalendarCell[][];
   /** The value in the table that corresponds to today. */
   todayValue: number;
   /** Start value of the selected date range. */
@@ -449,10 +449,10 @@ export declare class MatCalendarBody implements OnChanges, OnDestroy, AfterViewC
   /** End of the preview range. */
   previewEnd: number | null;
   /** Emits when a new value is selected. */
-  readonly selectedValueChange: EventEmitter<MatCalendarUserEvent<number>>;
+  readonly selectedValueChange: EventEmitter<TakCalendarUserEvent<number>>;
   /** Emits when the preview has changed as a result of a user action. */
-  readonly previewChange: EventEmitter<MatCalendarUserEvent<MatCalendarCell<any> | null>>;
-  readonly activeDateChange: EventEmitter<MatCalendarUserEvent<number>>;
+  readonly previewChange: EventEmitter<TakCalendarUserEvent<TakCalendarCell<any> | null>>;
+  readonly activeDateChange: EventEmitter<TakCalendarUserEvent<number>>;
   /** The number of blank cells to put at the beginning for the first row. */
   _firstRowOffset: number;
   /** Padding for the individual date cells. */
@@ -461,8 +461,8 @@ export declare class MatCalendarBody implements OnChanges, OnDestroy, AfterViewC
   _cellWidth: string;
   constructor(_elementRef: ElementRef<HTMLElement>, _ngZone: NgZone);
   /** Called when a cell is clicked. */
-  _cellClicked(cell: MatCalendarCell, event: MouseEvent): void;
-  _emitActiveDateChange(cell: MatCalendarCell, event: FocusEvent): void;
+  _cellClicked(cell: TakCalendarCell, event: MouseEvent): void;
+  _emitActiveDateChange(cell: TakCalendarCell, event: FocusEvent): void;
   /** Returns whether a cell should be marked as selected. */
   _isSelected(value: number): boolean;
   ngOnChanges(changes: SimpleChanges): void;
@@ -537,13 +537,13 @@ export declare class MatCalendarBody implements OnChanges, OnDestroy, AfterViewC
    * inside the calendar body (e.g. by hovering out or blurring).
    */
   private _leaveHandler;
-  /** Finds the MatCalendarCell that corresponds to a DOM node. */
+  /** Finds the TakCalendarCell that corresponds to a DOM node. */
   private _getCellFromElement;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatCalendarBody, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakCalendarBody, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatCalendarBody,
-    '[mat-calendar-body]',
-    ['matCalendarBody'],
+    TakCalendarBody,
+    '[tak-calendar-body]',
+    ['takCalendarBody'],
     {
       label: 'label';
       rows: 'rows';
@@ -575,12 +575,12 @@ export declare class MatCalendarBody implements OnChanges, OnDestroy, AfterViewC
  * An internal class that represents the data corresponding to a single calendar cell.
  * @docs-private
  */
-export declare class MatCalendarCell<D = any> {
+export declare class TakCalendarCell<D = any> {
   value: number;
   displayValue: string;
   ariaLabel: string;
   enabled: boolean;
-  cssClasses: MatCalendarCellCssClasses;
+  cssClasses: TakCalendarCellCssClasses;
   compareValue: number;
   rawValue?: D | undefined;
   constructor(
@@ -588,20 +588,20 @@ export declare class MatCalendarCell<D = any> {
     displayValue: string,
     ariaLabel: string,
     enabled: boolean,
-    cssClasses?: MatCalendarCellCssClasses,
+    cssClasses?: TakCalendarCellCssClasses,
     compareValue?: number,
     rawValue?: D | undefined
   );
 }
 
 /** Function that can generate the extra classes that should be added to a calendar cell. */
-export declare type MatCalendarCellClassFunction<D> = (
+export declare type TakCalendarCellClassFunction<D> = (
   date: D,
   view: 'month' | 'year' | 'multi-year'
-) => MatCalendarCellCssClasses;
+) => TakCalendarCellCssClasses;
 
 /** Extra CSS classes that can be associated with a calendar cell. */
-export declare type MatCalendarCellCssClasses =
+export declare type TakCalendarCellCssClasses =
   | string
   | string[]
   | Set<string>
@@ -609,18 +609,18 @@ export declare type MatCalendarCellCssClasses =
       [key: string]: any;
     };
 
-/** Default header for MatCalendar */
-export declare class MatCalendarHeader<D> {
+/** Default header for TakCalendar */
+export declare class TakCalendarHeader<D> {
   private _intl;
-  calendar: MatCalendar<D>;
+  calendar: TakCalendar<D>;
   private _dateAdapter;
   private _dateFormats;
   _buttonDescriptionId: string;
   constructor(
-    _intl: MatDatepickerIntl,
-    calendar: MatCalendar<D>,
+    _intl: TakDatepickerIntl,
+    calendar: TakCalendar<D>,
     _dateAdapter: DateAdapter<D>,
-    _dateFormats: MatDateFormats,
+    _dateFormats: TakDateFormats,
     changeDetectorRef: ChangeDetectorRef
   );
   /** The label for the current calendar view. */
@@ -643,13 +643,13 @@ export declare class MatCalendarHeader<D> {
   /** Whether the two dates represent the same view in the current view mode (month or year). */
   private _isSameView;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatCalendarHeader<any>,
+    TakCalendarHeader<any>,
     [null, null, { optional: true }, { optional: true }, null]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatCalendarHeader<any>,
-    'mat-calendar-header',
-    ['matCalendarHeader'],
+    TakCalendarHeader<any>,
+    'tak-calendar-header',
+    ['takCalendarHeader'],
     {},
     {},
     never,
@@ -659,7 +659,7 @@ export declare class MatCalendarHeader<D> {
 }
 
 /** Event emitted when a date inside the calendar is triggered as a result of a user action. */
-export declare interface MatCalendarUserEvent<D> {
+export declare interface TakCalendarUserEvent<D> {
   value: D;
   event: Event;
 }
@@ -668,19 +668,19 @@ export declare interface MatCalendarUserEvent<D> {
  * Possible views for the calendar.
  * @docs-private
  */
-export declare type MatCalendarView = 'month' | 'year' | 'multi-year';
+export declare type TakCalendarView = 'month' | 'year' | 'multi-year';
 
 /** Component responsible for managing the datepicker popup/dialog. */
-export declare class MatDatepicker<D> extends MatDatepickerBase<
-  MatDatepickerControl<D>,
+export declare class TakDatepicker<D> extends TakDatepickerBase<
+  TakDatepickerControl<D>,
   D | null,
   D
 > {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDatepicker<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDatepicker<any>, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDatepicker<any>,
-    'mat-datepicker',
-    ['matDatepicker'],
+    TakDatepicker<any>,
+    'tak-datepicker',
+    ['takDatepicker'],
     {},
     {},
     never,
@@ -693,21 +693,21 @@ export declare class MatDatepicker<D> extends MatDatepickerBase<
  * Container that can be used to project a row of action buttons
  * to the bottom of a datepicker or date range picker.
  */
-export declare class MatDatepickerActions implements AfterViewInit, OnDestroy {
+export declare class TakDatepickerActions implements AfterViewInit, OnDestroy {
   private _datepicker;
   private _viewContainerRef;
   _template: TemplateRef<unknown>;
   private _portal;
   constructor(
-    _datepicker: MatDatepickerBase<MatDatepickerControl<any>, unknown>,
+    _datepicker: TakDatepickerBase<TakDatepickerControl<any>, unknown>,
     _viewContainerRef: ViewContainerRef
   );
   ngAfterViewInit(): void;
   ngOnDestroy(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDatepickerActions, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDatepickerActions, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDatepickerActions,
-    'mat-datepicker-actions, mat-date-range-picker-actions',
+    TakDatepickerActions,
+    'tak-datepicker-actions, tak-date-range-picker-actions',
     never,
     {},
     {},
@@ -721,20 +721,20 @@ export declare class MatDatepickerActions implements AfterViewInit, OnDestroy {
  * Animations used by the Material datepicker.
  * @docs-private
  */
-export declare const matDatepickerAnimations: {
+export declare const takDatepickerAnimations: {
   readonly transformPanel: AnimationTriggerMetadata;
   readonly fadeInCalendar: AnimationTriggerMetadata;
 };
 
 /** Button that will close the datepicker and assign the current selection to the data model. */
-export declare class MatDatepickerApply {
+export declare class TakDatepickerApply {
   private _datepicker;
-  constructor(_datepicker: MatDatepickerBase<MatDatepickerControl<any>, unknown>);
+  constructor(_datepicker: TakDatepickerBase<TakDatepickerControl<any>, unknown>);
   _applySelection(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDatepickerApply, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDatepickerApply, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDatepickerApply,
-    '[matDatepickerApply], [matDateRangePickerApply]',
+    TakDatepickerApply,
+    '[takDatepickerApply], [takDateRangePickerApply]',
     never,
     {},
     {},
@@ -745,12 +745,12 @@ export declare class MatDatepickerApply {
 }
 
 /** Base class for a datepicker. */
-declare abstract class MatDatepickerBase<
-    C extends MatDatepickerControl<D>,
+declare abstract class TakDatepickerBase<
+    C extends TakDatepickerControl<D>,
     S,
     D = ExtractDateTypeFromSelection<S>,
   >
-  implements MatDatepickerPanel<C, S, D>, OnDestroy, OnChanges
+  implements TakDatepickerPanel<C, S, D>, OnDestroy, OnChanges
 {
   private _overlay;
   private _ngZone;
@@ -809,9 +809,9 @@ declare abstract class MatDatepickerBase<
   /**
    * Emits when the current view changes.
    */
-  readonly viewChanged: EventEmitter<MatCalendarView>;
+  readonly viewChanged: EventEmitter<TakCalendarView>;
   /** Function that can be used to add custom CSS classes to dates. */
-  dateClass: MatCalendarCellClassFunction<D>;
+  dateClass: TakCalendarCellClassFunction<D>;
   /** Emits when the datepicker has been opened. */
   readonly openedStream: EventEmitter<void>;
   /** Emits when the datepicker has been closed. */
@@ -855,7 +855,7 @@ declare abstract class MatDatepickerBase<
     scrollStrategy: any,
     _dateAdapter: DateAdapter<D>,
     _dir: Directionality,
-    _model: MatDateSelectionModel<S, D>
+    _model: TakDateSelectionModel<S, D>
   );
   ngOnChanges(changes: SimpleChanges): void;
   ngOnDestroy(): void;
@@ -866,13 +866,13 @@ declare abstract class MatDatepickerBase<
   /** Emits selected month in year view */
   _selectMonth(normalizedMonth: D): void;
   /** Emits changed view */
-  _viewChanged(view: MatCalendarView): void;
+  _viewChanged(view: TakCalendarView): void;
   /**
    * Register an input with this datepicker.
    * @param input The datepicker input to register with this datepicker.
    * @returns Selection model that the input should hook itself up to.
    */
-  registerInput(input: C): MatDateSelectionModel<S, D>;
+  registerInput(input: C): TakDateSelectionModel<S, D>;
   /**
    * Registers a portal containing action buttons with the datepicker.
    * @param portal Portal to be registered.
@@ -890,7 +890,7 @@ declare abstract class MatDatepickerBase<
   /** Applies the current pending selection on the overlay to the model. */
   _applyPendingSelection(): void;
   /** Forwards relevant values from the datepicker to the datepicker content inside the overlay. */
-  protected _forwardContentValues(instance: MatDatepickerContent<S, D>): void;
+  protected _forwardContentValues(instance: TakDatepickerContent<S, D>): void;
   /** Opens the overlay with the calendar. */
   private _openOverlay;
   /** Destroys the current overlay. */
@@ -904,11 +904,11 @@ declare abstract class MatDatepickerBase<
   /** Gets an observable that will emit when the overlay is supposed to be closed. */
   private _getCloseStream;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDatepickerBase<any, any, any>,
+    TakDatepickerBase<any, any, any>,
     [null, null, null, null, { optional: true }, { optional: true }, null]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDatepickerBase<any, any, any>,
+    TakDatepickerBase<any, any, any>,
     never,
     never,
     {
@@ -939,13 +939,13 @@ declare abstract class MatDatepickerBase<
 }
 
 /** Button that will close the datepicker and discard the current selection. */
-export declare class MatDatepickerCancel {
-  _datepicker: MatDatepickerBase<MatDatepickerControl<any>, unknown>;
-  constructor(_datepicker: MatDatepickerBase<MatDatepickerControl<any>, unknown>);
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDatepickerCancel, never>;
+export declare class TakDatepickerCancel {
+  _datepicker: TakDatepickerBase<TakDatepickerControl<any>, unknown>;
+  constructor(_datepicker: TakDatepickerBase<TakDatepickerControl<any>, unknown>);
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDatepickerCancel, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDatepickerCancel,
-    '[matDatepickerCancel], [matDateRangePickerCancel]',
+    TakDatepickerCancel,
+    '[takDatepickerCancel], [takDateRangePickerCancel]',
     never,
     {},
     {},
@@ -957,13 +957,13 @@ export declare class MatDatepickerCancel {
 
 /**
  * Component used as the content for the datepicker overlay. We use this instead of using
- * MatCalendar directly as the content so we can control the initial focus. This also gives us a
+ * TakCalendar directly as the content so we can control the initial focus. This also gives us a
  * place to put additional features of the overlay that are not part of the calendar itself in the
- * future. (e.g. confirmation buttons).
+ * future. (e.g. confirtakion buttons).
  * @docs-private
  */
-export declare class MatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
-  extends _MatDatepickerContentBase
+export declare class TakDatepickerContent<S, D = ExtractDateTypeFromSelection<S>>
+  extends _TakDatepickerContentBase
   implements OnInit, AfterViewInit, OnDestroy, CanColor
 {
   private _changeDetectorRef;
@@ -973,9 +973,9 @@ export declare class MatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>
   private _subscriptions;
   private _model;
   /** Reference to the internal calendar component. */
-  _calendar: MatCalendar<D>;
+  _calendar: TakCalendar<D>;
   /** Reference to the datepicker that created the overlay. */
-  datepicker: MatDatepickerBase<any, S, D>;
+  datepicker: TakDatepickerBase<any, S, D>;
   /** Start of the comparison range. */
   comparisonStart: D | null;
   /** End of the comparison range. */
@@ -997,15 +997,15 @@ export declare class MatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>
   constructor(
     elementRef: ElementRef,
     _changeDetectorRef: ChangeDetectorRef,
-    _globalModel: MatDateSelectionModel<S, D>,
+    _globalModel: TakDateSelectionModel<S, D>,
     _dateAdapter: DateAdapter<D>,
-    _rangeSelectionStrategy: MatDateRangeSelectionStrategy<D>,
-    intl: MatDatepickerIntl
+    _rangeSelectionStrategy: TakDateRangeSelectionStrategy<D>,
+    intl: TakDatepickerIntl
   );
   ngOnInit(): void;
   ngAfterViewInit(): void;
   ngOnDestroy(): void;
-  _handleUserSelection(event: MatCalendarUserEvent<D | null>): void;
+  _handleUserSelection(event: TakCalendarUserEvent<D | null>): void;
   _startExitAnimation(): void;
   _getSelected(): D | DateRange<D> | null;
   /** Applies the current pending selection to the global model. */
@@ -1019,13 +1019,13 @@ export declare class MatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>
    */
   _assignActions(portal: TemplatePortal<any> | null, forceRerender: boolean): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDatepickerContent<any, any>,
+    TakDatepickerContent<any, any>,
     [null, null, null, null, { optional: true }, null]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDatepickerContent<any, any>,
-    'mat-datepicker-content',
-    ['matDatepickerContent'],
+    TakDatepickerContent<any, any>,
+    'tak-datepicker-content',
+    ['takDatepickerContent'],
     { color: 'color' },
     {},
     never,
@@ -1035,7 +1035,7 @@ export declare class MatDatepickerContent<S, D = ExtractDateTypeFromSelection<S>
 }
 
 /** @docs-private */
-declare const _MatDatepickerContentBase: _Constructor<CanColor> &
+declare const _TakDatepickerContentBase: _Constructor<CanColor> &
   _AbstractConstructor<CanColor> & {
     new (_elementRef: ElementRef): {
       _elementRef: ElementRef;
@@ -1043,7 +1043,7 @@ declare const _MatDatepickerContentBase: _Constructor<CanColor> &
   };
 
 /** Form control that can be associated with a datepicker. */
-declare interface MatDatepickerControl<D> {
+declare interface TakDatepickerControl<D> {
   getStartValue(): D | null;
   getThemePalette(): ThemePalette;
   min: D | null;
@@ -1055,16 +1055,16 @@ declare interface MatDatepickerControl<D> {
   stateChanges: Observable<void>;
 }
 
-/** Directive used to connect an input to a MatDatepicker. */
-export declare class MatDatepickerInput<D>
-  extends MatDatepickerInputBase<D | null, D>
-  implements MatDatepickerControl<D | null>, OnDestroy
+/** Directive used to connect an input to a TakDatepicker. */
+export declare class TakDatepickerInput<D>
+  extends TakDatepickerInputBase<D | null, D>
+  implements TakDatepickerControl<D | null>, OnDestroy
 {
   private _formField?;
   private _closedSubscription;
   /** The datepicker that this input is associated with. */
-  set matDatepicker(datepicker: MatDatepickerPanel<MatDatepickerControl<D>, D | null, D>);
-  _datepicker: MatDatepickerPanel<MatDatepickerControl<D>, D | null, D>;
+  set takDatepicker(datepicker: TakDatepickerPanel<TakDatepickerControl<D>, D | null, D>);
+  _datepicker: TakDatepickerPanel<TakDatepickerControl<D>, D | null, D>;
   /** The minimum valid date. */
   get min(): D | null;
   set min(value: D | null);
@@ -1082,8 +1082,8 @@ export declare class MatDatepickerInput<D>
   constructor(
     elementRef: ElementRef<HTMLInputElement>,
     dateAdapter: DateAdapter<D>,
-    dateFormats: MatDateFormats,
-    _formField?: MatFormField | undefined
+    dateFormats: TakDateFormats,
+    _formField?: TakFormField | undefined
   );
   /**
    * Gets the element that the datepicker popup should be connected to.
@@ -1109,14 +1109,14 @@ export declare class MatDatepickerInput<D>
   protected _getDateFilter(): DateFilterFn<D | null>;
   protected _shouldHandleChangeEvent(event: DateSelectionModelChange<D>): boolean;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDatepickerInput<any>,
+    TakDatepickerInput<any>,
     [null, { optional: true }, { optional: true }, { optional: true }]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDatepickerInput<any>,
-    'input[matDatepicker]',
-    ['matDatepickerInput'],
-    { matDatepicker: 'matDatepicker'; min: 'min'; max: 'max'; dateFilter: 'matDatepickerFilter' },
+    TakDatepickerInput<any>,
+    'input[takDatepicker]',
+    ['takDatepickerInput'],
+    { takDatepicker: 'takDatepicker'; min: 'min'; max: 'max'; dateFilter: 'takDatepickerFilter' },
     {},
     never,
     never,
@@ -1125,7 +1125,7 @@ export declare class MatDatepickerInput<D>
 }
 
 /** Base class for datepicker inputs. */
-declare abstract class MatDatepickerInputBase<S, D = ExtractDateTypeFromSelection<S>>
+declare abstract class TakDatepickerInputBase<S, D = ExtractDateTypeFromSelection<S>>
   implements ControlValueAccessor, AfterViewInit, OnChanges, OnDestroy, Validator
 {
   protected _elementRef: ElementRef<HTMLInputElement>;
@@ -1136,15 +1136,15 @@ declare abstract class MatDatepickerInputBase<S, D = ExtractDateTypeFromSelectio
   /** The value of the input. */
   get value(): D | null;
   set value(value: any);
-  protected _model: MatDateSelectionModel<S, D> | undefined;
+  protected _model: TakDateSelectionModel<S, D> | undefined;
   /** Whether the datepicker-input is disabled. */
   get disabled(): boolean;
   set disabled(value: BooleanInput);
   private _disabled;
   /** Emits when a `change` event is fired on this `<input>`. */
-  readonly dateChange: EventEmitter<MatDatepickerInputEvent<D, S>>;
+  readonly dateChange: EventEmitter<TakDatepickerInputEvent<D, S>>;
   /** Emits when an `input` event is fired on this `<input>`. */
-  readonly dateInput: EventEmitter<MatDatepickerInputEvent<D, S>>;
+  readonly dateInput: EventEmitter<TakDatepickerInputEvent<D, S>>;
   /** Emits when the internal state has changed */
   readonly stateChanges: Subject<void>;
   _onTouched: () => void;
@@ -1175,7 +1175,7 @@ declare abstract class MatDatepickerInputBase<S, D = ExtractDateTypeFromSelectio
   /** Gets the date filter function. Used for validation. */
   protected abstract _getDateFilter(): DateFilterFn<D> | undefined;
   /** Registers a date selection model with the input. */
-  _registerModel(model: MatDateSelectionModel<S, D>): void;
+  _registerModel(model: TakDateSelectionModel<S, D>): void;
   /** Opens the popup associated with the input. */
   protected abstract _openPopup(): void;
   /** Assigns a value to the input's model. */
@@ -1191,7 +1191,7 @@ declare abstract class MatDatepickerInputBase<S, D = ExtractDateTypeFromSelectio
   constructor(
     _elementRef: ElementRef<HTMLInputElement>,
     _dateAdapter: DateAdapter<D>,
-    _dateFormats: MatDateFormats
+    _dateFormats: TakDateFormats
   );
   ngAfterViewInit(): void;
   ngOnChanges(changes: SimpleChanges): void;
@@ -1220,16 +1220,16 @@ declare abstract class MatDatepickerInputBase<S, D = ExtractDateTypeFromSelectio
    * by inputs extending this one which can be placed inside of a group that can be disabled.
    */
   protected _parentDisabled(): boolean;
-  /** Programmatically assigns a value to the input. */
-  protected _assignValueProgrammatically(value: D | null): void;
+  /** Programtakically assigns a value to the input. */
+  protected _assignValueProgramtakically(value: D | null): void;
   /** Gets whether a value matches the current date filter. */
   _matchesFilter(value: D | null): boolean;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDatepickerInputBase<any, any>,
+    TakDatepickerInputBase<any, any>,
     [null, { optional: true }, { optional: true }]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDatepickerInputBase<any, any>,
+    TakDatepickerInputBase<any, any>,
     never,
     never,
     { value: 'value'; disabled: 'disabled' },
@@ -1243,25 +1243,25 @@ declare abstract class MatDatepickerInputBase<S, D = ExtractDateTypeFromSelectio
 /**
  * An event used for datepicker input and change events. We don't always have access to a native
  * input or change event because the event may have been triggered by the user clicking on the
- * calendar popup. For consistency, we always use MatDatepickerInputEvent instead.
+ * calendar popup. For consistency, we always use TakDatepickerInputEvent instead.
  */
-export declare class MatDatepickerInputEvent<D, S = unknown> {
+export declare class TakDatepickerInputEvent<D, S = unknown> {
   /** Reference to the datepicker input component that emitted the event. */
-  target: MatDatepickerInputBase<S, D>;
+  target: TakDatepickerInputBase<S, D>;
   /** Reference to the native input element associated with the datepicker input. */
   targetElement: HTMLElement;
   /** The new value for the target datepicker input. */
   value: D | null;
   constructor(
     /** Reference to the datepicker input component that emitted the event. */
-    target: MatDatepickerInputBase<S, D>,
+    target: TakDatepickerInputBase<S, D>,
     /** Reference to the native input element associated with the datepicker input. */
     targetElement: HTMLElement
   );
 }
 
 /** Datepicker data that requires internationalization. */
-export declare class MatDatepickerIntl {
+export declare class TakDatepickerIntl {
   /**
    * Stream that emits whenever the labels here are changed. Use this to notify
    * components if the labels have changed after initialization.
@@ -1297,70 +1297,70 @@ export declare class MatDatepickerIntl {
   formatYearRange(start: string, end: string): string;
   /** Formats a label for a range of years (used by screen readers). */
   formatYearRangeLabel(start: string, end: string): string;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDatepickerIntl, never>;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatDatepickerIntl>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDatepickerIntl, never>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakDatepickerIntl>;
 }
 
-export declare class MatDatepickerModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDatepickerModule, never>;
+export declare class TakDatepickerModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDatepickerModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatDatepickerModule,
+    TakDatepickerModule,
     [
-      typeof i1.MatCalendar,
-      typeof i2.MatCalendarBody,
-      typeof i3.MatDatepicker,
-      typeof i4.MatDatepickerContent,
-      typeof i5.MatDatepickerInput,
-      typeof i6.MatDatepickerToggle,
-      typeof i6.MatDatepickerToggleIcon,
-      typeof i7.MatMonthView,
-      typeof i8.MatYearView,
-      typeof i9.MatMultiYearView,
-      typeof i1.MatCalendarHeader,
-      typeof i10.MatDateRangeInput,
-      typeof i11.MatStartDate,
-      typeof i11.MatEndDate,
-      typeof i12.MatDateRangePicker,
-      typeof i13.MatDatepickerActions,
-      typeof i13.MatDatepickerCancel,
-      typeof i13.MatDatepickerApply,
+      typeof i1.TakCalendar,
+      typeof i2.TakCalendarBody,
+      typeof i3.TakDatepicker,
+      typeof i4.TakDatepickerContent,
+      typeof i5.TakDatepickerInput,
+      typeof i6.TakDatepickerToggle,
+      typeof i6.TakDatepickerToggleIcon,
+      typeof i7.TakMonthView,
+      typeof i8.TakYearView,
+      typeof i9.TakMultiYearView,
+      typeof i1.TakCalendarHeader,
+      typeof i10.TakDateRangeInput,
+      typeof i11.TakStartDate,
+      typeof i11.TakEndDate,
+      typeof i12.TakDateRangePicker,
+      typeof i13.TakDatepickerActions,
+      typeof i13.TakDatepickerCancel,
+      typeof i13.TakDatepickerApply,
     ],
     [
       typeof i14.CommonModule,
-      typeof i15.MatButtonModule,
+      typeof i15.TakButtonModule,
       typeof i16.OverlayModule,
       typeof i17.A11yModule,
       typeof i18.PortalModule,
-      typeof i19.MatCommonModule,
+      typeof i19.TakCommonModule,
     ],
     [
       typeof i20.CdkScrollableModule,
-      typeof i1.MatCalendar,
-      typeof i2.MatCalendarBody,
-      typeof i3.MatDatepicker,
-      typeof i4.MatDatepickerContent,
-      typeof i5.MatDatepickerInput,
-      typeof i6.MatDatepickerToggle,
-      typeof i6.MatDatepickerToggleIcon,
-      typeof i7.MatMonthView,
-      typeof i8.MatYearView,
-      typeof i9.MatMultiYearView,
-      typeof i1.MatCalendarHeader,
-      typeof i10.MatDateRangeInput,
-      typeof i11.MatStartDate,
-      typeof i11.MatEndDate,
-      typeof i12.MatDateRangePicker,
-      typeof i13.MatDatepickerActions,
-      typeof i13.MatDatepickerCancel,
-      typeof i13.MatDatepickerApply,
+      typeof i1.TakCalendar,
+      typeof i2.TakCalendarBody,
+      typeof i3.TakDatepicker,
+      typeof i4.TakDatepickerContent,
+      typeof i5.TakDatepickerInput,
+      typeof i6.TakDatepickerToggle,
+      typeof i6.TakDatepickerToggleIcon,
+      typeof i7.TakMonthView,
+      typeof i8.TakYearView,
+      typeof i9.TakMultiYearView,
+      typeof i1.TakCalendarHeader,
+      typeof i10.TakDateRangeInput,
+      typeof i11.TakStartDate,
+      typeof i11.TakEndDate,
+      typeof i12.TakDateRangePicker,
+      typeof i13.TakDatepickerActions,
+      typeof i13.TakDatepickerCancel,
+      typeof i13.TakDatepickerApply,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatDatepickerModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakDatepickerModule>;
 }
 
-/** A datepicker that can be attached to a {@link MatDatepickerControl}. */
-declare interface MatDatepickerPanel<
-  C extends MatDatepickerControl<D>,
+/** A datepicker that can be attached to a {@link TakDatepickerControl}. */
+declare interface TakDatepickerPanel<
+  C extends TakDatepickerControl<D>,
   S,
   D = ExtractDateTypeFromSelection<S>,
 > {
@@ -1383,15 +1383,15 @@ declare interface MatDatepickerPanel<
   /** Opens the datepicker. */
   open(): void;
   /** Register an input with the datepicker. */
-  registerInput(input: C): MatDateSelectionModel<S, D>;
+  registerInput(input: C): TakDateSelectionModel<S, D>;
 }
 
-export declare class MatDatepickerToggle<D> implements AfterContentInit, OnChanges, OnDestroy {
-  _intl: MatDatepickerIntl;
+export declare class TakDatepickerToggle<D> implements AfterContentInit, OnChanges, OnDestroy {
+  _intl: TakDatepickerIntl;
   private _changeDetectorRef;
   private _stateChanges;
   /** Datepicker instance that the button will toggle. */
-  datepicker: MatDatepickerPanel<MatDatepickerControl<any>, D>;
+  datepicker: TakDatepickerPanel<TakDatepickerControl<any>, D>;
   /** Tabindex for the toggle. */
   tabIndex: number | null;
   /** Screen-reader label for the button. */
@@ -1403,11 +1403,11 @@ export declare class MatDatepickerToggle<D> implements AfterContentInit, OnChang
   /** Whether ripples on the toggle should be disabled. */
   disableRipple: boolean;
   /** Custom icon set by the consumer. */
-  _customIcon: MatDatepickerToggleIcon;
+  _customIcon: TakDatepickerToggleIcon;
   /** Underlying button element. */
-  _button: MatButton;
+  _button: TakButton;
   constructor(
-    _intl: MatDatepickerIntl,
+    _intl: TakDatepickerIntl,
     _changeDetectorRef: ChangeDetectorRef,
     defaultTabIndex: string
   );
@@ -1417,13 +1417,13 @@ export declare class MatDatepickerToggle<D> implements AfterContentInit, OnChang
   _open(event: Event): void;
   private _watchStateChanges;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDatepickerToggle<any>,
+    TakDatepickerToggle<any>,
     [null, null, { attribute: 'tabindex' }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDatepickerToggle<any>,
-    'mat-datepicker-toggle',
-    ['matDatepickerToggle'],
+    TakDatepickerToggle<any>,
+    'tak-datepicker-toggle',
+    ['takDatepickerToggle'],
     {
       datepicker: 'for';
       tabIndex: 'tabIndex';
@@ -1433,17 +1433,17 @@ export declare class MatDatepickerToggle<D> implements AfterContentInit, OnChang
     },
     {},
     ['_customIcon'],
-    ['[matDatepickerToggleIcon]'],
+    ['[takDatepickerToggleIcon]'],
     false
   >;
 }
 
-/** Can be used to override the icon of a `matDatepickerToggle`. */
-export declare class MatDatepickerToggleIcon {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDatepickerToggleIcon, never>;
+/** Can be used to override the icon of a `takDatepickerToggle`. */
+export declare class TakDatepickerToggleIcon {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDatepickerToggleIcon, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDatepickerToggleIcon,
-    '[matDatepickerToggleIcon]',
+    TakDatepickerToggleIcon,
+    '[takDatepickerToggleIcon]',
     never,
     {},
     {},
@@ -1453,12 +1453,12 @@ export declare class MatDatepickerToggleIcon {
   >;
 }
 
-export declare class MatDateRangeInput<D>
+export declare class TakDateRangeInput<D>
   implements
-    MatFormFieldControl<DateRange<D>>,
-    MatDatepickerControl<D>,
-    MatDateRangeInputParent<D>,
-    MatDateRangePickerInput<D>,
+    TakFormFieldControl<DateRange<D>>,
+    TakDatepickerControl<D>,
+    TakDateRangeInputParent<D>,
+    TakDateRangePickerInput<D>,
     AfterContentInit,
     OnChanges,
     OnDestroy
@@ -1479,14 +1479,14 @@ export declare class MatDateRangeInput<D>
   /** Name of the form control. */
   controlType: string;
   /**
-   * Implemented as a part of `MatFormFieldControl`.
-   * Set the placeholder attribute on `matStartDate` and `matEndDate`.
+   * Implemented as a part of `TakFormFieldControl`.
+   * Set the placeholder attribute on `takStartDate` and `takEndDate`.
    * @docs-private
    */
   get placeholder(): string;
   /** The range picker that this input is associated with. */
-  get rangePicker(): MatDatepickerPanel<MatDatepickerControl<D>, DateRange<D>, D>;
-  set rangePicker(rangePicker: MatDatepickerPanel<MatDatepickerControl<D>, DateRange<D>, D>);
+  get rangePicker(): TakDatepickerPanel<TakDatepickerControl<D>, DateRange<D>, D>;
+  set rangePicker(rangePicker: TakDatepickerPanel<TakDatepickerControl<D>, DateRange<D>, D>);
   private _rangePicker;
   /** Whether the input is required. */
   get required(): boolean;
@@ -1522,10 +1522,10 @@ export declare class MatDateRangeInput<D>
   comparisonStart: D | null;
   /** End of the comparison range that should be shown in the calendar. */
   comparisonEnd: D | null;
-  _startInput: MatStartDate<D>;
-  _endInput: MatEndDate<D>;
+  _startInput: TakStartDate<D>;
+  _endInput: TakEndDate<D>;
   /**
-   * Implemented as a part of `MatFormFieldControl`.
+   * Implemented as a part of `TakFormFieldControl`.
    * TODO(crisbeto): change type to `AbstractControlDirective` after #18206 lands.
    * @docs-private
    */
@@ -1537,15 +1537,15 @@ export declare class MatDateRangeInput<D>
     _elementRef: ElementRef<HTMLElement>,
     control: ControlContainer,
     _dateAdapter: DateAdapter<D>,
-    _formField?: MatFormField | undefined
+    _formField?: TakFormField | undefined
   );
   /**
-   * Implemented as a part of `MatFormFieldControl`.
+   * Implemented as a part of `TakFormFieldControl`.
    * @docs-private
    */
   setDescribedByIds(ids: string[]): void;
   /**
-   * Implemented as a part of `MatFormFieldControl`.
+   * Implemented as a part of `TakFormFieldControl`.
    * @docs-private
    */
   onContainerClick(): void;
@@ -1579,13 +1579,13 @@ export declare class MatDateRangeInput<D>
   /** Registers the current date selection model with the start/end inputs. */
   private _registerModel;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDateRangeInput<any>,
+    TakDateRangeInput<any>,
     [null, null, { optional: true; self: true }, { optional: true }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDateRangeInput<any>,
-    'mat-date-range-input',
-    ['matDateRangeInput'],
+    TakDateRangeInput<any>,
+    'tak-date-range-input',
+    ['takDateRangeInput'],
     {
       rangePicker: 'rangePicker';
       required: 'required';
@@ -1599,17 +1599,17 @@ export declare class MatDateRangeInput<D>
     },
     {},
     ['_startInput', '_endInput'],
-    ['input[matStartDate]', 'input[matEndDate]'],
+    ['input[takStartDate]', 'input[takEndDate]'],
     false
   >;
 }
 
-declare const _MatDateRangeInputBase: _Constructor<CanUpdateErrorState> &
+declare const _TakDateRangeInputBase: _Constructor<CanUpdateErrorState> &
   _AbstractConstructor<CanUpdateErrorState> &
-  typeof MatDateRangeInputPartBase;
+  typeof TakDateRangeInputPartBase;
 
-/** Parent component that should be wrapped around `MatStartDate` and `MatEndDate`. */
-declare interface MatDateRangeInputParent<D> {
+/** Parent component that should be wrapped around `TakStartDate` and `TakEndDate`. */
+declare interface TakDateRangeInputParent<D> {
   id: string;
   min: D | null;
   max: D | null;
@@ -1618,21 +1618,21 @@ declare interface MatDateRangeInputParent<D> {
     opened: boolean;
     id: string;
   };
-  _startInput: MatDateRangeInputPartBase<D>;
-  _endInput: MatDateRangeInputPartBase<D>;
+  _startInput: TakDateRangeInputPartBase<D>;
+  _endInput: TakDateRangeInputPartBase<D>;
   _groupDisabled: boolean;
   _handleChildValueChange(): void;
   _openDatepicker(): void;
 }
 
 /**
- * Base class for the individual inputs that can be projected inside a `mat-date-range-input`.
+ * Base class for the individual inputs that can be projected inside a `tak-date-range-input`.
  */
-declare abstract class MatDateRangeInputPartBase<D>
-  extends MatDatepickerInputBase<DateRange<D>>
+declare abstract class TakDateRangeInputPartBase<D>
+  extends TakDatepickerInputBase<DateRange<D>>
   implements OnInit, DoCheck
 {
-  _rangeInput: MatDateRangeInputParent<D>;
+  _rangeInput: TakDateRangeInputParent<D>;
   _elementRef: ElementRef<HTMLInputElement>;
   _defaultErrorStateMatcher: ErrorStateMatcher;
   private _injector;
@@ -1650,14 +1650,14 @@ declare abstract class MatDateRangeInputPartBase<D>
   protected abstract _getValueFromModel(modelValue: DateRange<D>): D | null;
   protected readonly _dir: Directionality | null;
   constructor(
-    _rangeInput: MatDateRangeInputParent<D>,
+    _rangeInput: TakDateRangeInputParent<D>,
     _elementRef: ElementRef<HTMLInputElement>,
     _defaultErrorStateMatcher: ErrorStateMatcher,
     _injector: Injector,
     _parentForm: NgForm,
     _parentFormGroup: FormGroupDirective,
     dateAdapter: DateAdapter<D>,
-    dateFormats: MatDateFormats
+    dateFormats: TakDateFormats
   );
   ngOnInit(): void;
   ngDoCheck(): void;
@@ -1679,9 +1679,9 @@ declare abstract class MatDateRangeInputPartBase<D>
   protected _getDateFilter(): DateFilterFn<D>;
   protected _parentDisabled(): boolean;
   protected _shouldHandleChangeEvent({ source }: DateSelectionModelChange<DateRange<D>>): boolean;
-  protected _assignValueProgrammatically(value: D | null): void;
+  protected _assignValueProgramtakically(value: D | null): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDateRangeInputPartBase<any>,
+    TakDateRangeInputPartBase<any>,
     [
       null,
       null,
@@ -1694,7 +1694,7 @@ declare abstract class MatDateRangeInputPartBase<D>
     ]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDateRangeInputPartBase<any>,
+    TakDateRangeInputPartBase<any>,
     never,
     never,
     {},
@@ -1706,17 +1706,17 @@ declare abstract class MatDateRangeInputPartBase<D>
 }
 
 /** Component responsible for managing the date range picker popup/dialog. */
-export declare class MatDateRangePicker<D> extends MatDatepickerBase<
-  MatDateRangePickerInput<D>,
+export declare class TakDateRangePicker<D> extends TakDatepickerBase<
+  TakDateRangePickerInput<D>,
   DateRange<D>,
   D
 > {
-  protected _forwardContentValues(instance: MatDatepickerContent<DateRange<D>, D>): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDateRangePicker<any>, never>;
+  protected _forwardContentValues(instance: TakDatepickerContent<DateRange<D>, D>): void;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDateRangePicker<any>, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDateRangePicker<any>,
-    'mat-date-range-picker',
-    ['matDateRangePicker'],
+    TakDateRangePicker<any>,
+    'tak-date-range-picker',
+    ['takDateRangePicker'],
     {},
     {},
     never,
@@ -1729,13 +1729,13 @@ export declare class MatDateRangePicker<D> extends MatDatepickerBase<
  * Input that can be associated with a date range picker.
  * @docs-private
  */
-declare interface MatDateRangePickerInput<D> extends MatDatepickerControl<D> {
+declare interface TakDateRangePickerInput<D> extends TakDatepickerControl<D> {
   comparisonStart: D | null;
   comparisonEnd: D | null;
 }
 
 /** Object that can be provided in order to customize the date range selection behavior. */
-export declare interface MatDateRangeSelectionStrategy<D> {
+export declare interface TakDateRangeSelectionStrategy<D> {
   /**
    * Called when the user has finished selecting a value.
    * @param date Date that was selected. Will be null if the user cleared the selection.
@@ -1761,7 +1761,7 @@ export declare interface MatDateRangeSelectionStrategy<D> {
  * A selection model containing a date selection.
  * @docs-private
  */
-export declare abstract class MatDateSelectionModel<S, D = ExtractDateTypeFromSelection<S>>
+export declare abstract class TakDateSelectionModel<S, D = ExtractDateTypeFromSelection<S>>
   implements OnDestroy
 {
   /** The current selection. */
@@ -1790,27 +1790,27 @@ export declare abstract class MatDateSelectionModel<S, D = ExtractDateTypeFromSe
   /** Checks whether the current selection is complete. */
   abstract isComplete(): boolean;
   /** Clones the selection model. */
-  abstract clone(): MatDateSelectionModel<S, D>;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDateSelectionModel<any, any>, never>;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatDateSelectionModel<any, any>>;
+  abstract clone(): TakDateSelectionModel<S, D>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDateSelectionModel<any, any>, never>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakDateSelectionModel<any, any>>;
 }
 
-/** Input for entering the end date in a `mat-date-range-input`. */
-export declare class MatEndDate<D>
-  extends _MatDateRangeInputBase<D>
+/** Input for entering the end date in a `tak-date-range-input`. */
+export declare class TakEndDate<D>
+  extends _TakDateRangeInputBase<D>
   implements CanUpdateErrorState
 {
   /** Validator that checks that the end date isn't before the start date. */
   private _endValidator;
   constructor(
-    rangeInput: MatDateRangeInputParent<D>,
+    rangeInput: TakDateRangeInputParent<D>,
     elementRef: ElementRef<HTMLInputElement>,
     defaultErrorStateMatcher: ErrorStateMatcher,
     injector: Injector,
     parentForm: NgForm,
     parentFormGroup: FormGroupDirective,
     dateAdapter: DateAdapter<D>,
-    dateFormats: MatDateFormats
+    dateFormats: TakDateFormats
   );
   protected _validator: ValidatorFn | null;
   protected _getValueFromModel(modelValue: DateRange<D>): D | null;
@@ -1818,7 +1818,7 @@ export declare class MatEndDate<D>
   protected _assignValueToModel(value: D | null): void;
   _onKeydown(event: KeyboardEvent): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatEndDate<any>,
+    TakEndDate<any>,
     [
       null,
       null,
@@ -1831,8 +1831,8 @@ export declare class MatEndDate<D>
     ]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatEndDate<any>,
-    'input[matEndDate]',
+    TakEndDate<any>,
+    'input[takEndDate]',
     never,
     { errorStateMatcher: 'errorStateMatcher' },
     { dateChange: 'dateChange'; dateInput: 'dateInput' },
@@ -1846,7 +1846,7 @@ export declare class MatEndDate<D>
  * An internal component used to display a single month in the datepicker.
  * @docs-private
  */
-export declare class MatMonthView<D> implements AfterContentInit, OnChanges, OnDestroy {
+export declare class TakMonthView<D> implements AfterContentInit, OnChanges, OnDestroy {
   readonly _changeDetectorRef: ChangeDetectorRef;
   private _dateFormats;
   _dateAdapter: DateAdapter<D>;
@@ -1876,7 +1876,7 @@ export declare class MatMonthView<D> implements AfterContentInit, OnChanges, OnD
   /** Function used to filter which dates are selectable. */
   dateFilter: (date: D) => boolean;
   /** Function that can be used to add custom CSS classes to dates. */
-  dateClass: MatCalendarCellClassFunction<D>;
+  dateClass: TakCalendarCellClassFunction<D>;
   /** Start of the comparison range. */
   comparisonStart: D | null;
   /** End of the comparison range. */
@@ -1884,15 +1884,15 @@ export declare class MatMonthView<D> implements AfterContentInit, OnChanges, OnD
   /** Emits when a new date is selected. */
   readonly selectedChange: EventEmitter<D | null>;
   /** Emits when any date is selected. */
-  readonly _userSelection: EventEmitter<MatCalendarUserEvent<D | null>>;
+  readonly _userSelection: EventEmitter<TakCalendarUserEvent<D | null>>;
   /** Emits when any date is activated. */
   readonly activeDateChange: EventEmitter<D>;
   /** The body of calendar table */
-  _matCalendarBody: MatCalendarBody;
+  _takCalendarBody: TakCalendarBody;
   /** The label for this month (e.g. "January 2017"). */
   _monthLabel: string;
   /** Grid of calendar cells representing the dates of the month. */
-  _weeks: MatCalendarCell[][];
+  _weeks: TakCalendarCell[][];
   /** The number of blank cells in the first row before the 1st of the month. */
   _firstWeekOffset: number;
   /** Start value of the currently-shown date range. */
@@ -1918,16 +1918,16 @@ export declare class MatMonthView<D> implements AfterContentInit, OnChanges, OnD
   }[];
   constructor(
     _changeDetectorRef: ChangeDetectorRef,
-    _dateFormats: MatDateFormats,
+    _dateFormats: TakDateFormats,
     _dateAdapter: DateAdapter<D>,
     _dir?: Directionality | undefined,
-    _rangeStrategy?: MatDateRangeSelectionStrategy<D> | undefined
+    _rangeStrategy?: TakDateRangeSelectionStrategy<D> | undefined
   );
   ngAfterContentInit(): void;
   ngOnChanges(changes: SimpleChanges): void;
   ngOnDestroy(): void;
   /** Handles when a new date is selected. */
-  _dateSelected(event: MatCalendarUserEvent<number>): void;
+  _dateSelected(event: TakCalendarUserEvent<number>): void;
   /**
    * Takes the index of a calendar body cell wrapped in in an event as argument. For the date that
    * corresponds to the given cell, set `activeDate` to that date and fire `activeDateChange` with
@@ -1938,7 +1938,7 @@ export declare class MatMonthView<D> implements AfterContentInit, OnChanges, OnD
    * parent's value asynchronously via the `activeDateChange` event. The child component receives an
    * updated value asynchronously via the `activeCell` Input.
    */
-  _updateActiveDate(event: MatCalendarUserEvent<number>): void;
+  _updateActiveDate(event: TakCalendarUserEvent<number>): void;
   /** Handles keydown events on the calendar body when calendar is in month view. */
   _handleCalendarBodyKeydown(event: KeyboardEvent): void;
   /** Handles keyup events on the calendar body when calendar is in month view. */
@@ -1950,7 +1950,7 @@ export declare class MatMonthView<D> implements AfterContentInit, OnChanges, OnD
   /** Focuses the active cell after change detection has run and the microtask queue is empty. */
   _focusActiveCellAfterViewChecked(): void;
   /** Called when the user has activated a new cell and the preview needs to be updated. */
-  _previewChanged({ event, value: cell }: MatCalendarUserEvent<MatCalendarCell<D> | null>): void;
+  _previewChanged({ event, value: cell }: TakCalendarUserEvent<TakCalendarCell<D> | null>): void;
   /**
    * Takes a day of the month and returns a new date in the same month and year as the currently
    *  active date. The returned date will have the same day of the month as the argument date.
@@ -1958,7 +1958,7 @@ export declare class MatMonthView<D> implements AfterContentInit, OnChanges, OnD
   private _getDateFromDayOfMonth;
   /** Initializes the weekdays. */
   private _initWeekdays;
-  /** Creates MatCalendarCells for the dates in this month. */
+  /** Creates TakCalendarCells for the dates in this month. */
   private _createWeekCells;
   /** Date filter for the month */
   private _shouldEnableDate;
@@ -1978,13 +1978,13 @@ export declare class MatMonthView<D> implements AfterContentInit, OnChanges, OnD
   /** Gets whether a date can be selected in the month view. */
   private _canSelect;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatMonthView<any>,
+    TakMonthView<any>,
     [null, { optional: true }, { optional: true }, { optional: true }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatMonthView<any>,
-    'mat-month-view',
-    ['matMonthView'],
+    TakMonthView<any>,
+    'tak-month-view',
+    ['takMonthView'],
     {
       activeDate: 'activeDate';
       selected: 'selected';
@@ -2010,7 +2010,7 @@ export declare class MatMonthView<D> implements AfterContentInit, OnChanges, OnD
  * An internal component used to display a year selector in the datepicker.
  * @docs-private
  */
-export declare class MatMultiYearView<D> implements AfterContentInit, OnDestroy {
+export declare class TakMultiYearView<D> implements AfterContentInit, OnDestroy {
   private _changeDetectorRef;
   _dateAdapter: DateAdapter<D>;
   private _dir?;
@@ -2036,7 +2036,7 @@ export declare class MatMultiYearView<D> implements AfterContentInit, OnDestroy 
   /** A function used to filter which dates are selectable. */
   dateFilter: (date: D) => boolean;
   /** Function that can be used to add custom CSS classes to date cells. */
-  dateClass: MatCalendarCellClassFunction<D>;
+  dateClass: TakCalendarCellClassFunction<D>;
   /** Emits when a new year is selected. */
   readonly selectedChange: EventEmitter<D>;
   /** Emits the selected year. This doesn't imply a change on the selected date */
@@ -2044,9 +2044,9 @@ export declare class MatMultiYearView<D> implements AfterContentInit, OnDestroy 
   /** Emits when any date is activated. */
   readonly activeDateChange: EventEmitter<D>;
   /** The body of calendar table */
-  _matCalendarBody: MatCalendarBody;
+  _takCalendarBody: TakCalendarBody;
   /** Grid of calendar cells representing the currently displayed years. */
-  _years: MatCalendarCell[][];
+  _years: TakCalendarCell[][];
   /** The year that today falls on. */
   _todayYear: number;
   /** The year of the selected date. Null if the selected date is null. */
@@ -2061,7 +2061,7 @@ export declare class MatMultiYearView<D> implements AfterContentInit, OnDestroy 
   /** Initializes this multi-year view. */
   _init(): void;
   /** Handles when a new year is selected. */
-  _yearSelected(event: MatCalendarUserEvent<number>): void;
+  _yearSelected(event: TakCalendarUserEvent<number>): void;
   /**
    * Takes the index of a calendar body cell wrapped in in an event as argument. For the date that
    * corresponds to the given cell, set `activeDate` to that date and fire `activeDateChange` with
@@ -2072,7 +2072,7 @@ export declare class MatMultiYearView<D> implements AfterContentInit, OnDestroy 
    * parent's value asynchronously via the `activeDateChange` event. The child component receives an
    * updated value asynchronously via the `activeCell` Input.
    */
-  _updateActiveDate(event: MatCalendarUserEvent<number>): void;
+  _updateActiveDate(event: TakCalendarUserEvent<number>): void;
   /** Handles keydown events on the calendar body when calendar is in multi-year view. */
   _handleCalendarBodyKeydown(event: KeyboardEvent): void;
   /** Handles keyup events on the calendar body when calendar is in multi-year view. */
@@ -2087,7 +2087,7 @@ export declare class MatMultiYearView<D> implements AfterContentInit, OnDestroy 
    *  The returned date will have the same year as the argument date.
    */
   private _getDateFromYear;
-  /** Creates an MatCalendarCell for the given year. */
+  /** Creates an TakCalendarCell for the given year. */
   private _createCellForYear;
   /** Whether the given year is enabled. */
   private _shouldEnableYear;
@@ -2096,13 +2096,13 @@ export declare class MatMultiYearView<D> implements AfterContentInit, OnDestroy 
   /** Sets the currently-highlighted year based on a model value. */
   private _setSelectedYear;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatMultiYearView<any>,
+    TakMultiYearView<any>,
     [null, { optional: true }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatMultiYearView<any>,
-    'mat-multi-year-view',
-    ['matMultiYearView'],
+    TakMultiYearView<any>,
+    'tak-multi-year-view',
+    ['takMultiYearView'],
     {
       activeDate: 'activeDate';
       selected: 'selected';
@@ -2126,7 +2126,7 @@ export declare class MatMultiYearView<D> implements AfterContentInit, OnDestroy 
  * A selection model that contains a date range.
  * @docs-private
  */
-export declare class MatRangeDateSelectionModel<D> extends MatDateSelectionModel<DateRange<D>, D> {
+export declare class TakRangeDateSelectionModel<D> extends TakDateSelectionModel<DateRange<D>, D> {
   constructor(adapter: DateAdapter<D>);
   /**
    * Adds a date to the current selection. In the case of a date range selection, the added date
@@ -2142,16 +2142,16 @@ export declare class MatRangeDateSelectionModel<D> extends MatDateSelectionModel
    */
   isComplete(): boolean;
   /** Clones the selection model. */
-  clone(): MatRangeDateSelectionModel<D>;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatRangeDateSelectionModel<any>, never>;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatRangeDateSelectionModel<any>>;
+  clone(): TakRangeDateSelectionModel<D>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakRangeDateSelectionModel<any>, never>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakRangeDateSelectionModel<any>>;
 }
 
 /**
  * A selection model that contains a single date.
  * @docs-private
  */
-export declare class MatSingleDateSelectionModel<D> extends MatDateSelectionModel<D | null, D> {
+export declare class TakSingleDateSelectionModel<D> extends TakDateSelectionModel<D | null, D> {
   constructor(adapter: DateAdapter<D>);
   /**
    * Adds a date to the current selection. In the case of a single date selection, the added date
@@ -2166,27 +2166,27 @@ export declare class MatSingleDateSelectionModel<D> extends MatDateSelectionMode
    */
   isComplete(): boolean;
   /** Clones the selection model. */
-  clone(): MatSingleDateSelectionModel<D>;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSingleDateSelectionModel<any>, never>;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatSingleDateSelectionModel<any>>;
+  clone(): TakSingleDateSelectionModel<D>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSingleDateSelectionModel<any>, never>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakSingleDateSelectionModel<any>>;
 }
 
-/** Input for entering the start date in a `mat-date-range-input`. */
-export declare class MatStartDate<D>
-  extends _MatDateRangeInputBase<D>
+/** Input for entering the start date in a `tak-date-range-input`. */
+export declare class TakStartDate<D>
+  extends _TakDateRangeInputBase<D>
   implements CanUpdateErrorState
 {
   /** Validator that checks that the start date isn't after the end date. */
   private _startValidator;
   constructor(
-    rangeInput: MatDateRangeInputParent<D>,
+    rangeInput: TakDateRangeInputParent<D>,
     elementRef: ElementRef<HTMLInputElement>,
     defaultErrorStateMatcher: ErrorStateMatcher,
     injector: Injector,
     parentForm: NgForm,
     parentFormGroup: FormGroupDirective,
     dateAdapter: DateAdapter<D>,
-    dateFormats: MatDateFormats
+    dateFormats: TakDateFormats
   );
   protected _validator: ValidatorFn | null;
   protected _getValueFromModel(modelValue: DateRange<D>): D | null;
@@ -2197,7 +2197,7 @@ export declare class MatStartDate<D>
   getMirrorValue(): string;
   _onKeydown(event: KeyboardEvent): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatStartDate<any>,
+    TakStartDate<any>,
     [
       null,
       null,
@@ -2210,8 +2210,8 @@ export declare class MatStartDate<D>
     ]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatStartDate<any>,
-    'input[matStartDate]',
+    TakStartDate<any>,
+    'input[takStartDate]',
     never,
     { errorStateMatcher: 'errorStateMatcher' },
     { dateChange: 'dateChange'; dateInput: 'dateInput' },
@@ -2225,7 +2225,7 @@ export declare class MatStartDate<D>
  * An internal component used to display a single year in the datepicker.
  * @docs-private
  */
-export declare class MatYearView<D> implements AfterContentInit, OnDestroy {
+export declare class TakYearView<D> implements AfterContentInit, OnDestroy {
   readonly _changeDetectorRef: ChangeDetectorRef;
   private _dateFormats;
   _dateAdapter: DateAdapter<D>;
@@ -2252,7 +2252,7 @@ export declare class MatYearView<D> implements AfterContentInit, OnDestroy {
   /** A function used to filter which dates are selectable. */
   dateFilter: (date: D) => boolean;
   /** Function that can be used to add custom CSS classes to date cells. */
-  dateClass: MatCalendarCellClassFunction<D>;
+  dateClass: TakCalendarCellClassFunction<D>;
   /** Emits when a new month is selected. */
   readonly selectedChange: EventEmitter<D>;
   /** Emits the selected month. This doesn't imply a change on the selected date */
@@ -2260,9 +2260,9 @@ export declare class MatYearView<D> implements AfterContentInit, OnDestroy {
   /** Emits when any date is activated. */
   readonly activeDateChange: EventEmitter<D>;
   /** The body of calendar table */
-  _matCalendarBody: MatCalendarBody;
+  _takCalendarBody: TakCalendarBody;
   /** Grid of calendar cells representing the months of the year. */
-  _months: MatCalendarCell[][];
+  _months: TakCalendarCell[][];
   /** The label for this year (e.g. "2017"). */
   _yearLabel: string;
   /** The month in this year that today falls on. Null if today is in a different year. */
@@ -2274,14 +2274,14 @@ export declare class MatYearView<D> implements AfterContentInit, OnDestroy {
   _selectedMonth: number | null;
   constructor(
     _changeDetectorRef: ChangeDetectorRef,
-    _dateFormats: MatDateFormats,
+    _dateFormats: TakDateFormats,
     _dateAdapter: DateAdapter<D>,
     _dir?: Directionality | undefined
   );
   ngAfterContentInit(): void;
   ngOnDestroy(): void;
   /** Handles when a new month is selected. */
-  _monthSelected(event: MatCalendarUserEvent<number>): void;
+  _monthSelected(event: TakCalendarUserEvent<number>): void;
   /**
    * Takes the index of a calendar body cell wrapped in in an event as argument. For the date that
    * corresponds to the given cell, set `activeDate` to that date and fire `activeDateChange` with
@@ -2292,7 +2292,7 @@ export declare class MatYearView<D> implements AfterContentInit, OnDestroy {
    * parent's value asynchronously via the `activeDateChange` event. The child component receives an
    * updated value asynchronously via the `activeCell` Input.
    */
-  _updateActiveDate(event: MatCalendarUserEvent<number>): void;
+  _updateActiveDate(event: TakCalendarUserEvent<number>): void;
   /** Handles keydown events on the calendar body when calendar is in year view. */
   _handleCalendarBodyKeydown(event: KeyboardEvent): void;
   /** Handles keyup events on the calendar body when calendar is in year view. */
@@ -2301,7 +2301,7 @@ export declare class MatYearView<D> implements AfterContentInit, OnDestroy {
   _init(): void;
   /** Focuses the active cell after the microtask queue is empty. */
   _focusActiveCell(): void;
-  /** Schedules the matCalendarBody to focus the active cell after change detection has run */
+  /** Schedules the takCalendarBody to focus the active cell after change detection has run */
   _focusActiveCellAfterViewChecked(): void;
   /**
    * Gets the month in this year that the given Date falls on.
@@ -2313,7 +2313,7 @@ export declare class MatYearView<D> implements AfterContentInit, OnDestroy {
    *  The returned date will have the same month as the argument date.
    */
   private _getDateFromMonth;
-  /** Creates an MatCalendarCell for the given month. */
+  /** Creates an TakCalendarCell for the given month. */
   private _createCellForMonth;
   /** Whether the given month is enabled. */
   private _shouldEnableMonth;
@@ -2332,13 +2332,13 @@ export declare class MatYearView<D> implements AfterContentInit, OnDestroy {
   /** Sets the currently-selected month based on a model value. */
   private _setSelectedMonth;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatYearView<any>,
+    TakYearView<any>,
     [null, { optional: true }, { optional: true }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatYearView<any>,
-    'mat-year-view',
-    ['matYearView'],
+    TakYearView<any>,
+    'tak-year-view',
+    ['takYearView'],
     {
       activeDate: 'activeDate';
       selected: 'selected';

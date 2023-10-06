@@ -17,46 +17,46 @@
   $drawer-push-background-color: theming.get-color-from-palette($background, dialog);
   $drawer-side-border: solid 1px theming.get-color-from-palette($foreground, divider);
 
-  .mat-drawer-container {
+  .tak-drawer-container {
     background-color: $drawer-container-background-color;
     color: theming.get-color-from-palette($foreground, text);
   }
 
-  .mat-drawer {
+  .tak-drawer {
     background-color: $drawer-background-color;
     color: theming.get-color-from-palette($foreground, text);
 
-    &.mat-drawer-push {
+    &.tak-drawer-push {
       background-color: $drawer-push-background-color;
     }
 
-    &:not(.mat-drawer-side) {
+    &:not(.tak-drawer-side) {
       // The elevation of z-16 is noted in the design specifications.
       // See https://material.io/design/components/navigation-drawer.html
       @include private.private-theme-elevation(16, $config);
     }
   }
 
-  .mat-drawer-side {
+  .tak-drawer-side {
     border-right: $drawer-side-border;
 
-    &.mat-drawer-end {
+    &.tak-drawer-end {
       border-left: $drawer-side-border;
       border-right: none;
     }
   }
 
-  [dir='rtl'] .mat-drawer-side {
+  [dir='rtl'] .tak-drawer-side {
     border-left: $drawer-side-border;
     border-right: none;
 
-    &.mat-drawer-end {
+    &.tak-drawer-end {
       border-left: none;
       border-right: $drawer-side-border;
     }
   }
 
-  .mat-drawer-backdrop.mat-drawer-shown {
+  .tak-drawer-backdrop.tak-drawer-shown {
     $opacity: 0.6;
     $backdrop-color: theming.get-color-from-palette($background, card, $opacity);
 
@@ -82,7 +82,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-sidenav') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-sidenav') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

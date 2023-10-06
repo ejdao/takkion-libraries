@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -33,7 +33,7 @@ class MiscClassInheritanceMigration extends schematics_1.Migration {
       return;
     }
     // Migration for: https://github.com/angular/components/pull/10293 (v6)
-    if (baseTypes.includes('MatFormFieldControl')) {
+    if (baseTypes.includes('TakFormFieldControl')) {
       const hasFloatLabelMember = node.members
         .filter(member => member.name)
         .find(member => member.name.getText() === 'shouldLabelFloat');
@@ -41,7 +41,7 @@ class MiscClassInheritanceMigration extends schematics_1.Migration {
         this.createFailureAtNode(
           node,
           `Found class "${className}" which extends ` +
-            `"${'MatFormFieldControl'}". This class must define ` +
+            `"${'TakFormFieldControl'}". This class must define ` +
             `"${'shouldLabelFloat'}" which is now a required property.`
         );
       }

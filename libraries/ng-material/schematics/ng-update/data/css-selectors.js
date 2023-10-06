@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -13,31 +13,31 @@ exports.cssSelectors = {
   [schematics_1.TargetVersion.V14]: [
     {
       pr: 'https://github.com/angular/components/pull/23327',
-      changes: [{ replace: '.mat-list-item-avatar', replaceWith: '.mat-list-item-with-avatar' }],
+      changes: [{ replace: '.tak-list-item-avatar', replaceWith: '.tak-list-item-with-avatar' }],
     },
   ],
   [schematics_1.TargetVersion.V6]: [
     {
       pr: 'https://github.com/angular/components/pull/10296',
       changes: [
-        { replace: '.mat-form-field-placeholder', replaceWith: '.mat-form-field-label' },
-        { replace: '.mat-input-container', replaceWith: '.mat-form-field' },
-        { replace: '.mat-input-flex', replaceWith: '.mat-form-field-flex' },
-        { replace: '.mat-input-hint-spacer', replaceWith: '.mat-form-field-hint-spacer' },
-        { replace: '.mat-input-hint-wrapper', replaceWith: '.mat-form-field-hint-wrapper' },
-        { replace: '.mat-input-infix', replaceWith: '.mat-form-field-infix' },
-        { replace: '.mat-input-invalid', replaceWith: '.mat-form-field-invalid' },
-        { replace: '.mat-input-placeholder', replaceWith: '.mat-form-field-label' },
-        { replace: '.mat-input-placeholder-wrapper', replaceWith: '.mat-form-field-label-wrapper' },
-        { replace: '.mat-input-prefix', replaceWith: '.mat-form-field-prefix' },
-        { replace: '.mat-input-ripple', replaceWith: '.mat-form-field-ripple' },
+        { replace: '.tak-form-field-placeholder', replaceWith: '.tak-form-field-label' },
+        { replace: '.tak-input-container', replaceWith: '.tak-form-field' },
+        { replace: '.tak-input-flex', replaceWith: '.tak-form-field-flex' },
+        { replace: '.tak-input-hint-spacer', replaceWith: '.tak-form-field-hint-spacer' },
+        { replace: '.tak-input-hint-wrapper', replaceWith: '.tak-form-field-hint-wrapper' },
+        { replace: '.tak-input-infix', replaceWith: '.tak-form-field-infix' },
+        { replace: '.tak-input-invalid', replaceWith: '.tak-form-field-invalid' },
+        { replace: '.tak-input-placeholder', replaceWith: '.tak-form-field-label' },
+        { replace: '.tak-input-placeholder-wrapper', replaceWith: '.tak-form-field-label-wrapper' },
+        { replace: '.tak-input-prefix', replaceWith: '.tak-form-field-prefix' },
+        { replace: '.tak-input-ripple', replaceWith: '.tak-form-field-ripple' },
         {
-          replace: '.mat-input-subscript-wrapper',
-          replaceWith: '.mat-form-field-subscript-wrapper',
+          replace: '.tak-input-subscript-wrapper',
+          replaceWith: '.tak-form-field-subscript-wrapper',
         },
-        { replace: '.mat-input-suffix', replaceWith: '.mat-form-field-suffix' },
-        { replace: '.mat-input-underline', replaceWith: '.mat-form-field-underline' },
-        { replace: '.mat-input-wrapper', replaceWith: '.mat-form-field-wrapper' },
+        { replace: '.tak-input-suffix', replaceWith: '.tak-form-field-suffix' },
+        { replace: '.tak-input-underline', replaceWith: '.tak-form-field-underline' },
+        { replace: '.tak-input-wrapper', replaceWith: '.tak-form-field-wrapper' },
       ],
     },
     // TODO(devversion): this shouldn't be here because it's not a CSS selector. Move into misc
@@ -46,7 +46,7 @@ exports.cssSelectors = {
       pr: 'https://github.com/angular/components/pull/10430',
       changes: [
         {
-          replace: '$mat-font-family',
+          replace: '$tak-font-family',
           replaceWith: "Roboto, 'Helvetica Neue', sans-serif",
           replaceIn: { stylesheet: true },
         },

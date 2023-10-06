@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -37,31 +37,31 @@ function addNavModulesToModule(options) {
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatGridListModule',
+      'TakGridListModule',
       '@takkion/ng-material/grid-list'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatCardModule',
+      'TakCardModule',
       '@takkion/ng-material/card'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatMenuModule',
+      'TakMenuModule',
       '@takkion/ng-material/menu'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatIconModule',
+      'TakIconModule',
       '@takkion/ng-material/icon'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatButtonModule',
+      'TakButtonModule',
       '@takkion/ng-material/button'
     );
     (0, schematics_2.addModuleImportToModule)(

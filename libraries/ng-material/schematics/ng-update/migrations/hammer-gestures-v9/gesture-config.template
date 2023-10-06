@@ -9,7 +9,7 @@
 
 import {Injectable, Inject, Optional, Type} from '@angular/core';
 import {HammerGestureConfig} from '@angular/platform-browser';
-import {MAT_HAMMER_OPTIONS} from '@takkion/ng-material/core';
+import {TAK_HAMMER_OPTIONS} from '@takkion/ng-material/core';
 
 /**
  * Noop hammer instance that is used when an instance is requested, but
@@ -36,7 +36,7 @@ export class GestureConfig extends HammerGestureConfig {
     'slideleft'
   ];
 
-  constructor(@Optional() @Inject(MAT_HAMMER_OPTIONS) private hammerOptions?: any) {
+  constructor(@Optional() @Inject(TAK_HAMMER_OPTIONS) private hammerOptions?: any) {
     super();
   }
 

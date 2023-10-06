@@ -1,31 +1,61 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatRippleModule } from '../ripple/index';
-import { MatPseudoCheckboxModule } from '../selection/index';
-import { MatCommonModule } from '../common-behaviors/common-module';
-import { MatOption } from './option';
-import { MatOptgroup } from './optgroup';
-import * as i0 from "@angular/core";
-export class MatOptionModule {
-}
-MatOptionModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatOptionModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-MatOptionModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "14.2.0", ngImport: i0, type: MatOptionModule, declarations: [MatOption, MatOptgroup], imports: [MatRippleModule, CommonModule, MatCommonModule, MatPseudoCheckboxModule], exports: [MatOption, MatOptgroup] });
-MatOptionModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatOptionModule, imports: [MatRippleModule, CommonModule, MatCommonModule, MatPseudoCheckboxModule] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatOptionModule, decorators: [{
-            type: NgModule,
-            args: [{
-                    imports: [MatRippleModule, CommonModule, MatCommonModule, MatPseudoCheckboxModule],
-                    exports: [MatOption, MatOptgroup],
-                    declarations: [MatOption, MatOptgroup],
-                }]
-        }] });
+import { TakRippleModule } from '../ripple/index';
+import { TakPseudoCheckboxModule } from '../selection/index';
+import { TakCommonModule } from '../common-behaviors/common-module';
+import { TakOption } from './option';
+import { TakOptgroup } from './optgroup';
+import * as i0 from '@angular/core';
+export class TakOptionModule {}
+TakOptionModule.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakOptionModule,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.NgModule,
+});
+TakOptionModule.ɵmod = i0.ɵɵngDeclareNgModule({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakOptionModule,
+  declarations: [TakOption, TakOptgroup],
+  imports: [TakRippleModule, CommonModule, TakCommonModule, TakPseudoCheckboxModule],
+  exports: [TakOption, TakOptgroup],
+});
+TakOptionModule.ɵinj = i0.ɵɵngDeclareInjector({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakOptionModule,
+  imports: [TakRippleModule, CommonModule, TakCommonModule, TakPseudoCheckboxModule],
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakOptionModule,
+  decorators: [
+    {
+      type: NgModule,
+      args: [
+        {
+          imports: [TakRippleModule, CommonModule, TakCommonModule, TakPseudoCheckboxModule],
+          exports: [TakOption, TakOptgroup],
+          declarations: [TakOption, TakOptgroup],
+        },
+      ],
+    },
+  ],
+});
 export * from './option';
 export * from './optgroup';
 export * from './option-parent';

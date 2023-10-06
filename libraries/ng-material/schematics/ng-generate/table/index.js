@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -37,19 +37,19 @@ function addTableModulesToModule(options) {
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatTableModule',
+      'TakTableModule',
       '@takkion/ng-material/table'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatPaginatorModule',
+      'TakPaginatorModule',
       '@takkion/ng-material/paginator'
     );
     (0, schematics_2.addModuleImportToModule)(
       host,
       modulePath,
-      'MatSortModule',
+      'TakSortModule',
       '@takkion/ng-material/sort'
     );
   };

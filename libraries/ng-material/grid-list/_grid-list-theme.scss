@@ -11,8 +11,8 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-grid-tile-header,
-  .mat-grid-tile-footer {
+  .tak-grid-tile-header,
+  .tak-grid-tile-footer {
     @include list-common.base(typography-utils.font-size($config, caption));
     font-size: typography-utils.font-size($config, body-1);
   }
@@ -23,7 +23,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-grid-list') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-grid-list') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

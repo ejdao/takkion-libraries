@@ -1,22 +1,22 @@
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
-    <button mat-icon-button disabled></button>
-    <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
+<tak-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <tak-tree-node *takTreeNodeDef="let node" takTreeNodeToggle takTreeNodePadding>
+    <button tak-icon-button disabled></button>
+    <tak-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
       {{ node.type === 'file' ? 'description' : 'folder' }}
-    </mat-icon>
+    </tak-icon>
     {{node.name}}
-  </mat-tree-node>
+  </tak-tree-node>
 
-  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
-    <button mat-icon-button matTreeNodeToggle
+  <tak-tree-node *takTreeNodeDef="let node; when: hasChild" takTreeNodePadding>
+    <button tak-icon-button takTreeNodeToggle
             [attr.aria-label]="'Toggle ' + node.name">
-      <mat-icon class="mat-icon-rtl-mirror">
+      <tak-icon class="tak-icon-rtl-mirror">
         {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-      </mat-icon>
+      </tak-icon>
     </button>
-    <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
+    <tak-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
       {{ node.type ==='file' ? 'description' : 'folder' }}
-    </mat-icon>
+    </tak-icon>
     {{node.name}}
-  </mat-tree-node>
-</mat-tree>
+  </tak-tree-node>
+</tak-tree>

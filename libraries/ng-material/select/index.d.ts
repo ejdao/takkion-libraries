@@ -26,12 +26,12 @@ import * as i5 from '@takkion/ng-cdk/scrolling';
 import * as i6 from '@takkion/ng-material/form-field';
 import { InjectionToken } from '@angular/core';
 import { LiveAnnouncer } from '@takkion/ng-cdk/a11y';
-import { MatFormField } from '@takkion/ng-material/form-field';
-import { MatFormFieldControl } from '@takkion/ng-material/form-field';
-import { MatOptgroup } from '@takkion/ng-material/core';
-import { MatOption } from '@takkion/ng-material/core';
-import { _MatOptionBase } from '@takkion/ng-material/core';
-import { MatOptionSelectionChange } from '@takkion/ng-material/core';
+import { TakFormField } from '@takkion/ng-material/form-field';
+import { TakFormFieldControl } from '@takkion/ng-material/form-field';
+import { TakOptgroup } from '@takkion/ng-material/core';
+import { TakOption } from '@takkion/ng-material/core';
+import { _TakOptionBase } from '@takkion/ng-material/core';
+import { TakOptionSelectionChange } from '@takkion/ng-material/core';
 import { NgControl } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { NgZone } from '@angular/core';
@@ -50,51 +50,51 @@ import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 
 declare namespace i1 {
   export {
-    MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY,
+    TAK_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY,
     SELECT_PANEL_MAX_HEIGHT,
     SELECT_PANEL_PADDING_X,
     SELECT_PANEL_INDENT_PADDING_X,
     SELECT_ITEM_HEIGHT_EM,
     SELECT_MULTIPLE_PANEL_PADDING_X,
     SELECT_PANEL_VIEWPORT_PADDING,
-    MAT_SELECT_SCROLL_STRATEGY,
-    MatSelectConfig,
-    MAT_SELECT_CONFIG,
-    MAT_SELECT_SCROLL_STRATEGY_PROVIDER,
-    MatSelectChange,
-    MAT_SELECT_TRIGGER,
-    MatSelectTrigger,
-    _MatSelectBase,
-    MatSelect,
+    TAK_SELECT_SCROLL_STRATEGY,
+    TakSelectConfig,
+    TAK_SELECT_CONFIG,
+    TAK_SELECT_SCROLL_STRATEGY_PROVIDER,
+    TakSelectChange,
+    TAK_SELECT_TRIGGER,
+    TakSelectTrigger,
+    _TakSelectBase,
+    TakSelect,
   };
 }
 
 /** Injection token that can be used to provide the default options the select module. */
-export declare const MAT_SELECT_CONFIG: InjectionToken<MatSelectConfig>;
+export declare const TAK_SELECT_CONFIG: InjectionToken<TakSelectConfig>;
 
 /** Injection token that determines the scroll handling while a select is open. */
-export declare const MAT_SELECT_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
+export declare const TAK_SELECT_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
 
 /** @docs-private */
-export declare const MAT_SELECT_SCROLL_STRATEGY_PROVIDER: {
+export declare const TAK_SELECT_SCROLL_STRATEGY_PROVIDER: {
   provide: InjectionToken<() => ScrollStrategy>;
   deps: (typeof Overlay)[];
-  useFactory: typeof MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY;
+  useFactory: typeof TAK_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY;
 };
 
 /** @docs-private */
-export declare function MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY(
+export declare function TAK_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY(
   overlay: Overlay
 ): () => ScrollStrategy;
 
 /**
- * Injection token that can be used to reference instances of `MatSelectTrigger`. It serves as
- * alternative token to the actual `MatSelectTrigger` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakSelectTrigger`. It serves as
+ * alternative token to the actual `TakSelectTrigger` class which could cause unnecessary
  * retention of the class and its directive metadata.
  */
-export declare const MAT_SELECT_TRIGGER: InjectionToken<MatSelectTrigger>;
+export declare const TAK_SELECT_TRIGGER: InjectionToken<TakSelectTrigger>;
 
-export declare class MatSelect extends _MatSelectBase<MatSelectChange> implements OnInit {
+export declare class TakSelect extends _TakSelectBase<TakSelectChange> implements OnInit {
   /** The scroll position of the overlay panel, calculated to center the selected option. */
   private _scrollTop;
   /** The last measured value for the trigger's client bounding rect. */
@@ -109,9 +109,9 @@ export declare class MatSelect extends _MatSelectBase<MatSelectChange> implement
    * when the panel opens. Will change based on the y-position of the selected option.
    */
   _offsetY: number;
-  options: QueryList<MatOption>;
-  optionGroups: QueryList<MatOptgroup>;
-  customTrigger: MatSelectTrigger;
+  options: QueryList<TakOption>;
+  optionGroups: QueryList<TakOptgroup>;
+  customTrigger: TakSelectTrigger;
   _positions: ConnectedPosition[];
   /**
    * Calculates the scroll position of the select's overlay panel.
@@ -126,8 +126,8 @@ export declare class MatSelect extends _MatSelectBase<MatSelectChange> implement
   /** Scrolls the active option into view. */
   protected _scrollOptionIntoView(index: number): void;
   protected _positioningSettled(): void;
-  protected _panelDoneAnimating(isOpen: boolean): void;
-  protected _getChangeEvent(value: any): MatSelectChange;
+  protected _panelDoneAnitaking(isOpen: boolean): void;
+  protected _getChangeEvent(value: any): TakSelectChange;
   /**
    * Sets the x-offset of the overlay panel in relation to the trigger's top start corner.
    * This must be adjusted to align the selected option text over the trigger text when
@@ -161,34 +161,34 @@ export declare class MatSelect extends _MatSelectBase<MatSelectChange> implement
   private _getItemHeight;
   /** Calculates the amount of items in the select. This includes options and group labels. */
   private _getItemCount;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSelect, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSelect, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatSelect,
-    'mat-select',
-    ['matSelect'],
+    TakSelect,
+    'tak-select',
+    ['takSelect'],
     { disabled: 'disabled'; disableRipple: 'disableRipple'; tabIndex: 'tabIndex' },
     {},
     ['customTrigger', 'options', 'optionGroups'],
-    ['mat-select-trigger', '*'],
+    ['tak-select-trigger', '*'],
     false
   >;
 }
 
 /**
- * The following are all the animations for the mat-select component, with each
+ * The following are all the animations for the tak-select component, with each
  * const containing the metadata for one animation.
  *
- * The values below match the implementation of the AngularJS Material mat-select animation.
+ * The values below match the implementation of the AngularJS Material tak-select animation.
  * @docs-private
  */
-export declare const matSelectAnimations: {
+export declare const takSelectAnimations: {
   readonly transformPanelWrap: AnimationTriggerMetadata;
   readonly transformPanel: AnimationTriggerMetadata;
 };
 
-/** Base class with all of the `MatSelect` functionality. */
-export declare abstract class _MatSelectBase<C>
-  extends _MatSelectMixinBase
+/** Base class with all of the `TakSelect` functionality. */
+export declare abstract class _TakSelectBase<C>
+  extends _TakSelectMixinBase
   implements
     AfterContentInit,
     OnChanges,
@@ -198,7 +198,7 @@ export declare abstract class _MatSelectBase<C>
     ControlValueAccessor,
     CanDisable,
     HasTabIndex,
-    MatFormFieldControl<any>,
+    TakFormFieldControl<any>,
     CanUpdateErrorState,
     CanDisableRipple
 {
@@ -206,13 +206,13 @@ export declare abstract class _MatSelectBase<C>
   protected _changeDetectorRef: ChangeDetectorRef;
   protected _ngZone: NgZone;
   private _dir;
-  protected _parentFormField: MatFormField;
+  protected _parentFormField: TakFormField;
   private _liveAnnouncer;
   private _defaultOptions?;
   /** All of the defined select options. */
-  abstract options: QueryList<_MatOptionBase>;
+  abstract options: QueryList<_TakOptionBase>;
   /** All of the defined groups of options. */
-  abstract optionGroups: QueryList<MatOptgroup>;
+  abstract optionGroups: QueryList<TakOptgroup>;
   /** User-supplied override of the trigger element. */
   abstract customTrigger: {};
   /**
@@ -246,14 +246,14 @@ export declare abstract class _MatSelectBase<C>
   /** Emits whenever the component is destroyed. */
   protected readonly _destroy: Subject<void>;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   userAriaDescribedBy: string;
   /** Deals with the selection logic. */
-  _selectionModel: SelectionModel<MatOption>;
+  _selectionModel: SelectionModel<TakOption>;
   /** Manages keyboard events for options in the panel. */
-  _keyManager: ActiveDescendantKeyManager<MatOption>;
+  _keyManager: ActiveDescendantKeyManager<TakOption>;
   /** `View -> model callback called when value changes` */
   _onChange: (value: any) => void;
   /** `View -> model callback called when select has been touched` */
@@ -261,14 +261,14 @@ export declare abstract class _MatSelectBase<C>
   /** ID for the DOM node containing the select's value. */
   _valueId: string;
   /** Emits when the panel element is finished transforming in. */
-  readonly _panelDoneAnimatingStream: Subject<string>;
+  readonly _panelDoneAnitakingStream: Subject<string>;
   /** Strategy that will be used to handle scrolling while the select panel is open. */
   _scrollStrategy: ScrollStrategy;
   _overlayPanelClass: string | string[];
   /** Whether the select is focused. */
   get focused(): boolean;
   private _focused;
-  /** A name for this control that can be used by `mat-form-field`. */
+  /** A name for this control that can be used by `tak-form-field`. */
   controlType: string;
   /** Trigger that opens the select. */
   trigger: ElementRef;
@@ -325,13 +325,13 @@ export declare abstract class _MatSelectBase<C>
    * Function used to sort the values in a select in multiple mode.
    * Follows the same logic as `Array.prototype.sort`.
    */
-  sortComparator: (a: MatOption, b: MatOption, options: MatOption[]) => number;
+  sortComparator: (a: TakOption, b: TakOption, options: TakOption[]) => number;
   /** Unique id of the element. */
   get id(): string;
   set id(value: string);
   private _id;
   /** Combined stream of all of the child options' change events. */
-  readonly optionSelectionChanges: Observable<MatOptionSelectionChange>;
+  readonly optionSelectionChanges: Observable<TakOptionSelectionChange>;
   /** Event emitted when the select panel has been toggled. */
   readonly openedChange: EventEmitter<boolean>;
   /** Event emitted when the select has been opened. */
@@ -355,12 +355,12 @@ export declare abstract class _MatSelectBase<C>
     _dir: Directionality,
     _parentForm: NgForm,
     _parentFormGroup: FormGroupDirective,
-    _parentFormField: MatFormField,
+    _parentFormField: TakFormField,
     ngControl: NgControl,
     tabIndex: string,
     scrollStrategyFactory: any,
     _liveAnnouncer: LiveAnnouncer,
-    _defaultOptions?: MatSelectConfig | undefined
+    _defaultOptions?: TakSelectConfig | undefined
   );
   ngOnInit(): void;
   ngAfterContentInit(): void;
@@ -406,7 +406,7 @@ export declare abstract class _MatSelectBase<C>
   /** Whether or not the overlay panel is open. */
   get panelOpen(): boolean;
   /** The currently selected option. */
-  get selected(): MatOption | MatOption[];
+  get selected(): TakOption | TakOption[];
   /** The value displayed in the trigger. */
   get triggerValue(): string;
   /** Whether the element is in RTL mode. */
@@ -470,24 +470,24 @@ export declare abstract class _MatSelectBase<C>
   /** Gets the aria-labelledby of the select component trigger. */
   private _getTriggerAriaLabelledby;
   /** Called when the overlay panel is done animating. */
-  protected _panelDoneAnimating(isOpen: boolean): void;
+  protected _panelDoneAnitaking(isOpen: boolean): void;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   setDescribedByIds(ids: string[]): void;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   onContainerClick(): void;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get shouldLabelFloat(): boolean;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    _MatSelectBase<any>,
+    _TakSelectBase<any>,
     [
       null,
       null,
@@ -506,7 +506,7 @@ export declare abstract class _MatSelectBase<C>
     ]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatSelectBase<any>,
+    _TakSelectBase<any>,
     never,
     never,
     {
@@ -539,21 +539,21 @@ export declare abstract class _MatSelectBase<C>
 }
 
 /** Change event object that is emitted when the select value has changed. */
-export declare class MatSelectChange {
+export declare class TakSelectChange {
   /** Reference to the select that emitted the change event. */
-  source: MatSelect;
+  source: TakSelect;
   /** Current value of the select that emitted the event. */
   value: any;
   constructor(
     /** Reference to the select that emitted the change event. */
-    source: MatSelect,
+    source: TakSelect,
     /** Current value of the select that emitted the event. */
     value: any
   );
 }
 
 /** Object that can be used to configure the default options for the select module. */
-export declare interface MatSelectConfig {
+export declare interface TakSelectConfig {
   /** Whether option centering should be disabled. */
   disableOptionCentering?: boolean;
   /** Time to wait in milliseconds after the last keystroke before moving focus to an item. */
@@ -563,7 +563,7 @@ export declare interface MatSelectConfig {
 }
 
 /** @docs-private */
-declare const _MatSelectMixinBase: _Constructor<CanDisableRipple> &
+declare const _TakSelectMixinBase: _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> &
   _Constructor<HasTabIndex> &
   _AbstractConstructor<HasTabIndex> &
@@ -580,7 +580,7 @@ declare const _MatSelectMixinBase: _Constructor<CanDisableRipple> &
     ): {
       /**
        * Emits whenever the component state changes and should cause the parent
-       * form-field to update. Implemented as part of `MatFormFieldControl`.
+       * form-field to update. Implemented as part of `TakFormFieldControl`.
        * @docs-private
        */
       readonly stateChanges: Subject<void>;
@@ -590,44 +590,44 @@ declare const _MatSelectMixinBase: _Constructor<CanDisableRipple> &
       _parentFormGroup: FormGroupDirective;
       /**
        * Form control bound to the component.
-       * Implemented as part of `MatFormFieldControl`.
+       * Implemented as part of `TakFormFieldControl`.
        * @docs-private
        */
       ngControl: NgControl;
     };
   };
 
-export declare class MatSelectModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSelectModule, never>;
+export declare class TakSelectModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSelectModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatSelectModule,
-    [typeof i1.MatSelect, typeof i1.MatSelectTrigger],
+    TakSelectModule,
+    [typeof i1.TakSelect, typeof i1.TakSelectTrigger],
     [
       typeof i2.CommonModule,
       typeof i3.OverlayModule,
-      typeof i4.MatOptionModule,
-      typeof i4.MatCommonModule,
+      typeof i4.TakOptionModule,
+      typeof i4.TakCommonModule,
     ],
     [
       typeof i5.CdkScrollableModule,
-      typeof i6.MatFormFieldModule,
-      typeof i1.MatSelect,
-      typeof i1.MatSelectTrigger,
-      typeof i4.MatOptionModule,
-      typeof i4.MatCommonModule,
+      typeof i6.TakFormFieldModule,
+      typeof i1.TakSelect,
+      typeof i1.TakSelectTrigger,
+      typeof i4.TakOptionModule,
+      typeof i4.TakCommonModule,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatSelectModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakSelectModule>;
 }
 
 /**
  * Allows the user to customize the trigger that is displayed when the select has a value.
  */
-export declare class MatSelectTrigger {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSelectTrigger, never>;
+export declare class TakSelectTrigger {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSelectTrigger, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatSelectTrigger,
-    'mat-select-trigger',
+    TakSelectTrigger,
+    'tak-select-trigger',
     never,
     {},
     {},

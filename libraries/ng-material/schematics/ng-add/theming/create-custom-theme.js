@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -13,26 +13,26 @@ function createCustomTheme(name = 'app') {
   return `
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use '@angular/material' as tak;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat.core();
+@include tak.core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$${name}-primary: mat.define-palette(mat.$indigo-palette);
-$${name}-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$${name}-primary: tak.define-palette(tak.$indigo-palette);
+$${name}-accent: tak.define-palette(tak.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$${name}-warn: mat.define-palette(mat.$red-palette);
+$${name}-warn: tak.define-palette(tak.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$${name}-theme: mat.define-light-theme((
+$${name}-theme: tak.define-light-theme((
   color: (
     primary: $${name}-primary,
     accent: $${name}-accent,
@@ -43,7 +43,7 @@ $${name}-theme: mat.define-light-theme((
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($${name}-theme);
+@include tak.all-component-themes($${name}-theme);
 
 `;
 }

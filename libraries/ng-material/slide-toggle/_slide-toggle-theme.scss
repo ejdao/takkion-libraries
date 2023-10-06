@@ -6,18 +6,18 @@
 @use '../core/typography/typography-utils';
 
 @mixin _checked-color($palette, $thumb-checked-hue) {
-  &.mat-checked {
-    .mat-slide-toggle-thumb {
+  &.tak-checked {
+    .tak-slide-toggle-thumb {
       background-color: theming.get-color-from-palette($palette, $thumb-checked-hue);
     }
 
-    .mat-slide-toggle-bar {
+    .tak-slide-toggle-bar {
       // Opacity is determined from the specs for the selection controls.
       // See: https://material.io/design/components/selection-controls.html#specs
       background-color: theming.get-color-from-palette($palette, $thumb-checked-hue, 0.54);
     }
 
-    .mat-ripple-element {
+    .tak-ripple-element {
       // Set no opacity for the ripples because the ripple opacity will be adjusted dynamically
       // based on the type of interaction with the slide-toggle (e.g. for hover, focus)
       background-color: theming.get-color-from-palette($palette, $thumb-checked-hue);
@@ -46,30 +46,30 @@
   $bar-unchecked-color: theming.get-color-from-palette($foreground, disabled);
   $ripple-unchecked-color: theming.get-color-from-palette($foreground, base);
 
-  .mat-slide-toggle {
+  .tak-slide-toggle {
     @include _checked-color($accent, $thumb-checked-hue);
 
-    &.mat-primary {
+    &.tak-primary {
       @include _checked-color($primary, $thumb-checked-hue);
     }
 
-    &.mat-warn {
+    &.tak-warn {
       @include _checked-color($warn, $thumb-checked-hue);
     }
 
-    &:not(.mat-checked) .mat-ripple-element {
+    &:not(.tak-checked) .tak-ripple-element {
       // Set no opacity for the ripples because the ripple opacity will be adjusted dynamically
       // based on the type of interaction with the slide-toggle (e.g. for hover, focus)
       background-color: $ripple-unchecked-color;
     }
   }
 
-  .mat-slide-toggle-thumb {
+  .tak-slide-toggle-thumb {
     @include private.private-theme-elevation(1, $config);
     background-color: theming.get-color-from-palette(palette.$grey-palette, $thumb-unchecked-hue);
   }
 
-  .mat-slide-toggle-bar {
+  .tak-slide-toggle-bar {
     background-color: $bar-unchecked-color;
   }
 }
@@ -78,7 +78,7 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-slide-toggle-content {
+  .tak-slide-toggle-content {
     font-family: typography-utils.font-family($config);
   }
 }
@@ -88,7 +88,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-slide-toggle') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-slide-toggle') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

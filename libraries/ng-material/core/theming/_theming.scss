@@ -80,7 +80,7 @@ $_emitted-density: () !default;
   @return $result;
 }
 
-/// Gets a color from a theme palette (the output of mat-palette).
+/// Gets a color from a theme palette (the output of tak-palette).
 /// The hue can be one of the standard values (500, A400, etc.), one of the three preconfigured
 /// hues (default, lighter, darker), or any of the aforementioned suffixed with "-contrast".
 ///
@@ -112,7 +112,7 @@ $_emitted-density: () !default;
 
 // Validates the specified theme by ensuring that the optional color config defines
 // a primary, accent and warn palette. Returns the theme if no failures were found.
-@function _mat-validate-theme($theme) {
+@function _tak-validate-theme($theme) {
   @if map.get($theme, color) {
     $color: map.get($theme, color);
     @if not map.get($color, primary) {
@@ -128,7 +128,7 @@ $_emitted-density: () !default;
 
 // Creates a light-themed color configuration from the specified
 // primary, accent and warn palettes.
-@function _mat-create-light-color-config($primary, $accent, $warn: null) {
+@function _tak-create-light-color-config($primary, $accent, $warn: null) {
   @return (
     primary: $primary,
     accent: $accent,
@@ -141,7 +141,7 @@ $_emitted-density: () !default;
 
 // Creates a dark-themed color configuration from the specified
 // primary, accent and warn palettes.
-@function _mat-create-dark-color-config($primary, $accent, $warn: null) {
+@function _tak-create-dark-color-config($primary, $accent, $warn: null) {
   @return (
     primary: $primary,
     accent: $accent,
@@ -174,10 +174,10 @@ $_emitted-density: () !default;
   // configuration for the `color` theming part.
   @if $accent != null {
     @return private-create-backwards-compatibility-theme(
-      _mat-validate-theme(
+      _tak-validate-theme(
         (
           _is-legacy-theme: true,
-          color: _mat-create-light-color-config($primary, $accent, $warn),
+          color: _tak-create-light-color-config($primary, $accent, $warn),
         )
       )
     );
@@ -194,11 +194,11 @@ $_emitted-density: () !default;
     $result: map.merge(
       $result,
       (
-        color: _mat-create-light-color-config($primary, $accent, $warn),
+        color: _tak-create-light-color-config($primary, $accent, $warn),
       )
     );
   }
-  @return private-create-backwards-compatibility-theme(_mat-validate-theme($result));
+  @return private-create-backwards-compatibility-theme(_tak-validate-theme($result));
 }
 
 // TODO: Remove legacy API and rename below `$primary` to `$config`. Currently it cannot be renamed
@@ -223,10 +223,10 @@ $_emitted-density: () !default;
   // configuration for the `color` theming part.
   @if $accent != null {
     @return private-create-backwards-compatibility-theme(
-      _mat-validate-theme(
+      _tak-validate-theme(
         (
           _is-legacy-theme: true,
-          color: _mat-create-dark-color-config($primary, $accent, $warn),
+          color: _tak-create-dark-color-config($primary, $accent, $warn),
         )
       )
     );
@@ -243,11 +243,11 @@ $_emitted-density: () !default;
     $result: map.merge(
       $result,
       (
-        color: _mat-create-dark-color-config($primary, $accent, $warn),
+        color: _tak-create-dark-color-config($primary, $accent, $warn),
       )
     );
   }
-  @return private-create-backwards-compatibility-theme(_mat-validate-theme($result));
+  @return private-create-backwards-compatibility-theme(_tak-validate-theme($result));
 }
 
 /// Gets the color configuration from the given theme or configuration.
@@ -401,7 +401,7 @@ $_emitted-density: () !default;
   // duplicate style checks do not report another warning. e.g. if developers include
   // the `all-component-themes` mixin twice, only the top-level duplicate styles check
   // should report a warning. Not all individual components should report a warning too.
-  $orig-mat-theme-ignore-duplication-warnings: $theme-ignore-duplication-warnings;
+  $orig-tak-theme-ignore-duplication-warnings: $theme-ignore-duplication-warnings;
   $theme-ignore-duplication-warnings: true !global;
 
   // If duplicate default density styles would be generated for a legacy constructed theme,
@@ -415,7 +415,7 @@ $_emitted-density: () !default;
   compatibility.$private-density-generate-styles: not $duplicate-legacy-density;
 
   @content;
-  $theme-ignore-duplication-warnings: $orig-mat-theme-ignore-duplication-warnings !global;
+  $theme-ignore-duplication-warnings: $orig-tak-theme-ignore-duplication-warnings !global;
 
   compatibility.$private-density-generate-at-root: false;
   compatibility.$private-density-generate-styles: true;
@@ -446,7 +446,7 @@ $_emitted-density: () !default;
 //
 //    @mixin my-custom-component-theme($theme) {
 //      .my-comp {
-//        background-color: mat.get-color-from-palette(map.get($theme, primary));
+//        background-color: tak.get-color-from-palette(map.get($theme, primary));
 //      }
 //    }
 //
@@ -480,7 +480,7 @@ $_emitted-density: () !default;
   );
 }
 
-// Approximates an rgba color into a solid hex color, given a background color.
+// Approxitakes an rgba color into a solid hex color, given a background color.
 @function private-rgba-to-hex($color, $background-color) {
   // We convert the rgba color into a solid one by taking the opacity from the rgba
   // value and using it to determine the percentage of the background to put

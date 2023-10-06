@@ -3,7 +3,7 @@
 @use '../theming/theming';
 @use './private';
 
-$_prefix: 'mat';
+$_prefix: 'tak';
 
 // stylelint-disable-next-line material/theme-mixin-api
 @mixin color($config-or-theme-or-color) {
@@ -37,7 +37,7 @@ $_prefix: 'mat';
     );
   } @else {
     $theme: theming.private-legacy-get-theme($theme-or-color-config-or-color);
-    @include theming.private-check-duplicate-theme-styles($theme, 'mat-focus-indicators') {
+    @include theming.private-check-duplicate-theme-styles($theme, 'tak-focus-indicators') {
       $color: theming.get-color-config($theme);
       @if $color != null {
         @include color($color);

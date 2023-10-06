@@ -1,6 +1,6 @@
-@forward 'stepper-variables' as mat-* hide $mat-density-config, $mat-header-height,
-  $mat-header-maximum-height, $mat-header-minimum-height, $mat-label-header-height,
-  $mat-label-min-width, $mat-label-position-bottom-top-gap, $mat-line-gap, $mat-line-width,
-  $mat-side-gap;
-@forward 'stepper-variables' as mat-stepper-* hide $mat-stepper-step-header-icon-size,
-  $mat-stepper-step-sub-label-font-size, $mat-stepper-vertical-stepper-content-margin;
+@forward 'stepper-variables' as tak-* hide $tak-density-config, $tak-header-height,
+  $tak-header-maximum-height, $tak-header-minimum-height, $tak-label-header-height,
+  $tak-label-min-width, $tak-label-position-bottom-top-gap, $tak-line-gap, $tak-line-width,
+  $tak-side-gap;
+@forward 'stepper-variables' as tak-stepper-* hide $tak-stepper-step-header-icon-size,
+  $tak-stepper-step-sub-label-font-size, $tak-stepper-vertical-stepper-content-margin;

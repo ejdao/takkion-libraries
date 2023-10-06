@@ -4,7 +4,7 @@
 // Note that this file is called `private`, because the APIs in it aren't public yet.
 // Once they're made available, the code should be moved out into an `index.scss`.
 
-// Taken from mat-density with small modifications to not rely on the new Sass module
+// Taken from tak-density with small modifications to not rely on the new Sass module
 // system, and to support arbitrary properties in a density configuration.
 // https://github.com/material-components/material-components-web/blob/master/packages/mdc-density
 
@@ -23,8 +23,8 @@ $private-density-generate-at-root: false;
 $private-density-generate-styles: true;
 
 // Mixin that can be used to wrap density styles of given components. The mixin will
-// move the density styles to root if the `$mat-private-density-generate-at-root` global variable
-// is set. If `$mat-private-density-generate-styles` is set to `false`, generation of density
+// move the density styles to root if the `$tak-private-density-generate-at-root` global variable
+// is set. If `$tak-private-density-generate-styles` is set to `false`, generation of density
 // styles wrapped in this mixin is skipped. This mixin exists to improve backwards compatibility
 // of the new theming API where density styles are included as part of themes. Previously,
 // density styles of components were part of their base styles. With the new API, they are
@@ -51,7 +51,7 @@ $private-density-generate-styles: true;
       list.index($list: $_supported-scales, $value: $density-scale) ==
       null
   ) {
-    @error 'mat-density: Supported density scales #{$_supported-scales}, '  +
+    @error 'tak-density: Supported density scales #{$_supported-scales}, '  +
       'but received #{$density-scale}.';
   }
 
@@ -68,7 +68,7 @@ $private-density-generate-styles: true;
   $max-value: map.get($property-scale-map, $_maximum-scale);
 
   @if ($value < $min-value or $value > $max-value) {
-    @error 'mat-density: #{$property-name} must be between #{$min-value} and ' +
+    @error 'tak-density: #{$property-name} must be between #{$min-value} and ' +
       '#{$max-value} (inclusive), but received #{$value}.';
   }
 

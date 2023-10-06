@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -11,10 +11,10 @@
  * @docs-private
  */
 export const FAKE_SVGS = {
-    cat: '<svg><path id="meow" name="meow"></path></svg>',
-    dog: '<svg><path id="woof" name="woof"></path></svg>',
-    dogWithSpaces: '<svg><path id="woof says the dog" name="woof"></path></svg>',
-    farmSet1: `
+  cat: '<svg><path id="meow" name="meow"></path></svg>',
+  dog: '<svg><path id="woof" name="woof"></path></svg>',
+  dogWithSpaces: '<svg><path id="woof says the dog" name="woof"></path></svg>',
+  farmSet1: `
     <svg>
       <defs>
         <g id="pig" name="pig"><path name="oink"></path></g>
@@ -22,7 +22,7 @@ export const FAKE_SVGS = {
       </defs>
     </svg>
   `,
-    farmSet2: `
+  farmSet2: `
     <svg>
       <defs>
         <g id="cow" name="cow"><path name="moo moo"></path></g>
@@ -30,28 +30,28 @@ export const FAKE_SVGS = {
       </defs>
     </svg>
   `,
-    farmSet3: `
+  farmSet3: `
     <svg>
       <symbol id="duck" name="duck">
         <path id="quack" name="quack"></path>
       </symbol>
     </svg>
   `,
-    farmSet4: `
+  farmSet4: `
     <svg>
       <defs>
         <g id="pig with spaces" name="pig"><path name="oink"></path></g>
       </defs>
     </svg>
   `,
-    farmSet5: `
+  farmSet5: `
     <svg>
       <symbol id="duck" viewBox="0 0 13 37">
         <path id="quack" name="quack"></path>
       </symbol>
     </svg>
   `,
-    arrows: `
+  arrows: `
     <svg>
       <defs>
         <svg id="left-arrow" name="left-arrow"><path name="left"></path></svg>

@@ -15,9 +15,9 @@
   $white-30pct-opacity-on-dark: #686868;
   $black-26pct-opacity-on-light: #b0b0b0;
   $disabled-color: if($is-dark-theme, $white-30pct-opacity-on-dark, $black-26pct-opacity-on-light);
-  $colored-box-selector: '.mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate';
+  $colored-box-selector: '.tak-pseudo-checkbox-checked, .tak-pseudo-checkbox-indeterminate';
 
-  .mat-pseudo-checkbox {
+  .tak-pseudo-checkbox {
     color: theming.get-color-from-palette(map.get($config, foreground), secondary-text);
 
     &::after {
@@ -25,35 +25,35 @@
     }
   }
 
-  .mat-pseudo-checkbox-disabled {
+  .tak-pseudo-checkbox-disabled {
     color: $disabled-color;
   }
 
-  .mat-primary .mat-pseudo-checkbox-checked,
-  .mat-primary .mat-pseudo-checkbox-indeterminate {
+  .tak-primary .tak-pseudo-checkbox-checked,
+  .tak-primary .tak-pseudo-checkbox-indeterminate {
     background: theming.get-color-from-palette(map.get($config, primary));
   }
 
   // Default to the accent color. Note that the pseudo checkboxes are meant to inherit the
   // theme from their parent, rather than implementing their own theming, which is why we
-  // don't attach to the `mat-*` classes. Also note that this needs to be below `.mat-primary`
+  // don't attach to the `tak-*` classes. Also note that this needs to be below `.tak-primary`
   // in order to allow for the color to be overwritten if the checkbox is inside a parent that
-  // has `mat-accent` and is placed inside another parent that has `mat-primary`.
-  .mat-pseudo-checkbox-checked,
-  .mat-pseudo-checkbox-indeterminate,
-  .mat-accent .mat-pseudo-checkbox-checked,
-  .mat-accent .mat-pseudo-checkbox-indeterminate {
+  // has `tak-accent` and is placed inside another parent that has `tak-primary`.
+  .tak-pseudo-checkbox-checked,
+  .tak-pseudo-checkbox-indeterminate,
+  .tak-accent .tak-pseudo-checkbox-checked,
+  .tak-accent .tak-pseudo-checkbox-indeterminate {
     background: theming.get-color-from-palette(map.get($config, accent));
   }
 
-  .mat-warn .mat-pseudo-checkbox-checked,
-  .mat-warn .mat-pseudo-checkbox-indeterminate {
+  .tak-warn .tak-pseudo-checkbox-checked,
+  .tak-warn .tak-pseudo-checkbox-indeterminate {
     background: theming.get-color-from-palette(map.get($config, warn));
   }
 
-  .mat-pseudo-checkbox-checked,
-  .mat-pseudo-checkbox-indeterminate {
-    &.mat-pseudo-checkbox-disabled {
+  .tak-pseudo-checkbox-checked,
+  .tak-pseudo-checkbox-indeterminate {
+    &.tak-pseudo-checkbox-disabled {
       background: $disabled-color;
     }
   }
@@ -67,7 +67,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-pseudo-checkbox') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-pseudo-checkbox') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

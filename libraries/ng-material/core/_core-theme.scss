@@ -10,9 +10,9 @@
 @mixin color($config-or-theme) {
   $config: theming.get-color-config($config-or-theme);
   // Wrapper element that provides the theme background when the user's content isn't
-  // inside of a `mat-sidenav-container`. Note that we need to exclude the ampersand
+  // inside of a `tak-sidenav-container`. Note that we need to exclude the ampersand
   // selector in case the mixin is included at the top level.
-  .mat-app-background#{if(&, ', &.mat-app-background', '')} {
+  .tak-app-background#{if(&, ', &.tak-app-background', '')} {
     $background: map.get($config, background);
     $foreground: map.get($config, foreground);
 
@@ -21,7 +21,7 @@
   }
 
   // Provides external CSS classes for each elevation value. Each CSS class is formatted as
-  // `mat-elevation-z$zValue` where `$zValue` corresponds to the z-space to which the element is
+  // `tak-elevation-z$zValue` where `$zValue` corresponds to the z-space to which the element is
   // elevated.
   @for $zValue from 0 through 24 {
     .#{elevation.$prefix}#{$zValue} {
@@ -31,7 +31,7 @@
 
   // Marker that is used to determine whether the user has added a theme to their page.
   @at-root {
-    .mat-theme-loaded-marker {
+    .tak-theme-loaded-marker {
       display: none;
     }
   }
@@ -41,9 +41,9 @@
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
   // Wrap the sub-theme includes in the duplicate theme styles mixin. This ensures that
-  // there won't be multiple warnings. e.g. if `mat-core-theme` reports a warning, then
-  // the imported themes (such as `mat-ripple-theme`) should not report again.
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-core') {
+  // there won't be multiple warnings. e.g. if `tak-core-theme` reports a warning, then
+  // the imported themes (such as `tak-ripple-theme`) should not report again.
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-core') {
     @include ripple-theme.theme($theme);
     @include option-theme.theme($theme);
     @include optgroup-theme.theme($theme);

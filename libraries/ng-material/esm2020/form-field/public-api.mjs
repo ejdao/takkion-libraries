@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -8,7 +8,7 @@
 export * from './form-field-module';
 export * from './error';
 export * from './form-field';
-export { MatFormFieldControl } from './form-field-control';
+export { TakFormFieldControl } from './form-field-control';
 export * from './form-field-errors';
 export * from './hint';
 export * from './placeholder';

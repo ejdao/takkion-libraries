@@ -19,22 +19,22 @@ import { NumberInput } from '@takkion/ng-cdk/coercion';
 import { OnDestroy } from '@angular/core';
 
 declare namespace i1 {
-  export { MAT_SLIDER_VALUE_ACCESSOR, MatSliderChange, MatSlider };
+  export { TAK_SLIDER_VALUE_ACCESSOR, TakSliderChange, TakSlider };
 }
 
 /**
- * Provider Expression that allows mat-slider to register as a ControlValueAccessor.
+ * Provider Expression that allows tak-slider to register as a ControlValueAccessor.
  * This allows it to support [(ngModel)] and [formControl].
  * @docs-private
  */
-export declare const MAT_SLIDER_VALUE_ACCESSOR: any;
+export declare const TAK_SLIDER_VALUE_ACCESSOR: any;
 
 /**
  * Allows users to select from a range of values by moving the slider thumb. It is similar in
  * behavior to the native `<input type="range">` element.
  */
-export declare class MatSlider
-  extends _MatSliderBase
+export declare class TakSlider
+  extends _TakSliderBase
   implements ControlValueAccessor, OnDestroy, CanDisable, CanColor, AfterViewInit, HasTabIndex
 {
   private _focusMonitor;
@@ -86,9 +86,9 @@ export declare class MatSlider
   set vertical(value: BooleanInput);
   private _vertical;
   /** Event emitted when the slider value has changed. */
-  readonly change: EventEmitter<MatSliderChange>;
+  readonly change: EventEmitter<TakSliderChange>;
   /** Event emitted when the slider thumb moves. */
-  readonly input: EventEmitter<MatSliderChange>;
+  readonly input: EventEmitter<TakSliderChange>;
   /**
    * Emits when the raw value of the slider changes. This is here primarily
    * to facilitate the two-way binding for the `value` input.
@@ -272,7 +272,7 @@ export declare class MatSlider
    */
   setDisabledState(isDisabled: boolean): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatSlider,
+    TakSlider,
     [
       null,
       null,
@@ -285,9 +285,9 @@ export declare class MatSlider
     ]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatSlider,
-    'mat-slider',
-    ['matSlider'],
+    TakSlider,
+    'tak-slider',
+    ['takSlider'],
     {
       disabled: 'disabled';
       color: 'color';
@@ -311,7 +311,7 @@ export declare class MatSlider
 }
 
 /** @docs-private */
-declare const _MatSliderBase: _Constructor<HasTabIndex> &
+declare const _TakSliderBase: _Constructor<HasTabIndex> &
   _AbstractConstructor<HasTabIndex> &
   _Constructor<CanColor> &
   _AbstractConstructor<CanColor> &
@@ -322,23 +322,23 @@ declare const _MatSliderBase: _Constructor<HasTabIndex> &
     };
   };
 
-/** A simple change event emitted by the MatSlider component. */
-export declare class MatSliderChange {
-  /** The MatSlider that changed. */
-  source: MatSlider;
+/** A simple change event emitted by the TakSlider component. */
+export declare class TakSliderChange {
+  /** The TakSlider that changed. */
+  source: TakSlider;
   /** The new value of the source slider. */
   value: number | null;
 }
 
-export declare class MatSliderModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSliderModule, never>;
+export declare class TakSliderModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSliderModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatSliderModule,
-    [typeof i1.MatSlider],
-    [typeof i2.CommonModule, typeof i3.MatCommonModule],
-    [typeof i1.MatSlider, typeof i3.MatCommonModule]
+    TakSliderModule,
+    [typeof i1.TakSlider],
+    [typeof i2.CommonModule, typeof i3.TakCommonModule],
+    [typeof i1.TakSlider, typeof i3.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatSliderModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakSliderModule>;
 }
 
 export {};

@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -18,128 +18,128 @@ exports.constructorChecks = {
   [schematics_1.TargetVersion.V14]: [
     {
       pr: 'https://github.com/angular/components/pull/23327',
-      changes: ['MatSelectionList', 'MatSelectionListChange'],
+      changes: ['TakSelectionList', 'TakSelectionListChange'],
     },
   ],
   [schematics_1.TargetVersion.V13]: [
     {
       pr: 'https://github.com/angular/components/pull/23389',
-      changes: ['MatFormField'],
+      changes: ['TakFormField'],
     },
     {
       pr: 'https://github.com/angular/components/pull/23573',
-      changes: ['MatDatepicker', 'MatDateRangePicker'],
+      changes: ['TakDatepicker', 'TakDateRangePicker'],
     },
     {
       pr: 'https://github.com/angular/components/pull/23328',
-      changes: ['MatStepper'],
+      changes: ['TakStepper'],
     },
   ],
   [schematics_1.TargetVersion.V12]: [
     {
       pr: 'https://github.com/angular/components/pull/21897',
-      changes: ['MatTooltip'],
+      changes: ['TakTooltip'],
     },
     {
       pr: 'https://github.com/angular/components/pull/21952',
-      changes: ['MatDatepickerContent'],
+      changes: ['TakDatepickerContent'],
     },
     {
       pr: 'https://github.com/angular/components/issues/21900',
-      changes: ['MatVerticalStepper', 'MatStep'],
+      changes: ['TakVerticalStepper', 'TakStep'],
     },
   ],
   [schematics_1.TargetVersion.V11]: [
     {
       pr: 'https://github.com/angular/components/issues/20463',
-      changes: ['MatChip', 'MatChipRemove'],
+      changes: ['TakChip', 'TakChipRemove'],
     },
     {
       pr: 'https://github.com/angular/components/pull/20449',
-      changes: ['MatDatepickerContent'],
+      changes: ['TakDatepickerContent'],
     },
     {
       pr: 'https://github.com/angular/components/pull/20545',
-      changes: ['MatBottomSheet', 'MatBottomSheetRef'],
+      changes: ['TakBottomSheet', 'TakBottomSheetRef'],
     },
     {
       pr: 'https://github.com/angular/components/issues/20535',
-      changes: ['MatCheckbox'],
+      changes: ['TakCheckbox'],
     },
     {
       pr: 'https://github.com/angular/components/pull/20499',
-      changes: ['MatPaginatedTabHeader', 'MatTabBodyPortal', 'MatTabNav', 'MatTab'],
+      changes: ['TakPaginatedTabHeader', 'TakTabBodyPortal', 'TakTabNav', 'TakTab'],
     },
     {
       pr: 'https://github.com/angular/components/pull/20479',
-      changes: ['MatCommonModule'],
+      changes: ['TakCommonModule'],
     },
   ],
   [schematics_1.TargetVersion.V10]: [
     {
       pr: 'https://github.com/angular/components/pull/19307',
-      changes: ['MatSlideToggle'],
+      changes: ['TakSlideToggle'],
     },
     {
       pr: 'https://github.com/angular/components/pull/19379',
-      changes: ['MatSlider'],
+      changes: ['TakSlider'],
     },
     {
       pr: 'https://github.com/angular/components/pull/19372',
-      changes: ['MatSortHeader'],
+      changes: ['TakSortHeader'],
     },
     {
       pr: 'https://github.com/angular/components/pull/19324',
-      changes: ['MatAutocompleteTrigger'],
+      changes: ['TakAutocompleteTrigger'],
     },
     {
       pr: 'https://github.com/angular/components/pull/19363',
-      changes: ['MatTooltip'],
+      changes: ['TakTooltip'],
     },
     {
       pr: 'https://github.com/angular/components/pull/19323',
-      changes: ['MatIcon', 'MatIconRegistry'],
+      changes: ['TakIcon', 'TakIconRegistry'],
     },
   ],
   [schematics_1.TargetVersion.V9]: [
     {
       pr: 'https://github.com/angular/components/pull/17230',
-      changes: ['MatSelect'],
+      changes: ['TakSelect'],
     },
     {
       pr: 'https://github.com/angular/components/pull/17333',
-      changes: ['MatDialogRef'],
+      changes: ['TakDialogRef'],
     },
   ],
   [schematics_1.TargetVersion.V8]: [
     {
       pr: 'https://github.com/angular/components/pull/15647',
-      changes: ['MatFormField', 'MatTabLink', 'MatVerticalStepper'],
+      changes: ['TakFormField', 'TakTabLink', 'TakVerticalStepper'],
     },
-    { pr: 'https://github.com/angular/components/pull/15757', changes: ['MatBadge'] },
+    { pr: 'https://github.com/angular/components/pull/15757', changes: ['TakBadge'] },
     {
       pr: 'https://github.com/angular/components/issues/15734',
-      changes: ['MatButton', 'MatAnchor'],
+      changes: ['TakButton', 'TakAnchor'],
     },
     {
       pr: 'https://github.com/angular/components/pull/15761',
-      changes: ['MatSpinner', 'MatProgressSpinner'],
+      changes: ['TakSpinner', 'TakProgressSpinner'],
     },
-    { pr: 'https://github.com/angular/components/pull/15723', changes: ['MatList', 'MatListItem'] },
-    { pr: 'https://github.com/angular/components/pull/15722', changes: ['MatExpansionPanel'] },
+    { pr: 'https://github.com/angular/components/pull/15723', changes: ['TakList', 'TakListItem'] },
+    { pr: 'https://github.com/angular/components/pull/15722', changes: ['TakExpansionPanel'] },
     {
       pr: 'https://github.com/angular/components/pull/15737',
-      changes: ['MatTabHeader', 'MatTabBody'],
+      changes: ['TakTabHeader', 'TakTabBody'],
     },
-    { pr: 'https://github.com/angular/components/pull/15806', changes: ['MatSlideToggle'] },
-    { pr: 'https://github.com/angular/components/pull/15773', changes: ['MatDrawerContainer'] },
+    { pr: 'https://github.com/angular/components/pull/15806', changes: ['TakSlideToggle'] },
+    { pr: 'https://github.com/angular/components/pull/15773', changes: ['TakDrawerContainer'] },
   ],
   [schematics_1.TargetVersion.V7]: [
     {
       pr: 'https://github.com/angular/components/pull/11706',
-      changes: ['MatDrawerContent'],
+      changes: ['TakDrawerContent'],
     },
-    { pr: 'https://github.com/angular/components/pull/11706', changes: ['MatSidenavContent'] },
+    { pr: 'https://github.com/angular/components/pull/11706', changes: ['TakSidenavContent'] },
   ],
   [schematics_1.TargetVersion.V6]: [
     {
@@ -148,19 +148,19 @@ exports.constructorChecks = {
     },
     {
       pr: 'https://github.com/angular/components/pull/10319',
-      changes: ['MatAutocomplete'],
+      changes: ['TakAutocomplete'],
     },
     {
       pr: 'https://github.com/angular/components/pull/10344',
-      changes: ['MatTooltip'],
+      changes: ['TakTooltip'],
     },
     {
       pr: 'https://github.com/angular/components/pull/10389',
-      changes: ['MatIconRegistry'],
+      changes: ['TakIconRegistry'],
     },
     {
       pr: 'https://github.com/angular/components/pull/9775',
-      changes: ['MatCalendar'],
+      changes: ['TakCalendar'],
     },
   ],
 };

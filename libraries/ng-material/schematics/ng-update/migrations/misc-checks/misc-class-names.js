@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -28,19 +28,19 @@ class MiscClassNamesMigration extends schematics_1.Migration {
   }
   _visitIdentifier(identifier) {
     // Migration for: https://github.com/angular/components/pull/10279 (v6)
-    if (identifier.getText() === 'MatDrawerToggleResult') {
+    if (identifier.getText() === 'TakDrawerToggleResult') {
       this.createFailureAtNode(
         identifier,
-        `Found "MatDrawerToggleResult" which has changed from a class type to a string ` +
+        `Found "TakDrawerToggleResult" which has changed from a class type to a string ` +
           `literal type. Your code may need to be updated.`
       );
     }
     // Migration for: https://github.com/angular/components/pull/10398 (v6)
-    if (identifier.getText() === 'MatListOptionChange') {
+    if (identifier.getText() === 'TakListOptionChange') {
       this.createFailureAtNode(
         identifier,
-        `Found usage of "MatListOptionChange" which has been removed. Please listen for ` +
-          `"selectionChange" on "MatSelectionList" instead.`
+        `Found usage of "TakListOptionChange" which has been removed. Please listen for ` +
+          `"selectionChange" on "TakSelectionList" instead.`
       );
     }
   }

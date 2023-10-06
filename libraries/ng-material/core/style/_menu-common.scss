@@ -3,7 +3,7 @@
 @use './list-common';
 @use './layout-common';
 
-// The mixins below are shared between mat-menu and mat-select
+// The mixins below are shared between tak-menu and tak-select
 
 // menu width must be a multiple of 56px
 $overlay-min-width: 112px !default; // 56 * 2
@@ -43,7 +43,7 @@ $icon-margin: 16px !default;
     text-align: right;
   }
 
-  .mat-icon {
+  .tak-icon {
     margin-right: $icon-margin;
     vertical-align: middle;
 

@@ -44,68 +44,68 @@ export declare const fadeInItems: AnimationTriggerMetadata;
 
 declare namespace i1 {
   export {
-    MAT_MENU_DEFAULT_OPTIONS_FACTORY,
-    MatMenuDefaultOptions,
-    MAT_MENU_DEFAULT_OPTIONS,
+    TAK_MENU_DEFAULT_OPTIONS_FACTORY,
+    TakMenuDefaultOptions,
+    TAK_MENU_DEFAULT_OPTIONS,
     MenuCloseReason,
-    _MatMenuBase,
-    MatMenu,
+    _TakMenuBase,
+    TakMenu,
   };
 }
 
 declare namespace i2 {
-  export { MatMenuItem };
+  export { TakMenuItem };
 }
 
 declare namespace i3 {
   export {
-    MAT_MENU_SCROLL_STRATEGY_FACTORY,
-    MAT_MENU_SCROLL_STRATEGY,
-    MAT_MENU_SCROLL_STRATEGY_FACTORY_PROVIDER,
+    TAK_MENU_SCROLL_STRATEGY_FACTORY,
+    TAK_MENU_SCROLL_STRATEGY,
+    TAK_MENU_SCROLL_STRATEGY_FACTORY_PROVIDER,
     MENU_PANEL_TOP_PADDING,
-    _MatMenuTriggerBase,
-    MatMenuTrigger,
+    _TakMenuTriggerBase,
+    TakMenuTrigger,
   };
 }
 
 declare namespace i4 {
-  export { MAT_MENU_CONTENT, _MatMenuContentBase, MatMenuContent };
+  export { TAK_MENU_CONTENT, _TakMenuContentBase, TakMenuContent };
 }
 
 /**
- * Injection token that can be used to reference instances of `MatMenuContent`. It serves
- * as alternative token to the actual `MatMenuContent` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakMenuContent`. It serves
+ * as alternative token to the actual `TakMenuContent` class which could cause unnecessary
  * retention of the class and its directive metadata.
  */
-export declare const MAT_MENU_CONTENT: InjectionToken<MatMenuContent>;
+export declare const TAK_MENU_CONTENT: InjectionToken<TakMenuContent>;
 
-/** Injection token to be used to override the default options for `mat-menu`. */
-export declare const MAT_MENU_DEFAULT_OPTIONS: InjectionToken<MatMenuDefaultOptions>;
+/** Injection token to be used to override the default options for `tak-menu`. */
+export declare const TAK_MENU_DEFAULT_OPTIONS: InjectionToken<TakMenuDefaultOptions>;
 
 /** @docs-private */
-declare function MAT_MENU_DEFAULT_OPTIONS_FACTORY(): MatMenuDefaultOptions;
+declare function TAK_MENU_DEFAULT_OPTIONS_FACTORY(): TakMenuDefaultOptions;
 
 /**
  * Injection token used to provide the parent menu to menu-specific components.
  * @docs-private
  */
-export declare const MAT_MENU_PANEL: InjectionToken<MatMenuPanel<any>>;
+export declare const TAK_MENU_PANEL: InjectionToken<TakMenuPanel<any>>;
 
 /** Injection token that determines the scroll handling while the menu is open. */
-export declare const MAT_MENU_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
+export declare const TAK_MENU_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
 
 /** @docs-private */
-declare function MAT_MENU_SCROLL_STRATEGY_FACTORY(overlay: Overlay): () => ScrollStrategy;
+declare function TAK_MENU_SCROLL_STRATEGY_FACTORY(overlay: Overlay): () => ScrollStrategy;
 
 /** @docs-private */
-declare const MAT_MENU_SCROLL_STRATEGY_FACTORY_PROVIDER: {
+declare const TAK_MENU_SCROLL_STRATEGY_FACTORY_PROVIDER: {
   provide: InjectionToken<() => ScrollStrategy>;
   deps: (typeof Overlay)[];
-  useFactory: typeof MAT_MENU_SCROLL_STRATEGY_FACTORY;
+  useFactory: typeof TAK_MENU_SCROLL_STRATEGY_FACTORY;
 };
 
-/** @docs-public MatMenu */
-export declare class MatMenu extends _MatMenuBase {
+/** @docs-public TakMenu */
+export declare class TakMenu extends _TakMenuBase {
   protected _elevationPrefix: string;
   protected _baseElevation: number;
   /**
@@ -115,13 +115,13 @@ export declare class MatMenu extends _MatMenuBase {
   constructor(
     elementRef: ElementRef<HTMLElement>,
     ngZone: NgZone,
-    defaultOptions: MatMenuDefaultOptions
+    defaultOptions: TakMenuDefaultOptions
   );
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatMenu, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakMenu, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatMenu,
-    'mat-menu',
-    ['matMenu'],
+    TakMenu,
+    'tak-menu',
+    ['takMenu'],
     {},
     {},
     never,
@@ -131,19 +131,19 @@ export declare class MatMenu extends _MatMenuBase {
 }
 
 /**
- * Animations used by the mat-menu component.
+ * Animations used by the tak-menu component.
  * Animation duration and timing values are based on:
  * https://material.io/guidelines/components/menus.html#menus-usage
  * @docs-private
  */
-export declare const matMenuAnimations: {
+export declare const takMenuAnimations: {
   readonly transformMenu: AnimationTriggerMetadata;
   readonly fadeInItems: AnimationTriggerMetadata;
 };
 
-/** Base class with all of the `MatMenu` functionality. */
-export declare class _MatMenuBase
-  implements AfterContentInit, MatMenuPanel<MatMenuItem>, OnInit, OnDestroy
+/** Base class with all of the `TakMenu` functionality. */
+export declare class _TakMenuBase
+  implements AfterContentInit, TakMenuPanel<TakMenuItem>, OnInit, OnDestroy
 {
   private _elementRef;
   private _ngZone;
@@ -156,9 +156,9 @@ export declare class _MatMenuBase
   protected _elevationPrefix: string;
   protected _baseElevation: number;
   /** All items inside the menu. Includes items nested inside another menu. */
-  _allItems: QueryList<MatMenuItem>;
+  _allItems: QueryList<TakMenuItem>;
   /** Only the direct descendant menu items. */
-  _directDescendantItems: QueryList<MatMenuItem>;
+  _directDescendantItems: QueryList<TakMenuItem>;
   /** Subscription to tab events on the menu panel */
   private _tabSubscription;
   /** Config object to be passed into the menu's ngClass */
@@ -170,9 +170,9 @@ export declare class _MatMenuBase
   /** Emits whenever an animation on the menu completes. */
   readonly _animationDone: Subject<AnimationEvent_2>;
   /** Whether the menu is animating. */
-  _isAnimating: boolean;
+  _isAnitaking: boolean;
   /** Parent menu of the current menu panel. */
-  parentMenu: MatMenuPanel | undefined;
+  parentMenu: TakMenuPanel | undefined;
   /** Layout direction of the menu. */
   direction: Direction;
   /** Class or list of classes to be added to the overlay panel. */
@@ -198,12 +198,12 @@ export declare class _MatMenuBase
    * @deprecated
    * @breaking-change 8.0.0
    */
-  items: QueryList<MatMenuItem>;
+  items: QueryList<TakMenuItem>;
   /**
    * Menu content that will be rendered lazily.
    * @docs-private
    */
-  lazyContent: MatMenuContent;
+  lazyContent: TakMenuContent;
   /** Whether the menu should overlap its trigger. */
   get overlapTrigger(): boolean;
   set overlapTrigger(value: BooleanInput);
@@ -213,7 +213,7 @@ export declare class _MatMenuBase
   set hasBackdrop(value: BooleanInput);
   private _hasBackdrop;
   /**
-   * This method takes classes set on the host mat-menu element and applies them on the
+   * This method takes classes set on the host tak-menu element and applies them on the
    * menu template that displays in the overlay container.  Otherwise, it's difficult
    * to style the containing menu from outside the component.
    * @param classes list of class names
@@ -221,7 +221,7 @@ export declare class _MatMenuBase
   set panelClass(classes: string);
   private _previousPanelClass;
   /**
-   * This method takes classes set on the host mat-menu element and applies them on the
+   * This method takes classes set on the host tak-menu element and applies them on the
    * menu template that displays in the overlay container.  Otherwise, it's difficult
    * to style the containing menu from outside the component.
    * @deprecated Use `panelClass` instead.
@@ -241,7 +241,7 @@ export declare class _MatMenuBase
   constructor(
     elementRef: ElementRef<HTMLElement>,
     ngZone: NgZone,
-    defaultOptions: MatMenuDefaultOptions,
+    defaultOptions: TakMenuDefaultOptions,
     changeDetectorRef: ChangeDetectorRef
   );
   /**
@@ -251,22 +251,22 @@ export declare class _MatMenuBase
   constructor(
     elementRef: ElementRef<HTMLElement>,
     ngZone: NgZone,
-    defaultOptions: MatMenuDefaultOptions,
+    defaultOptions: TakMenuDefaultOptions,
     changeDetectorRef?: ChangeDetectorRef
   );
   ngOnInit(): void;
   ngAfterContentInit(): void;
   ngOnDestroy(): void;
   /** Stream that emits whenever the hovered menu item changes. */
-  _hovered(): Observable<MatMenuItem>;
-  addItem(_item: MatMenuItem): void;
+  _hovered(): Observable<TakMenuItem>;
+  addItem(_item: TakMenuItem): void;
   /**
    * Removes an item from the menu.
    * @docs-private
    * @deprecated No longer being used. To be removed.
    * @breaking-change 9.0.0
    */
-  removeItem(_item: MatMenuItem): void;
+  removeItem(_item: TakMenuItem): void;
   /** Handle a keyboard event from the menu, delegating to the appropriate action. */
   _handleKeydown(event: KeyboardEvent): void;
   /**
@@ -306,9 +306,9 @@ export declare class _MatMenuBase
    * when it comes to maintaining the item order.
    */
   private _updateDirectDescendants;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatMenuBase, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakMenuBase, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatMenuBase,
+    _TakMenuBase,
     never,
     never,
     {
@@ -333,11 +333,11 @@ export declare class _MatMenuBase
 /**
  * Menu content that will be rendered lazily once the menu is opened.
  */
-export declare class MatMenuContent extends _MatMenuContentBase {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatMenuContent, never>;
+export declare class TakMenuContent extends _TakMenuContentBase {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakMenuContent, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatMenuContent,
-    'ng-template[matMenuContent]',
+    TakMenuContent,
+    'ng-template[takMenuContent]',
     never,
     {},
     {},
@@ -347,7 +347,7 @@ export declare class MatMenuContent extends _MatMenuContentBase {
   >;
 }
 
-export declare abstract class _MatMenuContentBase implements OnDestroy {
+export declare abstract class _TakMenuContentBase implements OnDestroy {
   private _template;
   private _componentFactoryResolver;
   private _appRef;
@@ -392,9 +392,9 @@ export declare abstract class _MatMenuContentBase implements OnDestroy {
    */
   detach(): void;
   ngOnDestroy(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatMenuContentBase, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakMenuContentBase, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatMenuContentBase,
+    _TakMenuContentBase,
     never,
     never,
     {},
@@ -405,8 +405,8 @@ export declare abstract class _MatMenuContentBase implements OnDestroy {
   >;
 }
 
-/** Default `mat-menu` options that can be overridden. */
-export declare interface MatMenuDefaultOptions {
+/** Default `tak-menu` options that can be overridden. */
+export declare interface TakMenuDefaultOptions {
   /** The x-axis position of the menu. */
   xPosition: MenuPositionX;
   /** The y-axis position of the menu. */
@@ -422,23 +422,23 @@ export declare interface MatMenuDefaultOptions {
 }
 
 /**
- * Single item inside of a `mat-menu`. Provides the menu item styling and accessibility treatment.
+ * Single item inside of a `tak-menu`. Provides the menu item styling and accessibility treatment.
  */
-export declare class MatMenuItem
-  extends _MatMenuItemBase
+export declare class TakMenuItem
+  extends _TakMenuItemBase
   implements FocusableOption, CanDisable, CanDisableRipple, AfterViewInit, OnDestroy
 {
   private _elementRef;
   private _document?;
   private _focusMonitor?;
-  _parentMenu?: MatMenuPanel<MatMenuItem> | undefined;
+  _parentMenu?: TakMenuPanel<TakMenuItem> | undefined;
   private _changeDetectorRef?;
   /** ARIA role for the menu item. */
   role: 'menuitem' | 'menuitemradio' | 'menuitemcheckbox';
   /** Stream that emits when the menu item is hovered. */
-  readonly _hovered: Subject<MatMenuItem>;
+  readonly _hovered: Subject<TakMenuItem>;
   /** Stream that emits when the menu item is focused. */
-  readonly _focused: Subject<MatMenuItem>;
+  readonly _focused: Subject<TakMenuItem>;
   /** Whether the menu item is highlighted. */
   _highlighted: boolean;
   /** Whether the menu item acts as a trigger for a sub-menu. */
@@ -447,7 +447,7 @@ export declare class MatMenuItem
     elementRef: ElementRef<HTMLElement>,
     document: any,
     focusMonitor: FocusMonitor,
-    parentMenu: MatMenuPanel<MatMenuItem> | undefined,
+    parentMenu: TakMenuPanel<TakMenuItem> | undefined,
     changeDetectorRef: ChangeDetectorRef
   );
   /**
@@ -458,7 +458,7 @@ export declare class MatMenuItem
     elementRef: ElementRef<HTMLElement>,
     document?: any,
     focusMonitor?: FocusMonitor,
-    parentMenu?: MatMenuPanel<MatMenuItem>,
+    parentMenu?: TakMenuPanel<TakMenuItem>,
     changeDetectorRef?: ChangeDetectorRef
   );
   /** Focuses the menu item. */
@@ -477,11 +477,11 @@ export declare class MatMenuItem
   getLabel(): string;
   _setHighlighted(isHighlighted: boolean): void;
   _hasFocus(): boolean;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatMenuItem, [null, null, null, { optional: true }, null]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakMenuItem, [null, null, null, { optional: true }, null]>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatMenuItem,
-    '[mat-menu-item]',
-    ['matMenuItem'],
+    TakMenuItem,
+    '[tak-menu-item]',
+    ['takMenuItem'],
     { disabled: 'disabled'; disableRipple: 'disableRipple'; role: 'role' },
     {},
     never,
@@ -491,53 +491,53 @@ export declare class MatMenuItem
 }
 
 /** @docs-private */
-declare const _MatMenuItemBase: _Constructor<CanDisableRipple> &
+declare const _TakMenuItemBase: _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> &
   _Constructor<CanDisable> &
   _AbstractConstructor<CanDisable> & {
     new (): {};
   };
 
-export declare class MatMenuModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatMenuModule, never>;
+export declare class TakMenuModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakMenuModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatMenuModule,
-    [typeof i1.MatMenu, typeof i2.MatMenuItem, typeof i3.MatMenuTrigger, typeof i4.MatMenuContent],
+    TakMenuModule,
+    [typeof i1.TakMenu, typeof i2.TakMenuItem, typeof i3.TakMenuTrigger, typeof i4.TakMenuContent],
     [
       typeof i5.CommonModule,
-      typeof i6.MatCommonModule,
-      typeof i6.MatRippleModule,
+      typeof i6.TakCommonModule,
+      typeof i6.TakRippleModule,
       typeof i7.OverlayModule,
     ],
     [
       typeof i8.CdkScrollableModule,
-      typeof i6.MatCommonModule,
-      typeof i1.MatMenu,
-      typeof i2.MatMenuItem,
-      typeof i3.MatMenuTrigger,
-      typeof i4.MatMenuContent,
+      typeof i6.TakCommonModule,
+      typeof i1.TakMenu,
+      typeof i2.TakMenuItem,
+      typeof i3.TakMenuTrigger,
+      typeof i4.TakMenuContent,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatMenuModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakMenuModule>;
 }
 
 /**
- * Interface for a custom menu panel that can be used with `matMenuTriggerFor`.
+ * Interface for a custom menu panel that can be used with `takMenuTriggerFor`.
  * @docs-private
  */
-export declare interface MatMenuPanel<T = any> {
+export declare interface TakMenuPanel<T = any> {
   xPosition: MenuPositionX;
   yPosition: MenuPositionY;
   overlapTrigger: boolean;
   templateRef: TemplateRef<any>;
   readonly close: EventEmitter<void | 'click' | 'keydown' | 'tab'>;
-  parentMenu?: MatMenuPanel | undefined;
+  parentMenu?: TakMenuPanel | undefined;
   direction?: Direction;
   focusFirstItem: (origin?: FocusOrigin) => void;
   resetActiveItem: () => void;
   setPositionClasses?: (x: MenuPositionX, y: MenuPositionY) => void;
   setElevation?(depth: number): void;
-  lazyContent?: MatMenuContent;
+  lazyContent?: TakMenuContent;
   backdropClass?: string;
   overlayPanelClass?: string | string[];
   hasBackdrop?: boolean;
@@ -554,13 +554,13 @@ export declare interface MatMenuPanel<T = any> {
   removeItem?: (item: T) => void;
 }
 
-/** Directive applied to an element that should trigger a `mat-menu`. */
-export declare class MatMenuTrigger extends _MatMenuTriggerBase {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatMenuTrigger, never>;
+/** Directive applied to an element that should trigger a `tak-menu`. */
+export declare class TakMenuTrigger extends _TakMenuTriggerBase {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakMenuTrigger, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatMenuTrigger,
-    '[mat-menu-trigger-for], [matMenuTriggerFor]',
-    ['matMenuTrigger'],
+    TakMenuTrigger,
+    '[tak-menu-trigger-for], [takMenuTriggerFor]',
+    ['takMenuTrigger'],
     {},
     {},
     never,
@@ -569,7 +569,7 @@ export declare class MatMenuTrigger extends _MatMenuTriggerBase {
   >;
 }
 
-export declare abstract class _MatMenuTriggerBase implements AfterContentInit, OnDestroy {
+export declare abstract class _TakMenuTriggerBase implements AfterContentInit, OnDestroy {
   private _overlay;
   private _element;
   private _viewContainerRef;
@@ -585,7 +585,7 @@ export declare abstract class _MatMenuTriggerBase implements AfterContentInit, O
   private _menuCloseSubscription;
   private _scrollStrategy;
   /**
-   * We're specifically looking for a `MatMenu` here since the generic `MatMenuPanel`
+   * We're specifically looking for a `TakMenu` here since the generic `TakMenuPanel`
    * interface lacks some functionality around nested menus and animations.
    */
   private _parentMaterialMenu;
@@ -604,11 +604,11 @@ export declare abstract class _MatMenuTriggerBase implements AfterContentInit, O
    * @deprecated
    * @breaking-change 8.0.0
    */
-  get _deprecatedMatMenuTriggerFor(): MatMenuPanel | null;
-  set _deprecatedMatMenuTriggerFor(v: MatMenuPanel | null);
+  get _deprecatedTakMenuTriggerFor(): TakMenuPanel | null;
+  set _deprecatedTakMenuTriggerFor(v: TakMenuPanel | null);
   /** References the menu instance that the trigger is associated with. */
-  get menu(): MatMenuPanel | null;
-  set menu(menu: MatMenuPanel | null);
+  get menu(): TakMenuPanel | null;
+  set menu(menu: TakMenuPanel | null);
   private _menu;
   /** Data to be passed along to any lazily-rendered content. */
   menuData: any;
@@ -639,8 +639,8 @@ export declare abstract class _MatMenuTriggerBase implements AfterContentInit, O
     element: ElementRef<HTMLElement>,
     viewContainerRef: ViewContainerRef,
     scrollStrategy: any,
-    parentMenu: MatMenuPanel,
-    menuItemInstance: MatMenuItem,
+    parentMenu: TakMenuPanel,
+    menuItemInstance: TakMenuItem,
     dir: Directionality,
     focusMonitor: FocusMonitor,
     ngZone: NgZone
@@ -654,8 +654,8 @@ export declare abstract class _MatMenuTriggerBase implements AfterContentInit, O
     element: ElementRef<HTMLElement>,
     viewContainerRef: ViewContainerRef,
     scrollStrategy: any,
-    parentMenu: MatMenuPanel,
-    menuItemInstance: MatMenuItem,
+    parentMenu: TakMenuPanel,
+    menuItemInstance: TakMenuItem,
     dir: Directionality,
     focusMonitor?: FocusMonitor | null
   );
@@ -668,8 +668,8 @@ export declare abstract class _MatMenuTriggerBase implements AfterContentInit, O
     element: ElementRef<HTMLElement>,
     viewContainerRef: ViewContainerRef,
     scrollStrategy: any,
-    parentMenu: MatMenuPanel,
-    menuItemInstance: MatMenuItem,
+    parentMenu: TakMenuPanel,
+    menuItemInstance: TakMenuItem,
     dir: Directionality,
     focusMonitor: FocusMonitor
   );
@@ -741,7 +741,7 @@ export declare abstract class _MatMenuTriggerBase implements AfterContentInit, O
   /** Gets the portal that should be attached to the overlay. */
   private _getPortal;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    _MatMenuTriggerBase,
+    _TakMenuTriggerBase,
     [
       null,
       null,
@@ -755,14 +755,14 @@ export declare abstract class _MatMenuTriggerBase implements AfterContentInit, O
     ]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatMenuTriggerBase,
+    _TakMenuTriggerBase,
     never,
     never,
     {
-      _deprecatedMatMenuTriggerFor: 'mat-menu-trigger-for';
-      menu: 'matMenuTriggerFor';
-      menuData: 'matMenuTriggerData';
-      restoreFocus: 'matMenuTriggerRestoreFocus';
+      _deprecatedTakMenuTriggerFor: 'tak-menu-trigger-for';
+      menu: 'takMenuTriggerFor';
+      menuData: 'takMenuTriggerData';
+      restoreFocus: 'takMenuTriggerRestoreFocus';
     },
     {
       menuOpened: 'menuOpened';

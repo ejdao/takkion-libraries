@@ -259,7 +259,7 @@
       "node": "./fesm2015/slide-toggle.mjs",
       "default": "./fesm2020/slide-toggle.mjs"
     },
-     "./slider": {
+    "./slider": {
       "types": "./slider/index.d.ts",
       "esm2020": "./esm2020/slider/slider_public_index.mjs",
       "es2020": "./fesm2020/slider.mjs",

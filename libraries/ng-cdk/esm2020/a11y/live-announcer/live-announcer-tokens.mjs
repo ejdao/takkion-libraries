@@ -1,18 +1,18 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
 import { InjectionToken } from '@angular/core';
 export const LIVE_ANNOUNCER_ELEMENT_TOKEN = new InjectionToken('liveAnnouncerElement', {
-    providedIn: 'root',
-    factory: LIVE_ANNOUNCER_ELEMENT_TOKEN_FACTORY,
+  providedIn: 'root',
+  factory: LIVE_ANNOUNCER_ELEMENT_TOKEN_FACTORY,
 });
 /** @docs-private */
 export function LIVE_ANNOUNCER_ELEMENT_TOKEN_FACTORY() {
-    return null;
+  return null;
 }
 /** Injection token that can be used to configure the default options for the LiveAnnouncer. */
 export const LIVE_ANNOUNCER_DEFAULT_OPTIONS = new InjectionToken('LIVE_ANNOUNCER_DEFAULT_OPTIONS');

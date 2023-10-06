@@ -3,7 +3,7 @@
 @use 'sass:color';
 @use '../core/theming/theming';
 
-// Approximates the correct buffer color by using a mix between the theme color
+// Approxitakes the correct buffer color by using a mix between the theme color
 // and the theme's background color.
 @function _get-buffer-color($theme, $background) {
   $theme-color: theming.get-color-from-palette($theme);
@@ -21,42 +21,42 @@
   $warn: map.get($config, warn);
   $background: map.get(map.get($config, background), background);
 
-  .mat-progress-bar-background {
+  .tak-progress-bar-background {
     fill: _get-buffer-color($primary, $background);
   }
 
-  .mat-progress-bar-buffer {
+  .tak-progress-bar-buffer {
     background-color: _get-buffer-color($primary, $background);
   }
 
-  .mat-progress-bar-fill::after {
+  .tak-progress-bar-fill::after {
     background-color: theming.get-color-from-palette($primary);
   }
 
-  .mat-progress-bar.mat-accent {
-    .mat-progress-bar-background {
+  .tak-progress-bar.tak-accent {
+    .tak-progress-bar-background {
       fill: _get-buffer-color($accent, $background);
     }
 
-    .mat-progress-bar-buffer {
+    .tak-progress-bar-buffer {
       background-color: _get-buffer-color($accent, $background);
     }
 
-    .mat-progress-bar-fill::after {
+    .tak-progress-bar-fill::after {
       background-color: theming.get-color-from-palette($accent);
     }
   }
 
-  .mat-progress-bar.mat-warn {
-    .mat-progress-bar-background {
+  .tak-progress-bar.tak-warn {
+    .tak-progress-bar-background {
       fill: _get-buffer-color($warn, $background);
     }
 
-    .mat-progress-bar-buffer {
+    .tak-progress-bar-buffer {
       background-color: _get-buffer-color($warn, $background);
     }
 
-    .mat-progress-bar-fill::after {
+    .tak-progress-bar-fill::after {
       background-color: theming.get-color-from-palette($warn);
     }
   }
@@ -70,7 +70,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-progress-bar') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-progress-bar') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

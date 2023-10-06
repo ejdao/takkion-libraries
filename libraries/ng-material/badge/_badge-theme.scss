@@ -22,72 +22,72 @@ $_badge-structure-emitted: false !default;
 @mixin _badge-size($size) {
   // This mixin isn't used in the context of a theme so we can disable the ampersand check.
   // stylelint-disable material/no-ampersand-beyond-selector-start
-  .mat-badge-content {
+  .tak-badge-content {
     width: $size;
     height: $size;
     line-height: $size;
   }
 
-  &.mat-badge-above {
-    .mat-badge-content {
+  &.tak-badge-above {
+    .tak-badge-content {
       top: math.div(-$size, 2);
     }
   }
 
-  &.mat-badge-below {
-    .mat-badge-content {
+  &.tak-badge-below {
+    .tak-badge-content {
       bottom: math.div(-$size, 2);
     }
   }
 
-  &.mat-badge-before {
-    .mat-badge-content {
+  &.tak-badge-before {
+    .tak-badge-content {
       left: -$size;
     }
   }
 
-  [dir='rtl'] &.mat-badge-before {
-    .mat-badge-content {
+  [dir='rtl'] &.tak-badge-before {
+    .tak-badge-content {
       left: auto;
       right: -$size;
     }
   }
 
-  &.mat-badge-after {
-    .mat-badge-content {
+  &.tak-badge-after {
+    .tak-badge-content {
       right: -$size;
     }
   }
 
-  [dir='rtl'] &.mat-badge-after {
-    .mat-badge-content {
+  [dir='rtl'] &.tak-badge-after {
+    .tak-badge-content {
       right: auto;
       left: -$size;
     }
   }
 
-  &.mat-badge-overlap {
-    &.mat-badge-before {
-      .mat-badge-content {
+  &.tak-badge-overlap {
+    &.tak-badge-before {
+      .tak-badge-content {
         left: math.div(-$size, 2);
       }
     }
 
-    [dir='rtl'] &.mat-badge-before {
-      .mat-badge-content {
+    [dir='rtl'] &.tak-badge-before {
+      .tak-badge-content {
         left: auto;
         right: math.div(-$size, 2);
       }
     }
 
-    &.mat-badge-after {
-      .mat-badge-content {
+    &.tak-badge-after {
+      .tak-badge-content {
         right: math.div(-$size, 2);
       }
     }
 
-    [dir='rtl'] &.mat-badge-after {
-      .mat-badge-content {
+    [dir='rtl'] &.tak-badge-after {
+      .tak-badge-content {
         right: auto;
         left: math.div(-$size, 2);
       }
@@ -99,25 +99,25 @@ $_badge-structure-emitted: false !default;
 // Structural styles for the badge. They have to be included as a part of the theme,
 // because the badge is a directive and we have no other way of attaching styles to it.
 @mixin _badge-structure {
-  .mat-badge {
+  .tak-badge {
     position: relative;
   }
 
   // The badge should make sure its host is overflow visible so that the badge content
-  // can be rendered outside of the element. Some components such as <mat-icon> explicitly
+  // can be rendered outside of the element. Some components such as <tak-icon> explicitly
   // style `overflow: hidden` so this requires extra specificity so that it does not
   // depend on style load order.
-  .mat-badge.mat-badge {
+  .tak-badge.tak-badge {
     overflow: visible;
   }
 
-  .mat-badge-hidden {
-    .mat-badge-content {
+  .tak-badge-hidden {
+    .tak-badge-content {
       display: none;
     }
   }
 
-  .mat-badge-content {
+  .tak-badge-content {
     position: absolute;
     text-align: center;
     display: inline-block;
@@ -130,27 +130,27 @@ $_badge-structure-emitted: false !default;
     pointer-events: none;
   }
 
-  .ng-animate-disabled .mat-badge-content,
-  .mat-badge-content._mat-animation-noopable {
+  .ng-animate-disabled .tak-badge-content,
+  .tak-badge-content._tak-animation-noopable {
     transition: none;
   }
 
   // The active class is added after the element is added
   // so it can animate scale to default
-  .mat-badge-content.mat-badge-active {
+  .tak-badge-content.tak-badge-active {
     // Scale to `none` instead of `1` to avoid blurry text in some browsers.
     transform: none;
   }
 
-  .mat-badge-small {
+  .tak-badge-small {
     @include _badge-size($small-size);
   }
 
-  .mat-badge-medium {
+  .tak-badge-medium {
     @include _badge-size($default-size);
   }
 
-  .mat-badge-large {
+  .tak-badge-large {
     @include _badge-size($large-size);
   }
 }
@@ -163,7 +163,7 @@ $_badge-structure-emitted: false !default;
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-badge-content {
+  .tak-badge-content {
     color: theming.get-color-from-palette($primary, default-contrast);
     background: theming.get-color-from-palette($primary);
 
@@ -173,22 +173,22 @@ $_badge-structure-emitted: false !default;
     }
   }
 
-  .mat-badge-accent {
-    .mat-badge-content {
+  .tak-badge-accent {
+    .tak-badge-content {
       background: theming.get-color-from-palette($accent);
       color: theming.get-color-from-palette($accent, default-contrast);
     }
   }
 
-  .mat-badge-warn {
-    .mat-badge-content {
+  .tak-badge-warn {
+    .tak-badge-content {
       color: theming.get-color-from-palette($warn, default-contrast);
       background: theming.get-color-from-palette($warn);
     }
   }
 
-  .mat-badge-disabled {
-    .mat-badge-content {
+  .tak-badge-disabled {
+    .tak-badge-content {
       $app-background: theming.get-color-from-palette($background, 'background');
       $badge-color: theming.get-color-from-palette($foreground, disabled-button);
 
@@ -213,18 +213,18 @@ $_badge-structure-emitted: false !default;
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-badge-content {
+  .tak-badge-content {
     font-weight: $font-weight;
     font-size: $font-size;
     font-family: typography-utils.font-family($config);
   }
 
-  .mat-badge-small .mat-badge-content {
+  .tak-badge-small .tak-badge-content {
     // Set the font size to 75% of the original.
     font-size: $font-size * 0.75;
   }
 
-  .mat-badge-large .mat-badge-content {
+  .tak-badge-large .tak-badge-content {
     font-size: $font-size * 2;
   }
 }
@@ -234,7 +234,7 @@ $_badge-structure-emitted: false !default;
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-badge') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-badge') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -68,7 +68,7 @@ class ConstructorSignatureMigration extends migration_1.Migration {
       // Determine the class names of the actual construct signatures because we cannot assume that
       // the diagnostic refers to a constructor of the actual expression. In case the constructor
       // is inherited, we need to detect that the owner-class of the constructor is added to the
-      // constructor checks upgrade data. e.g. `class CustomCalendar extends MatCalendar {}`.
+      // constructor checks upgrade data. e.g. `class CustomCalendar extends TakCalendar {}`.
       const signatureClassNames = classType
         .getConstructSignatures()
         .map(signature => getClassDeclarationOfSignature(signature))

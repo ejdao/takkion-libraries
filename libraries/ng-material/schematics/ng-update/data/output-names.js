@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -18,21 +18,21 @@ exports.outputNames = {
           replace: 'change',
           replaceWith: 'selectionChange',
           limitedTo: {
-            elements: ['mat-select'],
+            elements: ['tak-select'],
           },
         },
         {
           replace: 'onClose',
           replaceWith: 'closed',
           limitedTo: {
-            elements: ['mat-select'],
+            elements: ['tak-select'],
           },
         },
         {
           replace: 'onOpen',
           replaceWith: 'opened',
           limitedTo: {
-            elements: ['mat-select'],
+            elements: ['tak-select'],
           },
         },
       ],
@@ -44,21 +44,21 @@ exports.outputNames = {
           replace: 'align-changed',
           replaceWith: 'positionChanged',
           limitedTo: {
-            elements: ['mat-drawer', 'mat-sidenav'],
+            elements: ['tak-drawer', 'tak-sidenav'],
           },
         },
         {
           replace: 'close',
           replaceWith: 'closed',
           limitedTo: {
-            elements: ['mat-drawer', 'mat-sidenav'],
+            elements: ['tak-drawer', 'tak-sidenav'],
           },
         },
         {
           replace: 'open',
           replaceWith: 'opened',
           limitedTo: {
-            elements: ['mat-drawer', 'mat-sidenav'],
+            elements: ['tak-drawer', 'tak-sidenav'],
           },
         },
       ],
@@ -70,7 +70,7 @@ exports.outputNames = {
           replace: 'selectChange',
           replaceWith: 'selectedTabChange',
           limitedTo: {
-            elements: ['mat-tab-group'],
+            elements: ['tak-tab-group'],
           },
         },
       ],
@@ -82,16 +82,16 @@ exports.outputNames = {
           replace: 'remove',
           replaceWith: 'removed',
           limitedTo: {
-            attributes: ['mat-chip', 'mat-basic-chip'],
-            elements: ['mat-chip', 'mat-basic-chip'],
+            attributes: ['tak-chip', 'tak-basic-chip'],
+            elements: ['tak-chip', 'tak-basic-chip'],
           },
         },
         {
           replace: 'destroy',
           replaceWith: 'destroyed',
           limitedTo: {
-            attributes: ['mat-chip', 'mat-basic-chip'],
-            elements: ['mat-chip', 'mat-basic-chip'],
+            attributes: ['tak-chip', 'tak-basic-chip'],
+            elements: ['tak-chip', 'tak-basic-chip'],
           },
         },
       ],

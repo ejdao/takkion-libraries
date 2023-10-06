@@ -27,29 +27,29 @@ import { TreeControl } from '@takkion/ng-cdk/tree';
 import { ViewContainerRef } from '@angular/core';
 
 declare namespace i1 {
-  export { MatTreeNode, MatTreeNodeDef, MatNestedTreeNode };
+  export { TakTreeNode, TakTreeNodeDef, TakNestedTreeNode };
 }
 
 declare namespace i2 {
-  export { MatTreeNodePadding };
+  export { TakTreeNodePadding };
 }
 
 declare namespace i3 {
-  export { MatTreeNodeToggle };
+  export { TakTreeNodeToggle };
 }
 
 declare namespace i4 {
-  export { MatTree };
+  export { TakTree };
 }
 
 declare namespace i5 {
-  export { MatTreeNodeOutlet };
+  export { TakTreeNodeOutlet };
 }
 
 /**
  * Wrapper for the CdkTree nested node with Material design styles.
  */
-export declare class MatNestedTreeNode<T, K = T>
+export declare class TakNestedTreeNode<T, K = T>
   extends CdkNestedTreeNode<T, K>
   implements AfterContentInit, OnDestroy, OnInit
 {
@@ -72,14 +72,14 @@ export declare class MatNestedTreeNode<T, K = T>
   ngAfterContentInit(): void;
   ngOnDestroy(): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatNestedTreeNode<any, any>,
+    TakNestedTreeNode<any, any>,
     [null, null, null, { attribute: 'tabindex' }]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatNestedTreeNode<any, any>,
-    'mat-nested-tree-node',
-    ['matNestedTreeNode'],
-    { role: 'role'; disabled: 'disabled'; tabIndex: 'tabIndex'; node: 'matNestedTreeNode' },
+    TakNestedTreeNode<any, any>,
+    'tak-nested-tree-node',
+    ['takNestedTreeNode'],
+    { role: 'role'; disabled: 'disabled'; tabIndex: 'tabIndex'; node: 'takNestedTreeNode' },
     {},
     never,
     never,
@@ -90,13 +90,13 @@ export declare class MatNestedTreeNode<T, K = T>
 /**
  * Wrapper for the CdkTable with Material design styles.
  */
-export declare class MatTree<T, K = T> extends CdkTree<T, K> {
-  _nodeOutlet: MatTreeNodeOutlet;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTree<any, any>, never>;
+export declare class TakTree<T, K = T> extends CdkTree<T, K> {
+  _nodeOutlet: TakTreeNodeOutlet;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTree<any, any>, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatTree<any, any>,
-    'mat-tree',
-    ['matTree'],
+    TakTree<any, any>,
+    'tak-tree',
+    ['takTree'],
     {},
     {},
     never,
@@ -108,11 +108,11 @@ export declare class MatTree<T, K = T> extends CdkTree<T, K> {
 /**
  * Data source for flat tree.
  * The data source need to handle expansion/collapsion of the tree node and change the data feed
- * to `MatTree`.
- * The nested tree nodes of type `T` are flattened through `MatTreeFlattener`, and converted
- * to type `F` for `MatTree` to consume.
+ * to `TakTree`.
+ * The nested tree nodes of type `T` are flattened through `TakTreeFlattener`, and converted
+ * to type `F` for `TakTree` to consume.
  */
-export declare class MatTreeFlatDataSource<T, F, K = F> extends DataSource<F> {
+export declare class TakTreeFlatDataSource<T, F, K = F> extends DataSource<F> {
   private _treeControl;
   private _treeFlattener;
   private readonly _flattenedData;
@@ -122,7 +122,7 @@ export declare class MatTreeFlatDataSource<T, F, K = F> extends DataSource<F> {
   private readonly _data;
   constructor(
     _treeControl: FlatTreeControl<F, K>,
-    _treeFlattener: MatTreeFlattener<T, F, K>,
+    _treeFlattener: TakTreeFlattener<T, F, K>,
     initialData?: T[]
   );
   connect(collectionViewer: CollectionViewer): Observable<F[]>;
@@ -163,7 +163,7 @@ export declare class MatTreeFlatDataSource<T, F, K = F> extends DataSource<F> {
  * }
  * and the output flattened type is `F` with additional information.
  */
-export declare class MatTreeFlattener<T, F, K = F> {
+export declare class TakTreeFlattener<T, F, K = F> {
   transformFunction: (node: T, level: number) => F;
   getLevel: (node: F) => number;
   isExpandable: (node: F) => boolean;
@@ -189,32 +189,32 @@ export declare class MatTreeFlattener<T, F, K = F> {
   expandFlattenedNodes(nodes: F[], treeControl: TreeControl<F, K>): F[];
 }
 
-export declare class MatTreeModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTreeModule, never>;
+export declare class TakTreeModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTreeModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatTreeModule,
+    TakTreeModule,
     [
-      typeof i1.MatNestedTreeNode,
-      typeof i1.MatTreeNodeDef,
-      typeof i2.MatTreeNodePadding,
-      typeof i3.MatTreeNodeToggle,
-      typeof i4.MatTree,
-      typeof i1.MatTreeNode,
-      typeof i5.MatTreeNodeOutlet,
+      typeof i1.TakNestedTreeNode,
+      typeof i1.TakTreeNodeDef,
+      typeof i2.TakTreeNodePadding,
+      typeof i3.TakTreeNodeToggle,
+      typeof i4.TakTree,
+      typeof i1.TakTreeNode,
+      typeof i5.TakTreeNodeOutlet,
     ],
-    [typeof i6.CdkTreeModule, typeof i7.MatCommonModule],
+    [typeof i6.CdkTreeModule, typeof i7.TakCommonModule],
     [
-      typeof i7.MatCommonModule,
-      typeof i1.MatNestedTreeNode,
-      typeof i1.MatTreeNodeDef,
-      typeof i2.MatTreeNodePadding,
-      typeof i3.MatTreeNodeToggle,
-      typeof i4.MatTree,
-      typeof i1.MatTreeNode,
-      typeof i5.MatTreeNodeOutlet,
+      typeof i7.TakCommonModule,
+      typeof i1.TakNestedTreeNode,
+      typeof i1.TakTreeNodeDef,
+      typeof i2.TakTreeNodePadding,
+      typeof i3.TakTreeNodeToggle,
+      typeof i4.TakTree,
+      typeof i1.TakTreeNode,
+      typeof i5.TakTreeNodeOutlet,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatTreeModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakTreeModule>;
 }
 
 /**
@@ -223,7 +223,7 @@ export declare class MatTreeModule {
  * The data source for nested tree doesn't have to consider node flattener, or the way to expand
  * or collapse. The expansion/collapsion will be handled by TreeControl and each non-leaf node.
  */
-export declare class MatTreeNestedDataSource<T> extends DataSource<T> {
+export declare class TakTreeNestedDataSource<T> extends DataSource<T> {
   /**
    * Data for the nested tree
    */
@@ -237,21 +237,21 @@ export declare class MatTreeNestedDataSource<T> extends DataSource<T> {
 /**
  * Wrapper for the CdkTree node with Material design styles.
  */
-export declare class MatTreeNode<T, K = T>
-  extends _MatTreeNodeBase<T, K>
+export declare class TakTreeNode<T, K = T>
+  extends _TakTreeNodeBase<T, K>
   implements CanDisable, HasTabIndex, OnInit, OnDestroy
 {
   constructor(elementRef: ElementRef<HTMLElement>, tree: CdkTree<T, K>, tabIndex: string);
   ngOnInit(): void;
   ngOnDestroy(): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatTreeNode<any, any>,
+    TakTreeNode<any, any>,
     [null, null, { attribute: 'tabindex' }]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatTreeNode<any, any>,
-    'mat-tree-node',
-    ['matTreeNode'],
+    TakTreeNode<any, any>,
+    'tak-tree-node',
+    ['takTreeNode'],
     { role: 'role'; disabled: 'disabled'; tabIndex: 'tabIndex' },
     {},
     never,
@@ -260,7 +260,7 @@ export declare class MatTreeNode<T, K = T>
   >;
 }
 
-declare const _MatTreeNodeBase: _Constructor<HasTabIndex> &
+declare const _TakTreeNodeBase: _Constructor<HasTabIndex> &
   _AbstractConstructor<HasTabIndex> &
   _Constructor<CanDisable> &
   _AbstractConstructor<CanDisable> &
@@ -270,14 +270,14 @@ declare const _MatTreeNodeBase: _Constructor<HasTabIndex> &
  * Wrapper for the CdkTree node definition with Material design styles.
  * Captures the node's template and a when predicate that describes when this node should be used.
  */
-export declare class MatTreeNodeDef<T> extends CdkTreeNodeDef<T> {
+export declare class TakTreeNodeDef<T> extends CdkTreeNodeDef<T> {
   data: T;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTreeNodeDef<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTreeNodeDef<any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatTreeNodeDef<any>,
-    '[matTreeNodeDef]',
+    TakTreeNodeDef<any>,
+    '[takTreeNodeDef]',
     never,
-    { when: 'matTreeNodeDefWhen'; data: 'matTreeNode' },
+    { when: 'takTreeNodeDefWhen'; data: 'takTreeNode' },
     {},
     never,
     never,
@@ -286,17 +286,17 @@ export declare class MatTreeNodeDef<T> extends CdkTreeNodeDef<T> {
 }
 
 /**
- * Outlet for nested CdkNode. Put `[matTreeNodeOutlet]` on a tag to place children dataNodes
+ * Outlet for nested CdkNode. Put `[takTreeNodeOutlet]` on a tag to place children dataNodes
  * inside the outlet.
  */
-export declare class MatTreeNodeOutlet implements CdkTreeNodeOutlet {
+export declare class TakTreeNodeOutlet implements CdkTreeNodeOutlet {
   viewContainer: ViewContainerRef;
   _node?: any;
   constructor(viewContainer: ViewContainerRef, _node?: any);
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTreeNodeOutlet, [null, { optional: true }]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTreeNodeOutlet, [null, { optional: true }]>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatTreeNodeOutlet,
-    '[matTreeNodeOutlet]',
+    TakTreeNodeOutlet,
+    '[takTreeNodeOutlet]',
     never,
     {},
     {},
@@ -309,19 +309,19 @@ export declare class MatTreeNodeOutlet implements CdkTreeNodeOutlet {
 /**
  * Wrapper for the CdkTree padding with Material design styles.
  */
-export declare class MatTreeNodePadding<T, K = T> extends CdkTreeNodePadding<T, K> {
+export declare class TakTreeNodePadding<T, K = T> extends CdkTreeNodePadding<T, K> {
   /** The level of depth of the tree node. The padding will be `level * indent` pixels. */
   get level(): number;
   set level(value: NumberInput);
   /** The indent for each level. Default number 40px from material design menu sub-menu spec. */
   get indent(): number | string;
   set indent(indent: number | string);
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTreeNodePadding<any, any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTreeNodePadding<any, any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatTreeNodePadding<any, any>,
-    '[matTreeNodePadding]',
+    TakTreeNodePadding<any, any>,
+    '[takTreeNodePadding]',
     never,
-    { level: 'matTreeNodePadding'; indent: 'matTreeNodePaddingIndent' },
+    { level: 'takTreeNodePadding'; indent: 'takTreeNodePaddingIndent' },
     {},
     never,
     never,
@@ -332,13 +332,13 @@ export declare class MatTreeNodePadding<T, K = T> extends CdkTreeNodePadding<T, 
 /**
  * Wrapper for the CdkTree's toggle with Material design styles.
  */
-export declare class MatTreeNodeToggle<T, K = T> extends CdkTreeNodeToggle<T, K> {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTreeNodeToggle<any, any>, never>;
+export declare class TakTreeNodeToggle<T, K = T> extends CdkTreeNodeToggle<T, K> {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTreeNodeToggle<any, any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatTreeNodeToggle<any, any>,
-    '[matTreeNodeToggle]',
+    TakTreeNodeToggle<any, any>,
+    '[takTreeNodeToggle]',
     never,
-    { recursive: 'matTreeNodeToggleRecursive' },
+    { recursive: 'takTreeNodeToggleRecursive' },
     {},
     never,
     never,

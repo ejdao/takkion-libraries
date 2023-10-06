@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -111,7 +111,7 @@ function migrateMaterialSymbols(
   extraMaterialSymbols = {}
 ) {
   const initialContent = content;
-  const namespace = 'mat';
+  const namespace = 'tak';
   // Migrate the mixins.
   const mixinsToUpdate = { ...config_1.materialMixins, ...extraMaterialSymbols.mixins };
   content = renameSymbols(

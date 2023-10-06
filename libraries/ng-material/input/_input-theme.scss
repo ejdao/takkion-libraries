@@ -14,16 +14,16 @@
   $warn: map.get($config, warn);
   $foreground: map.get($config, foreground);
 
-  .mat-form-field-type-mat-native-select .mat-form-field-infix::after {
+  .tak-form-field-type-tak-native-select .tak-form-field-infix::after {
     color: theming.get-color-from-palette($foreground, secondary-text);
   }
 
-  .mat-input-element:disabled,
-  .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+  .tak-input-element:disabled,
+  .tak-form-field-type-tak-native-select.tak-form-field-disabled .tak-form-field-infix::after {
     color: theming.get-color-from-palette($foreground, disabled-text);
   }
 
-  .mat-input-element {
+  .tak-input-element {
     caret-color: theming.get-color-from-palette($primary, text);
 
     @include vendor-prefixes.input-placeholder {
@@ -36,7 +36,7 @@
     // Since we can't change background of the dropdown, we need to explicitly
     // reset the color of the options to something dark.
     @if (map.get($config, is-dark)) {
-      &:not(.mat-native-select-inline) {
+      &:not(.tak-native-select-inline) {
         option {
           color: palette.$dark-primary-text;
         }
@@ -48,16 +48,16 @@
     }
   }
 
-  .mat-form-field.mat-accent .mat-input-element {
+  .tak-form-field.tak-accent .tak-input-element {
     caret-color: theming.get-color-from-palette($accent, text);
   }
 
-  .mat-form-field.mat-warn .mat-input-element,
-  .mat-form-field-invalid .mat-input-element {
+  .tak-form-field.tak-warn .tak-input-element,
+  .tak-form-field-invalid .tak-input-element {
     caret-color: theming.get-color-from-palette($warn, text);
   }
 
-  .mat-form-field-type-mat-native-select.mat-form-field-invalid .mat-form-field-infix::after {
+  .tak-form-field-type-tak-native-select.tak-form-field-invalid .tak-form-field-infix::after {
     color: theming.get-color-from-palette($warn, text);
   }
 }
@@ -75,7 +75,7 @@
 
   // <input> elements seem to have their height set slightly too large on Safari causing the text to
   // be misaligned w.r.t. the placeholder. Adding this margin corrects it.
-  input.mat-input-element {
+  input.tak-input-element {
     margin-top: typography-utils.private-coerce-unitless-to-em(-$line-spacing);
   }
 }
@@ -85,7 +85,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-input') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-input') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

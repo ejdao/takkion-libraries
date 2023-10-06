@@ -1,20 +1,18 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
 /** @docs-private */
-export class AnimationCurves {
-}
+export class AnimationCurves {}
 AnimationCurves.STANDARD_CURVE = 'cubic-bezier(0.4,0.0,0.2,1)';
 AnimationCurves.DECELERATION_CURVE = 'cubic-bezier(0.0,0.0,0.2,1)';
 AnimationCurves.ACCELERATION_CURVE = 'cubic-bezier(0.4,0.0,1,1)';
 AnimationCurves.SHARP_CURVE = 'cubic-bezier(0.4,0.0,0.6,1)';
 /** @docs-private */
-export class AnimationDurations {
-}
+export class AnimationDurations {}
 AnimationDurations.COMPLEX = '375ms';
 AnimationDurations.ENTERING = '225ms';
 AnimationDurations.EXITING = '195ms';

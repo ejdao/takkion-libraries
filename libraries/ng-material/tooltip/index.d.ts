@@ -34,46 +34,46 @@ import { ViewContainerRef } from '@angular/core';
  * Creates an error to be thrown if the user supplied an invalid tooltip position.
  * @docs-private
  */
-export declare function getMatTooltipInvalidPositionError(position: string): Error;
+export declare function getTakTooltipInvalidPositionError(position: string): Error;
 
 declare namespace i1 {
   export {
-    getMatTooltipInvalidPositionError,
-    MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY,
-    MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY,
+    getTakTooltipInvalidPositionError,
+    TAK_TOOLTIP_SCROLL_STRATEGY_FACTORY,
+    TAK_TOOLTIP_DEFAULT_OPTIONS_FACTORY,
     TooltipPosition,
     TooltipTouchGestures,
     TooltipVisibility,
     SCROLL_THROTTLE_MS,
     TOOLTIP_PANEL_CLASS,
-    MAT_TOOLTIP_SCROLL_STRATEGY,
-    MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER,
-    MatTooltipDefaultOptions,
-    MAT_TOOLTIP_DEFAULT_OPTIONS,
-    _MatTooltipBase,
-    MatTooltip,
+    TAK_TOOLTIP_SCROLL_STRATEGY,
+    TAK_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER,
+    TakTooltipDefaultOptions,
+    TAK_TOOLTIP_DEFAULT_OPTIONS,
+    _TakTooltipBase,
+    TakTooltip,
     _TooltipComponentBase,
     TooltipComponent,
   };
 }
 
-/** Injection token to be used to override the default options for `matTooltip`. */
-export declare const MAT_TOOLTIP_DEFAULT_OPTIONS: InjectionToken<MatTooltipDefaultOptions>;
+/** Injection token to be used to override the default options for `takTooltip`. */
+export declare const TAK_TOOLTIP_DEFAULT_OPTIONS: InjectionToken<TakTooltipDefaultOptions>;
 
 /** @docs-private */
-export declare function MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY(): MatTooltipDefaultOptions;
+export declare function TAK_TOOLTIP_DEFAULT_OPTIONS_FACTORY(): TakTooltipDefaultOptions;
 
 /** Injection token that determines the scroll handling while a tooltip is visible. */
-export declare const MAT_TOOLTIP_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
+export declare const TAK_TOOLTIP_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
 
 /** @docs-private */
-export declare function MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY(overlay: Overlay): () => ScrollStrategy;
+export declare function TAK_TOOLTIP_SCROLL_STRATEGY_FACTORY(overlay: Overlay): () => ScrollStrategy;
 
 /** @docs-private */
-export declare const MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER: {
+export declare const TAK_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER: {
   provide: InjectionToken<() => ScrollStrategy>;
   deps: (typeof Overlay)[];
-  useFactory: typeof MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY;
+  useFactory: typeof TAK_TOOLTIP_SCROLL_STRATEGY_FACTORY;
 };
 
 /**
@@ -82,7 +82,7 @@ export declare const MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER: {
  *
  * https://material.io/design/components/tooltips.html
  */
-export declare class MatTooltip extends _MatTooltipBase<TooltipComponent> {
+export declare class TakTooltip extends _TakTooltipBase<TooltipComponent> {
   protected readonly _tooltipComponent: typeof TooltipComponent;
   constructor(
     overlay: Overlay,
@@ -95,11 +95,11 @@ export declare class MatTooltip extends _MatTooltipBase<TooltipComponent> {
     focusMonitor: FocusMonitor,
     scrollStrategy: any,
     dir: Directionality,
-    defaultOptions: MatTooltipDefaultOptions,
+    defaultOptions: TakTooltipDefaultOptions,
     _document: any
   );
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatTooltip,
+    TakTooltip,
     [
       null,
       null,
@@ -116,9 +116,9 @@ export declare class MatTooltip extends _MatTooltipBase<TooltipComponent> {
     ]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatTooltip,
-    '[matTooltip]',
-    ['matTooltip'],
+    TakTooltip,
+    '[takTooltip]',
+    ['takTooltip'],
     {},
     {},
     never,
@@ -128,14 +128,14 @@ export declare class MatTooltip extends _MatTooltipBase<TooltipComponent> {
 }
 
 /**
- * Animations used by MatTooltip.
+ * Animations used by TakTooltip.
  * @docs-private
  */
-export declare const matTooltipAnimations: {
+export declare const takTooltipAnimations: {
   readonly tooltipState: AnimationTriggerMetadata;
 };
 
-export declare abstract class _MatTooltipBase<T extends _TooltipComponentBase>
+export declare abstract class _TakTooltipBase<T extends _TooltipComponentBase>
   implements OnDestroy, AfterViewInit
 {
   private _overlay;
@@ -230,7 +230,7 @@ export declare abstract class _MatTooltipBase<T extends _TooltipComponentBase>
     _focusMonitor: FocusMonitor,
     scrollStrategy: any,
     _dir: Directionality,
-    _defaultOptions: MatTooltipDefaultOptions,
+    _defaultOptions: TakTooltipDefaultOptions,
     _document: any
   );
   ngAfterViewInit(): void;
@@ -284,19 +284,19 @@ export declare abstract class _MatTooltipBase<T extends _TooltipComponentBase>
   private _wheelListener;
   /** Disables the native browser gestures, based on how the tooltip has been configured. */
   private _disableNativeGesturesIfNecessary;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatTooltipBase<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakTooltipBase<any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatTooltipBase<any>,
+    _TakTooltipBase<any>,
     never,
     never,
     {
-      position: 'matTooltipPosition';
-      disabled: 'matTooltipDisabled';
-      showDelay: 'matTooltipShowDelay';
-      hideDelay: 'matTooltipHideDelay';
-      touchGestures: 'matTooltipTouchGestures';
-      message: 'matTooltip';
-      tooltipClass: 'matTooltipClass';
+      position: 'takTooltipPosition';
+      disabled: 'takTooltipDisabled';
+      showDelay: 'takTooltipShowDelay';
+      hideDelay: 'takTooltipHideDelay';
+      touchGestures: 'takTooltipTouchGestures';
+      message: 'takTooltip';
+      tooltipClass: 'takTooltipClass';
     },
     {},
     never,
@@ -305,8 +305,8 @@ export declare abstract class _MatTooltipBase<T extends _TooltipComponentBase>
   >;
 }
 
-/** Default `matTooltip` options that can be overridden. */
-export declare interface MatTooltipDefaultOptions {
+/** Default `takTooltip` options that can be overridden. */
+export declare interface TakTooltipDefaultOptions {
   /** Default delay when the tooltip is shown. */
   showDelay: number;
   /** Default delay when the tooltip is hidden. */
@@ -321,25 +321,25 @@ export declare interface MatTooltipDefaultOptions {
   disableTooltipInteractivity?: boolean;
 }
 
-export declare class MatTooltipModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTooltipModule, never>;
+export declare class TakTooltipModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTooltipModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatTooltipModule,
-    [typeof i1.MatTooltip, typeof i1.TooltipComponent],
+    TakTooltipModule,
+    [typeof i1.TakTooltip, typeof i1.TooltipComponent],
     [
       typeof i2.A11yModule,
       typeof i3.CommonModule,
       typeof i4.OverlayModule,
-      typeof i5.MatCommonModule,
+      typeof i5.TakCommonModule,
     ],
     [
-      typeof i1.MatTooltip,
+      typeof i1.TakTooltip,
       typeof i1.TooltipComponent,
-      typeof i5.MatCommonModule,
+      typeof i5.TakCommonModule,
       typeof i6.CdkScrollableModule,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatTooltipModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakTooltipModule>;
 }
 
 /** Time in ms to throttle repositioning after scroll events. */
@@ -350,7 +350,7 @@ export declare const SCROLL_THROTTLE_MS = 20;
  * @deprecated
  * @breaking-change 13.0.0 remove this variable
  */
-export declare const TOOLTIP_PANEL_CLASS = 'mat-tooltip-panel';
+export declare const TOOLTIP_PANEL_CLASS = 'tak-tooltip-panel';
 
 /**
  * Internal component that wraps the tooltip's content.
@@ -371,7 +371,7 @@ export declare class TooltipComponent extends _TooltipComponentBase {
   static ɵfac: i0.ɵɵFactoryDeclaration<TooltipComponent, [null, null, { optional: true }]>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
     TooltipComponent,
-    'mat-tooltip-component',
+    'tak-tooltip-component',
     never,
     {},
     {},
@@ -476,7 +476,7 @@ export declare type TooltipPosition = 'left' | 'right' | 'above' | 'below' | 'be
 
 /**
  * Options for how the tooltip trigger should handle touch gestures.
- * See `MatTooltip.touchGestures` for more information.
+ * See `TakTooltip.touchGestures` for more information.
  */
 export declare type TooltipTouchGestures = 'auto' | 'on' | 'off';
 

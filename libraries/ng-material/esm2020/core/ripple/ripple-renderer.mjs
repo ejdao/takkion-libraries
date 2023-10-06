@@ -68,7 +68,7 @@ export class RippleRenderer {
         const offsetY = y - containerRect.top;
         const enterDuration = animationConfig.enterDuration;
         const ripple = document.createElement('div');
-        ripple.classList.add('mat-ripple-element');
+        ripple.classList.add('tak-ripple-element');
         ripple.style.left = `${offsetX - radius}px`;
         ripple.style.top = `${offsetY - radius}px`;
         ripple.style.height = `${radius * 2}px`;

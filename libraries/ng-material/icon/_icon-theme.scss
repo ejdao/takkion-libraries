@@ -9,16 +9,16 @@
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-icon {
-    &.mat-primary {
+  .tak-icon {
+    &.tak-primary {
       color: theming.get-color-from-palette($primary, text);
     }
 
-    &.mat-accent {
+    &.tak-accent {
       color: theming.get-color-from-palette($accent, text);
     }
 
-    &.mat-warn {
+    &.tak-warn {
       color: theming.get-color-from-palette($warn, text);
     }
   }
@@ -32,7 +32,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-icon') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-icon') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

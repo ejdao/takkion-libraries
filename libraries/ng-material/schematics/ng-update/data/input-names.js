@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -17,7 +17,7 @@ exports.inputNames = {
         {
           replace: 'align',
           replaceWith: 'labelPosition',
-          limitedTo: { elements: ['mat-radio-group', 'mat-radio-button'] },
+          limitedTo: { elements: ['tak-radio-group', 'tak-radio-button'] },
         },
       ],
     },
@@ -27,7 +27,7 @@ exports.inputNames = {
         {
           replace: 'align',
           replaceWith: 'position',
-          limitedTo: { elements: ['mat-drawer', 'mat-sidenav'] },
+          limitedTo: { elements: ['tak-drawer', 'tak-sidenav'] },
         },
       ],
     },
@@ -37,12 +37,12 @@ exports.inputNames = {
         {
           replace: 'dividerColor',
           replaceWith: 'color',
-          limitedTo: { elements: ['mat-form-field'] },
+          limitedTo: { elements: ['tak-form-field'] },
         },
         {
           replace: 'floatPlaceholder',
           replaceWith: 'floatLabel',
-          limitedTo: { elements: ['mat-form-field'] },
+          limitedTo: { elements: ['tak-form-field'] },
         },
       ],
     },
@@ -50,9 +50,9 @@ exports.inputNames = {
       pr: 'https://github.com/angular/components/pull/10309',
       changes: [
         {
-          replace: 'mat-dynamic-height',
+          replace: 'tak-dynamic-height',
           replaceWith: 'dynamicHeight',
-          limitedTo: { elements: ['mat-tab-group'] },
+          limitedTo: { elements: ['tak-tab-group'] },
         },
       ],
     },
@@ -62,7 +62,7 @@ exports.inputNames = {
         {
           replace: 'align',
           replaceWith: 'labelPosition',
-          limitedTo: { elements: ['mat-checkbox'] },
+          limitedTo: { elements: ['tak-checkbox'] },
         },
       ],
     },
@@ -71,8 +71,8 @@ exports.inputNames = {
       changes: [
         {
           replace: 'tooltip-position',
-          replaceWith: 'matTooltipPosition',
-          limitedTo: { attributes: ['matTooltip'] },
+          replaceWith: 'takTooltipPosition',
+          limitedTo: { attributes: ['takTooltip'] },
         },
       ],
     },
@@ -82,12 +82,12 @@ exports.inputNames = {
         {
           replace: 'thumb-label',
           replaceWith: 'thumbLabel',
-          limitedTo: { elements: ['mat-slider'] },
+          limitedTo: { elements: ['tak-slider'] },
         },
         {
           replace: 'tick-interval',
           replaceWith: 'tickInterval',
-          limitedTo: { elements: ['mat-slider'] },
+          limitedTo: { elements: ['tak-slider'] },
         },
       ],
     },

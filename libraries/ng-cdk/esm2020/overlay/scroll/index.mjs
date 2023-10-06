@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
 export { CdkScrollable, ScrollDispatcher } from '@takkion/ng-cdk/scrolling';
 export { ScrollStrategyOptions } from './scroll-strategy-options';
-export { RepositionScrollStrategy, } from './reposition-scroll-strategy';
+export { RepositionScrollStrategy } from './reposition-scroll-strategy';
 export { CloseScrollStrategy } from './close-scroll-strategy';
 export { NoopScrollStrategy } from './noop-scroll-strategy';
 export { BlockScrollStrategy } from './block-scroll-strategy';

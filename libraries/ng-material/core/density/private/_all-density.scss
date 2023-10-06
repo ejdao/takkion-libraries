@@ -23,9 +23,9 @@
 
   // TODO: COMP-309: Do not use individual mixins. Instead, use the all-theme mixin and only
   // specify a `density` config while setting `color` and `typography` to `null`. This is currently
-  // not possible as it would introduce a circular dependency for density because the `mat-core`
+  // not possible as it would introduce a circular dependency for density because the `tak-core`
   // mixin that is transitively loaded by the `all-theme` file, imports `all-density` which
-  // would then load `all-theme` again. This ultimately results a circular dependency.
+  // would then load `all-theme` again. This ultitakely results a circular dependency.
 
   @include expansion-theme.density($config);
   @include stepper-theme.density($config);

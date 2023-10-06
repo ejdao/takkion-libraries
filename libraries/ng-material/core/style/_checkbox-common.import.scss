@@ -1,11 +1,11 @@
 @forward 'variables' hide $fast-out-linear-in-timing-function, $fast-out-slow-in-timing-function,
   $linear-out-slow-in-timing-function, $small, $toggle-padding, $toggle-size, $xsmall;
-@forward 'variables' as mat-* hide $mat-ease-in-out-curve-function, $mat-pi, $mat-swift-ease-in,
-  $mat-swift-ease-in-duration, $mat-swift-ease-in-out, $mat-swift-ease-in-out-duration,
-  $mat-swift-ease-in-out-timing-function, $mat-swift-ease-in-timing-function, $mat-swift-ease-out,
-  $mat-swift-ease-out-duration, $mat-swift-ease-out-timing-function, $mat-swift-linear,
-  $mat-swift-linear-duration, $mat-swift-linear-timing-function, $mat-z-index-drawer,
-  $mat-z-index-fab;
-@forward 'checkbox-common' as mat-checkbox-*;
+@forward 'variables' as tak-* hide $tak-ease-in-out-curve-function, $tak-pi, $tak-swift-ease-in,
+  $tak-swift-ease-in-duration, $tak-swift-ease-in-out, $tak-swift-ease-in-out-duration,
+  $tak-swift-ease-in-out-timing-function, $tak-swift-ease-in-timing-function, $tak-swift-ease-out,
+  $tak-swift-ease-out-duration, $tak-swift-ease-out-timing-function, $tak-swift-linear,
+  $tak-swift-linear-duration, $tak-swift-linear-timing-function, $tak-z-index-drawer,
+  $tak-z-index-fab;
+@forward 'checkbox-common' as tak-checkbox-*;
 
 @import './variables';

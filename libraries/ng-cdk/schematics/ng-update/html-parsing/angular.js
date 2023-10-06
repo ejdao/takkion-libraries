@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -16,7 +16,7 @@ const elements_1 = require('./elements');
 /** Finds the specified Angular @Input in the given elements with tag name. */
 function findInputsOnElementWithTag(html, inputName, tagNames) {
   return [
-    // Inputs can be also used without brackets (e.g. `<mat-toolbar color="primary">`)
+    // Inputs can be also used without brackets (e.g. `<tak-toolbar color="primary">`)
     ...(0, elements_1.findAttributeOnElementWithTag)(html, inputName, tagNames),
     // Add one column to the mapped offset because the first bracket for the @Input
     // is part of the attribute and therefore also part of the offset. We only want to return
@@ -30,7 +30,7 @@ exports.findInputsOnElementWithTag = findInputsOnElementWithTag;
 /** Finds the specified Angular @Input in elements that have one of the specified attributes. */
 function findInputsOnElementWithAttr(html, inputName, attrs) {
   return [
-    // Inputs can be also used without brackets (e.g. `<button mat-button color="primary">`)
+    // Inputs can be also used without brackets (e.g. `<button tak-button color="primary">`)
     ...(0, elements_1.findAttributeOnElementWithAttrs)(html, inputName, attrs),
     // Add one column to the mapped offset because the first bracket for the @Input
     // is part of the attribute and therefore also part of the offset. We only want to return

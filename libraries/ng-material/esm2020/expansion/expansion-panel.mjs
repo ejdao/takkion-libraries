@@ -7,10 +7,10 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, Di
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { Subject } from 'rxjs';
 import { distinctUntilChanged, filter, startWith, take } from 'rxjs/operators';
-import { MAT_ACCORDION } from './accordion-base';
-import { matExpansionAnimations } from './expansion-animations';
-import { MAT_EXPANSION_PANEL } from './expansion-panel-base';
-import { MatExpansionPanelContent } from './expansion-panel-content';
+import { TAK_ACCORDION } from './accordion-base';
+import { takExpansionAnimations } from './expansion-animations';
+import { TAK_EXPANSION_PANEL } from './expansion-panel-base';
+import { TakExpansionPanelContent } from './expansion-panel-content';
 import * as i0 from "@angular/core";
 import * as i1 from "@takkion/ng-cdk/collections";
 import * as i2 from "@takkion/ng-cdk/portal";
@@ -20,12 +20,12 @@ let uniqueId = 0;
  * Injection token that can be used to configure the default
  * options for the expansion panel component.
  */
-export const MAT_EXPANSION_PANEL_DEFAULT_OPTIONS = new InjectionToken('MAT_EXPANSION_PANEL_DEFAULT_OPTIONS');
+export const TAK_EXPANSION_PANEL_DEFAULT_OPTIONS = new InjectionToken('TAK_EXPANSION_PANEL_DEFAULT_OPTIONS');
 /**
  * This component can be used as a single element to show expandable content, or as one of
- * multiple children of an element with the MatAccordion directive attached.
+ * multiple children of an element with the TakAccordion directive attached.
  */
-export class MatExpansionPanel extends CdkAccordionItem {
+export class TakExpansionPanel extends CdkAccordionItem {
     constructor(accordion, _changeDetectorRef, _uniqueSelectionDispatcher, _viewContainerRef, _document, _animationMode, defaultOptions) {
         super(accordion, _changeDetectorRef, _uniqueSelectionDispatcher);
         this._viewContainerRef = _viewContainerRef;
@@ -38,7 +38,7 @@ export class MatExpansionPanel extends CdkAccordionItem {
         /** Stream that emits for changes in `@Input` properties. */
         this._inputChanges = new Subject();
         /** ID for the associated header element. Used for a11y labelling. */
-        this._headerId = `mat-expansion-panel-header-${uniqueId++}`;
+        this._headerId = `tak-expansion-panel-header-${uniqueId++}`;
         /** Stream of body animation done events. */
         this._bodyAnimationDone = new Subject();
         this.accordion = accordion;
@@ -128,33 +128,33 @@ export class MatExpansionPanel extends CdkAccordionItem {
         return false;
     }
 }
-MatExpansionPanel.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatExpansionPanel, deps: [{ token: MAT_ACCORDION, optional: true, skipSelf: true }, { token: i0.ChangeDetectorRef }, { token: i1.UniqueSelectionDispatcher }, { token: i0.ViewContainerRef }, { token: DOCUMENT }, { token: ANIMATION_MODULE_TYPE, optional: true }, { token: MAT_EXPANSION_PANEL_DEFAULT_OPTIONS, optional: true }], target: i0.ɵɵFactoryTarget.Component });
-MatExpansionPanel.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: MatExpansionPanel, selector: "mat-expansion-panel", inputs: { disabled: "disabled", expanded: "expanded", hideToggle: "hideToggle", togglePosition: "togglePosition" }, outputs: { opened: "opened", closed: "closed", expandedChange: "expandedChange", afterExpand: "afterExpand", afterCollapse: "afterCollapse" }, host: { properties: { "class.mat-expanded": "expanded", "class._mat-animation-noopable": "_animationMode === \"NoopAnimations\"", "class.mat-expansion-panel-spacing": "_hasSpacing()" }, classAttribute: "mat-expansion-panel" }, providers: [
-        // Provide MatAccordion as undefined to prevent nested expansion panels from registering
+TakExpansionPanel.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakExpansionPanel, deps: [{ token: TAK_ACCORDION, optional: true, skipSelf: true }, { token: i0.ChangeDetectorRef }, { token: i1.UniqueSelectionDispatcher }, { token: i0.ViewContainerRef }, { token: DOCUMENT }, { token: ANIMATION_MODULE_TYPE, optional: true }, { token: TAK_EXPANSION_PANEL_DEFAULT_OPTIONS, optional: true }], target: i0.ɵɵFactoryTarget.Component });
+TakExpansionPanel.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: TakExpansionPanel, selector: "tak-expansion-panel", inputs: { disabled: "disabled", expanded: "expanded", hideToggle: "hideToggle", togglePosition: "togglePosition" }, outputs: { opened: "opened", closed: "closed", expandedChange: "expandedChange", afterExpand: "afterExpand", afterCollapse: "afterCollapse" }, host: { properties: { "class.tak-expanded": "expanded", "class._tak-animation-noopable": "_animationMode === \"NoopAnimations\"", "class.tak-expansion-panel-spacing": "_hasSpacing()" }, classAttribute: "tak-expansion-panel" }, providers: [
+        // Provide TakAccordion as undefined to prevent nested expansion panels from registering
         // to the same accordion.
-        { provide: MAT_ACCORDION, useValue: undefined },
-        { provide: MAT_EXPANSION_PANEL, useExisting: MatExpansionPanel },
-    ], queries: [{ propertyName: "_lazyContent", first: true, predicate: MatExpansionPanelContent, descendants: true }], viewQueries: [{ propertyName: "_body", first: true, predicate: ["body"], descendants: true }], exportAs: ["matExpansionPanel"], usesInheritance: true, usesOnChanges: true, ngImport: i0, template: "<ng-content select=\"mat-expansion-panel-header\"></ng-content>\n<div class=\"mat-expansion-panel-content\"\n     role=\"region\"\n     [@bodyExpansion]=\"_getExpandedState()\"\n     (@bodyExpansion.done)=\"_bodyAnimationDone.next($event)\"\n     [attr.aria-labelledby]=\"_headerId\"\n     [id]=\"id\"\n     #body>\n  <div class=\"mat-expansion-panel-body\">\n    <ng-content></ng-content>\n    <ng-template [cdkPortalOutlet]=\"_portal\"></ng-template>\n  </div>\n  <ng-content select=\"mat-action-row\"></ng-content>\n</div>\n", styles: [".mat-expansion-panel{box-sizing:content-box;display:block;margin:0;border-radius:4px;overflow:hidden;transition:margin 225ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);position:relative}.mat-accordion .mat-expansion-panel:not(.mat-expanded),.mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing){border-radius:0}.mat-accordion .mat-expansion-panel:first-of-type{border-top-right-radius:4px;border-top-left-radius:4px}.mat-accordion .mat-expansion-panel:last-of-type{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.cdk-high-contrast-active .mat-expansion-panel{outline:solid 1px}.mat-expansion-panel.ng-animate-disabled,.ng-animate-disabled .mat-expansion-panel,.mat-expansion-panel._mat-animation-noopable{transition:none}.mat-expansion-panel-content{display:flex;flex-direction:column;overflow:visible}.mat-expansion-panel-content[style*=\"visibility: hidden\"] *{visibility:hidden !important}.mat-expansion-panel-body{padding:0 24px 16px}.mat-expansion-panel-spacing{margin:16px 0}.mat-accordion>.mat-expansion-panel-spacing:first-child,.mat-accordion>*:first-child:not(.mat-expansion-panel) .mat-expansion-panel-spacing{margin-top:0}.mat-accordion>.mat-expansion-panel-spacing:last-child,.mat-accordion>*:last-child:not(.mat-expansion-panel) .mat-expansion-panel-spacing{margin-bottom:0}.mat-action-row{border-top-style:solid;border-top-width:1px;display:flex;flex-direction:row;justify-content:flex-end;padding:16px 8px 16px 24px}.mat-action-row .mat-button-base,.mat-action-row .mat-mdc-button-base{margin-left:8px}[dir=rtl] .mat-action-row .mat-button-base,[dir=rtl] .mat-action-row .mat-mdc-button-base{margin-left:0;margin-right:8px}"], dependencies: [{ kind: "directive", type: i2.CdkPortalOutlet, selector: "[cdkPortalOutlet]", inputs: ["cdkPortalOutlet"], outputs: ["attached"], exportAs: ["cdkPortalOutlet"] }], animations: [matExpansionAnimations.bodyExpansion], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatExpansionPanel, decorators: [{
+        { provide: TAK_ACCORDION, useValue: undefined },
+        { provide: TAK_EXPANSION_PANEL, useExisting: TakExpansionPanel },
+    ], queries: [{ propertyName: "_lazyContent", first: true, predicate: TakExpansionPanelContent, descendants: true }], viewQueries: [{ propertyName: "_body", first: true, predicate: ["body"], descendants: true }], exportAs: ["takExpansionPanel"], usesInheritance: true, usesOnChanges: true, ngImport: i0, template: "<ng-content select=\"tak-expansion-panel-header\"></ng-content>\n<div class=\"tak-expansion-panel-content\"\n     role=\"region\"\n     [@bodyExpansion]=\"_getExpandedState()\"\n     (@bodyExpansion.done)=\"_bodyAnimationDone.next($event)\"\n     [attr.aria-labelledby]=\"_headerId\"\n     [id]=\"id\"\n     #body>\n  <div class=\"tak-expansion-panel-body\">\n    <ng-content></ng-content>\n    <ng-template [cdkPortalOutlet]=\"_portal\"></ng-template>\n  </div>\n  <ng-content select=\"tak-action-row\"></ng-content>\n</div>\n", styles: [".tak-expansion-panel{box-sizing:content-box;display:block;margin:0;border-radius:4px;overflow:hidden;transition:margin 225ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);position:relative}.tak-accordion .tak-expansion-panel:not(.tak-expanded),.tak-accordion .tak-expansion-panel:not(.tak-expansion-panel-spacing){border-radius:0}.tak-accordion .tak-expansion-panel:first-of-type{border-top-right-radius:4px;border-top-left-radius:4px}.tak-accordion .tak-expansion-panel:last-of-type{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.cdk-high-contrast-active .tak-expansion-panel{outline:solid 1px}.tak-expansion-panel.ng-animate-disabled,.ng-animate-disabled .tak-expansion-panel,.tak-expansion-panel._tak-animation-noopable{transition:none}.tak-expansion-panel-content{display:flex;flex-direction:column;overflow:visible}.tak-expansion-panel-content[style*=\"visibility: hidden\"] *{visibility:hidden !important}.tak-expansion-panel-body{padding:0 24px 16px}.tak-expansion-panel-spacing{margin:16px 0}.tak-accordion>.tak-expansion-panel-spacing:first-child,.tak-accordion>*:first-child:not(.tak-expansion-panel) .tak-expansion-panel-spacing{margin-top:0}.tak-accordion>.tak-expansion-panel-spacing:last-child,.tak-accordion>*:last-child:not(.tak-expansion-panel) .tak-expansion-panel-spacing{margin-bottom:0}.tak-action-row{border-top-style:solid;border-top-width:1px;display:flex;flex-direction:row;justify-content:flex-end;padding:16px 8px 16px 24px}.tak-action-row .tak-button-base,.tak-action-row .tak-mdc-button-base{margin-left:8px}[dir=rtl] .tak-action-row .tak-button-base,[dir=rtl] .tak-action-row .tak-mdc-button-base{margin-left:0;margin-right:8px}"], dependencies: [{ kind: "directive", type: i2.CdkPortalOutlet, selector: "[cdkPortalOutlet]", inputs: ["cdkPortalOutlet"], outputs: ["attached"], exportAs: ["cdkPortalOutlet"] }], animations: [takExpansionAnimations.bodyExpansion], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakExpansionPanel, decorators: [{
             type: Component,
-            args: [{ selector: 'mat-expansion-panel', exportAs: 'matExpansionPanel', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush, inputs: ['disabled', 'expanded'], outputs: ['opened', 'closed', 'expandedChange'], animations: [matExpansionAnimations.bodyExpansion], providers: [
-                        // Provide MatAccordion as undefined to prevent nested expansion panels from registering
+            args: [{ selector: 'tak-expansion-panel', exportAs: 'takExpansionPanel', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush, inputs: ['disabled', 'expanded'], outputs: ['opened', 'closed', 'expandedChange'], animations: [takExpansionAnimations.bodyExpansion], providers: [
+                        // Provide TakAccordion as undefined to prevent nested expansion panels from registering
                         // to the same accordion.
-                        { provide: MAT_ACCORDION, useValue: undefined },
-                        { provide: MAT_EXPANSION_PANEL, useExisting: MatExpansionPanel },
+                        { provide: TAK_ACCORDION, useValue: undefined },
+                        { provide: TAK_EXPANSION_PANEL, useExisting: TakExpansionPanel },
                     ], host: {
-                        'class': 'mat-expansion-panel',
-                        '[class.mat-expanded]': 'expanded',
-                        '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
-                        '[class.mat-expansion-panel-spacing]': '_hasSpacing()',
-                    }, template: "<ng-content select=\"mat-expansion-panel-header\"></ng-content>\n<div class=\"mat-expansion-panel-content\"\n     role=\"region\"\n     [@bodyExpansion]=\"_getExpandedState()\"\n     (@bodyExpansion.done)=\"_bodyAnimationDone.next($event)\"\n     [attr.aria-labelledby]=\"_headerId\"\n     [id]=\"id\"\n     #body>\n  <div class=\"mat-expansion-panel-body\">\n    <ng-content></ng-content>\n    <ng-template [cdkPortalOutlet]=\"_portal\"></ng-template>\n  </div>\n  <ng-content select=\"mat-action-row\"></ng-content>\n</div>\n", styles: [".mat-expansion-panel{box-sizing:content-box;display:block;margin:0;border-radius:4px;overflow:hidden;transition:margin 225ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);position:relative}.mat-accordion .mat-expansion-panel:not(.mat-expanded),.mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing){border-radius:0}.mat-accordion .mat-expansion-panel:first-of-type{border-top-right-radius:4px;border-top-left-radius:4px}.mat-accordion .mat-expansion-panel:last-of-type{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.cdk-high-contrast-active .mat-expansion-panel{outline:solid 1px}.mat-expansion-panel.ng-animate-disabled,.ng-animate-disabled .mat-expansion-panel,.mat-expansion-panel._mat-animation-noopable{transition:none}.mat-expansion-panel-content{display:flex;flex-direction:column;overflow:visible}.mat-expansion-panel-content[style*=\"visibility: hidden\"] *{visibility:hidden !important}.mat-expansion-panel-body{padding:0 24px 16px}.mat-expansion-panel-spacing{margin:16px 0}.mat-accordion>.mat-expansion-panel-spacing:first-child,.mat-accordion>*:first-child:not(.mat-expansion-panel) .mat-expansion-panel-spacing{margin-top:0}.mat-accordion>.mat-expansion-panel-spacing:last-child,.mat-accordion>*:last-child:not(.mat-expansion-panel) .mat-expansion-panel-spacing{margin-bottom:0}.mat-action-row{border-top-style:solid;border-top-width:1px;display:flex;flex-direction:row;justify-content:flex-end;padding:16px 8px 16px 24px}.mat-action-row .mat-button-base,.mat-action-row .mat-mdc-button-base{margin-left:8px}[dir=rtl] .mat-action-row .mat-button-base,[dir=rtl] .mat-action-row .mat-mdc-button-base{margin-left:0;margin-right:8px}"] }]
+                        'class': 'tak-expansion-panel',
+                        '[class.tak-expanded]': 'expanded',
+                        '[class._tak-animation-noopable]': '_animationMode === "NoopAnimations"',
+                        '[class.tak-expansion-panel-spacing]': '_hasSpacing()',
+                    }, template: "<ng-content select=\"tak-expansion-panel-header\"></ng-content>\n<div class=\"tak-expansion-panel-content\"\n     role=\"region\"\n     [@bodyExpansion]=\"_getExpandedState()\"\n     (@bodyExpansion.done)=\"_bodyAnimationDone.next($event)\"\n     [attr.aria-labelledby]=\"_headerId\"\n     [id]=\"id\"\n     #body>\n  <div class=\"tak-expansion-panel-body\">\n    <ng-content></ng-content>\n    <ng-template [cdkPortalOutlet]=\"_portal\"></ng-template>\n  </div>\n  <ng-content select=\"tak-action-row\"></ng-content>\n</div>\n", styles: [".tak-expansion-panel{box-sizing:content-box;display:block;margin:0;border-radius:4px;overflow:hidden;transition:margin 225ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);position:relative}.tak-accordion .tak-expansion-panel:not(.tak-expanded),.tak-accordion .tak-expansion-panel:not(.tak-expansion-panel-spacing){border-radius:0}.tak-accordion .tak-expansion-panel:first-of-type{border-top-right-radius:4px;border-top-left-radius:4px}.tak-accordion .tak-expansion-panel:last-of-type{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.cdk-high-contrast-active .tak-expansion-panel{outline:solid 1px}.tak-expansion-panel.ng-animate-disabled,.ng-animate-disabled .tak-expansion-panel,.tak-expansion-panel._tak-animation-noopable{transition:none}.tak-expansion-panel-content{display:flex;flex-direction:column;overflow:visible}.tak-expansion-panel-content[style*=\"visibility: hidden\"] *{visibility:hidden !important}.tak-expansion-panel-body{padding:0 24px 16px}.tak-expansion-panel-spacing{margin:16px 0}.tak-accordion>.tak-expansion-panel-spacing:first-child,.tak-accordion>*:first-child:not(.tak-expansion-panel) .tak-expansion-panel-spacing{margin-top:0}.tak-accordion>.tak-expansion-panel-spacing:last-child,.tak-accordion>*:last-child:not(.tak-expansion-panel) .tak-expansion-panel-spacing{margin-bottom:0}.tak-action-row{border-top-style:solid;border-top-width:1px;display:flex;flex-direction:row;justify-content:flex-end;padding:16px 8px 16px 24px}.tak-action-row .tak-button-base,.tak-action-row .tak-mdc-button-base{margin-left:8px}[dir=rtl] .tak-action-row .tak-button-base,[dir=rtl] .tak-action-row .tak-mdc-button-base{margin-left:0;margin-right:8px}"] }]
         }], ctorParameters: function () { return [{ type: undefined, decorators: [{
                     type: Optional
                 }, {
                     type: SkipSelf
                 }, {
                     type: Inject,
-                    args: [MAT_ACCORDION]
+                    args: [TAK_ACCORDION]
                 }] }, { type: i0.ChangeDetectorRef }, { type: i1.UniqueSelectionDispatcher }, { type: i0.ViewContainerRef }, { type: undefined, decorators: [{
                     type: Inject,
                     args: [DOCUMENT]
@@ -165,7 +165,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
                     args: [ANIMATION_MODULE_TYPE]
                 }] }, { type: undefined, decorators: [{
                     type: Inject,
-                    args: [MAT_EXPANSION_PANEL_DEFAULT_OPTIONS]
+                    args: [TAK_EXPANSION_PANEL_DEFAULT_OPTIONS]
                 }, {
                     type: Optional
                 }] }]; }, propDecorators: { hideToggle: [{
@@ -178,24 +178,24 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
                 type: Output
             }], _lazyContent: [{
                 type: ContentChild,
-                args: [MatExpansionPanelContent]
+                args: [TakExpansionPanelContent]
             }], _body: [{
                 type: ViewChild,
                 args: ['body']
             }] } });
 /**
- * Actions of a `<mat-expansion-panel>`.
+ * Actions of a `<tak-expansion-panel>`.
  */
-export class MatExpansionPanelActionRow {
+export class TakExpansionPanelActionRow {
 }
-MatExpansionPanelActionRow.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatExpansionPanelActionRow, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatExpansionPanelActionRow.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatExpansionPanelActionRow, selector: "mat-action-row", host: { classAttribute: "mat-action-row" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatExpansionPanelActionRow, decorators: [{
+TakExpansionPanelActionRow.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakExpansionPanelActionRow, deps: [], target: i0.ɵɵFactoryTarget.Directive });
+TakExpansionPanelActionRow.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: TakExpansionPanelActionRow, selector: "tak-action-row", host: { classAttribute: "tak-action-row" }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakExpansionPanelActionRow, decorators: [{
             type: Directive,
             args: [{
-                    selector: 'mat-action-row',
+                    selector: 'tak-action-row',
                     host: {
-                        class: 'mat-action-row',
+                        class: 'tak-action-row',
                     },
                 }]
         }] });

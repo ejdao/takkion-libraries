@@ -1,11 +1,20 @@
 import * as i0 from '@angular/core';
-import { Directive, Input, Component, ViewEncapsulation, ChangeDetectionStrategy, Optional, Inject, NgModule } from '@angular/core';
+import {
+  Directive,
+  Input,
+  Component,
+  ViewEncapsulation,
+  ChangeDetectionStrategy,
+  Optional,
+  Inject,
+  NgModule,
+} from '@angular/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import { MatCommonModule } from '@takkion/ng-material/core';
+import { TakCommonModule } from '@takkion/ng-material/core';
 
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -14,321 +23,743 @@ import { MatCommonModule } from '@takkion/ng-material/core';
  * Content of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
-class MatCardContent {
-}
-MatCardContent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardContent, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardContent.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardContent, selector: "mat-card-content, [mat-card-content], [matCardContent]", host: { classAttribute: "mat-card-content" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardContent, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: 'mat-card-content, [mat-card-content], [matCardContent]',
-                    host: { 'class': 'mat-card-content' },
-                }]
-        }] });
+class TakCardContent {}
+TakCardContent.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardContent,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardContent.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardContent,
+  selector: 'tak-card-content, [tak-card-content], [takCardContent]',
+  host: { classAttribute: 'tak-card-content' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardContent,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: 'tak-card-content, [tak-card-content], [takCardContent]',
+          host: { class: 'tak-card-content' },
+        },
+      ],
+    },
+  ],
+});
 /**
  * Title of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
-class MatCardTitle {
-}
-MatCardTitle.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardTitle, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardTitle.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardTitle, selector: "mat-card-title, [mat-card-title], [matCardTitle]", host: { classAttribute: "mat-card-title" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardTitle, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: `mat-card-title, [mat-card-title], [matCardTitle]`,
-                    host: {
-                        'class': 'mat-card-title',
-                    },
-                }]
-        }] });
+class TakCardTitle {}
+TakCardTitle.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardTitle,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardTitle.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardTitle,
+  selector: 'tak-card-title, [tak-card-title], [takCardTitle]',
+  host: { classAttribute: 'tak-card-title' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardTitle,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: `tak-card-title, [tak-card-title], [takCardTitle]`,
+          host: {
+            class: 'tak-card-title',
+          },
+        },
+      ],
+    },
+  ],
+});
 /**
  * Sub-title of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
-class MatCardSubtitle {
-}
-MatCardSubtitle.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardSubtitle, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardSubtitle.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardSubtitle, selector: "mat-card-subtitle, [mat-card-subtitle], [matCardSubtitle]", host: { classAttribute: "mat-card-subtitle" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardSubtitle, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: `mat-card-subtitle, [mat-card-subtitle], [matCardSubtitle]`,
-                    host: {
-                        'class': 'mat-card-subtitle',
-                    },
-                }]
-        }] });
+class TakCardSubtitle {}
+TakCardSubtitle.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardSubtitle,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardSubtitle.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardSubtitle,
+  selector: 'tak-card-subtitle, [tak-card-subtitle], [takCardSubtitle]',
+  host: { classAttribute: 'tak-card-subtitle' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardSubtitle,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: `tak-card-subtitle, [tak-card-subtitle], [takCardSubtitle]`,
+          host: {
+            class: 'tak-card-subtitle',
+          },
+        },
+      ],
+    },
+  ],
+});
 /**
  * Action section of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
-class MatCardActions {
-    constructor() {
-        /** Position of the actions inside the card. */
-        this.align = 'start';
-    }
+class TakCardActions {
+  constructor() {
+    /** Position of the actions inside the card. */
+    this.align = 'start';
+  }
 }
-MatCardActions.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardActions, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardActions.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardActions, selector: "mat-card-actions", inputs: { align: "align" }, host: { properties: { "class.mat-card-actions-align-end": "align === \"end\"" }, classAttribute: "mat-card-actions" }, exportAs: ["matCardActions"], ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardActions, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: 'mat-card-actions',
-                    exportAs: 'matCardActions',
-                    host: {
-                        'class': 'mat-card-actions',
-                        '[class.mat-card-actions-align-end]': 'align === "end"',
-                    },
-                }]
-        }], propDecorators: { align: [{
-                type: Input
-            }] } });
+TakCardActions.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardActions,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardActions.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardActions,
+  selector: 'tak-card-actions',
+  inputs: { align: 'align' },
+  host: {
+    properties: { 'class.tak-card-actions-align-end': 'align === "end"' },
+    classAttribute: 'tak-card-actions',
+  },
+  exportAs: ['takCardActions'],
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardActions,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: 'tak-card-actions',
+          exportAs: 'takCardActions',
+          host: {
+            class: 'tak-card-actions',
+            '[class.tak-card-actions-align-end]': 'align === "end"',
+          },
+        },
+      ],
+    },
+  ],
+  propDecorators: {
+    align: [
+      {
+        type: Input,
+      },
+    ],
+  },
+});
 /**
  * Footer of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
-class MatCardFooter {
-}
-MatCardFooter.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardFooter, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardFooter.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardFooter, selector: "mat-card-footer", host: { classAttribute: "mat-card-footer" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardFooter, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: 'mat-card-footer',
-                    host: { 'class': 'mat-card-footer' },
-                }]
-        }] });
+class TakCardFooter {}
+TakCardFooter.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardFooter,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardFooter.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardFooter,
+  selector: 'tak-card-footer',
+  host: { classAttribute: 'tak-card-footer' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardFooter,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: 'tak-card-footer',
+          host: { class: 'tak-card-footer' },
+        },
+      ],
+    },
+  ],
+});
 /**
- * Image used in a card, needed to add the mat- CSS styling.
+ * Image used in a card, needed to add the tak- CSS styling.
  * @docs-private
  */
-class MatCardImage {
-}
-MatCardImage.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardImage, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardImage.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardImage, selector: "[mat-card-image], [matCardImage]", host: { classAttribute: "mat-card-image" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardImage, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: '[mat-card-image], [matCardImage]',
-                    host: { 'class': 'mat-card-image' },
-                }]
-        }] });
+class TakCardImage {}
+TakCardImage.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardImage,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardImage.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardImage,
+  selector: '[tak-card-image], [takCardImage]',
+  host: { classAttribute: 'tak-card-image' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardImage,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: '[tak-card-image], [takCardImage]',
+          host: { class: 'tak-card-image' },
+        },
+      ],
+    },
+  ],
+});
 /**
- * Image used in a card, needed to add the mat- CSS styling.
+ * Image used in a card, needed to add the tak- CSS styling.
  * @docs-private
  */
-class MatCardSmImage {
-}
-MatCardSmImage.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardSmImage, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardSmImage.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardSmImage, selector: "[mat-card-sm-image], [matCardImageSmall]", host: { classAttribute: "mat-card-sm-image" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardSmImage, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: '[mat-card-sm-image], [matCardImageSmall]',
-                    host: { 'class': 'mat-card-sm-image' },
-                }]
-        }] });
+class TakCardSmImage {}
+TakCardSmImage.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardSmImage,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardSmImage.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardSmImage,
+  selector: '[tak-card-sm-image], [takCardImageSmall]',
+  host: { classAttribute: 'tak-card-sm-image' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardSmImage,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: '[tak-card-sm-image], [takCardImageSmall]',
+          host: { class: 'tak-card-sm-image' },
+        },
+      ],
+    },
+  ],
+});
 /**
- * Image used in a card, needed to add the mat- CSS styling.
+ * Image used in a card, needed to add the tak- CSS styling.
  * @docs-private
  */
-class MatCardMdImage {
-}
-MatCardMdImage.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardMdImage, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardMdImage.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardMdImage, selector: "[mat-card-md-image], [matCardImageMedium]", host: { classAttribute: "mat-card-md-image" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardMdImage, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: '[mat-card-md-image], [matCardImageMedium]',
-                    host: { 'class': 'mat-card-md-image' },
-                }]
-        }] });
+class TakCardMdImage {}
+TakCardMdImage.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardMdImage,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardMdImage.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardMdImage,
+  selector: '[tak-card-md-image], [takCardImageMedium]',
+  host: { classAttribute: 'tak-card-md-image' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardMdImage,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: '[tak-card-md-image], [takCardImageMedium]',
+          host: { class: 'tak-card-md-image' },
+        },
+      ],
+    },
+  ],
+});
 /**
- * Image used in a card, needed to add the mat- CSS styling.
+ * Image used in a card, needed to add the tak- CSS styling.
  * @docs-private
  */
-class MatCardLgImage {
-}
-MatCardLgImage.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardLgImage, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardLgImage.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardLgImage, selector: "[mat-card-lg-image], [matCardImageLarge]", host: { classAttribute: "mat-card-lg-image" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardLgImage, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: '[mat-card-lg-image], [matCardImageLarge]',
-                    host: { 'class': 'mat-card-lg-image' },
-                }]
-        }] });
+class TakCardLgImage {}
+TakCardLgImage.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardLgImage,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardLgImage.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardLgImage,
+  selector: '[tak-card-lg-image], [takCardImageLarge]',
+  host: { classAttribute: 'tak-card-lg-image' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardLgImage,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: '[tak-card-lg-image], [takCardImageLarge]',
+          host: { class: 'tak-card-lg-image' },
+        },
+      ],
+    },
+  ],
+});
 /**
- * Large image used in a card, needed to add the mat- CSS styling.
+ * Large image used in a card, needed to add the tak- CSS styling.
  * @docs-private
  */
-class MatCardXlImage {
-}
-MatCardXlImage.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardXlImage, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardXlImage.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardXlImage, selector: "[mat-card-xl-image], [matCardImageXLarge]", host: { classAttribute: "mat-card-xl-image" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardXlImage, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: '[mat-card-xl-image], [matCardImageXLarge]',
-                    host: { 'class': 'mat-card-xl-image' },
-                }]
-        }] });
+class TakCardXlImage {}
+TakCardXlImage.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardXlImage,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardXlImage.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardXlImage,
+  selector: '[tak-card-xl-image], [takCardImageXLarge]',
+  host: { classAttribute: 'tak-card-xl-image' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardXlImage,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: '[tak-card-xl-image], [takCardImageXLarge]',
+          host: { class: 'tak-card-xl-image' },
+        },
+      ],
+    },
+  ],
+});
 /**
- * Avatar image used in a card, needed to add the mat- CSS styling.
+ * Avatar image used in a card, needed to add the tak- CSS styling.
  * @docs-private
  */
-class MatCardAvatar {
-}
-MatCardAvatar.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardAvatar, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-MatCardAvatar.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.0", type: MatCardAvatar, selector: "[mat-card-avatar], [matCardAvatar]", host: { classAttribute: "mat-card-avatar" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardAvatar, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: '[mat-card-avatar], [matCardAvatar]',
-                    host: { 'class': 'mat-card-avatar' },
-                }]
-        }] });
+class TakCardAvatar {}
+TakCardAvatar.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardAvatar,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Directive,
+});
+TakCardAvatar.ɵdir = i0.ɵɵngDeclareDirective({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardAvatar,
+  selector: '[tak-card-avatar], [takCardAvatar]',
+  host: { classAttribute: 'tak-card-avatar' },
+  ngImport: i0,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardAvatar,
+  decorators: [
+    {
+      type: Directive,
+      args: [
+        {
+          selector: '[tak-card-avatar], [takCardAvatar]',
+          host: { class: 'tak-card-avatar' },
+        },
+      ],
+    },
+  ],
+});
 /**
  * A basic content container component that adds the styles of a Material design card.
  *
  * While this component can be used alone, it also provides a number
  * of preset styles for common card sections, including:
- * - mat-card-title
- * - mat-card-subtitle
- * - mat-card-content
- * - mat-card-actions
- * - mat-card-footer
+ * - tak-card-title
+ * - tak-card-subtitle
+ * - tak-card-content
+ * - tak-card-actions
+ * - tak-card-footer
  */
-class MatCard {
-    // @breaking-change 9.0.0 `_animationMode` parameter to be made required.
-    constructor(_animationMode) {
-        this._animationMode = _animationMode;
-    }
+class TakCard {
+  // @breaking-change 9.0.0 `_animationMode` parameter to be made required.
+  constructor(_animationMode) {
+    this._animationMode = _animationMode;
+  }
 }
-MatCard.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCard, deps: [{ token: ANIMATION_MODULE_TYPE, optional: true }], target: i0.ɵɵFactoryTarget.Component });
-MatCard.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: MatCard, selector: "mat-card", host: { properties: { "class._mat-animation-noopable": "_animationMode === \"NoopAnimations\"" }, classAttribute: "mat-card mat-focus-indicator" }, exportAs: ["matCard"], ngImport: i0, template: "<ng-content></ng-content>\n<ng-content select=\"mat-card-footer\"></ng-content>\n", styles: [".mat-card{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);display:block;position:relative;padding:16px;border-radius:4px}.mat-card._mat-animation-noopable{transition:none !important;animation:none !important}.mat-card>.mat-divider-horizontal{position:absolute;left:0;width:100%}[dir=rtl] .mat-card>.mat-divider-horizontal{left:auto;right:0}.mat-card>.mat-divider-horizontal.mat-divider-inset{position:static;margin:0}[dir=rtl] .mat-card>.mat-divider-horizontal.mat-divider-inset{margin-right:0}.cdk-high-contrast-active .mat-card{outline:solid 1px}.mat-card-actions,.mat-card-subtitle,.mat-card-content{display:block;margin-bottom:16px}.mat-card-title{display:block;margin-bottom:8px}.mat-card-actions{margin-left:-8px;margin-right:-8px;padding:8px 0}.mat-card-actions-align-end{display:flex;justify-content:flex-end}.mat-card-image{width:calc(100% + 32px);margin:0 -16px 16px -16px;display:block;overflow:hidden}.mat-card-image img{width:100%}.mat-card-footer{display:block;margin:0 -16px -16px -16px}.mat-card-actions .mat-button,.mat-card-actions .mat-raised-button,.mat-card-actions .mat-stroked-button{margin:0 8px}.mat-card-header{display:flex;flex-direction:row}.mat-card-header .mat-card-title{margin-bottom:12px}.mat-card-header-text{margin:0 16px}.mat-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;object-fit:cover}.mat-card-title-group{display:flex;justify-content:space-between}.mat-card-sm-image{width:80px;height:80px}.mat-card-md-image{width:112px;height:112px}.mat-card-lg-image{width:152px;height:152px}.mat-card-xl-image{width:240px;height:240px;margin:-8px}.mat-card-title-group>.mat-card-xl-image{margin:-8px 0 8px}@media(max-width: 599px){.mat-card-title-group{margin:0}.mat-card-xl-image{margin-left:0;margin-right:0}}.mat-card>:first-child,.mat-card-content>:first-child{margin-top:0}.mat-card>:last-child:not(.mat-card-footer),.mat-card-content>:last-child:not(.mat-card-footer){margin-bottom:0}.mat-card-image:first-child{margin-top:-16px;border-top-left-radius:inherit;border-top-right-radius:inherit}.mat-card>.mat-card-actions:last-child{margin-bottom:-8px;padding-bottom:0}.mat-card-actions:not(.mat-card-actions-align-end) .mat-button:first-child,.mat-card-actions:not(.mat-card-actions-align-end) .mat-raised-button:first-child,.mat-card-actions:not(.mat-card-actions-align-end) .mat-stroked-button:first-child{margin-left:0;margin-right:0}.mat-card-actions-align-end .mat-button:last-child,.mat-card-actions-align-end .mat-raised-button:last-child,.mat-card-actions-align-end .mat-stroked-button:last-child{margin-left:0;margin-right:0}.mat-card-title:not(:first-child),.mat-card-subtitle:not(:first-child){margin-top:-4px}.mat-card-header .mat-card-subtitle:not(:first-child){margin-top:-8px}.mat-card>.mat-card-xl-image:first-child{margin-top:-8px}.mat-card>.mat-card-xl-image:last-child{margin-bottom:-8px}"], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCard, decorators: [{
-            type: Component,
-            args: [{ selector: 'mat-card', exportAs: 'matCard', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush, host: {
-                        'class': 'mat-card mat-focus-indicator',
-                        '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
-                    }, template: "<ng-content></ng-content>\n<ng-content select=\"mat-card-footer\"></ng-content>\n", styles: [".mat-card{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);display:block;position:relative;padding:16px;border-radius:4px}.mat-card._mat-animation-noopable{transition:none !important;animation:none !important}.mat-card>.mat-divider-horizontal{position:absolute;left:0;width:100%}[dir=rtl] .mat-card>.mat-divider-horizontal{left:auto;right:0}.mat-card>.mat-divider-horizontal.mat-divider-inset{position:static;margin:0}[dir=rtl] .mat-card>.mat-divider-horizontal.mat-divider-inset{margin-right:0}.cdk-high-contrast-active .mat-card{outline:solid 1px}.mat-card-actions,.mat-card-subtitle,.mat-card-content{display:block;margin-bottom:16px}.mat-card-title{display:block;margin-bottom:8px}.mat-card-actions{margin-left:-8px;margin-right:-8px;padding:8px 0}.mat-card-actions-align-end{display:flex;justify-content:flex-end}.mat-card-image{width:calc(100% + 32px);margin:0 -16px 16px -16px;display:block;overflow:hidden}.mat-card-image img{width:100%}.mat-card-footer{display:block;margin:0 -16px -16px -16px}.mat-card-actions .mat-button,.mat-card-actions .mat-raised-button,.mat-card-actions .mat-stroked-button{margin:0 8px}.mat-card-header{display:flex;flex-direction:row}.mat-card-header .mat-card-title{margin-bottom:12px}.mat-card-header-text{margin:0 16px}.mat-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;object-fit:cover}.mat-card-title-group{display:flex;justify-content:space-between}.mat-card-sm-image{width:80px;height:80px}.mat-card-md-image{width:112px;height:112px}.mat-card-lg-image{width:152px;height:152px}.mat-card-xl-image{width:240px;height:240px;margin:-8px}.mat-card-title-group>.mat-card-xl-image{margin:-8px 0 8px}@media(max-width: 599px){.mat-card-title-group{margin:0}.mat-card-xl-image{margin-left:0;margin-right:0}}.mat-card>:first-child,.mat-card-content>:first-child{margin-top:0}.mat-card>:last-child:not(.mat-card-footer),.mat-card-content>:last-child:not(.mat-card-footer){margin-bottom:0}.mat-card-image:first-child{margin-top:-16px;border-top-left-radius:inherit;border-top-right-radius:inherit}.mat-card>.mat-card-actions:last-child{margin-bottom:-8px;padding-bottom:0}.mat-card-actions:not(.mat-card-actions-align-end) .mat-button:first-child,.mat-card-actions:not(.mat-card-actions-align-end) .mat-raised-button:first-child,.mat-card-actions:not(.mat-card-actions-align-end) .mat-stroked-button:first-child{margin-left:0;margin-right:0}.mat-card-actions-align-end .mat-button:last-child,.mat-card-actions-align-end .mat-raised-button:last-child,.mat-card-actions-align-end .mat-stroked-button:last-child{margin-left:0;margin-right:0}.mat-card-title:not(:first-child),.mat-card-subtitle:not(:first-child){margin-top:-4px}.mat-card-header .mat-card-subtitle:not(:first-child){margin-top:-8px}.mat-card>.mat-card-xl-image:first-child{margin-top:-8px}.mat-card>.mat-card-xl-image:last-child{margin-bottom:-8px}"] }]
-        }], ctorParameters: function () { return [{ type: undefined, decorators: [{
-                    type: Optional
-                }, {
-                    type: Inject,
-                    args: [ANIMATION_MODULE_TYPE]
-                }] }]; } });
+TakCard.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCard,
+  deps: [{ token: ANIMATION_MODULE_TYPE, optional: true }],
+  target: i0.ɵɵFactoryTarget.Component,
+});
+TakCard.ɵcmp = i0.ɵɵngDeclareComponent({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCard,
+  selector: 'tak-card',
+  host: {
+    properties: { 'class._tak-animation-noopable': '_animationMode === "NoopAnimations"' },
+    classAttribute: 'tak-card tak-focus-indicator',
+  },
+  exportAs: ['takCard'],
+  ngImport: i0,
+  template: '<ng-content></ng-content>\n<ng-content select="tak-card-footer"></ng-content>\n',
+  styles: [
+    '.tak-card{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);display:block;position:relative;padding:16px;border-radius:4px}.tak-card._tak-animation-noopable{transition:none !important;animation:none !important}.tak-card>.tak-divider-horizontal{position:absolute;left:0;width:100%}[dir=rtl] .tak-card>.tak-divider-horizontal{left:auto;right:0}.tak-card>.tak-divider-horizontal.tak-divider-inset{position:static;margin:0}[dir=rtl] .tak-card>.tak-divider-horizontal.tak-divider-inset{margin-right:0}.cdk-high-contrast-active .tak-card{outline:solid 1px}.tak-card-actions,.tak-card-subtitle,.tak-card-content{display:block;margin-bottom:16px}.tak-card-title{display:block;margin-bottom:8px}.tak-card-actions{margin-left:-8px;margin-right:-8px;padding:8px 0}.tak-card-actions-align-end{display:flex;justify-content:flex-end}.tak-card-image{width:calc(100% + 32px);margin:0 -16px 16px -16px;display:block;overflow:hidden}.tak-card-image img{width:100%}.tak-card-footer{display:block;margin:0 -16px -16px -16px}.tak-card-actions .tak-button,.tak-card-actions .tak-raised-button,.tak-card-actions .tak-stroked-button{margin:0 8px}.tak-card-header{display:flex;flex-direction:row}.tak-card-header .tak-card-title{margin-bottom:12px}.tak-card-header-text{margin:0 16px}.tak-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;object-fit:cover}.tak-card-title-group{display:flex;justify-content:space-between}.tak-card-sm-image{width:80px;height:80px}.tak-card-md-image{width:112px;height:112px}.tak-card-lg-image{width:152px;height:152px}.tak-card-xl-image{width:240px;height:240px;margin:-8px}.tak-card-title-group>.tak-card-xl-image{margin:-8px 0 8px}@media(max-width: 599px){.tak-card-title-group{margin:0}.tak-card-xl-image{margin-left:0;margin-right:0}}.tak-card>:first-child,.tak-card-content>:first-child{margin-top:0}.tak-card>:last-child:not(.tak-card-footer),.tak-card-content>:last-child:not(.tak-card-footer){margin-bottom:0}.tak-card-image:first-child{margin-top:-16px;border-top-left-radius:inherit;border-top-right-radius:inherit}.tak-card>.tak-card-actions:last-child{margin-bottom:-8px;padding-bottom:0}.tak-card-actions:not(.tak-card-actions-align-end) .tak-button:first-child,.tak-card-actions:not(.tak-card-actions-align-end) .tak-raised-button:first-child,.tak-card-actions:not(.tak-card-actions-align-end) .tak-stroked-button:first-child{margin-left:0;margin-right:0}.tak-card-actions-align-end .tak-button:last-child,.tak-card-actions-align-end .tak-raised-button:last-child,.tak-card-actions-align-end .tak-stroked-button:last-child{margin-left:0;margin-right:0}.tak-card-title:not(:first-child),.tak-card-subtitle:not(:first-child){margin-top:-4px}.tak-card-header .tak-card-subtitle:not(:first-child){margin-top:-8px}.tak-card>.tak-card-xl-image:first-child{margin-top:-8px}.tak-card>.tak-card-xl-image:last-child{margin-bottom:-8px}',
+  ],
+  changeDetection: i0.ChangeDetectionStrategy.OnPush,
+  encapsulation: i0.ViewEncapsulation.None,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCard,
+  decorators: [
+    {
+      type: Component,
+      args: [
+        {
+          selector: 'tak-card',
+          exportAs: 'takCard',
+          encapsulation: ViewEncapsulation.None,
+          changeDetection: ChangeDetectionStrategy.OnPush,
+          host: {
+            class: 'tak-card tak-focus-indicator',
+            '[class._tak-animation-noopable]': '_animationMode === "NoopAnimations"',
+          },
+          template:
+            '<ng-content></ng-content>\n<ng-content select="tak-card-footer"></ng-content>\n',
+          styles: [
+            '.tak-card{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);display:block;position:relative;padding:16px;border-radius:4px}.tak-card._tak-animation-noopable{transition:none !important;animation:none !important}.tak-card>.tak-divider-horizontal{position:absolute;left:0;width:100%}[dir=rtl] .tak-card>.tak-divider-horizontal{left:auto;right:0}.tak-card>.tak-divider-horizontal.tak-divider-inset{position:static;margin:0}[dir=rtl] .tak-card>.tak-divider-horizontal.tak-divider-inset{margin-right:0}.cdk-high-contrast-active .tak-card{outline:solid 1px}.tak-card-actions,.tak-card-subtitle,.tak-card-content{display:block;margin-bottom:16px}.tak-card-title{display:block;margin-bottom:8px}.tak-card-actions{margin-left:-8px;margin-right:-8px;padding:8px 0}.tak-card-actions-align-end{display:flex;justify-content:flex-end}.tak-card-image{width:calc(100% + 32px);margin:0 -16px 16px -16px;display:block;overflow:hidden}.tak-card-image img{width:100%}.tak-card-footer{display:block;margin:0 -16px -16px -16px}.tak-card-actions .tak-button,.tak-card-actions .tak-raised-button,.tak-card-actions .tak-stroked-button{margin:0 8px}.tak-card-header{display:flex;flex-direction:row}.tak-card-header .tak-card-title{margin-bottom:12px}.tak-card-header-text{margin:0 16px}.tak-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;object-fit:cover}.tak-card-title-group{display:flex;justify-content:space-between}.tak-card-sm-image{width:80px;height:80px}.tak-card-md-image{width:112px;height:112px}.tak-card-lg-image{width:152px;height:152px}.tak-card-xl-image{width:240px;height:240px;margin:-8px}.tak-card-title-group>.tak-card-xl-image{margin:-8px 0 8px}@media(max-width: 599px){.tak-card-title-group{margin:0}.tak-card-xl-image{margin-left:0;margin-right:0}}.tak-card>:first-child,.tak-card-content>:first-child{margin-top:0}.tak-card>:last-child:not(.tak-card-footer),.tak-card-content>:last-child:not(.tak-card-footer){margin-bottom:0}.tak-card-image:first-child{margin-top:-16px;border-top-left-radius:inherit;border-top-right-radius:inherit}.tak-card>.tak-card-actions:last-child{margin-bottom:-8px;padding-bottom:0}.tak-card-actions:not(.tak-card-actions-align-end) .tak-button:first-child,.tak-card-actions:not(.tak-card-actions-align-end) .tak-raised-button:first-child,.tak-card-actions:not(.tak-card-actions-align-end) .tak-stroked-button:first-child{margin-left:0;margin-right:0}.tak-card-actions-align-end .tak-button:last-child,.tak-card-actions-align-end .tak-raised-button:last-child,.tak-card-actions-align-end .tak-stroked-button:last-child{margin-left:0;margin-right:0}.tak-card-title:not(:first-child),.tak-card-subtitle:not(:first-child){margin-top:-4px}.tak-card-header .tak-card-subtitle:not(:first-child){margin-top:-8px}.tak-card>.tak-card-xl-image:first-child{margin-top:-8px}.tak-card>.tak-card-xl-image:last-child{margin-bottom:-8px}',
+          ],
+        },
+      ],
+    },
+  ],
+  ctorParameters: function () {
+    return [
+      {
+        type: undefined,
+        decorators: [
+          {
+            type: Optional,
+          },
+          {
+            type: Inject,
+            args: [ANIMATION_MODULE_TYPE],
+          },
+        ],
+      },
+    ];
+  },
+});
 /**
- * Component intended to be used within the `<mat-card>` component. It adds styles for a
+ * Component intended to be used within the `<tak-card>` component. It adds styles for a
  * preset header section (i.e. a title, subtitle, and avatar layout).
  * @docs-private
  */
-class MatCardHeader {
-}
-MatCardHeader.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardHeader, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MatCardHeader.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: MatCardHeader, selector: "mat-card-header", host: { classAttribute: "mat-card-header" }, ngImport: i0, template: "<ng-content select=\"[mat-card-avatar], [matCardAvatar]\"></ng-content>\n<div class=\"mat-card-header-text\">\n  <ng-content\n      select=\"mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]\"></ng-content>\n</div>\n<ng-content></ng-content>\n", changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardHeader, decorators: [{
-            type: Component,
-            args: [{ selector: 'mat-card-header', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush, host: { 'class': 'mat-card-header' }, template: "<ng-content select=\"[mat-card-avatar], [matCardAvatar]\"></ng-content>\n<div class=\"mat-card-header-text\">\n  <ng-content\n      select=\"mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]\"></ng-content>\n</div>\n<ng-content></ng-content>\n" }]
-        }] });
+class TakCardHeader {}
+TakCardHeader.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardHeader,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Component,
+});
+TakCardHeader.ɵcmp = i0.ɵɵngDeclareComponent({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardHeader,
+  selector: 'tak-card-header',
+  host: { classAttribute: 'tak-card-header' },
+  ngImport: i0,
+  template:
+    '<ng-content select="[tak-card-avatar], [takCardAvatar]"></ng-content>\n<div class="tak-card-header-text">\n  <ng-content\n      select="tak-card-title, tak-card-subtitle,\n      [tak-card-title], [tak-card-subtitle],\n      [takCardTitle], [takCardSubtitle]"></ng-content>\n</div>\n<ng-content></ng-content>\n',
+  changeDetection: i0.ChangeDetectionStrategy.OnPush,
+  encapsulation: i0.ViewEncapsulation.None,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardHeader,
+  decorators: [
+    {
+      type: Component,
+      args: [
+        {
+          selector: 'tak-card-header',
+          encapsulation: ViewEncapsulation.None,
+          changeDetection: ChangeDetectionStrategy.OnPush,
+          host: { class: 'tak-card-header' },
+          template:
+            '<ng-content select="[tak-card-avatar], [takCardAvatar]"></ng-content>\n<div class="tak-card-header-text">\n  <ng-content\n      select="tak-card-title, tak-card-subtitle,\n      [tak-card-title], [tak-card-subtitle],\n      [takCardTitle], [takCardSubtitle]"></ng-content>\n</div>\n<ng-content></ng-content>\n',
+        },
+      ],
+    },
+  ],
+});
 /**
- * Component intended to be used within the `<mat-card>` component. It adds styles for a preset
+ * Component intended to be used within the `<tak-card>` component. It adds styles for a preset
  * layout that groups an image with a title section.
  * @docs-private
  */
-class MatCardTitleGroup {
-}
-MatCardTitleGroup.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardTitleGroup, deps: [], target: i0.ɵɵFactoryTarget.Component });
-MatCardTitleGroup.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: MatCardTitleGroup, selector: "mat-card-title-group", host: { classAttribute: "mat-card-title-group" }, ngImport: i0, template: "<div>\n  <ng-content\n      select=\"mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]\"></ng-content>\n</div>\n<ng-content select=\"img\"></ng-content>\n<ng-content></ng-content>\n", changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardTitleGroup, decorators: [{
-            type: Component,
-            args: [{ selector: 'mat-card-title-group', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush, host: { 'class': 'mat-card-title-group' }, template: "<div>\n  <ng-content\n      select=\"mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]\"></ng-content>\n</div>\n<ng-content select=\"img\"></ng-content>\n<ng-content></ng-content>\n" }]
-        }] });
+class TakCardTitleGroup {}
+TakCardTitleGroup.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardTitleGroup,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.Component,
+});
+TakCardTitleGroup.ɵcmp = i0.ɵɵngDeclareComponent({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  type: TakCardTitleGroup,
+  selector: 'tak-card-title-group',
+  host: { classAttribute: 'tak-card-title-group' },
+  ngImport: i0,
+  template:
+    '<div>\n  <ng-content\n      select="tak-card-title, tak-card-subtitle,\n      [tak-card-title], [tak-card-subtitle],\n      [takCardTitle], [takCardSubtitle]"></ng-content>\n</div>\n<ng-content select="img"></ng-content>\n<ng-content></ng-content>\n',
+  changeDetection: i0.ChangeDetectionStrategy.OnPush,
+  encapsulation: i0.ViewEncapsulation.None,
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardTitleGroup,
+  decorators: [
+    {
+      type: Component,
+      args: [
+        {
+          selector: 'tak-card-title-group',
+          encapsulation: ViewEncapsulation.None,
+          changeDetection: ChangeDetectionStrategy.OnPush,
+          host: { class: 'tak-card-title-group' },
+          template:
+            '<div>\n  <ng-content\n      select="tak-card-title, tak-card-subtitle,\n      [tak-card-title], [tak-card-subtitle],\n      [takCardTitle], [takCardSubtitle]"></ng-content>\n</div>\n<ng-content select="img"></ng-content>\n<ng-content></ng-content>\n',
+        },
+      ],
+    },
+  ],
+});
 
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-class MatCardModule {
-}
-MatCardModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-MatCardModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "14.2.0", ngImport: i0, type: MatCardModule, declarations: [MatCard,
-        MatCardHeader,
-        MatCardTitleGroup,
-        MatCardContent,
-        MatCardTitle,
-        MatCardSubtitle,
-        MatCardActions,
-        MatCardFooter,
-        MatCardSmImage,
-        MatCardMdImage,
-        MatCardLgImage,
-        MatCardImage,
-        MatCardXlImage,
-        MatCardAvatar], imports: [MatCommonModule], exports: [MatCard,
-        MatCardHeader,
-        MatCardTitleGroup,
-        MatCardContent,
-        MatCardTitle,
-        MatCardSubtitle,
-        MatCardActions,
-        MatCardFooter,
-        MatCardSmImage,
-        MatCardMdImage,
-        MatCardLgImage,
-        MatCardImage,
-        MatCardXlImage,
-        MatCardAvatar,
-        MatCommonModule] });
-MatCardModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardModule, imports: [MatCommonModule, MatCommonModule] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatCardModule, decorators: [{
-            type: NgModule,
-            args: [{
-                    imports: [MatCommonModule],
-                    exports: [
-                        MatCard,
-                        MatCardHeader,
-                        MatCardTitleGroup,
-                        MatCardContent,
-                        MatCardTitle,
-                        MatCardSubtitle,
-                        MatCardActions,
-                        MatCardFooter,
-                        MatCardSmImage,
-                        MatCardMdImage,
-                        MatCardLgImage,
-                        MatCardImage,
-                        MatCardXlImage,
-                        MatCardAvatar,
-                        MatCommonModule,
-                    ],
-                    declarations: [
-                        MatCard,
-                        MatCardHeader,
-                        MatCardTitleGroup,
-                        MatCardContent,
-                        MatCardTitle,
-                        MatCardSubtitle,
-                        MatCardActions,
-                        MatCardFooter,
-                        MatCardSmImage,
-                        MatCardMdImage,
-                        MatCardLgImage,
-                        MatCardImage,
-                        MatCardXlImage,
-                        MatCardAvatar,
-                    ],
-                }]
-        }] });
+class TakCardModule {}
+TakCardModule.ɵfac = i0.ɵɵngDeclareFactory({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardModule,
+  deps: [],
+  target: i0.ɵɵFactoryTarget.NgModule,
+});
+TakCardModule.ɵmod = i0.ɵɵngDeclareNgModule({
+  minVersion: '14.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardModule,
+  declarations: [
+    TakCard,
+    TakCardHeader,
+    TakCardTitleGroup,
+    TakCardContent,
+    TakCardTitle,
+    TakCardSubtitle,
+    TakCardActions,
+    TakCardFooter,
+    TakCardSmImage,
+    TakCardMdImage,
+    TakCardLgImage,
+    TakCardImage,
+    TakCardXlImage,
+    TakCardAvatar,
+  ],
+  imports: [TakCommonModule],
+  exports: [
+    TakCard,
+    TakCardHeader,
+    TakCardTitleGroup,
+    TakCardContent,
+    TakCardTitle,
+    TakCardSubtitle,
+    TakCardActions,
+    TakCardFooter,
+    TakCardSmImage,
+    TakCardMdImage,
+    TakCardLgImage,
+    TakCardImage,
+    TakCardXlImage,
+    TakCardAvatar,
+    TakCommonModule,
+  ],
+});
+TakCardModule.ɵinj = i0.ɵɵngDeclareInjector({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardModule,
+  imports: [TakCommonModule, TakCommonModule],
+});
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: '12.0.0',
+  version: '14.2.0',
+  ngImport: i0,
+  type: TakCardModule,
+  decorators: [
+    {
+      type: NgModule,
+      args: [
+        {
+          imports: [TakCommonModule],
+          exports: [
+            TakCard,
+            TakCardHeader,
+            TakCardTitleGroup,
+            TakCardContent,
+            TakCardTitle,
+            TakCardSubtitle,
+            TakCardActions,
+            TakCardFooter,
+            TakCardSmImage,
+            TakCardMdImage,
+            TakCardLgImage,
+            TakCardImage,
+            TakCardXlImage,
+            TakCardAvatar,
+            TakCommonModule,
+          ],
+          declarations: [
+            TakCard,
+            TakCardHeader,
+            TakCardTitleGroup,
+            TakCardContent,
+            TakCardTitle,
+            TakCardSubtitle,
+            TakCardActions,
+            TakCardFooter,
+            TakCardSmImage,
+            TakCardMdImage,
+            TakCardLgImage,
+            TakCardImage,
+            TakCardXlImage,
+            TakCardAvatar,
+          ],
+        },
+      ],
+    },
+  ],
+});
 
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -336,7 +767,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
 
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -346,5 +777,21 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
  * Generated bundle index. Do not edit.
  */
 
-export { MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardFooter, MatCardHeader, MatCardImage, MatCardLgImage, MatCardMdImage, MatCardModule, MatCardSmImage, MatCardSubtitle, MatCardTitle, MatCardTitleGroup, MatCardXlImage };
+export {
+  TakCard,
+  TakCardActions,
+  TakCardAvatar,
+  TakCardContent,
+  TakCardFooter,
+  TakCardHeader,
+  TakCardImage,
+  TakCardLgImage,
+  TakCardMdImage,
+  TakCardModule,
+  TakCardSmImage,
+  TakCardSubtitle,
+  TakCardTitle,
+  TakCardTitleGroup,
+  TakCardXlImage,
+};
 //# sourceMappingURL=card.mjs.map

@@ -7,7 +7,7 @@
   $foreground: map.get($config, foreground);
   $background: map.get($config, background);
 
-  .mat-autocomplete-panel {
+  .tak-autocomplete-panel {
     @include private.private-theme-overridable-elevation(4, $config);
     background: theming.get-color-from-palette($background, card);
     color: theming.get-color-from-palette($foreground, text);
@@ -17,10 +17,10 @@
     // they are *not* in hover or focus state. This change has to be
     // made here because base option styles are shared between the
     // autocomplete and the select.
-    .mat-option.mat-selected:not(.mat-active):not(:hover) {
+    .tak-option.tak-selected:not(.tak-active):not(:hover) {
       background: theming.get-color-from-palette($background, card);
 
-      &:not(.mat-option-disabled) {
+      &:not(.tak-option-disabled) {
         color: theming.get-color-from-palette($foreground, text);
       }
     }
@@ -35,7 +35,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-autocomplete') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-autocomplete') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

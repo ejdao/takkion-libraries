@@ -52,9 +52,9 @@
 
   // TODO: COMP-309: Do not use individual mixins. Instead, use the all-theme mixin and only
   // specify a `typography` config while setting `color` and `density` to `null`. This is currently
-  // not possible as it would introduce a circular dependency for typography because the `mat-core`
+  // not possible as it would introduce a circular dependency for typography because the `tak-core`
   // mixin that is transitively loaded by the `all-theme` file, imports `all-typography` which
-  // would then load `all-theme` again. This ultimately results a circular dependency.
+  // would then load `all-theme` again. This ultitakely results a circular dependency.
 
   @include badge-theme.typography($config);
   @include typography.typography-hierarchy($config);

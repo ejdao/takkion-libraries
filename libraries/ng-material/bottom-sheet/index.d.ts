@@ -31,32 +31,32 @@ import { ViewContainerRef } from '@angular/core';
 export declare type AutoFocusTarget = 'dialog' | 'first-tabbable' | 'first-heading';
 
 declare namespace i1 {
-  export { MatBottomSheetContainer };
+  export { TakBottomSheetContainer };
 }
 
 /** Injection token that can be used to access the data that was passed in to a bottom sheet. */
-export declare const MAT_BOTTOM_SHEET_DATA: InjectionToken<any>;
+export declare const TAK_BOTTOM_SHEET_DATA: InjectionToken<any>;
 
 /** Injection token that can be used to specify default bottom sheet options. */
-export declare const MAT_BOTTOM_SHEET_DEFAULT_OPTIONS: InjectionToken<MatBottomSheetConfig<any>>;
+export declare const TAK_BOTTOM_SHEET_DEFAULT_OPTIONS: InjectionToken<TakBottomSheetConfig<any>>;
 
 /**
  * Service to trigger Material Design bottom sheets.
  */
-export declare class MatBottomSheet implements OnDestroy {
+export declare class TakBottomSheet implements OnDestroy {
   private _overlay;
   private _parentBottomSheet;
   private _defaultOptions?;
   private _bottomSheetRefAtThisLevel;
   private _dialog;
   /** Reference to the currently opened bottom sheet. */
-  get _openedBottomSheetRef(): MatBottomSheetRef<any> | null;
-  set _openedBottomSheetRef(value: MatBottomSheetRef<any> | null);
+  get _openedBottomSheetRef(): TakBottomSheetRef<any> | null;
+  set _openedBottomSheetRef(value: TakBottomSheetRef<any> | null);
   constructor(
     _overlay: Overlay,
     injector: Injector,
-    _parentBottomSheet: MatBottomSheet,
-    _defaultOptions?: MatBottomSheetConfig<any> | undefined
+    _parentBottomSheet: TakBottomSheet,
+    _defaultOptions?: TakBottomSheetConfig<any> | undefined
   );
   /**
    * Opens a bottom sheet containing the given component.
@@ -66,8 +66,8 @@ export declare class MatBottomSheet implements OnDestroy {
    */
   open<T, D = any, R = any>(
     component: ComponentType<T>,
-    config?: MatBottomSheetConfig<D>
-  ): MatBottomSheetRef<T, R>;
+    config?: TakBottomSheetConfig<D>
+  ): TakBottomSheetRef<T, R>;
   /**
    * Opens a bottom sheet containing the given template.
    * @param template TemplateRef to instantiate as the bottom sheet content.
@@ -76,8 +76,8 @@ export declare class MatBottomSheet implements OnDestroy {
    */
   open<T, D = any, R = any>(
     template: TemplateRef<T>,
-    config?: MatBottomSheetConfig<D>
-  ): MatBottomSheetRef<T, R>;
+    config?: TakBottomSheetConfig<D>
+  ): TakBottomSheetRef<T, R>;
   /**
    * Dismisses the currently-visible bottom sheet.
    * @param result Data to pass to the bottom sheet instance.
@@ -85,21 +85,21 @@ export declare class MatBottomSheet implements OnDestroy {
   dismiss<R = any>(result?: R): void;
   ngOnDestroy(): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatBottomSheet,
+    TakBottomSheet,
     [null, null, { optional: true; skipSelf: true }, { optional: true }]
   >;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatBottomSheet>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakBottomSheet>;
 }
 
 /** Animations used by the Material bottom sheet. */
-export declare const matBottomSheetAnimations: {
+export declare const takBottomSheetAnimations: {
   readonly bottomSheetState: AnimationTriggerMetadata;
 };
 
 /**
  * Configuration used when opening a bottom sheet.
  */
-export declare class MatBottomSheetConfig<D = any> {
+export declare class TakBottomSheetConfig<D = any> {
   /** The view container to place the overlay for the bottom sheet into. */
   viewContainerRef?: ViewContainerRef;
   /** Extra CSS classes to be added to the bottom sheet container. */
@@ -143,7 +143,7 @@ export declare class MatBottomSheetConfig<D = any> {
  * Internal component that wraps user-provided bottom sheet content.
  * @docs-private
  */
-export declare class MatBottomSheetContainer extends CdkDialogContainer implements OnDestroy {
+export declare class TakBottomSheetContainer extends CdkDialogContainer implements OnDestroy {
   private _changeDetectorRef;
   private _breakpointSubscription;
   /** The state of the bottom sheet animations. */
@@ -174,12 +174,12 @@ export declare class MatBottomSheetContainer extends CdkDialogContainer implemen
   protected _captureInitialFocus(): void;
   private _toggleClass;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatBottomSheetContainer,
+    TakBottomSheetContainer,
     [null, null, { optional: true }, null, null, null, null, null, null, null]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatBottomSheetContainer,
-    'mat-bottom-sheet-container',
+    TakBottomSheetContainer,
+    'tak-bottom-sheet-container',
     never,
     {},
     {},
@@ -189,21 +189,21 @@ export declare class MatBottomSheetContainer extends CdkDialogContainer implemen
   >;
 }
 
-export declare class MatBottomSheetModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatBottomSheetModule, never>;
+export declare class TakBottomSheetModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakBottomSheetModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatBottomSheetModule,
-    [typeof i1.MatBottomSheetContainer],
-    [typeof i2.DialogModule, typeof i3.MatCommonModule, typeof i4.PortalModule],
-    [typeof i1.MatBottomSheetContainer, typeof i3.MatCommonModule]
+    TakBottomSheetModule,
+    [typeof i1.TakBottomSheetContainer],
+    [typeof i2.DialogModule, typeof i3.TakCommonModule, typeof i4.PortalModule],
+    [typeof i1.TakBottomSheetContainer, typeof i3.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatBottomSheetModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakBottomSheetModule>;
 }
 
 /**
  * Reference to a bottom sheet dispatched from the bottom sheet service.
  */
-export declare class MatBottomSheetRef<T = any, R = any> {
+export declare class TakBottomSheetRef<T = any, R = any> {
   private _ref;
   /** Instance of the component making up the content of the bottom sheet. */
   get instance(): T;
@@ -211,7 +211,7 @@ export declare class MatBottomSheetRef<T = any, R = any> {
    * Instance of the component into which the bottom sheet content is projected.
    * @docs-private
    */
-  containerInstance: MatBottomSheetContainer;
+  containerInstance: TakBottomSheetContainer;
   /** Whether the user is allowed to close the bottom sheet. */
   disableClose: boolean | undefined;
   /** Subject for notifying the user that the bottom sheet has opened and appeared. */
@@ -222,8 +222,8 @@ export declare class MatBottomSheetRef<T = any, R = any> {
   private _closeFallbackTimeout;
   constructor(
     _ref: DialogRef<R, T>,
-    config: MatBottomSheetConfig,
-    containerInstance: MatBottomSheetContainer
+    config: TakBottomSheetConfig,
+    containerInstance: TakBottomSheetContainer
   );
   /**
    * Dismisses the bottom sheet.

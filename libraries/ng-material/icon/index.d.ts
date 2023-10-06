@@ -23,55 +23,55 @@ import { ThemePalette } from '@takkion/ng-material/core';
  * @param literal HTML that was attempted to be sanitized.
  * @docs-private
  */
-export declare function getMatIconFailedToSanitizeLiteralError(literal: SafeHtml): Error;
+export declare function getTakIconFailedToSanitizeLiteralError(literal: SafeHtml): Error;
 
 /**
  * Returns an exception to be thrown when a URL couldn't be sanitized.
  * @param url URL that was attempted to be sanitized.
  * @docs-private
  */
-export declare function getMatIconFailedToSanitizeUrlError(url: SafeResourceUrl): Error;
+export declare function getTakIconFailedToSanitizeUrlError(url: SafeResourceUrl): Error;
 
 /**
  * Returns an exception to be thrown in the case when attempting to
  * load an icon with a name that cannot be found.
  * @docs-private
  */
-export declare function getMatIconNameNotFoundError(iconName: string): Error;
+export declare function getTakIconNameNotFoundError(iconName: string): Error;
 
 /**
  * Returns an exception to be thrown when the consumer attempts to use
- * `<mat-icon>` without including @angular/common/http.
+ * `<tak-icon>` without including @angular/common/http.
  * @docs-private
  */
-export declare function getMatIconNoHttpProviderError(): Error;
+export declare function getTakIconNoHttpProviderError(): Error;
 
 declare namespace i1 {
   export {
-    MAT_ICON_LOCATION_FACTORY,
-    MatIconDefaultOptions,
-    MAT_ICON_DEFAULT_OPTIONS,
-    MAT_ICON_LOCATION,
-    MatIconLocation,
-    MatIcon,
+    TAK_ICON_LOCATION_FACTORY,
+    TakIconDefaultOptions,
+    TAK_ICON_DEFAULT_OPTIONS,
+    TAK_ICON_LOCATION,
+    TakIconLocation,
+    TakIcon,
   };
 }
 
 /** @docs-private */
 export declare const ICON_REGISTRY_PROVIDER: {
-  provide: typeof MatIconRegistry;
+  provide: typeof TakIconRegistry;
   deps: (Optional[] | typeof DomSanitizer | typeof ErrorHandler)[];
   useFactory: typeof ICON_REGISTRY_PROVIDER_FACTORY;
 };
 
 /** @docs-private */
 export declare function ICON_REGISTRY_PROVIDER_FACTORY(
-  parentRegistry: MatIconRegistry,
+  parentRegistry: TakIconRegistry,
   httpClient: HttpClient,
   sanitizer: DomSanitizer,
   errorHandler: ErrorHandler,
   document?: any
-): MatIconRegistry;
+): TakIconRegistry;
 
 /** Options that can be used to configure how an icon or the icons in an icon set are presented. */
 export declare interface IconOptions {
@@ -90,53 +90,53 @@ export declare type IconResolver = (
   namespace: string
 ) => SafeResourceUrl | SafeResourceUrlWithIconOptions | null;
 
-/** Injection token to be used to override the default options for `mat-icon`. */
-export declare const MAT_ICON_DEFAULT_OPTIONS: InjectionToken<MatIconDefaultOptions>;
+/** Injection token to be used to override the default options for `tak-icon`. */
+export declare const TAK_ICON_DEFAULT_OPTIONS: InjectionToken<TakIconDefaultOptions>;
 
 /**
- * Injection token used to provide the current location to `MatIcon`.
+ * Injection token used to provide the current location to `TakIcon`.
  * Used to handle server-side rendering and to stub out during unit tests.
  * @docs-private
  */
-export declare const MAT_ICON_LOCATION: InjectionToken<MatIconLocation>;
+export declare const TAK_ICON_LOCATION: InjectionToken<TakIconLocation>;
 
 /** @docs-private */
-export declare function MAT_ICON_LOCATION_FACTORY(): MatIconLocation;
+export declare function TAK_ICON_LOCATION_FACTORY(): TakIconLocation;
 
 /**
  * Component to display an icon. It can be used in the following ways:
  *
  * - Specify the svgIcon input to load an SVG icon from a URL previously registered with the
  *   addSvgIcon, addSvgIconInNamespace, addSvgIconSet, or addSvgIconSetInNamespace methods of
- *   MatIconRegistry. If the svgIcon value contains a colon it is assumed to be in the format
+ *   TakIconRegistry. If the svgIcon value contains a colon it is assumed to be in the format
  *   "[namespace]:[name]", if not the value will be the name of an icon in the default namespace.
  *   Examples:
- *     `<mat-icon svgIcon="left-arrow"></mat-icon>
- *     <mat-icon svgIcon="animals:cat"></mat-icon>`
+ *     `<tak-icon svgIcon="left-arrow"></tak-icon>
+ *     <tak-icon svgIcon="animals:cat"></tak-icon>`
  *
  * - Use a font ligature as an icon by putting the ligature text in the `fontIcon` attribute or the
- *   content of the `<mat-icon>` component. If you register a custom font class, don't forget to also
- *   include the special class `mat-ligature-font`. It is recommended to use the attribute alternative
+ *   content of the `<tak-icon>` component. If you register a custom font class, don't forget to also
+ *   include the special class `tak-ligature-font`. It is recommended to use the attribute alternative
  *   to prevent the ligature text to be selectable and to appear in search engine results.
  *   By default, the Material icons font is used as described at
  *   http://google.github.io/material-design-icons/#icon-font-for-the-web. You can specify an
  *   alternate font by setting the fontSet input to either the CSS class to apply to use the
- *   desired font, or to an alias previously registered with MatIconRegistry.registerFontClassAlias.
+ *   desired font, or to an alias previously registered with TakIconRegistry.registerFontClassAlias.
  *   Examples:
- *     `<mat-icon fontIcon="home"></mat-icon>
- *     <mat-icon>home</mat-icon>
- *     <mat-icon fontSet="myfont" fontIcon="sun"></mat-icon>
- *     <mat-icon fontSet="myfont">sun</mat-icon>`
+ *     `<tak-icon fontIcon="home"></tak-icon>
+ *     <tak-icon>home</tak-icon>
+ *     <tak-icon fontSet="myfont" fontIcon="sun"></tak-icon>
+ *     <tak-icon fontSet="myfont">sun</tak-icon>`
  *
  * - Specify a font glyph to be included via CSS rules by setting the fontSet input to specify the
  *   font, and the fontIcon input to specify the icon. Typically the fontIcon will specify a
  *   CSS class which causes the glyph to be displayed via a :before selector, as in
  *   https://fortawesome.github.io/Font-Awesome/examples/
  *   Example:
- *     `<mat-icon fontSet="fa" fontIcon="alarm"></mat-icon>`
+ *     `<tak-icon fontSet="fa" fontIcon="alarm"></tak-icon>`
  */
-export declare class MatIcon
-  extends _MatIconBase
+export declare class TakIcon
+  extends _TakIconBase
   implements OnInit, AfterViewChecked, CanColor, OnDestroy
 {
   private _iconRegistry;
@@ -173,11 +173,11 @@ export declare class MatIcon
   private _currentIconFetch;
   constructor(
     elementRef: ElementRef<HTMLElement>,
-    _iconRegistry: MatIconRegistry,
+    _iconRegistry: TakIconRegistry,
     ariaHidden: string,
-    _location: MatIconLocation,
+    _location: TakIconLocation,
     _errorHandler: ErrorHandler,
-    defaults?: MatIconDefaultOptions
+    defaults?: TakIconDefaultOptions
   );
   /**
    * Splits an svgIcon binding value into its icon set and icon name components.
@@ -220,13 +220,13 @@ export declare class MatIcon
   /** Sets a new SVG icon with a particular name. */
   private _updateSvgIcon;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatIcon,
+    TakIcon,
     [null, null, { attribute: 'aria-hidden' }, null, null, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatIcon,
-    'mat-icon',
-    ['matIcon'],
+    TakIcon,
+    'tak-icon',
+    ['takIcon'],
     {
       color: 'color';
       inline: 'inline';
@@ -242,15 +242,15 @@ export declare class MatIcon
 }
 
 /** @docs-private */
-declare const _MatIconBase: _Constructor<CanColor> &
+declare const _TakIconBase: _Constructor<CanColor> &
   _AbstractConstructor<CanColor> & {
     new (_elementRef: ElementRef): {
       _elementRef: ElementRef;
     };
   };
 
-/** Default options for `mat-icon`.  */
-export declare interface MatIconDefaultOptions {
+/** Default options for `tak-icon`.  */
+export declare interface TakIconDefaultOptions {
   /** Default color of the icon. */
   color?: ThemePalette;
   /** Font set that the icon is a part of. */
@@ -258,32 +258,32 @@ export declare interface MatIconDefaultOptions {
 }
 
 /**
- * Stubbed out location for `MatIcon`.
+ * Stubbed out location for `TakIcon`.
  * @docs-private
  */
-export declare interface MatIconLocation {
+export declare interface TakIconLocation {
   getPathname: () => string;
 }
 
-export declare class MatIconModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatIconModule, never>;
+export declare class TakIconModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakIconModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatIconModule,
-    [typeof i1.MatIcon],
-    [typeof i2.MatCommonModule],
-    [typeof i1.MatIcon, typeof i2.MatCommonModule]
+    TakIconModule,
+    [typeof i1.TakIcon],
+    [typeof i2.TakCommonModule],
+    [typeof i1.TakIcon, typeof i2.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatIconModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakIconModule>;
 }
 
 /**
- * Service to register and display icons used by the `<mat-icon>` component.
+ * Service to register and display icons used by the `<tak-icon>` component.
  * - Registers icon URLs by namespace and name.
  * - Registers icon set URLs by namespace.
  * - Registers aliases for CSS classes, for use with icon fonts.
  * - Loads icons from URLs and extracts individual icons from icon sets.
  */
-export declare class MatIconRegistry implements OnDestroy {
+export declare class TakIconRegistry implements OnDestroy {
   private _httpClient;
   private _sanitizer;
   private readonly _errorHandler;
@@ -306,7 +306,7 @@ export declare class MatIconRegistry implements OnDestroy {
   /** Registered icon resolver functions. */
   private _resolvers;
   /**
-   * The CSS classes to apply when an `<mat-icon>` component has no icon name, url, or font
+   * The CSS classes to apply when an `<tak-icon>` component has no icon name, url, or font
    * specified. The default 'material-icons' value assumes that the material icon font has been
    * loaded as described at http://google.github.io/material-design-icons/#icon-font-for-the-web
    */
@@ -389,21 +389,21 @@ export declare class MatIconRegistry implements OnDestroy {
     options?: IconOptions
   ): this;
   /**
-   * Defines an alias for CSS class names to be used for icon fonts. Creating an matIcon
+   * Defines an alias for CSS class names to be used for icon fonts. Creating an takIcon
    * component with the alias as the fontSet input will cause the class name to be applied
-   * to the `<mat-icon>` element.
+   * to the `<tak-icon>` element.
    *
    * If the registered font is a ligature font, then don't forget to also include the special
-   * class `mat-ligature-font` to allow the usage via attribute. So register like this:
+   * class `tak-ligature-font` to allow the usage via attribute. So register like this:
    *
    * ```ts
-   * iconRegistry.registerFontClassAlias('f1', 'font1 mat-ligature-font');
+   * iconRegistry.registerFontClassAlias('f1', 'font1 tak-ligature-font');
    * ```
    *
    * And use like this:
    *
    * ```html
-   * <mat-icon fontSet="f1" fontIcon="home"></mat-icon>
+   * <tak-icon fontSet="f1" fontIcon="home"></tak-icon>
    * ```
    *
    * @param alias Alias for the font.
@@ -416,12 +416,12 @@ export declare class MatIconRegistry implements OnDestroy {
    */
   classNameForFontAlias(alias: string): string;
   /**
-   * Sets the CSS classes to be used for icon fonts when an `<mat-icon>` component does not
+   * Sets the CSS classes to be used for icon fonts when an `<tak-icon>` component does not
    * have a fontSet input value, and is not loading an icon by name or URL.
    */
   setDefaultFontSetClass(...classNames: string[]): this;
   /**
-   * Returns the CSS classes to be used for icon fonts when an `<mat-icon>` component does not
+   * Returns the CSS classes to be used for icon fonts when an `<tak-icon>` component does not
    * have a fontSet input value, and is not loading an icon by name or URL.
    */
   getDefaultFontSetClass(): string[];
@@ -514,10 +514,10 @@ export declare class MatIconRegistry implements OnDestroy {
   /** Tries to create an icon config through the registered resolver functions. */
   private _getIconConfigFromResolvers;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatIconRegistry,
+    TakIconRegistry,
     [{ optional: true }, null, { optional: true }, null]
   >;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatIconRegistry>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakIconRegistry>;
 }
 
 /** Object that specifies a URL from which to fetch an icon and the options to use for it. */

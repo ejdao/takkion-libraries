@@ -5,22 +5,22 @@
 @use '../core/typography/typography-utils';
 
 @mixin _inner-content-theme($palette) {
-  .mat-slider-track-fill,
-  .mat-slider-thumb,
-  .mat-slider-thumb-label {
+  .tak-slider-track-fill,
+  .tak-slider-thumb,
+  .tak-slider-thumb-label {
     background-color: theming.get-color-from-palette($palette);
   }
 
-  .mat-slider-thumb-label-text {
+  .tak-slider-thumb-label-text {
     color: theming.get-color-from-palette($palette, default-contrast);
   }
 
-  .mat-slider-focus-ring {
+  .tak-slider-focus-ring {
     $opacity: 0.2;
     $color: theming.get-color-from-palette($palette, default, $opacity);
     background-color: $color;
 
-    // `mat-color` uses `rgba` for the opacity which won't work with
+    // `tak-color` uses `rgba` for the opacity which won't work with
     // CSS variables so we need to use `opacity` as a fallback.
     @if (meta.type-of($color) != color) {
       opacity: $opacity;
@@ -36,125 +36,125 @@
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  $mat-slider-off-color: theming.get-color-from-palette($foreground, slider-off);
-  $mat-slider-off-focused-color: theming.get-color-from-palette($foreground, slider-off-active);
-  $mat-slider-disabled-color: theming.get-color-from-palette($foreground, slider-off);
-  $mat-slider-labeled-min-value-thumb-color: theming.get-color-from-palette(
+  $tak-slider-off-color: theming.get-color-from-palette($foreground, slider-off);
+  $tak-slider-off-focused-color: theming.get-color-from-palette($foreground, slider-off-active);
+  $tak-slider-disabled-color: theming.get-color-from-palette($foreground, slider-off);
+  $tak-slider-labeled-min-value-thumb-color: theming.get-color-from-palette(
     $foreground,
     slider-min
   );
-  $mat-slider-labeled-min-value-thumb-label-color: theming.get-color-from-palette(
+  $tak-slider-labeled-min-value-thumb-label-color: theming.get-color-from-palette(
     $foreground,
     slider-off
   );
-  $mat-slider-tick-opacity: 0.7;
-  $mat-slider-tick-color: theming.get-color-from-palette(
+  $tak-slider-tick-opacity: 0.7;
+  $tak-slider-tick-color: theming.get-color-from-palette(
     $foreground,
     base,
-    $mat-slider-tick-opacity
+    $tak-slider-tick-opacity
   );
-  $mat-slider-tick-size: 2px;
+  $tak-slider-tick-size: 2px;
 
-  .mat-slider-track-background {
-    background-color: $mat-slider-off-color;
+  .tak-slider-track-background {
+    background-color: $tak-slider-off-color;
   }
 
-  .mat-slider {
-    &.mat-primary {
+  .tak-slider {
+    &.tak-primary {
       @include _inner-content-theme($primary);
     }
 
-    &.mat-accent {
+    &.tak-accent {
       @include _inner-content-theme($accent);
     }
 
-    &.mat-warn {
+    &.tak-warn {
       @include _inner-content-theme($warn);
     }
   }
 
-  .mat-slider:hover,
-  .mat-slider.cdk-focused {
-    .mat-slider-track-background {
-      background-color: $mat-slider-off-focused-color;
+  .tak-slider:hover,
+  .tak-slider.cdk-focused {
+    .tak-slider-track-background {
+      background-color: $tak-slider-off-focused-color;
     }
   }
 
-  .mat-slider.mat-slider-disabled {
-    .mat-slider-track-background,
-    .mat-slider-track-fill,
-    .mat-slider-thumb {
-      background-color: $mat-slider-disabled-color;
+  .tak-slider.tak-slider-disabled {
+    .tak-slider-track-background,
+    .tak-slider-track-fill,
+    .tak-slider-thumb {
+      background-color: $tak-slider-disabled-color;
     }
 
     &:hover {
-      .mat-slider-track-background {
-        background-color: $mat-slider-disabled-color;
+      .tak-slider-track-background {
+        background-color: $tak-slider-disabled-color;
       }
     }
   }
 
-  .mat-slider.mat-slider-min-value {
-    .mat-slider-focus-ring {
+  .tak-slider.tak-slider-min-value {
+    .tak-slider-focus-ring {
       $opacity: 0.12;
       $color: theming.get-color-from-palette($foreground, base, $opacity);
       background-color: $color;
 
-      // `mat-color` uses `rgba` for the opacity which won't work with
+      // `tak-color` uses `rgba` for the opacity which won't work with
       // CSS variables so we need to use `opacity` as a fallback.
       @if (meta.type-of($color) != color) {
         opacity: $opacity;
       }
     }
 
-    &.mat-slider-thumb-label-showing {
-      .mat-slider-thumb,
-      .mat-slider-thumb-label {
-        background-color: $mat-slider-labeled-min-value-thumb-color;
+    &.tak-slider-thumb-label-showing {
+      .tak-slider-thumb,
+      .tak-slider-thumb-label {
+        background-color: $tak-slider-labeled-min-value-thumb-color;
       }
 
       &.cdk-focused {
-        .mat-slider-thumb,
-        .mat-slider-thumb-label {
-          background-color: $mat-slider-labeled-min-value-thumb-label-color;
+        .tak-slider-thumb,
+        .tak-slider-thumb-label {
+          background-color: $tak-slider-labeled-min-value-thumb-label-color;
         }
       }
     }
 
-    &:not(.mat-slider-thumb-label-showing) {
-      .mat-slider-thumb {
-        border-color: $mat-slider-off-color;
+    &:not(.tak-slider-thumb-label-showing) {
+      .tak-slider-thumb {
+        border-color: $tak-slider-off-color;
         background-color: transparent;
       }
 
       &:hover,
       &.cdk-focused {
-        .mat-slider-thumb {
-          border-color: $mat-slider-off-focused-color;
+        .tak-slider-thumb {
+          border-color: $tak-slider-off-focused-color;
         }
 
-        &.mat-slider-disabled .mat-slider-thumb {
-          border-color: $mat-slider-disabled-color;
+        &.tak-slider-disabled .tak-slider-thumb {
+          border-color: $tak-slider-disabled-color;
         }
       }
     }
   }
 
-  .mat-slider-has-ticks .mat-slider-wrapper::after {
-    border-color: $mat-slider-tick-color;
+  .tak-slider-has-ticks .tak-slider-wrapper::after {
+    border-color: $tak-slider-tick-color;
 
-    // `mat-color` uses `rgba` for the opacity which won't work with
+    // `tak-color` uses `rgba` for the opacity which won't work with
     // CSS variables so we need to use `opacity` as a fallback.
-    @if (meta.type-of($mat-slider-tick-color) != color) {
-      opacity: $mat-slider-tick-opacity;
+    @if (meta.type-of($tak-slider-tick-color) != color) {
+      opacity: $tak-slider-tick-opacity;
     }
   }
 
-  .mat-slider-horizontal .mat-slider-ticks {
+  .tak-slider-horizontal .tak-slider-ticks {
     background-image: repeating-linear-gradient(
       to right,
-      $mat-slider-tick-color,
-      $mat-slider-tick-color $mat-slider-tick-size,
+      $tak-slider-tick-color,
+      $tak-slider-tick-color $tak-slider-tick-size,
       transparent 0,
       transparent
     );
@@ -162,32 +162,32 @@
     // (see https://bugzilla.mozilla.org/show_bug.cgi?id=1314319).
     background-image: -moz-repeating-linear-gradient(
       0.0001deg,
-      $mat-slider-tick-color,
-      $mat-slider-tick-color $mat-slider-tick-size,
+      $tak-slider-tick-color,
+      $tak-slider-tick-color $tak-slider-tick-size,
       transparent 0,
       transparent
     );
 
-    // `mat-color` uses `rgba` for the opacity which won't work with
+    // `tak-color` uses `rgba` for the opacity which won't work with
     // CSS variables so we need to use `opacity` as a fallback.
-    @if (meta.type-of($mat-slider-tick-color) != color) {
-      opacity: $mat-slider-tick-opacity;
+    @if (meta.type-of($tak-slider-tick-color) != color) {
+      opacity: $tak-slider-tick-opacity;
     }
   }
 
-  .mat-slider-vertical .mat-slider-ticks {
+  .tak-slider-vertical .tak-slider-ticks {
     background-image: repeating-linear-gradient(
       to bottom,
-      $mat-slider-tick-color,
-      $mat-slider-tick-color $mat-slider-tick-size,
+      $tak-slider-tick-color,
+      $tak-slider-tick-color $tak-slider-tick-size,
       transparent 0,
       transparent
     );
 
-    // `mat-color` uses `rgba` for the opacity which won't work with
+    // `tak-color` uses `rgba` for the opacity which won't work with
     // CSS variables so we need to use `opacity` as a fallback.
-    @if (meta.type-of($mat-slider-tick-color) != color) {
-      opacity: $mat-slider-tick-opacity;
+    @if (meta.type-of($tak-slider-tick-color) != color) {
+      opacity: $tak-slider-tick-opacity;
     }
   }
 }
@@ -196,7 +196,7 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-slider-thumb-label-text {
+  .tak-slider-thumb-label-text {
     font: {
       family: typography-utils.font-family($config);
       size: typography-utils.font-size($config, caption);
@@ -210,7 +210,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-slider') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-slider') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

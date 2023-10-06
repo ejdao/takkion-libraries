@@ -14,12 +14,12 @@
     if($is-dark-theme, 0.7, 0.42)
   );
 
-  .mat-form-field-appearance-standard {
-    .mat-form-field-underline {
+  .tak-form-field-appearance-standard {
+    .tak-form-field-underline {
       background-color: $underline-color;
     }
 
-    &.mat-form-field-disabled .mat-form-field-underline {
+    &.tak-form-field-disabled .tak-form-field-underline {
       @include form-common.private-control-disabled-underline($underline-color);
     }
   }
@@ -33,7 +33,7 @@
 
 @mixin standard-theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-form-field-standard') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-form-field-standard') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

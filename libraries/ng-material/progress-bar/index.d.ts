@@ -16,35 +16,35 @@ import { ThemePalette } from '@takkion/ng-material/core';
 
 declare namespace i1 {
   export {
-    MAT_PROGRESS_BAR_LOCATION_FACTORY,
+    TAK_PROGRESS_BAR_LOCATION_FACTORY,
     ProgressAnimationEnd,
-    MAT_PROGRESS_BAR_LOCATION,
-    MatProgressBarLocation,
+    TAK_PROGRESS_BAR_LOCATION,
+    TakProgressBarLocation,
     ProgressBarMode,
-    MatProgressBarDefaultOptions,
-    MAT_PROGRESS_BAR_DEFAULT_OPTIONS,
-    MatProgressBar,
+    TakProgressBarDefaultOptions,
+    TAK_PROGRESS_BAR_DEFAULT_OPTIONS,
+    TakProgressBar,
   };
 }
 
-/** Injection token to be used to override the default options for `mat-progress-bar`. */
-export declare const MAT_PROGRESS_BAR_DEFAULT_OPTIONS: InjectionToken<MatProgressBarDefaultOptions>;
+/** Injection token to be used to override the default options for `tak-progress-bar`. */
+export declare const TAK_PROGRESS_BAR_DEFAULT_OPTIONS: InjectionToken<TakProgressBarDefaultOptions>;
 
 /**
- * Injection token used to provide the current location to `MatProgressBar`.
+ * Injection token used to provide the current location to `TakProgressBar`.
  * Used to handle server-side rendering and to stub out during unit tests.
  * @docs-private
  */
-export declare const MAT_PROGRESS_BAR_LOCATION: InjectionToken<MatProgressBarLocation>;
+export declare const TAK_PROGRESS_BAR_LOCATION: InjectionToken<TakProgressBarLocation>;
 
 /** @docs-private */
-export declare function MAT_PROGRESS_BAR_LOCATION_FACTORY(): MatProgressBarLocation;
+export declare function TAK_PROGRESS_BAR_LOCATION_FACTORY(): TakProgressBarLocation;
 
 /**
- * `<mat-progress-bar>` component.
+ * `<tak-progress-bar>` component.
  */
-export declare class MatProgressBar
-  extends _MatProgressBarBase
+export declare class TakProgressBar
+  extends _TakProgressBarBase
   implements CanColor, AfterViewInit, OnDestroy
 {
   private _ngZone;
@@ -62,8 +62,8 @@ export declare class MatProgressBar
      * @deprecated `location` parameter to be made required.
      * @breaking-change 8.0.0
      */
-    location?: MatProgressBarLocation,
-    defaults?: MatProgressBarDefaultOptions,
+    location?: TakProgressBarLocation,
+    defaults?: TakProgressBarDefaultOptions,
     /**
      * @deprecated `_changeDetectorRef` parameter to be made required.
      * @breaking-change 11.0.0
@@ -115,13 +115,13 @@ export declare class MatProgressBar
   ngAfterViewInit(): void;
   ngOnDestroy(): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatProgressBar,
+    TakProgressBar,
     [null, null, { optional: true }, { optional: true }, { optional: true }, null]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatProgressBar,
-    'mat-progress-bar',
-    ['matProgressBar'],
+    TakProgressBar,
+    'tak-progress-bar',
+    ['takProgressBar'],
     { color: 'color'; value: 'value'; bufferValue: 'bufferValue'; mode: 'mode' },
     { animationEnd: 'animationEnd' },
     never,
@@ -131,15 +131,15 @@ export declare class MatProgressBar
 }
 
 /** @docs-private */
-declare const _MatProgressBarBase: _Constructor<CanColor> &
+declare const _TakProgressBarBase: _Constructor<CanColor> &
   _AbstractConstructor<CanColor> & {
     new (_elementRef: ElementRef): {
       _elementRef: ElementRef;
     };
   };
 
-/** Default `mat-progress-bar` options that can be overridden. */
-export declare interface MatProgressBarDefaultOptions {
+/** Default `tak-progress-bar` options that can be overridden. */
+export declare interface TakProgressBarDefaultOptions {
   /** Default color of the progress bar. */
   color?: ThemePalette;
   /** Default mode of the progress bar. */
@@ -147,22 +147,22 @@ export declare interface MatProgressBarDefaultOptions {
 }
 
 /**
- * Stubbed out location for `MatProgressBar`.
+ * Stubbed out location for `TakProgressBar`.
  * @docs-private
  */
-export declare interface MatProgressBarLocation {
+export declare interface TakProgressBarLocation {
   getPathname: () => string;
 }
 
-export declare class MatProgressBarModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatProgressBarModule, never>;
+export declare class TakProgressBarModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakProgressBarModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatProgressBarModule,
-    [typeof i1.MatProgressBar],
-    [typeof i2.CommonModule, typeof i3.MatCommonModule],
-    [typeof i1.MatProgressBar, typeof i3.MatCommonModule]
+    TakProgressBarModule,
+    [typeof i1.TakProgressBar],
+    [typeof i2.CommonModule, typeof i3.TakCommonModule],
+    [typeof i1.TakProgressBar, typeof i3.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatProgressBarModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakProgressBarModule>;
 }
 
 /** Last animation end data. */

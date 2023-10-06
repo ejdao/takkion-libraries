@@ -8,38 +8,38 @@
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-table {
+  .tak-table {
     background: theming.get-color-from-palette($background, 'card');
   }
 
-  .mat-table thead,
-  .mat-table tbody,
-  .mat-table tfoot,
-  mat-header-row,
-  mat-row,
-  mat-footer-row,
-  [mat-header-row],
-  [mat-row],
-  [mat-footer-row],
-  .mat-table-sticky {
+  .tak-table thead,
+  .tak-table tbody,
+  .tak-table tfoot,
+  tak-header-row,
+  tak-row,
+  tak-footer-row,
+  [tak-header-row],
+  [tak-row],
+  [tak-footer-row],
+  .tak-table-sticky {
     background: inherit;
   }
 
-  mat-row,
-  mat-header-row,
-  mat-footer-row,
-  th.mat-header-cell,
-  td.mat-cell,
-  td.mat-footer-cell {
+  tak-row,
+  tak-header-row,
+  tak-footer-row,
+  th.tak-header-cell,
+  td.tak-cell,
+  td.tak-footer-cell {
     border-bottom-color: theming.get-color-from-palette($foreground, divider);
   }
 
-  .mat-header-cell {
+  .tak-header-cell {
     color: theming.get-color-from-palette($foreground, secondary-text);
   }
 
-  .mat-cell,
-  .mat-footer-cell {
+  .tak-cell,
+  .tak-footer-cell {
     color: theming.get-color-from-palette($foreground, text);
   }
 }
@@ -48,17 +48,17 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-table {
+  .tak-table {
     font-family: typography-utils.font-family($config);
   }
 
-  .mat-header-cell {
+  .tak-header-cell {
     font-size: typography-utils.font-size($config, caption);
     font-weight: typography-utils.font-weight($config, body-2);
   }
 
-  .mat-cell,
-  .mat-footer-cell {
+  .tak-cell,
+  .tak-footer-cell {
     font-size: typography-utils.font-size($config, body-1);
   }
 }
@@ -68,7 +68,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-table') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-table') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

@@ -4,7 +4,7 @@ import { BreakpointObserver, Breakpoints } from '@takkion/ng-cdk/layout';
 import { OverlayRef } from '@takkion/ng-cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Inject, NgZone, Optional, ViewEncapsulation, } from '@angular/core';
-import { matBottomSheetAnimations } from './bottom-sheet-animations';
+import { takBottomSheetAnimations } from './bottom-sheet-animations';
 import * as i0 from "@angular/core";
 import * as i1 from "@takkion/ng-cdk/a11y";
 import * as i2 from "@takkion/ng-cdk/dialog";
@@ -15,7 +15,7 @@ import * as i5 from "@takkion/ng-cdk/portal";
  * Internal component that wraps user-provided bottom sheet content.
  * @docs-private
  */
-export class MatBottomSheetContainer extends CdkDialogContainer {
+export class TakBottomSheetContainer extends CdkDialogContainer {
     constructor(elementRef, focusTrapFactory, document, config, checker, ngZone, overlayRef, breakpointObserver, _changeDetectorRef, focusMonitor) {
         super(elementRef, focusTrapFactory, document, config, checker, ngZone, overlayRef, focusMonitor);
         this._changeDetectorRef = _changeDetectorRef;
@@ -26,9 +26,9 @@ export class MatBottomSheetContainer extends CdkDialogContainer {
         this._breakpointSubscription = breakpointObserver
             .observe([Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
             .subscribe(() => {
-            this._toggleClass('mat-bottom-sheet-container-medium', breakpointObserver.isMatched(Breakpoints.Medium));
-            this._toggleClass('mat-bottom-sheet-container-large', breakpointObserver.isMatched(Breakpoints.Large));
-            this._toggleClass('mat-bottom-sheet-container-xlarge', breakpointObserver.isMatched(Breakpoints.XLarge));
+            this._toggleClass('tak-bottom-sheet-container-medium', breakpointObserver.isMatched(Breakpoints.Medium));
+            this._toggleClass('tak-bottom-sheet-container-large', breakpointObserver.isMatched(Breakpoints.Large));
+            this._toggleClass('tak-bottom-sheet-container-xlarge', breakpointObserver.isMatched(Breakpoints.XLarge));
         });
     }
     /** Begin animation of bottom sheet entrance into view. */
@@ -64,12 +64,12 @@ export class MatBottomSheetContainer extends CdkDialogContainer {
         this._elementRef.nativeElement.classList.toggle(cssClass, add);
     }
 }
-MatBottomSheetContainer.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatBottomSheetContainer, deps: [{ token: i0.ElementRef }, { token: i1.FocusTrapFactory }, { token: DOCUMENT, optional: true }, { token: i2.DialogConfig }, { token: i1.InteractivityChecker }, { token: i0.NgZone }, { token: i3.OverlayRef }, { token: i4.BreakpointObserver }, { token: i0.ChangeDetectorRef }, { token: i1.FocusMonitor }], target: i0.ɵɵFactoryTarget.Component });
-MatBottomSheetContainer.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: MatBottomSheetContainer, selector: "mat-bottom-sheet-container", host: { attributes: { "tabindex": "-1" }, listeners: { "@state.start": "_onAnimationStart($event)", "@state.done": "_onAnimationDone($event)" }, properties: { "attr.role": "_config.role", "attr.aria-modal": "_config.ariaModal", "attr.aria-label": "_config.ariaLabel", "@state": "_animationState" }, classAttribute: "mat-bottom-sheet-container" }, usesInheritance: true, ngImport: i0, template: "<ng-template cdkPortalOutlet></ng-template>\r\n", styles: [".mat-bottom-sheet-container{padding:8px 16px;min-width:100vw;box-sizing:border-box;display:block;outline:0;max-height:80vh;overflow:auto}.cdk-high-contrast-active .mat-bottom-sheet-container{outline:1px solid}.mat-bottom-sheet-container-xlarge,.mat-bottom-sheet-container-large,.mat-bottom-sheet-container-medium{border-top-left-radius:4px;border-top-right-radius:4px}.mat-bottom-sheet-container-medium{min-width:384px;max-width:calc(100vw - 128px)}.mat-bottom-sheet-container-large{min-width:512px;max-width:calc(100vw - 256px)}.mat-bottom-sheet-container-xlarge{min-width:576px;max-width:calc(100vw - 384px)}"], dependencies: [{ kind: "directive", type: i5.CdkPortalOutlet, selector: "[cdkPortalOutlet]", inputs: ["cdkPortalOutlet"], outputs: ["attached"], exportAs: ["cdkPortalOutlet"] }], animations: [matBottomSheetAnimations.bottomSheetState], changeDetection: i0.ChangeDetectionStrategy.Default, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatBottomSheetContainer, decorators: [{
+TakBottomSheetContainer.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakBottomSheetContainer, deps: [{ token: i0.ElementRef }, { token: i1.FocusTrapFactory }, { token: DOCUMENT, optional: true }, { token: i2.DialogConfig }, { token: i1.InteractivityChecker }, { token: i0.NgZone }, { token: i3.OverlayRef }, { token: i4.BreakpointObserver }, { token: i0.ChangeDetectorRef }, { token: i1.FocusMonitor }], target: i0.ɵɵFactoryTarget.Component });
+TakBottomSheetContainer.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: TakBottomSheetContainer, selector: "tak-bottom-sheet-container", host: { attributes: { "tabindex": "-1" }, listeners: { "@state.start": "_onAnimationStart($event)", "@state.done": "_onAnimationDone($event)" }, properties: { "attr.role": "_config.role", "attr.aria-modal": "_config.ariaModal", "attr.aria-label": "_config.ariaLabel", "@state": "_animationState" }, classAttribute: "tak-bottom-sheet-container" }, usesInheritance: true, ngImport: i0, template: "<ng-template cdkPortalOutlet></ng-template>\r\n", styles: [".tak-bottom-sheet-container{padding:8px 16px;min-width:100vw;box-sizing:border-box;display:block;outline:0;max-height:80vh;overflow:auto}.cdk-high-contrast-active .tak-bottom-sheet-container{outline:1px solid}.tak-bottom-sheet-container-xlarge,.tak-bottom-sheet-container-large,.tak-bottom-sheet-container-medium{border-top-left-radius:4px;border-top-right-radius:4px}.tak-bottom-sheet-container-medium{min-width:384px;max-width:calc(100vw - 128px)}.tak-bottom-sheet-container-large{min-width:512px;max-width:calc(100vw - 256px)}.tak-bottom-sheet-container-xlarge{min-width:576px;max-width:calc(100vw - 384px)}"], dependencies: [{ kind: "directive", type: i5.CdkPortalOutlet, selector: "[cdkPortalOutlet]", inputs: ["cdkPortalOutlet"], outputs: ["attached"], exportAs: ["cdkPortalOutlet"] }], animations: [takBottomSheetAnimations.bottomSheetState], changeDetection: i0.ChangeDetectionStrategy.Default, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakBottomSheetContainer, decorators: [{
             type: Component,
-            args: [{ selector: 'mat-bottom-sheet-container', changeDetection: ChangeDetectionStrategy.Default, encapsulation: ViewEncapsulation.None, animations: [matBottomSheetAnimations.bottomSheetState], host: {
-                        'class': 'mat-bottom-sheet-container',
+            args: [{ selector: 'tak-bottom-sheet-container', changeDetection: ChangeDetectionStrategy.Default, encapsulation: ViewEncapsulation.None, animations: [takBottomSheetAnimations.bottomSheetState], host: {
+                        'class': 'tak-bottom-sheet-container',
                         'tabindex': '-1',
                         '[attr.role]': '_config.role',
                         '[attr.aria-modal]': '_config.ariaModal',
@@ -77,7 +77,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
                         '[@state]': '_animationState',
                         '(@state.start)': '_onAnimationStart($event)',
                         '(@state.done)': '_onAnimationDone($event)',
-                    }, template: "<ng-template cdkPortalOutlet></ng-template>\r\n", styles: [".mat-bottom-sheet-container{padding:8px 16px;min-width:100vw;box-sizing:border-box;display:block;outline:0;max-height:80vh;overflow:auto}.cdk-high-contrast-active .mat-bottom-sheet-container{outline:1px solid}.mat-bottom-sheet-container-xlarge,.mat-bottom-sheet-container-large,.mat-bottom-sheet-container-medium{border-top-left-radius:4px;border-top-right-radius:4px}.mat-bottom-sheet-container-medium{min-width:384px;max-width:calc(100vw - 128px)}.mat-bottom-sheet-container-large{min-width:512px;max-width:calc(100vw - 256px)}.mat-bottom-sheet-container-xlarge{min-width:576px;max-width:calc(100vw - 384px)}"] }]
+                    }, template: "<ng-template cdkPortalOutlet></ng-template>\r\n", styles: [".tak-bottom-sheet-container{padding:8px 16px;min-width:100vw;box-sizing:border-box;display:block;outline:0;max-height:80vh;overflow:auto}.cdk-high-contrast-active .tak-bottom-sheet-container{outline:1px solid}.tak-bottom-sheet-container-xlarge,.tak-bottom-sheet-container-large,.tak-bottom-sheet-container-medium{border-top-left-radius:4px;border-top-right-radius:4px}.tak-bottom-sheet-container-medium{min-width:384px;max-width:calc(100vw - 128px)}.tak-bottom-sheet-container-large{min-width:512px;max-width:calc(100vw - 256px)}.tak-bottom-sheet-container-xlarge{min-width:576px;max-width:calc(100vw - 384px)}"] }]
         }], ctorParameters: function () { return [{ type: i0.ElementRef }, { type: i1.FocusTrapFactory }, { type: undefined, decorators: [{
                     type: Optional
                 }, {

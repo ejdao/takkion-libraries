@@ -13,6 +13,6 @@
   @include cdk.overlay();
   @include cdk.text-field-autosize();
   @include cdk.text-field-autofill();
-  @include private.structural-styling('mat');
-  @include private.structural-styling('mat-mdc');
+  @include private.structural-styling('tak');
+  @include private.structural-styling('tak-mdc');
 }

@@ -34,49 +34,49 @@
     if($is-dark-theme, 0.15, 0.06)
   );
 
-  .mat-form-field-appearance-outline {
-    .mat-form-field-outline {
+  .tak-form-field-appearance-outline {
+    .tak-form-field-outline {
       color: $outline-color;
     }
 
-    .mat-form-field-outline-thick {
+    .tak-form-field-outline-thick {
       color: $outline-color-hover;
     }
 
-    &.mat-focused {
-      .mat-form-field-outline-thick {
+    &.tak-focused {
+      .tak-form-field-outline-thick {
         color: $outline-color-primary;
       }
 
-      &.mat-accent .mat-form-field-outline-thick {
+      &.tak-accent .tak-form-field-outline-thick {
         color: $outline-color-accent;
       }
 
-      &.mat-warn .mat-form-field-outline-thick {
+      &.tak-warn .tak-form-field-outline-thick {
         color: $outline-color-warn;
       }
     }
 
     // Class repeated so that rule is specific enough to override focused accent color case.
-    &.mat-form-field-invalid.mat-form-field-invalid {
-      .mat-form-field-outline-thick {
+    &.tak-form-field-invalid.tak-form-field-invalid {
+      .tak-form-field-outline-thick {
         color: $outline-color-warn;
       }
     }
 
-    &.mat-form-field-disabled {
-      .mat-form-field-label {
+    &.tak-form-field-disabled {
+      .tak-form-field-label {
         color: $label-disabled-color;
       }
 
-      .mat-form-field-outline {
+      .tak-form-field-outline {
         color: $outline-color-disabled;
       }
     }
   }
 }
 
-// Used to make instances of the _mat-form-field-label-floating mixin negligibly different,
+// Used to make instances of the _tak-form-field-label-floating mixin negligibly different,
 // and prevent Google's CSS Optimizer from collapsing the declarations. This is needed because some
 // of the selectors contain pseudo-classes not recognized in all browsers. If a browser encounters
 // an unknown pseudo-class it will discard the entire rule set.
@@ -103,7 +103,7 @@ $outline-dedupe: 0;
   // The margin applied to the form-field-infix to reserve space for the floating label.
   $infix-margin-top: $subscript-font-scale *
     typography-utils.private-coerce-unitless-to-em($line-height);
-  // The space between the bottom of the .mat-form-field-flex area and the subscript wrapper.
+  // The space between the bottom of the .tak-form-field-flex area and the subscript wrapper.
   // Mocks show half of the text size, but this margin is applied to an element with the subscript
   // text font size, so we need to divide by the scale factor to make it half of the original text
   // size.
@@ -115,19 +115,19 @@ $outline-dedupe: 0;
   // The amount we offset the label from the input text in the outline appearance.
   $outline-appearance-label-offset: -0.25em;
 
-  .mat-form-field-appearance-outline {
-    .mat-form-field-infix {
+  .tak-form-field-appearance-outline {
+    .tak-form-field-infix {
       padding: $infix-padding 0 $infix-padding 0;
     }
 
-    .mat-form-field-label {
+    .tak-form-field-label {
       top: $infix-margin-top + $infix-padding;
       margin-top: $outline-appearance-label-offset;
     }
 
-    &.mat-form-field-can-float {
-      &.mat-form-field-should-float .mat-form-field-label,
-      .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    &.tak-form-field-can-float {
+      &.tak-form-field-should-float .tak-form-field-label,
+      .tak-input-server:focus + .tak-form-field-label-wrapper .tak-form-field-label {
         @include _label-floating(
           $subscript-font-scale,
           $infix-padding + $outline-appearance-label-offset,
@@ -135,11 +135,11 @@ $outline-dedupe: 0;
         );
       }
 
-      // Server-side rendered matInput with a label attribute but label not shown
-      // (used as a pure CSS stand-in for mat-form-field-should-float).
-      .mat-input-server[label]:not(:label-shown)
-        + .mat-form-field-label-wrapper
-        .mat-form-field-label {
+      // Server-side rendered takInput with a label attribute but label not shown
+      // (used as a pure CSS stand-in for tak-form-field-should-float).
+      .tak-input-server[label]:not(:label-shown)
+        + .tak-form-field-label-wrapper
+        .tak-form-field-label {
         @include _label-floating(
           $subscript-font-scale,
           $infix-padding + $outline-appearance-label-offset,
@@ -155,7 +155,7 @@ $outline-dedupe: 0;
 
 @mixin outline-theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-form-field-outline') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-form-field-outline') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

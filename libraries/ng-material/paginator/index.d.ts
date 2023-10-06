@@ -12,7 +12,7 @@ import * as i4 from '@takkion/ng-material/select';
 import * as i5 from '@takkion/ng-material/tooltip';
 import * as i6 from '@takkion/ng-material/core';
 import { InjectionToken } from '@angular/core';
-import { MatFormFieldAppearance } from '@takkion/ng-material/form-field';
+import { TakFormFieldAppearance } from '@takkion/ng-material/form-field';
 import { NumberInput } from '@takkion/ng-cdk/coercion';
 import { OnDestroy } from '@angular/core';
 import { OnInit } from '@angular/core';
@@ -23,47 +23,47 @@ import { ThemePalette } from '@takkion/ng-material/core';
 declare namespace i1 {
   export {
     PageEvent,
-    MatPaginatorDefaultOptions,
-    MAT_PAGINATOR_DEFAULT_OPTIONS,
-    MatPaginatorSelectConfig,
-    _MatPaginatorBase,
-    MatPaginator,
+    TakPaginatorDefaultOptions,
+    TAK_PAGINATOR_DEFAULT_OPTIONS,
+    TakPaginatorSelectConfig,
+    _TakPaginatorBase,
+    TakPaginator,
   };
 }
 
 /** Injection token that can be used to provide the default options for the paginator module. */
-export declare const MAT_PAGINATOR_DEFAULT_OPTIONS: InjectionToken<MatPaginatorDefaultOptions>;
+export declare const TAK_PAGINATOR_DEFAULT_OPTIONS: InjectionToken<TakPaginatorDefaultOptions>;
 
 /** @docs-private */
-export declare const MAT_PAGINATOR_INTL_PROVIDER: {
-  provide: typeof MatPaginatorIntl;
+export declare const TAK_PAGINATOR_INTL_PROVIDER: {
+  provide: typeof TakPaginatorIntl;
   deps: Optional[][];
-  useFactory: typeof MAT_PAGINATOR_INTL_PROVIDER_FACTORY;
+  useFactory: typeof TAK_PAGINATOR_INTL_PROVIDER_FACTORY;
 };
 
 /** @docs-private */
-export declare function MAT_PAGINATOR_INTL_PROVIDER_FACTORY(
-  parentIntl: MatPaginatorIntl
-): MatPaginatorIntl;
+export declare function TAK_PAGINATOR_INTL_PROVIDER_FACTORY(
+  parentIntl: TakPaginatorIntl
+): TakPaginatorIntl;
 
 /**
  * Component to provide navigation between paged information. Displays the size of the current
  * page, user-selectable options to change that size, what items are being shown, and
  * navigational button to go to the previous or next page.
  */
-export declare class MatPaginator extends _MatPaginatorBase<MatPaginatorDefaultOptions> {
+export declare class TakPaginator extends _TakPaginatorBase<TakPaginatorDefaultOptions> {
   /** If set, styles the "page size" form field with the designated style. */
-  _formFieldAppearance?: MatFormFieldAppearance;
+  _formFieldAppearance?: TakFormFieldAppearance;
   constructor(
-    intl: MatPaginatorIntl,
+    intl: TakPaginatorIntl,
     changeDetectorRef: ChangeDetectorRef,
-    defaults?: MatPaginatorDefaultOptions
+    defaults?: TakPaginatorDefaultOptions
   );
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatPaginator, [null, null, { optional: true }]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakPaginator, [null, null, { optional: true }]>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatPaginator,
-    'mat-paginator',
-    ['matPaginator'],
+    TakPaginator,
+    'tak-paginator',
+    ['takPaginator'],
     { disabled: 'disabled' },
     {},
     never,
@@ -73,10 +73,10 @@ export declare class MatPaginator extends _MatPaginatorBase<MatPaginatorDefaultO
 }
 
 /**
- * Base class with all of the `MatPaginator` functionality.
+ * Base class with all of the `TakPaginator` functionality.
  * @docs-private
  */
-export declare abstract class _MatPaginatorBase<
+export declare abstract class _TakPaginatorBase<
     O extends {
       pageSize?: number;
       pageSizeOptions?: number[];
@@ -84,10 +84,10 @@ export declare abstract class _MatPaginatorBase<
       showFirstLastButtons?: boolean;
     },
   >
-  extends _MatPaginatorMixinBase
+  extends _TakPaginatorMixinBase
   implements OnInit, OnDestroy, CanDisable, HasInitialized
 {
-  _intl: MatPaginatorIntl;
+  _intl: TakPaginatorIntl;
   private _changeDetectorRef;
   private _initialized;
   private _intlChanges;
@@ -117,13 +117,13 @@ export declare abstract class _MatPaginatorBase<
   get showFirstLastButtons(): boolean;
   set showFirstLastButtons(value: BooleanInput);
   private _showFirstLastButtons;
-  /** Used to configure the underlying `MatSelect` inside the paginator. */
-  selectConfig: MatPaginatorSelectConfig;
+  /** Used to configure the underlying `TakSelect` inside the paginator. */
+  selectConfig: TakPaginatorSelectConfig;
   /** Event emitted when the paginator changes the page size or page index. */
   readonly page: EventEmitter<PageEvent>;
   /** Displayed set of page size options. Will be sorted and include current page size. */
   _displayedPageSizeOptions: number[];
-  constructor(_intl: MatPaginatorIntl, _changeDetectorRef: ChangeDetectorRef, defaults?: O);
+  constructor(_intl: TakPaginatorIntl, _changeDetectorRef: ChangeDetectorRef, defaults?: O);
   ngOnInit(): void;
   ngOnDestroy(): void;
   /** Advances to the next page if it exists. */
@@ -160,9 +160,9 @@ export declare abstract class _MatPaginatorBase<
   private _updateDisplayedPageSizeOptions;
   /** Emits an event notifying that a change of the paginator's properties has been triggered. */
   private _emitPageEvent;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatPaginatorBase<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakPaginatorBase<any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatPaginatorBase<any>,
+    _TakPaginatorBase<any>,
     never,
     never,
     {
@@ -183,7 +183,7 @@ export declare abstract class _MatPaginatorBase<
 }
 
 /** Object that can be used to configure the default options for the paginator module. */
-export declare interface MatPaginatorDefaultOptions {
+export declare interface TakPaginatorDefaultOptions {
   /** Number of items to display on a page. By default set to 50. */
   pageSize?: number;
   /** The set of provided page size options to display to the user. */
@@ -193,14 +193,14 @@ export declare interface MatPaginatorDefaultOptions {
   /** Whether to show the first/last buttons UI to the user. */
   showFirstLastButtons?: boolean;
   /** The default form-field appearance to apply to the page size options selector. */
-  formFieldAppearance?: MatFormFieldAppearance;
+  formFieldAppearance?: TakFormFieldAppearance;
 }
 
 /**
- * To modify the labels and text displayed, create a new instance of MatPaginatorIntl and
+ * To modify the labels and text displayed, create a new instance of TakPaginatorIntl and
  * include it in a custom provider
  */
-export declare class MatPaginatorIntl {
+export declare class TakPaginatorIntl {
   /**
    * Stream to emit from when labels are changed. Use this to notify components when the labels have
    * changed after initialization.
@@ -218,36 +218,36 @@ export declare class MatPaginatorIntl {
   lastPageLabel: string;
   /** A label for the range of items within the current page and the length of the whole list. */
   getRangeLabel: (page: number, pageSize: number, length: number) => string;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatPaginatorIntl, never>;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatPaginatorIntl>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakPaginatorIntl, never>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakPaginatorIntl>;
 }
 
 /** @docs-private */
-declare const _MatPaginatorMixinBase: _Constructor<CanDisable> &
+declare const _TakPaginatorMixinBase: _Constructor<CanDisable> &
   _AbstractConstructor<CanDisable> &
   (new (...args: any[]) => HasInitialized) & {
     new (): {};
   };
 
-export declare class MatPaginatorModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatPaginatorModule, never>;
+export declare class TakPaginatorModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakPaginatorModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatPaginatorModule,
-    [typeof i1.MatPaginator],
+    TakPaginatorModule,
+    [typeof i1.TakPaginator],
     [
       typeof i2.CommonModule,
-      typeof i3.MatButtonModule,
-      typeof i4.MatSelectModule,
-      typeof i5.MatTooltipModule,
-      typeof i6.MatCommonModule,
+      typeof i3.TakButtonModule,
+      typeof i4.TakSelectModule,
+      typeof i5.TakTooltipModule,
+      typeof i6.TakCommonModule,
     ],
-    [typeof i1.MatPaginator]
+    [typeof i1.TakPaginator]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatPaginatorModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakPaginatorModule>;
 }
 
-/** Object that can used to configure the underlying `MatSelect` inside a `MatPaginator`. */
-export declare interface MatPaginatorSelectConfig {
+/** Object that can used to configure the underlying `TakSelect` inside a `TakPaginator`. */
+export declare interface TakPaginatorSelectConfig {
   /** Whether to center the active option over the trigger. */
   disableOptionCentering?: boolean;
   /** Classes to be passed to the select panel. */

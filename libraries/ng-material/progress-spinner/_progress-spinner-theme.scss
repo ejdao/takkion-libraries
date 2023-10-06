@@ -7,17 +7,17 @@
   $accent: map.get($config, accent);
   $warn: map.get($config, warn);
 
-  .mat-progress-spinner,
-  .mat-spinner {
+  .tak-progress-spinner,
+  .tak-spinner {
     circle {
       stroke: theming.get-color-from-palette($primary);
     }
 
-    &.mat-accent circle {
+    &.tak-accent circle {
       stroke: theming.get-color-from-palette($accent);
     }
 
-    &.mat-warn circle {
+    &.tak-warn circle {
       stroke: theming.get-color-from-palette($warn);
     }
   }
@@ -31,7 +31,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-progress-spinner') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-progress-spinner') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, ElementRef, EventEmitter, forwardRef, Inject, InjectionToken, Input, NgZone, Optional, Output, QueryList, ViewChild, ViewEncapsulation, } from '@angular/core';
 import { fromEvent, merge, Observable, Subject } from 'rxjs';
 import { debounceTime, filter, map, startWith, take, takeUntil, distinctUntilChanged, mapTo, } from 'rxjs/operators';
-import { matDrawerAnimations } from './drawer-animations';
+import { takDrawerAnimations } from './drawer-animations';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import * as i0 from "@angular/core";
 import * as i1 from "@takkion/ng-cdk/scrolling";
@@ -17,27 +17,27 @@ import * as i3 from "@takkion/ng-cdk/platform";
 import * as i4 from "@takkion/ng-cdk/bidi";
 import * as i5 from "@angular/common";
 /**
- * Throws an exception when two MatDrawer are matching the same position.
+ * Throws an exception when two TakDrawer are matching the same position.
  * @docs-private
  */
-export function throwMatDuplicatedDrawerError(position) {
+export function throwTakDuplicatedDrawerError(position) {
     throw Error(`A drawer was already declared for 'position="${position}"'`);
 }
 /** Configures whether drawers should use auto sizing by default. */
-export const MAT_DRAWER_DEFAULT_AUTOSIZE = new InjectionToken('MAT_DRAWER_DEFAULT_AUTOSIZE', {
+export const TAK_DRAWER_DEFAULT_AUTOSIZE = new InjectionToken('TAK_DRAWER_DEFAULT_AUTOSIZE', {
     providedIn: 'root',
-    factory: MAT_DRAWER_DEFAULT_AUTOSIZE_FACTORY,
+    factory: TAK_DRAWER_DEFAULT_AUTOSIZE_FACTORY,
 });
 /**
  * Used to provide a drawer container to a drawer while avoiding circular references.
  * @docs-private
  */
-export const MAT_DRAWER_CONTAINER = new InjectionToken('MAT_DRAWER_CONTAINER');
+export const TAK_DRAWER_CONTAINER = new InjectionToken('TAK_DRAWER_CONTAINER');
 /** @docs-private */
-export function MAT_DRAWER_DEFAULT_AUTOSIZE_FACTORY() {
+export function TAK_DRAWER_DEFAULT_AUTOSIZE_FACTORY() {
     return false;
 }
-export class MatDrawerContent extends CdkScrollable {
+export class TakDrawerContent extends CdkScrollable {
     constructor(_changeDetectorRef, _container, elementRef, scrollDispatcher, ngZone) {
         super(elementRef, scrollDispatcher, ngZone);
         this._changeDetectorRef = _changeDetectorRef;
@@ -49,20 +49,20 @@ export class MatDrawerContent extends CdkScrollable {
         });
     }
 }
-MatDrawerContent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatDrawerContent, deps: [{ token: i0.ChangeDetectorRef }, { token: forwardRef(() => MatDrawerContainer) }, { token: i0.ElementRef }, { token: i1.ScrollDispatcher }, { token: i0.NgZone }], target: i0.ɵɵFactoryTarget.Component });
-MatDrawerContent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: MatDrawerContent, selector: "mat-drawer-content", host: { properties: { "style.margin-left.px": "_container._contentMargins.left", "style.margin-right.px": "_container._contentMargins.right" }, classAttribute: "mat-drawer-content" }, providers: [
+TakDrawerContent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakDrawerContent, deps: [{ token: i0.ChangeDetectorRef }, { token: forwardRef(() => TakDrawerContainer) }, { token: i0.ElementRef }, { token: i1.ScrollDispatcher }, { token: i0.NgZone }], target: i0.ɵɵFactoryTarget.Component });
+TakDrawerContent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: TakDrawerContent, selector: "tak-drawer-content", host: { properties: { "style.margin-left.px": "_container._contentMargins.left", "style.margin-right.px": "_container._contentMargins.right" }, classAttribute: "tak-drawer-content" }, providers: [
         {
             provide: CdkScrollable,
-            useExisting: MatDrawerContent,
+            useExisting: TakDrawerContent,
         },
     ], usesInheritance: true, ngImport: i0, template: '<ng-content></ng-content>', isInline: true, changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatDrawerContent, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakDrawerContent, decorators: [{
             type: Component,
             args: [{
-                    selector: 'mat-drawer-content',
+                    selector: 'tak-drawer-content',
                     template: '<ng-content></ng-content>',
                     host: {
-                        'class': 'mat-drawer-content',
+                        'class': 'tak-drawer-content',
                         '[style.margin-left.px]': '_container._contentMargins.left',
                         '[style.margin-right.px]': '_container._contentMargins.right',
                     },
@@ -71,18 +71,18 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
                     providers: [
                         {
                             provide: CdkScrollable,
-                            useExisting: MatDrawerContent,
+                            useExisting: TakDrawerContent,
                         },
                     ],
                 }]
-        }], ctorParameters: function () { return [{ type: i0.ChangeDetectorRef }, { type: MatDrawerContainer, decorators: [{
+        }], ctorParameters: function () { return [{ type: i0.ChangeDetectorRef }, { type: TakDrawerContainer, decorators: [{
                     type: Inject,
-                    args: [forwardRef(() => MatDrawerContainer)]
+                    args: [forwardRef(() => TakDrawerContainer)]
                 }] }, { type: i0.ElementRef }, { type: i1.ScrollDispatcher }, { type: i0.NgZone }]; } });
 /**
  * This component corresponds to a drawer that can be opened on the drawer container.
  */
-export class MatDrawer {
+export class TakDrawer {
     constructor(_elementRef, _focusTrapFactory, _focusMonitor, _platform, _ngZone, _interactivityChecker, _doc, _container) {
         this._elementRef = _elementRef;
         this._focusTrapFactory = _focusTrapFactory;
@@ -106,7 +106,7 @@ export class MatDrawer {
         /** Current state of the sidenav animation. */
         this._animationState = 'void';
         /** Event emitted when the drawer open state is changed. */
-        this.openedChange = 
+        this.openedChange =
         // Note this has to be async in order to avoid some issues with two-bindings (see #8872).
         new EventEmitter(/* isAsync */ true);
         /** Event emitted when the drawer has been opened. */
@@ -384,7 +384,7 @@ export class MatDrawer {
         if (isOpen && openedVia) {
             this._openedVia = openedVia;
         }
-        const result = this._setOpen(isOpen, 
+        const result = this._setOpen(isOpen,
         /* restoreFocus */ !isOpen && this._isFocusWithinDrawer(), this._openedVia || 'program');
         if (!isOpen) {
             this._openedVia = null;
@@ -434,7 +434,7 @@ export class MatDrawer {
         const parent = element.parentNode;
         if (newPosition === 'end') {
             if (!this._anchor) {
-                this._anchor = this._doc.createComment('mat-drawer-anchor');
+                this._anchor = this._doc.createComment('tak-drawer-anchor');
                 parent.insertBefore(this._anchor, element);
             }
             parent.appendChild(element);
@@ -444,34 +444,34 @@ export class MatDrawer {
         }
     }
 }
-MatDrawer.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatDrawer, deps: [{ token: i0.ElementRef }, { token: i2.FocusTrapFactory }, { token: i2.FocusMonitor }, { token: i3.Platform }, { token: i0.NgZone }, { token: i2.InteractivityChecker }, { token: DOCUMENT, optional: true }, { token: MAT_DRAWER_CONTAINER, optional: true }], target: i0.ɵɵFactoryTarget.Component });
-MatDrawer.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: MatDrawer, selector: "mat-drawer", inputs: { position: "position", mode: "mode", disableClose: "disableClose", autoFocus: "autoFocus", opened: "opened" }, outputs: { openedChange: "openedChange", _openedStream: "opened", openedStart: "openedStart", _closedStream: "closed", closedStart: "closedStart", onPositionChanged: "positionChanged" }, host: { attributes: { "tabIndex": "-1" }, listeners: { "@transform.start": "_animationStarted.next($event)", "@transform.done": "_animationEnd.next($event)" }, properties: { "attr.align": "null", "class.mat-drawer-end": "position === \"end\"", "class.mat-drawer-over": "mode === \"over\"", "class.mat-drawer-push": "mode === \"push\"", "class.mat-drawer-side": "mode === \"side\"", "class.mat-drawer-opened": "opened", "@transform": "_animationState" }, classAttribute: "mat-drawer" }, viewQueries: [{ propertyName: "_content", first: true, predicate: ["content"], descendants: true }], exportAs: ["matDrawer"], ngImport: i0, template: "<div class=\"mat-drawer-inner-container\" cdkScrollable #content>\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i1.CdkScrollable, selector: "[cdk-scrollable], [cdkScrollable]" }], animations: [matDrawerAnimations.transformDrawer], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatDrawer, decorators: [{
+TakDrawer.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakDrawer, deps: [{ token: i0.ElementRef }, { token: i2.FocusTrapFactory }, { token: i2.FocusMonitor }, { token: i3.Platform }, { token: i0.NgZone }, { token: i2.InteractivityChecker }, { token: DOCUMENT, optional: true }, { token: TAK_DRAWER_CONTAINER, optional: true }], target: i0.ɵɵFactoryTarget.Component });
+TakDrawer.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: TakDrawer, selector: "tak-drawer", inputs: { position: "position", mode: "mode", disableClose: "disableClose", autoFocus: "autoFocus", opened: "opened" }, outputs: { openedChange: "openedChange", _openedStream: "opened", openedStart: "openedStart", _closedStream: "closed", closedStart: "closedStart", onPositionChanged: "positionChanged" }, host: { attributes: { "tabIndex": "-1" }, listeners: { "@transform.start": "_animationStarted.next($event)", "@transform.done": "_animationEnd.next($event)" }, properties: { "attr.align": "null", "class.tak-drawer-end": "position === \"end\"", "class.tak-drawer-over": "mode === \"over\"", "class.tak-drawer-push": "mode === \"push\"", "class.tak-drawer-side": "mode === \"side\"", "class.tak-drawer-opened": "opened", "@transform": "_animationState" }, classAttribute: "tak-drawer" }, viewQueries: [{ propertyName: "_content", first: true, predicate: ["content"], descendants: true }], exportAs: ["takDrawer"], ngImport: i0, template: "<div class=\"tak-drawer-inner-container\" cdkScrollable #content>\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i1.CdkScrollable, selector: "[cdk-scrollable], [cdkScrollable]" }], animations: [takDrawerAnimations.transformDrawer], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakDrawer, decorators: [{
             type: Component,
-            args: [{ selector: 'mat-drawer', exportAs: 'matDrawer', animations: [matDrawerAnimations.transformDrawer], host: {
-                        'class': 'mat-drawer',
+            args: [{ selector: 'tak-drawer', exportAs: 'takDrawer', animations: [takDrawerAnimations.transformDrawer], host: {
+                        'class': 'tak-drawer',
                         // must prevent the browser from aligning text based on value
                         '[attr.align]': 'null',
-                        '[class.mat-drawer-end]': 'position === "end"',
-                        '[class.mat-drawer-over]': 'mode === "over"',
-                        '[class.mat-drawer-push]': 'mode === "push"',
-                        '[class.mat-drawer-side]': 'mode === "side"',
-                        '[class.mat-drawer-opened]': 'opened',
+                        '[class.tak-drawer-end]': 'position === "end"',
+                        '[class.tak-drawer-over]': 'mode === "over"',
+                        '[class.tak-drawer-push]': 'mode === "push"',
+                        '[class.tak-drawer-side]': 'mode === "side"',
+                        '[class.tak-drawer-opened]': 'opened',
                         'tabIndex': '-1',
                         '[@transform]': '_animationState',
                         '(@transform.start)': '_animationStarted.next($event)',
                         '(@transform.done)': '_animationEnd.next($event)',
-                    }, changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<div class=\"mat-drawer-inner-container\" cdkScrollable #content>\r\n  <ng-content></ng-content>\r\n</div>\r\n" }]
+                    }, changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: "<div class=\"tak-drawer-inner-container\" cdkScrollable #content>\r\n  <ng-content></ng-content>\r\n</div>\r\n" }]
         }], ctorParameters: function () { return [{ type: i0.ElementRef }, { type: i2.FocusTrapFactory }, { type: i2.FocusMonitor }, { type: i3.Platform }, { type: i0.NgZone }, { type: i2.InteractivityChecker }, { type: undefined, decorators: [{
                     type: Optional
                 }, {
                     type: Inject,
                     args: [DOCUMENT]
-                }] }, { type: MatDrawerContainer, decorators: [{
+                }] }, { type: TakDrawerContainer, decorators: [{
                     type: Optional
                 }, {
                     type: Inject,
-                    args: [MAT_DRAWER_CONTAINER]
+                    args: [TAK_DRAWER_CONTAINER]
                 }] }]; }, propDecorators: { position: [{
                 type: Input
             }], mode: [{
@@ -502,12 +502,12 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
                 args: ['content']
             }] } });
 /**
- * `<mat-drawer-container>` component.
+ * `<tak-drawer-container>` component.
  *
- * This is the parent component to one or two `<mat-drawer>`s that validates the state internally
+ * This is the parent component to one or two `<tak-drawer>`s that validates the state internally
  * and coordinates the backdrop and content styling.
  */
-export class MatDrawerContainer {
+export class TakDrawerContainer {
     constructor(_dir, _element, _ngZone, _changeDetectorRef, viewportRuler, defaultAutosize = false, _animationMode) {
         this._dir = _dir;
         this._element = _element;
@@ -559,7 +559,7 @@ export class MatDrawerContainer {
      *
      * **Use at your own risk!** Enabling this option can cause layout thrashing by measuring
      * the drawers on every change detection cycle. Can be configured globally via the
-     * `MAT_DRAWER_DEFAULT_AUTOSIZE` token.
+     * `TAK_DRAWER_DEFAULT_AUTOSIZE` token.
      */
     get autosize() {
         return this._autosize;
@@ -694,7 +694,7 @@ export class MatDrawerContainer {
             // Set the transition class on the container so that the animations occur. This should not
             // be set initially because animations should only be triggered via a change in state.
             if (event.toState !== 'open-instant' && this._animationMode !== 'NoopAnimations') {
-                this._element.nativeElement.classList.add('mat-drawer-transition');
+                this._element.nativeElement.classList.add('tak-drawer-transition');
             }
             this.updateContentMargins();
             this._changeDetectorRef.markForCheck();
@@ -732,10 +732,10 @@ export class MatDrawerContainer {
             });
         }
     }
-    /** Toggles the 'mat-drawer-opened' class on the main 'mat-drawer-container' element. */
+    /** Toggles the 'tak-drawer-opened' class on the main 'tak-drawer-container' element. */
     _setContainerClass(isAdd) {
         const classList = this._element.nativeElement.classList;
-        const className = 'mat-drawer-container-has-open';
+        const className = 'tak-drawer-container-has-open';
         if (isAdd) {
             classList.add(className);
         }
@@ -750,13 +750,13 @@ export class MatDrawerContainer {
         this._drawers.forEach(drawer => {
             if (drawer.position == 'end') {
                 if (this._end != null && (typeof ngDevMode === 'undefined' || ngDevMode)) {
-                    throwMatDuplicatedDrawerError('end');
+                    throwTakDuplicatedDrawerError('end');
                 }
                 this._end = drawer;
             }
             else {
                 if (this._start != null && (typeof ngDevMode === 'undefined' || ngDevMode)) {
-                    throwMatDuplicatedDrawerError('start');
+                    throwTakDuplicatedDrawerError('start');
                 }
                 this._start = drawer;
             }
@@ -798,29 +798,29 @@ export class MatDrawerContainer {
         return drawer != null && drawer.opened;
     }
 }
-MatDrawerContainer.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatDrawerContainer, deps: [{ token: i4.Directionality, optional: true }, { token: i0.ElementRef }, { token: i0.NgZone }, { token: i0.ChangeDetectorRef }, { token: i1.ViewportRuler }, { token: MAT_DRAWER_DEFAULT_AUTOSIZE }, { token: ANIMATION_MODULE_TYPE, optional: true }], target: i0.ɵɵFactoryTarget.Component });
-MatDrawerContainer.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: MatDrawerContainer, selector: "mat-drawer-container", inputs: { autosize: "autosize", hasBackdrop: "hasBackdrop" }, outputs: { backdropClick: "backdropClick" }, host: { properties: { "class.mat-drawer-container-explicit-backdrop": "_backdropOverride" }, classAttribute: "mat-drawer-container" }, providers: [
+TakDrawerContainer.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakDrawerContainer, deps: [{ token: i4.Directionality, optional: true }, { token: i0.ElementRef }, { token: i0.NgZone }, { token: i0.ChangeDetectorRef }, { token: i1.ViewportRuler }, { token: TAK_DRAWER_DEFAULT_AUTOSIZE }, { token: ANIMATION_MODULE_TYPE, optional: true }], target: i0.ɵɵFactoryTarget.Component });
+TakDrawerContainer.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.0", type: TakDrawerContainer, selector: "tak-drawer-container", inputs: { autosize: "autosize", hasBackdrop: "hasBackdrop" }, outputs: { backdropClick: "backdropClick" }, host: { properties: { "class.tak-drawer-container-explicit-backdrop": "_backdropOverride" }, classAttribute: "tak-drawer-container" }, providers: [
         {
-            provide: MAT_DRAWER_CONTAINER,
-            useExisting: MatDrawerContainer,
+            provide: TAK_DRAWER_CONTAINER,
+            useExisting: TakDrawerContainer,
         },
-    ], queries: [{ propertyName: "_content", first: true, predicate: MatDrawerContent, descendants: true }, { propertyName: "_allDrawers", predicate: MatDrawer, descendants: true }], viewQueries: [{ propertyName: "_userContent", first: true, predicate: MatDrawerContent, descendants: true }], exportAs: ["matDrawerContainer"], ngImport: i0, template: "<div class=\"mat-drawer-backdrop\" (click)=\"_onBackdropClicked()\" *ngIf=\"hasBackdrop\"\n     [class.mat-drawer-shown]=\"_isShowingBackdrop()\"></div>\n\n<ng-content select=\"mat-drawer\"></ng-content>\n\n<ng-content select=\"mat-drawer-content\">\n</ng-content>\n<mat-drawer-content *ngIf=\"!_content\">\n  <ng-content></ng-content>\n</mat-drawer-content>\n", styles: [".mat-drawer-container{position:relative;z-index:1;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:hidden}.mat-drawer-container[fullscreen]{top:0;left:0;right:0;bottom:0;position:absolute}.mat-drawer-container[fullscreen].mat-drawer-container-has-open{overflow:hidden}.mat-drawer-container.mat-drawer-container-explicit-backdrop .mat-drawer-side{z-index:3}.mat-drawer-container.ng-animate-disabled .mat-drawer-backdrop,.mat-drawer-container.ng-animate-disabled .mat-drawer-content,.ng-animate-disabled .mat-drawer-container .mat-drawer-backdrop,.ng-animate-disabled .mat-drawer-container .mat-drawer-content{transition:none}.mat-drawer-backdrop{top:0;left:0;right:0;bottom:0;position:absolute;display:block;z-index:3;visibility:hidden}.mat-drawer-backdrop.mat-drawer-shown{visibility:visible}.mat-drawer-transition .mat-drawer-backdrop{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:background-color,visibility}.cdk-high-contrast-active .mat-drawer-backdrop{opacity:.5}.mat-drawer-content{position:relative;z-index:1;display:block;height:100%;overflow:auto}.mat-drawer-transition .mat-drawer-content{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:transform,margin-left,margin-right}.mat-drawer{position:relative;z-index:4;display:block;position:absolute;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%, 0, 0)}.cdk-high-contrast-active .mat-drawer,.cdk-high-contrast-active [dir=rtl] .mat-drawer.mat-drawer-end{border-right:solid 1px currentColor}.cdk-high-contrast-active [dir=rtl] .mat-drawer,.cdk-high-contrast-active .mat-drawer.mat-drawer-end{border-left:solid 1px currentColor;border-right:none}.mat-drawer.mat-drawer-side{z-index:2}.mat-drawer.mat-drawer-end{right:0;transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer{transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer.mat-drawer-end{left:0;right:auto;transform:translate3d(-100%, 0, 0)}.mat-drawer[style*=\"visibility: hidden\"]{display:none}.mat-drawer-inner-container{width:100%;height:100%;overflow:auto;-webkit-overflow-scrolling:touch}.mat-sidenav-fixed{position:fixed}"], dependencies: [{ kind: "directive", type: i5.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "component", type: MatDrawerContent, selector: "mat-drawer-content" }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: MatDrawerContainer, decorators: [{
+    ], queries: [{ propertyName: "_content", first: true, predicate: TakDrawerContent, descendants: true }, { propertyName: "_allDrawers", predicate: TakDrawer, descendants: true }], viewQueries: [{ propertyName: "_userContent", first: true, predicate: TakDrawerContent, descendants: true }], exportAs: ["takDrawerContainer"], ngImport: i0, template: "<div class=\"tak-drawer-backdrop\" (click)=\"_onBackdropClicked()\" *ngIf=\"hasBackdrop\"\n     [class.tak-drawer-shown]=\"_isShowingBackdrop()\"></div>\n\n<ng-content select=\"tak-drawer\"></ng-content>\n\n<ng-content select=\"tak-drawer-content\">\n</ng-content>\n<tak-drawer-content *ngIf=\"!_content\">\n  <ng-content></ng-content>\n</tak-drawer-content>\n", styles: [".tak-drawer-container{position:relative;z-index:1;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:hidden}.tak-drawer-container[fullscreen]{top:0;left:0;right:0;bottom:0;position:absolute}.tak-drawer-container[fullscreen].tak-drawer-container-has-open{overflow:hidden}.tak-drawer-container.tak-drawer-container-explicit-backdrop .tak-drawer-side{z-index:3}.tak-drawer-container.ng-animate-disabled .tak-drawer-backdrop,.tak-drawer-container.ng-animate-disabled .tak-drawer-content,.ng-animate-disabled .tak-drawer-container .tak-drawer-backdrop,.ng-animate-disabled .tak-drawer-container .tak-drawer-content{transition:none}.tak-drawer-backdrop{top:0;left:0;right:0;bottom:0;position:absolute;display:block;z-index:3;visibility:hidden}.tak-drawer-backdrop.tak-drawer-shown{visibility:visible}.tak-drawer-transition .tak-drawer-backdrop{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:background-color,visibility}.cdk-high-contrast-active .tak-drawer-backdrop{opacity:.5}.tak-drawer-content{position:relative;z-index:1;display:block;height:100%;overflow:auto}.tak-drawer-transition .tak-drawer-content{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:transform,margin-left,margin-right}.tak-drawer{position:relative;z-index:4;display:block;position:absolute;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%, 0, 0)}.cdk-high-contrast-active .tak-drawer,.cdk-high-contrast-active [dir=rtl] .tak-drawer.tak-drawer-end{border-right:solid 1px currentColor}.cdk-high-contrast-active [dir=rtl] .tak-drawer,.cdk-high-contrast-active .tak-drawer.tak-drawer-end{border-left:solid 1px currentColor;border-right:none}.tak-drawer.tak-drawer-side{z-index:2}.tak-drawer.tak-drawer-end{right:0;transform:translate3d(100%, 0, 0)}[dir=rtl] .tak-drawer{transform:translate3d(100%, 0, 0)}[dir=rtl] .tak-drawer.tak-drawer-end{left:0;right:auto;transform:translate3d(-100%, 0, 0)}.tak-drawer[style*=\"visibility: hidden\"]{display:none}.tak-drawer-inner-container{width:100%;height:100%;overflow:auto;-webkit-overflow-scrolling:touch}.tak-sidenav-fixed{position:fixed}"], dependencies: [{ kind: "directive", type: i5.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "component", type: TakDrawerContent, selector: "tak-drawer-content" }], changeDetection: i0.ChangeDetectionStrategy.OnPush, encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImport: i0, type: TakDrawerContainer, decorators: [{
             type: Component,
-            args: [{ selector: 'mat-drawer-container', exportAs: 'matDrawerContainer', host: {
-                        'class': 'mat-drawer-container',
-                        '[class.mat-drawer-container-explicit-backdrop]': '_backdropOverride',
+            args: [{ selector: 'tak-drawer-container', exportAs: 'takDrawerContainer', host: {
+                        'class': 'tak-drawer-container',
+                        '[class.tak-drawer-container-explicit-backdrop]': '_backdropOverride',
                     }, changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, providers: [
                         {
-                            provide: MAT_DRAWER_CONTAINER,
-                            useExisting: MatDrawerContainer,
+                            provide: TAK_DRAWER_CONTAINER,
+                            useExisting: TakDrawerContainer,
                         },
-                    ], template: "<div class=\"mat-drawer-backdrop\" (click)=\"_onBackdropClicked()\" *ngIf=\"hasBackdrop\"\n     [class.mat-drawer-shown]=\"_isShowingBackdrop()\"></div>\n\n<ng-content select=\"mat-drawer\"></ng-content>\n\n<ng-content select=\"mat-drawer-content\">\n</ng-content>\n<mat-drawer-content *ngIf=\"!_content\">\n  <ng-content></ng-content>\n</mat-drawer-content>\n", styles: [".mat-drawer-container{position:relative;z-index:1;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:hidden}.mat-drawer-container[fullscreen]{top:0;left:0;right:0;bottom:0;position:absolute}.mat-drawer-container[fullscreen].mat-drawer-container-has-open{overflow:hidden}.mat-drawer-container.mat-drawer-container-explicit-backdrop .mat-drawer-side{z-index:3}.mat-drawer-container.ng-animate-disabled .mat-drawer-backdrop,.mat-drawer-container.ng-animate-disabled .mat-drawer-content,.ng-animate-disabled .mat-drawer-container .mat-drawer-backdrop,.ng-animate-disabled .mat-drawer-container .mat-drawer-content{transition:none}.mat-drawer-backdrop{top:0;left:0;right:0;bottom:0;position:absolute;display:block;z-index:3;visibility:hidden}.mat-drawer-backdrop.mat-drawer-shown{visibility:visible}.mat-drawer-transition .mat-drawer-backdrop{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:background-color,visibility}.cdk-high-contrast-active .mat-drawer-backdrop{opacity:.5}.mat-drawer-content{position:relative;z-index:1;display:block;height:100%;overflow:auto}.mat-drawer-transition .mat-drawer-content{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:transform,margin-left,margin-right}.mat-drawer{position:relative;z-index:4;display:block;position:absolute;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%, 0, 0)}.cdk-high-contrast-active .mat-drawer,.cdk-high-contrast-active [dir=rtl] .mat-drawer.mat-drawer-end{border-right:solid 1px currentColor}.cdk-high-contrast-active [dir=rtl] .mat-drawer,.cdk-high-contrast-active .mat-drawer.mat-drawer-end{border-left:solid 1px currentColor;border-right:none}.mat-drawer.mat-drawer-side{z-index:2}.mat-drawer.mat-drawer-end{right:0;transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer{transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer.mat-drawer-end{left:0;right:auto;transform:translate3d(-100%, 0, 0)}.mat-drawer[style*=\"visibility: hidden\"]{display:none}.mat-drawer-inner-container{width:100%;height:100%;overflow:auto;-webkit-overflow-scrolling:touch}.mat-sidenav-fixed{position:fixed}"] }]
+                    ], template: "<div class=\"tak-drawer-backdrop\" (click)=\"_onBackdropClicked()\" *ngIf=\"hasBackdrop\"\n     [class.tak-drawer-shown]=\"_isShowingBackdrop()\"></div>\n\n<ng-content select=\"tak-drawer\"></ng-content>\n\n<ng-content select=\"tak-drawer-content\">\n</ng-content>\n<tak-drawer-content *ngIf=\"!_content\">\n  <ng-content></ng-content>\n</tak-drawer-content>\n", styles: [".tak-drawer-container{position:relative;z-index:1;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:hidden}.tak-drawer-container[fullscreen]{top:0;left:0;right:0;bottom:0;position:absolute}.tak-drawer-container[fullscreen].tak-drawer-container-has-open{overflow:hidden}.tak-drawer-container.tak-drawer-container-explicit-backdrop .tak-drawer-side{z-index:3}.tak-drawer-container.ng-animate-disabled .tak-drawer-backdrop,.tak-drawer-container.ng-animate-disabled .tak-drawer-content,.ng-animate-disabled .tak-drawer-container .tak-drawer-backdrop,.ng-animate-disabled .tak-drawer-container .tak-drawer-content{transition:none}.tak-drawer-backdrop{top:0;left:0;right:0;bottom:0;position:absolute;display:block;z-index:3;visibility:hidden}.tak-drawer-backdrop.tak-drawer-shown{visibility:visible}.tak-drawer-transition .tak-drawer-backdrop{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:background-color,visibility}.cdk-high-contrast-active .tak-drawer-backdrop{opacity:.5}.tak-drawer-content{position:relative;z-index:1;display:block;height:100%;overflow:auto}.tak-drawer-transition .tak-drawer-content{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:transform,margin-left,margin-right}.tak-drawer{position:relative;z-index:4;display:block;position:absolute;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%, 0, 0)}.cdk-high-contrast-active .tak-drawer,.cdk-high-contrast-active [dir=rtl] .tak-drawer.tak-drawer-end{border-right:solid 1px currentColor}.cdk-high-contrast-active [dir=rtl] .tak-drawer,.cdk-high-contrast-active .tak-drawer.tak-drawer-end{border-left:solid 1px currentColor;border-right:none}.tak-drawer.tak-drawer-side{z-index:2}.tak-drawer.tak-drawer-end{right:0;transform:translate3d(100%, 0, 0)}[dir=rtl] .tak-drawer{transform:translate3d(100%, 0, 0)}[dir=rtl] .tak-drawer.tak-drawer-end{left:0;right:auto;transform:translate3d(-100%, 0, 0)}.tak-drawer[style*=\"visibility: hidden\"]{display:none}.tak-drawer-inner-container{width:100%;height:100%;overflow:auto;-webkit-overflow-scrolling:touch}.tak-sidenav-fixed{position:fixed}"] }]
         }], ctorParameters: function () { return [{ type: i4.Directionality, decorators: [{
                     type: Optional
                 }] }, { type: i0.ElementRef }, { type: i0.NgZone }, { type: i0.ChangeDetectorRef }, { type: i1.ViewportRuler }, { type: undefined, decorators: [{
                     type: Inject,
-                    args: [MAT_DRAWER_DEFAULT_AUTOSIZE]
+                    args: [TAK_DRAWER_DEFAULT_AUTOSIZE]
                 }] }, { type: undefined, decorators: [{
                     type: Optional
                 }, {
@@ -828,17 +828,17 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
                     args: [ANIMATION_MODULE_TYPE]
                 }] }]; }, propDecorators: { _allDrawers: [{
                 type: ContentChildren,
-                args: [MatDrawer, {
+                args: [TakDrawer, {
                         // We need to use `descendants: true`, because Ivy will no longer match
                         // indirect descendants if it's left as false.
                         descendants: true,
                     }]
             }], _content: [{
                 type: ContentChild,
-                args: [MatDrawerContent]
+                args: [TakDrawerContent]
             }], _userContent: [{
                 type: ViewChild,
-                args: [MatDrawerContent]
+                args: [TakDrawerContent]
             }], autosize: [{
                 type: Input
             }], hasBackdrop: [{

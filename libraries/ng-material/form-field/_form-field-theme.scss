@@ -38,58 +38,58 @@
   $underline-color-warn: theming.get-color-from-palette($warn, text);
   $underline-focused-color: theming.get-color-from-palette($primary, text);
 
-  .mat-form-field-label {
+  .tak-form-field-label {
     color: $label-color;
   }
 
-  .mat-hint {
+  .tak-hint {
     color: $label-color;
   }
 
-  .mat-form-field.mat-focused .mat-form-field-label {
+  .tak-form-field.tak-focused .tak-form-field-label {
     color: $focused-label-color;
 
-    &.mat-accent {
+    &.tak-accent {
       color: $underline-color-accent;
     }
 
-    &.mat-warn {
+    &.tak-warn {
       color: $underline-color-warn;
     }
   }
 
-  .mat-focused .mat-form-field-required-marker {
+  .tak-focused .tak-form-field-required-marker {
     color: $required-label-color;
   }
 
-  .mat-form-field-ripple {
+  .tak-form-field-ripple {
     background-color: $underline-color-base;
   }
 
-  .mat-form-field.mat-focused {
-    .mat-form-field-ripple {
+  .tak-form-field.tak-focused {
+    .tak-form-field-ripple {
       background-color: $underline-focused-color;
 
-      &.mat-accent {
+      &.tak-accent {
         background-color: $underline-color-accent;
       }
 
-      &.mat-warn {
+      &.tak-warn {
         background-color: $underline-color-warn;
       }
     }
   }
 
-  .mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) {
-    .mat-form-field-infix::after {
+  .tak-form-field-type-tak-native-select.tak-focused:not(.tak-form-field-invalid) {
+    .tak-form-field-infix::after {
       color: $underline-focused-color;
     }
 
-    &.mat-accent .mat-form-field-infix::after {
+    &.tak-accent .tak-form-field-infix::after {
       color: $underline-color-accent;
     }
 
-    &.mat-warn .mat-form-field-infix::after {
+    &.tak-warn .tak-form-field-infix::after {
       color: $underline-color-warn;
     }
   }
@@ -97,23 +97,23 @@
   // Styling for the error state of the form field. Note that while the same can be
   // achieved with the ng-* classes, we use this approach in order to ensure that the same
   // logic is used to style the error state and to show the error messages.
-  .mat-form-field.mat-form-field-invalid {
-    .mat-form-field-label {
+  .tak-form-field.tak-form-field-invalid {
+    .tak-form-field-label {
       color: $underline-color-warn;
 
-      &.mat-accent,
-      .mat-form-field-required-marker {
+      &.tak-accent,
+      .tak-form-field-required-marker {
         color: $underline-color-warn;
       }
     }
 
-    .mat-form-field-ripple,
-    .mat-form-field-ripple.mat-accent {
+    .tak-form-field-ripple,
+    .tak-form-field-ripple.tak-accent {
       background-color: $underline-color-warn;
     }
   }
 
-  .mat-error {
+  .tak-error {
     color: $underline-color-warn;
   }
 
@@ -123,7 +123,7 @@
   @include form-field-outline-theme.outline-color($config);
 }
 
-// Used to make instances of the _mat-form-field-label-floating mixin negligibly different,
+// Used to make instances of the _tak-form-field-label-floating mixin negligibly different,
 // and prevent Google's CSS Optimizer from collapsing the declarations. This is needed because some
 // of the selectors contain pseudo-classes not recognized in all browsers. If a browser encounters
 // an unknown pseudo-class it will discard the entire rule set.
@@ -159,7 +159,7 @@ $dedupe: 0;
   $subscript-font-size: $subscript-font-scale * 100%;
   // Font size to use for the for the prefix and suffix icons.
   $prefix-suffix-icon-font-size: $prefix-suffix-icon-font-scale * 100%;
-  // The space between the bottom of the .mat-form-field-flex area and the subscript wrapper.
+  // The space between the bottom of the .tak-form-field-flex area and the subscript wrapper.
   // Mocks show half of the text size, but this margin is applied to an element with the subscript
   // text font size, so we need to divide by the scale factor to make it half of the original text
   // size.
@@ -169,71 +169,71 @@ $dedupe: 0;
   // need to multiply by the subscript font scale factor since the wrapper has a larger font size.
   $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale;
 
-  .mat-form-field {
+  .tak-form-field {
     @include typography-utils.typography-level($config, input);
   }
 
-  .mat-form-field-wrapper {
+  .tak-form-field-wrapper {
     padding-bottom: $wrapper-padding-bottom;
   }
 
-  .mat-form-field-prefix,
-  .mat-form-field-suffix {
+  .tak-form-field-prefix,
+  .tak-form-field-suffix {
     // Allow icons in a prefix or suffix to adapt to the correct size.
-    .mat-icon {
+    .tak-icon {
       font-size: $prefix-suffix-icon-font-size;
       line-height: $line-height;
     }
 
     // Allow icon buttons in a prefix or suffix to adapt to the correct size.
-    .mat-icon-button {
+    .tak-icon-button {
       height: $prefix-suffix-icon-font-scale * 1em;
       width: $prefix-suffix-icon-font-scale * 1em;
 
-      .mat-icon {
+      .tak-icon {
         height: typography-utils.private-coerce-unitless-to-em($line-height);
         line-height: $line-height;
       }
     }
   }
 
-  .mat-form-field-infix {
+  .tak-form-field-infix {
     padding: $infix-padding 0;
     // Throws off the baseline if we do it as a real margin, so we do it as a border instead.
     border-top: $infix-margin-top solid transparent;
   }
 
-  .mat-form-field-can-float {
-    &.mat-form-field-should-float .mat-form-field-label,
-    .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+  .tak-form-field-can-float {
+    &.tak-form-field-should-float .tak-form-field-label,
+    .tak-input-server:focus + .tak-form-field-label-wrapper .tak-form-field-label {
       @include _label-floating($subscript-font-scale, $infix-padding, $infix-margin-top);
     }
 
-    // Server-side rendered matInput with a label attribute but label not shown
-    // (used as a pure CSS stand-in for mat-form-field-should-float).
-    .mat-input-server[label]:not(:label-shown)
-      + .mat-form-field-label-wrapper
-      .mat-form-field-label {
+    // Server-side rendered takInput with a label attribute but label not shown
+    // (used as a pure CSS stand-in for tak-form-field-should-float).
+    .tak-input-server[label]:not(:label-shown)
+      + .tak-form-field-label-wrapper
+      .tak-form-field-label {
       @include _label-floating($subscript-font-scale, $infix-padding, $infix-margin-top);
     }
   }
 
-  .mat-form-field-label-wrapper {
+  .tak-form-field-label-wrapper {
     top: -$infix-margin-top;
     padding-top: $infix-margin-top;
   }
 
-  .mat-form-field-label {
+  .tak-form-field-label {
     top: $infix-margin-top + $infix-padding;
   }
 
-  .mat-form-field-underline {
+  .tak-form-field-underline {
     // We want the underline to start at the end of the content box, not the padding box,
     // so we move it up by the padding amount.
     bottom: $wrapper-padding-bottom;
   }
 
-  .mat-form-field-subscript-wrapper {
+  .tak-form-field-subscript-wrapper {
     font-size: $subscript-font-size;
     margin-top: $subscript-margin-top;
 
@@ -258,7 +258,7 @@ $dedupe: 0;
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-form-field') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-form-field') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

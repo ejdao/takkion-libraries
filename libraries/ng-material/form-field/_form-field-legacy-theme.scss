@@ -19,26 +19,26 @@
     if($is-dark-theme, 0.7, 0.42)
   );
 
-  .mat-form-field-appearance-legacy {
-    .mat-form-field-label {
+  .tak-form-field-appearance-legacy {
+    .tak-form-field-label {
       color: $label-color;
     }
 
-    .mat-hint {
+    .tak-hint {
       color: $label-color;
     }
 
-    .mat-form-field-underline {
+    .tak-form-field-underline {
       background-color: $underline-color;
     }
 
-    &.mat-form-field-disabled .mat-form-field-underline {
+    &.tak-form-field-disabled .tak-form-field-underline {
       @include form-common.private-control-disabled-underline($underline-color);
     }
   }
 }
 
-// Used to make instances of the _mat-form-field-label-floating mixin negligibly different,
+// Used to make instances of the _tak-form-field-label-floating mixin negligibly different,
 // and prevent Google's CSS Optimizer from collapsing the declarations. This is needed because some
 // of the selectors contain pseudo-classes not recognized in all browsers. If a browser encounters
 // an unknown pseudo-class it will discard the entire rule set.
@@ -85,7 +85,7 @@ $legacy-dedupe: 0;
   // If the line-height is given as a unitless number, coerce it to `em`.
   $infix-margin-top: $subscript-font-scale *
     typography-utils.private-coerce-unitless-to-em($line-height);
-  // The space between the bottom of the .mat-form-field-flex area and the subscript wrapper.
+  // The space between the bottom of the .tak-form-field-flex area and the subscript wrapper.
   // Mocks show half of the text size, but this margin is applied to an element with the subscript
   // text font size, so we need to divide by the scale factor to make it half of the original text
   // size. We again need to subtract off the line spacing since the mocks measure to the edge of the
@@ -96,48 +96,48 @@ $legacy-dedupe: 0;
   // need to multiply by the subscript font scale factor since the wrapper has a larger font size.
   $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale;
 
-  .mat-form-field-appearance-legacy {
-    .mat-form-field-wrapper {
+  .tak-form-field-appearance-legacy {
+    .tak-form-field-wrapper {
       padding-bottom: $wrapper-padding-bottom;
     }
 
-    .mat-form-field-infix {
+    .tak-form-field-infix {
       padding: $infix-padding 0;
     }
 
-    &.mat-form-field-can-float {
-      &.mat-form-field-should-float .mat-form-field-label,
-      .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    &.tak-form-field-can-float {
+      &.tak-form-field-should-float .tak-form-field-label,
+      .tak-input-server:focus + .tak-form-field-label-wrapper .tak-form-field-label {
         @include _label-floating($subscript-font-scale, $infix-padding, $infix-margin-top);
       }
 
       // @breaking-change 8.0.0 will rely on AutofillMonitor instead.
-      .mat-form-field-autofill-control:-webkit-autofill
-        + .mat-form-field-label-wrapper
-        .mat-form-field-label {
+      .tak-form-field-autofill-control:-webkit-autofill
+        + .tak-form-field-label-wrapper
+        .tak-form-field-label {
         @include _label-floating($subscript-font-scale, $infix-padding, $infix-margin-top);
       }
 
-      // Server-side rendered matInput with a label attribute but label not shown
-      // (used as a pure CSS stand-in for mat-form-field-should-float).
-      .mat-input-server[label]:not(:label-shown)
-        + .mat-form-field-label-wrapper
-        .mat-form-field-label {
+      // Server-side rendered takInput with a label attribute but label not shown
+      // (used as a pure CSS stand-in for tak-form-field-should-float).
+      .tak-input-server[label]:not(:label-shown)
+        + .tak-form-field-label-wrapper
+        .tak-form-field-label {
         @include _label-floating($subscript-font-scale, $infix-padding, $infix-margin-top);
       }
     }
 
-    .mat-form-field-label {
+    .tak-form-field-label {
       top: $infix-margin-top + $infix-padding;
     }
 
-    .mat-form-field-underline {
+    .tak-form-field-underline {
       // We want the underline to start at the end of the content box, not the padding box,
       // so we move it up by the padding amount.
       bottom: $wrapper-padding-bottom;
     }
 
-    .mat-form-field-subscript-wrapper {
+    .tak-form-field-subscript-wrapper {
       margin-top: $subscript-margin-top;
 
       // We want the subscript to start at the end of the content box, not the padding box,
@@ -149,25 +149,25 @@ $legacy-dedupe: 0;
   // translateZ causes the label to not appear while printing, so we override it to not
   // apply translateZ while printing
   @media print {
-    .mat-form-field-appearance-legacy {
-      &.mat-form-field-can-float {
-        &.mat-form-field-should-float .mat-form-field-label,
-        .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    .tak-form-field-appearance-legacy {
+      &.tak-form-field-can-float {
+        &.tak-form-field-should-float .tak-form-field-label,
+        .tak-input-server:focus + .tak-form-field-label-wrapper .tak-form-field-label {
           @include _label-floating-print($subscript-font-scale, $infix-padding, $infix-margin-top);
         }
 
         // @breaking-change 8.0.0 will rely on AutofillMonitor instead.
-        .mat-form-field-autofill-control:-webkit-autofill
-          + .mat-form-field-label-wrapper
-          .mat-form-field-label {
+        .tak-form-field-autofill-control:-webkit-autofill
+          + .tak-form-field-label-wrapper
+          .tak-form-field-label {
           @include _label-floating-print($subscript-font-scale, $infix-padding, $infix-margin-top);
         }
 
-        // Server-side rendered matInput with a label attribute but label not shown
-        // (used as a pure CSS stand-in for mat-form-field-should-float).
-        .mat-input-server[label]:not(:label-shown)
-          + .mat-form-field-label-wrapper
-          .mat-form-field-label {
+        // Server-side rendered takInput with a label attribute but label not shown
+        // (used as a pure CSS stand-in for tak-form-field-should-float).
+        .tak-input-server[label]:not(:label-shown)
+          + .tak-form-field-label-wrapper
+          .tak-form-field-label {
           @include _label-floating-print($subscript-font-scale, $infix-padding, $infix-margin-top);
         }
       }
@@ -180,7 +180,7 @@ $legacy-dedupe: 0;
 
 @mixin legacy-theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-form-field-legacy') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-form-field-legacy') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

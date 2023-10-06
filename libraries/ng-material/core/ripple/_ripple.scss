@@ -1,13 +1,13 @@
 @use '@takkion/ng-cdk';
 
 @mixin ripple() {
-  // The host element of an mat-ripple directive should always have a position of "absolute" or
+  // The host element of an tak-ripple directive should always have a position of "absolute" or
   // "relative" so that the ripples inside are correctly positioned relatively to the container.
-  .mat-ripple {
+  .tak-ripple {
     overflow: hidden;
 
     // By default, every ripple container should have position: relative in favor of creating an
-    // easy API for developers using the MatRipple directive.
+    // easy API for developers using the TakRipple directive.
     position: relative;
 
     // Promote containers that have ripples to a new layer. We want to target `:not(:empty)`,
@@ -20,11 +20,11 @@
     }
   }
 
-  .mat-ripple.mat-ripple-unbounded {
+  .tak-ripple.tak-ripple-unbounded {
     overflow: visible;
   }
 
-  .mat-ripple-element {
+  .tak-ripple-element {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;

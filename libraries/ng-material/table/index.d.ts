@@ -19,50 +19,50 @@ import { DataSource } from '@takkion/ng-cdk/table';
 import * as i0 from '@angular/core';
 import * as i5 from '@takkion/ng-cdk/table';
 import * as i6 from '@takkion/ng-material/core';
-import { MatPaginator } from '@takkion/ng-material/paginator';
-import { MatSort } from '@takkion/ng-material/sort';
+import { TakPaginator } from '@takkion/ng-material/paginator';
+import { TakSort } from '@takkion/ng-material/sort';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs';
 
 declare namespace i1 {
-  export { MatRecycleRows, MatTable };
+  export { TakRecycleRows, TakTable };
 }
 
 declare namespace i2 {
   export {
-    MatCellDef,
-    MatHeaderCellDef,
-    MatFooterCellDef,
-    MatColumnDef,
-    MatHeaderCell,
-    MatFooterCell,
-    MatCell,
+    TakCellDef,
+    TakHeaderCellDef,
+    TakFooterCellDef,
+    TakColumnDef,
+    TakHeaderCell,
+    TakFooterCell,
+    TakCell,
   };
 }
 
 declare namespace i3 {
   export {
-    MatHeaderRowDef,
-    MatFooterRowDef,
-    MatRowDef,
-    MatHeaderRow,
-    MatFooterRow,
-    MatRow,
-    MatNoDataRow,
+    TakHeaderRowDef,
+    TakFooterRowDef,
+    TakRowDef,
+    TakHeaderRow,
+    TakFooterRow,
+    TakRow,
+    TakNoDataRow,
   };
 }
 
 declare namespace i4 {
-  export { MatTextColumn };
+  export { TakTextColumn };
 }
 
 /** Cell template container that adds the right classes and role. */
-export declare class MatCell extends CdkCell {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatCell, never>;
+export declare class TakCell extends CdkCell {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakCell, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatCell,
-    'mat-cell, td[mat-cell]',
+    TakCell,
+    'tak-cell, td[tak-cell]',
     never,
     {},
     {},
@@ -73,14 +73,14 @@ export declare class MatCell extends CdkCell {
 }
 
 /**
- * Cell definition for the mat-table.
+ * Cell definition for the tak-table.
  * Captures the template of a column's data row cell as well as cell-specific properties.
  */
-export declare class MatCellDef extends CdkCellDef {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatCellDef, never>;
+export declare class TakCellDef extends CdkCellDef {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakCellDef, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatCellDef,
-    '[matCellDef]',
+    TakCellDef,
+    '[takCellDef]',
     never,
     {},
     {},
@@ -91,26 +91,26 @@ export declare class MatCellDef extends CdkCellDef {
 }
 
 /**
- * Column definition for the mat-table.
+ * Column definition for the tak-table.
  * Defines a set of cells available for a table column.
  */
-export declare class MatColumnDef extends CdkColumnDef {
+export declare class TakColumnDef extends CdkColumnDef {
   /** Unique name for this column. */
   get name(): string;
   set name(name: string);
   /**
-   * Add "mat-column-" prefix in addition to "cdk-column-" prefix.
-   * In the future, this will only add "mat-column-" and columnCssClassName
+   * Add "tak-column-" prefix in addition to "cdk-column-" prefix.
+   * In the future, this will only add "tak-column-" and columnCssClassName
    * will change from type string[] to string.
    * @docs-private
    */
   protected _updateColumnCssClassName(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatColumnDef, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakColumnDef, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatColumnDef,
-    '[matColumnDef]',
+    TakColumnDef,
+    '[takColumnDef]',
     never,
-    { sticky: 'sticky'; name: 'matColumnDef' },
+    { sticky: 'sticky'; name: 'takColumnDef' },
     {},
     never,
     never,
@@ -119,11 +119,11 @@ export declare class MatColumnDef extends CdkColumnDef {
 }
 
 /** Footer cell template container that adds the right classes and role. */
-export declare class MatFooterCell extends CdkFooterCell {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatFooterCell, never>;
+export declare class TakFooterCell extends CdkFooterCell {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakFooterCell, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatFooterCell,
-    'mat-footer-cell, td[mat-footer-cell]',
+    TakFooterCell,
+    'tak-footer-cell, td[tak-footer-cell]',
     never,
     {},
     {},
@@ -134,14 +134,14 @@ export declare class MatFooterCell extends CdkFooterCell {
 }
 
 /**
- * Footer cell definition for the mat-table.
+ * Footer cell definition for the tak-table.
  * Captures the template of a column's footer cell and as well as cell-specific properties.
  */
-export declare class MatFooterCellDef extends CdkFooterCellDef {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatFooterCellDef, never>;
+export declare class TakFooterCellDef extends CdkFooterCellDef {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakFooterCellDef, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatFooterCellDef,
-    '[matFooterCellDef]',
+    TakFooterCellDef,
+    '[takFooterCellDef]',
     never,
     {},
     {},
@@ -152,12 +152,12 @@ export declare class MatFooterCellDef extends CdkFooterCellDef {
 }
 
 /** Footer template container that contains the cell outlet. Adds the right class and role. */
-export declare class MatFooterRow extends CdkFooterRow {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatFooterRow, never>;
+export declare class TakFooterRow extends CdkFooterRow {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakFooterRow, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatFooterRow,
-    'mat-footer-row, tr[mat-footer-row]',
-    ['matFooterRow'],
+    TakFooterRow,
+    'tak-footer-row, tr[tak-footer-row]',
+    ['takFooterRow'],
     {},
     {},
     never,
@@ -167,16 +167,16 @@ export declare class MatFooterRow extends CdkFooterRow {
 }
 
 /**
- * Footer row definition for the mat-table.
+ * Footer row definition for the tak-table.
  * Captures the footer row's template and other footer properties such as the columns to display.
  */
-export declare class MatFooterRowDef extends CdkFooterRowDef {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatFooterRowDef, never>;
+export declare class TakFooterRowDef extends CdkFooterRowDef {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakFooterRowDef, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatFooterRowDef,
-    '[matFooterRowDef]',
+    TakFooterRowDef,
+    '[takFooterRowDef]',
     never,
-    { columns: 'matFooterRowDef'; sticky: 'matFooterRowDefSticky' },
+    { columns: 'takFooterRowDef'; sticky: 'takFooterRowDefSticky' },
     {},
     never,
     never,
@@ -185,11 +185,11 @@ export declare class MatFooterRowDef extends CdkFooterRowDef {
 }
 
 /** Header cell template container that adds the right classes and role. */
-export declare class MatHeaderCell extends CdkHeaderCell {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatHeaderCell, never>;
+export declare class TakHeaderCell extends CdkHeaderCell {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakHeaderCell, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatHeaderCell,
-    'mat-header-cell, th[mat-header-cell]',
+    TakHeaderCell,
+    'tak-header-cell, th[tak-header-cell]',
     never,
     {},
     {},
@@ -200,14 +200,14 @@ export declare class MatHeaderCell extends CdkHeaderCell {
 }
 
 /**
- * Header cell definition for the mat-table.
+ * Header cell definition for the tak-table.
  * Captures the template of a column's header cell and as well as cell-specific properties.
  */
-export declare class MatHeaderCellDef extends CdkHeaderCellDef {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatHeaderCellDef, never>;
+export declare class TakHeaderCellDef extends CdkHeaderCellDef {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakHeaderCellDef, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatHeaderCellDef,
-    '[matHeaderCellDef]',
+    TakHeaderCellDef,
+    '[takHeaderCellDef]',
     never,
     {},
     {},
@@ -218,12 +218,12 @@ export declare class MatHeaderCellDef extends CdkHeaderCellDef {
 }
 
 /** Header template container that contains the cell outlet. Adds the right class and role. */
-export declare class MatHeaderRow extends CdkHeaderRow {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatHeaderRow, never>;
+export declare class TakHeaderRow extends CdkHeaderRow {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakHeaderRow, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatHeaderRow,
-    'mat-header-row, tr[mat-header-row]',
-    ['matHeaderRow'],
+    TakHeaderRow,
+    'tak-header-row, tr[tak-header-row]',
+    ['takHeaderRow'],
     {},
     {},
     never,
@@ -233,16 +233,16 @@ export declare class MatHeaderRow extends CdkHeaderRow {
 }
 
 /**
- * Header row definition for the mat-table.
+ * Header row definition for the tak-table.
  * Captures the header row's template and other header properties such as the columns to display.
  */
-export declare class MatHeaderRowDef extends CdkHeaderRowDef {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatHeaderRowDef, never>;
+export declare class TakHeaderRowDef extends CdkHeaderRowDef {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakHeaderRowDef, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatHeaderRowDef,
-    '[matHeaderRowDef]',
+    TakHeaderRowDef,
+    '[takHeaderRowDef]',
     never,
-    { columns: 'matHeaderRowDef'; sticky: 'matHeaderRowDefSticky' },
+    { columns: 'takHeaderRowDef'; sticky: 'takHeaderRowDefSticky' },
     {},
     never,
     never,
@@ -251,12 +251,12 @@ export declare class MatHeaderRowDef extends CdkHeaderRowDef {
 }
 
 /** Row that can be used to display a message when no data is shown in the table. */
-export declare class MatNoDataRow extends CdkNoDataRow {
+export declare class TakNoDataRow extends CdkNoDataRow {
   _contentClassName: string;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatNoDataRow, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakNoDataRow, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatNoDataRow,
-    'ng-template[matNoDataRow]',
+    TakNoDataRow,
+    'ng-template[takNoDataRow]',
     never,
     {},
     {},
@@ -270,11 +270,11 @@ export declare class MatNoDataRow extends CdkNoDataRow {
  * Enables the recycle view repeater strategy, which reduces rendering latency. Not compatible with
  * tables that animate rows.
  */
-export declare class MatRecycleRows {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatRecycleRows, never>;
+export declare class TakRecycleRows {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakRecycleRows, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatRecycleRows,
-    'mat-table[recycleRows], table[mat-table][recycleRows]',
+    TakRecycleRows,
+    'tak-table[recycleRows], table[tak-table][recycleRows]',
     never,
     {},
     {},
@@ -285,12 +285,12 @@ export declare class MatRecycleRows {
 }
 
 /** Data row template container that contains the cell outlet. Adds the right class and role. */
-export declare class MatRow extends CdkRow {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatRow, never>;
+export declare class TakRow extends CdkRow {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakRow, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatRow,
-    'mat-row, tr[mat-row]',
-    ['matRow'],
+    TakRow,
+    'tak-row, tr[tak-row]',
+    ['takRow'],
     {},
     {},
     never,
@@ -300,17 +300,17 @@ export declare class MatRow extends CdkRow {
 }
 
 /**
- * Data row definition for the mat-table.
+ * Data row definition for the tak-table.
  * Captures the data row's template and other properties such as the columns to display and
  * a when predicate that describes when this row should be used.
  */
-export declare class MatRowDef<T> extends CdkRowDef<T> {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatRowDef<any>, never>;
+export declare class TakRowDef<T> extends CdkRowDef<T> {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakRowDef<any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatRowDef<any>,
-    '[matRowDef]',
+    TakRowDef<any>,
+    '[takRowDef]',
     never,
-    { columns: 'matRowDefColumns'; when: 'matRowDefWhen' },
+    { columns: 'takRowDefColumns'; when: 'takRowDefWhen' },
     {},
     never,
     never,
@@ -321,16 +321,16 @@ export declare class MatRowDef<T> extends CdkRowDef<T> {
 /**
  * Wrapper for the CdkTable with Material design styles.
  */
-export declare class MatTable<T> extends CdkTable<T> {
+export declare class TakTable<T> extends CdkTable<T> {
   /** Overrides the sticky CSS class set by the `CdkTable`. */
   protected stickyCssClass: string;
   /** Overrides the need to add position: sticky on every sticky cell element in `CdkTable`. */
   protected needsPositionStickyOnElement: boolean;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTable<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTable<any>, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatTable<any>,
-    'mat-table, table[mat-table]',
-    ['matTable'],
+    TakTable<any>,
+    'tak-table, table[tak-table]',
+    ['takTable'],
     {},
     {},
     never,
@@ -341,7 +341,7 @@ export declare class MatTable<T> extends CdkTable<T> {
 
 /**
  * Data source that accepts a client-side data array and includes native support of filtering,
- * sorting (using MatSort), and pagination (using MatPaginator).
+ * sorting (using TakSort), and pagination (using TakPaginator).
  *
  * Allows for sort customization by overriding sortingDataAccessor, which defines how data
  * properties are accessed. Also allows for filter customization by overriding filterTermAccessor,
@@ -352,12 +352,12 @@ export declare class MatTable<T> extends CdkTable<T> {
  * interactions. If your app needs to support more advanced use cases, consider implementing your
  * own `DataSource`.
  */
-export declare class MatTableDataSource<T> extends _MatTableDataSource<T, MatPaginator> {}
+export declare class TakTableDataSource<T> extends _TakTableDataSource<T, TakPaginator> {}
 
 /** Shared base class with MDC-based implementation. */
-export declare class _MatTableDataSource<
+export declare class _TakTableDataSource<
   T,
-  P extends MatTableDataSourcePaginator = MatTableDataSourcePaginator,
+  P extends TakTableDataSourcePaginator = TakTableDataSourcePaginator,
 > extends DataSource<T> {
   /** Stream that emits when a new data array is set on the data source. */
   private readonly _data;
@@ -389,15 +389,15 @@ export declare class _MatTableDataSource<
   get filter(): string;
   set filter(filter: string);
   /**
-   * Instance of the MatSort directive used by the table to control its sorting. Sort changes
-   * emitted by the MatSort will trigger an update to the table's rendered data.
+   * Instance of the TakSort directive used by the table to control its sorting. Sort changes
+   * emitted by the TakSort will trigger an update to the table's rendered data.
    */
-  get sort(): MatSort | null;
-  set sort(sort: MatSort | null);
+  get sort(): TakSort | null;
+  set sort(sort: TakSort | null);
   private _sort;
   /**
-   * Instance of the MatPaginator component used by the table to control what page of the data is
-   * displayed. Page changes emitted by the MatPaginator will trigger an update to the
+   * Instance of the TakPaginator component used by the table to control what page of the data is
+   * displayed. Page changes emitted by the TakPaginator will trigger an update to the
    * table's rendered data.
    *
    * Note that the data source uses the paginator's properties to calculate which page of data
@@ -419,15 +419,15 @@ export declare class _MatTableDataSource<
    */
   sortingDataAccessor: (data: T, sortHeaderId: string) => string | number;
   /**
-   * Gets a sorted copy of the data array based on the state of the MatSort. Called
-   * after changes are made to the filtered data or when sort changes are emitted from MatSort.
+   * Gets a sorted copy of the data array based on the state of the TakSort. Called
+   * after changes are made to the filtered data or when sort changes are emitted from TakSort.
    * By default, the function retrieves the active sort and its direction and compares data
    * by retrieving data using the sortingDataAccessor. May be overridden for a custom implementation
    * of data ordering.
    * @param data The array of data that should be sorted.
-   * @param sort The connected MatSort that holds the current sort state.
+   * @param sort The connected TakSort that holds the current sort state.
    */
-  sortData: (data: T[], sort: MatSort) => T[];
+  sortData: (data: T[], sort: TakSort) => T[];
   /**
    * Checks if a data object matches the data source's filter string. By default, each data object
    * is converted to a string of its properties and returns true if the filter has
@@ -453,13 +453,13 @@ export declare class _MatTableDataSource<
    */
   _filterData(data: T[]): T[];
   /**
-   * Returns a sorted copy of the data if MatSort has a sort applied, otherwise just returns the
+   * Returns a sorted copy of the data if TakSort has a sort applied, otherwise just returns the
    * data array as provided. Uses the default data accessor for data lookup, unless a
    * sortDataAccessor function is defined.
    */
   _orderData(data: T[]): T[];
   /**
-   * Returns a paged slice of the provided data array according to the provided MatPaginator's page
+   * Returns a paged slice of the provided data array according to the provided TakPaginator's page
    * index and length. If there is no paginator provided, returns the data array as provided.
    */
   _pageData(data: T[]): T[];
@@ -470,85 +470,85 @@ export declare class _MatTableDataSource<
    */
   _updatePaginator(filteredDataLength: number): void;
   /**
-   * Used by the MatTable. Called when it connects to the data source.
+   * Used by the TakTable. Called when it connects to the data source.
    * @docs-private
    */
   connect(): BehaviorSubject<T[]>;
   /**
-   * Used by the MatTable. Called when it disconnects from the data source.
+   * Used by the TakTable. Called when it disconnects from the data source.
    * @docs-private
    */
   disconnect(): void;
 }
 
 /**
- * Interface that matches the required API parts for the MatPaginator's PageEvent.
+ * Interface that matches the required API parts for the TakPaginator's PageEvent.
  * Decoupled so that users can depend on either the legacy or MDC-based paginator.
  */
-export declare interface MatTableDataSourcePageEvent {
+export declare interface TakTableDataSourcePageEvent {
   pageIndex: number;
   pageSize: number;
   length: number;
 }
 
 /**
- * Interface that matches the required API parts of the MatPaginator.
+ * Interface that matches the required API parts of the TakPaginator.
  * Decoupled so that users can depend on either the legacy or MDC-based paginator.
  */
-export declare interface MatTableDataSourcePaginator {
-  page: Subject<MatTableDataSourcePageEvent>;
+export declare interface TakTableDataSourcePaginator {
+  page: Subject<TakTableDataSourcePageEvent>;
   pageIndex: number;
   initialized: Observable<void>;
   pageSize: number;
   length: number;
 }
 
-export declare class MatTableModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTableModule, never>;
+export declare class TakTableModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTableModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatTableModule,
+    TakTableModule,
     [
-      typeof i1.MatTable,
-      typeof i1.MatRecycleRows,
-      typeof i2.MatHeaderCellDef,
-      typeof i3.MatHeaderRowDef,
-      typeof i2.MatColumnDef,
-      typeof i2.MatCellDef,
-      typeof i3.MatRowDef,
-      typeof i2.MatFooterCellDef,
-      typeof i3.MatFooterRowDef,
-      typeof i2.MatHeaderCell,
-      typeof i2.MatCell,
-      typeof i2.MatFooterCell,
-      typeof i3.MatHeaderRow,
-      typeof i3.MatRow,
-      typeof i3.MatFooterRow,
-      typeof i3.MatNoDataRow,
-      typeof i4.MatTextColumn,
+      typeof i1.TakTable,
+      typeof i1.TakRecycleRows,
+      typeof i2.TakHeaderCellDef,
+      typeof i3.TakHeaderRowDef,
+      typeof i2.TakColumnDef,
+      typeof i2.TakCellDef,
+      typeof i3.TakRowDef,
+      typeof i2.TakFooterCellDef,
+      typeof i3.TakFooterRowDef,
+      typeof i2.TakHeaderCell,
+      typeof i2.TakCell,
+      typeof i2.TakFooterCell,
+      typeof i3.TakHeaderRow,
+      typeof i3.TakRow,
+      typeof i3.TakFooterRow,
+      typeof i3.TakNoDataRow,
+      typeof i4.TakTextColumn,
     ],
-    [typeof i5.CdkTableModule, typeof i6.MatCommonModule],
+    [typeof i5.CdkTableModule, typeof i6.TakCommonModule],
     [
-      typeof i6.MatCommonModule,
-      typeof i1.MatTable,
-      typeof i1.MatRecycleRows,
-      typeof i2.MatHeaderCellDef,
-      typeof i3.MatHeaderRowDef,
-      typeof i2.MatColumnDef,
-      typeof i2.MatCellDef,
-      typeof i3.MatRowDef,
-      typeof i2.MatFooterCellDef,
-      typeof i3.MatFooterRowDef,
-      typeof i2.MatHeaderCell,
-      typeof i2.MatCell,
-      typeof i2.MatFooterCell,
-      typeof i3.MatHeaderRow,
-      typeof i3.MatRow,
-      typeof i3.MatFooterRow,
-      typeof i3.MatNoDataRow,
-      typeof i4.MatTextColumn,
+      typeof i6.TakCommonModule,
+      typeof i1.TakTable,
+      typeof i1.TakRecycleRows,
+      typeof i2.TakHeaderCellDef,
+      typeof i3.TakHeaderRowDef,
+      typeof i2.TakColumnDef,
+      typeof i2.TakCellDef,
+      typeof i3.TakRowDef,
+      typeof i2.TakFooterCellDef,
+      typeof i3.TakFooterRowDef,
+      typeof i2.TakHeaderCell,
+      typeof i2.TakCell,
+      typeof i2.TakFooterCell,
+      typeof i3.TakHeaderRow,
+      typeof i3.TakRow,
+      typeof i3.TakFooterRow,
+      typeof i3.TakNoDataRow,
+      typeof i4.TakTextColumn,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatTableModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakTableModule>;
 }
 
 /**
@@ -560,11 +560,11 @@ export declare class MatTableModule {
  * the `dataAccessor` input. Change the text justification to the start or end using the `justify`
  * input.
  */
-export declare class MatTextColumn<T> extends CdkTextColumn<T> {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatTextColumn<any>, never>;
+export declare class TakTextColumn<T> extends CdkTextColumn<T> {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakTextColumn<any>, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatTextColumn<any>,
-    'mat-text-column',
+    TakTextColumn<any>,
+    'tak-text-column',
     never,
     {},
     {},

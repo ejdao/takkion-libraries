@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -13,7 +13,7 @@ exports.classNames = {
   [schematics_1.TargetVersion.V10]: [
     {
       pr: 'https://github.com/angular/components/pull/19289',
-      changes: [{ replace: 'MatButtonToggleGroupMultiple', replaceWith: 'MatButtonToggleGroup' }],
+      changes: [{ replace: 'TakButtonToggleGroupMultiple', replaceWith: 'TakButtonToggleGroup' }],
     },
   ],
   [schematics_1.TargetVersion.V6]: [
@@ -21,7 +21,7 @@ exports.classNames = {
       pr: 'https://github.com/angular/components/pull/10291',
       changes: [
         { replace: 'FloatPlaceholderType', replaceWith: 'FloatLabelType' },
-        { replace: 'MAT_PLACEHOLDER_GLOBAL_OPTIONS', replaceWith: 'MAT_LABEL_GLOBAL_OPTIONS' },
+        { replace: 'TAK_PLACEHOLDER_GLOBAL_OPTIONS', replaceWith: 'TAK_LABEL_GLOBAL_OPTIONS' },
         { replace: 'PlaceholderOptions', replaceWith: 'LabelOptions' },
       ],
     },

@@ -1,7 +1,7 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatButtonModule } from '@takkion/ng-material/button';
-import { MatIconModule } from '@takkion/ng-material/icon';
-import { MatTreeModule } from '@takkion/ng-material/tree';
+import { TakButtonModule } from '@takkion/ng-material/button';
+import { TakIconModule } from '@takkion/ng-material/icon';
+import { TakTreeModule } from '@takkion/ng-material/tree';
 
 import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 
@@ -13,9 +13,9 @@ describe('<%= classify(name) %>Component', () => {
     TestBed.configureTestingModule({
       declarations: [ <%= classify(name) %>Component ],
       imports: [
-        MatButtonModule,
-        MatIconModule,
-        MatTreeModule,
+        TakButtonModule,
+        TakIconModule,
+        TakTreeModule,
       ]
     }).compileComponents();
   }));

@@ -3,10 +3,10 @@ import * as i0 from '@angular/core';
 import * as i2 from '@takkion/ng-material/core';
 
 declare namespace i1 {
-  export { MatDivider };
+  export { TakDivider };
 }
 
-export declare class MatDivider {
+export declare class TakDivider {
   /** Whether the divider is vertically aligned. */
   get vertical(): boolean;
   set vertical(value: BooleanInput);
@@ -15,10 +15,10 @@ export declare class MatDivider {
   get inset(): boolean;
   set inset(value: BooleanInput);
   private _inset;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDivider, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDivider, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDivider,
-    'mat-divider',
+    TakDivider,
+    'tak-divider',
     never,
     { vertical: 'vertical'; inset: 'inset' },
     {},
@@ -28,15 +28,15 @@ export declare class MatDivider {
   >;
 }
 
-export declare class MatDividerModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDividerModule, never>;
+export declare class TakDividerModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDividerModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatDividerModule,
-    [typeof i1.MatDivider],
-    [typeof i2.MatCommonModule],
-    [typeof i1.MatDivider, typeof i2.MatCommonModule]
+    TakDividerModule,
+    [typeof i1.TakDivider],
+    [typeof i2.TakCommonModule],
+    [typeof i1.TakDivider, typeof i2.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatDividerModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakDividerModule>;
 }
 
 export {};

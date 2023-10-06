@@ -10,12 +10,12 @@
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-tree {
+  .tak-tree {
     background: theming.get-color-from-palette($background, 'card');
   }
 
-  .mat-tree-node,
-  .mat-nested-tree-node {
+  .tak-tree-node,
+  .tak-nested-tree-node {
     color: theming.get-color-from-palette($foreground, text);
   }
 }
@@ -24,12 +24,12 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-tree {
+  .tak-tree {
     font-family: typography-utils.font-family($config);
   }
 
-  .mat-tree-node,
-  .mat-nested-tree-node {
+  .tak-tree-node,
+  .tak-nested-tree-node {
     font-weight: typography-utils.font-weight($config, body-1);
     font-size: typography-utils.font-size($config, body-1);
   }
@@ -44,7 +44,7 @@
   );
 
   @include compatibility.private-density-legacy-compatibility() {
-    .mat-tree-node {
+    .tak-tree-node {
       min-height: $height;
     }
   }
@@ -52,7 +52,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-tree') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-tree') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

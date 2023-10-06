@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { InjectionToken, } from '@angular/core';
+import { InjectionToken } from '@angular/core';
 /**
  * Injection token for {@link _ViewRepeater}. This token is for use by Angular Material only.
  * @docs-private

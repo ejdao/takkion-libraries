@@ -141,7 +141,7 @@ export declare class _RecycleViewRepeaterStrategy<T, R, C extends _ViewRepeaterI
 }
 
 /**
- * Event emitted when the value of a MatSelectionModel has changed.
+ * Event emitted when the value of a TakSelectionModel has changed.
  * @docs-private
  */
 export declare interface SelectionChange<T> {

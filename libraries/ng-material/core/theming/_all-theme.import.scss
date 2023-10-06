@@ -42,10 +42,10 @@
 @forward '../../sort/sort-theme.import';
 @forward '../../tabs/tabs-theme.import';
 @forward '../typography/all-typography';
-@forward '../core' as mat-*;
-@forward '../core-theme' as mat-* hide mat-color, mat-theme;
-@forward '../core' as mat-core-* hide mat-core-core;
-@forward '../core-theme' as mat-core-*;
+@forward '../core' as tak-*;
+@forward '../core-theme' as tak-* hide tak-color, tak-theme;
+@forward '../core' as tak-core-* hide tak-core-core;
+@forward '../core-theme' as tak-core-*;
 @forward 'all-theme';
 
 @import '../core';

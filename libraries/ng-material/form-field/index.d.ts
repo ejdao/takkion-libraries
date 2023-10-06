@@ -27,101 +27,101 @@ import { ThemePalette } from '@takkion/ng-material/core';
 export declare type FloatLabelType = 'always' | 'never' | 'auto';
 
 /** @docs-private */
-export declare function getMatFormFieldDuplicatedHintError(align: string): Error;
+export declare function getTakFormFieldDuplicatedHintError(align: string): Error;
 
 /** @docs-private */
-export declare function getMatFormFieldMissingControlError(): Error;
+export declare function getTakFormFieldMissingControlError(): Error;
 
 /** @docs-private */
-export declare function getMatFormFieldPlaceholderConflictError(): Error;
+export declare function getTakFormFieldPlaceholderConflictError(): Error;
 
 declare namespace i1 {
-  export { MAT_ERROR, MatError };
+  export { TAK_ERROR, TakError };
 }
 
 declare namespace i2 {
   export {
-    MatFormFieldAppearance,
+    TakFormFieldAppearance,
     FloatLabelType,
-    MatFormFieldDefaultOptions,
-    MAT_FORM_FIELD_DEFAULT_OPTIONS,
-    MAT_FORM_FIELD,
-    MatFormField,
+    TakFormFieldDefaultOptions,
+    TAK_FORM_FIELD_DEFAULT_OPTIONS,
+    TAK_FORM_FIELD,
+    TakFormField,
   };
 }
 
 declare namespace i3 {
-  export { _MAT_HINT, MatHint };
+  export { _TAK_HINT, TakHint };
 }
 
 declare namespace i4 {
-  export { MatLabel };
+  export { TakLabel };
 }
 
 declare namespace i5 {
-  export { MatPlaceholder };
+  export { TakPlaceholder };
 }
 
 declare namespace i6 {
-  export { MAT_PREFIX, MatPrefix };
+  export { TAK_PREFIX, TakPrefix };
 }
 
 declare namespace i7 {
-  export { MAT_SUFFIX, MatSuffix };
+  export { TAK_SUFFIX, TakSuffix };
 }
 
 /**
- * Injection token that can be used to reference instances of `MatError`. It serves as
- * alternative token to the actual `MatError` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakError`. It serves as
+ * alternative token to the actual `TakError` class which could cause unnecessary
  * retention of the class and its directive metadata.
  */
-export declare const MAT_ERROR: InjectionToken<MatError>;
+export declare const TAK_ERROR: InjectionToken<TakError>;
 
 /**
- * Injection token that can be used to inject an instances of `MatFormField`. It serves
- * as alternative token to the actual `MatFormField` class which would cause unnecessary
- * retention of the `MatFormField` class and its component metadata.
+ * Injection token that can be used to inject an instances of `TakFormField`. It serves
+ * as alternative token to the actual `TakFormField` class which would cause unnecessary
+ * retention of the `TakFormField` class and its component metadata.
  */
-export declare const MAT_FORM_FIELD: InjectionToken<MatFormField>;
+export declare const TAK_FORM_FIELD: InjectionToken<TakFormField>;
 
 /**
  * Injection token that can be used to configure the
  * default options for all form field within an app.
  */
-export declare const MAT_FORM_FIELD_DEFAULT_OPTIONS: InjectionToken<MatFormFieldDefaultOptions>;
+export declare const TAK_FORM_FIELD_DEFAULT_OPTIONS: InjectionToken<TakFormFieldDefaultOptions>;
 
 /**
- * Injection token that can be used to reference instances of `MatHint`. It serves as
- * alternative token to the actual `MatHint` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakHint`. It serves as
+ * alternative token to the actual `TakHint` class which could cause unnecessary
  * retention of the class and its directive metadata.
  *
  * *Note*: This is not part of the public API as the MDC-based form-field will not
- * need a lightweight token for `MatHint` and we want to reduce breaking changes.
+ * need a lightweight token for `TakHint` and we want to reduce breaking changes.
  */
-export declare const _MAT_HINT: InjectionToken<MatHint>;
+export declare const _TAK_HINT: InjectionToken<TakHint>;
 
 /**
- * Injection token that can be used to reference instances of `MatPrefix`. It serves as
- * alternative token to the actual `MatPrefix` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakPrefix`. It serves as
+ * alternative token to the actual `TakPrefix` class which could cause unnecessary
  * retention of the class and its directive metadata.
  */
-export declare const MAT_PREFIX: InjectionToken<MatPrefix>;
+export declare const TAK_PREFIX: InjectionToken<TakPrefix>;
 
 /**
- * Injection token that can be used to reference instances of `MatSuffix`. It serves as
- * alternative token to the actual `MatSuffix` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakSuffix`. It serves as
+ * alternative token to the actual `TakSuffix` class which could cause unnecessary
  * retention of the class and its directive metadata.
  */
-export declare const MAT_SUFFIX: InjectionToken<MatSuffix>;
+export declare const TAK_SUFFIX: InjectionToken<TakSuffix>;
 
 /** Single error message to be shown underneath the form field. */
-export declare class MatError {
+export declare class TakError {
   id: string;
   constructor(ariaLive: string, elementRef: ElementRef);
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatError, [{ attribute: 'aria-live' }, null]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakError, [{ attribute: 'aria-live' }, null]>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatError,
-    'mat-error',
+    TakError,
+    'tak-error',
     never,
     { id: 'id' },
     {},
@@ -132,8 +132,8 @@ export declare class MatError {
 }
 
 /** Container for form controls that applies Material Design styling and behavior. */
-export declare class MatFormField
-  extends _MatFormFieldBase
+export declare class TakFormField
+  extends _TakFormFieldBase
   implements AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy, CanColor
 {
   private _changeDetectorRef;
@@ -150,9 +150,9 @@ export declare class MatFormField
   private _outlineGapCalculationNeededOnStable;
   private readonly _destroyed;
   /** The form field appearance style. */
-  get appearance(): MatFormFieldAppearance;
-  set appearance(value: MatFormFieldAppearance);
-  _appearance: MatFormFieldAppearance;
+  get appearance(): TakFormFieldAppearance;
+  set appearance(value: TakFormFieldAppearance);
+  _appearance: TakFormFieldAppearance;
   /** Whether the required marker should be hidden. */
   get hideRequiredMarker(): boolean;
   set hideRequiredMarker(value: BooleanInput);
@@ -163,7 +163,7 @@ export declare class MatFormField
   _shouldAlwaysFloat(): boolean;
   /** Whether the label can float or not. */
   _canLabelFloat(): boolean;
-  /** State of the mat-hint and mat-error animations. */
+  /** State of the tak-hint and tak-error animations. */
   _subscriptAnimationState: string;
   /** Text for the form field hint. */
   get hintLabel(): string;
@@ -187,23 +187,23 @@ export declare class MatFormField
   _connectionContainerRef: ElementRef;
   _inputContainerRef: ElementRef;
   private _label;
-  _controlNonStatic: MatFormFieldControl<any>;
-  _controlStatic: MatFormFieldControl<any>;
-  get _control(): MatFormFieldControl<any>;
-  set _control(value: MatFormFieldControl<any>);
+  _controlNonStatic: TakFormFieldControl<any>;
+  _controlStatic: TakFormFieldControl<any>;
+  get _control(): TakFormFieldControl<any>;
+  set _control(value: TakFormFieldControl<any>);
   private _explicitFormFieldControl;
-  _labelChildNonStatic: MatLabel;
-  _labelChildStatic: MatLabel;
-  _placeholderChild: MatPlaceholder;
-  _errorChildren: QueryList<MatError>;
-  _hintChildren: QueryList<MatHint>;
-  _prefixChildren: QueryList<MatPrefix>;
-  _suffixChildren: QueryList<MatSuffix>;
+  _labelChildNonStatic: TakLabel;
+  _labelChildStatic: TakLabel;
+  _placeholderChild: TakPlaceholder;
+  _errorChildren: QueryList<TakError>;
+  _hintChildren: QueryList<TakHint>;
+  _prefixChildren: QueryList<TakPrefix>;
+  _suffixChildren: QueryList<TakSuffix>;
   constructor(
     elementRef: ElementRef,
     _changeDetectorRef: ChangeDetectorRef,
     _dir: Directionality,
-    _defaults: MatFormFieldDefaultOptions,
+    _defaults: TakFormFieldDefaultOptions,
     _platform: Platform,
     _ngZone: NgZone,
     _animationMode: string
@@ -237,13 +237,13 @@ export declare class MatFormField
   _animateAndLockLabel(): void;
   /**
    * Ensure that there is only one placeholder (either `placeholder` attribute on the child control
-   * or child element with the `mat-placeholder` directive).
+   * or child element with the `tak-placeholder` directive).
    */
   private _validatePlaceholders;
   /** Does any extra processing that is required when handling the hints. */
   private _processHints;
   /**
-   * Ensure that there is a maximum of one of each `<mat-hint>` alignment specified, with the
+   * Ensure that there is a maximum of one of each `<tak-hint>` alignment specified, with the
    * attribute being considered as `align="start"`.
    */
   private _validateHints;
@@ -266,13 +266,13 @@ export declare class MatFormField
   /** Checks whether the form field is attached to the DOM. */
   private _isAttachedToDOM;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatFormField,
+    TakFormField,
     [null, null, { optional: true }, { optional: true }, null, null, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatFormField,
-    'mat-form-field',
-    ['matFormField'],
+    TakFormField,
+    'tak-form-field',
+    ['takFormField'],
     {
       color: 'color';
       appearance: 'appearance';
@@ -293,47 +293,47 @@ export declare class MatFormField
       '_suffixChildren',
     ],
     [
-      '[matPrefix]',
+      '[takPrefix]',
       '*',
-      'mat-placeholder',
-      'mat-label',
-      '[matSuffix]',
-      'mat-error',
-      "mat-hint:not([align='end'])",
-      "mat-hint[align='end']",
+      'tak-placeholder',
+      'tak-label',
+      '[takSuffix]',
+      'tak-error',
+      "tak-hint:not([align='end'])",
+      "tak-hint[align='end']",
     ],
     false
   >;
 }
 
 /**
- * Animations used by the MatFormField.
+ * Animations used by the TakFormField.
  * @docs-private
  */
-export declare const matFormFieldAnimations: {
+export declare const takFormFieldAnimations: {
   readonly transitionMessages: AnimationTriggerMetadata;
 };
 
 /** Possible appearance styles for the form field. */
-export declare type MatFormFieldAppearance = 'legacy' | 'standard' | 'fill' | 'outline';
+export declare type TakFormFieldAppearance = 'legacy' | 'standard' | 'fill' | 'outline';
 
 /**
- * Boilerplate for applying mixins to MatFormField.
+ * Boilerplate for applying mixins to TakFormField.
  * @docs-private
  */
-declare const _MatFormFieldBase: _Constructor<CanColor> &
+declare const _TakFormFieldBase: _Constructor<CanColor> &
   _AbstractConstructor<CanColor> & {
     new (_elementRef: ElementRef): {
       _elementRef: ElementRef;
     };
   };
 
-/** An interface which allows a control to work inside of a `MatFormField`. */
-export declare abstract class MatFormFieldControl<T> {
+/** An interface which allows a control to work inside of a `TakFormField`. */
+export declare abstract class TakFormFieldControl<T> {
   /** The value of the control. */
   value: T | null;
   /**
-   * Stream that emits whenever the state of the control changes such that the parent `MatFormField`
+   * Stream that emits whenever the state of the control changes such that the parent `TakFormField`
    * needs to run change detection.
    */
   readonly stateChanges: Observable<void>;
@@ -347,7 +347,7 @@ export declare abstract class MatFormFieldControl<T> {
   readonly focused: boolean;
   /** Whether the control is empty. */
   readonly empty: boolean;
-  /** Whether the `MatFormField` label should try to float. */
+  /** Whether the `TakFormField` label should try to float. */
   readonly shouldLabelFloat: boolean;
   /** Whether the control is required. */
   readonly required: boolean;
@@ -356,9 +356,9 @@ export declare abstract class MatFormFieldControl<T> {
   /** Whether the control is in an error state. */
   readonly errorState: boolean;
   /**
-   * An optional name for the control type that can be used to distinguish `mat-form-field` elements
+   * An optional name for the control type that can be used to distinguish `tak-form-field` elements
    * based on their control type. The form field will add a class,
-   * `mat-form-field-type-{{controlType}}` to its root element.
+   * `tak-form-field-type-{{controlType}}` to its root element.
    */
   readonly controlType?: string;
   /**
@@ -375,9 +375,9 @@ export declare abstract class MatFormFieldControl<T> {
   abstract setDescribedByIds(ids: string[]): void;
   /** Handles a click on the control's container. */
   abstract onContainerClick(event: MouseEvent): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatFormFieldControl<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakFormFieldControl<any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatFormFieldControl<any>,
+    TakFormFieldControl<any>,
     never,
     never,
     {},
@@ -390,11 +390,11 @@ export declare abstract class MatFormFieldControl<T> {
 
 /**
  * Represents the default options for the form field that can be configured
- * using the `MAT_FORM_FIELD_DEFAULT_OPTIONS` injection token.
+ * using the `TAK_FORM_FIELD_DEFAULT_OPTIONS` injection token.
  */
-export declare interface MatFormFieldDefaultOptions {
+export declare interface TakFormFieldDefaultOptions {
   /** Default form field appearance style. */
-  appearance?: MatFormFieldAppearance;
+  appearance?: TakFormFieldAppearance;
   /** Default color of the form field. */
   color?: ThemePalette;
   /** Whether the required marker should be hidden by default. */
@@ -406,44 +406,44 @@ export declare interface MatFormFieldDefaultOptions {
   floatLabel?: FloatLabelType;
 }
 
-export declare class MatFormFieldModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatFormFieldModule, never>;
+export declare class TakFormFieldModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakFormFieldModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatFormFieldModule,
+    TakFormFieldModule,
     [
-      typeof i1.MatError,
-      typeof i2.MatFormField,
-      typeof i3.MatHint,
-      typeof i4.MatLabel,
-      typeof i5.MatPlaceholder,
-      typeof i6.MatPrefix,
-      typeof i7.MatSuffix,
+      typeof i1.TakError,
+      typeof i2.TakFormField,
+      typeof i3.TakHint,
+      typeof i4.TakLabel,
+      typeof i5.TakPlaceholder,
+      typeof i6.TakPrefix,
+      typeof i7.TakSuffix,
     ],
-    [typeof i8.CommonModule, typeof i9.MatCommonModule, typeof i10.ObserversModule],
+    [typeof i8.CommonModule, typeof i9.TakCommonModule, typeof i10.ObserversModule],
     [
-      typeof i9.MatCommonModule,
-      typeof i1.MatError,
-      typeof i2.MatFormField,
-      typeof i3.MatHint,
-      typeof i4.MatLabel,
-      typeof i5.MatPlaceholder,
-      typeof i6.MatPrefix,
-      typeof i7.MatSuffix,
+      typeof i9.TakCommonModule,
+      typeof i1.TakError,
+      typeof i2.TakFormField,
+      typeof i3.TakHint,
+      typeof i4.TakLabel,
+      typeof i5.TakPlaceholder,
+      typeof i6.TakPrefix,
+      typeof i7.TakSuffix,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatFormFieldModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakFormFieldModule>;
 }
 
 /** Hint text to be shown underneath the form field control. */
-export declare class MatHint {
+export declare class TakHint {
   /** Whether to align the hint label at the start or end of the line. */
   align: 'start' | 'end';
   /** Unique ID for the hint. Used for the aria-describedby on the form field control. */
   id: string;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatHint, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakHint, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatHint,
-    'mat-hint',
+    TakHint,
+    'tak-hint',
     never,
     { align: 'align'; id: 'id' },
     {},
@@ -453,23 +453,23 @@ export declare class MatHint {
   >;
 }
 
-/** The floating label for a `mat-form-field`. */
-export declare class MatLabel {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatLabel, never>;
-  static ɵdir: i0.ɵɵDirectiveDeclaration<MatLabel, 'mat-label', never, {}, {}, never, never, false>;
+/** The floating label for a `tak-form-field`. */
+export declare class TakLabel {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakLabel, never>;
+  static ɵdir: i0.ɵɵDirectiveDeclaration<TakLabel, 'tak-label', never, {}, {}, never, never, false>;
 }
 
 /**
- * The placeholder text for an `MatFormField`.
- * @deprecated Use `<mat-label>` to specify the label and the `placeholder` attribute to specify the
+ * The placeholder text for an `TakFormField`.
+ * @deprecated Use `<tak-label>` to specify the label and the `placeholder` attribute to specify the
  *     placeholder.
  * @breaking-change 8.0.0
  */
-export declare class MatPlaceholder {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatPlaceholder, never>;
+export declare class TakPlaceholder {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakPlaceholder, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatPlaceholder,
-    'mat-placeholder',
+    TakPlaceholder,
+    'tak-placeholder',
     never,
     {},
     {},
@@ -480,11 +480,11 @@ export declare class MatPlaceholder {
 }
 
 /** Prefix to be placed in front of the form field. */
-export declare class MatPrefix {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatPrefix, never>;
+export declare class TakPrefix {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakPrefix, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatPrefix,
-    '[matPrefix]',
+    TakPrefix,
+    '[takPrefix]',
     never,
     {},
     {},
@@ -495,11 +495,11 @@ export declare class MatPrefix {
 }
 
 /** Suffix to be placed at the end of the form field. */
-export declare class MatSuffix {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSuffix, never>;
+export declare class TakSuffix {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSuffix, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatSuffix,
-    '[matSuffix]',
+    TakSuffix,
+    '[takSuffix]',
     never,
     {},
     {},

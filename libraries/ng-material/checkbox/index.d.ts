@@ -18,51 +18,51 @@ import * as i0 from '@angular/core';
 import * as i3 from '@takkion/ng-material/core';
 import * as i4 from '@takkion/ng-cdk/observers';
 import { InjectionToken } from '@angular/core';
-import { MatRipple } from '@takkion/ng-material/core';
+import { TakRipple } from '@takkion/ng-material/core';
 import { NgZone } from '@angular/core';
 import { OnDestroy } from '@angular/core';
 import { Provider } from '@angular/core';
 import { ThemePalette } from '@takkion/ng-material/core';
 
 declare namespace i1 {
-  export { MAT_CHECKBOX_REQUIRED_VALIDATOR, MatCheckboxRequiredValidator };
+  export { TAK_CHECKBOX_REQUIRED_VALIDATOR, TakCheckboxRequiredValidator };
 }
 
 declare namespace i2 {
   export {
-    MAT_CHECKBOX_CONTROL_VALUE_ACCESSOR,
+    TAK_CHECKBOX_CONTROL_VALUE_ACCESSOR,
     TransitionCheckState,
-    MatCheckboxChange,
-    _MatCheckboxBase,
-    MatCheckbox,
+    TakCheckboxChange,
+    _TakCheckboxBase,
+    TakCheckbox,
   };
 }
 
 /**
- * Provider Expression that allows mat-checkbox to register as a ControlValueAccessor.
+ * Provider Expression that allows tak-checkbox to register as a ControlValueAccessor.
  * This allows it to support [(ngModel)].
  * @docs-private
  */
-export declare const MAT_CHECKBOX_CONTROL_VALUE_ACCESSOR: any;
+export declare const TAK_CHECKBOX_CONTROL_VALUE_ACCESSOR: any;
 
-/** Injection token to be used to override the default options for `mat-checkbox`. */
-export declare const MAT_CHECKBOX_DEFAULT_OPTIONS: InjectionToken<MatCheckboxDefaultOptions>;
+/** Injection token to be used to override the default options for `tak-checkbox`. */
+export declare const TAK_CHECKBOX_DEFAULT_OPTIONS: InjectionToken<TakCheckboxDefaultOptions>;
 
 /** @docs-private */
-export declare function MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY(): MatCheckboxDefaultOptions;
+export declare function TAK_CHECKBOX_DEFAULT_OPTIONS_FACTORY(): TakCheckboxDefaultOptions;
 
-export declare const MAT_CHECKBOX_REQUIRED_VALIDATOR: Provider;
+export declare const TAK_CHECKBOX_REQUIRED_VALIDATOR: Provider;
 
 /**
  * A material design checkbox component. Supports all of the functionality of an HTML5 checkbox,
- * and exposes a similar API. A MatCheckbox can be either checked, unchecked, indeterminate, or
+ * and exposes a similar API. A TakCheckbox can be either checked, unchecked, indeterminate, or
  * disabled. Note that all additional accessibility attributes are taken care of by the component,
  * so there is no need to provide them yourself. However, if you want to omit a label and still
  * have the checkbox be accessible, you may supply an [aria-label] input.
  * See: https://material.io/design/components/selection-controls.html
  */
-export declare class MatCheckbox
-  extends _MatCheckboxBase<MatCheckboxChange>
+export declare class TakCheckbox
+  extends _TakCheckboxBase<TakCheckboxChange>
   implements AfterViewInit, OnDestroy
 {
   private _focusMonitor;
@@ -81,9 +81,9 @@ export declare class MatCheckbox
     ngZone: NgZone,
     tabIndex: string,
     animationMode?: string,
-    options?: MatCheckboxDefaultOptions
+    options?: TakCheckboxDefaultOptions
   );
-  protected _createChangeEvent(isChecked: boolean): MatCheckboxChange;
+  protected _createChangeEvent(isChecked: boolean): TakCheckboxChange;
   protected _getAnimationTargetElement(): any;
   ngAfterViewInit(): void;
   ngOnDestroy(): void;
@@ -98,13 +98,13 @@ export declare class MatCheckbox
   /** Focuses the checkbox. */
   focus(origin?: FocusOrigin, options?: FocusOptions): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatCheckbox,
+    TakCheckbox,
     [null, null, null, null, { attribute: 'tabindex' }, { optional: true }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatCheckbox,
-    'mat-checkbox',
-    ['matCheckbox'],
+    TakCheckbox,
+    'tak-checkbox',
+    ['takCheckbox'],
     { disableRipple: 'disableRipple'; color: 'color'; tabIndex: 'tabIndex' },
     {},
     never,
@@ -113,8 +113,8 @@ export declare class MatCheckbox
   >;
 }
 
-export declare abstract class _MatCheckboxBase<E>
-  extends _MatCheckboxMixinBase
+export declare abstract class _TakCheckboxBase<E>
+  extends _TakCheckboxMixinBase
   implements
     AfterViewInit,
     ControlValueAccessor,
@@ -127,7 +127,7 @@ export declare abstract class _MatCheckboxBase<E>
   protected _changeDetectorRef: ChangeDetectorRef;
   protected _ngZone: NgZone;
   _animationMode?: string | undefined;
-  protected _options?: MatCheckboxDefaultOptions | undefined;
+  protected _options?: TakCheckboxDefaultOptions | undefined;
   /** Focuses the checkbox. */
   abstract focus(origin?: FocusOrigin): void;
   /** Creates the change event that will be emitted by the checkbox. */
@@ -178,7 +178,7 @@ export declare abstract class _MatCheckboxBase<E>
   /** The native `<label>` element */
   _labelElement: ElementRef<HTMLInputElement>;
   /** Reference to the ripple instance of the checkbox. */
-  ripple: MatRipple;
+  ripple: TakRipple;
   /**
    * Called when the checkbox is blurred. Needed to properly implement ControlValueAccessor.
    * @docs-private
@@ -194,7 +194,7 @@ export declare abstract class _MatCheckboxBase<E>
     _ngZone: NgZone,
     tabIndex: string,
     _animationMode?: string | undefined,
-    _options?: MatCheckboxDefaultOptions | undefined
+    _options?: TakCheckboxDefaultOptions | undefined
   );
   ngAfterViewInit(): void;
   /** Whether the checkbox is checked. */
@@ -242,9 +242,9 @@ export declare abstract class _MatCheckboxBase<E>
    * server-side rendering.
    */
   private _syncIndeterminate;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatCheckboxBase<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakCheckboxBase<any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatCheckboxBase<any>,
+    _TakCheckboxBase<any>,
     never,
     never,
     {
@@ -267,10 +267,10 @@ export declare abstract class _MatCheckboxBase<E>
   >;
 }
 
-/** Change event object emitted by MatCheckbox. */
-export declare class MatCheckboxChange {
-  /** The source MatCheckbox of the event. */
-  source: MatCheckbox;
+/** Change event object emitted by TakCheckbox. */
+export declare class TakCheckboxChange {
+  /** The source TakCheckbox of the event. */
+  source: TakCheckbox;
   /** The new `checked` value of the checkbox. */
   checked: boolean;
 }
@@ -282,18 +282,18 @@ export declare class MatCheckboxChange {
  * check-indeterminate: Toggle checked status, set indeterminate to false. Default behavior.
  * undefined: Same as `check-indeterminate`.
  */
-export declare type MatCheckboxClickAction = 'noop' | 'check' | 'check-indeterminate' | undefined;
+export declare type TakCheckboxClickAction = 'noop' | 'check' | 'check-indeterminate' | undefined;
 
-/** Default `mat-checkbox` options that can be overridden. */
-export declare interface MatCheckboxDefaultOptions {
+/** Default `tak-checkbox` options that can be overridden. */
+export declare interface TakCheckboxDefaultOptions {
   /** Default theme color palette to be used for checkboxes. */
   color?: ThemePalette;
   /** Default checkbox click action for checkboxes. */
-  clickAction?: MatCheckboxClickAction;
+  clickAction?: TakCheckboxClickAction;
 }
 
 /** @docs-private */
-declare const _MatCheckboxMixinBase: _Constructor<HasTabIndex> &
+declare const _TakCheckboxMixinBase: _Constructor<HasTabIndex> &
   _AbstractConstructor<HasTabIndex> &
   _Constructor<CanColor> &
   _AbstractConstructor<CanColor> &
@@ -306,32 +306,32 @@ declare const _MatCheckboxMixinBase: _Constructor<HasTabIndex> &
     };
   };
 
-export declare class MatCheckboxModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatCheckboxModule, never>;
+export declare class TakCheckboxModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakCheckboxModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatCheckboxModule,
-    [typeof i2.MatCheckbox],
+    TakCheckboxModule,
+    [typeof i2.TakCheckbox],
     [
-      typeof i3.MatRippleModule,
-      typeof i3.MatCommonModule,
+      typeof i3.TakRippleModule,
+      typeof i3.TakCommonModule,
       typeof i4.ObserversModule,
-      typeof _MatCheckboxRequiredValidatorModule,
+      typeof _TakCheckboxRequiredValidatorModule,
     ],
-    [typeof i2.MatCheckbox, typeof i3.MatCommonModule, typeof _MatCheckboxRequiredValidatorModule]
+    [typeof i2.TakCheckbox, typeof i3.TakCommonModule, typeof _TakCheckboxRequiredValidatorModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatCheckboxModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakCheckboxModule>;
 }
 
 /**
  * Validator for Material checkbox's required attribute in template-driven checkbox.
  * Current CheckboxRequiredValidator only work with `input type=checkbox` and does not
- * work with `mat-checkbox`.
+ * work with `tak-checkbox`.
  */
-export declare class MatCheckboxRequiredValidator extends CheckboxRequiredValidator {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatCheckboxRequiredValidator, never>;
+export declare class TakCheckboxRequiredValidator extends CheckboxRequiredValidator {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakCheckboxRequiredValidator, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatCheckboxRequiredValidator,
-    'mat-checkbox[required][formControlName],             mat-checkbox[required][formControl], mat-checkbox[required][ngModel]',
+    TakCheckboxRequiredValidator,
+    'tak-checkbox[required][formControlName],             tak-checkbox[required][formControl], tak-checkbox[required][ngModel]',
     never,
     {},
     {},
@@ -342,15 +342,15 @@ export declare class MatCheckboxRequiredValidator extends CheckboxRequiredValida
 }
 
 /** This module is used by both original and MDC-based checkbox implementations. */
-export declare class _MatCheckboxRequiredValidatorModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatCheckboxRequiredValidatorModule, never>;
+export declare class _TakCheckboxRequiredValidatorModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakCheckboxRequiredValidatorModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    _MatCheckboxRequiredValidatorModule,
-    [typeof i1.MatCheckboxRequiredValidator],
+    _TakCheckboxRequiredValidatorModule,
+    [typeof i1.TakCheckboxRequiredValidator],
     never,
-    [typeof i1.MatCheckboxRequiredValidator]
+    [typeof i1.TakCheckboxRequiredValidator]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<_MatCheckboxRequiredValidatorModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<_TakCheckboxRequiredValidatorModule>;
 }
 
 /**

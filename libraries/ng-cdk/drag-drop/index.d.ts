@@ -530,7 +530,7 @@ export declare class CdkDropList<T = any> implements OnDestroy {
   /**
    * Keeps track of the items that are registered with this container. Historically we used to
    * do this with a `ContentChildren` query, however queries don't handle transplanted views very
-   * well which means that we can't handle cases like dragging the headers of a `mat-table`
+   * well which means that we can't handle cases like dragging the headers of a `tak-table`
    * correctly. What we do instead is to have the items register themselves with the container
    * and then we sort them based on their position in the DOM.
    */

@@ -34,39 +34,39 @@ declare type AutoFocusTarget = 'dialog' | 'first-tabbable' | 'first-heading';
 
 declare namespace i1 {
   export {
-    throwMatDuplicatedDrawerError,
-    MAT_DRAWER_DEFAULT_AUTOSIZE_FACTORY,
+    throwTakDuplicatedDrawerError,
+    TAK_DRAWER_DEFAULT_AUTOSIZE_FACTORY,
     AutoFocusTarget,
-    MatDrawerToggleResult,
-    MatDrawerMode,
-    MAT_DRAWER_DEFAULT_AUTOSIZE,
-    MAT_DRAWER_CONTAINER,
-    MatDrawerContent,
-    MatDrawer,
-    MatDrawerContainer,
+    TakDrawerToggleResult,
+    TakDrawerMode,
+    TAK_DRAWER_DEFAULT_AUTOSIZE,
+    TAK_DRAWER_CONTAINER,
+    TakDrawerContent,
+    TakDrawer,
+    TakDrawerContainer,
   };
 }
 
 declare namespace i2 {
-  export { MatSidenavContent, MatSidenav, MatSidenavContainer };
+  export { TakSidenavContent, TakSidenav, TakSidenavContainer };
 }
 
 /**
  * Used to provide a drawer container to a drawer while avoiding circular references.
  * @docs-private
  */
-declare const MAT_DRAWER_CONTAINER: InjectionToken<unknown>;
+declare const TAK_DRAWER_CONTAINER: InjectionToken<unknown>;
 
 /** Configures whether drawers should use auto sizing by default. */
-export declare const MAT_DRAWER_DEFAULT_AUTOSIZE: InjectionToken<boolean>;
+export declare const TAK_DRAWER_DEFAULT_AUTOSIZE: InjectionToken<boolean>;
 
 /** @docs-private */
-export declare function MAT_DRAWER_DEFAULT_AUTOSIZE_FACTORY(): boolean;
+export declare function TAK_DRAWER_DEFAULT_AUTOSIZE_FACTORY(): boolean;
 
 /**
  * This component corresponds to a drawer that can be opened on the drawer container.
  */
-export declare class MatDrawer implements AfterViewInit, AfterContentChecked, OnDestroy {
+export declare class TakDrawer implements AfterViewInit, AfterContentChecked, OnDestroy {
   private _elementRef;
   private _focusTrapFactory;
   private _focusMonitor;
@@ -74,7 +74,7 @@ export declare class MatDrawer implements AfterViewInit, AfterContentChecked, On
   private _ngZone;
   private readonly _interactivityChecker;
   private _doc;
-  _container?: MatDrawerContainer | undefined;
+  _container?: TakDrawerContainer | undefined;
   private _focusTrap;
   private _elementFocusedBeforeDrawerWasOpened;
   /** Whether the drawer is initialized. Used for disabling the initial animation. */
@@ -88,8 +88,8 @@ export declare class MatDrawer implements AfterViewInit, AfterContentChecked, On
   set position(value: 'start' | 'end');
   private _position;
   /** Mode of the drawer; one of 'over', 'push' or 'side'. */
-  get mode(): MatDrawerMode;
-  set mode(value: MatDrawerMode);
+  get mode(): TakDrawerMode;
+  set mode(value: TakDrawerMode);
   private _mode;
   /** Whether the drawer can be closed with the escape key or by clicking on the backdrop. */
   get disableClose(): boolean;
@@ -149,7 +149,7 @@ export declare class MatDrawer implements AfterViewInit, AfterContentChecked, On
     _ngZone: NgZone,
     _interactivityChecker: InteractivityChecker,
     _doc: any,
-    _container?: MatDrawerContainer | undefined
+    _container?: TakDrawerContainer | undefined
   );
   /**
    * Focuses the provided element. If the element is not focusable, it will add a tabIndex
@@ -182,18 +182,18 @@ export declare class MatDrawer implements AfterViewInit, AfterContentChecked, On
    * @param openedVia Whether the drawer was opened by a key press, mouse click or programmatically.
    * Used for focus management after the sidenav is closed.
    */
-  open(openedVia?: FocusOrigin): Promise<MatDrawerToggleResult>;
+  open(openedVia?: FocusOrigin): Promise<TakDrawerToggleResult>;
   /** Close the drawer. */
-  close(): Promise<MatDrawerToggleResult>;
+  close(): Promise<TakDrawerToggleResult>;
   /** Closes the drawer with context that the backdrop was clicked. */
-  _closeViaBackdropClick(): Promise<MatDrawerToggleResult>;
+  _closeViaBackdropClick(): Promise<TakDrawerToggleResult>;
   /**
    * Toggle this drawer.
    * @param isOpen Whether the drawer should be open.
    * @param openedVia Whether the drawer was opened by a key press, mouse click or programmatically.
    * Used for focus management after the sidenav is closed.
    */
-  toggle(isOpen?: boolean, openedVia?: FocusOrigin): Promise<MatDrawerToggleResult>;
+  toggle(isOpen?: boolean, openedVia?: FocusOrigin): Promise<TakDrawerToggleResult>;
   /**
    * Toggles the opened state of the drawer.
    * @param isOpen Whether the drawer should open or close.
@@ -212,13 +212,13 @@ export declare class MatDrawer implements AfterViewInit, AfterContentChecked, On
    */
   private _updatePositionInParent;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDrawer,
+    TakDrawer,
     [null, null, null, null, null, null, { optional: true }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDrawer,
-    'mat-drawer',
-    ['matDrawer'],
+    TakDrawer,
+    'tak-drawer',
+    ['takDrawer'],
     {
       position: 'position';
       mode: 'mode';
@@ -244,39 +244,39 @@ export declare class MatDrawer implements AfterViewInit, AfterContentChecked, On
  * Animations used by the Material drawers.
  * @docs-private
  */
-export declare const matDrawerAnimations: {
+export declare const takDrawerAnimations: {
   readonly transformDrawer: AnimationTriggerMetadata;
 };
 
 /**
- * `<mat-drawer-container>` component.
+ * `<tak-drawer-container>` component.
  *
- * This is the parent component to one or two `<mat-drawer>`s that validates the state internally
+ * This is the parent component to one or two `<tak-drawer>`s that validates the state internally
  * and coordinates the backdrop and content styling.
  */
-export declare class MatDrawerContainer implements AfterContentInit, DoCheck, OnDestroy {
+export declare class TakDrawerContainer implements AfterContentInit, DoCheck, OnDestroy {
   private _dir;
   private _element;
   private _ngZone;
   private _changeDetectorRef;
   private _animationMode?;
   /** All drawers in the container. Includes drawers from inside nested containers. */
-  _allDrawers: QueryList<MatDrawer>;
+  _allDrawers: QueryList<TakDrawer>;
   /** Drawers that belong to this container. */
-  _drawers: QueryList<MatDrawer>;
-  _content: MatDrawerContent;
-  _userContent: MatDrawerContent;
+  _drawers: QueryList<TakDrawer>;
+  _content: TakDrawerContent;
+  _userContent: TakDrawerContent;
   /** The drawer child with the `start` position. */
-  get start(): MatDrawer | null;
+  get start(): TakDrawer | null;
   /** The drawer child with the `end` position. */
-  get end(): MatDrawer | null;
+  get end(): TakDrawer | null;
   /**
    * Whether to automatically resize the container whenever
    * the size of any of its drawers changes.
    *
    * **Use at your own risk!** Enabling this option can cause layout thrashing by measuring
    * the drawers on every change detection cycle. Can be configured globally via the
-   * `MAT_DRAWER_DEFAULT_AUTOSIZE` token.
+   * `TAK_DRAWER_DEFAULT_AUTOSIZE` token.
    */
   get autosize(): boolean;
   set autosize(value: BooleanInput);
@@ -355,7 +355,7 @@ export declare class MatDrawerContainer implements AfterContentInit, DoCheck, On
   private _watchDrawerPosition;
   /** Subscribes to changes in drawer mode so we can run change detection. */
   private _watchDrawerMode;
-  /** Toggles the 'mat-drawer-opened' class on the main 'mat-drawer-container' element. */
+  /** Toggles the 'tak-drawer-opened' class on the main 'tak-drawer-container' element. */
   private _setContainerClass;
   /** Validate the state of the drawer children components. */
   private _validateDrawers;
@@ -367,36 +367,36 @@ export declare class MatDrawerContainer implements AfterContentInit, DoCheck, On
   private _canHaveBackdrop;
   private _isDrawerOpen;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDrawerContainer,
+    TakDrawerContainer,
     [{ optional: true }, null, null, null, null, null, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDrawerContainer,
-    'mat-drawer-container',
-    ['matDrawerContainer'],
+    TakDrawerContainer,
+    'tak-drawer-container',
+    ['takDrawerContainer'],
     { autosize: 'autosize'; hasBackdrop: 'hasBackdrop' },
     { backdropClick: 'backdropClick' },
     ['_content', '_allDrawers'],
-    ['mat-drawer', 'mat-drawer-content', '*'],
+    ['tak-drawer', 'tak-drawer-content', '*'],
     false
   >;
 }
 
-export declare class MatDrawerContent extends CdkScrollable implements AfterContentInit {
+export declare class TakDrawerContent extends CdkScrollable implements AfterContentInit {
   private _changeDetectorRef;
-  _container: MatDrawerContainer;
+  _container: TakDrawerContainer;
   constructor(
     _changeDetectorRef: ChangeDetectorRef,
-    _container: MatDrawerContainer,
+    _container: TakDrawerContainer,
     elementRef: ElementRef<HTMLElement>,
     scrollDispatcher: ScrollDispatcher,
     ngZone: NgZone
   );
   ngAfterContentInit(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDrawerContent, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDrawerContent, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDrawerContent,
-    'mat-drawer-content',
+    TakDrawerContent,
+    'tak-drawer-content',
     never,
     {},
     {},
@@ -407,12 +407,12 @@ export declare class MatDrawerContent extends CdkScrollable implements AfterCont
 }
 
 /** Drawer and SideNav display modes. */
-export declare type MatDrawerMode = 'over' | 'push' | 'side';
+export declare type TakDrawerMode = 'over' | 'push' | 'side';
 
 /** Result of the toggle promise that indicates the state of the drawer. */
-export declare type MatDrawerToggleResult = 'open' | 'close';
+export declare type TakDrawerToggleResult = 'open' | 'close';
 
-export declare class MatSidenav extends MatDrawer {
+export declare class TakSidenav extends TakDrawer {
   /** Whether the sidenav is fixed in the viewport. */
   get fixedInViewport(): boolean;
   set fixedInViewport(value: BooleanInput);
@@ -431,11 +431,11 @@ export declare class MatSidenav extends MatDrawer {
   get fixedBottomGap(): number;
   set fixedBottomGap(value: NumberInput);
   private _fixedBottomGap;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSidenav, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSidenav, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatSidenav,
-    'mat-sidenav',
-    ['matSidenav'],
+    TakSidenav,
+    'tak-sidenav',
+    ['takSidenav'],
     {
       fixedInViewport: 'fixedInViewport';
       fixedTopGap: 'fixedTopGap';
@@ -448,34 +448,34 @@ export declare class MatSidenav extends MatDrawer {
   >;
 }
 
-export declare class MatSidenavContainer extends MatDrawerContainer {
-  _allDrawers: QueryList<MatSidenav>;
-  _content: MatSidenavContent;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSidenavContainer, never>;
+export declare class TakSidenavContainer extends TakDrawerContainer {
+  _allDrawers: QueryList<TakSidenav>;
+  _content: TakSidenavContent;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSidenavContainer, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatSidenavContainer,
-    'mat-sidenav-container',
-    ['matSidenavContainer'],
+    TakSidenavContainer,
+    'tak-sidenav-container',
+    ['takSidenavContainer'],
     {},
     {},
     ['_content', '_allDrawers'],
-    ['mat-sidenav', 'mat-sidenav-content', '*'],
+    ['tak-sidenav', 'tak-sidenav-content', '*'],
     false
   >;
 }
 
-export declare class MatSidenavContent extends MatDrawerContent {
+export declare class TakSidenavContent extends TakDrawerContent {
   constructor(
     changeDetectorRef: ChangeDetectorRef,
-    container: MatSidenavContainer,
+    container: TakSidenavContainer,
     elementRef: ElementRef<HTMLElement>,
     scrollDispatcher: ScrollDispatcher,
     ngZone: NgZone
   );
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSidenavContent, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSidenavContent, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatSidenavContent,
-    'mat-sidenav-content',
+    TakSidenavContent,
+    'tak-sidenav-content',
     never,
     {},
     {},
@@ -485,37 +485,37 @@ export declare class MatSidenavContent extends MatDrawerContent {
   >;
 }
 
-export declare class MatSidenavModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSidenavModule, never>;
+export declare class TakSidenavModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSidenavModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatSidenavModule,
+    TakSidenavModule,
     [
-      typeof i1.MatDrawer,
-      typeof i1.MatDrawerContainer,
-      typeof i1.MatDrawerContent,
-      typeof i2.MatSidenav,
-      typeof i2.MatSidenavContainer,
-      typeof i2.MatSidenavContent,
+      typeof i1.TakDrawer,
+      typeof i1.TakDrawerContainer,
+      typeof i1.TakDrawerContent,
+      typeof i2.TakSidenav,
+      typeof i2.TakSidenavContainer,
+      typeof i2.TakSidenavContent,
     ],
-    [typeof i3.CommonModule, typeof i4.MatCommonModule, typeof i5.CdkScrollableModule],
+    [typeof i3.CommonModule, typeof i4.TakCommonModule, typeof i5.CdkScrollableModule],
     [
       typeof i5.CdkScrollableModule,
-      typeof i4.MatCommonModule,
-      typeof i1.MatDrawer,
-      typeof i1.MatDrawerContainer,
-      typeof i1.MatDrawerContent,
-      typeof i2.MatSidenav,
-      typeof i2.MatSidenavContainer,
-      typeof i2.MatSidenavContent,
+      typeof i4.TakCommonModule,
+      typeof i1.TakDrawer,
+      typeof i1.TakDrawerContainer,
+      typeof i1.TakDrawerContent,
+      typeof i2.TakSidenav,
+      typeof i2.TakSidenavContainer,
+      typeof i2.TakSidenavContent,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatSidenavModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakSidenavModule>;
 }
 
 /**
- * Throws an exception when two MatDrawer are matching the same position.
+ * Throws an exception when two TakDrawer are matching the same position.
  * @docs-private
  */
-export declare function throwMatDuplicatedDrawerError(position: string): void;
+export declare function throwTakDuplicatedDrawerError(position: string): void;
 
 export {};

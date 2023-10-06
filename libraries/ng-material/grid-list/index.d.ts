@@ -4,34 +4,34 @@ import { Directionality } from '@takkion/ng-cdk/bidi';
 import { ElementRef } from '@angular/core';
 import * as i0 from '@angular/core';
 import * as i3 from '@takkion/ng-material/core';
-import { MatLine } from '@takkion/ng-material/core';
+import { TakLine } from '@takkion/ng-material/core';
 import { NumberInput } from '@takkion/ng-cdk/coercion';
 import { OnInit } from '@angular/core';
 import { QueryList } from '@angular/core';
 
 declare namespace i1 {
-  export { MatGridList };
+  export { TakGridList };
 }
 
 declare namespace i2 {
   export {
-    MatGridTile,
-    MatGridTileText,
-    MatGridAvatarCssMatStyler,
-    MatGridTileHeaderCssMatStyler,
-    MatGridTileFooterCssMatStyler,
+    TakGridTile,
+    TakGridTileText,
+    TakGridAvatarCssTakStyler,
+    TakGridTileHeaderCssTakStyler,
+    TakGridTileFooterCssTakStyler,
   };
 }
 
 /**
- * Directive whose purpose is to add the mat- CSS styling to this selector.
+ * Directive whose purpose is to add the tak- CSS styling to this selector.
  * @docs-private
  */
-export declare class MatGridAvatarCssMatStyler {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatGridAvatarCssMatStyler, never>;
+export declare class TakGridAvatarCssTakStyler {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakGridAvatarCssTakStyler, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatGridAvatarCssMatStyler,
-    '[mat-grid-avatar], [matGridAvatar]',
+    TakGridAvatarCssTakStyler,
+    '[tak-grid-avatar], [takGridAvatar]',
     never,
     {},
     {},
@@ -41,8 +41,8 @@ export declare class MatGridAvatarCssMatStyler {
   >;
 }
 
-export declare class MatGridList
-  implements MatGridListBase, OnInit, AfterContentChecked, TileStyleTarget
+export declare class TakGridList
+  implements TakGridListBase, OnInit, AfterContentChecked, TileStyleTarget
 {
   private _element;
   private _dir;
@@ -62,7 +62,7 @@ export declare class MatGridList
   /** Sets position and size styles for a tile */
   private _tileStyler;
   /** Query list of tiles that are being rendered. */
-  _tiles: QueryList<MatGridTile>;
+  _tiles: QueryList<TakGridTile>;
   constructor(_element: ElementRef<HTMLElement>, _dir: Directionality);
   /** Amount of columns in the grid list. */
   get cols(): number;
@@ -89,11 +89,11 @@ export declare class MatGridList
   private _layoutTiles;
   /** Sets style on the main grid-list element, given the style name and value. */
   _setListStyle(style: [string, string | null] | null): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatGridList, [null, { optional: true }]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakGridList, [null, { optional: true }]>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatGridList,
-    'mat-grid-list',
-    ['matGridList'],
+    TakGridList,
+    'tak-grid-list',
+    ['takGridList'],
     { cols: 'cols'; gutterSize: 'gutterSize'; rowHeight: 'rowHeight' },
     {},
     ['_tiles'],
@@ -103,48 +103,48 @@ export declare class MatGridList
 }
 
 /**
- * Base interface for a `MatGridList`.
+ * Base interface for a `TakGridList`.
  * @docs-private
  */
-declare interface MatGridListBase {
+declare interface TakGridListBase {
   cols: number;
   gutterSize: string;
   rowHeight: number | string;
 }
 
-export declare class MatGridListModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatGridListModule, never>;
+export declare class TakGridListModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakGridListModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatGridListModule,
+    TakGridListModule,
     [
-      typeof i1.MatGridList,
-      typeof i2.MatGridTile,
-      typeof i2.MatGridTileText,
-      typeof i2.MatGridTileHeaderCssMatStyler,
-      typeof i2.MatGridTileFooterCssMatStyler,
-      typeof i2.MatGridAvatarCssMatStyler,
+      typeof i1.TakGridList,
+      typeof i2.TakGridTile,
+      typeof i2.TakGridTileText,
+      typeof i2.TakGridTileHeaderCssTakStyler,
+      typeof i2.TakGridTileFooterCssTakStyler,
+      typeof i2.TakGridAvatarCssTakStyler,
     ],
-    [typeof i3.MatLineModule, typeof i3.MatCommonModule],
+    [typeof i3.TakLineModule, typeof i3.TakCommonModule],
     [
-      typeof i1.MatGridList,
-      typeof i2.MatGridTile,
-      typeof i2.MatGridTileText,
-      typeof i3.MatLineModule,
-      typeof i3.MatCommonModule,
-      typeof i2.MatGridTileHeaderCssMatStyler,
-      typeof i2.MatGridTileFooterCssMatStyler,
-      typeof i2.MatGridAvatarCssMatStyler,
+      typeof i1.TakGridList,
+      typeof i2.TakGridTile,
+      typeof i2.TakGridTileText,
+      typeof i3.TakLineModule,
+      typeof i3.TakCommonModule,
+      typeof i2.TakGridTileHeaderCssTakStyler,
+      typeof i2.TakGridTileFooterCssTakStyler,
+      typeof i2.TakGridAvatarCssTakStyler,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatGridListModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakGridListModule>;
 }
 
-export declare class MatGridTile {
+export declare class TakGridTile {
   private _element;
-  _gridList?: MatGridListBase | undefined;
+  _gridList?: TakGridListBase | undefined;
   _rowspan: number;
   _colspan: number;
-  constructor(_element: ElementRef<HTMLElement>, _gridList?: MatGridListBase | undefined);
+  constructor(_element: ElementRef<HTMLElement>, _gridList?: TakGridListBase | undefined);
   /** Amount of rows that the grid tile takes up. */
   get rowspan(): number;
   set rowspan(value: NumberInput);
@@ -156,11 +156,11 @@ export declare class MatGridTile {
    * "Changed after checked" errors that would occur with HostBinding.
    */
   _setStyle(property: string, value: any): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatGridTile, [null, { optional: true }]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakGridTile, [null, { optional: true }]>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatGridTile,
-    'mat-grid-tile',
-    ['matGridTile'],
+    TakGridTile,
+    'tak-grid-tile',
+    ['takGridTile'],
     { rowspan: 'rowspan'; colspan: 'colspan' },
     {},
     never,
@@ -170,14 +170,14 @@ export declare class MatGridTile {
 }
 
 /**
- * Directive whose purpose is to add the mat- CSS styling to this selector.
+ * Directive whose purpose is to add the tak- CSS styling to this selector.
  * @docs-private
  */
-export declare class MatGridTileFooterCssMatStyler {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatGridTileFooterCssMatStyler, never>;
+export declare class TakGridTileFooterCssTakStyler {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakGridTileFooterCssTakStyler, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatGridTileFooterCssMatStyler,
-    'mat-grid-tile-footer',
+    TakGridTileFooterCssTakStyler,
+    'tak-grid-tile-footer',
     never,
     {},
     {},
@@ -188,14 +188,14 @@ export declare class MatGridTileFooterCssMatStyler {
 }
 
 /**
- * Directive whose purpose is to add the mat- CSS styling to this selector.
+ * Directive whose purpose is to add the tak- CSS styling to this selector.
  * @docs-private
  */
-export declare class MatGridTileHeaderCssMatStyler {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatGridTileHeaderCssMatStyler, never>;
+export declare class TakGridTileHeaderCssTakStyler {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakGridTileHeaderCssTakStyler, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatGridTileHeaderCssMatStyler,
-    'mat-grid-tile-header',
+    TakGridTileHeaderCssTakStyler,
+    'tak-grid-tile-header',
     never,
     {},
     {},
@@ -205,20 +205,20 @@ export declare class MatGridTileHeaderCssMatStyler {
   >;
 }
 
-export declare class MatGridTileText implements AfterContentInit {
+export declare class TakGridTileText implements AfterContentInit {
   private _element;
-  _lines: QueryList<MatLine>;
+  _lines: QueryList<TakLine>;
   constructor(_element: ElementRef<HTMLElement>);
   ngAfterContentInit(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatGridTileText, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakGridTileText, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatGridTileText,
-    'mat-grid-tile-header, mat-grid-tile-footer',
+    TakGridTileText,
+    'tak-grid-tile-header, tak-grid-tile-footer',
     never,
     {},
     {},
     ['_lines'],
-    ['[mat-grid-avatar], [matGridAvatar]', '[mat-line], [matLine]', '*'],
+    ['[tak-grid-avatar], [takGridAvatar]', '[tak-line], [takLine]', '*'],
     false
   >;
 }
@@ -301,7 +301,7 @@ declare class TilePosition {
 /** Object that can be styled by the `TileStyler`. */
 declare interface TileStyleTarget {
   _setListStyle(style: [string, string | null] | null): void;
-  _tiles: QueryList<MatGridTile>;
+  _tiles: QueryList<TakGridTile>;
 }
 
 export declare const ɵTileCoordinator: typeof TileCoordinator;

@@ -28,32 +28,32 @@
   );
   $label-disabled-color: theming.get-color-from-palette($foreground, disabled-text);
 
-  .mat-form-field-appearance-fill {
-    .mat-form-field-flex {
+  .tak-form-field-appearance-fill {
+    .tak-form-field-flex {
       background-color: $fill-background;
     }
 
-    &.mat-form-field-disabled .mat-form-field-flex {
+    &.tak-form-field-disabled .tak-form-field-flex {
       background-color: $fill-disabled-background;
     }
 
-    .mat-form-field-underline::before {
+    .tak-form-field-underline::before {
       background-color: $underline-color;
     }
 
-    &.mat-form-field-disabled {
-      .mat-form-field-label {
+    &.tak-form-field-disabled {
+      .tak-form-field-label {
         color: $label-disabled-color;
       }
 
-      .mat-form-field-underline::before {
+      .tak-form-field-underline::before {
         background-color: transparent;
       }
     }
   }
 }
 
-// Used to make instances of the _mat-form-field-label-floating mixin negligibly different,
+// Used to make instances of the _tak-form-field-label-floating mixin negligibly different,
 // and prevent Google's CSS Optimizer from collapsing the declarations. This is needed because some
 // of the selectors contain pseudo-classes not recognized in all browsers. If a browser encounters
 // an unknown pseudo-class it will discard the entire rule set.
@@ -85,19 +85,19 @@ $fill-dedupe: 0;
   // The amount we offset the label from the input text in the fill appearance.
   $fill-appearance-label-offset: -0.5em;
 
-  .mat-form-field-appearance-fill {
-    .mat-form-field-infix {
+  .tak-form-field-appearance-fill {
+    .tak-form-field-infix {
       padding: $infix-padding-top 0 $infix-padding-bottom 0;
     }
 
-    .mat-form-field-label {
+    .tak-form-field-label {
       top: $infix-margin-top + $infix-padding-top;
       margin-top: $fill-appearance-label-offset;
     }
 
-    &.mat-form-field-can-float {
-      &.mat-form-field-should-float .mat-form-field-label,
-      .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    &.tak-form-field-can-float {
+      &.tak-form-field-should-float .tak-form-field-label,
+      .tak-input-server:focus + .tak-form-field-label-wrapper .tak-form-field-label {
         @include _label-floating(
           $subscript-font-scale,
           $infix-padding-top + $fill-appearance-label-offset,
@@ -105,11 +105,11 @@ $fill-dedupe: 0;
         );
       }
 
-      // Server-side rendered matInput with a label attribute but label not shown
-      // (used as a pure CSS stand-in for mat-form-field-should-float).
-      .mat-input-server[label]:not(:label-shown)
-        + .mat-form-field-label-wrapper
-        .mat-form-field-label {
+      // Server-side rendered takInput with a label attribute but label not shown
+      // (used as a pure CSS stand-in for tak-form-field-should-float).
+      .tak-input-server[label]:not(:label-shown)
+        + .tak-form-field-label-wrapper
+        .tak-form-field-label {
         @include _label-floating(
           $subscript-font-scale,
           $infix-padding-top + $fill-appearance-label-offset,
@@ -125,7 +125,7 @@ $fill-dedupe: 0;
 
 @mixin fill-theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-form-field-fill') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-form-field-fill') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

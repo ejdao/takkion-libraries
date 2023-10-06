@@ -22,75 +22,75 @@
   $black-26pct-opacity-on-light: #b0b0b0;
   $disabled-color: if($is-dark-theme, $white-30pct-opacity-on-dark, $black-26pct-opacity-on-light);
 
-  .mat-checkbox-frame {
+  .tak-checkbox-frame {
     border-color: theming.get-color-from-palette($foreground, secondary-text);
   }
 
-  .mat-checkbox-checkmark {
+  .tak-checkbox-checkmark {
     fill: $checkbox-mark-color;
   }
 
-  .mat-checkbox-checkmark-path {
+  .tak-checkbox-checkmark-path {
     // !important is needed here because a stroke must be set as an
     // attribute on the SVG in order for line animation to work properly.
     stroke: $checkbox-mark-color !important;
   }
 
-  .mat-checkbox-mixedmark {
+  .tak-checkbox-mixedmark {
     background-color: $checkbox-mark-color;
   }
 
-  .mat-checkbox-indeterminate,
-  .mat-checkbox-checked {
-    &.mat-primary .mat-checkbox-background {
+  .tak-checkbox-indeterminate,
+  .tak-checkbox-checked {
+    &.tak-primary .tak-checkbox-background {
       background-color: theming.get-color-from-palette($primary);
     }
 
-    &.mat-accent .mat-checkbox-background {
+    &.tak-accent .tak-checkbox-background {
       background-color: theming.get-color-from-palette($accent);
     }
 
-    &.mat-warn .mat-checkbox-background {
+    &.tak-warn .tak-checkbox-background {
       background-color: theming.get-color-from-palette($warn);
     }
   }
 
-  .mat-checkbox-disabled {
-    &.mat-checkbox-checked,
-    &.mat-checkbox-indeterminate {
-      .mat-checkbox-background {
+  .tak-checkbox-disabled {
+    &.tak-checkbox-checked,
+    &.tak-checkbox-indeterminate {
+      .tak-checkbox-background {
         background-color: $disabled-color;
       }
     }
 
-    &:not(.mat-checkbox-checked) {
-      .mat-checkbox-frame {
+    &:not(.tak-checkbox-checked) {
+      .tak-checkbox-frame {
         border-color: $disabled-color;
       }
     }
 
-    .mat-checkbox-label {
+    .tak-checkbox-label {
       color: theming.get-color-from-palette($foreground, disabled);
     }
   }
 
   // Switch this to a solid color since we're using `opacity`
   // to control how opaque the ripple should be.
-  .mat-checkbox .mat-ripple-element {
+  .tak-checkbox .tak-ripple-element {
     background-color: map.get(map.get($config, foreground), base);
   }
 
-  .mat-checkbox-checked:not(.mat-checkbox-disabled),
-  .mat-checkbox:active:not(.mat-checkbox-disabled) {
-    &.mat-primary .mat-ripple-element {
+  .tak-checkbox-checked:not(.tak-checkbox-disabled),
+  .tak-checkbox:active:not(.tak-checkbox-disabled) {
+    &.tak-primary .tak-ripple-element {
       background: theming.get-color-from-palette($primary);
     }
 
-    &.mat-accent .mat-ripple-element {
+    &.tak-accent .tak-ripple-element {
       background: theming.get-color-from-palette($accent);
     }
 
-    &.mat-warn .mat-ripple-element {
+    &.tak-warn .tak-ripple-element {
       background: theming.get-color-from-palette($warn);
     }
   }
@@ -100,12 +100,12 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-checkbox {
+  .tak-checkbox {
     font-family: typography-utils.font-family($config);
   }
 
   // TODO(kara): Remove this style when fixing vertical baseline
-  .mat-checkbox-layout .mat-checkbox-label {
+  .tak-checkbox-layout .tak-checkbox-label {
     line-height: typography-utils.line-height($config, body-2);
   }
 }
@@ -115,7 +115,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-checkbox') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-checkbox') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

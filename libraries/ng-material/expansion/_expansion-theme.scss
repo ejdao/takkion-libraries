@@ -12,13 +12,13 @@
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-expansion-panel {
+  .tak-expansion-panel {
     @include private.private-theme-overridable-elevation(2, $config);
     background: theming.get-color-from-palette($background, card);
     color: theming.get-color-from-palette($foreground, text);
   }
 
-  .mat-action-row {
+  .tak-action-row {
     border-top-color: theming.get-color-from-palette($foreground, divider);
   }
 
@@ -29,26 +29,26 @@
   // Disable the hover on touch devices since it can appear like it is stuck. We can't use
   // `@media (hover)` above, because the desktop support browser support isn't great.
   @media (hover: none) {
-    .mat-expansion-panel:not(.mat-expanded):not([aria-disabled='true'])
-      .mat-expansion-panel-header:hover {
+    .tak-expansion-panel:not(.tak-expanded):not([aria-disabled='true'])
+      .tak-expansion-panel-header:hover {
       background: theming.get-color-from-palette($background, card);
     }
   }
 
-  .mat-expansion-panel-header-title {
+  .tak-expansion-panel-header-title {
     color: theming.get-color-from-palette($foreground, text);
   }
 
-  .mat-expansion-panel-header-description,
-  .mat-expansion-indicator::after {
+  .tak-expansion-panel-header-description,
+  .tak-expansion-indicator::after {
     color: theming.get-color-from-palette($foreground, secondary-text);
   }
 
-  .mat-expansion-panel-header[aria-disabled='true'] {
+  .tak-expansion-panel-header[aria-disabled='true'] {
     color: theming.get-color-from-palette($foreground, disabled-button);
 
-    .mat-expansion-panel-header-title,
-    .mat-expansion-panel-header-description {
+    .tak-expansion-panel-header-title,
+    .tak-expansion-panel-header-description {
       color: inherit;
     }
   }
@@ -58,7 +58,7 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-expansion-panel-header {
+  .tak-expansion-panel-header {
     font: {
       family: typography-utils.font-family($config, subheading-1);
       size: typography-utils.font-size($config, subheading-1);
@@ -66,7 +66,7 @@
     }
   }
 
-  .mat-expansion-panel-content {
+  .tak-expansion-panel-content {
     @include typography-utils.typography-level($config, body-1);
   }
 }
@@ -85,10 +85,10 @@
   );
 
   @include compatibility.private-density-legacy-compatibility() {
-    .mat-expansion-panel-header {
+    .tak-expansion-panel-header {
       height: $collapsed-height;
 
-      &.mat-expanded {
+      &.tak-expanded {
         height: $expanded-height;
       }
     }
@@ -97,7 +97,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-expansion') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-expansion') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

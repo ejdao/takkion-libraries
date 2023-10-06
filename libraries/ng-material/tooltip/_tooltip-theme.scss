@@ -16,7 +16,7 @@ $handset-vertical-padding: math.div($handset-target-height - $handset-font-size,
   $config: theming.get-color-config($config-or-theme);
   $background: map.get($config, background);
 
-  .mat-tooltip {
+  .tak-tooltip {
     background: theming.get-color-from-palette($background, tooltip, 0.9);
   }
 }
@@ -25,14 +25,14 @@ $handset-vertical-padding: math.div($handset-target-height - $handset-font-size,
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-tooltip {
+  .tak-tooltip {
     font-family: typography-utils.font-family($config);
     font-size: $font-size;
     padding-top: $vertical-padding;
     padding-bottom: $vertical-padding;
   }
 
-  .mat-tooltip-handset {
+  .tak-tooltip-handset {
     font-size: $handset-font-size;
     padding-top: $handset-vertical-padding;
     padding-bottom: $handset-vertical-padding;
@@ -44,7 +44,7 @@ $handset-vertical-padding: math.div($handset-target-height - $handset-font-size,
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-tooltip') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-tooltip') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

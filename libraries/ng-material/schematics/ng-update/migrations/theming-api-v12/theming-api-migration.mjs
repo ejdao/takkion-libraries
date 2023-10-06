@@ -1,46 +1,56 @@
-"use strict";
+'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, '__esModule', { value: true });
 exports.ThemingApiMigration = void 0;
-const core_1 = require("@angular-devkit/core");
-const schematics_1 = require("@takkion/ng-cdk/schematics");
-const migration_1 = require("./migration");
+const core_1 = require('@angular-devkit/core');
+const schematics_1 = require('@takkion/ng-cdk/schematics');
+const migration_1 = require('./migration');
 /** Migration that switches all Sass files using Material theming APIs to `@use`. */
 class ThemingApiMigration extends schematics_1.DevkitMigration {
-    constructor() {
-        super(...arguments);
-        this.enabled = this.targetVersion === schematics_1.TargetVersion.V12;
+  constructor() {
+    super(...arguments);
+    this.enabled = this.targetVersion === schematics_1.TargetVersion.V12;
+  }
+  visitStylesheet(stylesheet) {
+    if ((0, core_1.extname)(stylesheet.filePath) === '.scss') {
+      const content = stylesheet.content;
+      const migratedContent = content
+        ? (0, migration_1.migrateFileContent)(
+            content,
+            '@takkion/ng-material/',
+            '@takkion/ng-cdk/',
+            '@angular/material',
+            '@takkion/ng-cdk',
+            undefined,
+            /material\/prebuilt-themes|cdk\/.*-prebuilt/
+          )
+        : content;
+      if (migratedContent && migratedContent !== content) {
+        this.fileSystem
+          .edit(stylesheet.filePath)
+          .remove(0, stylesheet.content.length)
+          .insertLeft(0, migratedContent);
+        ThemingApiMigration.migratedFileCount++;
+      }
     }
-    visitStylesheet(stylesheet) {
-        if ((0, core_1.extname)(stylesheet.filePath) === '.scss') {
-            const content = stylesheet.content;
-            const migratedContent = content
-                ? (0, migration_1.migrateFileContent)(content, '@takkion/ng-material/', '@takkion/ng-cdk/', '@angular/material', '@takkion/ng-cdk', undefined, /material\/prebuilt-themes|cdk\/.*-prebuilt/)
-                : content;
-            if (migratedContent && migratedContent !== content) {
-                this.fileSystem
-                    .edit(stylesheet.filePath)
-                    .remove(0, stylesheet.content.length)
-                    .insertLeft(0, migratedContent);
-                ThemingApiMigration.migratedFileCount++;
-            }
-        }
+  }
+  /** Logs out the number of migrated files at the end of the migration. */
+  static globalPostMigration(_tree, _targetVersion, context) {
+    const count = ThemingApiMigration.migratedFileCount;
+    if (count > 0) {
+      context.logger.info(
+        `Migrated ${count === 1 ? `1 file` : `${count} files`} to the ` +
+          `new Angular Material theming API.`
+      );
+      ThemingApiMigration.migratedFileCount = 0;
     }
-    /** Logs out the number of migrated files at the end of the migration. */
-    static globalPostMigration(_tree, _targetVersion, context) {
-        const count = ThemingApiMigration.migratedFileCount;
-        if (count > 0) {
-            context.logger.info(`Migrated ${count === 1 ? `1 file` : `${count} files`} to the ` +
-                `new Angular Material theming API.`);
-            ThemingApiMigration.migratedFileCount = 0;
-        }
-    }
+  }
 }
 exports.ThemingApiMigration = ThemingApiMigration;
 /** Number of files that have been migrated. */

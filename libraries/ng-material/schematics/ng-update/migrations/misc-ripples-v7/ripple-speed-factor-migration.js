@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -11,10 +11,10 @@ exports.RippleSpeedFactorMigration = void 0;
 const schematics_1 = require('@takkion/ng-cdk/schematics');
 const ts = require('typescript');
 const ripple_speed_factor_1 = require('./ripple-speed-factor');
-/** Regular expression that matches [matRippleSpeedFactor]="$NUMBER" in templates. */
-const speedFactorNumberRegex = /\[matRippleSpeedFactor]="(\d+(?:\.\d+)?)"/g;
-/** Regular expression that matches [matRippleSpeedFactor]="$NOT_A_NUMBER" in templates. */
-const speedFactorNotParseable = /\[matRippleSpeedFactor]="(?!\d+(?:\.\d+)?")(.*)"/g;
+/** Regular expression that matches [takRippleSpeedFactor]="$NUMBER" in templates. */
+const speedFactorNumberRegex = /\[takRippleSpeedFactor]="(\d+(?:\.\d+)?)"/g;
+/** Regular expression that matches [takRippleSpeedFactor]="$NOT_A_NUMBER" in templates. */
+const speedFactorNotParseable = /\[takRippleSpeedFactor]="(?!\d+(?:\.\d+)?")(.*)"/g;
 /**
  * Note that will be added whenever a speed factor expression has been converted to calculate
  * the according duration. This note should encourage people to clean up their code by switching
@@ -24,7 +24,7 @@ const removeNote = `TODO: Cleanup duration calculation.`;
 /**
  * Migration that walks through every property assignment and switches the global `baseSpeedFactor`
  * ripple option to the new global animation config. Also updates every class member assignment
- * that refers to MatRipple#speedFactor.
+ * that refers to TakRipple#speedFactor.
  */
 class RippleSpeedFactorMigration extends schematics_1.Migration {
   constructor() {
@@ -50,7 +50,7 @@ class RippleSpeedFactorMigration extends schematics_1.Migration {
         template.filePath,
         template.start + match.index,
         match[0].length,
-        `[matRippleAnimation]="{enterDuration: ${newEnterDuration}}"`
+        `[takRippleAnimation]="{enterDuration: ${newEnterDuration}}"`
       );
     }
     while ((match = speedFactorNotParseable.exec(template.content)) !== null) {
@@ -61,7 +61,7 @@ class RippleSpeedFactorMigration extends schematics_1.Migration {
         template.filePath,
         template.start + match.index,
         match[0].length,
-        `[matRippleAnimation]="{enterDuration: (${newDurationExpression})}"`
+        `[takRippleAnimation]="{enterDuration: (${newDurationExpression})}"`
       );
     }
   }
@@ -79,7 +79,7 @@ class RippleSpeedFactorMigration extends schematics_1.Migration {
     const targetTypeName = targetTypeNode.symbol.getName();
     const propertyName = leftExpression.name.getText();
     const filePath = this.fileSystem.resolve(leftExpression.getSourceFile().fileName);
-    if (targetTypeName === 'MatRipple' && propertyName === 'speedFactor') {
+    if (targetTypeName === 'TakRipple' && propertyName === 'speedFactor') {
       if (ts.isNumericLiteral(expression.right)) {
         const numericValue = parseFloat(expression.right.text);
         const newEnterDurationValue = (0, ripple_speed_factor_1.convertSpeedFactorToDuration)(
@@ -139,7 +139,7 @@ class RippleSpeedFactorMigration extends schematics_1.Migration {
     if (assignment.name.getText() !== 'baseSpeedFactor') {
       return;
     }
-    // We could technically lazily check for the MAT_RIPPLE_GLOBAL_OPTIONS injection token to
+    // We could technically lazily check for the TAK_RIPPLE_GLOBAL_OPTIONS injection token to
     // be present, but it's not right to assume that everyone sets the ripple global options
     // immediately in the provider object (e.g. it can happen that someone just imports the
     // config from a separate file).

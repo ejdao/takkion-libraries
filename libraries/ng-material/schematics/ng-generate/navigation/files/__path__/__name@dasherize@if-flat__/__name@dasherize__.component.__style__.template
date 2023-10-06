@@ -6,11 +6,11 @@
   width: 200px;
 }
 
-.sidenav .mat-toolbar {
+.sidenav .tak-toolbar {
   background: inherit;
 }
 
-.mat-toolbar.mat-primary {
+.tak-toolbar.tak-primary {
   position: sticky;
   top: 0;
   z-index: 1;

@@ -5,11 +5,11 @@
   $config: theming.get-color-config($config-or-theme);
   $foreground: map.get($config, foreground);
 
-  .mat-divider {
+  .tak-divider {
     border-top-color: theming.get-color-from-palette($foreground, divider);
   }
 
-  .mat-divider-vertical {
+  .tak-divider-vertical {
     border-right-color: theming.get-color-from-palette($foreground, divider);
   }
 }
@@ -22,7 +22,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-divider') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-divider') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

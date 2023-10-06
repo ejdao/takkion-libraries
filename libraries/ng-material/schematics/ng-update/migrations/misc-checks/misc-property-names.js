@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -30,21 +30,21 @@ class MiscPropertyNamesMigration extends schematics_1.Migration {
     const hostType = this.typeChecker.getTypeAtLocation(node.expression);
     const typeName = hostType && hostType.symbol && hostType.symbol.getName();
     // Migration for: https://github.com/angular/components/pull/10398 (v6)
-    if (typeName === 'MatListOption' && node.name.text === 'selectionChange') {
+    if (typeName === 'TakListOption' && node.name.text === 'selectionChange') {
       this.createFailureAtNode(
         node,
         `Found deprecated property "selectionChange" of ` +
-          `class "MatListOption". Use the "selectionChange" property on the ` +
-          `parent "MatSelectionList" instead.`
+          `class "TakListOption". Use the "selectionChange" property on the ` +
+          `parent "TakSelectionList" instead.`
       );
     }
     // Migration for: https://github.com/angular/components/pull/10413 (v6)
-    if (typeName === 'MatDatepicker' && node.name.text === 'selectedChanged') {
+    if (typeName === 'TakDatepicker' && node.name.text === 'selectedChanged') {
       this.createFailureAtNode(
         node,
         `Found deprecated property "selectedChanged" of ` +
-          `class "MatDatepicker". Use the "dateChange" or "dateInput" methods ` +
-          `on "MatDatepickerInput" instead.`
+          `class "TakDatepicker". Use the "dateChange" or "dateInput" methods ` +
+          `on "TakDatepickerInput" instead.`
       );
     }
   }

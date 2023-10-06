@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -15,7 +15,7 @@ exports.methodCallChecks = {
       pr: 'https://github.com/angular/components/pull/20499',
       changes: [
         {
-          className: 'MatTabNav',
+          className: 'TakTabNav',
           method: 'updateActiveLink',
           invalidArgCounts: [{ count: 1, message: 'The "_element" parameter has been removed' }],
         },

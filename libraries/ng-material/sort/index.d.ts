@@ -43,102 +43,102 @@ export declare interface ArrowViewStateTransition {
 declare namespace i1 {
   export {
     SortHeaderArrowPosition,
-    MatSortable,
+    TakSortable,
     Sort,
-    MatSortDefaultOptions,
-    MAT_SORT_DEFAULT_OPTIONS,
-    MatSort,
+    TakSortDefaultOptions,
+    TAK_SORT_DEFAULT_OPTIONS,
+    TakSort,
   };
 }
 
 declare namespace i2 {
-  export { ArrowViewState, ArrowViewStateTransition, MatSortHeader };
+  export { ArrowViewState, ArrowViewStateTransition, TakSortHeader };
 }
 
-/** Injection token to be used to override the default options for `mat-sort`. */
-export declare const MAT_SORT_DEFAULT_OPTIONS: InjectionToken<MatSortDefaultOptions>;
+/** Injection token to be used to override the default options for `tak-sort`. */
+export declare const TAK_SORT_DEFAULT_OPTIONS: InjectionToken<TakSortDefaultOptions>;
 
 /** @docs-private */
-export declare const MAT_SORT_HEADER_INTL_PROVIDER: {
-  provide: typeof MatSortHeaderIntl;
+export declare const TAK_SORT_HEADER_INTL_PROVIDER: {
+  provide: typeof TakSortHeaderIntl;
   deps: Optional[][];
-  useFactory: typeof MAT_SORT_HEADER_INTL_PROVIDER_FACTORY;
+  useFactory: typeof TAK_SORT_HEADER_INTL_PROVIDER_FACTORY;
 };
 
 /** @docs-private */
-export declare function MAT_SORT_HEADER_INTL_PROVIDER_FACTORY(
-  parentIntl: MatSortHeaderIntl
-): MatSortHeaderIntl;
+export declare function TAK_SORT_HEADER_INTL_PROVIDER_FACTORY(
+  parentIntl: TakSortHeaderIntl
+): TakSortHeaderIntl;
 
-/** Container for MatSortables to manage the sort state and provide default sort parameters. */
-export declare class MatSort
-  extends _MatSortBase
+/** Container for TakSortables to manage the sort state and provide default sort parameters. */
+export declare class TakSort
+  extends _TakSortBase
   implements CanDisable, HasInitialized, OnChanges, OnDestroy, OnInit
 {
   private _defaultOptions?;
   /** Collection of all registered sortables that this directive manages. */
-  sortables: Map<string, MatSortable>;
+  sortables: Map<string, TakSortable>;
   /** Used to notify any child components listening to state changes. */
   readonly _stateChanges: Subject<void>;
-  /** The id of the most recently sorted MatSortable. */
+  /** The id of the most recently sorted TakSortable. */
   active: string;
   /**
-   * The direction to set when an MatSortable is initially sorted.
-   * May be overridden by the MatSortable's sort start.
+   * The direction to set when an TakSortable is initially sorted.
+   * May be overridden by the TakSortable's sort start.
    */
   start: SortDirection;
-  /** The sort direction of the currently active MatSortable. */
+  /** The sort direction of the currently active TakSortable. */
   get direction(): SortDirection;
   set direction(direction: SortDirection);
   private _direction;
   /**
    * Whether to disable the user from clearing the sort by finishing the sort direction cycle.
-   * May be overridden by the MatSortable's disable clear input.
+   * May be overridden by the TakSortable's disable clear input.
    */
   get disableClear(): boolean;
   set disableClear(v: BooleanInput);
   private _disableClear;
   /** Event emitted when the user changes either the active sort or sort direction. */
   readonly sortChange: EventEmitter<Sort>;
-  constructor(_defaultOptions?: MatSortDefaultOptions | undefined);
+  constructor(_defaultOptions?: TakSortDefaultOptions | undefined);
   /**
-   * Register function to be used by the contained MatSortables. Adds the MatSortable to the
-   * collection of MatSortables.
+   * Register function to be used by the contained TakSortables. Adds the TakSortable to the
+   * collection of TakSortables.
    */
-  register(sortable: MatSortable): void;
+  register(sortable: TakSortable): void;
   /**
-   * Unregister function to be used by the contained MatSortables. Removes the MatSortable from the
-   * collection of contained MatSortables.
+   * Unregister function to be used by the contained TakSortables. Removes the TakSortable from the
+   * collection of contained TakSortables.
    */
-  deregister(sortable: MatSortable): void;
+  deregister(sortable: TakSortable): void;
   /** Sets the active sort id and determines the new sort direction. */
-  sort(sortable: MatSortable): void;
+  sort(sortable: TakSortable): void;
   /** Returns the next sort direction of the active sortable, checking for potential overrides. */
-  getNextSortDirection(sortable: MatSortable): SortDirection;
+  getNextSortDirection(sortable: TakSortable): SortDirection;
   ngOnInit(): void;
   ngOnChanges(): void;
   ngOnDestroy(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSort, [{ optional: true }]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSort, [{ optional: true }]>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatSort,
-    '[matSort]',
-    ['matSort'],
+    TakSort,
+    '[takSort]',
+    ['takSort'],
     {
-      disabled: 'matSortDisabled';
-      active: 'matSortActive';
-      start: 'matSortStart';
-      direction: 'matSortDirection';
-      disableClear: 'matSortDisableClear';
+      disabled: 'takSortDisabled';
+      active: 'takSortActive';
+      start: 'takSortStart';
+      direction: 'takSortDirection';
+      disableClear: 'takSortDisableClear';
     },
-    { sortChange: 'matSortChange' },
+    { sortChange: 'takSortChange' },
     never,
     never,
     false
   >;
 }
 
-/** Interface for a directive that holds sorting state consumed by `MatSortHeader`. */
-export declare interface MatSortable {
+/** Interface for a directive that holds sorting state consumed by `TakSortHeader`. */
+export declare interface TakSortable {
   /** The id of the column being sorted. */
   id: string;
   /** Starting sort direction. */
@@ -148,10 +148,10 @@ export declare interface MatSortable {
 }
 
 /**
- * Animations used by MatSort.
+ * Animations used by TakSort.
  * @docs-private
  */
-export declare const matSortAnimations: {
+export declare const takSortAnimations: {
   readonly indicator: AnimationTriggerMetadata;
   readonly leftPointer: AnimationTriggerMetadata;
   readonly rightPointer: AnimationTriggerMetadata;
@@ -161,14 +161,14 @@ export declare const matSortAnimations: {
 };
 
 /** @docs-private */
-declare const _MatSortBase: (new (...args: any[]) => HasInitialized) &
+declare const _TakSortBase: (new (...args: any[]) => HasInitialized) &
   _Constructor<CanDisable> &
   _AbstractConstructor<CanDisable> & {
     new (): {};
   };
 
-/** Default options for `mat-sort`.  */
-export declare interface MatSortDefaultOptions {
+/** Default options for `tak-sort`.  */
+export declare interface TakSortDefaultOptions {
   /** Whether to disable clearing the sorting state. */
   disableClear?: boolean;
   /** Position of the arrow that displays when sorted. */
@@ -179,23 +179,23 @@ export declare interface MatSortDefaultOptions {
  * Applies sorting behavior (click to change sort) and styles to an element, including an
  * arrow to display the current sort direction.
  *
- * Must be provided with an id and contained within a parent MatSort directive.
+ * Must be provided with an id and contained within a parent TakSort directive.
  *
  * If used on header cells in a CdkTable, it will automatically default its id from its containing
  * column definition.
  */
-export declare class MatSortHeader
-  extends _MatSortHeaderBase
-  implements CanDisable, MatSortable, OnDestroy, OnInit, AfterViewInit
+export declare class TakSortHeader
+  extends _TakSortHeaderBase
+  implements CanDisable, TakSortable, OnDestroy, OnInit, AfterViewInit
 {
   /**
    * @deprecated `_intl` parameter isn't being used anymore and it'll be removed.
    * @breaking-change 13.0.0
    */
-  _intl: MatSortHeaderIntl;
+  _intl: TakSortHeaderIntl;
   private _changeDetectorRef;
-  _sort: MatSort;
-  _columnDef: MatSortHeaderColumnDef;
+  _sort: TakSort;
+  _columnDef: TakSortHeaderColumnDef;
   private _focusMonitor;
   private _elementRef;
   /** @breaking-change 14.0.0 _ariaDescriber will be required. */
@@ -230,16 +230,16 @@ export declare class MatSortHeader
   id: string;
   /** Sets the position of the arrow that displays when sorted. */
   arrowPosition: SortHeaderArrowPosition;
-  /** Overrides the sort start value of the containing MatSort for this MatSortable. */
+  /** Overrides the sort start value of the containing TakSort for this TakSortable. */
   start: SortDirection;
   /**
-   * Description applied to MatSortHeader's button element with aria-describedby. This text should
+   * Description applied to TakSortHeader's button element with aria-describedby. This text should
    * describe the action that will occur when the user clicks the sort header.
    */
   get sortActionDescription(): string;
   set sortActionDescription(value: string);
   private _sortActionDescription;
-  /** Overrides the disable clear value of the containing MatSort for this MatSortable. */
+  /** Overrides the disable clear value of the containing TakSort for this TakSortable. */
   get disableClear(): boolean;
   set disableClear(v: BooleanInput);
   private _disableClear;
@@ -248,15 +248,15 @@ export declare class MatSortHeader
      * @deprecated `_intl` parameter isn't being used anymore and it'll be removed.
      * @breaking-change 13.0.0
      */
-    _intl: MatSortHeaderIntl,
+    _intl: TakSortHeaderIntl,
     _changeDetectorRef: ChangeDetectorRef,
-    _sort: MatSort,
-    _columnDef: MatSortHeaderColumnDef,
+    _sort: TakSort,
+    _columnDef: TakSortHeaderColumnDef,
     _focusMonitor: FocusMonitor,
     _elementRef: ElementRef<HTMLElement>,
     /** @breaking-change 14.0.0 _ariaDescriber will be required. */
     _ariaDescriber?: AriaDescriber | null | undefined,
-    defaultOptions?: MatSortDefaultOptions
+    defaultOptions?: TakSortDefaultOptions
   );
   ngOnInit(): void;
   ngAfterViewInit(): void;
@@ -276,7 +276,7 @@ export declare class MatSortHeader
   _toggleOnInteraction(): void;
   _handleClick(): void;
   _handleKeydown(event: KeyboardEvent): void;
-  /** Whether this MatSortHeader is currently sorted in either ascending or descending order. */
+  /** Whether this TakSortHeader is currently sorted in either ascending or descending order. */
   _isSorted(): boolean;
   /** Returns the animation state for the arrow direction (indicator and pointers). */
   _getArrowDirectionState(): string;
@@ -307,7 +307,7 @@ export declare class MatSortHeader
   /** Handles changes in the sorting state. */
   private _handleStateChanges;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatSortHeader,
+    TakSortHeader,
     [
       null,
       null,
@@ -320,12 +320,12 @@ export declare class MatSortHeader
     ]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatSortHeader,
-    '[mat-sort-header]',
-    ['matSortHeader'],
+    TakSortHeader,
+    '[tak-sort-header]',
+    ['takSortHeader'],
     {
       disabled: 'disabled';
-      id: 'mat-sort-header';
+      id: 'tak-sort-header';
       arrowPosition: 'arrowPosition';
       start: 'start';
       sortActionDescription: 'sortActionDescription';
@@ -339,39 +339,39 @@ export declare class MatSortHeader
 }
 
 /** @docs-private */
-declare const _MatSortHeaderBase: _Constructor<CanDisable> &
+declare const _TakSortHeaderBase: _Constructor<CanDisable> &
   _AbstractConstructor<CanDisable> & {
     new (): {};
   };
 
-/** Column definition associated with a `MatSortHeader`. */
-declare interface MatSortHeaderColumnDef {
+/** Column definition associated with a `TakSortHeader`. */
+declare interface TakSortHeaderColumnDef {
   name: string;
 }
 
 /**
- * To modify the labels and text displayed, create a new instance of MatSortHeaderIntl and
+ * To modify the labels and text displayed, create a new instance of TakSortHeaderIntl and
  * include it in a custom provider.
  */
-export declare class MatSortHeaderIntl {
+export declare class TakSortHeaderIntl {
   /**
    * Stream that emits whenever the labels here are changed. Use this to notify
    * components if the labels have changed after initialization.
    */
   readonly changes: Subject<void>;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSortHeaderIntl, never>;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatSortHeaderIntl>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSortHeaderIntl, never>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakSortHeaderIntl>;
 }
 
-export declare class MatSortModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSortModule, never>;
+export declare class TakSortModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSortModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatSortModule,
-    [typeof i1.MatSort, typeof i2.MatSortHeader],
-    [typeof i3.CommonModule, typeof i4.MatCommonModule],
-    [typeof i1.MatSort, typeof i2.MatSortHeader]
+    TakSortModule,
+    [typeof i1.TakSort, typeof i2.TakSortHeader],
+    [typeof i3.CommonModule, typeof i4.TakCommonModule],
+    [typeof i1.TakSort, typeof i2.TakSortHeader]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatSortModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakSortModule>;
 }
 
 /** The current sort state. */

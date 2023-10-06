@@ -40,11 +40,11 @@ export declare type AutoFocusTarget = 'dialog' | 'first-tabbable' | 'first-headi
 
 /**
  * Closes the dialog with the specified interaction type. This is currently not part of
- * `MatDialogRef` as that would conflict with custom dialog ref mocks provided in tests.
+ * `TakDialogRef` as that would conflict with custom dialog ref mocks provided in tests.
  * More details. See: https://github.com/angular/components/pull/9257#issuecomment-651342226.
  */
 export declare function _closeDialogVia<R>(
-  ref: MatDialogRef<R>,
+  ref: TakDialogRef<R>,
   interactionType: FocusOrigin,
   result?: R
 ): void;
@@ -71,41 +71,41 @@ export declare interface DialogPosition {
 export declare type DialogRole = 'dialog' | 'alertdialog';
 
 declare namespace i1 {
-  export { _MatDialogContainerBase, MatDialogContainer };
+  export { _TakDialogContainerBase, TakDialogContainer };
 }
 
 declare namespace i2 {
-  export { MatDialogClose, MatDialogTitle, MatDialogContent, MatDialogActions };
+  export { TakDialogClose, TakDialogTitle, TakDialogContent, TakDialogActions };
 }
 
 /** Injection token that can be used to access the data that was passed in to a dialog. */
-export declare const MAT_DIALOG_DATA: InjectionToken<any>;
+export declare const TAK_DIALOG_DATA: InjectionToken<any>;
 
 /** Injection token that can be used to specify default dialog options. */
-export declare const MAT_DIALOG_DEFAULT_OPTIONS: InjectionToken<MatDialogConfig<any>>;
+export declare const TAK_DIALOG_DEFAULT_OPTIONS: InjectionToken<TakDialogConfig<any>>;
 
 /** Injection token that determines the scroll handling while the dialog is open. */
-export declare const MAT_DIALOG_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
+export declare const TAK_DIALOG_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
 
 /** @docs-private */
-export declare function MAT_DIALOG_SCROLL_STRATEGY_FACTORY(overlay: Overlay): () => ScrollStrategy;
+export declare function TAK_DIALOG_SCROLL_STRATEGY_FACTORY(overlay: Overlay): () => ScrollStrategy;
 
 /** @docs-private */
-export declare const MAT_DIALOG_SCROLL_STRATEGY_PROVIDER: {
+export declare const TAK_DIALOG_SCROLL_STRATEGY_PROVIDER: {
   provide: InjectionToken<() => ScrollStrategy>;
   deps: (typeof Overlay)[];
-  useFactory: typeof MAT_DIALOG_SCROLL_STRATEGY_PROVIDER_FACTORY;
+  useFactory: typeof TAK_DIALOG_SCROLL_STRATEGY_PROVIDER_FACTORY;
 };
 
 /** @docs-private */
-export declare function MAT_DIALOG_SCROLL_STRATEGY_PROVIDER_FACTORY(
+export declare function TAK_DIALOG_SCROLL_STRATEGY_PROVIDER_FACTORY(
   overlay: Overlay
 ): () => ScrollStrategy;
 
 /**
  * Service to open Material Design modal dialogs.
  */
-export declare class MatDialog extends _MatDialogBase<MatDialogContainer> {
+export declare class TakDialog extends _TakDialogBase<TakDialogContainer> {
   constructor(
     overlay: Overlay,
     injector: Injector,
@@ -114,9 +114,9 @@ export declare class MatDialog extends _MatDialogBase<MatDialogContainer> {
      * @breaking-change 10.0.0
      */
     _location: Location_2,
-    defaultOptions: MatDialogConfig,
+    defaultOptions: TakDialogConfig,
     scrollStrategy: any,
-    parentDialog: MatDialog,
+    parentDialog: TakDialog,
     /**
      * @deprecated No longer used. To be removed.
      * @breaking-change 15.0.0
@@ -129,7 +129,7 @@ export declare class MatDialog extends _MatDialogBase<MatDialogContainer> {
     animationMode?: 'NoopAnimations' | 'BrowserAnimations'
   );
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDialog,
+    TakDialog,
     [
       null,
       null,
@@ -141,22 +141,22 @@ export declare class MatDialog extends _MatDialogBase<MatDialogContainer> {
       { optional: true },
     ]
   >;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatDialog>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakDialog>;
 }
 
 /**
  * Container for the bottom action buttons in a dialog.
  * Stays fixed to the bottom when scrolling.
  */
-export declare class MatDialogActions {
+export declare class TakDialogActions {
   /**
    * Horizontal alignment of action buttons.
    */
   align?: 'start' | 'center' | 'end';
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDialogActions, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDialogActions, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDialogActions,
-    '[mat-dialog-actions], mat-dialog-actions, [matDialogActions]',
+    TakDialogActions,
+    '[tak-dialog-actions], tak-dialog-actions, [takDialogActions]',
     never,
     { align: 'align' },
     {},
@@ -167,10 +167,10 @@ export declare class MatDialogActions {
 }
 
 /**
- * Animations used by MatDialog.
+ * Animations used by TakDialog.
  * @docs-private
  */
-export declare const matDialogAnimations: {
+export declare const takDialogAnimations: {
   readonly dialogContainer: AnimationTriggerMetadata;
 };
 
@@ -178,7 +178,7 @@ export declare const matDialogAnimations: {
  * Base class for dialog services. The base dialog service allows
  * for arbitrary dialog refs and dialog container components.
  */
-export declare abstract class _MatDialogBase<C extends _MatDialogContainerBase>
+export declare abstract class _TakDialogBase<C extends _TakDialogContainerBase>
   implements OnDestroy
 {
   private _overlay;
@@ -194,9 +194,9 @@ export declare abstract class _MatDialogBase<C extends _MatDialogContainerBase>
   protected _idPrefix: string;
   private _dialog;
   /** Keeps track of the currently-open dialogs. */
-  get openDialogs(): MatDialogRef<any>[];
+  get openDialogs(): TakDialogRef<any>[];
   /** Stream that emits when a dialog has been opened. */
-  get afterOpened(): Subject<MatDialogRef<any>>;
+  get afterOpened(): Subject<TakDialogRef<any>>;
   private _getAfterAllClosed;
   /**
    * Stream that emits when all open dialog have finished closing.
@@ -206,15 +206,15 @@ export declare abstract class _MatDialogBase<C extends _MatDialogContainerBase>
   constructor(
     _overlay: Overlay,
     injector: Injector,
-    _defaultOptions: MatDialogConfig | undefined,
-    _parentDialog: _MatDialogBase<C> | undefined,
+    _defaultOptions: TakDialogConfig | undefined,
+    _parentDialog: _TakDialogBase<C> | undefined,
     /**
      * @deprecated No longer used. To be removed.
      * @breaking-change 15.0.0
      */
     _overlayContainer: OverlayContainer,
     scrollStrategy: any,
-    _dialogRefConstructor: Type<MatDialogRef<any>>,
+    _dialogRefConstructor: Type<TakDialogRef<any>>,
     _dialogContainerType: Type<C>,
     _dialogDataToken: InjectionToken<any>,
     /**
@@ -231,8 +231,8 @@ export declare abstract class _MatDialogBase<C extends _MatDialogContainerBase>
    */
   open<T, D = any, R = any>(
     component: ComponentType<T>,
-    config?: MatDialogConfig<D>
-  ): MatDialogRef<T, R>;
+    config?: TakDialogConfig<D>
+  ): TakDialogRef<T, R>;
   /**
    * Opens a modal dialog containing the given template.
    * @param template TemplateRef to instantiate as the dialog content.
@@ -241,12 +241,12 @@ export declare abstract class _MatDialogBase<C extends _MatDialogContainerBase>
    */
   open<T, D = any, R = any>(
     template: TemplateRef<T>,
-    config?: MatDialogConfig<D>
-  ): MatDialogRef<T, R>;
+    config?: TakDialogConfig<D>
+  ): TakDialogRef<T, R>;
   open<T, D = any, R = any>(
     template: ComponentType<T> | TemplateRef<T>,
-    config?: MatDialogConfig<D>
-  ): MatDialogRef<T, R>;
+    config?: TakDialogConfig<D>
+  ): TakDialogRef<T, R>;
   /**
    * Closes all of the currently-open dialogs.
    */
@@ -255,23 +255,23 @@ export declare abstract class _MatDialogBase<C extends _MatDialogContainerBase>
    * Finds an open dialog by its id.
    * @param id ID to use when looking up the dialog.
    */
-  getDialogById(id: string): MatDialogRef<any> | undefined;
+  getDialogById(id: string): TakDialogRef<any> | undefined;
   ngOnDestroy(): void;
   private _closeDialogs;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatDialogBase<any>, never>;
-  static ɵprov: i0.ɵɵInjectableDeclaration<_MatDialogBase<any>>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakDialogBase<any>, never>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<_TakDialogBase<any>>;
 }
 
 /**
  * Button that will close the current dialog.
  */
-export declare class MatDialogClose implements OnInit, OnChanges {
+export declare class TakDialogClose implements OnInit, OnChanges {
   /**
    * Reference to the containing dialog.
    * @deprecated `dialogRef` property to become private.
    * @breaking-change 13.0.0
    */
-  dialogRef: MatDialogRef<any>;
+  dialogRef: TakDialogRef<any>;
   private _elementRef;
   private _dialog;
   /** Screen reader label for the button. */
@@ -280,30 +280,30 @@ export declare class MatDialogClose implements OnInit, OnChanges {
   type: 'submit' | 'button' | 'reset';
   /** Dialog close input. */
   dialogResult: any;
-  _matDialogClose: any;
+  _takDialogClose: any;
   constructor(
     /**
      * Reference to the containing dialog.
      * @deprecated `dialogRef` property to become private.
      * @breaking-change 13.0.0
      */
-    dialogRef: MatDialogRef<any>,
+    dialogRef: TakDialogRef<any>,
     _elementRef: ElementRef<HTMLElement>,
-    _dialog: MatDialog
+    _dialog: TakDialog
   );
   ngOnInit(): void;
   ngOnChanges(changes: SimpleChanges): void;
   _onButtonClick(event: MouseEvent): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDialogClose, [{ optional: true }, null, null]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDialogClose, [{ optional: true }, null, null]>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDialogClose,
-    '[mat-dialog-close], [matDialogClose]',
-    ['matDialogClose'],
+    TakDialogClose,
+    '[tak-dialog-close], [takDialogClose]',
+    ['takDialogClose'],
     {
       ariaLabel: 'aria-label';
       type: 'type';
-      dialogResult: 'mat-dialog-close';
-      _matDialogClose: 'matDialogClose';
+      dialogResult: 'tak-dialog-close';
+      _takDialogClose: 'takDialogClose';
     },
     {},
     never,
@@ -313,9 +313,9 @@ export declare class MatDialogClose implements OnInit, OnChanges {
 }
 
 /**
- * Configuration for opening a modal dialog with the MatDialog service.
+ * Configuration for opening a modal dialog with the TakDialog service.
  */
-export declare class MatDialogConfig<D = any> {
+export declare class TakDialogConfig<D = any> {
   /**
    * Where the attached component should live in Angular's *logical* component tree.
    * This affects what is available for injection and the change detection order for the
@@ -400,7 +400,7 @@ export declare class MatDialogConfig<D = any> {
  * Animation is based on https://material.io/guidelines/motion/choreography.html.
  * @docs-private
  */
-export declare class MatDialogContainer extends _MatDialogContainerBase {
+export declare class TakDialogContainer extends _TakDialogContainerBase {
   private _changeDetectorRef;
   /** State of the dialog animation. */
   _state: 'void' | 'enter' | 'exit';
@@ -414,7 +414,7 @@ export declare class MatDialogContainer extends _MatDialogContainerBase {
     elementRef: ElementRef,
     focusTrapFactory: FocusTrapFactory,
     document: any,
-    dialogConfig: MatDialogConfig,
+    dialogConfig: TakDialogConfig,
     checker: InteractivityChecker,
     ngZone: NgZone,
     overlayRef: OverlayRef,
@@ -429,12 +429,12 @@ export declare class MatDialogContainer extends _MatDialogContainerBase {
     };
   };
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatDialogContainer,
+    TakDialogContainer,
     [null, null, { optional: true }, null, null, null, null, null, null]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatDialogContainer,
-    'mat-dialog-container',
+    TakDialogContainer,
+    'tak-dialog-container',
     never,
     {},
     {},
@@ -445,17 +445,17 @@ export declare class MatDialogContainer extends _MatDialogContainerBase {
 }
 
 /**
- * Base class for the `MatDialogContainer`. The base class does not implement
+ * Base class for the `TakDialogContainer`. The base class does not implement
  * animations as these are left to implementers of the dialog container.
  */
-export declare abstract class _MatDialogContainerBase extends CdkDialogContainer<MatDialogConfig> {
+export declare abstract class _TakDialogContainerBase extends CdkDialogContainer<TakDialogConfig> {
   /** Emits when an animation state changes. */
   _animationStateChanged: EventEmitter<DialogAnimationEvent>;
   constructor(
     elementRef: ElementRef,
     focusTrapFactory: FocusTrapFactory,
     _document: any,
-    dialogConfig: MatDialogConfig,
+    dialogConfig: TakDialogConfig,
     interactivityChecker: InteractivityChecker,
     ngZone: NgZone,
     overlayRef: OverlayRef,
@@ -470,11 +470,11 @@ export declare abstract class _MatDialogContainerBase extends CdkDialogContainer
    */
   protected _openAnimationDone(totalTime: number): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    _MatDialogContainerBase,
+    _TakDialogContainerBase,
     [null, null, { optional: true }, null, null, null, null, null]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    _MatDialogContainerBase,
+    _TakDialogContainerBase,
     'ng-component',
     never,
     {},
@@ -488,11 +488,11 @@ export declare abstract class _MatDialogContainerBase extends CdkDialogContainer
 /**
  * Scrollable content container of a dialog.
  */
-export declare class MatDialogContent {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDialogContent, never>;
+export declare class TakDialogContent {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDialogContent, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDialogContent,
-    '[mat-dialog-content], mat-dialog-content, [matDialogContent]',
+    TakDialogContent,
+    '[tak-dialog-content], tak-dialog-content, [takDialogContent]',
     never,
     {},
     {},
@@ -502,41 +502,41 @@ export declare class MatDialogContent {
   >;
 }
 
-export declare class MatDialogModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDialogModule, never>;
+export declare class TakDialogModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDialogModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatDialogModule,
+    TakDialogModule,
     [
-      typeof i1.MatDialogContainer,
-      typeof i2.MatDialogClose,
-      typeof i2.MatDialogTitle,
-      typeof i2.MatDialogActions,
-      typeof i2.MatDialogContent,
+      typeof i1.TakDialogContainer,
+      typeof i2.TakDialogClose,
+      typeof i2.TakDialogTitle,
+      typeof i2.TakDialogActions,
+      typeof i2.TakDialogContent,
     ],
     [
       typeof i3.DialogModule,
       typeof i4.OverlayModule,
       typeof i5.PortalModule,
-      typeof i6.MatCommonModule,
+      typeof i6.TakCommonModule,
     ],
     [
-      typeof i1.MatDialogContainer,
-      typeof i2.MatDialogClose,
-      typeof i2.MatDialogTitle,
-      typeof i2.MatDialogContent,
-      typeof i2.MatDialogActions,
-      typeof i6.MatCommonModule,
+      typeof i1.TakDialogContainer,
+      typeof i2.TakDialogClose,
+      typeof i2.TakDialogTitle,
+      typeof i2.TakDialogContent,
+      typeof i2.TakDialogActions,
+      typeof i6.TakCommonModule,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatDialogModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakDialogModule>;
 }
 
 /**
- * Reference to a dialog opened via the MatDialog service.
+ * Reference to a dialog opened via the TakDialog service.
  */
-export declare class MatDialogRef<T, R = any> {
+export declare class TakDialogRef<T, R = any> {
   private _ref;
-  _containerInstance: _MatDialogContainerBase;
+  _containerInstance: _TakDialogContainerBase;
   /** The instance of component opened into the dialog. */
   componentInstance: T;
   /** Whether the user is allowed to close the dialog. */
@@ -557,8 +557,8 @@ export declare class MatDialogRef<T, R = any> {
   private _closeInteractionType;
   constructor(
     _ref: DialogRef<R, T>,
-    config: MatDialogConfig,
-    _containerInstance: _MatDialogContainerBase
+    config: TakDialogConfig,
+    _containerInstance: _TakDialogContainerBase
   );
   /**
    * Close the dialog.
@@ -601,7 +601,7 @@ export declare class MatDialogRef<T, R = any> {
   /** Remove a CSS class or an array of classes from the overlay pane. */
   removePanelClass(classes: string | string[]): this;
   /** Gets the current state of the dialog's lifecycle. */
-  getState(): MatDialogState;
+  getState(): TakDialogState;
   /**
    * Finishes the dialog close by updating the state of the dialog
    * and disposing the overlay.
@@ -610,7 +610,7 @@ export declare class MatDialogRef<T, R = any> {
 }
 
 /** Possible states of the lifecycle of a dialog. */
-export declare const enum MatDialogState {
+export declare const enum TakDialogState {
   OPEN = 0,
   CLOSING = 1,
   CLOSED = 2,
@@ -619,23 +619,23 @@ export declare const enum MatDialogState {
 /**
  * Title of a dialog element. Stays fixed to the top of the dialog when scrolling.
  */
-export declare class MatDialogTitle implements OnInit {
+export declare class TakDialogTitle implements OnInit {
   private _dialogRef;
   private _elementRef;
   private _dialog;
   /** Unique id for the dialog title. If none is supplied, it will be auto-generated. */
   id: string;
   constructor(
-    _dialogRef: MatDialogRef<any>,
+    _dialogRef: TakDialogRef<any>,
     _elementRef: ElementRef<HTMLElement>,
-    _dialog: MatDialog
+    _dialog: TakDialog
   );
   ngOnInit(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatDialogTitle, [{ optional: true }, null, null]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakDialogTitle, [{ optional: true }, null, null]>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatDialogTitle,
-    '[mat-dialog-title], [matDialogTitle]',
-    ['matDialogTitle'],
+    TakDialogTitle,
+    '[tak-dialog-title], [takDialogTitle]',
+    ['takDialogTitle'],
     { id: 'id' },
     {},
     never,

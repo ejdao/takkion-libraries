@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -10,7 +10,7 @@ import * as ts from 'typescript';
 /**
  * Migration that walks through every property assignment and switches the global `baseSpeedFactor`
  * ripple option to the new global animation config. Also updates every class member assignment
- * that refers to MatRipple#speedFactor.
+ * that refers to TakRipple#speedFactor.
  */
 export declare class RippleSpeedFactorMigration extends Migration<null> {
   enabled: boolean;

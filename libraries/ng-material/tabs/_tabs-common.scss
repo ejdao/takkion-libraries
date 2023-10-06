@@ -24,12 +24,12 @@ $tab-animation-duration: 500ms !default;
   &:focus {
     outline: none;
 
-    &:not(.mat-tab-disabled) {
+    &:not(.tak-tab-disabled) {
       opacity: 1;
     }
   }
 
-  &.mat-tab-disabled {
+  &.tak-tab-disabled {
     cursor: default;
 
     @include cdk.high-contrast(active, off) {
@@ -37,7 +37,7 @@ $tab-animation-duration: 500ms !default;
     }
   }
 
-  .mat-tab-label-content {
+  .tak-tab-label-content {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@ $tab-animation-duration: 500ms !default;
   height: $height;
   transition: $tab-animation-duration variables.$ease-in-out-curve-function;
 
-  .mat-tab-group-inverted-header & {
+  .tak-tab-group-inverted-header & {
     bottom: auto;
     top: 0;
   }
@@ -70,16 +70,16 @@ $tab-animation-duration: 500ms !default;
   }
 }
 
-// Structural styles for a tab header. Used by both `mat-tab-header` and `mat-tab-nav-bar`.
+// Structural styles for a tab header. Used by both `tak-tab-header` and `tak-tab-nav-bar`.
 @mixin paginated-tab-header {
-  .mat-tab-header {
+  .tak-tab-header {
     display: flex;
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
   }
 
-  .mat-tab-header-pagination {
+  .tak-tab-header-pagination {
     @include vendor-prefixes.user-select(none);
     position: relative;
     display: none;
@@ -100,42 +100,42 @@ $tab-animation-duration: 500ms !default;
       border: 0;
     }
 
-    .mat-tab-header-pagination-controls-enabled & {
+    .tak-tab-header-pagination-controls-enabled & {
       display: flex;
     }
   }
 
   // The pagination control that is displayed on the left side of the tab header.
-  .mat-tab-header-pagination-before,
-  .mat-tab-header-rtl .mat-tab-header-pagination-after {
+  .tak-tab-header-pagination-before,
+  .tak-tab-header-rtl .tak-tab-header-pagination-after {
     padding-left: 4px;
-    .mat-tab-header-pagination-chevron {
+    .tak-tab-header-pagination-chevron {
       transform: rotate(-135deg);
     }
   }
 
   // The pagination control that is displayed on the right side of the tab header.
-  .mat-tab-header-rtl .mat-tab-header-pagination-before,
-  .mat-tab-header-pagination-after {
+  .tak-tab-header-rtl .tak-tab-header-pagination-before,
+  .tak-tab-header-pagination-after {
     padding-right: 4px;
-    .mat-tab-header-pagination-chevron {
+    .tak-tab-header-pagination-chevron {
       transform: rotate(45deg);
     }
   }
 
-  .mat-tab-header-pagination-chevron {
+  .tak-tab-header-pagination-chevron {
     border-style: solid;
     border-width: 2px 2px 0 0;
     height: 8px;
     width: 8px;
   }
 
-  .mat-tab-header-pagination-disabled {
+  .tak-tab-header-pagination-disabled {
     box-shadow: none;
     cursor: default;
   }
 
-  .mat-tab-list {
+  .tak-tab-list {
     flex-grow: 1;
     position: relative;
     transition: transform 500ms cubic-bezier(0.35, 0, 0.25, 1);
@@ -148,11 +148,11 @@ $tab-animation-duration: 500ms !default;
 
   // We need to set the parent here explicitly, in order to prevent the alignment
   // from any parent tab groups from propagating down to the children when nesting.
-  [mat-align-tabs='center'] > #{$parent} & {
+  [tak-align-tabs='center'] > #{$parent} & {
     justify-content: center;
   }
 
-  [mat-align-tabs='end'] > #{$parent} & {
+  [tak-align-tabs='end'] > #{$parent} & {
     justify-content: flex-end;
   }
 }

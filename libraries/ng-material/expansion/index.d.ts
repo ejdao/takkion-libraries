@@ -34,57 +34,57 @@ import { ViewContainerRef } from '@angular/core';
 export declare const EXPANSION_PANEL_ANIMATION_TIMING = '225ms cubic-bezier(0.4,0.0,0.2,1)';
 
 declare namespace i1 {
-  export { MatAccordion };
+  export { TakAccordion };
 }
 
 declare namespace i2 {
   export {
-    MatExpansionPanelState,
-    MatExpansionPanelDefaultOptions,
-    MAT_EXPANSION_PANEL_DEFAULT_OPTIONS,
-    MatExpansionPanel,
-    MatExpansionPanelActionRow,
+    TakExpansionPanelState,
+    TakExpansionPanelDefaultOptions,
+    TAK_EXPANSION_PANEL_DEFAULT_OPTIONS,
+    TakExpansionPanel,
+    TakExpansionPanelActionRow,
   };
 }
 
 declare namespace i3 {
-  export { MatExpansionPanelHeader, MatExpansionPanelDescription, MatExpansionPanelTitle };
+  export { TakExpansionPanelHeader, TakExpansionPanelDescription, TakExpansionPanelTitle };
 }
 
 declare namespace i4 {
-  export { MatExpansionPanelContent };
+  export { TakExpansionPanelContent };
 }
 
 /**
- * Token used to provide a `MatAccordion` to `MatExpansionPanel`.
- * Used primarily to avoid circular imports between `MatAccordion` and `MatExpansionPanel`.
+ * Token used to provide a `TakAccordion` to `TakExpansionPanel`.
+ * Used primarily to avoid circular imports between `TakAccordion` and `TakExpansionPanel`.
  */
-export declare const MAT_ACCORDION: InjectionToken<MatAccordionBase>;
+export declare const TAK_ACCORDION: InjectionToken<TakAccordionBase>;
 
 /**
- * Token used to provide a `MatExpansionPanel` to `MatExpansionPanelContent`.
- * Used to avoid circular imports between `MatExpansionPanel` and `MatExpansionPanelContent`.
+ * Token used to provide a `TakExpansionPanel` to `TakExpansionPanelContent`.
+ * Used to avoid circular imports between `TakExpansionPanel` and `TakExpansionPanelContent`.
  */
-export declare const MAT_EXPANSION_PANEL: InjectionToken<MatExpansionPanelBase>;
+export declare const TAK_EXPANSION_PANEL: InjectionToken<TakExpansionPanelBase>;
 
 /**
  * Injection token that can be used to configure the default
  * options for the expansion panel component.
  */
-export declare const MAT_EXPANSION_PANEL_DEFAULT_OPTIONS: InjectionToken<MatExpansionPanelDefaultOptions>;
+export declare const TAK_EXPANSION_PANEL_DEFAULT_OPTIONS: InjectionToken<TakExpansionPanelDefaultOptions>;
 
 /**
  * Directive for a Material Design Accordion.
  */
-export declare class MatAccordion
+export declare class TakAccordion
   extends CdkAccordion
-  implements MatAccordionBase, AfterContentInit, OnDestroy
+  implements TakAccordionBase, AfterContentInit, OnDestroy
 {
   private _keyManager;
   /** Headers belonging to this accordion. */
   private _ownHeaders;
   /** All headers inside the accordion. Includes headers inside nested accordions. */
-  _headers: QueryList<MatExpansionPanelHeader>;
+  _headers: QueryList<TakExpansionPanelHeader>;
   /** Whether the expansion indicator should be hidden. */
   get hideToggle(): boolean;
   set hideToggle(show: BooleanInput);
@@ -97,19 +97,19 @@ export declare class MatAccordion
    *  flat - no spacing is placed around expanded panels, showing all panels at the same
    *     elevation.
    */
-  displayMode: MatAccordionDisplayMode;
+  displayMode: TakAccordionDisplayMode;
   /** The position of the expansion indicator. */
-  togglePosition: MatAccordionTogglePosition;
+  togglePosition: TakAccordionTogglePosition;
   ngAfterContentInit(): void;
   /** Handles keyboard events coming in from the panel headers. */
   _handleHeaderKeydown(event: KeyboardEvent): void;
-  _handleHeaderFocus(header: MatExpansionPanelHeader): void;
+  _handleHeaderFocus(header: TakExpansionPanelHeader): void;
   ngOnDestroy(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatAccordion, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakAccordion, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatAccordion,
-    'mat-accordion',
-    ['matAccordion'],
+    TakAccordion,
+    'tak-accordion',
+    ['takAccordion'],
     {
       multi: 'multi';
       hideToggle: 'hideToggle';
@@ -124,27 +124,27 @@ export declare class MatAccordion
 }
 
 /**
- * Base interface for a `MatAccordion`.
+ * Base interface for a `TakAccordion`.
  * @docs-private
  */
-export declare interface MatAccordionBase extends CdkAccordion {
+export declare interface TakAccordionBase extends CdkAccordion {
   /** Whether the expansion indicator should be hidden. */
   hideToggle: boolean;
   /** Display mode used for all expansion panels in the accordion. */
-  displayMode: MatAccordionDisplayMode;
+  displayMode: TakAccordionDisplayMode;
   /** The position of the expansion indicator. */
-  togglePosition: MatAccordionTogglePosition;
+  togglePosition: TakAccordionTogglePosition;
   /** Handles keyboard events coming in from the panel headers. */
   _handleHeaderKeydown: (event: KeyboardEvent) => void;
   /** Handles focus events on the panel headers. */
   _handleHeaderFocus: (header: any) => void;
 }
 
-/** MatAccordion's display modes. */
-export declare type MatAccordionDisplayMode = 'default' | 'flat';
+/** TakAccordion's display modes. */
+export declare type TakAccordionDisplayMode = 'default' | 'flat';
 
-/** MatAccordion's toggle positions. */
-export declare type MatAccordionTogglePosition = 'before' | 'after';
+/** TakAccordion's toggle positions. */
+export declare type TakAccordionTogglePosition = 'before' | 'after';
 
 /**
  * Animations used by the Material expansion panel.
@@ -168,48 +168,48 @@ export declare type MatAccordionTogglePosition = 'before' | 'after';
  *
  * @docs-private
  */
-export declare const matExpansionAnimations: {
+export declare const takExpansionAnimations: {
   readonly indicatorRotate: AnimationTriggerMetadata;
   readonly bodyExpansion: AnimationTriggerMetadata;
 };
 
-export declare class MatExpansionModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatExpansionModule, never>;
+export declare class TakExpansionModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakExpansionModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatExpansionModule,
+    TakExpansionModule,
     [
-      typeof i1.MatAccordion,
-      typeof i2.MatExpansionPanel,
-      typeof i2.MatExpansionPanelActionRow,
-      typeof i3.MatExpansionPanelHeader,
-      typeof i3.MatExpansionPanelTitle,
-      typeof i3.MatExpansionPanelDescription,
-      typeof i4.MatExpansionPanelContent,
+      typeof i1.TakAccordion,
+      typeof i2.TakExpansionPanel,
+      typeof i2.TakExpansionPanelActionRow,
+      typeof i3.TakExpansionPanelHeader,
+      typeof i3.TakExpansionPanelTitle,
+      typeof i3.TakExpansionPanelDescription,
+      typeof i4.TakExpansionPanelContent,
     ],
     [
       typeof i5.CommonModule,
-      typeof i6.MatCommonModule,
+      typeof i6.TakCommonModule,
       typeof i7.CdkAccordionModule,
       typeof i8.PortalModule,
     ],
     [
-      typeof i1.MatAccordion,
-      typeof i2.MatExpansionPanel,
-      typeof i2.MatExpansionPanelActionRow,
-      typeof i3.MatExpansionPanelHeader,
-      typeof i3.MatExpansionPanelTitle,
-      typeof i3.MatExpansionPanelDescription,
-      typeof i4.MatExpansionPanelContent,
+      typeof i1.TakAccordion,
+      typeof i2.TakExpansionPanel,
+      typeof i2.TakExpansionPanelActionRow,
+      typeof i3.TakExpansionPanelHeader,
+      typeof i3.TakExpansionPanelTitle,
+      typeof i3.TakExpansionPanelDescription,
+      typeof i4.TakExpansionPanelContent,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatExpansionModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakExpansionModule>;
 }
 
 /**
  * This component can be used as a single element to show expandable content, or as one of
- * multiple children of an element with the MatAccordion directive attached.
+ * multiple children of an element with the TakAccordion directive attached.
  */
-export declare class MatExpansionPanel
+export declare class TakExpansionPanel
   extends CdkAccordionItem
   implements AfterContentInit, OnChanges, OnDestroy
 {
@@ -222,8 +222,8 @@ export declare class MatExpansionPanel
   get hideToggle(): boolean;
   set hideToggle(value: BooleanInput);
   /** The position of the expansion indicator. */
-  get togglePosition(): MatAccordionTogglePosition;
-  set togglePosition(value: MatAccordionTogglePosition);
+  get togglePosition(): TakAccordionTogglePosition;
+  set togglePosition(value: TakAccordionTogglePosition);
   /** An event emitted after the body's expansion animation happens. */
   readonly afterExpand: EventEmitter<void>;
   /** An event emitted after the body's collapse animation happens. */
@@ -231,9 +231,9 @@ export declare class MatExpansionPanel
   /** Stream that emits for changes in `@Input` properties. */
   readonly _inputChanges: Subject<SimpleChanges>;
   /** Optionally defined accordion the expansion panel belongs to. */
-  accordion: MatAccordionBase;
+  accordion: TakAccordionBase;
   /** Content that will be rendered lazily. */
-  _lazyContent: MatExpansionPanelContent;
+  _lazyContent: TakExpansionPanelContent;
   /** Element containing the panel's user-provided content. */
   _body: ElementRef<HTMLElement>;
   /** Portal holding the user's content. */
@@ -243,18 +243,18 @@ export declare class MatExpansionPanel
   /** Stream of body animation done events. */
   readonly _bodyAnimationDone: Subject<AnimationEvent_2>;
   constructor(
-    accordion: MatAccordionBase,
+    accordion: TakAccordionBase,
     _changeDetectorRef: ChangeDetectorRef,
     _uniqueSelectionDispatcher: UniqueSelectionDispatcher,
     _viewContainerRef: ViewContainerRef,
     _document: any,
     _animationMode: string,
-    defaultOptions?: MatExpansionPanelDefaultOptions
+    defaultOptions?: TakExpansionPanelDefaultOptions
   );
   /** Determines whether the expansion panel should have spacing between it and its siblings. */
   _hasSpacing(): boolean;
   /** Gets the expanded state string. */
-  _getExpandedState(): MatExpansionPanelState;
+  _getExpandedState(): TakExpansionPanelState;
   /** Toggles the expanded state of the expansion panel. */
   toggle(): void;
   /** Sets the expanded state of the expansion panel to false. */
@@ -267,7 +267,7 @@ export declare class MatExpansionPanel
   /** Checks whether the expansion panel's content contains the currently-focused element. */
   _containsFocus(): boolean;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatExpansionPanel,
+    TakExpansionPanel,
     [
       { optional: true; skipSelf: true },
       null,
@@ -279,9 +279,9 @@ export declare class MatExpansionPanel
     ]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatExpansionPanel,
-    'mat-expansion-panel',
-    ['matExpansionPanel'],
+    TakExpansionPanel,
+    'tak-expansion-panel',
+    ['takExpansionPanel'],
     {
       disabled: 'disabled';
       expanded: 'expanded';
@@ -296,19 +296,19 @@ export declare class MatExpansionPanel
       afterCollapse: 'afterCollapse';
     },
     ['_lazyContent'],
-    ['mat-expansion-panel-header', '*', 'mat-action-row'],
+    ['tak-expansion-panel-header', '*', 'tak-action-row'],
     false
   >;
 }
 
 /**
- * Actions of a `<mat-expansion-panel>`.
+ * Actions of a `<tak-expansion-panel>`.
  */
-export declare class MatExpansionPanelActionRow {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatExpansionPanelActionRow, never>;
+export declare class TakExpansionPanelActionRow {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakExpansionPanelActionRow, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatExpansionPanelActionRow,
-    'mat-action-row',
+    TakExpansionPanelActionRow,
+    'tak-action-row',
     never,
     {},
     {},
@@ -319,10 +319,10 @@ export declare class MatExpansionPanelActionRow {
 }
 
 /**
- * Base interface for a `MatExpansionPanel`.
+ * Base interface for a `TakExpansionPanel`.
  * @docs-private
  */
-declare interface MatExpansionPanelBase extends CdkAccordionItem {
+declare interface TakExpansionPanelBase extends CdkAccordionItem {
   /** Whether the toggle indicator should be hidden. */
   hideToggle: boolean;
 }
@@ -331,14 +331,14 @@ declare interface MatExpansionPanelBase extends CdkAccordionItem {
  * Expansion panel content that will be rendered lazily
  * after the panel is opened for the first time.
  */
-export declare class MatExpansionPanelContent {
+export declare class TakExpansionPanelContent {
   _template: TemplateRef<any>;
-  _expansionPanel?: MatExpansionPanelBase | undefined;
-  constructor(_template: TemplateRef<any>, _expansionPanel?: MatExpansionPanelBase | undefined);
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatExpansionPanelContent, [null, { optional: true }]>;
+  _expansionPanel?: TakExpansionPanelBase | undefined;
+  constructor(_template: TemplateRef<any>, _expansionPanel?: TakExpansionPanelBase | undefined);
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakExpansionPanelContent, [null, { optional: true }]>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatExpansionPanelContent,
-    'ng-template[matExpansionPanelContent]',
+    TakExpansionPanelContent,
+    'ng-template[takExpansionPanelContent]',
     never,
     {},
     {},
@@ -352,7 +352,7 @@ export declare class MatExpansionPanelContent {
  * Object that can be used to override the default options
  * for all of the expansion panels in a module.
  */
-export declare interface MatExpansionPanelDefaultOptions {
+export declare interface TakExpansionPanelDefaultOptions {
   /** Height of the header while the panel is expanded. */
   expandedHeight: string;
   /** Height of the header while the panel is collapsed. */
@@ -362,13 +362,13 @@ export declare interface MatExpansionPanelDefaultOptions {
 }
 
 /**
- * Description element of a `<mat-expansion-panel-header>`.
+ * Description element of a `<tak-expansion-panel-header>`.
  */
-export declare class MatExpansionPanelDescription {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatExpansionPanelDescription, never>;
+export declare class TakExpansionPanelDescription {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakExpansionPanelDescription, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatExpansionPanelDescription,
-    'mat-panel-description',
+    TakExpansionPanelDescription,
+    'tak-panel-description',
     never,
     {},
     {},
@@ -379,24 +379,24 @@ export declare class MatExpansionPanelDescription {
 }
 
 /**
- * Header element of a `<mat-expansion-panel>`.
+ * Header element of a `<tak-expansion-panel>`.
  */
-export declare class MatExpansionPanelHeader
-  extends _MatExpansionPanelHeaderMixinBase
+export declare class TakExpansionPanelHeader
+  extends _TakExpansionPanelHeaderMixinBase
   implements AfterViewInit, OnDestroy, FocusableOption, HasTabIndex
 {
-  panel: MatExpansionPanel;
+  panel: TakExpansionPanel;
   private _element;
   private _focusMonitor;
   private _changeDetectorRef;
   _animationMode?: string | undefined;
   private _parentChangeSubscription;
   constructor(
-    panel: MatExpansionPanel,
+    panel: TakExpansionPanel,
     _element: ElementRef,
     _focusMonitor: FocusMonitor,
     _changeDetectorRef: ChangeDetectorRef,
-    defaultOptions?: MatExpansionPanelDefaultOptions,
+    defaultOptions?: TakExpansionPanelDefaultOptions,
     _animationMode?: string | undefined,
     tabIndex?: string
   );
@@ -418,7 +418,7 @@ export declare class MatExpansionPanelHeader
   /** Gets the panel id. */
   _getPanelId(): string;
   /** Gets the toggle position for the header. */
-  _getTogglePosition(): MatAccordionTogglePosition;
+  _getTogglePosition(): TakAccordionTogglePosition;
   /** Gets whether the expand indicator should be shown. */
   _showToggle(): boolean;
   /**
@@ -437,7 +437,7 @@ export declare class MatExpansionPanelHeader
   ngAfterViewInit(): void;
   ngOnDestroy(): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatExpansionPanelHeader,
+    TakExpansionPanelHeader,
     [
       { host: true },
       null,
@@ -449,37 +449,37 @@ export declare class MatExpansionPanelHeader
     ]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatExpansionPanelHeader,
-    'mat-expansion-panel-header',
+    TakExpansionPanelHeader,
+    'tak-expansion-panel-header',
     never,
     { tabIndex: 'tabIndex'; expandedHeight: 'expandedHeight'; collapsedHeight: 'collapsedHeight' },
     {},
     never,
-    ['mat-panel-title', 'mat-panel-description', '*'],
+    ['tak-panel-title', 'tak-panel-description', '*'],
     false
   >;
 }
 
 /** @docs-private */
-declare abstract class MatExpansionPanelHeaderBase {
+declare abstract class TakExpansionPanelHeaderBase {
   abstract readonly disabled: boolean;
 }
 
-declare const _MatExpansionPanelHeaderMixinBase: _Constructor<HasTabIndex> &
+declare const _TakExpansionPanelHeaderMixinBase: _Constructor<HasTabIndex> &
   _AbstractConstructor<HasTabIndex> &
-  typeof MatExpansionPanelHeaderBase;
+  typeof TakExpansionPanelHeaderBase;
 
-/** MatExpansionPanel's states. */
-export declare type MatExpansionPanelState = 'expanded' | 'collapsed';
+/** TakExpansionPanel's states. */
+export declare type TakExpansionPanelState = 'expanded' | 'collapsed';
 
 /**
- * Title element of a `<mat-expansion-panel-header>`.
+ * Title element of a `<tak-expansion-panel-header>`.
  */
-export declare class MatExpansionPanelTitle {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatExpansionPanelTitle, never>;
+export declare class TakExpansionPanelTitle {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakExpansionPanelTitle, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatExpansionPanelTitle,
-    'mat-panel-title',
+    TakExpansionPanelTitle,
+    'tak-panel-title',
     never,
     {},
     {},

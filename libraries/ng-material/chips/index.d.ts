@@ -20,7 +20,7 @@ import { HasTabIndex } from '@takkion/ng-material/core';
 import * as i0 from '@angular/core';
 import * as i4 from '@takkion/ng-material/core';
 import { InjectionToken } from '@angular/core';
-import { MatFormFieldControl } from '@takkion/ng-material/form-field';
+import { TakFormFieldControl } from '@takkion/ng-material/form-field';
 import { NgControl } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { NgZone } from '@angular/core';
@@ -37,54 +37,54 @@ import { SelectionModel } from '@takkion/ng-cdk/collections';
 import { Subject } from 'rxjs';
 
 declare namespace i1 {
-  export { MatChipListChange, MatChipList };
+  export { TakChipListChange, TakChipList };
 }
 
 declare namespace i2 {
   export {
-    MatChipEvent,
-    MatChipSelectionChange,
-    MAT_CHIP_REMOVE,
-    MAT_CHIP_AVATAR,
-    MAT_CHIP_TRAILING_ICON,
-    MatChipAvatar,
-    MatChipTrailingIcon,
-    MatChip,
-    MatChipRemove,
+    TakChipEvent,
+    TakChipSelectionChange,
+    TAK_CHIP_REMOVE,
+    TAK_CHIP_AVATAR,
+    TAK_CHIP_TRAILING_ICON,
+    TakChipAvatar,
+    TakChipTrailingIcon,
+    TakChip,
+    TakChipRemove,
   };
 }
 
 declare namespace i3 {
-  export { MatChipInputEvent, MatChipInput };
+  export { TakChipInputEvent, TakChipInput };
 }
 
 /**
- * Injection token that can be used to reference instances of `MatChipAvatar`. It serves as
- * alternative token to the actual `MatChipAvatar` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakChipAvatar`. It serves as
+ * alternative token to the actual `TakChipAvatar` class which could cause unnecessary
  * retention of the class and its directive metadata.
  */
-export declare const MAT_CHIP_AVATAR: InjectionToken<MatChipAvatar>;
+export declare const TAK_CHIP_AVATAR: InjectionToken<TakChipAvatar>;
 
 /**
- * Injection token that can be used to reference instances of `MatChipRemove`. It serves as
- * alternative token to the actual `MatChipRemove` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakChipRemove`. It serves as
+ * alternative token to the actual `TakChipRemove` class which could cause unnecessary
  * retention of the class and its directive metadata.
  */
-export declare const MAT_CHIP_REMOVE: InjectionToken<MatChipRemove>;
+export declare const TAK_CHIP_REMOVE: InjectionToken<TakChipRemove>;
 
 /**
- * Injection token that can be used to reference instances of `MatChipTrailingIcon`. It serves as
- * alternative token to the actual `MatChipTrailingIcon` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakChipTrailingIcon`. It serves as
+ * alternative token to the actual `TakChipTrailingIcon` class which could cause unnecessary
  * retention of the class and its directive metadata.
  */
-export declare const MAT_CHIP_TRAILING_ICON: InjectionToken<MatChipTrailingIcon>;
+export declare const TAK_CHIP_TRAILING_ICON: InjectionToken<TakChipTrailingIcon>;
 
 /** Injection token to be used to override the default options for the chips module. */
-export declare const MAT_CHIPS_DEFAULT_OPTIONS: InjectionToken<MatChipsDefaultOptions>;
+export declare const TAK_CHIPS_DEFAULT_OPTIONS: InjectionToken<TakChipsDefaultOptions>;
 
-/** Material Design styled chip directive. Used inside the MatChipList component. */
-export declare class MatChip
-  extends _MatChipMixinBase
+/** Material Design styled chip directive. Used inside the TakChipList component. */
+export declare class TakChip
+  extends _TakChipMixinBase
   implements
     FocusableOption,
     OnDestroy,
@@ -127,18 +127,18 @@ export declare class MatChip
   /** Whether the chip list as a whole is disabled. */
   _chipListDisabled: boolean;
   /** The chip avatar */
-  avatar: MatChipAvatar;
+  avatar: TakChipAvatar;
   /** The chip's trailing icon. */
-  trailingIcon: MatChipTrailingIcon;
+  trailingIcon: TakChipTrailingIcon;
   /** The chip's remove toggler. */
-  removeIcon: MatChipRemove;
+  removeIcon: TakChipRemove;
   /** ARIA role that should be applied to the chip. */
   role: string;
   /** Whether the chip is selected. */
   get selected(): boolean;
   set selected(value: BooleanInput);
   protected _selected: boolean;
-  /** The value of the chip. Defaults to the content inside `<mat-chip>` tags. */
+  /** The value of the chip. Defaults to the content inside `<tak-chip>` tags. */
   get value(): any;
   set value(value: any);
   protected _value: any;
@@ -162,15 +162,15 @@ export declare class MatChip
   set removable(value: BooleanInput);
   protected _removable: boolean;
   /** Emits when the chip is focused. */
-  readonly _onFocus: Subject<MatChipEvent>;
+  readonly _onFocus: Subject<TakChipEvent>;
   /** Emits when the chip is blurred. */
-  readonly _onBlur: Subject<MatChipEvent>;
+  readonly _onBlur: Subject<TakChipEvent>;
   /** Emitted when the chip is selected or deselected. */
-  readonly selectionChange: EventEmitter<MatChipSelectionChange>;
+  readonly selectionChange: EventEmitter<TakChipSelectionChange>;
   /** Emitted when the chip is destroyed. */
-  readonly destroyed: EventEmitter<MatChipEvent>;
+  readonly destroyed: EventEmitter<TakChipEvent>;
   /** Emitted when a chip is to be removed. */
-  readonly removed: EventEmitter<MatChipEvent>;
+  readonly removed: EventEmitter<TakChipEvent>;
   /** The ARIA selected applied to the chip. */
   get ariaSelected(): string | null;
   constructor(
@@ -196,7 +196,7 @@ export declare class MatChip
   /** Allows for programmatic focusing of the chip. */
   focus(): void;
   /**
-   * Allows for programmatic removal of the chip. Called by the MatChipList when the DELETE or
+   * Allows for programmatic removal of the chip. Called by the TakChipList when the DELETE or
    * BACKSPACE keys are pressed.
    *
    * Informs any listeners of the removal request. Does not remove the chip from the DOM.
@@ -209,7 +209,7 @@ export declare class MatChip
   _blur(): void;
   private _dispatchSelectionChange;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatChip,
+    TakChip,
     [
       null,
       null,
@@ -222,9 +222,9 @@ export declare class MatChip
     ]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatChip,
-    'mat-basic-chip, [mat-basic-chip], mat-chip, [mat-chip]',
-    ['matChip'],
+    TakChip,
+    'tak-basic-chip, [tak-basic-chip], tak-chip, [tak-chip]',
+    ['takChip'],
     {
       color: 'color';
       disableRipple: 'disableRipple';
@@ -247,11 +247,11 @@ export declare class MatChip
  * Dummy directive to add CSS class to chip avatar.
  * @docs-private
  */
-export declare class MatChipAvatar {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatChipAvatar, never>;
+export declare class TakChipAvatar {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakChipAvatar, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatChipAvatar,
-    'mat-chip-avatar, [matChipAvatar]',
+    TakChipAvatar,
+    'tak-chip-avatar, [takChipAvatar]',
     never,
     {},
     {},
@@ -262,24 +262,24 @@ export declare class MatChipAvatar {
 }
 
 /** @docs-private */
-declare abstract class MatChipBase {
+declare abstract class TakChipBase {
   _elementRef: ElementRef;
   abstract disabled: boolean;
   constructor(_elementRef: ElementRef);
 }
 
-/** Represents an event fired on an individual `mat-chip`. */
-export declare interface MatChipEvent {
+/** Represents an event fired on an individual `tak-chip`. */
+export declare interface TakChipEvent {
   /** The chip the event was fired on. */
-  chip: MatChip;
+  chip: TakChip;
 }
 
 /**
- * Directive that adds chip-specific behaviors to an input element inside `<mat-form-field>`.
- * May be placed inside or outside of an `<mat-chip-list>`.
+ * Directive that adds chip-specific behaviors to an input element inside `<tak-form-field>`.
+ * May be placed inside or outside of an `<tak-chip-list>`.
  */
-export declare class MatChipInput
-  implements MatChipTextControl, OnChanges, OnDestroy, AfterContentInit
+export declare class TakChipInput
+  implements TakChipTextControl, OnChanges, OnDestroy, AfterContentInit
 {
   protected _elementRef: ElementRef<HTMLInputElement>;
   private _defaultOptions;
@@ -287,9 +287,9 @@ export declare class MatChipInput
   private _focusLastChipOnBackspace;
   /** Whether the control is focused. */
   focused: boolean;
-  _chipList: MatChipList;
+  _chipList: TakChipList;
   /** Register input for chip list */
-  set chipList(value: MatChipList);
+  set chipList(value: TakChipList);
   /**
    * Whether or not the chipEnd event will be emitted when the input is blurred.
    */
@@ -303,7 +303,7 @@ export declare class MatChipInput
    */
   separatorKeyCodes: readonly number[] | ReadonlySet<number>;
   /** Emitted when a chip is to be added. */
-  readonly chipEnd: EventEmitter<MatChipInputEvent>;
+  readonly chipEnd: EventEmitter<TakChipInputEvent>;
   /** The input's placeholder text. */
   placeholder: string;
   /** Unique id for the input. */
@@ -316,7 +316,7 @@ export declare class MatChipInput
   get empty(): boolean;
   /** The native input element to which this directive is attached. */
   readonly inputElement: HTMLInputElement;
-  constructor(_elementRef: ElementRef<HTMLInputElement>, _defaultOptions: MatChipsDefaultOptions);
+  constructor(_elementRef: ElementRef<HTMLInputElement>, _defaultOptions: TakChipsDefaultOptions);
   ngOnChanges(): void;
   ngOnDestroy(): void;
   ngAfterContentInit(): void;
@@ -338,47 +338,47 @@ export declare class MatChipInput
   clear(): void;
   /** Checks whether a keycode is one of the configured separators. */
   private _isSeparatorKey;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatChipInput, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakChipInput, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatChipInput,
-    'input[matChipInputFor]',
-    ['matChipInput', 'matChipInputFor'],
+    TakChipInput,
+    'input[takChipInputFor]',
+    ['takChipInput', 'takChipInputFor'],
     {
-      chipList: 'matChipInputFor';
-      addOnBlur: 'matChipInputAddOnBlur';
-      separatorKeyCodes: 'matChipInputSeparatorKeyCodes';
+      chipList: 'takChipInputFor';
+      addOnBlur: 'takChipInputAddOnBlur';
+      separatorKeyCodes: 'takChipInputSeparatorKeyCodes';
       placeholder: 'placeholder';
       id: 'id';
       disabled: 'disabled';
     },
-    { chipEnd: 'matChipInputTokenEnd' },
+    { chipEnd: 'takChipInputTokenEnd' },
     never,
     never,
     false
   >;
 }
 
-/** Represents an input event on a `matChipInput`. */
-export declare interface MatChipInputEvent {
+/** Represents an input event on a `takChipInput`. */
+export declare interface TakChipInputEvent {
   /**
    * The native `<input>` element that the event is being fired for.
-   * @deprecated Use `MatChipInputEvent#chipInput.inputElement` instead.
+   * @deprecated Use `TakChipInputEvent#chipInput.inputElement` instead.
    * @breaking-change 13.0.0 This property will be removed.
    */
   input: HTMLInputElement;
   /** The value of the input. */
   value: string;
   /** Reference to the chip input that emitted the event. */
-  chipInput: MatChipInput;
+  chipInput: TakChipInput;
 }
 
 /**
  * A material design chips component (named ChipList for its similarity to the List component).
  */
-export declare class MatChipList
-  extends _MatChipListBase
+export declare class TakChipList
+  extends _TakChipListBase
   implements
-    MatFormFieldControl<any>,
+    TakFormFieldControl<any>,
     ControlValueAccessor,
     AfterContentInit,
     DoCheck,
@@ -390,7 +390,7 @@ export declare class MatChipList
   private _changeDetectorRef;
   private _dir;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   readonly controlType: string;
@@ -411,7 +411,7 @@ export declare class MatChipList
   /** Subscription to remove changes in chips. */
   private _chipRemoveSubscription;
   /** The chip input to add more chips */
-  protected _chipInput: MatChipTextControl;
+  protected _chipInput: TakChipTextControl;
   /** Uid of the chip list */
   _uid: string;
   /** Tab index for the chip list. */
@@ -422,20 +422,20 @@ export declare class MatChipList
    */
   _userTabIndex: number | null;
   /** The FocusKeyManager which handles focus. */
-  _keyManager: FocusKeyManager<MatChip>;
+  _keyManager: FocusKeyManager<TakChip>;
   /** Function when touched */
   _onTouched: () => void;
   /** Function when changed */
   _onChange: (value: any) => void;
-  _selectionModel: SelectionModel<MatChip>;
+  _selectionModel: SelectionModel<TakChip>;
   /** The array of selected chips inside chip list. */
-  get selected(): MatChip[] | MatChip;
+  get selected(): TakChip[] | TakChip;
   /** The ARIA role applied to the chip list. */
   get role(): string | null;
   set role(role: string | null);
   private _explicitRole?;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   userAriaDescribedBy: string;
@@ -454,45 +454,45 @@ export declare class MatChipList
   set compareWith(fn: (o1: any, o2: any) => boolean);
   private _compareWith;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get value(): any;
   set value(value: any);
   protected _value: any;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get id(): string;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get required(): boolean;
   set required(value: BooleanInput);
   protected _required: boolean | undefined;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get placeholder(): string;
   set placeholder(value: string);
   protected _placeholder: string;
-  /** Whether any chips or the matChipInput inside of this chip-list has focus. */
+  /** Whether any chips or the takChipInput inside of this chip-list has focus. */
   get focused(): boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get empty(): boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get shouldLabelFloat(): boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get disabled(): boolean;
@@ -509,15 +509,15 @@ export declare class MatChipList
   protected _selectable: boolean;
   set tabIndex(value: number);
   /** Combined stream of all of the child chips' selection change events. */
-  get chipSelectionChanges(): Observable<MatChipSelectionChange>;
+  get chipSelectionChanges(): Observable<TakChipSelectionChange>;
   /** Combined stream of all of the child chips' focus change events. */
-  get chipFocusChanges(): Observable<MatChipEvent>;
+  get chipFocusChanges(): Observable<TakChipEvent>;
   /** Combined stream of all of the child chips' blur change events. */
-  get chipBlurChanges(): Observable<MatChipEvent>;
+  get chipBlurChanges(): Observable<TakChipEvent>;
   /** Combined stream of all of the child chips' remove change events. */
-  get chipRemoveChanges(): Observable<MatChipEvent>;
+  get chipRemoveChanges(): Observable<TakChipEvent>;
   /** Event emitted when the selected chip list value has been changed by the user. */
-  readonly change: EventEmitter<MatChipListChange>;
+  readonly change: EventEmitter<TakChipListChange>;
   /**
    * Event that emits whenever the raw value of the chip-list changes. This is here primarily
    * to facilitate the two-way binding for the `value` input.
@@ -525,7 +525,7 @@ export declare class MatChipList
    */
   readonly valueChange: EventEmitter<any>;
   /** The chips contained within this chip list. */
-  chips: QueryList<MatChip>;
+  chips: QueryList<TakChip>;
   constructor(
     _elementRef: ElementRef<HTMLElement>,
     _changeDetectorRef: ChangeDetectorRef,
@@ -540,9 +540,9 @@ export declare class MatChipList
   ngDoCheck(): void;
   ngOnDestroy(): void;
   /** Associates an HTML input element with this chip list. */
-  registerInput(inputElement: MatChipTextControl): void;
+  registerInput(inputElement: TakChipTextControl): void;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   setDescribedByIds(ids: string[]): void;
@@ -551,7 +551,7 @@ export declare class MatChipList
   registerOnTouched(fn: () => void): void;
   setDisabledState(isDisabled: boolean): void;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   onContainerClick(event: MouseEvent): void;
@@ -625,7 +625,7 @@ export declare class MatChipList
   /** Syncs the list's state with the individual chips. */
   private _syncChipsState;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatChipList,
+    TakChipList,
     [
       null,
       null,
@@ -637,9 +637,9 @@ export declare class MatChipList
     ]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatChipList,
-    'mat-chip-list',
-    ['matChipList'],
+    TakChipList,
+    'tak-chip-list',
+    ['takChipList'],
     {
       role: 'role';
       userAriaDescribedBy: 'aria-describedby';
@@ -662,7 +662,7 @@ export declare class MatChipList
 }
 
 /** @docs-private */
-declare const _MatChipListBase: _Constructor<CanUpdateErrorState> &
+declare const _TakChipListBase: _Constructor<CanUpdateErrorState> &
   _AbstractConstructor<CanUpdateErrorState> & {
     new (
       _defaultErrorStateMatcher: ErrorStateMatcher,
@@ -672,7 +672,7 @@ declare const _MatChipListBase: _Constructor<CanUpdateErrorState> &
     ): {
       /**
        * Emits whenever the component state changes and should cause the parent
-       * form-field to update. Implemented as part of `MatFormFieldControl`.
+       * form-field to update. Implemented as part of `TakFormFieldControl`.
        * @docs-private
        */
       readonly stateChanges: Subject<void>;
@@ -681,7 +681,7 @@ declare const _MatChipListBase: _Constructor<CanUpdateErrorState> &
       _parentFormGroup: FormGroupDirective;
       /**
        * Form control bound to the component.
-       * Implemented as part of `MatFormFieldControl`.
+       * Implemented as part of `TakFormFieldControl`.
        * @docs-private
        */
       ngControl: NgControl;
@@ -689,26 +689,26 @@ declare const _MatChipListBase: _Constructor<CanUpdateErrorState> &
   };
 
 /** Change event object that is emitted when the chip list value has changed. */
-export declare class MatChipListChange {
+export declare class TakChipListChange {
   /** Chip list that emitted the event. */
-  source: MatChipList;
+  source: TakChipList;
   /** Value of the chip list when the event was emitted. */
   value: any;
   constructor(
     /** Chip list that emitted the event. */
-    source: MatChipList,
+    source: TakChipList,
     /** Value of the chip list when the event was emitted. */
     value: any
   );
 }
 
-declare const _MatChipMixinBase: _Constructor<HasTabIndex> &
+declare const _TakChipMixinBase: _Constructor<HasTabIndex> &
   _AbstractConstructor<HasTabIndex> &
   _Constructor<CanColor> &
   _AbstractConstructor<CanColor> &
   _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> &
-  typeof MatChipBase;
+  typeof TakChipBase;
 
 /**
  * Applies proper (click) support and adds styling for use with the Material Design "cancel" icon
@@ -716,22 +716,22 @@ declare const _MatChipMixinBase: _Constructor<HasTabIndex> &
  *
  * Example:
  *
- *     `<mat-chip>
- *       <mat-icon matChipRemove>cancel</mat-icon>
- *     </mat-chip>`
+ *     `<tak-chip>
+ *       <tak-icon takChipRemove>cancel</tak-icon>
+ *     </tak-chip>`
  *
- * You *may* use a custom icon, but you may need to override the `mat-chip-remove` positioning
+ * You *may* use a custom icon, but you may need to override the `tak-chip-remove` positioning
  * styles to properly center the icon within the chip.
  */
-export declare class MatChipRemove {
-  protected _parentChip: MatChip;
-  constructor(_parentChip: MatChip, elementRef: ElementRef<HTMLElement>);
+export declare class TakChipRemove {
+  protected _parentChip: TakChip;
+  constructor(_parentChip: TakChip, elementRef: ElementRef<HTMLElement>);
   /** Calls the parent chip's public `remove()` method if applicable. */
   _handleClick(event: Event): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatChipRemove, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakChipRemove, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatChipRemove,
-    '[matChipRemove]',
+    TakChipRemove,
+    '[takChipRemove]',
     never,
     {},
     {},
@@ -742,22 +742,22 @@ export declare class MatChipRemove {
 }
 
 /** Default options, for the chips module, that can be overridden. */
-export declare interface MatChipsDefaultOptions {
+export declare interface TakChipsDefaultOptions {
   /** The list of key codes that will trigger a chipEnd event. */
   separatorKeyCodes: readonly number[] | ReadonlySet<number>;
 }
 
-/** Event object emitted by MatChip when selected or deselected. */
-export declare class MatChipSelectionChange {
+/** Event object emitted by TakChip when selected or deselected. */
+export declare class TakChipSelectionChange {
   /** Reference to the chip that emitted the event. */
-  source: MatChip;
+  source: TakChip;
   /** Whether the chip that emitted the event is selected. */
   selected: boolean;
   /** Whether the selection change was a result of a user interaction. */
   isUserInput: boolean;
   constructor(
     /** Reference to the chip that emitted the event. */
-    source: MatChip,
+    source: TakChip,
     /** Whether the chip that emitted the event is selected. */
     selected: boolean,
     /** Whether the selection change was a result of a user interaction. */
@@ -765,33 +765,33 @@ export declare class MatChipSelectionChange {
   );
 }
 
-export declare class MatChipsModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatChipsModule, never>;
+export declare class TakChipsModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakChipsModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatChipsModule,
+    TakChipsModule,
     [
-      typeof i1.MatChipList,
-      typeof i2.MatChip,
-      typeof i3.MatChipInput,
-      typeof i2.MatChipRemove,
-      typeof i2.MatChipAvatar,
-      typeof i2.MatChipTrailingIcon,
+      typeof i1.TakChipList,
+      typeof i2.TakChip,
+      typeof i3.TakChipInput,
+      typeof i2.TakChipRemove,
+      typeof i2.TakChipAvatar,
+      typeof i2.TakChipTrailingIcon,
     ],
-    [typeof i4.MatCommonModule],
+    [typeof i4.TakCommonModule],
     [
-      typeof i1.MatChipList,
-      typeof i2.MatChip,
-      typeof i3.MatChipInput,
-      typeof i2.MatChipRemove,
-      typeof i2.MatChipAvatar,
-      typeof i2.MatChipTrailingIcon,
+      typeof i1.TakChipList,
+      typeof i2.TakChip,
+      typeof i3.TakChipInput,
+      typeof i2.TakChipRemove,
+      typeof i2.TakChipAvatar,
+      typeof i2.TakChipTrailingIcon,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatChipsModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakChipsModule>;
 }
 
-/** Interface for a text control that is used to drive interaction with a mat-chip-list. */
-declare interface MatChipTextControl {
+/** Interface for a text control that is used to drive interaction with a tak-chip-list. */
+declare interface TakChipTextControl {
   /** Unique identifier for the text control. */
   id: string;
   /** The text control's placeholder text. */
@@ -808,11 +808,11 @@ declare interface MatChipTextControl {
  * Dummy directive to add CSS class to chip trailing icon.
  * @docs-private
  */
-export declare class MatChipTrailingIcon {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatChipTrailingIcon, never>;
+export declare class TakChipTrailingIcon {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakChipTrailingIcon, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatChipTrailingIcon,
-    'mat-chip-trailing-icon, [matChipTrailingIcon]',
+    TakChipTrailingIcon,
+    'tak-chip-trailing-icon, [takChipTrailingIcon]',
     never,
     {},
     {},

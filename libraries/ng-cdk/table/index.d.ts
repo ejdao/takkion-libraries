@@ -78,7 +78,7 @@ export declare interface CanStick {
 export declare type CanStickCtor = Constructor<CanStick>;
 
 /**
- * The row template that can be used by the mat-table. Should not be used outside of the
+ * The row template that can be used by the tak-table. Should not be used outside of the
  * material library.
  */
 export declare const CDK_ROW_TEMPLATE = '<ng-container cdkCellOutlet></ng-container>';
@@ -90,7 +90,7 @@ export declare const CDK_ROW_TEMPLATE = '<ng-container cdkCellOutlet></ng-contai
 export declare const CDK_TABLE: InjectionToken<any>;
 
 /**
- * The table template that can be used by the mat-table. Should not be used outside of the
+ * The table template that can be used by the tak-table. Should not be used outside of the
  * material library.
  * @docs-private
  */

@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -44,7 +44,7 @@ const STANDARD_HAMMERJS_EVENTS = [
   'tap',
 ];
 /** List of events which are provided by the deprecated Angular Material "GestureConfig". */
-const CUSTOM_MATERIAL_HAMMERJS_EVENS = [
+const CUSTOM_TAKERIAL_HAMMERJS_EVENS = [
   'longpress',
   'slide',
   'slidestart',
@@ -67,7 +67,7 @@ function isHammerJsUsedInTemplate(html) {
         return;
       }
       for (let attr of node.attrs) {
-        if (!customEvents && CUSTOM_MATERIAL_HAMMERJS_EVENS.some(e => `(${e})` === attr.name)) {
+        if (!customEvents && CUSTOM_TAKERIAL_HAMMERJS_EVENS.some(e => `(${e})` === attr.name)) {
           customEvents = true;
         }
         if (!standardEvents && STANDARD_HAMMERJS_EVENTS.some(e => `(${e})` === attr.name)) {

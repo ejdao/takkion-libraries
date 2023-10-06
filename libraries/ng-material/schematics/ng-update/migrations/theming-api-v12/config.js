@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -17,29 +17,29 @@ exports.unprefixedRemovedVariables =
     void 0;
 /** Mapping of Material mixins that should be renamed. */
 exports.materialMixins = {
-  'mat-core': 'core',
-  'mat-core-color': 'core-color',
-  'mat-core-theme': 'core-theme',
+  'tak-core': 'core',
+  'tak-core-color': 'core-color',
+  'tak-core-theme': 'core-theme',
   'angular-material-theme': 'all-component-themes',
   'angular-material-typography': 'all-component-typographies',
   'angular-material-color': 'all-component-colors',
-  'mat-base-typography': 'typography-hierarchy',
-  'mat-typography-level-to-styles': 'typography-level',
-  'mat-elevation': 'elevation',
-  'mat-overridable-elevation': 'overridable-elevation',
-  'mat-elevation-transition': 'elevation-transition',
-  'mat-ripple': 'ripple',
-  'mat-ripple-color': 'ripple-color',
-  'mat-ripple-theme': 'ripple-theme',
-  'mat-strong-focus-indicators': 'strong-focus-indicators',
-  'mat-strong-focus-indicators-color': 'strong-focus-indicators-color',
-  'mat-strong-focus-indicators-theme': 'strong-focus-indicators-theme',
-  'mat-font-shorthand': 'font-shorthand',
+  'tak-base-typography': 'typography-hierarchy',
+  'tak-typography-level-to-styles': 'typography-level',
+  'tak-elevation': 'elevation',
+  'tak-overridable-elevation': 'overridable-elevation',
+  'tak-elevation-transition': 'elevation-transition',
+  'tak-ripple': 'ripple',
+  'tak-ripple-color': 'ripple-color',
+  'tak-ripple-theme': 'ripple-theme',
+  'tak-strong-focus-indicators': 'strong-focus-indicators',
+  'tak-strong-focus-indicators-color': 'strong-focus-indicators-color',
+  'tak-strong-focus-indicators-theme': 'strong-focus-indicators-theme',
+  'tak-font-shorthand': 'font-shorthand',
   // The expansion panel is a special case, because the package is called `expansion`, but the
   // mixins were prefixed with `expansion-panel`. This was corrected by the Sass module migration.
-  'mat-expansion-panel-theme': 'expansion-theme',
-  'mat-expansion-panel-color': 'expansion-color',
-  'mat-expansion-panel-typography': 'expansion-typography',
+  'tak-expansion-panel-theme': 'expansion-theme',
+  'tak-expansion-panel-color': 'expansion-color',
+  'tak-expansion-panel-typography': 'expansion-typography',
 };
 // The component themes all follow the same pattern so we can spare ourselves some typing.
 [
@@ -80,31 +80,31 @@ exports.materialMixins = {
   'form-field',
   'tree',
 ].forEach(name => {
-  exports.materialMixins[`mat-${name}-theme`] = `${name}-theme`;
-  exports.materialMixins[`mat-${name}-color`] = `${name}-color`;
-  exports.materialMixins[`mat-${name}-typography`] = `${name}-typography`;
+  exports.materialMixins[`tak-${name}-theme`] = `${name}-theme`;
+  exports.materialMixins[`tak-${name}-color`] = `${name}-color`;
+  exports.materialMixins[`tak-${name}-typography`] = `${name}-typography`;
 });
 /** Mapping of Material functions that should be renamed. */
 exports.materialFunctions = {
-  'mat-color': 'get-color-from-palette',
-  'mat-contrast': 'get-contrast-color-from-palette',
-  'mat-palette': 'define-palette',
-  'mat-dark-theme': 'define-dark-theme',
-  'mat-light-theme': 'define-light-theme',
-  'mat-typography-level': 'define-typography-level',
-  'mat-typography-config': 'define-typography-config',
-  'mat-font-size': 'font-size',
-  'mat-line-height': 'line-height',
-  'mat-font-weight': 'font-weight',
-  'mat-letter-spacing': 'letter-spacing',
-  'mat-font-family': 'font-family',
+  'tak-color': 'get-color-from-palette',
+  'tak-contrast': 'get-contrast-color-from-palette',
+  'tak-palette': 'define-palette',
+  'tak-dark-theme': 'define-dark-theme',
+  'tak-light-theme': 'define-light-theme',
+  'tak-typography-level': 'define-typography-level',
+  'tak-typography-config': 'define-typography-config',
+  'tak-font-size': 'font-size',
+  'tak-line-height': 'line-height',
+  'tak-font-weight': 'font-weight',
+  'tak-letter-spacing': 'letter-spacing',
+  'tak-font-family': 'font-family',
 };
 /** Mapping of Material variables that should be renamed. */
 exports.materialVariables = {
-  'mat-light-theme-background': 'light-theme-background-palette',
-  'mat-dark-theme-background': 'dark-theme-background-palette',
-  'mat-light-theme-foreground': 'light-theme-foreground-palette',
-  'mat-dark-theme-foreground': 'dark-theme-foreground-palette',
+  'tak-light-theme-background': 'light-theme-background-palette',
+  'tak-dark-theme-background': 'dark-theme-background-palette',
+  'tak-light-theme-foreground': 'light-theme-foreground-palette',
+  'tak-dark-theme-foreground': 'dark-theme-foreground-palette',
 };
 // The palettes all follow the same pattern.
 [
@@ -129,7 +129,7 @@ exports.materialVariables = {
   'gray',
   'blue-grey',
   'blue-gray',
-].forEach(name => (exports.materialVariables[`mat-${name}`] = `${name}-palette`));
+].forEach(name => (exports.materialVariables[`tak-${name}`] = `${name}-palette`));
 /** Mapping of CDK variables that should be renamed. */
 exports.cdkVariables = {
   'cdk-z-index-overlay-container': 'overlay-container-z-index',
@@ -153,79 +153,79 @@ exports.cdkMixins = {
  */
 exports.removedMaterialVariables = {
   // Note: there's also a usage of a variable called `$pi`, but the name is short enough that
-  // it matches things like `$mat-pink`. Don't migrate it since it's unlikely to be used.
-  'mat-xsmall': 'max-width: 599px',
-  'mat-small': 'max-width: 959px',
-  'mat-toggle-padding': '8px',
-  'mat-toggle-size': '20px',
-  'mat-linear-out-slow-in-timing-function': 'cubic-bezier(0, 0, 0.2, 0.1)',
-  'mat-fast-out-slow-in-timing-function': 'cubic-bezier(0.4, 0, 0.2, 1)',
-  'mat-fast-out-linear-in-timing-function': 'cubic-bezier(0.4, 0, 1, 1)',
-  'mat-elevation-transition-duration': '280ms',
-  'mat-elevation-transition-timing-function': 'cubic-bezier(0.4, 0, 0.2, 1)',
-  'mat-elevation-color': '#000',
-  'mat-elevation-opacity': '1',
-  'mat-elevation-prefix': `'mat-elevation-z'`,
-  'mat-ripple-color-opacity': '0.1',
-  'mat-badge-font-size': '12px',
-  'mat-badge-font-weight': '600',
-  'mat-badge-default-size': '22px',
-  'mat-badge-small-size': '16px',
-  'mat-badge-large-size': '28px',
-  'mat-button-toggle-standard-height': '48px',
-  'mat-button-toggle-standard-minimum-height': '24px',
-  'mat-button-toggle-standard-maximum-height': '48px',
-  'mat-chip-remove-font-size': '18px',
-  'mat-datepicker-selected-today-box-shadow-width': '1px',
-  'mat-datepicker-selected-fade-amount': '0.6',
-  'mat-datepicker-range-fade-amount': '0.2',
-  'mat-datepicker-today-fade-amount': '0.2',
-  'mat-calendar-body-font-size': '13px',
-  'mat-calendar-weekday-table-font-size': '11px',
-  'mat-expansion-panel-header-collapsed-height': '48px',
-  'mat-expansion-panel-header-collapsed-minimum-height': '36px',
-  'mat-expansion-panel-header-collapsed-maximum-height': '48px',
-  'mat-expansion-panel-header-expanded-height': '64px',
-  'mat-expansion-panel-header-expanded-minimum-height': '48px',
-  'mat-expansion-panel-header-expanded-maximum-height': '64px',
-  'mat-expansion-panel-header-transition': '225ms cubic-bezier(0.4, 0, 0.2, 1)',
-  'mat-menu-side-padding': '16px',
+  // it matches things like `$tak-pink`. Don't migrate it since it's unlikely to be used.
+  'tak-xsmall': 'max-width: 599px',
+  'tak-small': 'max-width: 959px',
+  'tak-toggle-padding': '8px',
+  'tak-toggle-size': '20px',
+  'tak-linear-out-slow-in-timing-function': 'cubic-bezier(0, 0, 0.2, 0.1)',
+  'tak-fast-out-slow-in-timing-function': 'cubic-bezier(0.4, 0, 0.2, 1)',
+  'tak-fast-out-linear-in-timing-function': 'cubic-bezier(0.4, 0, 1, 1)',
+  'tak-elevation-transition-duration': '280ms',
+  'tak-elevation-transition-timing-function': 'cubic-bezier(0.4, 0, 0.2, 1)',
+  'tak-elevation-color': '#000',
+  'tak-elevation-opacity': '1',
+  'tak-elevation-prefix': `'tak-elevation-z'`,
+  'tak-ripple-color-opacity': '0.1',
+  'tak-badge-font-size': '12px',
+  'tak-badge-font-weight': '600',
+  'tak-badge-default-size': '22px',
+  'tak-badge-small-size': '16px',
+  'tak-badge-large-size': '28px',
+  'tak-button-toggle-standard-height': '48px',
+  'tak-button-toggle-standard-minimum-height': '24px',
+  'tak-button-toggle-standard-maximum-height': '48px',
+  'tak-chip-remove-font-size': '18px',
+  'tak-datepicker-selected-today-box-shadow-width': '1px',
+  'tak-datepicker-selected-fade-amount': '0.6',
+  'tak-datepicker-range-fade-amount': '0.2',
+  'tak-datepicker-today-fade-amount': '0.2',
+  'tak-calendar-body-font-size': '13px',
+  'tak-calendar-weekday-table-font-size': '11px',
+  'tak-expansion-panel-header-collapsed-height': '48px',
+  'tak-expansion-panel-header-collapsed-minimum-height': '36px',
+  'tak-expansion-panel-header-collapsed-maximum-height': '48px',
+  'tak-expansion-panel-header-expanded-height': '64px',
+  'tak-expansion-panel-header-expanded-minimum-height': '48px',
+  'tak-expansion-panel-header-expanded-maximum-height': '64px',
+  'tak-expansion-panel-header-transition': '225ms cubic-bezier(0.4, 0, 0.2, 1)',
+  'tak-menu-side-padding': '16px',
   'menu-menu-item-height': '48px',
   'menu-menu-icon-margin': '16px',
-  'mat-paginator-height': '56px',
-  'mat-paginator-minimum-height': '40px',
-  'mat-paginator-maximum-height': '56px',
-  'mat-stepper-header-height': '72px',
-  'mat-stepper-header-minimum-height': '42px',
-  'mat-stepper-header-maximum-height': '72px',
-  'mat-stepper-label-header-height': '24px',
-  'mat-stepper-label-position-bottom-top-gap': '16px',
-  'mat-stepper-label-min-width': '50px',
-  'mat-vertical-stepper-content-margin': '36px',
-  'mat-stepper-side-gap': '24px',
-  'mat-stepper-line-width': '1px',
-  'mat-stepper-line-gap': '8px',
-  'mat-step-sub-label-font-size': '12px',
-  'mat-step-header-icon-size': '16px',
-  'mat-toolbar-minimum-height': '44px',
-  'mat-toolbar-height-desktop': '64px',
-  'mat-toolbar-maximum-height-desktop': '64px',
-  'mat-toolbar-minimum-height-desktop': '44px',
-  'mat-toolbar-height-mobile': '56px',
-  'mat-toolbar-maximum-height-mobile': '56px',
-  'mat-toolbar-minimum-height-mobile': '44px',
-  'mat-tooltip-target-height': '22px',
-  'mat-tooltip-font-size': '10px',
-  'mat-tooltip-vertical-padding': '6px',
-  'mat-tooltip-handset-target-height': '30px',
-  'mat-tooltip-handset-font-size': '14px',
-  'mat-tooltip-handset-vertical-padding': '8px',
-  'mat-tree-node-height': '48px',
-  'mat-tree-node-minimum-height': '24px',
-  'mat-tree-node-maximum-height': '48px',
+  'tak-paginator-height': '56px',
+  'tak-paginator-minimum-height': '40px',
+  'tak-paginator-maximum-height': '56px',
+  'tak-stepper-header-height': '72px',
+  'tak-stepper-header-minimum-height': '42px',
+  'tak-stepper-header-maximum-height': '72px',
+  'tak-stepper-label-header-height': '24px',
+  'tak-stepper-label-position-bottom-top-gap': '16px',
+  'tak-stepper-label-min-width': '50px',
+  'tak-vertical-stepper-content-margin': '36px',
+  'tak-stepper-side-gap': '24px',
+  'tak-stepper-line-width': '1px',
+  'tak-stepper-line-gap': '8px',
+  'tak-step-sub-label-font-size': '12px',
+  'tak-step-header-icon-size': '16px',
+  'tak-toolbar-minimum-height': '44px',
+  'tak-toolbar-height-desktop': '64px',
+  'tak-toolbar-maximum-height-desktop': '64px',
+  'tak-toolbar-minimum-height-desktop': '44px',
+  'tak-toolbar-height-mobile': '56px',
+  'tak-toolbar-maximum-height-mobile': '56px',
+  'tak-toolbar-minimum-height-mobile': '44px',
+  'tak-tooltip-target-height': '22px',
+  'tak-tooltip-font-size': '10px',
+  'tak-tooltip-vertical-padding': '6px',
+  'tak-tooltip-handset-target-height': '30px',
+  'tak-tooltip-handset-font-size': '14px',
+  'tak-tooltip-handset-vertical-padding': '8px',
+  'tak-tree-node-height': '48px',
+  'tak-tree-node-minimum-height': '24px',
+  'tak-tree-node-maximum-height': '48px',
 };
 /**
- * Material variables **without a `mat-` prefix** that have been removed from the public API
+ * Material variables **without a `tak-` prefix** that have been removed from the public API
  * and which should be replaced with their values. These should be migrated only when there's a
  * Material import, because their names could conflict with other variables in the user's app.
  */

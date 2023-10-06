@@ -9,15 +9,15 @@
 // Examples:
 //
 //
-// .mat-foo {
-//   @include $mat-elevation(2);
+// .tak-foo {
+//   @include $tak-elevation(2);
 //
 //   &:active {
-//     @include $mat-elevation(8);
+//     @include $tak-elevation(8);
 //   }
 // }
 //
-// <div id="external-card" class="mat-elevation-z2"><p>Some content</p></div>
+// <div id="external-card" class="tak-elevation-z2"><p>Some content</p></div>
 //
 // For an explanation of the design behind how elevation is implemented, see the design doc at
 // https://goo.gl/Kq0k9Z.
@@ -142,7 +142,7 @@ $color: black !default;
 $opacity: 1 !default;
 
 // Prefix for elevation-related selectors.
-$prefix: 'mat-elevation-z';
+$prefix: 'tak-elevation-z';
 
 // Applies the correct css rules to an element to give it the elevation specified by $zValue.
 // The $zValue must be between 0 and 24.
@@ -173,7 +173,7 @@ $prefix: 'mat-elevation-z';
 // more than one property.
 //
 // .foo {
-//   transition: mat-elevation-transition-property-value(), opacity 100ms ease;
+//   transition: tak-elevation-transition-property-value(), opacity 100ms ease;
 // }
 @function private-transition-property-value(
   $duration: $transition-duration,

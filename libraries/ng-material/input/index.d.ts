@@ -13,8 +13,8 @@ import * as i2 from '@takkion/ng-cdk/text-field';
 import * as i3 from '@takkion/ng-material/form-field';
 import * as i4 from '@takkion/ng-material/core';
 import { InjectionToken } from '@angular/core';
-import { MatFormField } from '@takkion/ng-material/form-field';
-import { MatFormFieldControl } from '@takkion/ng-material/form-field';
+import { TakFormField } from '@takkion/ng-material/form-field';
+import { TakFormFieldControl } from '@takkion/ng-material/form-field';
 import { NgControl } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { NgZone } from '@angular/core';
@@ -24,27 +24,27 @@ import { Platform } from '@takkion/ng-cdk/platform';
 import { Subject } from 'rxjs';
 
 /** @docs-private */
-export declare function getMatInputUnsupportedTypeError(type: string): Error;
+export declare function getTakInputUnsupportedTypeError(type: string): Error;
 
 declare namespace i1 {
-  export { MatInput };
+  export { TakInput };
 }
 
 /**
- * This token is used to inject the object whose value should be set into `MatInput`. If none is
- * provided, the native `HTMLInputElement` is used. Directives like `MatDatepickerInput` can provide
- * themselves for this token, in order to make `MatInput` delegate the getting and setting of the
+ * This token is used to inject the object whose value should be set into `TakInput`. If none is
+ * provided, the native `HTMLInputElement` is used. Directives like `TakDatepickerInput` can provide
+ * themselves for this token, in order to make `TakInput` delegate the getting and setting of the
  * value to them.
  */
-export declare const MAT_INPUT_VALUE_ACCESSOR: InjectionToken<{
+export declare const TAK_INPUT_VALUE_ACCESSOR: InjectionToken<{
   value: any;
 }>;
 
-/** Directive that allows a native input to work inside a `MatFormField`. */
-export declare class MatInput
-  extends _MatInputBase
+/** Directive that allows a native input to work inside a `TakFormField`. */
+export declare class TakInput
+  extends _TakInputBase
   implements
-    MatFormFieldControl<any>,
+    TakFormFieldControl<any>,
     OnChanges,
     OnDestroy,
     AfterViewInit,
@@ -68,41 +68,41 @@ export declare class MatInput
   /** Whether the input is inside of a form field. */
   readonly _isInFormField: boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   focused: boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   readonly stateChanges: Subject<void>;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   controlType: string;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   autofilled: boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get disabled(): boolean;
   set disabled(value: BooleanInput);
   protected _disabled: boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get id(): string;
   set id(value: string);
   protected _id: string;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   placeholder: string;
@@ -112,7 +112,7 @@ export declare class MatInput
    */
   name: string;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get required(): boolean;
@@ -125,12 +125,12 @@ export declare class MatInput
   /** An object used to control when error messages are shown. */
   errorStateMatcher: ErrorStateMatcher;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   userAriaDescribedBy: string;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get value(): string;
@@ -150,7 +150,7 @@ export declare class MatInput
     inputValueAccessor: any,
     _autofillMonitor: AutofillMonitor,
     ngZone: NgZone,
-    _formField?: MatFormField | undefined
+    _formField?: TakFormField | undefined
   );
   ngAfterViewInit(): void;
   ngOnChanges(): void;
@@ -172,22 +172,22 @@ export declare class MatInput
   /** Checks whether the input is invalid based on the native validation. */
   protected _isBadInput(): boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get empty(): boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   get shouldLabelFloat(): boolean;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   setDescribedByIds(ids: string[]): void;
   /**
-   * Implemented as part of MatFormFieldControl.
+   * Implemented as part of TakFormFieldControl.
    * @docs-private
    */
   onContainerClick(): void;
@@ -195,7 +195,7 @@ export declare class MatInput
   _isInlineSelect(): boolean;
   private _iOSKeyupListener;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatInput,
+    TakInput,
     [
       null,
       null,
@@ -210,9 +210,9 @@ export declare class MatInput
     ]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatInput,
-    'input[matInput], textarea[matInput], select[matNativeControl],      input[matNativeControl], textarea[matNativeControl]',
-    ['matInput'],
+    TakInput,
+    'input[takInput], textarea[takInput], select[takNativeControl],      input[takNativeControl], textarea[takNativeControl]',
+    ['takInput'],
     {
       disabled: 'disabled';
       id: 'id';
@@ -233,7 +233,7 @@ export declare class MatInput
 }
 
 /** @docs-private */
-declare const _MatInputBase: _Constructor<CanUpdateErrorState> &
+declare const _TakInputBase: _Constructor<CanUpdateErrorState> &
   _AbstractConstructor<CanUpdateErrorState> & {
     new (
       _defaultErrorStateMatcher: ErrorStateMatcher,
@@ -243,7 +243,7 @@ declare const _MatInputBase: _Constructor<CanUpdateErrorState> &
     ): {
       /**
        * Emits whenever the component state changes and should cause the parent
-       * form field to update. Implemented as part of `MatFormFieldControl`.
+       * form field to update. Implemented as part of `TakFormFieldControl`.
        * @docs-private
        */
       readonly stateChanges: Subject<void>;
@@ -252,22 +252,22 @@ declare const _MatInputBase: _Constructor<CanUpdateErrorState> &
       _parentFormGroup: FormGroupDirective;
       /**
        * Form control bound to the component.
-       * Implemented as part of `MatFormFieldControl`.
+       * Implemented as part of `TakFormFieldControl`.
        * @docs-private
        */
       ngControl: NgControl;
     };
   };
 
-export declare class MatInputModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatInputModule, never>;
+export declare class TakInputModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakInputModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatInputModule,
-    [typeof i1.MatInput],
-    [typeof i2.TextFieldModule, typeof i3.MatFormFieldModule, typeof i4.MatCommonModule],
-    [typeof i2.TextFieldModule, typeof i3.MatFormFieldModule, typeof i1.MatInput]
+    TakInputModule,
+    [typeof i1.TakInput],
+    [typeof i2.TextFieldModule, typeof i3.TakFormFieldModule, typeof i4.TakCommonModule],
+    [typeof i2.TextFieldModule, typeof i3.TakFormFieldModule, typeof i1.TakInput]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatInputModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakInputModule>;
 }
 
 export {};

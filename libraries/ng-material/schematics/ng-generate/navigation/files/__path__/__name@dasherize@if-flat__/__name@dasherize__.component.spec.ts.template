@@ -1,11 +1,11 @@
 import { LayoutModule } from '@takkion/ng-cdk/layout';
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@takkion/ng-material/button';
-import { MatIconModule } from '@takkion/ng-material/icon';
-import { MatListModule } from '@takkion/ng-material/list';
-import { MatSidenavModule } from '@takkion/ng-material/sidenav';
-import { MatToolbarModule } from '@takkion/ng-material/toolbar';
+import { TakButtonModule } from '@takkion/ng-material/button';
+import { TakIconModule } from '@takkion/ng-material/icon';
+import { TakListModule } from '@takkion/ng-material/list';
+import { TakSidenavModule } from '@takkion/ng-material/sidenav';
+import { TakToolbarModule } from '@takkion/ng-material/toolbar';
 
 import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 
@@ -19,11 +19,11 @@ describe('<%= classify(name) %>Component', () => {
       imports: [
         NoopAnimationsModule,
         LayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatSidenavModule,
-        MatToolbarModule,
+        TakButtonModule,
+        TakIconModule,
+        TakListModule,
+        TakSidenavModule,
+        TakToolbarModule,
       ]
     }).compileComponents();
   }));

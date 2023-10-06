@@ -99,8 +99,8 @@ export declare type _Constructor<T> = new (...args: any[]) => T;
  */
 export declare function _countGroupLabelsBeforeOption(
   optionIndex: number,
-  options: QueryList<MatOption>,
-  optionGroups: QueryList<MatOptgroup>
+  options: QueryList<TakOption>,
+  optionGroups: QueryList<TakOptgroup>
 ): number;
 
 /** Adapts type `D` to be usable as a date by cdk-based components that work with dates. */
@@ -191,18 +191,18 @@ export declare abstract class DateAdapter<D, L = any> {
   /**
    * Parses a date from a user-provided value.
    * @param value The value to parse.
-   * @param parseFormat The expected format of the value being parsed
+   * @param parseFortak The expected format of the value being parsed
    *     (type is implementation-dependent).
    * @returns The parsed date.
    */
-  abstract parse(value: any, parseFormat: any): D | null;
+  abstract parse(value: any, parseFortak: any): D | null;
   /**
    * Formats a date as a string according to the given format.
    * @param date The value to format.
-   * @param displayFormat The format to use to display the date as a string.
+   * @param displayFortak The format to use to display the date as a string.
    * @returns The formatted date string.
    */
-  abstract format(date: D, displayFormat: any): string;
+  abstract format(date: D, displayFortak: any): string;
   /**
    * Adds the given number of years to the date. Years are counted as if flipping 12 pages on the
    * calendar for each year and then finding the closest date in the new month. For example when
@@ -265,7 +265,7 @@ export declare abstract class DateAdapter<D, L = any> {
    * Attempts to deserialize a value to a valid date object. This is different from parsing in that
    * deserialize should only accept non-ambiguous, locale-independent formats (e.g. a ISO 8601
    * string). The default implementation does not allow any deserialization, it simply checks that
-   * the given value is already a valid date object or null. The `<mat-datepicker>` will call this
+   * the given value is already a valid date object or null. The `<tak-datepicker>` will call this
    * method on all of its `@Input()` properties that accept dates. It is therefore possible to
    * support passing values from your backend directly to these properties by overriding this method
    * to also deserialize the format used by your backend.
@@ -390,11 +390,11 @@ declare type HasTabIndexCtor = _Constructor<HasTabIndex> & _AbstractConstructor<
 
 declare namespace i1_2 {
   export {
-    MATERIAL_SANITY_CHECKS_FACTORY,
-    MATERIAL_SANITY_CHECKS,
+    TAKERIAL_SANITY_CHECKS_FACTORY,
+    TAKERIAL_SANITY_CHECKS,
     SanityChecks,
     GranularSanityChecks,
-    MatCommonModule,
+    TakCommonModule,
   };
 }
 
@@ -402,30 +402,30 @@ declare namespace i1_3 {
   export {
     _countGroupLabelsBeforeOption,
     _getOptionScrollPosition,
-    MatOptionSelectionChange,
-    _MatOptionBase,
-    MatOption,
+    TakOptionSelectionChange,
+    _TakOptionBase,
+    TakOption,
   };
 }
 
 declare namespace i1_4 {
-  export { RippleGlobalOptions, MAT_RIPPLE_GLOBAL_OPTIONS, MatRipple };
+  export { RippleGlobalOptions, TAK_RIPPLE_GLOBAL_OPTIONS, TakRipple };
 }
 
 declare namespace i1_5 {
-  export { MatPseudoCheckboxState, MatPseudoCheckbox };
+  export { TakPseudoCheckboxState, TakPseudoCheckbox };
 }
 
 declare namespace i2 {
-  export { _MatOptgroupBase, MAT_OPTGROUP, MatOptgroup };
+  export { _TakOptgroupBase, TAK_OPTGROUP, TakOptgroup };
 }
 
 declare namespace i3 {
   export {
-    MatRippleModule,
+    TakRippleModule,
     RippleGlobalOptions,
-    MAT_RIPPLE_GLOBAL_OPTIONS,
-    MatRipple,
+    TAK_RIPPLE_GLOBAL_OPTIONS,
+    TakRipple,
     RippleState,
     RippleConfig,
     RippleAnimationConfig,
@@ -437,41 +437,41 @@ declare namespace i3 {
 }
 
 declare namespace i6 {
-  export { MatPseudoCheckboxModule };
+  export { TakPseudoCheckboxModule };
 }
 
-export declare const MAT_DATE_FORMATS: InjectionToken<MatDateFormats>;
+export declare const TAK_DATE_FORTAKS: InjectionToken<TakDateFormats>;
 
 /** InjectionToken for datepicker that can be used to override default locale code. */
-export declare const MAT_DATE_LOCALE: InjectionToken<{}>;
+export declare const TAK_DATE_LOCALE: InjectionToken<{}>;
 
 /** @docs-private */
-export declare function MAT_DATE_LOCALE_FACTORY(): {};
+export declare function TAK_DATE_LOCALE_FACTORY(): {};
 
-export declare const MAT_NATIVE_DATE_FORMATS: MatDateFormats;
+export declare const TAK_NATIVE_DATE_FORTAKS: TakDateFormats;
 
 /**
- * Injection token that can be used to reference instances of `MatOptgroup`. It serves as
- * alternative token to the actual `MatOptgroup` class which could cause unnecessary
+ * Injection token that can be used to reference instances of `TakOptgroup`. It serves as
+ * alternative token to the actual `TakOptgroup` class which could cause unnecessary
  * retention of the class and its component metadata.
  */
-export declare const MAT_OPTGROUP: InjectionToken<MatOptgroup>;
+export declare const TAK_OPTGROUP: InjectionToken<TakOptgroup>;
 
 /**
  * Injection token used to provide the parent component to options.
  */
-export declare const MAT_OPTION_PARENT_COMPONENT: InjectionToken<MatOptionParentComponent>;
+export declare const TAK_OPTION_PARENT_COMPONENT: InjectionToken<TakOptionParentComponent>;
 
 /** Injection token that can be used to specify the global ripple options. */
-export declare const MAT_RIPPLE_GLOBAL_OPTIONS: InjectionToken<RippleGlobalOptions>;
+export declare const TAK_RIPPLE_GLOBAL_OPTIONS: InjectionToken<RippleGlobalOptions>;
 
 /**
  * Module that captures anything that should be loaded and/or run for *all* Angular Material
  * components. This includes Bidi, etc.
  *
- * This module should be imported to each top-level component module (e.g., MatTabsModule).
+ * This module should be imported to each top-level component module (e.g., TakTabsModule).
  */
-export declare class MatCommonModule {
+export declare class TakCommonModule {
   private _sanityChecks;
   private _document;
   /** Whether we've done the global sanity checks (e.g. a theme is loaded, there is a doctype). */
@@ -483,17 +483,17 @@ export declare class MatCommonModule {
   );
   /** Gets whether a specific sanity check is enabled. */
   private _checkIsEnabled;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatCommonModule, [null, { optional: true }, null]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakCommonModule, [null, { optional: true }, null]>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatCommonModule,
+    TakCommonModule,
     never,
     [typeof i1.BidiModule],
     [typeof i1.BidiModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatCommonModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakCommonModule>;
 }
 
-export declare type MatDateFormats = {
+export declare type TakDateFormats = {
   parse: {
     dateInput: any;
   };
@@ -507,21 +507,21 @@ export declare type MatDateFormats = {
 };
 
 /** Injection token that configures whether the Material sanity checks are enabled. */
-export declare const MATERIAL_SANITY_CHECKS: InjectionToken<SanityChecks>;
+export declare const TAKERIAL_SANITY_CHECKS: InjectionToken<SanityChecks>;
 
 /** @docs-private */
-declare function MATERIAL_SANITY_CHECKS_FACTORY(): SanityChecks;
+declare function TAKERIAL_SANITY_CHECKS_FACTORY(): SanityChecks;
 
 /**
  * Shared directive to count lines inside a text area, such as a list item.
- * Line elements can be extracted with a @ContentChildren(MatLine) query, then
+ * Line elements can be extracted with a @ContentChildren(TakLine) query, then
  * counted by checking the query list's length.
  */
-export declare class MatLine {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatLine, never>;
+export declare class TakLine {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakLine, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatLine,
-    '[mat-line], [matLine]',
+    TakLine,
+    '[tak-line], [takLine]',
     never,
     {},
     {},
@@ -531,56 +531,56 @@ export declare class MatLine {
   >;
 }
 
-export declare class MatLineModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatLineModule, never>;
+export declare class TakLineModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakLineModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatLineModule,
-    [typeof MatLine],
-    [typeof i1_2.MatCommonModule],
-    [typeof MatLine, typeof i1_2.MatCommonModule]
+    TakLineModule,
+    [typeof TakLine],
+    [typeof i1_2.TakCommonModule],
+    [typeof TakLine, typeof i1_2.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatLineModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakLineModule>;
 }
 
-export declare class MatNativeDateModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatNativeDateModule, never>;
+export declare class TakNativeDateModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakNativeDateModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatNativeDateModule,
+    TakNativeDateModule,
     never,
     [typeof NativeDateModule],
     never
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatNativeDateModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakNativeDateModule>;
 }
 
 /**
- * Component that is used to group instances of `mat-option`.
+ * Component that is used to group instances of `tak-option`.
  */
-export declare class MatOptgroup extends _MatOptgroupBase {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatOptgroup, never>;
+export declare class TakOptgroup extends _TakOptgroupBase {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakOptgroup, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatOptgroup,
-    'mat-optgroup',
-    ['matOptgroup'],
+    TakOptgroup,
+    'tak-optgroup',
+    ['takOptgroup'],
     { disabled: 'disabled' },
     {},
     never,
-    ['*', 'mat-option, ng-container'],
+    ['*', 'tak-option, ng-container'],
     false
   >;
 }
 
-export declare class _MatOptgroupBase extends _MatOptgroupMixinBase implements CanDisable {
+export declare class _TakOptgroupBase extends _TakOptgroupMixinBase implements CanDisable {
   /** Label for the option group. */
   label: string;
   /** Unique id for the underlying label. */
   _labelId: string;
   /** Whether the group is in inert a11y mode. */
   _inert: boolean;
-  constructor(parent?: MatOptionParentComponent);
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatOptgroupBase, [{ optional: true }]>;
+  constructor(parent?: TakOptionParentComponent);
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakOptgroupBase, [{ optional: true }]>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatOptgroupBase,
+    _TakOptgroupBase,
     never,
     never,
     { label: 'label' },
@@ -592,29 +592,29 @@ export declare class _MatOptgroupBase extends _MatOptgroupMixinBase implements C
 }
 
 /** @docs-private */
-declare const _MatOptgroupMixinBase: _Constructor_2<CanDisable> &
+declare const _TakOptgroupMixinBase: _Constructor_2<CanDisable> &
   _AbstractConstructor_2<CanDisable> & {
     new (): {};
   };
 
 /**
- * Single option inside of a `<mat-select>` element.
+ * Single option inside of a `<tak-select>` element.
  */
-export declare class MatOption<T = any> extends _MatOptionBase<T> {
+export declare class TakOption<T = any> extends _TakOptionBase<T> {
   constructor(
     element: ElementRef<HTMLElement>,
     changeDetectorRef: ChangeDetectorRef,
-    parent: MatOptionParentComponent,
-    group: MatOptgroup
+    parent: TakOptionParentComponent,
+    group: TakOptgroup
   );
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatOption<any>,
+    TakOption<any>,
     [null, null, { optional: true }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatOption<any>,
-    'mat-option',
-    ['matOption'],
+    TakOption<any>,
+    'tak-option',
+    ['takOption'],
     {},
     {},
     never,
@@ -623,13 +623,13 @@ export declare class MatOption<T = any> extends _MatOptionBase<T> {
   >;
 }
 
-export declare class _MatOptionBase<T = any>
+export declare class _TakOptionBase<T = any>
   implements FocusableOption, AfterViewChecked, OnDestroy
 {
   private _element;
   private _changeDetectorRef;
   private _parent;
-  readonly group: _MatOptgroupBase;
+  readonly group: _TakOptgroupBase;
   private _selected;
   private _active;
   private _disabled;
@@ -648,14 +648,14 @@ export declare class _MatOptionBase<T = any>
   /** Whether ripples for the option are disabled. */
   get disableRipple(): boolean;
   /** Event emitted when the option is selected or deselected. */
-  readonly onSelectionChange: EventEmitter<MatOptionSelectionChange<T>>;
+  readonly onSelectionChange: EventEmitter<TakOptionSelectionChange<T>>;
   /** Emits when the state of the option changes and any parents have to be notified. */
   readonly _stateChanges: Subject<void>;
   constructor(
     _element: ElementRef<HTMLElement>,
     _changeDetectorRef: ChangeDetectorRef,
-    _parent: MatOptionParentComponent,
-    group: _MatOptgroupBase
+    _parent: TakOptionParentComponent,
+    group: _TakOptgroupBase
   );
   /**
    * Whether or not the option is currently active and ready to be selected.
@@ -711,9 +711,9 @@ export declare class _MatOptionBase<T = any>
   ngOnDestroy(): void;
   /** Emits the selection change event. */
   private _emitSelectionChangeEvent;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatOptionBase<any>, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakOptionBase<any>, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatOptionBase<any>,
+    _TakOptionBase<any>,
     never,
     never,
     { value: 'value'; id: 'id'; disabled: 'disabled' },
@@ -724,20 +724,20 @@ export declare class _MatOptionBase<T = any>
   >;
 }
 
-export declare class MatOptionModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatOptionModule, never>;
+export declare class TakOptionModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakOptionModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatOptionModule,
-    [typeof i1_3.MatOption, typeof i2.MatOptgroup],
+    TakOptionModule,
+    [typeof i1_3.TakOption, typeof i2.TakOptgroup],
     [
-      typeof i3.MatRippleModule,
+      typeof i3.TakRippleModule,
       typeof i4.CommonModule,
-      typeof i1_2.MatCommonModule,
-      typeof i6.MatPseudoCheckboxModule,
+      typeof i1_2.TakCommonModule,
+      typeof i6.TakPseudoCheckboxModule,
     ],
-    [typeof i1_3.MatOption, typeof i2.MatOptgroup]
+    [typeof i1_3.TakOption, typeof i2.TakOptgroup]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatOptionModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakOptionModule>;
 }
 
 /**
@@ -745,21 +745,21 @@ export declare class MatOptionModule {
  * Contains properties that the options can inherit.
  * @docs-private
  */
-export declare interface MatOptionParentComponent {
+export declare interface TakOptionParentComponent {
   disableRipple?: boolean;
   multiple?: boolean;
   inertGroups?: boolean;
 }
 
-/** Event object emitted by MatOption when selected or deselected. */
-export declare class MatOptionSelectionChange<T = any> {
+/** Event object emitted by TakOption when selected or deselected. */
+export declare class TakOptionSelectionChange<T = any> {
   /** Reference to the option that emitted the event. */
-  source: _MatOptionBase<T>;
+  source: _TakOptionBase<T>;
   /** Whether the change in the option's value was a result of a user action. */
   isUserInput: boolean;
   constructor(
     /** Reference to the option that emitted the event. */
-    source: _MatOptionBase<T>,
+    source: _TakOptionBase<T>,
     /** Whether the change in the option's value was a result of a user action. */
     isUserInput?: boolean
   );
@@ -770,25 +770,25 @@ export declare class MatOptionSelectionChange<T = any> {
  * Meant to be used when the checkbox is purely decorative and a large number of them will be
  * included, such as for the options in a multi-select. Uses no SVGs or complex animations.
  * Note that theming is meant to be handled by the parent element, e.g.
- * `mat-primary .mat-pseudo-checkbox`.
+ * `tak-primary .tak-pseudo-checkbox`.
  *
  * Note that this component will be completely invisible to screen-reader users. This is *not*
- * interchangeable with `<mat-checkbox>` and should *not* be used if the user would directly
+ * interchangeable with `<tak-checkbox>` and should *not* be used if the user would directly
  * interact with the checkbox. The pseudo-checkbox should only be used as an implementation detail
  * of more complex components that appropriately handle selected / checked state.
  * @docs-private
  */
-export declare class MatPseudoCheckbox {
+export declare class TakPseudoCheckbox {
   _animationMode?: string | undefined;
   /** Display state of the checkbox. */
-  state: MatPseudoCheckboxState;
+  state: TakPseudoCheckboxState;
   /** Whether the checkbox is disabled. */
   disabled: boolean;
   constructor(_animationMode?: string | undefined);
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatPseudoCheckbox, [{ optional: true }]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakPseudoCheckbox, [{ optional: true }]>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatPseudoCheckbox,
-    'mat-pseudo-checkbox',
+    TakPseudoCheckbox,
+    'tak-pseudo-checkbox',
     never,
     { state: 'state'; disabled: 'disabled' },
     {},
@@ -798,24 +798,24 @@ export declare class MatPseudoCheckbox {
   >;
 }
 
-export declare class MatPseudoCheckboxModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatPseudoCheckboxModule, never>;
+export declare class TakPseudoCheckboxModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakPseudoCheckboxModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatPseudoCheckboxModule,
-    [typeof i1_5.MatPseudoCheckbox],
-    [typeof i1_2.MatCommonModule],
-    [typeof i1_5.MatPseudoCheckbox]
+    TakPseudoCheckboxModule,
+    [typeof i1_5.TakPseudoCheckbox],
+    [typeof i1_2.TakCommonModule],
+    [typeof i1_5.TakPseudoCheckbox]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatPseudoCheckboxModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakPseudoCheckboxModule>;
 }
 
 /**
  * Possible states for a pseudo checkbox.
  * @docs-private
  */
-export declare type MatPseudoCheckboxState = 'unchecked' | 'checked' | 'indeterminate';
+export declare type TakPseudoCheckboxState = 'unchecked' | 'checked' | 'indeterminate';
 
-export declare class MatRipple implements OnInit, OnDestroy, RippleTarget {
+export declare class TakRipple implements OnInit, OnDestroy, RippleTarget {
   private _elementRef;
   private _animationMode?;
   /** Custom color for all ripples. */
@@ -899,21 +899,21 @@ export declare class MatRipple implements OnInit, OnDestroy, RippleTarget {
    */
   launch(x: number, y: number, config?: RippleConfig): RippleRef;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatRipple,
+    TakRipple,
     [null, null, null, { optional: true }, { optional: true }]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatRipple,
-    '[mat-ripple], [matRipple]',
-    ['matRipple'],
+    TakRipple,
+    '[tak-ripple], [takRipple]',
+    ['takRipple'],
     {
-      color: 'matRippleColor';
-      unbounded: 'matRippleUnbounded';
-      centered: 'matRippleCentered';
-      radius: 'matRippleRadius';
-      animation: 'matRippleAnimation';
-      disabled: 'matRippleDisabled';
-      trigger: 'matRippleTrigger';
+      color: 'takRippleColor';
+      unbounded: 'takRippleUnbounded';
+      centered: 'takRippleCentered';
+      radius: 'takRippleRadius';
+      animation: 'takRippleAnimation';
+      disabled: 'takRippleDisabled';
+      trigger: 'takRippleTrigger';
     },
     {},
     never,
@@ -922,15 +922,15 @@ export declare class MatRipple implements OnInit, OnDestroy, RippleTarget {
   >;
 }
 
-export declare class MatRippleModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatRippleModule, never>;
+export declare class TakRippleModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakRippleModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatRippleModule,
-    [typeof i1_4.MatRipple],
-    [typeof i1_2.MatCommonModule],
-    [typeof i1_4.MatRipple, typeof i1_2.MatCommonModule]
+    TakRippleModule,
+    [typeof i1_4.TakRipple],
+    [typeof i1_2.TakCommonModule],
+    [typeof i1_4.TakRipple, typeof i1_2.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatRippleModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakRippleModule>;
 }
 
 /** Mixin to augment a directive with a `color` property. */
@@ -976,7 +976,7 @@ export declare class NativeDateAdapter extends DateAdapter<Date> {
    */
   useUtcForDisplay: boolean;
   constructor(
-    matDateLocale: string,
+    takDateLocale: string,
     /**
      * @deprecated No longer being used. To be removed.
      * @breaking-change 14.0.0
@@ -996,8 +996,8 @@ export declare class NativeDateAdapter extends DateAdapter<Date> {
   clone(date: Date): Date;
   createDate(year: number, month: number, date: number): Date;
   today(): Date;
-  parse(value: any, parseFormat?: any): Date | null;
-  format(date: Date, displayFormat: Object): string;
+  parse(value: any, parseFortak?: any): Date | null;
+  format(date: Date, displayFortak: Object): string;
   addCalendarYears(date: Date, years: number): Date;
   addCalendarMonths(date: Date, months: number): Date;
   addCalendarDays(date: Date, days: number): Date;
@@ -1025,7 +1025,7 @@ export declare class NativeDateAdapter extends DateAdapter<Date> {
    * very frequently, and the current valid rule is not always valid in previous years though.
    * We work around this problem building a new Date object which has its internal UTC
    * representation with the local date and time.
-   * @param dtf Intl.DateTimeFormat object, containing the desired string format. It must have
+   * @param dtf Intl.DateTimeFortak object, containing the desired string format. It must have
    *    timeZone set to 'utc' to work fine.
    * @param date Date from which we want to get the string representation according to dtf
    * @returns A Date object with its UTC representation based on the passed in date info
@@ -1061,7 +1061,7 @@ export declare type RippleConfig = {
   terminateOnPointerUp?: boolean;
 };
 
-/** Configurable options for `matRipple`. */
+/** Configurable options for `takRipple`. */
 export declare interface RippleGlobalOptions {
   /**
    * Whether ripples should be disabled. Ripples can be still launched manually by using
@@ -1071,7 +1071,7 @@ export declare interface RippleGlobalOptions {
   /**
    * Default configuration for the animation duration of the ripples. There are two phases with
    * different durations for the ripples: `enter` and `leave`. The durations will be overwritten
-   * by the value of `matRippleAnimation` or if the `NoopAnimationsModule` is included.
+   * by the value of `takRippleAnimation` or if the `NoopAnimationsModule` is included.
    */
   animation?: RippleAnimationConfig;
   /**

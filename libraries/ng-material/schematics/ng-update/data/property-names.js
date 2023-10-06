@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -17,7 +17,7 @@ exports.propertyNames = {
         {
           replace: 'getPopupConnectionElementRef',
           replaceWith: 'getConnectedOverlayOrigin',
-          limitedTo: { classes: ['MatDatepickerInput'] },
+          limitedTo: { classes: ['TakDatepickerInput'] },
         },
       ],
     },
@@ -29,17 +29,17 @@ exports.propertyNames = {
         {
           replace: 'afterOpen',
           replaceWith: 'afterOpened',
-          limitedTo: { classes: ['MatDialogRef'] },
+          limitedTo: { classes: ['TakDialogRef'] },
         },
         {
           replace: 'beforeClose',
           replaceWith: 'beforeClosed',
-          limitedTo: { classes: ['MatDialogRef'] },
+          limitedTo: { classes: ['TakDialogRef'] },
         },
         {
           replace: 'afterOpen',
           replaceWith: 'afterOpened',
-          limitedTo: { classes: ['MatDialog'] },
+          limitedTo: { classes: ['TakDialog'] },
         },
       ],
     },
@@ -51,17 +51,17 @@ exports.propertyNames = {
         {
           replace: 'change',
           replaceWith: 'selectionChange',
-          limitedTo: { classes: ['MatSelect'] },
+          limitedTo: { classes: ['TakSelect'] },
         },
         {
           replace: 'onOpen',
           replaceWith: 'openedChange.pipe(filter(isOpen => isOpen))',
-          limitedTo: { classes: ['MatSelect'] },
+          limitedTo: { classes: ['TakSelect'] },
         },
         {
           replace: 'onClose',
           replaceWith: 'openedChange.pipe(filter(isOpen => !isOpen))',
-          limitedTo: { classes: ['MatSelect'] },
+          limitedTo: { classes: ['TakSelect'] },
         },
       ],
     },
@@ -71,7 +71,7 @@ exports.propertyNames = {
         {
           replace: 'align',
           replaceWith: 'labelPosition',
-          limitedTo: { classes: ['MatRadioGroup', 'MatRadioButton'] },
+          limitedTo: { classes: ['TakRadioGroup', 'TakRadioButton'] },
         },
       ],
     },
@@ -81,7 +81,7 @@ exports.propertyNames = {
         {
           replace: 'extraClasses',
           replaceWith: 'panelClass',
-          limitedTo: { classes: ['MatSnackBarConfig'] },
+          limitedTo: { classes: ['TakSnackBarConfig'] },
         },
       ],
     },
@@ -91,22 +91,22 @@ exports.propertyNames = {
         {
           replace: 'align',
           replaceWith: 'position',
-          limitedTo: { classes: ['MatDrawer', 'MatSidenav'] },
+          limitedTo: { classes: ['TakDrawer', 'TakSidenav'] },
         },
         {
           replace: 'onAlignChanged',
           replaceWith: 'onPositionChanged',
-          limitedTo: { classes: ['MatDrawer', 'MatSidenav'] },
+          limitedTo: { classes: ['TakDrawer', 'TakSidenav'] },
         },
         {
           replace: 'onOpen',
           replaceWith: 'openedChange.pipe(filter(isOpen => isOpen))',
-          limitedTo: { classes: ['MatDrawer', 'MatSidenav'] },
+          limitedTo: { classes: ['TakDrawer', 'TakSidenav'] },
         },
         {
           replace: 'onClose',
           replaceWith: 'openedChange.pipe(filter(isOpen => !isOpen))',
-          limitedTo: { classes: ['MatDrawer', 'MatSidenav'] },
+          limitedTo: { classes: ['TakDrawer', 'TakSidenav'] },
         },
       ],
     },
@@ -116,18 +116,18 @@ exports.propertyNames = {
         {
           replace: 'shouldPlaceholderFloat',
           replaceWith: 'shouldLabelFloat',
-          limitedTo: { classes: ['MatFormFieldControl', 'MatSelect'] },
+          limitedTo: { classes: ['TakFormFieldControl', 'TakSelect'] },
         },
       ],
     },
     {
       pr: 'https://github.com/angular/components/pull/10294',
       changes: [
-        { replace: 'dividerColor', replaceWith: 'color', limitedTo: { classes: ['MatFormField'] } },
+        { replace: 'dividerColor', replaceWith: 'color', limitedTo: { classes: ['TakFormField'] } },
         {
           replace: 'floatPlaceholder',
           replaceWith: 'floatLabel',
-          limitedTo: { classes: ['MatFormField'] },
+          limitedTo: { classes: ['TakFormField'] },
         },
       ],
     },
@@ -137,26 +137,26 @@ exports.propertyNames = {
         {
           replace: 'selectChange',
           replaceWith: 'selectedTabChange',
-          limitedTo: { classes: ['MatTabGroup'] },
+          limitedTo: { classes: ['TakTabGroup'] },
         },
         {
           replace: '_dynamicHeightDeprecated',
           replaceWith: 'dynamicHeight',
-          limitedTo: { classes: ['MatTabGroup'] },
+          limitedTo: { classes: ['TakTabGroup'] },
         },
       ],
     },
     {
       pr: 'https://github.com/angular/components/pull/10311',
       changes: [
-        { replace: 'destroy', replaceWith: 'destroyed', limitedTo: { classes: ['MatChip'] } },
-        { replace: 'onRemove', replaceWith: 'removed', limitedTo: { classes: ['MatChip'] } },
+        { replace: 'destroy', replaceWith: 'destroyed', limitedTo: { classes: ['TakChip'] } },
+        { replace: 'onRemove', replaceWith: 'removed', limitedTo: { classes: ['TakChip'] } },
       ],
     },
     {
       pr: 'https://github.com/angular/components/pull/10342',
       changes: [
-        { replace: 'align', replaceWith: 'labelPosition', limitedTo: { classes: ['MatCheckbox'] } },
+        { replace: 'align', replaceWith: 'labelPosition', limitedTo: { classes: ['TakCheckbox'] } },
       ],
     },
     {
@@ -165,7 +165,7 @@ exports.propertyNames = {
         {
           replace: '_positionDeprecated',
           replaceWith: 'position',
-          limitedTo: { classes: ['MatTooltip'] },
+          limitedTo: { classes: ['TakTooltip'] },
         },
       ],
     },
@@ -175,12 +175,12 @@ exports.propertyNames = {
         {
           replace: '_thumbLabelDeprecated',
           replaceWith: 'thumbLabel',
-          limitedTo: { classes: ['MatSlider'] },
+          limitedTo: { classes: ['TakSlider'] },
         },
         {
           replace: '_tickIntervalDeprecated',
           replaceWith: 'tickInterval',
-          limitedTo: { classes: ['MatSlider'] },
+          limitedTo: { classes: ['TakSlider'] },
         },
       ],
     },

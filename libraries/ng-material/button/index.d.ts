@@ -10,18 +10,18 @@ import { FocusMonitor } from '@takkion/ng-cdk/a11y';
 import { FocusOrigin } from '@takkion/ng-cdk/a11y';
 import * as i0 from '@angular/core';
 import * as i2 from '@takkion/ng-material/core';
-import { MatRipple } from '@takkion/ng-material/core';
+import { TakRipple } from '@takkion/ng-material/core';
 import { NgZone } from '@angular/core';
 import { OnDestroy } from '@angular/core';
 
 declare namespace i1 {
-  export { MatButton, MatAnchor };
+  export { TakButton, TakAnchor };
 }
 
 /**
  * Material design anchor button.
  */
-export declare class MatAnchor extends MatButton implements AfterViewInit, OnDestroy {
+export declare class TakAnchor extends TakButton implements AfterViewInit, OnDestroy {
   /** @breaking-change 14.0.0 _ngZone will be required. */
   private _ngZone?;
   /** Tabindex of the button. */
@@ -37,13 +37,13 @@ export declare class MatAnchor extends MatButton implements AfterViewInit, OnDes
   ngOnDestroy(): void;
   _haltDisabledEvents: (event: Event) => void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatAnchor,
+    TakAnchor,
     [null, null, { optional: true }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatAnchor,
-    'a[mat-button], a[mat-raised-button], a[mat-icon-button], a[mat-fab],             a[mat-mini-fab], a[mat-stroked-button], a[mat-flat-button]',
-    ['matButton', 'matAnchor'],
+    TakAnchor,
+    'a[tak-button], a[tak-raised-button], a[tak-icon-button], a[tak-fab],             a[tak-mini-fab], a[tak-stroked-button], a[tak-flat-button]',
+    ['takButton', 'takAnchor'],
     { disabled: 'disabled'; disableRipple: 'disableRipple'; color: 'color'; tabIndex: 'tabIndex' },
     {},
     never,
@@ -55,8 +55,8 @@ export declare class MatAnchor extends MatButton implements AfterViewInit, OnDes
 /**
  * Material design button.
  */
-export declare class MatButton
-  extends _MatButtonBase
+export declare class TakButton
+  extends _TakButtonBase
   implements AfterViewInit, OnDestroy, CanDisable, CanColor, CanDisableRipple, FocusableOption
 {
   private _focusMonitor;
@@ -65,8 +65,8 @@ export declare class MatButton
   readonly isRoundButton: boolean;
   /** Whether the button is icon button. */
   readonly isIconButton: boolean;
-  /** Reference to the MatRipple instance of the button. */
-  ripple: MatRipple;
+  /** Reference to the TakRipple instance of the button. */
+  ripple: TakRipple;
   constructor(elementRef: ElementRef, _focusMonitor: FocusMonitor, _animationMode: string);
   ngAfterViewInit(): void;
   ngOnDestroy(): void;
@@ -76,11 +76,11 @@ export declare class MatButton
   _isRippleDisabled(): boolean;
   /** Gets whether the button has one of the given attributes. */
   _hasHostAttributes(...attributes: string[]): boolean;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatButton, [null, null, { optional: true }]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakButton, [null, null, { optional: true }]>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatButton,
-    'button[mat-button], button[mat-raised-button], button[mat-icon-button],             button[mat-fab], button[mat-mini-fab], button[mat-stroked-button],             button[mat-flat-button]',
-    ['matButton'],
+    TakButton,
+    'button[tak-button], button[tak-raised-button], button[tak-icon-button],             button[tak-fab], button[tak-mini-fab], button[tak-stroked-button],             button[tak-flat-button]',
+    ['takButton'],
     { disabled: 'disabled'; disableRipple: 'disableRipple'; color: 'color' },
     {},
     never,
@@ -89,7 +89,7 @@ export declare class MatButton
   >;
 }
 
-declare const _MatButtonBase: _Constructor<CanColor> &
+declare const _TakButtonBase: _Constructor<CanColor> &
   _AbstractConstructor<CanColor> &
   _Constructor<CanDisable> &
   _AbstractConstructor<CanDisable> &
@@ -100,15 +100,15 @@ declare const _MatButtonBase: _Constructor<CanColor> &
     };
   };
 
-export declare class MatButtonModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatButtonModule, never>;
+export declare class TakButtonModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakButtonModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatButtonModule,
-    [typeof i1.MatButton, typeof i1.MatAnchor],
-    [typeof i2.MatRippleModule, typeof i2.MatCommonModule],
-    [typeof i1.MatButton, typeof i1.MatAnchor, typeof i2.MatCommonModule]
+    TakButtonModule,
+    [typeof i1.TakButton, typeof i1.TakAnchor],
+    [typeof i2.TakRippleModule, typeof i2.TakCommonModule],
+    [typeof i1.TakButton, typeof i1.TakAnchor, typeof i2.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatButtonModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakButtonModule>;
 }
 
 export {};

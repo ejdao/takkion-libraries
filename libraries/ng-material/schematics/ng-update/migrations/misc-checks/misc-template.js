@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -23,37 +23,37 @@ class MiscTemplateMigration extends schematics_1.Migration {
   visitTemplate(template) {
     // Migration for: https://github.com/angular/components/pull/10398 (v6)
     (0, schematics_1.findOutputsOnElementWithTag)(template.content, 'selectionChange', [
-      'mat-list-option',
+      'tak-list-option',
     ]).forEach(offset => {
       this.failures.push({
         filePath: template.filePath,
         position: template.getCharacterAndLineOfPosition(template.start + offset),
         message:
-          `Found deprecated "selectionChange" output binding on "mat-list-option". ` +
-          `Use "selectionChange" on "mat-selection-list" instead.`,
+          `Found deprecated "selectionChange" output binding on "tak-list-option". ` +
+          `Use "selectionChange" on "tak-selection-list" instead.`,
       });
     });
     // Migration for: https://github.com/angular/components/pull/10413 (v6)
     (0, schematics_1.findOutputsOnElementWithTag)(template.content, 'selectedChanged', [
-      'mat-datepicker',
+      'tak-datepicker',
     ]).forEach(offset => {
       this.failures.push({
         filePath: template.filePath,
         position: template.getCharacterAndLineOfPosition(template.start + offset),
         message:
-          `Found deprecated "selectedChanged" output binding on "mat-datepicker". ` +
-          `Use "dateChange" or "dateInput" on "<input [matDatepicker]>" instead.`,
+          `Found deprecated "selectedChanged" output binding on "tak-datepicker". ` +
+          `Use "dateChange" or "dateInput" on "<input [takDatepicker]>" instead.`,
       });
     });
     // Migration for: https://github.com/angular/components/commit/f0bf6e7 (v6)
     (0, schematics_1.findInputsOnElementWithTag)(template.content, 'selected', [
-      'mat-button-toggle-group',
+      'tak-button-toggle-group',
     ]).forEach(offset => {
       this.failures.push({
         filePath: template.filePath,
         position: template.getCharacterAndLineOfPosition(template.start + offset),
         message:
-          `Found deprecated "selected" input binding on "mat-radio-button-group". ` +
+          `Found deprecated "selected" input binding on "tak-radio-button-group". ` +
           `Use "value" instead.`,
       });
     });

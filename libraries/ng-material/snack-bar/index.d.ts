@@ -34,7 +34,7 @@ import { Type } from '@angular/core';
 import { ViewContainerRef } from '@angular/core';
 
 declare namespace i1 {
-  export { _MatSnackBarContainerBase, MatSnackBarContainer };
+  export { _TakSnackBarContainerBase, TakSnackBarContainer };
 }
 
 declare namespace i2 {
@@ -42,45 +42,45 @@ declare namespace i2 {
 }
 
 /** Injection token that can be used to access the data that was passed in to a snack bar. */
-export declare const MAT_SNACK_BAR_DATA: InjectionToken<any>;
+export declare const TAK_SNACK_BAR_DATA: InjectionToken<any>;
 
 /** Injection token that can be used to specify default snack bar. */
-export declare const MAT_SNACK_BAR_DEFAULT_OPTIONS: InjectionToken<MatSnackBarConfig<any>>;
+export declare const TAK_SNACK_BAR_DEFAULT_OPTIONS: InjectionToken<TakSnackBarConfig<any>>;
 
 /** @docs-private */
-export declare function MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY(): MatSnackBarConfig;
+export declare function TAK_SNACK_BAR_DEFAULT_OPTIONS_FACTORY(): TakSnackBarConfig;
 
 /**
  * Service to dispatch Material Design snack bar messages.
  */
-export declare class MatSnackBar extends _MatSnackBarBase {
+export declare class TakSnackBar extends _TakSnackBarBase {
   protected simpleSnackBarComponent: typeof SimpleSnackBar;
-  protected snackBarContainerComponent: typeof MatSnackBarContainer;
+  protected snackBarContainerComponent: typeof TakSnackBarContainer;
   protected handsetCssClass: string;
   constructor(
     overlay: Overlay,
     live: LiveAnnouncer,
     injector: Injector,
     breakpointObserver: BreakpointObserver,
-    parentSnackBar: MatSnackBar,
-    defaultConfig: MatSnackBarConfig
+    parentSnackBar: TakSnackBar,
+    defaultConfig: TakSnackBarConfig
   );
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatSnackBar,
+    TakSnackBar,
     [null, null, null, null, { optional: true; skipSelf: true }, null]
   >;
-  static ɵprov: i0.ɵɵInjectableDeclaration<MatSnackBar>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<TakSnackBar>;
 }
 
 /**
  * Animations used by the Material snack bar.
  * @docs-private
  */
-export declare const matSnackBarAnimations: {
+export declare const takSnackBarAnimations: {
   readonly snackBarState: AnimationTriggerMetadata;
 };
 
-export declare abstract class _MatSnackBarBase implements OnDestroy {
+export declare abstract class _TakSnackBarBase implements OnDestroy {
   private _overlay;
   private _live;
   private _injector;
@@ -96,19 +96,19 @@ export declare abstract class _MatSnackBarBase implements OnDestroy {
   /** The component that should be rendered as the snack bar's simple component. */
   protected abstract simpleSnackBarComponent: Type<TextOnlySnackBar>;
   /** The container component that attaches the provided template or component. */
-  protected abstract snackBarContainerComponent: Type<_MatSnackBarContainerBase>;
+  protected abstract snackBarContainerComponent: Type<_TakSnackBarContainerBase>;
   /** The CSS class to apply for handset mode. */
   protected abstract handsetCssClass: string;
   /** Reference to the currently opened snackbar at *any* level. */
-  get _openedSnackBarRef(): MatSnackBarRef<any> | null;
-  set _openedSnackBarRef(value: MatSnackBarRef<any> | null);
+  get _openedSnackBarRef(): TakSnackBarRef<any> | null;
+  set _openedSnackBarRef(value: TakSnackBarRef<any> | null);
   constructor(
     _overlay: Overlay,
     _live: LiveAnnouncer,
     _injector: Injector,
     _breakpointObserver: BreakpointObserver,
-    _parentSnackBar: _MatSnackBarBase,
-    _defaultConfig: MatSnackBarConfig
+    _parentSnackBar: _TakSnackBarBase,
+    _defaultConfig: TakSnackBarConfig
   );
   /**
    * Creates and dispatches a snack bar with a custom component for the content, removing any
@@ -119,8 +119,8 @@ export declare abstract class _MatSnackBarBase implements OnDestroy {
    */
   openFromComponent<T, D = any>(
     component: ComponentType<T>,
-    config?: MatSnackBarConfig<D>
-  ): MatSnackBarRef<T>;
+    config?: TakSnackBarConfig<D>
+  ): TakSnackBarRef<T>;
   /**
    * Creates and dispatches a snack bar with a custom template for the content, removing any
    * currently opened snack bars.
@@ -130,8 +130,8 @@ export declare abstract class _MatSnackBarBase implements OnDestroy {
    */
   openFromTemplate(
     template: TemplateRef<any>,
-    config?: MatSnackBarConfig
-  ): MatSnackBarRef<EmbeddedViewRef<any>>;
+    config?: TakSnackBarConfig
+  ): TakSnackBarRef<EmbeddedViewRef<any>>;
   /**
    * Opens a snackbar with a message and an optional action.
    * @param message The message to show in the snackbar.
@@ -141,8 +141,8 @@ export declare abstract class _MatSnackBarBase implements OnDestroy {
   open(
     message: string,
     action?: string,
-    config?: MatSnackBarConfig
-  ): MatSnackBarRef<TextOnlySnackBar>;
+    config?: TakSnackBarConfig
+  ): TakSnackBarRef<TextOnlySnackBar>;
   /**
    * Dismisses the currently-visible snack bar.
    */
@@ -170,17 +170,17 @@ export declare abstract class _MatSnackBarBase implements OnDestroy {
    */
   private _createInjector;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    _MatSnackBarBase,
+    _TakSnackBarBase,
     [null, null, null, null, { optional: true; skipSelf: true }, null]
   >;
-  static ɵprov: i0.ɵɵInjectableDeclaration<_MatSnackBarBase>;
+  static ɵprov: i0.ɵɵInjectableDeclaration<_TakSnackBarBase>;
 }
 
 /**
  * Configuration used when opening a snack-bar.
  */
-export declare class MatSnackBarConfig<D = any> {
-  /** The politeness level for the MatAriaLiveAnnouncer announcement. */
+export declare class TakSnackBarConfig<D = any> {
+  /** The politeness level for the TakAriaLiveAnnouncer announcement. */
   politeness?: AriaLivePoliteness;
   /**
    * Message to be announced by the LiveAnnouncer. When opening a snackbar without a custom
@@ -201,20 +201,20 @@ export declare class MatSnackBarConfig<D = any> {
   /** Data being injected into the child component. */
   data?: D | null;
   /** The horizontal position to place the snack bar. */
-  horizontalPosition?: MatSnackBarHorizontalPosition;
+  horizontalPosition?: TakSnackBarHorizontalPosition;
   /** The vertical position to place the snack bar. */
-  verticalPosition?: MatSnackBarVerticalPosition;
+  verticalPosition?: TakSnackBarVerticalPosition;
 }
 
 /**
  * Internal component that wraps user-provided snack bar content.
  * @docs-private
  */
-export declare class MatSnackBarContainer extends _MatSnackBarContainerBase {
+export declare class TakSnackBarContainer extends _TakSnackBarContainerBase {
   protected _afterPortalAttached(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSnackBarContainer, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSnackBarContainer, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatSnackBarContainer,
+    TakSnackBarContainer,
     'snack-bar-container',
     never,
     {},
@@ -229,7 +229,7 @@ export declare class MatSnackBarContainer extends _MatSnackBarContainerBase {
  * Base class for snack bar containers.
  * @docs-private
  */
-export declare abstract class _MatSnackBarContainerBase
+export declare abstract class _TakSnackBarContainerBase
   extends BasePortalOutlet
   implements OnDestroy
 {
@@ -238,7 +238,7 @@ export declare abstract class _MatSnackBarContainerBase
   private _changeDetectorRef;
   private _platform;
   /** The snack bar configuration. */
-  snackBarConfig: MatSnackBarConfig;
+  snackBarConfig: TakSnackBarConfig;
   /** The number of milliseconds to wait before announcing the snack bar's content. */
   private readonly _announceDelay;
   /** The timeout for announcing the snack bar's content. */
@@ -268,7 +268,7 @@ export declare abstract class _MatSnackBarContainerBase
     _changeDetectorRef: ChangeDetectorRef,
     _platform: Platform,
     /** The snack bar configuration. */
-    snackBarConfig: MatSnackBarConfig
+    snackBarConfig: TakSnackBarConfig
   );
   /** Attach a component portal as content to this snack bar container. */
   attachComponentPortal<T>(portal: ComponentPortal<T>): ComponentRef<T>;
@@ -305,9 +305,9 @@ export declare abstract class _MatSnackBarContainerBase
    * announce it.
    */
   private _screenReaderAnnounce;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatSnackBarContainerBase, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakSnackBarContainerBase, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatSnackBarContainerBase,
+    _TakSnackBarContainerBase,
     never,
     never,
     {},
@@ -319,35 +319,35 @@ export declare abstract class _MatSnackBarContainerBase
 }
 
 /** Event that is emitted when a snack bar is dismissed. */
-export declare interface MatSnackBarDismiss {
+export declare interface TakSnackBarDismiss {
   /** Whether the snack bar was dismissed using the action button. */
   dismissedByAction: boolean;
 }
 
-/** Possible values for horizontalPosition on MatSnackBarConfig. */
-export declare type MatSnackBarHorizontalPosition = 'start' | 'center' | 'end' | 'left' | 'right';
+/** Possible values for horizontalPosition on TakSnackBarConfig. */
+export declare type TakSnackBarHorizontalPosition = 'start' | 'center' | 'end' | 'left' | 'right';
 
-export declare class MatSnackBarModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSnackBarModule, never>;
+export declare class TakSnackBarModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSnackBarModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatSnackBarModule,
-    [typeof i1.MatSnackBarContainer, typeof i2.SimpleSnackBar],
+    TakSnackBarModule,
+    [typeof i1.TakSnackBarContainer, typeof i2.SimpleSnackBar],
     [
       typeof i3.OverlayModule,
       typeof i4.PortalModule,
       typeof i5.CommonModule,
-      typeof i6.MatButtonModule,
-      typeof i7.MatCommonModule,
+      typeof i6.TakButtonModule,
+      typeof i7.TakCommonModule,
     ],
-    [typeof i1.MatSnackBarContainer, typeof i7.MatCommonModule]
+    [typeof i1.TakSnackBarContainer, typeof i7.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatSnackBarModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakSnackBarModule>;
 }
 
 /**
  * Reference to a snack bar dispatched from the snack bar service.
  */
-export declare class MatSnackBarRef<T> {
+export declare class TakSnackBarRef<T> {
   private _overlayRef;
   /** The instance of the component making up the content of the snack bar. */
   instance: T;
@@ -355,7 +355,7 @@ export declare class MatSnackBarRef<T> {
    * The instance of the component making up the content of the snack bar.
    * @docs-private
    */
-  containerInstance: _MatSnackBarContainerBase;
+  containerInstance: _TakSnackBarContainerBase;
   /** Subject for notifying the user that the snack bar has been dismissed. */
   private readonly _afterDismissed;
   /** Subject for notifying the user that the snack bar has opened and appeared. */
@@ -369,7 +369,7 @@ export declare class MatSnackBarRef<T> {
   private _durationTimeoutId;
   /** Whether the snack bar was dismissed using the action button. */
   private _dismissedByAction;
-  constructor(containerInstance: _MatSnackBarContainerBase, _overlayRef: OverlayRef);
+  constructor(containerInstance: _TakSnackBarContainerBase, _overlayRef: OverlayRef);
   /** Dismisses the snack bar. */
   dismiss(): void;
   /** Marks the snackbar action clicked. */
@@ -387,28 +387,28 @@ export declare class MatSnackBarRef<T> {
   /** Cleans up the DOM after closing. */
   private _finishDismiss;
   /** Gets an observable that is notified when the snack bar is finished closing. */
-  afterDismissed(): Observable<MatSnackBarDismiss>;
+  afterDismissed(): Observable<TakSnackBarDismiss>;
   /** Gets an observable that is notified when the snack bar has opened and appeared. */
   afterOpened(): Observable<void>;
   /** Gets an observable that is notified when the snack bar action is called. */
   onAction(): Observable<void>;
 }
 
-/** Possible values for verticalPosition on MatSnackBarConfig. */
-export declare type MatSnackBarVerticalPosition = 'top' | 'bottom';
+/** Possible values for verticalPosition on TakSnackBarConfig. */
+export declare type TakSnackBarVerticalPosition = 'top' | 'bottom';
 
 /**
  * A component used to open as the default snack bar, matching material spec.
  * This should only be used internally by the snack bar service.
  */
 export declare class SimpleSnackBar implements TextOnlySnackBar {
-  snackBarRef: MatSnackBarRef<SimpleSnackBar>;
+  snackBarRef: TakSnackBarRef<SimpleSnackBar>;
   /** Data that was injected into the snack bar. */
   data: {
     message: string;
     action: string;
   };
-  constructor(snackBarRef: MatSnackBarRef<SimpleSnackBar>, data: any);
+  constructor(snackBarRef: TakSnackBarRef<SimpleSnackBar>, data: any);
   /** Performs the action on the snack bar. */
   action(): void;
   /** If the action button should be shown. */
@@ -434,7 +434,7 @@ export declare interface TextOnlySnackBar {
     message: string;
     action: string;
   };
-  snackBarRef: MatSnackBarRef<TextOnlySnackBar>;
+  snackBarRef: TakSnackBarRef<TextOnlySnackBar>;
   action: () => void;
   hasAction: boolean;
 }

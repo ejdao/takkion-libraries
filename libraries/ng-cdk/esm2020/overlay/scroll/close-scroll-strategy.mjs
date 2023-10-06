@@ -1,4 +1,4 @@
-import { getMatScrollStrategyAlreadyAttachedError } from './scroll-strategy';
+import { getTakScrollStrategyAlreadyAttachedError } from './scroll-strategy';
 /**
  * Strategy that will close the overlay as soon as the user starts scrolling.
  */
@@ -20,7 +20,7 @@ export class CloseScrollStrategy {
     /** Attaches this scroll strategy to an overlay. */
     attach(overlayRef) {
         if (this._overlayRef && (typeof ngDevMode === 'undefined' || ngDevMode)) {
-            throw getMatScrollStrategyAlreadyAttachedError();
+            throw getTakScrollStrategyAlreadyAttachedError();
         }
         this._overlayRef = overlayRef;
     }

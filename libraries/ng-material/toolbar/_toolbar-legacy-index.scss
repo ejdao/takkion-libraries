@@ -1,4 +1,4 @@
-@forward 'toolbar-variables' as mat-toolbar-*;
+@forward 'toolbar-variables' as tak-toolbar-*;
 @forward 'toolbar-theme' hide color, density, theme, typography;
-@forward 'toolbar-theme' as mat-toolbar-* hide mat-toolbar-color, mat-toolbar-form-field-overrides,
-  mat-toolbar-height;
+@forward 'toolbar-theme' as tak-toolbar-* hide tak-toolbar-color, tak-toolbar-form-field-overrides,
+  tak-toolbar-height;

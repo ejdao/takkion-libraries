@@ -16,12 +16,12 @@ import * as i5 from '@takkion/ng-material/core';
 import * as i6 from '@angular/common';
 import * as i7 from '@takkion/ng-cdk/scrolling';
 import { InjectionToken } from '@angular/core';
-import { MatFormField } from '@takkion/ng-material/form-field';
-import { MatOptgroup } from '@takkion/ng-material/core';
-import { _MatOptgroupBase } from '@takkion/ng-material/core';
-import { MatOption } from '@takkion/ng-material/core';
-import { _MatOptionBase } from '@takkion/ng-material/core';
-import { MatOptionSelectionChange } from '@takkion/ng-material/core';
+import { TakFormField } from '@takkion/ng-material/form-field';
+import { TakOptgroup } from '@takkion/ng-material/core';
+import { _TakOptgroupBase } from '@takkion/ng-material/core';
+import { TakOption } from '@takkion/ng-material/core';
+import { _TakOptionBase } from '@takkion/ng-material/core';
+import { TakOptionSelectionChange } from '@takkion/ng-material/core';
 import { NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OnChanges } from '@angular/core';
@@ -39,75 +39,75 @@ import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
  * Creates an error to be thrown when attempting to use an autocomplete trigger without a panel.
  * @docs-private
  */
-export declare function getMatAutocompleteMissingPanelError(): Error;
+export declare function getTakAutocompleteMissingPanelError(): Error;
 
 declare namespace i1 {
   export {
-    MAT_AUTOCOMPLETE_DEFAULT_OPTIONS_FACTORY,
-    MatAutocompleteSelectedEvent,
-    MatAutocompleteActivatedEvent,
-    MatAutocompleteDefaultOptions,
-    MAT_AUTOCOMPLETE_DEFAULT_OPTIONS,
-    _MatAutocompleteBase,
-    MatAutocomplete,
+    TAK_AUTOCOMPLETE_DEFAULT_OPTIONS_FACTORY,
+    TakAutocompleteSelectedEvent,
+    TakAutocompleteActivatedEvent,
+    TakAutocompleteDefaultOptions,
+    TAK_AUTOCOMPLETE_DEFAULT_OPTIONS,
+    _TakAutocompleteBase,
+    TakAutocomplete,
   };
 }
 
 declare namespace i2 {
   export {
-    MAT_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY,
-    getMatAutocompleteMissingPanelError,
-    MAT_AUTOCOMPLETE_SCROLL_STRATEGY,
-    MAT_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY_PROVIDER,
-    MAT_AUTOCOMPLETE_VALUE_ACCESSOR,
-    _MatAutocompleteTriggerBase,
-    MatAutocompleteTrigger,
+    TAK_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY,
+    getTakAutocompleteMissingPanelError,
+    TAK_AUTOCOMPLETE_SCROLL_STRATEGY,
+    TAK_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY_PROVIDER,
+    TAK_AUTOCOMPLETE_VALUE_ACCESSOR,
+    _TakAutocompleteTriggerBase,
+    TakAutocompleteTrigger,
   };
 }
 
 declare namespace i3 {
-  export { _MatAutocompleteOriginBase, MatAutocompleteOrigin };
+  export { _TakAutocompleteOriginBase, TakAutocompleteOrigin };
 }
 
-/** Injection token to be used to override the default options for `mat-autocomplete`. */
-export declare const MAT_AUTOCOMPLETE_DEFAULT_OPTIONS: InjectionToken<MatAutocompleteDefaultOptions>;
+/** Injection token to be used to override the default options for `tak-autocomplete`. */
+export declare const TAK_AUTOCOMPLETE_DEFAULT_OPTIONS: InjectionToken<TakAutocompleteDefaultOptions>;
 
 /** @docs-private */
-export declare function MAT_AUTOCOMPLETE_DEFAULT_OPTIONS_FACTORY(): MatAutocompleteDefaultOptions;
+export declare function TAK_AUTOCOMPLETE_DEFAULT_OPTIONS_FACTORY(): TakAutocompleteDefaultOptions;
 
 /** Injection token that determines the scroll handling while the autocomplete panel is open. */
-export declare const MAT_AUTOCOMPLETE_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
+export declare const TAK_AUTOCOMPLETE_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;
 
 /** @docs-private */
-export declare function MAT_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY(
+export declare function TAK_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY(
   overlay: Overlay
 ): () => ScrollStrategy;
 
 /** @docs-private */
-export declare const MAT_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY_PROVIDER: {
+export declare const TAK_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY_PROVIDER: {
   provide: InjectionToken<() => ScrollStrategy>;
   deps: (typeof Overlay)[];
-  useFactory: typeof MAT_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY;
+  useFactory: typeof TAK_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY;
 };
 
 /**
  * Provider that allows the autocomplete to register as a ControlValueAccessor.
  * @docs-private
  */
-export declare const MAT_AUTOCOMPLETE_VALUE_ACCESSOR: any;
+export declare const TAK_AUTOCOMPLETE_VALUE_ACCESSOR: any;
 
-export declare class MatAutocomplete extends _MatAutocompleteBase {
+export declare class TakAutocomplete extends _TakAutocompleteBase {
   /** Reference to all option groups within the autocomplete. */
-  optionGroups: QueryList<MatOptgroup>;
+  optionGroups: QueryList<TakOptgroup>;
   /** Reference to all options within the autocomplete. */
-  options: QueryList<MatOption>;
+  options: QueryList<TakOption>;
   protected _visibleClass: string;
   protected _hiddenClass: string;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatAutocomplete, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakAutocomplete, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatAutocomplete,
-    'mat-autocomplete',
-    ['matAutocomplete'],
+    TakAutocomplete,
+    'tak-autocomplete',
+    ['takAutocomplete'],
     { disableRipple: 'disableRipple' },
     {},
     ['optionGroups', 'options'],
@@ -117,16 +117,16 @@ export declare class MatAutocomplete extends _MatAutocompleteBase {
 }
 
 /** Event object that is emitted when an autocomplete option is activated. */
-export declare interface MatAutocompleteActivatedEvent {
+export declare interface TakAutocompleteActivatedEvent {
   /** Reference to the autocomplete panel that emitted the event. */
-  source: _MatAutocompleteBase;
+  source: _TakAutocompleteBase;
   /** Option that was selected. */
-  option: _MatOptionBase | null;
+  option: _TakOptionBase | null;
 }
 
-/** Base class with all of the `MatAutocomplete` functionality. */
-export declare abstract class _MatAutocompleteBase
-  extends _MatAutocompleteMixinBase
+/** Base class with all of the `TakAutocomplete` functionality. */
+export declare abstract class _TakAutocompleteBase
+  extends _TakAutocompleteMixinBase
   implements AfterContentInit, CanDisableRipple, OnDestroy
 {
   private _changeDetectorRef;
@@ -137,7 +137,7 @@ export declare abstract class _MatAutocompleteBase
   /** Class to apply to the panel when it's hidden. */
   protected abstract _hiddenClass: string;
   /** Manages active item in option list based on key events. */
-  _keyManager: ActiveDescendantKeyManager<_MatOptionBase>;
+  _keyManager: ActiveDescendantKeyManager<_TakOptionBase>;
   /** Whether the autocomplete panel should be visible, depending on option length. */
   showPanel: boolean;
   /** Whether the autocomplete panel is open. */
@@ -148,9 +148,9 @@ export declare abstract class _MatAutocompleteBase
   /** Element for the panel containing the autocomplete options. */
   panel: ElementRef;
   /** Reference to all options within the autocomplete. */
-  abstract options: QueryList<_MatOptionBase>;
+  abstract options: QueryList<_TakOptionBase>;
   /** Reference to all option groups within the autocomplete. */
-  abstract optionGroups: QueryList<_MatOptgroupBase>;
+  abstract optionGroups: QueryList<_TakOptgroupBase>;
   /** Aria label of the autocomplete. */
   ariaLabel: string;
   /** Input that can be used to specify the `aria-labelledby` attribute. */
@@ -159,7 +159,7 @@ export declare abstract class _MatAutocompleteBase
   displayWith: ((value: any) => string) | null;
   /**
    * Whether the first option should be highlighted when the autocomplete panel is opened.
-   * Can be configured globally through the `MAT_AUTOCOMPLETE_DEFAULT_OPTIONS` token.
+   * Can be configured globally through the `TAK_AUTOCOMPLETE_DEFAULT_OPTIONS` token.
    */
   get autoActiveFirstOption(): boolean;
   set autoActiveFirstOption(value: BooleanInput);
@@ -174,15 +174,15 @@ export declare abstract class _MatAutocompleteBase
    */
   panelWidth: string | number;
   /** Event that is emitted whenever an option from the list is selected. */
-  readonly optionSelected: EventEmitter<MatAutocompleteSelectedEvent>;
+  readonly optionSelected: EventEmitter<TakAutocompleteSelectedEvent>;
   /** Event that is emitted when the autocomplete panel is opened. */
   readonly opened: EventEmitter<void>;
   /** Event that is emitted when the autocomplete panel is closed. */
   readonly closed: EventEmitter<void>;
   /** Emits whenever an option is activated. */
-  readonly optionActivated: EventEmitter<MatAutocompleteActivatedEvent>;
+  readonly optionActivated: EventEmitter<TakAutocompleteActivatedEvent>;
   /**
-   * Takes classes set on the host mat-autocomplete element and applies them to the panel
+   * Takes classes set on the host tak-autocomplete element and applies them to the panel
    * inside the overlay container to allow for easy styling.
    */
   set classList(value: string | string[]);
@@ -192,14 +192,14 @@ export declare abstract class _MatAutocompleteBase
   /** Unique ID to be used by autocomplete trigger's "aria-owns" property. */
   id: string;
   /**
-   * Tells any descendant `mat-optgroup` to use the inert a11y pattern.
+   * Tells any descendant `tak-optgroup` to use the inert a11y pattern.
    * @docs-private
    */
   readonly inertGroups: boolean;
   constructor(
     _changeDetectorRef: ChangeDetectorRef,
     _elementRef: ElementRef<HTMLElement>,
-    defaults: MatAutocompleteDefaultOptions,
+    defaults: TakAutocompleteDefaultOptions,
     platform?: Platform
   );
   ngAfterContentInit(): void;
@@ -214,14 +214,14 @@ export declare abstract class _MatAutocompleteBase
   /** Panel should hide itself when the option list is empty. */
   _setVisibility(): void;
   /** Emits the `select` event. */
-  _emitSelectEvent(option: _MatOptionBase): void;
+  _emitSelectEvent(option: _TakOptionBase): void;
   /** Gets the aria-labelledby for the autocomplete panel. */
   _getPanelAriaLabelledby(labelId: string | null): string | null;
   /** Sets the autocomplete visibility classes on a classlist based on the panel is visible. */
   private _setVisibilityClasses;
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatAutocompleteBase, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakAutocompleteBase, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatAutocompleteBase,
+    _TakAutocompleteBase,
     never,
     never,
     {
@@ -245,8 +245,8 @@ export declare abstract class _MatAutocompleteBase
   >;
 }
 
-/** Default `mat-autocomplete` options that can be overridden. */
-export declare interface MatAutocompleteDefaultOptions {
+/** Default `tak-autocomplete` options that can be overridden. */
+export declare interface TakAutocompleteDefaultOptions {
   /** Whether the first option should be highlighted when an autocomplete panel is opened. */
   autoActiveFirstOption?: boolean;
   /** Whether the active option should be selected as the user is navigating. */
@@ -256,44 +256,44 @@ export declare interface MatAutocompleteDefaultOptions {
 }
 
 /** @docs-private */
-declare const _MatAutocompleteMixinBase: _Constructor<CanDisableRipple> &
+declare const _TakAutocompleteMixinBase: _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> & {
     new (): {};
   };
 
-export declare class MatAutocompleteModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatAutocompleteModule, never>;
+export declare class TakAutocompleteModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakAutocompleteModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatAutocompleteModule,
-    [typeof i1.MatAutocomplete, typeof i2.MatAutocompleteTrigger, typeof i3.MatAutocompleteOrigin],
+    TakAutocompleteModule,
+    [typeof i1.TakAutocomplete, typeof i2.TakAutocompleteTrigger, typeof i3.TakAutocompleteOrigin],
     [
       typeof i4.OverlayModule,
-      typeof i5.MatOptionModule,
-      typeof i5.MatCommonModule,
+      typeof i5.TakOptionModule,
+      typeof i5.TakCommonModule,
       typeof i6.CommonModule,
     ],
     [
-      typeof i1.MatAutocomplete,
-      typeof i2.MatAutocompleteTrigger,
-      typeof i3.MatAutocompleteOrigin,
+      typeof i1.TakAutocomplete,
+      typeof i2.TakAutocompleteTrigger,
+      typeof i3.TakAutocompleteOrigin,
       typeof i7.CdkScrollableModule,
-      typeof i5.MatOptionModule,
-      typeof i5.MatCommonModule,
+      typeof i5.TakOptionModule,
+      typeof i5.TakCommonModule,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatAutocompleteModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakAutocompleteModule>;
 }
 
 /**
  * Directive applied to an element to make it usable
  * as a connection point for an autocomplete panel.
  */
-export declare class MatAutocompleteOrigin extends _MatAutocompleteOriginBase {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatAutocompleteOrigin, never>;
+export declare class TakAutocompleteOrigin extends _TakAutocompleteOriginBase {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakAutocompleteOrigin, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatAutocompleteOrigin,
-    '[matAutocompleteOrigin]',
-    ['matAutocompleteOrigin'],
+    TakAutocompleteOrigin,
+    '[takAutocompleteOrigin]',
+    ['takAutocompleteOrigin'],
     {},
     {},
     never,
@@ -302,17 +302,17 @@ export declare class MatAutocompleteOrigin extends _MatAutocompleteOriginBase {
   >;
 }
 
-/** Base class containing all of the functionality for `MatAutocompleteOrigin`. */
-export declare abstract class _MatAutocompleteOriginBase {
+/** Base class containing all of the functionality for `TakAutocompleteOrigin`. */
+export declare abstract class _TakAutocompleteOriginBase {
   /** Reference to the element on which the directive is applied. */
   elementRef: ElementRef<HTMLElement>;
   constructor(
     /** Reference to the element on which the directive is applied. */
     elementRef: ElementRef<HTMLElement>
   );
-  static ɵfac: i0.ɵɵFactoryDeclaration<_MatAutocompleteOriginBase, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<_TakAutocompleteOriginBase, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatAutocompleteOriginBase,
+    _TakAutocompleteOriginBase,
     never,
     never,
     {},
@@ -324,26 +324,26 @@ export declare abstract class _MatAutocompleteOriginBase {
 }
 
 /** Event object that is emitted when an autocomplete option is selected. */
-export declare class MatAutocompleteSelectedEvent {
+export declare class TakAutocompleteSelectedEvent {
   /** Reference to the autocomplete panel that emitted the event. */
-  source: _MatAutocompleteBase;
+  source: _TakAutocompleteBase;
   /** Option that was selected. */
-  option: _MatOptionBase;
+  option: _TakOptionBase;
   constructor(
     /** Reference to the autocomplete panel that emitted the event. */
-    source: _MatAutocompleteBase,
+    source: _TakAutocompleteBase,
     /** Option that was selected. */
-    option: _MatOptionBase
+    option: _TakOptionBase
   );
 }
 
-export declare class MatAutocompleteTrigger extends _MatAutocompleteTriggerBase {
+export declare class TakAutocompleteTrigger extends _TakAutocompleteTriggerBase {
   protected _aboveClass: string;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatAutocompleteTrigger, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakAutocompleteTrigger, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatAutocompleteTrigger,
-    'input[matAutocomplete], textarea[matAutocomplete]',
-    ['matAutocompleteTrigger'],
+    TakAutocompleteTrigger,
+    'input[takAutocomplete], textarea[takAutocomplete]',
+    ['takAutocompleteTrigger'],
     {},
     {},
     never,
@@ -352,8 +352,8 @@ export declare class MatAutocompleteTrigger extends _MatAutocompleteTriggerBase 
   >;
 }
 
-/** Base class with all of the `MatAutocompleteTrigger` functionality. */
-export declare abstract class _MatAutocompleteTriggerBase
+/** Base class with all of the `TakAutocompleteTrigger` functionality. */
+export declare abstract class _TakAutocompleteTriggerBase
   implements ControlValueAccessor, AfterViewInit, OnChanges, OnDestroy
 {
   private _element;
@@ -406,7 +406,7 @@ export declare abstract class _MatAutocompleteTriggerBase
   /** `View -> model callback called when autocomplete has been touched` */
   _onTouched: () => void;
   /** The autocomplete panel to be attached to this trigger. */
-  autocomplete: _MatAutocompleteBase;
+  autocomplete: _TakAutocompleteBase;
   /**
    * Position of the autocomplete panel relative to the trigger element. A position of `auto`
    * will render the panel underneath the trigger if there is enough space for it to fit in
@@ -419,7 +419,7 @@ export declare abstract class _MatAutocompleteTriggerBase
    * Reference relative to which to position the autocomplete panel.
    * Defaults to the autocomplete trigger element.
    */
-  connectedTo: _MatAutocompleteOriginBase;
+  connectedTo: _TakAutocompleteOriginBase;
   /**
    * `autocomplete` attribute to be set on the input element.
    * @docs-private
@@ -439,10 +439,10 @@ export declare abstract class _MatAutocompleteTriggerBase
     _changeDetectorRef: ChangeDetectorRef,
     scrollStrategy: any,
     _dir: Directionality,
-    _formField: MatFormField,
+    _formField: TakFormField,
     _document: any,
     _viewportRuler: ViewportRuler,
-    _defaults?: MatAutocompleteDefaultOptions | undefined
+    _defaults?: TakAutocompleteDefaultOptions | undefined
   );
   /** Class to apply to the panel when it's above the input. */
   protected abstract _aboveClass: string;
@@ -465,11 +465,11 @@ export declare abstract class _MatAutocompleteTriggerBase
    * A stream of actions that should close the autocomplete panel, including
    * when an option is selected, on blur, and when TAB is pressed.
    */
-  get panelClosingActions(): Observable<MatOptionSelectionChange | null>;
+  get panelClosingActions(): Observable<TakOptionSelectionChange | null>;
   /** Stream of changes to the selection state of the autocomplete options. */
-  readonly optionSelections: Observable<MatOptionSelectionChange>;
-  /** The currently active option, coerced to MatOption type. */
-  get activeOption(): _MatOptionBase | null;
+  readonly optionSelections: Observable<TakOptionSelectionChange>;
+  /** The currently active option, coerced to TakOption type. */
+  get activeOption(): _TakOptionBase | null;
   /** Stream of clicks outside of the autocomplete panel. */
   private _getOutsideClickStream;
   writeValue(value: any): void;
@@ -531,7 +531,7 @@ export declare abstract class _MatAutocompleteTriggerBase
   /** Handles keyboard events coming from the overlay panel. */
   private _handleOverlayEvents;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    _MatAutocompleteTriggerBase,
+    _TakAutocompleteTriggerBase,
     [
       null,
       null,
@@ -547,15 +547,15 @@ export declare abstract class _MatAutocompleteTriggerBase
     ]
   >;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    _MatAutocompleteTriggerBase,
+    _TakAutocompleteTriggerBase,
     never,
     never,
     {
-      autocomplete: 'matAutocomplete';
-      position: 'matAutocompletePosition';
-      connectedTo: 'matAutocompleteConnectedTo';
+      autocomplete: 'takAutocomplete';
+      position: 'takAutocompletePosition';
+      connectedTo: 'takAutocompleteConnectedTo';
       autocompleteAttribute: 'autocomplete';
-      autocompleteDisabled: 'matAutocompleteDisabled';
+      autocompleteDisabled: 'takAutocompleteDisabled';
     },
     {},
     never,

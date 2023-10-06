@@ -1,14 +1,14 @@
 /**
  * @license
- * Copyright Google LLC All Rights Reserved.
+ * Developed by Google LLC but not supported.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-export { MAT_MENU_DEFAULT_OPTIONS, MatMenu, _MatMenuBase } from './menu';
-export { MatMenuItem } from './menu-item';
-export { MatMenuTrigger, MAT_MENU_SCROLL_STRATEGY, _MatMenuTriggerBase } from './menu-trigger';
-export { MAT_MENU_PANEL } from './menu-panel';
+export { TAK_MENU_DEFAULT_OPTIONS, TakMenu, _TakMenuBase } from './menu';
+export { TakMenuItem } from './menu-item';
+export { TakMenuTrigger, TAK_MENU_SCROLL_STRATEGY, _TakMenuTriggerBase } from './menu-trigger';
+export { TAK_MENU_PANEL } from './menu-panel';
 export * from './menu-module';
 export * from './menu-animations';
 export * from './menu-content';

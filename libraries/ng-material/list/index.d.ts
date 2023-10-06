@@ -16,7 +16,7 @@ import * as i3 from '@takkion/ng-material/core';
 import * as i4 from '@angular/common';
 import * as i5 from '@takkion/ng-material/divider';
 import { InjectionToken } from '@angular/core';
-import { MatLine } from '@takkion/ng-material/core';
+import { TakLine } from '@takkion/ng-material/core';
 import { OnChanges } from '@angular/core';
 import { OnDestroy } from '@angular/core';
 import { OnInit } from '@angular/core';
@@ -28,46 +28,46 @@ import { ThemePalette } from '@takkion/ng-material/core';
 
 declare namespace i1 {
   export {
-    MAT_LIST,
-    MAT_NAV_LIST,
-    MatNavList,
-    MatList,
-    MatListAvatarCssMatStyler,
-    MatListIconCssMatStyler,
-    MatListSubheaderCssMatStyler,
-    MatListItem,
+    TAK_LIST,
+    TAK_NAV_LIST,
+    TakNavList,
+    TakList,
+    TakListAvatarCssTakStyler,
+    TakListIconCssTakStyler,
+    TakListSubheaderCssTakStyler,
+    TakListItem,
   };
 }
 
 declare namespace i2 {
   export {
-    MAT_SELECTION_LIST_VALUE_ACCESSOR,
-    MatSelectionListChange,
-    MatListOptionCheckboxPosition,
-    MatListOption,
-    MatSelectionList,
+    TAK_SELECTION_LIST_VALUE_ACCESSOR,
+    TakSelectionListChange,
+    TakListOptionCheckboxPosition,
+    TakListOption,
+    TakSelectionList,
   };
 }
 
 /**
- * Injection token that can be used to inject instances of `MatList`. It serves as
- * alternative token to the actual `MatList` class which could cause unnecessary
+ * Injection token that can be used to inject instances of `TakList`. It serves as
+ * alternative token to the actual `TakList` class which could cause unnecessary
  * retention of the class and its component metadata.
  */
-export declare const MAT_LIST: InjectionToken<MatList>;
+export declare const TAK_LIST: InjectionToken<TakList>;
 
 /**
- * Injection token that can be used to inject instances of `MatNavList`. It serves as
- * alternative token to the actual `MatNavList` class which could cause unnecessary
+ * Injection token that can be used to inject instances of `TakNavList`. It serves as
+ * alternative token to the actual `TakNavList` class which could cause unnecessary
  * retention of the class and its component metadata.
  */
-export declare const MAT_NAV_LIST: InjectionToken<MatNavList>;
+export declare const TAK_NAV_LIST: InjectionToken<TakNavList>;
 
 /** @docs-private */
-export declare const MAT_SELECTION_LIST_VALUE_ACCESSOR: any;
+export declare const TAK_SELECTION_LIST_VALUE_ACCESSOR: any;
 
-export declare class MatList
-  extends _MatListBase
+export declare class TakList
+  extends _TakListBase
   implements CanDisable, CanDisableRipple, OnChanges, OnDestroy
 {
   private _elementRef;
@@ -77,11 +77,11 @@ export declare class MatList
   _getListType(): 'list' | 'action-list' | null;
   ngOnChanges(): void;
   ngOnDestroy(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatList, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakList, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatList,
-    'mat-list, mat-action-list',
-    ['matList'],
+    TakList,
+    'tak-list, tak-action-list',
+    ['takList'],
     { disableRipple: 'disableRipple'; disabled: 'disabled' },
     {},
     never,
@@ -91,14 +91,14 @@ export declare class MatList
 }
 
 /**
- * Directive whose purpose is to add the mat- CSS styling to this selector.
+ * Directive whose purpose is to add the tak- CSS styling to this selector.
  * @docs-private
  */
-export declare class MatListAvatarCssMatStyler {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatListAvatarCssMatStyler, never>;
+export declare class TakListAvatarCssTakStyler {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakListAvatarCssTakStyler, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatListAvatarCssMatStyler,
-    '[mat-list-avatar], [matListAvatar]',
+    TakListAvatarCssTakStyler,
+    '[tak-list-avatar], [takListAvatar]',
     never,
     {},
     {},
@@ -109,7 +109,7 @@ export declare class MatListAvatarCssMatStyler {
 }
 
 /** @docs-private */
-declare const _MatListBase: _Constructor<CanDisable> &
+declare const _TakListBase: _Constructor<CanDisable> &
   _AbstractConstructor<CanDisable> &
   _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> & {
@@ -117,14 +117,14 @@ declare const _MatListBase: _Constructor<CanDisable> &
   };
 
 /**
- * Directive whose purpose is to add the mat- CSS styling to this selector.
+ * Directive whose purpose is to add the tak- CSS styling to this selector.
  * @docs-private
  */
-export declare class MatListIconCssMatStyler {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatListIconCssMatStyler, never>;
+export declare class TakListIconCssTakStyler {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakListIconCssTakStyler, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatListIconCssMatStyler,
-    '[mat-list-icon], [matListIcon]',
+    TakListIconCssTakStyler,
+    '[tak-list-icon], [takListIcon]',
     never,
     {},
     {},
@@ -135,22 +135,22 @@ export declare class MatListIconCssMatStyler {
 }
 
 /** An item within a Material Design list. */
-export declare class MatListItem
-  extends _MatListItemMixinBase
+export declare class TakListItem
+  extends _TakListItemMixinBase
   implements AfterContentInit, CanDisableRipple, OnDestroy
 {
   private _element;
   private _isInteractiveList;
   private _list?;
   private readonly _destroyed;
-  _lines: QueryList<MatLine>;
-  _avatar: MatListAvatarCssMatStyler;
-  _icon: MatListIconCssMatStyler;
+  _lines: QueryList<TakLine>;
+  _avatar: TakListAvatarCssTakStyler;
+  _icon: TakListIconCssTakStyler;
   constructor(
     _element: ElementRef<HTMLElement>,
     _changeDetectorRef: ChangeDetectorRef,
-    navList?: MatNavList,
-    list?: MatList
+    navList?: TakNavList,
+    list?: TakList
   );
   /** Whether the option is disabled. */
   get disabled(): boolean;
@@ -163,19 +163,19 @@ export declare class MatListItem
   /** Retrieves the DOM element of the component host. */
   _getHostElement(): HTMLElement;
   static ɵfac: i0.ɵɵFactoryDeclaration<
-    MatListItem,
+    TakListItem,
     [null, null, { optional: true }, { optional: true }]
   >;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatListItem,
-    'mat-list-item, a[mat-list-item], button[mat-list-item]',
-    ['matListItem'],
+    TakListItem,
+    'tak-list-item, a[tak-list-item], button[tak-list-item]',
+    ['takListItem'],
     { disableRipple: 'disableRipple'; disabled: 'disabled' },
     {},
     ['_avatar', '_icon', '_lines'],
     [
-      '[mat-list-avatar], [mat-list-icon], [matListAvatar], [matListIcon]',
-      '[mat-line], [matLine]',
+      '[tak-list-avatar], [tak-list-icon], [takListAvatar], [takListIcon]',
+      '[tak-line], [takLine]',
       '*',
     ],
     false
@@ -183,48 +183,48 @@ export declare class MatListItem
 }
 
 /** @docs-private */
-declare const _MatListItemMixinBase: _Constructor<CanDisableRipple> &
+declare const _TakListItemMixinBase: _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> & {
     new (): {};
   };
 
-export declare class MatListModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatListModule, never>;
+export declare class TakListModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakListModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatListModule,
+    TakListModule,
     [
-      typeof i1.MatList,
-      typeof i1.MatNavList,
-      typeof i1.MatListItem,
-      typeof i1.MatListAvatarCssMatStyler,
-      typeof i1.MatListIconCssMatStyler,
-      typeof i1.MatListSubheaderCssMatStyler,
-      typeof i2.MatSelectionList,
-      typeof i2.MatListOption,
+      typeof i1.TakList,
+      typeof i1.TakNavList,
+      typeof i1.TakListItem,
+      typeof i1.TakListAvatarCssTakStyler,
+      typeof i1.TakListIconCssTakStyler,
+      typeof i1.TakListSubheaderCssTakStyler,
+      typeof i2.TakSelectionList,
+      typeof i2.TakListOption,
     ],
     [
-      typeof i3.MatLineModule,
-      typeof i3.MatRippleModule,
-      typeof i3.MatCommonModule,
-      typeof i3.MatPseudoCheckboxModule,
+      typeof i3.TakLineModule,
+      typeof i3.TakRippleModule,
+      typeof i3.TakCommonModule,
+      typeof i3.TakPseudoCheckboxModule,
       typeof i4.CommonModule,
     ],
     [
-      typeof i1.MatList,
-      typeof i1.MatNavList,
-      typeof i1.MatListItem,
-      typeof i1.MatListAvatarCssMatStyler,
-      typeof i3.MatLineModule,
-      typeof i3.MatCommonModule,
-      typeof i1.MatListIconCssMatStyler,
-      typeof i1.MatListSubheaderCssMatStyler,
-      typeof i3.MatPseudoCheckboxModule,
-      typeof i2.MatSelectionList,
-      typeof i2.MatListOption,
-      typeof i5.MatDividerModule,
+      typeof i1.TakList,
+      typeof i1.TakNavList,
+      typeof i1.TakListItem,
+      typeof i1.TakListAvatarCssTakStyler,
+      typeof i3.TakLineModule,
+      typeof i3.TakCommonModule,
+      typeof i1.TakListIconCssTakStyler,
+      typeof i1.TakListSubheaderCssTakStyler,
+      typeof i3.TakPseudoCheckboxModule,
+      typeof i2.TakSelectionList,
+      typeof i2.TakListOption,
+      typeof i5.TakDividerModule,
     ]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatListModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakListModule>;
 }
 
 /**
@@ -232,20 +232,20 @@ export declare class MatListModule {
  * generate a checkbox and can put current item into the selectionModel of selection-list
  * if the current item is selected.
  */
-export declare class MatListOption
-  extends _MatListOptionBase
+export declare class TakListOption
+  extends _TakListOptionBase
   implements AfterContentInit, OnDestroy, OnInit, FocusableOption, CanDisableRipple
 {
   private _element;
   private _changeDetector;
   /** @docs-private */
-  selectionList: MatSelectionList;
+  selectionList: TakSelectionList;
   private _selected;
   private _disabled;
   private _hasFocus;
-  _avatar: MatListAvatarCssMatStyler;
-  _icon: MatListIconCssMatStyler;
-  _lines: QueryList<MatLine>;
+  _avatar: TakListAvatarCssTakStyler;
+  _icon: TakListIconCssTakStyler;
+  _lines: QueryList<TakLine>;
   /**
    * Emits when the selected state of the option has changed.
    * Use to facilitate two-data binding to the `selected` property.
@@ -255,7 +255,7 @@ export declare class MatListOption
   /** DOM element containing the item's text. */
   _text: ElementRef;
   /** Whether the label should appear before or after the checkbox. Defaults to 'after' */
-  checkboxPosition: MatListOptionCheckboxPosition;
+  checkboxPosition: TakListOptionCheckboxPosition;
   /** Theme color of the list option. This sets the color of the checkbox. */
   get color(): ThemePalette;
   set color(newValue: ThemePalette);
@@ -279,7 +279,7 @@ export declare class MatListOption
     _element: ElementRef<HTMLElement>,
     _changeDetector: ChangeDetectorRef,
     /** @docs-private */
-    selectionList: MatSelectionList
+    selectionList: TakSelectionList
   );
   ngOnInit(): void;
   ngAfterContentInit(): void;
@@ -308,11 +308,11 @@ export declare class MatListOption
    * changed.
    */
   _markForCheck(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatListOption, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakListOption, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatListOption,
-    'mat-list-option',
-    ['matListOption'],
+    TakListOption,
+    'tak-list-option',
+    ['takListOption'],
     {
       disableRipple: 'disableRipple';
       checkboxPosition: 'checkboxPosition';
@@ -323,12 +323,12 @@ export declare class MatListOption
     },
     { selectedChange: 'selectedChange' },
     ['_avatar', '_icon', '_lines'],
-    ['*', '[mat-list-avatar], [mat-list-icon], [matListAvatar], [matListIcon]'],
+    ['*', '[tak-list-avatar], [tak-list-icon], [takListAvatar], [takListIcon]'],
     false
   >;
 }
 
-declare const _MatListOptionBase: _Constructor<CanDisableRipple> &
+declare const _TakListOptionBase: _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> & {
     new (): {};
   };
@@ -337,17 +337,17 @@ declare const _MatListOptionBase: _Constructor<CanDisableRipple> &
  * Type describing possible positions of a checkbox in a list option
  * with respect to the list item's text.
  */
-export declare type MatListOptionCheckboxPosition = 'before' | 'after';
+export declare type TakListOptionCheckboxPosition = 'before' | 'after';
 
 /**
- * Directive whose purpose is to add the mat- CSS styling to this selector.
+ * Directive whose purpose is to add the tak- CSS styling to this selector.
  * @docs-private
  */
-export declare class MatListSubheaderCssMatStyler {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatListSubheaderCssMatStyler, never>;
+export declare class TakListSubheaderCssTakStyler {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakListSubheaderCssTakStyler, never>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatListSubheaderCssMatStyler,
-    '[mat-subheader], [matSubheader]',
+    TakListSubheaderCssTakStyler,
+    '[tak-subheader], [takSubheader]',
     never,
     {},
     {},
@@ -357,19 +357,19 @@ export declare class MatListSubheaderCssMatStyler {
   >;
 }
 
-export declare class MatNavList
-  extends _MatListBase
+export declare class TakNavList
+  extends _TakListBase
   implements CanDisable, CanDisableRipple, OnChanges, OnDestroy
 {
   /** Emits when the state of the list changes. */
   readonly _stateChanges: Subject<void>;
   ngOnChanges(): void;
   ngOnDestroy(): void;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatNavList, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakNavList, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatNavList,
-    'mat-nav-list',
-    ['matNavList'],
+    TakNavList,
+    'tak-nav-list',
+    ['takNavList'],
     { disableRipple: 'disableRipple'; disabled: 'disabled' },
     {},
     never,
@@ -381,8 +381,8 @@ export declare class MatNavList
 /**
  * Material Design list component where each item is a selectable option. Behaves as a listbox.
  */
-export declare class MatSelectionList
-  extends _MatSelectionListBase
+export declare class TakSelectionList
+  extends _TakSelectionListBase
   implements CanDisableRipple, AfterContentInit, ControlValueAccessor, OnDestroy, OnChanges
 {
   private _element;
@@ -391,11 +391,11 @@ export declare class MatSelectionList
   private _multiple;
   private _contentInitialized;
   /** The FocusKeyManager which handles focus. */
-  _keyManager: FocusKeyManager<MatListOption>;
+  _keyManager: FocusKeyManager<TakListOption>;
   /** The option components contained within this selection-list. */
-  options: QueryList<MatListOption>;
+  options: QueryList<TakListOption>;
   /** Emits a change event whenever the selected state of an option changes. */
-  readonly selectionChange: EventEmitter<MatSelectionListChange>;
+  readonly selectionChange: EventEmitter<TakSelectionListChange>;
   /** Theme color of the selection list. This sets the checkbox color for all list options. */
   color: ThemePalette;
   /**
@@ -412,7 +412,7 @@ export declare class MatSelectionList
   get multiple(): boolean;
   set multiple(value: BooleanInput);
   /** The currently selected options. */
-  selectedOptions: SelectionModel<MatListOption>;
+  selectedOptions: SelectionModel<TakListOption>;
   /** The tabindex of the selection list. */
   _tabIndex: number;
   /** View to model callback that should be called whenever the selected options change. */
@@ -436,22 +436,22 @@ export declare class MatSelectionList
   /** Focuses the selection list. */
   focus(options?: FocusOptions): void;
   /** Selects all of the options. Returns the options that changed as a result. */
-  selectAll(): MatListOption[];
+  selectAll(): TakListOption[];
   /** Deselects all of the options. Returns the options that changed as a result. */
-  deselectAll(): MatListOption[];
+  deselectAll(): TakListOption[];
   /** Sets the focused option of the selection-list. */
-  _setFocusedOption(option: MatListOption): void;
+  _setFocusedOption(option: TakListOption): void;
   /**
    * Removes an option from the selection list and updates the active item.
    * @returns Currently-active item.
    */
-  _removeOptionFromList(option: MatListOption): MatListOption | null;
+  _removeOptionFromList(option: TakListOption): TakListOption | null;
   /** Passes relevant key presses to our key manager. */
   _keydown(event: KeyboardEvent): void;
   /** Reports a value change to the ControlValueAccessor */
   _reportValueChange(): void;
   /** Emits a change event if the selected state of an option changed. */
-  _emitChangeEvent(options: MatListOption[]): void;
+  _emitChangeEvent(options: TakListOption[]): void;
   /** Implemented as part of ControlValueAccessor. */
   writeValue(values: string[]): void;
   /** Implemented as a part of ControlValueAccessor. */
@@ -489,11 +489,11 @@ export declare class MatSelectionList
   private _allowFocusEscape;
   /** Updates the tabindex based upon if the selection list is empty. */
   private _updateTabIndex;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatSelectionList, never>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakSelectionList, never>;
   static ɵcmp: i0.ɵɵComponentDeclaration<
-    MatSelectionList,
-    'mat-selection-list',
-    ['matSelectionList'],
+    TakSelectionList,
+    'tak-selection-list',
+    ['takSelectionList'],
     {
       disableRipple: 'disableRipple';
       color: 'color';
@@ -508,22 +508,22 @@ export declare class MatSelectionList
   >;
 }
 
-declare const _MatSelectionListBase: _Constructor<CanDisableRipple> &
+declare const _TakSelectionListBase: _Constructor<CanDisableRipple> &
   _AbstractConstructor<CanDisableRipple> & {
     new (): {};
   };
 
 /** Change event that is being fired whenever the selected state of an option changes. */
-export declare class MatSelectionListChange {
+export declare class TakSelectionListChange {
   /** Reference to the selection list that emitted the event. */
-  source: MatSelectionList;
+  source: TakSelectionList;
   /** Reference to the options that have been changed. */
-  options: MatListOption[];
+  options: TakListOption[];
   constructor(
     /** Reference to the selection list that emitted the event. */
-    source: MatSelectionList,
+    source: TakSelectionList,
     /** Reference to the options that have been changed. */
-    options: MatListOption[]
+    options: TakListOption[]
   );
 }
 

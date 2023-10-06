@@ -14,11 +14,11 @@ import { Renderer2 } from '@angular/core';
 import { ThemePalette } from '@takkion/ng-material/core';
 
 declare namespace i1 {
-  export { MatBadgePosition, MatBadgeSize, MatBadge };
+  export { TakBadgePosition, TakBadgeSize, TakBadge };
 }
 
 /** Directive to display a text badge. */
-export declare class MatBadge extends _MatBadgeBase implements OnInit, OnDestroy, CanDisable {
+export declare class TakBadge extends _TakBadgeBase implements OnInit, OnDestroy, CanDisable {
   private _ngZone;
   private _elementRef;
   private _ariaDescriber;
@@ -36,7 +36,7 @@ export declare class MatBadge extends _MatBadgeBase implements OnInit, OnDestroy
    * Position the badge should reside.
    * Accepts any combination of 'above'|'below' and 'before'|'after'
    */
-  position: MatBadgePosition;
+  position: TakBadgePosition;
   /** The content for the badge */
   get content(): string | number | undefined | null;
   set content(newContent: string | number | undefined | null);
@@ -46,7 +46,7 @@ export declare class MatBadge extends _MatBadgeBase implements OnInit, OnDestroy
   set description(newDescription: string);
   private _description;
   /** Size of the badge. Can be 'small', 'medium', or 'large'. */
-  size: MatBadgeSize;
+  size: TakBadgeSize;
   /** Whether the badge is hidden. */
   get hidden(): boolean;
   set hidden(val: BooleanInput);
@@ -85,20 +85,20 @@ export declare class MatBadge extends _MatBadgeBase implements OnInit, OnDestroy
   private _setColor;
   /** Clears any existing badges that might be left over from server-side rendering. */
   private _clearExistingBadges;
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatBadge, [null, null, null, null, { optional: true }]>;
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakBadge, [null, null, null, null, { optional: true }]>;
   static ɵdir: i0.ɵɵDirectiveDeclaration<
-    MatBadge,
-    '[matBadge]',
+    TakBadge,
+    '[takBadge]',
     never,
     {
-      disabled: 'matBadgeDisabled';
-      color: 'matBadgeColor';
-      overlap: 'matBadgeOverlap';
-      position: 'matBadgePosition';
-      content: 'matBadge';
-      description: 'matBadgeDescription';
-      size: 'matBadgeSize';
-      hidden: 'matBadgeHidden';
+      disabled: 'takBadgeDisabled';
+      color: 'takBadgeColor';
+      overlap: 'takBadgeOverlap';
+      position: 'takBadgePosition';
+      content: 'takBadge';
+      description: 'takBadgeDescription';
+      size: 'takBadgeSize';
+      hidden: 'takBadgeHidden';
     },
     {},
     never,
@@ -108,24 +108,24 @@ export declare class MatBadge extends _MatBadgeBase implements OnInit, OnDestroy
 }
 
 /** @docs-private */
-declare const _MatBadgeBase: _Constructor<CanDisable> &
+declare const _TakBadgeBase: _Constructor<CanDisable> &
   _AbstractConstructor<CanDisable> & {
     new (): {};
   };
 
-export declare class MatBadgeModule {
-  static ɵfac: i0.ɵɵFactoryDeclaration<MatBadgeModule, never>;
+export declare class TakBadgeModule {
+  static ɵfac: i0.ɵɵFactoryDeclaration<TakBadgeModule, never>;
   static ɵmod: i0.ɵɵNgModuleDeclaration<
-    MatBadgeModule,
-    [typeof i1.MatBadge],
-    [typeof i2.A11yModule, typeof i3.MatCommonModule],
-    [typeof i1.MatBadge, typeof i3.MatCommonModule]
+    TakBadgeModule,
+    [typeof i1.TakBadge],
+    [typeof i2.A11yModule, typeof i3.TakCommonModule],
+    [typeof i1.TakBadge, typeof i3.TakCommonModule]
   >;
-  static ɵinj: i0.ɵɵInjectorDeclaration<MatBadgeModule>;
+  static ɵinj: i0.ɵɵInjectorDeclaration<TakBadgeModule>;
 }
 
-/** Allowed position options for matBadgePosition */
-export declare type MatBadgePosition =
+/** Allowed position options for takBadgePosition */
+export declare type TakBadgePosition =
   | 'above after'
   | 'above before'
   | 'below before'
@@ -135,7 +135,7 @@ export declare type MatBadgePosition =
   | 'above'
   | 'below';
 
-/** Allowed size options for matBadgeSize */
-export declare type MatBadgeSize = 'small' | 'medium' | 'large';
+/** Allowed size options for takBadgeSize */
+export declare type TakBadgeSize = 'small' | 'medium' | 'large';
 
 export {};

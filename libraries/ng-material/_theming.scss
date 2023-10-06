@@ -1,6 +1,6 @@
 // Forwards all public API mixins so they can be imported from a single entry point.
 // Note that we have to forward the `.import` files for backwards-compatibility with
-// projects that don't use Sass modules and include the `mat-`-prefixed mixins.
+// projects that don't use Sass modules and include the `tak-`-prefixed mixins.
 
 @forward '../cdk/a11y/index.import';
 @forward '../cdk/overlay/index.import';

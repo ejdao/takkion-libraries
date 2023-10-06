@@ -9,7 +9,7 @@
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-bottom-sheet-container {
+  .tak-bottom-sheet-container {
     @include private.private-theme-elevation(16, $config);
     background: theming.get-color-from-palette($background, dialog);
     color: theming.get-color-from-palette($foreground, text);
@@ -20,7 +20,7 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-bottom-sheet-container {
+  .tak-bottom-sheet-container {
     @include typography-utils.typography-level($config, body-1);
   }
 }
@@ -30,7 +30,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-bottom-sheet') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-bottom-sheet') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

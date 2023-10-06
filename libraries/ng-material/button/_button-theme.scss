@@ -7,26 +7,26 @@
 
 $_ripple-opacity: 0.1;
 
-// Applies a focus style to an mat-button element for each of the supported palettes.
+// Applies a focus style to an tak-button element for each of the supported palettes.
 @mixin _focus-overlay-color($config-or-theme) {
   $config: theming.get-color-config($config-or-theme);
   $primary: map.get($config, primary);
   $accent: map.get($config, accent);
   $warn: map.get($config, warn);
 
-  &.mat-primary .mat-button-focus-overlay {
+  &.tak-primary .tak-button-focus-overlay {
     background-color: theming.get-color-from-palette($primary);
   }
 
-  &.mat-accent .mat-button-focus-overlay {
+  &.tak-accent .tak-button-focus-overlay {
     background-color: theming.get-color-from-palette($accent);
   }
 
-  &.mat-warn .mat-button-focus-overlay {
+  &.tak-warn .tak-button-focus-overlay {
     background-color: theming.get-color-from-palette($warn);
   }
 
-  &.mat-button-disabled .mat-button-focus-overlay {
+  &.tak-button-disabled .tak-button-focus-overlay {
     background-color: transparent;
   }
 }
@@ -47,20 +47,20 @@ $_ripple-opacity: 0.1;
   $accent: map.get($theme, accent);
   $warn: map.get($theme, warn);
 
-  &.mat-primary .mat-ripple-element {
+  &.tak-primary .tak-ripple-element {
     @include _ripple-background($primary, $hue, $opacity);
   }
 
-  &.mat-accent .mat-ripple-element {
+  &.tak-accent .tak-ripple-element {
     @include _ripple-background($accent, $hue, $opacity);
   }
 
-  &.mat-warn .mat-ripple-element {
+  &.tak-warn .tak-ripple-element {
     @include _ripple-background($warn, $hue, $opacity);
   }
 }
 
-// Applies a property to an mat-button element for each of the supported palettes.
+// Applies a property to an tak-button element for each of the supported palettes.
 @mixin _theme-property($theme, $property, $hue) {
   $primary: map.get($theme, primary);
   $accent: map.get($theme, accent);
@@ -68,21 +68,21 @@ $_ripple-opacity: 0.1;
   $background: map.get($theme, background);
   $foreground: map.get($theme, foreground);
 
-  &.mat-primary {
+  &.tak-primary {
     #{$property}: theming.get-color-from-palette($primary, $hue);
   }
-  &.mat-accent {
+  &.tak-accent {
     #{$property}: theming.get-color-from-palette($accent, $hue);
   }
-  &.mat-warn {
+  &.tak-warn {
     #{$property}: theming.get-color-from-palette($warn, $hue);
   }
 
-  &.mat-primary,
-  &.mat-accent,
-  &.mat-warn,
-  &.mat-button-disabled {
-    &.mat-button-disabled {
+  &.tak-primary,
+  &.tak-accent,
+  &.tak-warn,
+  &.tak-button-disabled {
+    &.tak-button-disabled {
       $palette: if($property == 'color', $foreground, $background);
       #{$property}: theming.get-color-from-palette($palette, disabled-button);
     }
@@ -97,9 +97,9 @@ $_ripple-opacity: 0.1;
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-button,
-  .mat-icon-button,
-  .mat-stroked-button {
+  .tak-button,
+  .tak-icon-button,
+  .tak-stroked-button {
     // Buttons without a background color should inherit the font color. This is necessary to
     // ensure that the button is readable on custom background colors. It's wrong to always assume
     // that those buttons are always placed inside of containers with the default background
@@ -113,26 +113,26 @@ $_ripple-opacity: 0.1;
     // Setup the ripple color to be based on the text color. This ensures that the ripples
     // are matching with the current theme palette and are in contrast to the background color
     // (e.g in themed toolbars).
-    .mat-ripple-element {
+    .tak-ripple-element {
       opacity: $_ripple-opacity;
       background-color: currentColor;
     }
   }
 
-  .mat-button-focus-overlay {
+  .tak-button-focus-overlay {
     background: map.get($foreground, base);
   }
 
   // Note: this needs a bit extra specificity, because we're not guaranteed the inclusion
   // order of the theme styles and the button reset may end up resetting this as well.
-  .mat-stroked-button:not(.mat-button-disabled) {
+  .tak-stroked-button:not(.tak-button-disabled) {
     border-color: theming.get-color-from-palette($foreground, divider);
   }
 
-  .mat-flat-button,
-  .mat-raised-button,
-  .mat-fab,
-  .mat-mini-fab {
+  .tak-flat-button,
+  .tak-raised-button,
+  .tak-fab,
+  .tak-mini-fab {
     // Default font and background color when not using any color palette.
     color: theming.get-color-from-palette($foreground, text);
     background-color: theming.get-color-from-palette($background, raised-button);
@@ -142,32 +142,32 @@ $_ripple-opacity: 0.1;
     @include _ripple-color($config, default-contrast);
   }
 
-  .mat-stroked-button,
-  .mat-flat-button {
+  .tak-stroked-button,
+  .tak-flat-button {
     @include private.private-theme-overridable-elevation(0, $config);
   }
 
-  .mat-raised-button {
+  .tak-raised-button {
     @include private.private-theme-overridable-elevation(2, $config);
 
-    &:not(.mat-button-disabled):active {
+    &:not(.tak-button-disabled):active {
       @include private.private-theme-overridable-elevation(8, $config);
     }
 
-    &.mat-button-disabled {
+    &.tak-button-disabled {
       @include private.private-theme-overridable-elevation(0, $config);
     }
   }
 
-  .mat-fab,
-  .mat-mini-fab {
+  .tak-fab,
+  .tak-mini-fab {
     @include private.private-theme-overridable-elevation(6, $config);
 
-    &:not(.mat-button-disabled):active {
+    &:not(.tak-button-disabled):active {
       @include private.private-theme-overridable-elevation(12, $config);
     }
 
-    &.mat-button-disabled {
+    &.tak-button-disabled {
       @include private.private-theme-overridable-elevation(0, $config);
     }
   }
@@ -177,13 +177,13 @@ $_ripple-opacity: 0.1;
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-button,
-  .mat-raised-button,
-  .mat-icon-button,
-  .mat-stroked-button,
-  .mat-flat-button,
-  .mat-fab,
-  .mat-mini-fab {
+  .tak-button,
+  .tak-raised-button,
+  .tak-icon-button,
+  .tak-stroked-button,
+  .tak-flat-button,
+  .tak-fab,
+  .tak-mini-fab {
     font: {
       family: typography-utils.font-family($config, button);
       size: typography-utils.font-size($config, button);
@@ -197,7 +197,7 @@ $_ripple-opacity: 0.1;
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-button') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-button') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);

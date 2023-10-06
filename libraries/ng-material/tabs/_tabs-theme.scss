@@ -12,45 +12,45 @@
   $foreground: map.get($config, foreground);
   $header-border: 1px solid theming.get-color-from-palette($foreground, divider);
 
-  .mat-tab-nav-bar,
-  .mat-tab-header {
+  .tak-tab-nav-bar,
+  .tak-tab-header {
     border-bottom: $header-border;
   }
 
-  .mat-tab-group-inverted-header {
-    .mat-tab-nav-bar,
-    .mat-tab-header {
+  .tak-tab-group-inverted-header {
+    .tak-tab-nav-bar,
+    .tak-tab-header {
       border-top: $header-border;
       border-bottom: none;
     }
   }
 
-  .mat-tab-label,
-  .mat-tab-link {
+  .tak-tab-label,
+  .tak-tab-link {
     color: theming.get-color-from-palette($foreground, text);
 
-    &.mat-tab-disabled {
+    &.tak-tab-disabled {
       color: theming.get-color-from-palette($foreground, disabled-text);
     }
   }
 
-  .mat-tab-header-pagination-chevron {
+  .tak-tab-header-pagination-chevron {
     border-color: theming.get-color-from-palette($foreground, text);
   }
 
-  .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+  .tak-tab-header-pagination-disabled .tak-tab-header-pagination-chevron {
     border-color: theming.get-color-from-palette($foreground, disabled-text);
   }
 
   // Remove header border when there is a background color
-  .mat-tab-group[class*='mat-background-'] > .mat-tab-header,
-  .mat-tab-nav-bar[class*='mat-background-'] {
+  .tak-tab-group[class*='tak-background-'] > .tak-tab-header,
+  .tak-tab-nav-bar[class*='tak-background-'] {
     border-bottom: none;
     border-top: none;
   }
 
-  .mat-tab-group,
-  .mat-tab-nav-bar {
+  .tak-tab-group,
+  .tak-tab-nav-bar {
     $theme-colors: (
       primary: $primary,
       accent: $accent,
@@ -59,14 +59,14 @@
 
     @each $name, $color in $theme-colors {
       // Set the foreground color of the tabs
-      &.mat-#{$name} {
+      &.tak-#{$name} {
         @include _label-focus-color($color);
         @include _ink-bar-color($color);
 
         // Override ink bar when background color is the same
-        &.mat-background-#{$name} {
-          > .mat-tab-header,
-          > .mat-tab-link-container {
+        &.tak-background-#{$name} {
+          > .tak-tab-header,
+          > .tak-tab-link-container {
             @include _ink-bar-color($color, default-contrast);
           }
         }
@@ -75,7 +75,7 @@
 
     @each $name, $color in $theme-colors {
       // Set background color of the tabs and override focus color
-      &.mat-background-#{$name} {
+      &.tak-background-#{$name} {
         @include _label-focus-color($color);
         @include _tabs-background($color);
       }
@@ -84,17 +84,17 @@
 }
 
 @mixin _ink-bar-color($color, $hue: default) {
-  .mat-ink-bar {
+  .tak-ink-bar {
     background-color: theming.get-color-from-palette($color, $hue);
   }
 }
 
 @mixin _label-focus-color($tab-focus-color) {
-  .mat-tab-label,
-  .mat-tab-link {
+  .tak-tab-label,
+  .tak-tab-link {
     &.cdk-keyboard-focused,
     &.cdk-program-focused {
-      &:not(.mat-tab-disabled) {
+      &:not(.tak-tab-disabled) {
         background-color: theming.get-color-from-palette($tab-focus-color, lighter, 0.3);
       }
     }
@@ -106,32 +106,32 @@
   // that the styles don't apply to any nested tab groups.
 
   // Set background color for the tab group
-  > .mat-tab-header,
-  > .mat-tab-link-container,
-  > .mat-tab-header-pagination {
+  > .tak-tab-header,
+  > .tak-tab-link-container,
+  > .tak-tab-header-pagination {
     background-color: theming.get-color-from-palette($background-color);
   }
 
   // Set labels to contrast against background
-  > .mat-tab-header .mat-tab-label,
-  > .mat-tab-link-container .mat-tab-link {
+  > .tak-tab-header .tak-tab-label,
+  > .tak-tab-link-container .tak-tab-link {
     color: theming.get-color-from-palette($background-color, default-contrast);
 
-    &.mat-tab-disabled {
+    &.tak-tab-disabled {
       color: theming.get-color-from-palette($background-color, default-contrast, 0.4);
     }
   }
 
   // Set pagination chevrons to contrast background
-  > .mat-tab-header .mat-tab-header-pagination-chevron,
-  > .mat-tab-header-pagination .mat-tab-header-pagination-chevron,
-  > .mat-tab-link-container .mat-focus-indicator::before,
-  > .mat-tab-header .mat-focus-indicator::before {
+  > .tak-tab-header .tak-tab-header-pagination-chevron,
+  > .tak-tab-header-pagination .tak-tab-header-pagination-chevron,
+  > .tak-tab-link-container .tak-focus-indicator::before,
+  > .tak-tab-header .tak-focus-indicator::before {
     border-color: theming.get-color-from-palette($background-color, default-contrast);
   }
 
-  > .mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,
-  > .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+  > .tak-tab-header .tak-tab-header-pagination-disabled .tak-tab-header-pagination-chevron,
+  > .tak-tab-header-pagination-disabled .tak-tab-header-pagination-chevron {
     // Set the color opacity via `opacity`, rather than `rgba`, because it may be a CSS variable.
     border-color: theming.get-color-from-palette($background-color, default-contrast, 1);
     opacity: 0.4;
@@ -139,9 +139,9 @@
 
   // Set ripples color to be the contrast color of the new background. Otherwise the ripple
   // color will be based on the app background color.
-  > .mat-tab-header .mat-ripple-element,
-  > .mat-tab-link-container .mat-ripple-element,
-  > .mat-tab-header-pagination .mat-ripple-element {
+  > .tak-tab-header .tak-ripple-element,
+  > .tak-tab-link-container .tak-ripple-element,
+  > .tak-tab-header-pagination .tak-ripple-element {
     // Set the color opacity via `opacity`, rather than `rgba`, because it may be a CSS variable.
     background-color: theming.get-color-from-palette($background-color, default-contrast, 1);
     opacity: 0.12;
@@ -152,12 +152,12 @@
   $config: typography.private-typography-to-2014-config(
     theming.get-typography-config($config-or-theme)
   );
-  .mat-tab-group {
+  .tak-tab-group {
     font-family: typography-utils.font-family($config);
   }
 
-  .mat-tab-label,
-  .mat-tab-link {
+  .tak-tab-label,
+  .tak-tab-link {
     font: {
       family: typography-utils.font-family($config, button);
       size: typography-utils.font-size($config, button);
@@ -171,7 +171,7 @@
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
-  @include theming.private-check-duplicate-theme-styles($theme, 'mat-tabs') {
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-tabs') {
     $color: theming.get-color-config($theme);
     $density: theming.get-density-config($theme);
     $typography: theming.get-typography-config($theme);
