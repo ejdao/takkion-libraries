@@ -3,7 +3,6 @@
 @use '../core/typography/typography';
 @use '../core/typography/typography-utils';
 
-
 @mixin color($config-or-theme) {
   $config: theming.get-color-config($config-or-theme);
   $is-dark-theme: map.get($config, is-dark);
@@ -12,7 +11,6 @@
   $warn: map.get($config, warn);
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
-
 
   // The color of the checkbox's checkmark / mixedmark.
   $checkbox-mark-color: theming.get-color-from-palette($background, background);
@@ -42,7 +40,8 @@
     background-color: $checkbox-mark-color;
   }
 
-  .mat-checkbox-indeterminate, .mat-checkbox-checked {
+  .mat-checkbox-indeterminate,
+  .mat-checkbox-checked {
     &.mat-primary .mat-checkbox-background {
       background-color: theming.get-color-from-palette($primary);
     }
@@ -99,7 +98,8 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-checkbox {
     font-family: typography-utils.font-family($config);
   }
@@ -110,7 +110,8 @@
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

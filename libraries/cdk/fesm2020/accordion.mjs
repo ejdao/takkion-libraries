@@ -1,7 +1,7 @@
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, Input, EventEmitter, Optional, Inject, SkipSelf, Output, NgModule } from '@angular/core';
-import * as i1 from '@angular/cdk/collections';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import * as i1 from '@takkion/ng-cdk/collections';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Subject, Subscription } from 'rxjs';
 
 /**

@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '@angular/cdk';
+@use '@takkion/ng-cdk';
 @use '../style/layout-common';
 
 // Private sass variables that will be used as reference throughout component stylesheets.
@@ -18,22 +18,10 @@ $default-border-radius: 4px;
       box-sizing: border-box;
       pointer-events: none;
       display: var(--#{$prefix}-focus-indicator-display, none); // Hide the indicator by default.
-      border: var(
-          --#{$prefix}-focus-indicator-border-width,
-          #{$default-border-width}
-        )
-        var(
-          --#{$prefix}-focus-indicator-border-style,
-          #{$default-border-style}
-        )
-        var(
-          --#{$prefix}-focus-indicator-border-color,
-          #{$default-border-color}
-        );
-      border-radius: var(
-        --#{$prefix}-focus-indicator-border-radius,
-        #{$default-border-radius}
-      );
+      border: var(--#{$prefix}-focus-indicator-border-width, #{$default-border-width})
+        var(--#{$prefix}-focus-indicator-border-style, #{$default-border-style})
+        var(--#{$prefix}-focus-indicator-border-color, #{$default-border-color});
+      border-radius: var(--#{$prefix}-focus-indicator-border-radius, #{$default-border-radius});
     }
 
     // By default, render the focus indicator when the focus indicator host element takes focus.
@@ -45,7 +33,12 @@ $default-border-radius: 4px;
 
   // Enable the indicator in high contrast mode.
   @include cdk.high-contrast(active, off) {
-    @include customize-focus-indicators((display: block), $prefix);
+    @include customize-focus-indicators(
+      (
+        display: block,
+      ),
+      $prefix
+    );
   }
 }
 
@@ -75,8 +68,7 @@ $default-border-radius: 4px;
 
   @if (&) {
     @include _output-variables($map);
-  }
-  @else {
+  } @else {
     // We use `html` here instead of `:root`, because the
     // latter causes some issues with internal tooling.
     html {

@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MiscClassInheritanceMigration = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 const ts = require("typescript");
 /**
  * Migration that checks for classes that extend Angular Material classes which

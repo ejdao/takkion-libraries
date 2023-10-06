@@ -17,7 +17,8 @@
   // stack up with the background of a button toggle. This can cause the border
   // of a selected toggle to look different from an deselected one. We use a solid
   // color to ensure that the border always stays the same.
-  $divider-color: if(type-of($theme-divider-color) == color,
+  $divider-color: if(
+    type-of($theme-divider-color) == color,
     theming.private-rgba-to-hex($theme-divider-color, map.get($background, card)),
     $theme-divider-color
   );
@@ -98,7 +99,8 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-button-toggle {
     font-family: typography-utils.font-family($config);
   }
@@ -107,7 +109,10 @@
 @mixin density($config-or-theme) {
   $density-scale: theming.get-density-config($config-or-theme);
   $standard-height: compatibility.private-density-prop-value(
-      button-toggle-variables.$standard-density-config, $density-scale, height);
+    button-toggle-variables.$standard-density-config,
+    $density-scale,
+    height
+  );
 
   @include compatibility.private-density-legacy-compatibility() {
     .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {

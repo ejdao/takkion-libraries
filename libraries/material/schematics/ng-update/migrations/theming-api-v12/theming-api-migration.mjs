@@ -9,7 +9,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ThemingApiMigration = void 0;
 const core_1 = require("@angular-devkit/core");
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 const migration_1 = require("./migration");
 /** Migration that switches all Sass files using Material theming APIs to `@use`. */
 class ThemingApiMigration extends schematics_1.DevkitMigration {
@@ -21,7 +21,7 @@ class ThemingApiMigration extends schematics_1.DevkitMigration {
         if ((0, core_1.extname)(stylesheet.filePath) === '.scss') {
             const content = stylesheet.content;
             const migratedContent = content
-                ? (0, migration_1.migrateFileContent)(content, '@angular/material/', '@angular/cdk/', '@angular/material', '@angular/cdk', undefined, /material\/prebuilt-themes|cdk\/.*-prebuilt/)
+                ? (0, migration_1.migrateFileContent)(content, '@takkion/ng-material/', '@takkion/ng-cdk/', '@angular/material', '@takkion/ng-cdk', undefined, /material\/prebuilt-themes|cdk\/.*-prebuilt/)
                 : content;
             if (migratedContent && migratedContent !== content) {
                 this.fileSystem

@@ -1,19 +1,19 @@
-import * as i1 from '@angular/cdk/scrolling';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-export { CdkScrollable, ScrollDispatcher, ViewportRuler } from '@angular/cdk/scrolling';
+import * as i1 from '@takkion/ng-cdk/scrolling';
+import { ScrollingModule } from '@takkion/ng-cdk/scrolling';
+export { CdkScrollable, ScrollDispatcher, ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import * as i6 from '@angular/common';
 import { DOCUMENT } from '@angular/common';
 import * as i0 from '@angular/core';
 import { Injectable, Inject, Optional, ElementRef, ApplicationRef, ANIMATION_MODULE_TYPE, InjectionToken, Directive, EventEmitter, Input, Output, NgModule } from '@angular/core';
-import { coerceCssPixelValue, coerceArray, coerceBooleanProperty } from '@angular/cdk/coercion';
-import * as i1$1 from '@angular/cdk/platform';
-import { supportsScrollBehavior, _getEventTarget, _isTestEnvironment } from '@angular/cdk/platform';
-import * as i5 from '@angular/cdk/bidi';
-import { BidiModule } from '@angular/cdk/bidi';
-import { DomPortalOutlet, TemplatePortal, PortalModule } from '@angular/cdk/portal';
+import { coerceCssPixelValue, coerceArray, coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import * as i1$1 from '@takkion/ng-cdk/platform';
+import { supportsScrollBehavior, _getEventTarget, _isTestEnvironment } from '@takkion/ng-cdk/platform';
+import * as i5 from '@takkion/ng-cdk/bidi';
+import { BidiModule } from '@takkion/ng-cdk/bidi';
+import { DomPortalOutlet, TemplatePortal, PortalModule } from '@takkion/ng-cdk/portal';
 import { Subject, Subscription, merge } from 'rxjs';
 import { take, takeUntil, takeWhile } from 'rxjs/operators';
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
+import { ESCAPE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
 
 /**
  * @license

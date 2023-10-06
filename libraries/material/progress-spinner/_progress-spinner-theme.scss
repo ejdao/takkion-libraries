@@ -7,7 +7,8 @@
   $accent: map.get($config, accent);
   $warn: map.get($config, warn);
 
-  .mat-progress-spinner, .mat-spinner {
+  .mat-progress-spinner,
+  .mat-spinner {
     circle {
       stroke: theming.get-color-from-palette($primary);
     }
@@ -22,9 +23,11 @@
   }
 }
 
-@mixin typography($config-or-theme) {}
+@mixin typography($config-or-theme) {
+}
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

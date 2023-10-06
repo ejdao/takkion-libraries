@@ -1,7 +1,7 @@
-import { ContentContainerComponentHarness, TestKey, HarnessPredicate } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, TestKey, HarnessPredicate } from '@takkion/ng-cdk/testing';
 import { __decorate, __metadata } from 'tslib';
 import { Directive, Component, ChangeDetectionStrategy, ViewEncapsulation, NgModule } from '@angular/core';
-import { _MatDialogBase, MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { _MatDialogBase, MatDialog, MatDialogModule } from '@takkion/ng-material/dialog';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 /**

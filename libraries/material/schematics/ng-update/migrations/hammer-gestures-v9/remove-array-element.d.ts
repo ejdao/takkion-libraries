@@ -15,4 +15,7 @@ import * as ts from 'typescript';
  */
 export declare function getParentSyntaxList(node: ts.Node): ts.SyntaxList | null;
 /** Removes a given element from its parent array literal expression. */
-export declare function removeElementFromArrayExpression(element: ts.Node, recorder: UpdateRecorder): void;
+export declare function removeElementFromArrayExpression(
+  element: ts.Node,
+  recorder: UpdateRecorder
+): void;

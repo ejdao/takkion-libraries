@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, parallel } from '@angular/cdk/testing';
+import { ComponentHarness, parallel } from '@takkion/ng-cdk/testing';
 import { MatCalendarHarness } from './calendar-harness';
 /** Base class for harnesses that can trigger a calendar. */
 export class DatepickerTriggerHarnessBase extends ComponentHarness {

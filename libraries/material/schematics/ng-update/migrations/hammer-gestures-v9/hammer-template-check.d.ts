@@ -11,6 +11,6 @@
  * match on a component output, but only on the Hammer plugin.
  */
 export declare function isHammerJsUsedInTemplate(html: string): {
-    standardEvents: boolean;
-    customEvents: boolean;
+  standardEvents: boolean;
+  customEvents: boolean;
 };

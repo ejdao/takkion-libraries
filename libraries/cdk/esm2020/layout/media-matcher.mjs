@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Injectable } from '@angular/core';
-import { Platform } from '@angular/cdk/platform';
+import { Platform } from '@takkion/ng-cdk/platform';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /** Global registry for all dynamically-created, injected media queries. */
 const mediaQueriesForWebkitCompatibility = new Set();
 /** Style tag that holds all of the dynamically-created media queries. */

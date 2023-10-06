@@ -7,11 +7,11 @@
  */
 import { VersionChanges } from '../../update-tool/version-changes';
 export interface MethodCallUpgradeData {
-    className: string;
-    method: string;
-    invalidArgCounts: {
-        count: number;
-        message: string;
-    }[];
+  className: string;
+  method: string;
+  invalidArgCounts: {
+    count: number;
+    message: string;
+  }[];
 }
 export declare const methodCallChecks: VersionChanges<MethodCallUpgradeData>;

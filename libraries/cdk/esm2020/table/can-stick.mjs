@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 /**
  * Mixin to provide a directive with a function that checks if the sticky input has been
  * changed since the last time the function was called. Essentially adds a dirty-check to the

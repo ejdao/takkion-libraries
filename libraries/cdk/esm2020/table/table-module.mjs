@@ -10,7 +10,7 @@ import { HeaderRowOutlet, DataRowOutlet, CdkTable, CdkRecycleRows, FooterRowOutl
 import { CdkCellOutlet, CdkFooterRow, CdkFooterRowDef, CdkHeaderRow, CdkHeaderRowDef, CdkRow, CdkRowDef, CdkNoDataRow, } from './row';
 import { CdkColumnDef, CdkHeaderCellDef, CdkHeaderCell, CdkCell, CdkCellDef, CdkFooterCellDef, CdkFooterCell, } from './cell';
 import { CdkTextColumn } from './text-column';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+import { ScrollingModule } from '@takkion/ng-cdk/scrolling';
 import * as i0 from "@angular/core";
 const EXPORTED_DECLARATIONS = [
     CdkTable,

@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { DOCUMENT } from '@angular/common';
 import { ContentChild, ContentChildren, Directive, ElementRef, EventEmitter, Inject, Input, NgZone, Optional, Output, QueryList, SkipSelf, ViewContainerRef, ChangeDetectorRef, Self, } from '@angular/core';
-import { coerceBooleanProperty, coerceNumberProperty, coerceElement, } from '@angular/cdk/coercion';
+import { coerceBooleanProperty, coerceNumberProperty, coerceElement, } from '@takkion/ng-cdk/coercion';
 import { Observable, Subject, merge } from 'rxjs';
 import { startWith, take, map, takeUntil, switchMap, tap } from 'rxjs/operators';
 import { CDK_DRAG_HANDLE, CdkDragHandle } from './drag-handle';
@@ -20,7 +20,7 @@ import { DragDrop } from '../drag-drop';
 import { CDK_DRAG_CONFIG } from './config';
 import { assertElementNode } from './assertions';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-cdk/bidi";
 import * as i2 from "../drag-drop";
 import * as i3 from "./drag-handle";
 const DRAG_HOST_CLASS = 'cdk-drag';

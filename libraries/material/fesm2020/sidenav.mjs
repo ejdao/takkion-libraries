@@ -1,15 +1,15 @@
-import * as i1 from '@angular/cdk/scrolling';
-import { CdkScrollable, CdkScrollableModule } from '@angular/cdk/scrolling';
+import * as i1 from '@takkion/ng-cdk/scrolling';
+import { CdkScrollable, CdkScrollableModule } from '@takkion/ng-cdk/scrolling';
 import * as i5 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { InjectionToken, forwardRef, Component, ChangeDetectionStrategy, ViewEncapsulation, Inject, EventEmitter, Optional, Input, Output, ViewChild, QueryList, ContentChildren, ContentChild, NgModule } from '@angular/core';
-import { MatCommonModule } from '@angular/material/core';
-import * as i2 from '@angular/cdk/a11y';
-import * as i4 from '@angular/cdk/bidi';
-import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
-import * as i3 from '@angular/cdk/platform';
+import { MatCommonModule } from '@takkion/ng-material/core';
+import * as i2 from '@takkion/ng-cdk/a11y';
+import * as i4 from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import { ESCAPE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
+import * as i3 from '@takkion/ng-cdk/platform';
 import { Subject, fromEvent, merge } from 'rxjs';
 import { filter, map, mapTo, takeUntil, distinctUntilChanged, take, startWith, debounceTime } from 'rxjs/operators';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -137,7 +137,7 @@ class MatDrawer {
         /** Current state of the sidenav animation. */
         this._animationState = 'void';
         /** Event emitted when the drawer open state is changed. */
-        this.openedChange = 
+        this.openedChange =
         // Note this has to be async in order to avoid some issues with two-bindings (see #8872).
         new EventEmitter(/* isAsync */ true);
         /** Event emitted when the drawer has been opened. */
@@ -415,7 +415,7 @@ class MatDrawer {
         if (isOpen && openedVia) {
             this._openedVia = openedVia;
         }
-        const result = this._setOpen(isOpen, 
+        const result = this._setOpen(isOpen,
         /* restoreFocus */ !isOpen && this._isFocusWithinDrawer(), this._openedVia || 'program');
         if (!isOpen) {
             this._openedVia = null;

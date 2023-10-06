@@ -1,6 +1,6 @@
 import { __awaiter } from 'tslib';
-import { coerceNumberProperty } from '@angular/cdk/coercion';
-import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import { ComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
 
 /** Harness for interacting with a standard mat-progress-bar in tests. */
 class MatProgressBarHarness extends ComponentHarness {

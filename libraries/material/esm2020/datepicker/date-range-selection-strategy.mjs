@@ -6,10 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Injectable, InjectionToken, Optional, SkipSelf } from '@angular/core';
-import { DateAdapter } from '@angular/material/core';
+import { DateAdapter } from '@takkion/ng-material/core';
 import { DateRange } from './date-selection-model';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/material/core";
+import * as i1 from "@takkion/ng-material/core";
 /** Injection token used to customize the date range selection behavior. */
 export const MAT_DATE_RANGE_SELECTION_STRATEGY = new InjectionToken('MAT_DATE_RANGE_SELECTION_STRATEGY');
 /** Provides the default date range selection behavior. */

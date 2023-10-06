@@ -1,15 +1,15 @@
-import { CdkDialogContainer } from '@angular/cdk/dialog';
-import { FocusMonitor, FocusTrapFactory, InteractivityChecker } from '@angular/cdk/a11y';
-import { OverlayRef } from '@angular/cdk/overlay';
+import { CdkDialogContainer } from '@takkion/ng-cdk/dialog';
+import { FocusMonitor, FocusTrapFactory, InteractivityChecker } from '@takkion/ng-cdk/a11y';
+import { OverlayRef } from '@takkion/ng-cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Inject, NgZone, Optional, ViewEncapsulation, } from '@angular/core';
 import { matDialogAnimations, defaultParams } from './dialog-animations';
 import { MatDialogConfig } from './dialog-config';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
+import * as i1 from "@takkion/ng-cdk/a11y";
 import * as i2 from "./dialog-config";
-import * as i3 from "@angular/cdk/overlay";
-import * as i4 from "@angular/cdk/portal";
+import * as i3 from "@takkion/ng-cdk/overlay";
+import * as i4 from "@takkion/ng-cdk/portal";
 /**
  * Base class for the `MatDialogContainer`. The base class does not implement
  * animations as these are left to implementers of the dialog container.

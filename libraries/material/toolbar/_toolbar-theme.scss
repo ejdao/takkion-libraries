@@ -10,7 +10,8 @@
   .mat-toolbar-multiple-rows {
     min-height: $height;
   }
-  .mat-toolbar-row, .mat-toolbar-single-row {
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
     height: $height;
   }
 }
@@ -70,7 +71,8 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-toolbar,
   .mat-toolbar h1,
   .mat-toolbar h2,
@@ -86,9 +88,15 @@
 @mixin density($config-or-theme) {
   $density-scale: theming.get-density-config($config-or-theme);
   $height-desktop: compatibility.private-density-prop-value(
-      toolbar-variables.$desktop-density-config, $density-scale, height);
+    toolbar-variables.$desktop-density-config,
+    $density-scale,
+    height
+  );
   $height-mobile: compatibility.private-density-prop-value(
-      toolbar-variables.$mobile-density-config, $density-scale, height);
+    toolbar-variables.$mobile-density-config,
+    $density-scale,
+    height
+  );
 
   @include compatibility.private-density-legacy-compatibility() {
     // Set the default height for the toolbar.

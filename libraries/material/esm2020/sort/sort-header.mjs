@@ -5,11 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ENTER, SPACE } from '@angular/cdk/keycodes';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { ENTER, SPACE } from '@takkion/ng-cdk/keycodes';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Inject, Input, Optional, ViewEncapsulation, } from '@angular/core';
-import { mixinDisabled } from '@angular/material/core';
+import { mixinDisabled } from '@takkion/ng-material/core';
 import { merge } from 'rxjs';
 import { MAT_SORT_DEFAULT_OPTIONS, MatSort, } from './sort';
 import { matSortAnimations } from './sort-animations';
@@ -18,7 +18,7 @@ import { MatSortHeaderIntl } from './sort-header-intl';
 import * as i0 from "@angular/core";
 import * as i1 from "./sort-header-intl";
 import * as i2 from "./sort";
-import * as i3 from "@angular/cdk/a11y";
+import * as i3 from "@takkion/ng-cdk/a11y";
 import * as i4 from "@angular/common";
 // Boilerplate for applying mixins to the sort header.
 /** @docs-private */
@@ -39,10 +39,10 @@ export class MatSortHeader extends _MatSortHeaderBase {
      * @deprecated `_intl` parameter isn't being used anymore and it'll be removed.
      * @breaking-change 13.0.0
      */
-    _intl, _changeDetectorRef, 
+    _intl, _changeDetectorRef,
     // `MatSort` is not optionally injected, but just asserted manually w/ better error.
     // tslint:disable-next-line: lightweight-tokens
-    _sort, _columnDef, _focusMonitor, _elementRef, 
+    _sort, _columnDef, _focusMonitor, _elementRef,
     /** @breaking-change 14.0.0 _ariaDescriber will be required. */
     _ariaDescriber, defaultOptions) {
         // Note that we use a string token for the `_columnDef`, because the value is provided both by

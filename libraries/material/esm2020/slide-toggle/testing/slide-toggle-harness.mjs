@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, HarnessPredicate, } from '@angular/cdk/testing';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { ComponentHarness, HarnessPredicate, } from '@takkion/ng-cdk/testing';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 export class _MatSlideToggleHarnessBase extends ComponentHarness {
     constructor() {
         super(...arguments);

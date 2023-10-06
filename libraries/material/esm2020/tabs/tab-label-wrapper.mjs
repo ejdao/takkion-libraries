@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Directive, ElementRef } from '@angular/core';
-import { mixinDisabled } from '@angular/material/core';
+import { mixinDisabled } from '@takkion/ng-material/core';
 import * as i0 from "@angular/core";
 // Boilerplate for applying mixins to MatTabLabelWrapper.
 /** @docs-private */

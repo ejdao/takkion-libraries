@@ -10,13 +10,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.addTypographyClass = exports.addThemeToAppStyles = void 0;
 const core_1 = require("@angular-devkit/core");
 const schematics_1 = require("@angular-devkit/schematics");
-const schematics_2 = require("@angular/cdk/schematics");
+const schematics_2 = require("@takkion/ng-cdk/schematics");
 const change_1 = require("@schematics/angular/utility/change");
 const workspace_1 = require("@schematics/angular/utility/workspace");
 const path_1 = require("path");
 const create_custom_theme_1 = require("./create-custom-theme");
 /** Path segment that can be found in paths that refer to a prebuilt theme. */
-const prebuiltThemePathSegment = '@angular/material/prebuilt-themes';
+const prebuiltThemePathSegment = '@takkion/ng-material/prebuilt-themes';
 /** Default file name of the custom theme that can be generated. */
 const defaultCustomThemeFilename = 'custom-theme.scss';
 /** Add pre-built styles to the main project style file. */

@@ -9,7 +9,7 @@ import { ElementRef } from '@angular/core';
 import { ConnectedOverlayPositionChange, validateHorizontalPosition, validateVerticalPosition, } from './connected-position';
 import { Subscription, Subject } from 'rxjs';
 import { isElementScrolledOutsideView, isElementClippedByScrolling } from './scroll-clip';
-import { coerceCssPixelValue, coerceArray } from '@angular/cdk/coercion';
+import { coerceCssPixelValue, coerceArray } from '@takkion/ng-cdk/coercion';
 // TODO: refactor clipping detection into a separate thing (part of scrolling module)
 // TODO: doesn't handle both flexible width and height when it has to scroll along both axis.
 /** Class to be added to the overlay bounding box. */

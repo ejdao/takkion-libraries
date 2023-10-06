@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { TextFieldModule } from '@angular/cdk/text-field';
+import { TextFieldModule } from '@takkion/ng-cdk/text-field';
 import { NgModule } from '@angular/core';
-import { ErrorStateMatcher, MatCommonModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { ErrorStateMatcher, MatCommonModule } from '@takkion/ng-material/core';
+import { MatFormFieldModule } from '@takkion/ng-material/form-field';
 import { MatInput } from './input';
 import * as i0 from "@angular/core";
 export class MatInputModule {

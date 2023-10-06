@@ -4,7 +4,6 @@
 @use 'sass:meta';
 @use 'sass:string';
 
-
 // Utility for fetching a nested value from a typography config.
 @function _mat-get-type-value($config, $level, $name) {
   @return map.get(map.get($config, $level), $name);
@@ -62,21 +61,29 @@
 @mixin font-shorthand($font-size, $font-weight, $line-height, $font-family) {
   // If any of the values are set to `inherit`, we can't use the shorthand
   // so we fall back to passing in the individual properties.
-  @if ($font-size == inherit or
-       $font-weight == inherit or
-       $line-height == inherit or
-       $font-family == inherit or
-       $font-size == null or
-       $font-weight == null or
-       $line-height == null or
-       $font-family == null) {
-
+  @if (
+    $font-size ==
+      inherit or
+      $font-weight ==
+      inherit or
+      $line-height ==
+      inherit or
+      $font-family ==
+      inherit or
+      $font-size ==
+      null or
+      $font-weight ==
+      null or
+      $line-height ==
+      null or
+      $font-family ==
+      null
+  ) {
     font-size: $font-size;
     font-weight: $font-weight;
     line-height: $line-height;
     font-family: $font-family;
-  }
-  @else {
+  } @else {
     // Otherwise use the shorthand `font`, because it's the least amount of bytes.
     font: $font-weight list.slash($font-size, $line-height) $font-family;
   }

@@ -1,8 +1,8 @@
-import * as i1 from '@angular/cdk/platform';
-import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
+import * as i1 from '@takkion/ng-cdk/platform';
+import { normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
 import * as i0 from '@angular/core';
 import { Injectable, EventEmitter, Directive, Output, Optional, Inject, Input, NgModule } from '@angular/core';
-import { coerceElement, coerceNumberProperty, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceElement, coerceNumberProperty, coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { EMPTY, Subject, fromEvent } from 'rxjs';
 import { auditTime, takeUntil } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';

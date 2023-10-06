@@ -5,18 +5,18 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, ViewEncapsulation, } from '@angular/core';
 import { MatStepLabel } from './step-label';
 import { MatStepperIntl } from './stepper-intl';
-import { CdkStepHeader } from '@angular/cdk/stepper';
-import { mixinColor } from '@angular/material/core';
+import { CdkStepHeader } from '@takkion/ng-cdk/stepper';
+import { mixinColor } from '@takkion/ng-material/core';
 import * as i0 from "@angular/core";
 import * as i1 from "./stepper-intl";
-import * as i2 from "@angular/cdk/a11y";
+import * as i2 from "@takkion/ng-cdk/a11y";
 import * as i3 from "@angular/common";
-import * as i4 from "@angular/material/icon";
-import * as i5 from "@angular/material/core";
+import * as i4 from "@takkion/ng-material/icon";
+import * as i5 from "@takkion/ng-material/core";
 // Boilerplate for applying mixins to MatStepHeader.
 /** @docs-private */
 const _MatStepHeaderBase = mixinColor(class MatStepHeaderBase extends CdkStepHeader {

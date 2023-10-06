@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SecondaryEntryPointsMigration = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 const ts = require("typescript");
 const module_specifiers_1 = require("../../../ng-update/typescript/module-specifiers");
 const ONLY_SUBPACKAGE_FAILURE_STR = `Importing from "@angular/material" is deprecated. ` +
@@ -96,8 +96,8 @@ class SecondaryEntryPointsMigration extends schematics_1.Migration {
         }
         // Transforms the import declaration into multiple import declarations that import
         // the given symbols from the individual secondary entry-points. For example:
-        // import {MatCardModule, MatCardTitle} from '@angular/material/card';
-        // import {MatRadioModule} from '@angular/material/radio';
+        // import {MatCardModule, MatCardTitle} from '@takkion/ng-material/card';
+        // import {MatRadioModule} from '@takkion/ng-material/radio';
         const newImportStatements = Array.from(importMap.entries())
             .sort()
             .map(([name, elements]) => {

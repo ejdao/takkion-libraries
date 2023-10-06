@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { ContentChild, Directive, ElementRef, Inject, Input, Optional, TemplateRef, } from '@angular/core';
 import { mixinHasStickyInput } from './can-stick';
 import { CDK_TABLE } from './tokens';

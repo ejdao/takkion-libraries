@@ -5,17 +5,17 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor, FocusTrapFactory, InteractivityChecker, } from '@angular/cdk/a11y';
-import { OverlayRef } from '@angular/cdk/overlay';
-import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
-import { BasePortalOutlet, CdkPortalOutlet, } from '@angular/cdk/portal';
+import { FocusMonitor, FocusTrapFactory, InteractivityChecker, } from '@takkion/ng-cdk/a11y';
+import { OverlayRef } from '@takkion/ng-cdk/overlay';
+import { _getFocusedElementPierceShadowDom } from '@takkion/ng-cdk/platform';
+import { BasePortalOutlet, CdkPortalOutlet, } from '@takkion/ng-cdk/portal';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ElementRef, Inject, NgZone, Optional, ViewChild, ViewEncapsulation, } from '@angular/core';
 import { DialogConfig } from './dialog-config';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
-import * as i2 from "@angular/cdk/overlay";
-import * as i3 from "@angular/cdk/portal";
+import * as i1 from "@takkion/ng-cdk/a11y";
+import * as i2 from "@takkion/ng-cdk/overlay";
+import * as i3 from "@takkion/ng-cdk/portal";
 export function throwDialogContentAlreadyAttachedError() {
     throw Error('Attempting to attach dialog content after content is already attached');
 }

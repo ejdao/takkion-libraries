@@ -1,6 +1,6 @@
-import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
-import { isFakeMousedownFromScreenReader, isFakeTouchstartFromScreenReader } from '@angular/cdk/a11y';
-import { coerceElement } from '@angular/cdk/coercion';
+import { normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
+import { isFakeMousedownFromScreenReader, isFakeTouchstartFromScreenReader } from '@takkion/ng-cdk/a11y';
+import { coerceElement } from '@takkion/ng-cdk/coercion';
 import { RippleRef } from './ripple-ref';
 // TODO: import these values from `@material/ripple` eventually.
 /**

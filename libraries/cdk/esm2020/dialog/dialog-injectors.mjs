@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { InjectionToken } from '@angular/core';
-import { Overlay } from '@angular/cdk/overlay';
+import { Overlay } from '@takkion/ng-cdk/overlay';
 /** Injection token for the Dialog's ScrollStrategy. */
 export const DIALOG_SCROLL_STRATEGY = new InjectionToken('DialogScrollStrategy');
 /** Injection token for the Dialog's Data. */

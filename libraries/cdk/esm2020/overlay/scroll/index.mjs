@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-export { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
+export { CdkScrollable, ScrollDispatcher } from '@takkion/ng-cdk/scrolling';
 export { ScrollStrategyOptions } from './scroll-strategy-options';
 export { RepositionScrollStrategy, } from './reposition-scroll-strategy';
 export { CloseScrollStrategy } from './close-scroll-strategy';

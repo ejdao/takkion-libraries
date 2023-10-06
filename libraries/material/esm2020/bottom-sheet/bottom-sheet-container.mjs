@@ -1,16 +1,16 @@
-import { CdkDialogContainer, DialogConfig } from '@angular/cdk/dialog';
-import { FocusMonitor, FocusTrapFactory, InteractivityChecker } from '@angular/cdk/a11y';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { OverlayRef } from '@angular/cdk/overlay';
+import { CdkDialogContainer, DialogConfig } from '@takkion/ng-cdk/dialog';
+import { FocusMonitor, FocusTrapFactory, InteractivityChecker } from '@takkion/ng-cdk/a11y';
+import { BreakpointObserver, Breakpoints } from '@takkion/ng-cdk/layout';
+import { OverlayRef } from '@takkion/ng-cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Inject, NgZone, Optional, ViewEncapsulation, } from '@angular/core';
 import { matBottomSheetAnimations } from './bottom-sheet-animations';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
-import * as i2 from "@angular/cdk/dialog";
-import * as i3 from "@angular/cdk/overlay";
-import * as i4 from "@angular/cdk/layout";
-import * as i5 from "@angular/cdk/portal";
+import * as i1 from "@takkion/ng-cdk/a11y";
+import * as i2 from "@takkion/ng-cdk/dialog";
+import * as i3 from "@takkion/ng-cdk/overlay";
+import * as i4 from "@takkion/ng-cdk/layout";
+import * as i5 from "@takkion/ng-cdk/portal";
 /**
  * Internal component that wraps user-provided bottom sheet content.
  * @docs-private

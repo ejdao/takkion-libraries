@@ -1,6 +1,6 @@
-import { DataSource } from '@angular/cdk/collections';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { DataSource } from '@takkion/ng-cdk/collections';
+import { MatPaginator } from '@takkion/ng-material/paginator';
+import { MatSort } from '@takkion/ng-material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 

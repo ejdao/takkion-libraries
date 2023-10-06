@@ -5,15 +5,15 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HighContrastModeDetector } from '@angular/cdk/a11y';
-import { BidiModule } from '@angular/cdk/bidi';
+import { HighContrastModeDetector } from '@takkion/ng-cdk/a11y';
+import { BidiModule } from '@takkion/ng-cdk/bidi';
 import { Inject, InjectionToken, NgModule, Optional } from '@angular/core';
-import { VERSION as CDK_VERSION } from '@angular/cdk';
+import { VERSION as CDK_VERSION } from '@takkion/ng-cdk';
 import { DOCUMENT } from '@angular/common';
-import { _isTestEnvironment } from '@angular/cdk/platform';
+import { _isTestEnvironment } from '@takkion/ng-cdk/platform';
 import { VERSION } from '../version';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
+import * as i1 from "@takkion/ng-cdk/a11y";
 /** @docs-private */
 export function MATERIAL_SANITY_CHECKS_FACTORY() {
     return true;

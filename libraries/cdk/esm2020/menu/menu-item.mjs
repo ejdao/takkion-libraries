@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Directive, ElementRef, EventEmitter, inject, InjectFlags, Input, NgZone, Output, } from '@angular/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ENTER, hasModifierKey, LEFT_ARROW, RIGHT_ARROW, SPACE } from '@angular/cdk/keycodes';
-import { Directionality } from '@angular/cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { ENTER, hasModifierKey, LEFT_ARROW, RIGHT_ARROW, SPACE } from '@takkion/ng-cdk/keycodes';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { fromEvent, Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import { CdkMenuTrigger } from './menu-trigger';

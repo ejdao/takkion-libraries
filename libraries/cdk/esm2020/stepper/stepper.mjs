@@ -5,18 +5,18 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusKeyManager } from '@angular/cdk/a11y';
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty, coerceNumberProperty, } from '@angular/cdk/coercion';
-import { ENTER, hasModifierKey, SPACE } from '@angular/cdk/keycodes';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty, coerceNumberProperty, } from '@takkion/ng-cdk/coercion';
+import { ENTER, hasModifierKey, SPACE } from '@takkion/ng-cdk/keycodes';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, Directive, ElementRef, EventEmitter, forwardRef, Inject, InjectionToken, Input, Optional, Output, QueryList, TemplateRef, ViewChild, ViewEncapsulation, } from '@angular/core';
-import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
+import { _getFocusedElementPierceShadowDom } from '@takkion/ng-cdk/platform';
 import { of as observableOf, Subject } from 'rxjs';
 import { startWith, takeUntil } from 'rxjs/operators';
 import { CdkStepHeader } from './step-header';
 import { CdkStepLabel } from './step-label';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-cdk/bidi";
 /** Used to generate unique ID for each stepper component. */
 let nextId = 0;
 /** Change event emitted on selection changes. */

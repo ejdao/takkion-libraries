@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { SelectionModel } from '@angular/cdk/collections';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
 /** Base tree control. It has basic toggle/expand/collapse operations on a single data node. */
 export class BaseTreeControl {
     constructor() {

@@ -1,6 +1,6 @@
 import { __awaiter } from 'tslib';
-import { HarnessPredicate, ComponentHarness, ContentContainerComponentHarness, parallel } from '@angular/cdk/testing';
-import { MatDividerHarness } from '@angular/material/divider/testing';
+import { HarnessPredicate, ComponentHarness, ContentContainerComponentHarness, parallel } from '@takkion/ng-cdk/testing';
+import { MatDividerHarness } from '@takkion/ng-material/divider/testing';
 
 const iconSelector = '.mat-list-icon';
 const avatarSelector = '.mat-list-avatar';

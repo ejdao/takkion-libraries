@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, HarnessPredicate, parallel, } from '@angular/cdk/testing';
-import { MatDatepickerInputHarness, MatDateRangeInputHarness, } from '@angular/material/datepicker/testing';
-import { MatInputHarness } from '@angular/material/input/testing';
-import { MatSelectHarness } from '@angular/material/select/testing';
+import { ComponentHarness, HarnessPredicate, parallel, } from '@takkion/ng-cdk/testing';
+import { MatDatepickerInputHarness, MatDateRangeInputHarness, } from '@takkion/ng-material/datepicker/testing';
+import { MatInputHarness } from '@takkion/ng-material/input/testing';
+import { MatSelectHarness } from '@takkion/ng-material/select/testing';
 export class _MatFormFieldHarnessBase extends ComponentHarness {
     /** Gets the label of the form-field. */
     async getLabel() {

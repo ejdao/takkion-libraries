@@ -8,7 +8,7 @@
 var _MatTestDialogOpenerBase_1, MatTestDialogOpener_1;
 import { __decorate, __metadata } from "tslib";
 import { ChangeDetectionStrategy, Directive, Component, NgModule, ViewEncapsulation, } from '@angular/core';
-import { _MatDialogBase, MatDialog, MatDialogModule, } from '@angular/material/dialog';
+import { _MatDialogBase, MatDialog, MatDialogModule, } from '@takkion/ng-material/dialog';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 /** Base class for a component that immediately opens a dialog when created. */
 let _MatTestDialogOpenerBase = _MatTestDialogOpenerBase_1 = class _MatTestDialogOpenerBase {

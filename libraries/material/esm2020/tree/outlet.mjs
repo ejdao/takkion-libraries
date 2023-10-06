@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { CDK_TREE_NODE_OUTLET_NODE, CdkTreeNodeOutlet } from '@angular/cdk/tree';
+import { CDK_TREE_NODE_OUTLET_NODE, CdkTreeNodeOutlet } from '@takkion/ng-cdk/tree';
 import { Directive, Inject, Optional, ViewContainerRef } from '@angular/core';
 import * as i0 from "@angular/core";
 /**

@@ -1,7 +1,7 @@
-import { CdkAccordionItem } from '@angular/cdk/accordion';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
-import { TemplatePortal } from '@angular/cdk/portal';
+import { CdkAccordionItem } from '@takkion/ng-cdk/accordion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { UniqueSelectionDispatcher } from '@takkion/ng-cdk/collections';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, Directive, ElementRef, EventEmitter, Inject, InjectionToken, Input, Optional, Output, SkipSelf, ViewChild, ViewContainerRef, ViewEncapsulation, } from '@angular/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
@@ -12,8 +12,8 @@ import { matExpansionAnimations } from './expansion-animations';
 import { MAT_EXPANSION_PANEL } from './expansion-panel-base';
 import { MatExpansionPanelContent } from './expansion-panel-content';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/collections";
-import * as i2 from "@angular/cdk/portal";
+import * as i1 from "@takkion/ng-cdk/collections";
+import * as i2 from "@takkion/ng-cdk/portal";
 /** Counter for generating unique element ids. */
 let uniqueId = 0;
 /**

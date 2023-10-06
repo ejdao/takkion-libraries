@@ -1,7 +1,7 @@
 import * as i0 from '@angular/core';
 import { SecurityContext, Injectable, Optional, Inject, SkipSelf, ErrorHandler, InjectionToken, inject, Component, ViewEncapsulation, ChangeDetectionStrategy, Attribute, Input, NgModule } from '@angular/core';
-import { mixinColor, MatCommonModule } from '@angular/material/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { mixinColor, MatCommonModule } from '@takkion/ng-material/core';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { DOCUMENT } from '@angular/common';
 import { of, throwError, forkJoin, Subscription } from 'rxjs';
 import { tap, map, catchError, finalize, share, take } from 'rxjs/operators';

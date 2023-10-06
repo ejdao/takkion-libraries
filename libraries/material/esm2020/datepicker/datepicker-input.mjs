@@ -7,14 +7,14 @@
  */
 import { Directive, ElementRef, forwardRef, Inject, Input, Optional } from '@angular/core';
 import { NG_VALIDATORS, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
-import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
-import { MatFormField, MAT_FORM_FIELD } from '@angular/material/form-field';
-import { MAT_INPUT_VALUE_ACCESSOR } from '@angular/material/input';
+import { DateAdapter, MAT_DATE_FORMATS } from '@takkion/ng-material/core';
+import { MatFormField, MAT_FORM_FIELD } from '@takkion/ng-material/form-field';
+import { MAT_INPUT_VALUE_ACCESSOR } from '@takkion/ng-material/input';
 import { Subscription } from 'rxjs';
 import { MatDatepickerInputBase } from './datepicker-input-base';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/material/core";
-import * as i2 from "@angular/material/form-field";
+import * as i1 from "@takkion/ng-material/core";
+import * as i2 from "@takkion/ng-material/form-field";
 /** @docs-private */
 export const MAT_DATEPICKER_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,

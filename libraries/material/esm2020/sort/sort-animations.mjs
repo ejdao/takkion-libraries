@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { animate, state, style, transition, trigger, keyframes, query, animateChild, } from '@angular/animations';
-import { AnimationCurves, AnimationDurations } from '@angular/material/core';
+import { AnimationCurves, AnimationDurations } from '@takkion/ng-material/core';
 const SORT_ANIMATION_TRANSITION = AnimationDurations.ENTERING + ' ' + AnimationCurves.STANDARD_CURVE;
 /**
  * Animations used by MatSort.

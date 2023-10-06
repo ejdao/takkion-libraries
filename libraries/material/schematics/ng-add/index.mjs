@@ -42,7 +42,7 @@ function default_1(options) {
         if (materialVersionRange === null) {
             (0, package_config_1.addPackageToPackageJson)(host, '@angular/material', fallbackMaterialVersionRange);
         }
-        (0, package_config_1.addPackageToPackageJson)(host, '@angular/cdk', materialVersionRange || fallbackMaterialVersionRange);
+        (0, package_config_1.addPackageToPackageJson)(host, '@takkion/ng-cdk', materialVersionRange || fallbackMaterialVersionRange);
         (0, package_config_1.addPackageToPackageJson)(host, '@angular/forms', angularDependencyVersion);
         (0, package_config_1.addPackageToPackageJson)(host, '@angular/animations', angularDependencyVersion);
         // Since the Angular Material schematics depend on the schematic utility functions from the

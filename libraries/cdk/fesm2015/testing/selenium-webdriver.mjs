@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { TestKey, getNoKeysSpecifiedError, _getTextWithExcludedElements, HarnessEnvironment } from '@angular/cdk/testing';
+import { TestKey, getNoKeysSpecifiedError, _getTextWithExcludedElements, HarnessEnvironment } from '@takkion/ng-cdk/testing';
 import * as webdriver from 'selenium-webdriver';
 
 /**

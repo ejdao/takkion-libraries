@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Directive, Inject, InjectionToken, Optional, TemplateRef, ViewContainerRef, } from '@angular/core';
-import { CdkPortal } from '@angular/cdk/portal';
+import { CdkPortal } from '@takkion/ng-cdk/portal';
 import * as i0 from "@angular/core";
 /**
  * Injection token that can be used to reference instances of `MatTabLabel`. It serves as

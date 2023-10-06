@@ -1,18 +1,18 @@
 import * as i0 from '@angular/core';
 import { Version, InjectionToken, NgModule, Optional, Inject, inject, LOCALE_ID, Injectable, Directive, Input, Component, ViewEncapsulation, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
-import * as i1 from '@angular/cdk/a11y';
-import { isFakeMousedownFromScreenReader, isFakeTouchstartFromScreenReader } from '@angular/cdk/a11y';
-import { BidiModule } from '@angular/cdk/bidi';
-import { VERSION as VERSION$1 } from '@angular/cdk';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import { isFakeMousedownFromScreenReader, isFakeTouchstartFromScreenReader } from '@takkion/ng-cdk/a11y';
+import { BidiModule } from '@takkion/ng-cdk/bidi';
+import { VERSION as VERSION$1 } from '@takkion/ng-cdk';
 import * as i3 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
-import * as i1$1 from '@angular/cdk/platform';
-import { _isTestEnvironment, normalizePassiveListenerOptions } from '@angular/cdk/platform';
-import { coerceBooleanProperty, coerceNumberProperty, coerceElement } from '@angular/cdk/coercion';
+import * as i1$1 from '@takkion/ng-cdk/platform';
+import { _isTestEnvironment, normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
+import { coerceBooleanProperty, coerceNumberProperty, coerceElement } from '@takkion/ng-cdk/coercion';
 import { Observable, Subject } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import { ENTER, SPACE, hasModifierKey } from '@angular/cdk/keycodes';
+import { ENTER, SPACE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
 
 /**
  * @license
@@ -496,7 +496,7 @@ function range(length, valueFunction) {
 }
 /** Adapts the native JS Date for use with cdk-based components that work with dates. */
 class NativeDateAdapter extends DateAdapter {
-    constructor(matDateLocale, 
+    constructor(matDateLocale,
     /**
      * @deprecated No longer being used. To be removed.
      * @breaking-change 14.0.0
@@ -838,11 +838,11 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
  * Reference to a previously launched ripple element.
  */
 class RippleRef {
-    constructor(_renderer, 
+    constructor(_renderer,
     /** Reference to the ripple HTML element. */
-    element, 
+    element,
     /** Ripple configuration used for the ripple. */
-    config, 
+    config,
     /* Whether animations are forcibly disabled for ripples through CSS. */
     _animationForciblyDisabledThroughCss = false) {
         this._renderer = _renderer;
@@ -1530,7 +1530,7 @@ let _uniqueIdCounter = 0;
 class MatOptionSelectionChange {
     constructor(
     /** Reference to the option that emitted the event. */
-    source, 
+    source,
     /** Whether the change in the option's value was a result of a user action. */
     isUserInput = false) {
         this.source = source;

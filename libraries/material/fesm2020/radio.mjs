@@ -1,10 +1,10 @@
 import * as i0 from '@angular/core';
 import { InjectionToken, forwardRef, EventEmitter, Directive, Output, Input, ContentChildren, ViewChild, Component, ViewEncapsulation, ChangeDetectionStrategy, Optional, Inject, Attribute, NgModule } from '@angular/core';
-import * as i3 from '@angular/material/core';
-import { mixinDisableRipple, mixinTabIndex, MatRippleModule, MatCommonModule } from '@angular/material/core';
-import * as i1 from '@angular/cdk/a11y';
-import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
-import * as i2 from '@angular/cdk/collections';
+import * as i3 from '@takkion/ng-material/core';
+import { mixinDisableRipple, mixinTabIndex, MatRippleModule, MatCommonModule } from '@takkion/ng-material/core';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import * as i2 from '@takkion/ng-cdk/collections';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 
@@ -40,7 +40,7 @@ const MAT_RADIO_GROUP_CONTROL_VALUE_ACCESSOR = {
 class MatRadioChange {
     constructor(
     /** The MatRadioButton that emits the change event. */
-    source, 
+    source,
     /** The value of the MatRadioButton. */
     value) {
         this.source = source;

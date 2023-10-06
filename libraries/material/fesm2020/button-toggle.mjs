@@ -1,11 +1,11 @@
-import * as i1 from '@angular/cdk/a11y';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { SelectionModel } from '@angular/cdk/collections';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
 import * as i0 from '@angular/core';
 import { InjectionToken, forwardRef, EventEmitter, Directive, Optional, Inject, ContentChildren, Input, Output, Component, ViewEncapsulation, ChangeDetectionStrategy, Attribute, ViewChild, NgModule } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import * as i2 from '@angular/material/core';
-import { mixinDisableRipple, MatCommonModule, MatRippleModule } from '@angular/material/core';
+import * as i2 from '@takkion/ng-material/core';
+import { mixinDisableRipple, MatCommonModule, MatRippleModule } from '@takkion/ng-material/core';
 
 /**
  * @license
@@ -41,7 +41,7 @@ let uniqueIdCounter = 0;
 class MatButtonToggleChange {
     constructor(
     /** The MatButtonToggle that emits the event. */
-    source, 
+    source,
     /** The value assigned to the MatButtonToggle. */
     value) {
         this.source = source;

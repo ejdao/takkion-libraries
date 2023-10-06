@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, parallel, } from '@angular/cdk/testing';
-import { MatDividerHarness } from '@angular/material/divider/testing';
+import { ComponentHarness, parallel, } from '@takkion/ng-cdk/testing';
+import { MatDividerHarness } from '@takkion/ng-material/divider/testing';
 import { MatSubheaderHarness } from './list-item-harness-base';
 /**
  * Shared behavior among the harnesses for the various `MatList` flavors.

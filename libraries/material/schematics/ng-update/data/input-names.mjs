@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.inputNames = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 exports.inputNames = {
     [schematics_1.TargetVersion.V6]: [
         {

@@ -3,15 +3,15 @@
 @use '../core/style/button-common';
 @use '../core/style/private';
 
-
 // Flat and raised button standards
 $padding: 0 16px !default;
 $min-width: 64px !default;
 $margin: 0 !default;
 $line-height: 36px !default;
 $border-radius: 4px !default;
-$focus-transition: opacity 200ms variables.$swift-ease-in-out-timing-function,
-                   background-color 200ms variables.$swift-ease-in-out-timing-function !default;
+$focus-transition:
+  opacity 200ms variables.$swift-ease-in-out-timing-function,
+  background-color 200ms variables.$swift-ease-in-out-timing-function !default;
 
 // Stroked button padding is 1px less horizontally than default/flat/raised
 // button's padding.
@@ -62,7 +62,8 @@ $mini-fab-padding: 8px !default;
     cursor: default;
   }
 
-  &.cdk-keyboard-focused, &.cdk-program-focused {
+  &.cdk-keyboard-focused,
+  &.cdk-program-focused {
     .mat-button-focus-overlay {
       opacity: 0.12;
     }
@@ -82,8 +83,9 @@ $mini-fab-padding: 8px !default;
   transform: translate3d(0, 0, 0);
 
   // Animation.
-  transition: background variables.$swift-ease-out-duration
-    variables.$swift-ease-out-timing-function, elevation.private-transition-property-value();
+  transition:
+    background variables.$swift-ease-out-duration variables.$swift-ease-out-timing-function,
+    elevation.private-transition-property-value();
 }
 
 // Applies styles to fab and mini-fab button types only

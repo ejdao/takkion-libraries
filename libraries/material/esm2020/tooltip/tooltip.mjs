@@ -5,27 +5,27 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { AriaDescriber, FocusMonitor } from '@angular/cdk/a11y';
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty, coerceNumberProperty, } from '@angular/cdk/coercion';
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Overlay, } from '@angular/cdk/overlay';
-import { Platform, normalizePassiveListenerOptions } from '@angular/cdk/platform';
-import { ComponentPortal } from '@angular/cdk/portal';
-import { ScrollDispatcher } from '@angular/cdk/scrolling';
+import { AriaDescriber, FocusMonitor } from '@takkion/ng-cdk/a11y';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty, coerceNumberProperty, } from '@takkion/ng-cdk/coercion';
+import { ESCAPE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
+import { BreakpointObserver, Breakpoints } from '@takkion/ng-cdk/layout';
+import { Overlay, } from '@takkion/ng-cdk/overlay';
+import { Platform, normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
+import { ComponentPortal } from '@takkion/ng-cdk/portal';
+import { ScrollDispatcher } from '@takkion/ng-cdk/scrolling';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, ElementRef, Inject, InjectionToken, Input, NgZone, Optional, ViewContainerRef, ViewEncapsulation, ViewChild, } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/overlay";
-import * as i2 from "@angular/cdk/scrolling";
-import * as i3 from "@angular/cdk/platform";
-import * as i4 from "@angular/cdk/a11y";
-import * as i5 from "@angular/cdk/bidi";
-import * as i6 from "@angular/cdk/layout";
+import * as i1 from "@takkion/ng-cdk/overlay";
+import * as i2 from "@takkion/ng-cdk/scrolling";
+import * as i3 from "@takkion/ng-cdk/platform";
+import * as i4 from "@takkion/ng-cdk/a11y";
+import * as i5 from "@takkion/ng-cdk/bidi";
+import * as i6 from "@takkion/ng-cdk/layout";
 import * as i7 from "@angular/common";
 /** Time in ms to throttle repositioning after scroll events. */
 export const SCROLL_THROTTLE_MS = 20;

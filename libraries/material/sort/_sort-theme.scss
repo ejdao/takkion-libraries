@@ -21,16 +21,17 @@
     @if (meta.type-of($table-background) == color and meta.type-of($text-color) == color) {
       $text-opacity: opacity($text-color);
       color: color.mix($table-background, rgba($text-color, 1), (1 - $text-opacity) * 100%);
-    }
-    @else {
+    } @else {
       color: $text-color;
     }
   }
 }
 
-@mixin typography($config-or-theme) {}
+@mixin typography($config-or-theme) {
+}
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

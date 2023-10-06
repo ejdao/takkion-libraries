@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { getNoKeysSpecifiedError } from '@angular/cdk/testing';
-import { PERIOD } from '@angular/cdk/keycodes';
+import { getNoKeysSpecifiedError } from '@takkion/ng-cdk/testing';
+import { PERIOD } from '@takkion/ng-cdk/keycodes';
 import { dispatchFakeEvent, dispatchKeyboardEvent } from './dispatch-events';
 import { triggerFocus } from './element-focus';
 /** Input types for which the value can be entered incrementally. */

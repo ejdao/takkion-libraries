@@ -5,18 +5,18 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceNumberProperty, coerceBooleanProperty, } from '@angular/cdk/coercion';
+import { coerceNumberProperty, coerceBooleanProperty, } from '@takkion/ng-cdk/coercion';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, ViewEncapsulation, InjectionToken, Inject, Optional, Directive, } from '@angular/core';
 import { MatPaginatorIntl } from './paginator-intl';
-import { mixinInitialized, mixinDisabled, } from '@angular/material/core';
+import { mixinInitialized, mixinDisabled, } from '@takkion/ng-material/core';
 import * as i0 from "@angular/core";
 import * as i1 from "./paginator-intl";
 import * as i2 from "@angular/common";
-import * as i3 from "@angular/material/button";
-import * as i4 from "@angular/material/form-field";
-import * as i5 from "@angular/material/select";
-import * as i6 from "@angular/material/core";
-import * as i7 from "@angular/material/tooltip";
+import * as i3 from "@takkion/ng-material/button";
+import * as i4 from "@takkion/ng-material/form-field";
+import * as i5 from "@takkion/ng-material/select";
+import * as i6 from "@takkion/ng-material/core";
+import * as i7 from "@takkion/ng-material/tooltip";
 /** The default page size if there is no page size and there are no provided page size options. */
 const DEFAULT_PAGE_SIZE = 50;
 /**

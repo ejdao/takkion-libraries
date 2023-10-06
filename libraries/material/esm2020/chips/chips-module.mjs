@@ -5,9 +5,9 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ENTER } from '@angular/cdk/keycodes';
+import { ENTER } from '@takkion/ng-cdk/keycodes';
 import { NgModule } from '@angular/core';
-import { ErrorStateMatcher, MatCommonModule } from '@angular/material/core';
+import { ErrorStateMatcher, MatCommonModule } from '@takkion/ng-material/core';
 import { MatChip, MatChipAvatar, MatChipRemove, MatChipTrailingIcon } from './chip';
 import { MAT_CHIPS_DEFAULT_OPTIONS } from './chip-default-options';
 import { MatChipInput } from './chip-input';

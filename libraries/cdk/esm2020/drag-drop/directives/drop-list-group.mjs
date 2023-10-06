@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Directive, Input, InjectionToken } from '@angular/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import * as i0 from "@angular/core";
 /**
  * Injection token that can be used to reference instances of `CdkDropListGroup`. It serves as

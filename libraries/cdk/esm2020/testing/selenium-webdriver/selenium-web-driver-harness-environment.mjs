@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessEnvironment } from '@angular/cdk/testing';
+import { HarnessEnvironment } from '@takkion/ng-cdk/testing';
 import * as webdriver from 'selenium-webdriver';
 import { SeleniumWebDriverElement } from './selenium-web-driver-element';
 /** The default environment options. */

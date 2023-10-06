@@ -1,13 +1,13 @@
-import * as i3 from '@angular/cdk/observers';
-import { ObserversModule } from '@angular/cdk/observers';
+import * as i3 from '@takkion/ng-cdk/observers';
+import { ObserversModule } from '@takkion/ng-cdk/observers';
 import * as i0 from '@angular/core';
 import { InjectionToken, forwardRef, EventEmitter, Directive, Input, Output, Component, ViewEncapsulation, ChangeDetectionStrategy, Attribute, Inject, Optional, ViewChild, NgModule } from '@angular/core';
-import * as i2 from '@angular/material/core';
-import { mixinTabIndex, mixinColor, mixinDisableRipple, mixinDisabled, MatRippleModule, MatCommonModule } from '@angular/material/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import * as i2 from '@takkion/ng-material/core';
+import { mixinTabIndex, mixinColor, mixinDisableRipple, mixinDisabled, MatRippleModule, MatCommonModule } from '@takkion/ng-material/core';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { NG_VALUE_ACCESSOR, NG_VALIDATORS, CheckboxRequiredValidator } from '@angular/forms';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import * as i1 from '@angular/cdk/a11y';
+import * as i1 from '@takkion/ng-cdk/a11y';
 
 /**
  * @license
@@ -34,7 +34,7 @@ const MAT_SLIDE_TOGGLE_VALUE_ACCESSOR = {
 class MatSlideToggleChange {
     constructor(
     /** The source MatSlideToggle of the event. */
-    source, 
+    source,
     /** The new `checked` value of the MatSlideToggle. */
     checked) {
         this.source = source;

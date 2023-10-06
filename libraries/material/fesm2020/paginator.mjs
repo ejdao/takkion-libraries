@@ -2,17 +2,17 @@ import * as i2 from '@angular/common';
 import { CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { Injectable, Optional, SkipSelf, InjectionToken, EventEmitter, Directive, Input, Output, Component, ChangeDetectionStrategy, ViewEncapsulation, Inject, NgModule } from '@angular/core';
-import * as i6 from '@angular/material/core';
-import { mixinDisabled, mixinInitialized, MatCommonModule } from '@angular/material/core';
-import * as i3 from '@angular/material/button';
-import { MatButtonModule } from '@angular/material/button';
-import * as i5 from '@angular/material/select';
-import { MatSelectModule } from '@angular/material/select';
-import * as i7 from '@angular/material/tooltip';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { coerceNumberProperty, coerceBooleanProperty } from '@angular/cdk/coercion';
+import * as i6 from '@takkion/ng-material/core';
+import { mixinDisabled, mixinInitialized, MatCommonModule } from '@takkion/ng-material/core';
+import * as i3 from '@takkion/ng-material/button';
+import { MatButtonModule } from '@takkion/ng-material/button';
+import * as i5 from '@takkion/ng-material/select';
+import { MatSelectModule } from '@takkion/ng-material/select';
+import * as i7 from '@takkion/ng-material/tooltip';
+import { MatTooltipModule } from '@takkion/ng-material/tooltip';
+import { coerceNumberProperty, coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Subject } from 'rxjs';
-import * as i4 from '@angular/material/form-field';
+import * as i4 from '@takkion/ng-material/form-field';
 
 /**
  * @license

@@ -1,25 +1,25 @@
-import * as i7 from '@angular/cdk/a11y';
-import { FocusKeyManager, A11yModule } from '@angular/cdk/a11y';
-import * as i5 from '@angular/cdk/observers';
-import { ObserversModule } from '@angular/cdk/observers';
-import * as i2 from '@angular/cdk/portal';
-import { CdkPortal, TemplatePortal, CdkPortalOutlet, PortalModule } from '@angular/cdk/portal';
+import * as i7 from '@takkion/ng-cdk/a11y';
+import { FocusKeyManager, A11yModule } from '@takkion/ng-cdk/a11y';
+import * as i5 from '@takkion/ng-cdk/observers';
+import { ObserversModule } from '@takkion/ng-cdk/observers';
+import * as i2 from '@takkion/ng-cdk/portal';
+import { CdkPortal, TemplatePortal, CdkPortalOutlet, PortalModule } from '@takkion/ng-cdk/portal';
 import * as i1$2 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, Inject, Optional, TemplateRef, Component, ChangeDetectionStrategy, ViewEncapsulation, ContentChild, ViewChild, Input, forwardRef, EventEmitter, Output, ContentChildren, QueryList, Attribute, NgModule } from '@angular/core';
-import * as i4 from '@angular/material/core';
-import { mixinDisabled, mixinColor, mixinDisableRipple, mixinTabIndex, MAT_RIPPLE_GLOBAL_OPTIONS, RippleRenderer, MatCommonModule, MatRippleModule } from '@angular/material/core';
+import * as i4 from '@takkion/ng-material/core';
+import { mixinDisabled, mixinColor, mixinDisableRipple, mixinTabIndex, MAT_RIPPLE_GLOBAL_OPTIONS, RippleRenderer, MatCommonModule, MatRippleModule } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { take, startWith, distinctUntilChanged, takeUntil, switchMap, skip, filter } from 'rxjs/operators';
 import { Subject, Subscription, fromEvent, of, merge, EMPTY, Observable, timer } from 'rxjs';
-import * as i1 from '@angular/cdk/bidi';
+import * as i1 from '@takkion/ng-cdk/bidi';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
-import * as i1$1 from '@angular/cdk/scrolling';
-import * as i3 from '@angular/cdk/platform';
-import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
-import { hasModifierKey, SPACE, ENTER } from '@angular/cdk/keycodes';
+import { coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import * as i1$1 from '@takkion/ng-cdk/scrolling';
+import * as i3 from '@takkion/ng-cdk/platform';
+import { normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
+import { hasModifierKey, SPACE, ENTER } from '@takkion/ng-cdk/keycodes';
 
 /**
  * @license
@@ -754,10 +754,10 @@ class MatPaginatedTabHeader {
             return () => {
                 resizeObserver.disconnect();
             };
-        }))), 
+        }))),
         // Skip the first emit since the resize observer emits when an item
         // is observed for new items when the tab is already inserted
-        skip(1), 
+        skip(1),
         // Skip emissions where all the elements are invisible since we don't want
         // the header to try and re-render with invalid measurements. See #25574.
         filter(entries => entries.some(e => e.contentRect.width > 0 && e.contentRect.height > 0)));
@@ -1781,7 +1781,7 @@ const _MatTabLinkMixinBase = mixinTabIndex(mixinDisableRipple(mixinDisabled(clas
 })));
 /** Base class with all of the `MatTabLink` functionality. */
 class _MatTabLinkBase extends _MatTabLinkMixinBase {
-    constructor(_tabNavBar, 
+    constructor(_tabNavBar,
     /** @docs-private */ elementRef, globalRippleOptions, tabIndex, _focusMonitor, animationMode) {
         super();
         this._tabNavBar = _tabNavBar;

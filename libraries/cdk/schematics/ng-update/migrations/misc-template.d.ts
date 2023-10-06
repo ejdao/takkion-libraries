@@ -13,6 +13,6 @@ import { UpgradeData } from '../upgrade-data';
  * instances of outdated Angular CDK API that can't be migrated automatically.
  */
 export declare class MiscTemplateMigration extends Migration<UpgradeData> {
-    enabled: boolean;
-    visitTemplate(template: ResolvedResource): void;
+  enabled: boolean;
+  visitTemplate(template: ResolvedResource): void;
 }

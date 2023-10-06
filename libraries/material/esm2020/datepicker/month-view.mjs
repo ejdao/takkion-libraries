@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { DOWN_ARROW, END, ENTER, HOME, LEFT_ARROW, PAGE_DOWN, PAGE_UP, RIGHT_ARROW, UP_ARROW, SPACE, ESCAPE, hasModifierKey, } from '@angular/cdk/keycodes';
+import { DOWN_ARROW, END, ENTER, HOME, LEFT_ARROW, PAGE_DOWN, PAGE_UP, RIGHT_ARROW, UP_ARROW, SPACE, ESCAPE, hasModifierKey, } from '@takkion/ng-cdk/keycodes';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Inject, Input, Optional, Output, ViewEncapsulation, ViewChild, } from '@angular/core';
-import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
-import { Directionality } from '@angular/cdk/bidi';
+import { DateAdapter, MAT_DATE_FORMATS } from '@takkion/ng-material/core';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { MatCalendarBody, MatCalendarCell, } from './calendar-body';
 import { createMissingDateImplError } from './datepicker-errors';
 import { Subscription } from 'rxjs';
@@ -16,8 +16,8 @@ import { startWith } from 'rxjs/operators';
 import { DateRange } from './date-selection-model';
 import { MAT_DATE_RANGE_SELECTION_STRATEGY, } from './date-range-selection-strategy';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/material/core";
-import * as i2 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-material/core";
+import * as i2 from "@takkion/ng-cdk/bidi";
 import * as i3 from "@angular/common";
 import * as i4 from "./calendar-body";
 const DAYS_PER_WEEK = 7;

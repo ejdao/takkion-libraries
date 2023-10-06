@@ -7,9 +7,9 @@
  */
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
-import { Platform, _isTestEnvironment } from '@angular/cdk/platform';
+import { Platform, _isTestEnvironment } from '@takkion/ng-cdk/platform';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /** Container inside which all overlays will render. */
 export class OverlayContainer {
     constructor(document, _platform) {

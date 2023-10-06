@@ -1,7 +1,7 @@
 import { __awaiter } from 'tslib';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
-import { MatOptionHarness, MatOptgroupHarness } from '@angular/material/core/testing';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { ComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
+import { MatOptionHarness, MatOptgroupHarness } from '@takkion/ng-material/core/testing';
 
 class _MatAutocompleteHarnessBase extends ComponentHarness {
     constructor() {

@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Inject, inject, InjectionToken, Input, NgZone, Optional, Output, ViewChild, ViewEncapsulation, ChangeDetectorRef, } from '@angular/core';
-import { mixinColor } from '@angular/material/core';
+import { mixinColor } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { fromEvent, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -45,12 +45,12 @@ let progressbarId = 0;
  * `<mat-progress-bar>` component.
  */
 export class MatProgressBar extends _MatProgressBarBase {
-    constructor(elementRef, _ngZone, _animationMode, 
+    constructor(elementRef, _ngZone, _animationMode,
     /**
      * @deprecated `location` parameter to be made required.
      * @breaking-change 8.0.0
      */
-    location, defaults, 
+    location, defaults,
     /**
      * @deprecated `_changeDetectorRef` parameter to be made required.
      * @breaking-change 11.0.0

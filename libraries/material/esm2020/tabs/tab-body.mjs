@@ -6,14 +6,14 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Component, ChangeDetectorRef, Input, Inject, Output, EventEmitter, ElementRef, Directive, Optional, ViewEncapsulation, ChangeDetectionStrategy, ComponentFactoryResolver, ViewContainerRef, forwardRef, ViewChild, } from '@angular/core';
-import { TemplatePortal, CdkPortalOutlet } from '@angular/cdk/portal';
-import { Directionality } from '@angular/cdk/bidi';
+import { TemplatePortal, CdkPortalOutlet } from '@takkion/ng-cdk/portal';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { DOCUMENT } from '@angular/common';
 import { Subscription, Subject } from 'rxjs';
 import { matTabsAnimations } from './tabs-animations';
 import { startWith, distinctUntilChanged } from 'rxjs/operators';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-cdk/bidi";
 /**
  * The portal host directive for the contents of the tab.
  * @docs-private

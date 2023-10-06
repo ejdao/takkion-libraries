@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { animate, state, style, transition, trigger, group, query, animateChild, } from '@angular/animations';
-import { AnimationCurves, AnimationDurations } from '@angular/material/core';
+import { AnimationCurves, AnimationDurations } from '@takkion/ng-material/core';
 /** Animations used by the Material bottom sheet. */
 export const matBottomSheetAnimations = {
     /** Animation that shows and hides a bottom sheet. */

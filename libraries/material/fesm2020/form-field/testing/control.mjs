@@ -1,4 +1,4 @@
-import { ComponentHarness } from '@angular/cdk/testing';
+import { ComponentHarness } from '@takkion/ng-cdk/testing';
 
 /**
  * @license

@@ -5,12 +5,12 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Platform } from '@angular/cdk/platform';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ContentChildren, Directive, ElementRef, Inject, QueryList, ViewEncapsulation, } from '@angular/core';
-import { mixinColor } from '@angular/material/core';
+import { mixinColor } from '@takkion/ng-material/core';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 // Boilerplate for applying mixins to MatToolbar.
 /** @docs-private */
 const _MatToolbarBase = mixinColor(class {

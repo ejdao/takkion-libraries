@@ -1,13 +1,13 @@
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import * as i0 from '@angular/core';
 import { InjectionToken, forwardRef, EventEmitter, Directive, Input, Output, ViewChild, Component, ViewEncapsulation, ChangeDetectionStrategy, Attribute, Optional, Inject, NgModule } from '@angular/core';
 import { NG_VALUE_ACCESSOR, NG_VALIDATORS, CheckboxRequiredValidator } from '@angular/forms';
-import * as i2 from '@angular/material/core';
-import { mixinTabIndex, mixinColor, mixinDisableRipple, mixinDisabled, MatRipple, MatRippleModule, MatCommonModule } from '@angular/material/core';
+import * as i2 from '@takkion/ng-material/core';
+import { mixinTabIndex, mixinColor, mixinDisableRipple, mixinDisabled, MatRipple, MatRippleModule, MatCommonModule } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import * as i1 from '@angular/cdk/a11y';
-import * as i3 from '@angular/cdk/observers';
-import { ObserversModule } from '@angular/cdk/observers';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import * as i3 from '@takkion/ng-cdk/observers';
+import { ObserversModule } from '@takkion/ng-cdk/observers';
 
 /**
  * @license

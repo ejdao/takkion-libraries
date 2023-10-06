@@ -7,7 +7,7 @@
  */
 import { Directive, EventEmitter, inject, InjectionToken, Injector, ViewContainerRef, } from '@angular/core';
 import { MENU_STACK } from './menu-stack';
-import { TemplatePortal } from '@angular/cdk/portal';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
 import { merge, Subject } from 'rxjs';
 import * as i0 from "@angular/core";
 /** Injection token used for an implementation of MenuStack. */

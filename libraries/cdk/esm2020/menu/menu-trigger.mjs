@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Directive, ElementRef, inject, InjectFlags, NgZone } from '@angular/core';
-import { Directionality } from '@angular/cdk/bidi';
-import { Overlay, OverlayConfig, STANDARD_DROPDOWN_ADJACENT_POSITIONS, STANDARD_DROPDOWN_BELOW_POSITIONS, } from '@angular/cdk/overlay';
-import { DOWN_ARROW, ENTER, hasModifierKey, LEFT_ARROW, RIGHT_ARROW, SPACE, UP_ARROW, } from '@angular/cdk/keycodes';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { Overlay, OverlayConfig, STANDARD_DROPDOWN_ADJACENT_POSITIONS, STANDARD_DROPDOWN_BELOW_POSITIONS, } from '@takkion/ng-cdk/overlay';
+import { DOWN_ARROW, ENTER, hasModifierKey, LEFT_ARROW, RIGHT_ARROW, SPACE, UP_ARROW, } from '@takkion/ng-cdk/keycodes';
 import { fromEvent } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 import { CDK_MENU } from './menu-interface';

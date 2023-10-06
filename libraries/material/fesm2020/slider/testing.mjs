@@ -1,5 +1,5 @@
-import { ComponentHarness, HarnessPredicate, parallel } from '@angular/cdk/testing';
-import { coerceNumberProperty, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { ComponentHarness, HarnessPredicate, parallel } from '@takkion/ng-cdk/testing';
+import { coerceNumberProperty, coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 
 /**
  * @license

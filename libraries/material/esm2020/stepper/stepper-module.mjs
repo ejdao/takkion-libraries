@@ -5,13 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { PortalModule } from '@angular/cdk/portal';
-import { CdkStepperModule } from '@angular/cdk/stepper';
+import { PortalModule } from '@takkion/ng-cdk/portal';
+import { CdkStepperModule } from '@takkion/ng-cdk/stepper';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { ErrorStateMatcher, MatCommonModule, MatRippleModule } from '@angular/material/core';
-import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@takkion/ng-material/button';
+import { ErrorStateMatcher, MatCommonModule, MatRippleModule } from '@takkion/ng-material/core';
+import { MatIconModule } from '@takkion/ng-material/icon';
 import { MatStepHeader } from './step-header';
 import { MatStepLabel } from './step-label';
 import { MatStep, MatStepper } from './stepper';

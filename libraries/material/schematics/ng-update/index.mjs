@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateToV15 = exports.updateToV14 = exports.updateToV13 = exports.updateToV12 = exports.updateToV11 = exports.updateToV10 = exports.updateToV9 = exports.updateToV8 = exports.updateToV7 = exports.updateToV6 = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 const hammer_gestures_migration_1 = require("./migrations/hammer-gestures-v9/hammer-gestures-migration");
 const misc_class_inheritance_1 = require("./migrations/misc-checks/misc-class-inheritance");
 const misc_class_names_1 = require("./migrations/misc-checks/misc-class-names");

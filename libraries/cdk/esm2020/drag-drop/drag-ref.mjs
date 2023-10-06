@@ -5,9 +5,9 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { normalizePassiveListenerOptions, _getEventTarget, _getShadowRoot, } from '@angular/cdk/platform';
-import { coerceBooleanProperty, coerceElement } from '@angular/cdk/coercion';
-import { isFakeMousedownFromScreenReader, isFakeTouchstartFromScreenReader } from '@angular/cdk/a11y';
+import { normalizePassiveListenerOptions, _getEventTarget, _getShadowRoot, } from '@takkion/ng-cdk/platform';
+import { coerceBooleanProperty, coerceElement } from '@takkion/ng-cdk/coercion';
+import { isFakeMousedownFromScreenReader, isFakeTouchstartFromScreenReader } from '@takkion/ng-cdk/a11y';
 import { Subscription, Subject } from 'rxjs';
 import { combineTransforms, extendStyles, toggleNativeDragInteractions, toggleVisibility, } from './dom/styling';
 import { getTransformTransitionDurationInMs } from './dom/transition-duration';

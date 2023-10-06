@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ScrollDispatcher, ViewportRuler } from '@angular/cdk/scrolling';
+import { ScrollDispatcher, ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, NgZone } from '@angular/core';
 import { BlockScrollStrategy } from './block-scroll-strategy';
@@ -13,7 +13,7 @@ import { CloseScrollStrategy } from './close-scroll-strategy';
 import { NoopScrollStrategy } from './noop-scroll-strategy';
 import { RepositionScrollStrategy, } from './reposition-scroll-strategy';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/scrolling";
+import * as i1 from "@takkion/ng-cdk/scrolling";
 /**
  * Options for how an overlay will handle scrolling.
  *

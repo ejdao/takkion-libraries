@@ -1,5 +1,5 @@
-import { coerceNumberProperty } from '@angular/cdk/coercion';
-import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import { ComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
 
 /**
  * @license

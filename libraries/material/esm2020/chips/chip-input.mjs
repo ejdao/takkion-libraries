@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { BACKSPACE, hasModifierKey, TAB } from '@angular/cdk/keycodes';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { BACKSPACE, hasModifierKey, TAB } from '@takkion/ng-cdk/keycodes';
 import { Directive, ElementRef, EventEmitter, Inject, Input, Output, } from '@angular/core';
 import { MAT_CHIPS_DEFAULT_OPTIONS } from './chip-default-options';
 import { MatChipList } from './chip-list';

@@ -7,10 +7,10 @@
  */
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, APP_ID, inject } from '@angular/core';
-import { Platform } from '@angular/cdk/platform';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { addAriaReferencedId, getAriaReferenceIds, removeAriaReferencedId } from './aria-reference';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /**
  * ID used for the body container where all messages are appended.
  * @deprecated No longer being used. To be removed.

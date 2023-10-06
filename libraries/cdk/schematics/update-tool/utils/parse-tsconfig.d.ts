@@ -7,4 +7,7 @@
  */
 import * as ts from 'typescript';
 import { FileSystem, WorkspacePath } from '../file-system';
-export declare function parseTsconfigFile(tsconfigPath: WorkspacePath, fileSystem: FileSystem): ts.ParsedCommandLine;
+export declare function parseTsconfigFile(
+  tsconfigPath: WorkspacePath,
+  fileSystem: FileSystem
+): ts.ParsedCommandLine;

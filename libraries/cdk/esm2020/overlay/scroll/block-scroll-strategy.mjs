@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceCssPixelValue } from '@angular/cdk/coercion';
-import { supportsScrollBehavior } from '@angular/cdk/platform';
+import { coerceCssPixelValue } from '@takkion/ng-cdk/coercion';
+import { supportsScrollBehavior } from '@takkion/ng-cdk/platform';
 const scrollBehaviorSupported = supportsScrollBehavior();
 /**
  * Strategy that will prevent the user from scrolling while the overlay is visible.

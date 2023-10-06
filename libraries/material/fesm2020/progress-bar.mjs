@@ -2,8 +2,8 @@ import * as i0 from '@angular/core';
 import { InjectionToken, inject, EventEmitter, Component, ChangeDetectionStrategy, ViewEncapsulation, Optional, Inject, Input, ViewChild, Output, NgModule } from '@angular/core';
 import * as i1 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
-import { mixinColor, MatCommonModule } from '@angular/material/core';
-import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { mixinColor, MatCommonModule } from '@takkion/ng-material/core';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { Subscription, fromEvent } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -46,12 +46,12 @@ let progressbarId = 0;
  * `<mat-progress-bar>` component.
  */
 class MatProgressBar extends _MatProgressBarBase {
-    constructor(elementRef, _ngZone, _animationMode, 
+    constructor(elementRef, _ngZone, _animationMode,
     /**
      * @deprecated `location` parameter to be made required.
      * @breaking-change 8.0.0
      */
-    location, defaults, 
+    location, defaults,
     /**
      * @deprecated `_changeDetectorRef` parameter to be made required.
      * @breaking-change 11.0.0

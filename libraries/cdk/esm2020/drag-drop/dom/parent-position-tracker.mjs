@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { _getEventTarget } from '@angular/cdk/platform';
+import { _getEventTarget } from '@takkion/ng-cdk/platform';
 import { getMutableClientRect, adjustClientRect } from './client-rect';
 /** Keeps track of the scroll position and dimensions of the parents of an element. */
 export class ParentPositionTracker {

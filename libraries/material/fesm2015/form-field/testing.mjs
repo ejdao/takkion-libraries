@@ -1,9 +1,9 @@
-export { MatFormFieldControlHarness } from '@angular/material/form-field/testing/control';
+export { MatFormFieldControlHarness } from '@takkion/ng-material/form-field/testing/control';
 import { __awaiter } from 'tslib';
-import { ComponentHarness, parallel, HarnessPredicate } from '@angular/cdk/testing';
-import { MatDatepickerInputHarness, MatDateRangeInputHarness } from '@angular/material/datepicker/testing';
-import { MatInputHarness } from '@angular/material/input/testing';
-import { MatSelectHarness } from '@angular/material/select/testing';
+import { ComponentHarness, parallel, HarnessPredicate } from '@takkion/ng-cdk/testing';
+import { MatDatepickerInputHarness, MatDateRangeInputHarness } from '@takkion/ng-material/datepicker/testing';
+import { MatInputHarness } from '@takkion/ng-material/input/testing';
+import { MatSelectHarness } from '@takkion/ng-material/select/testing';
 
 class _MatFormFieldHarnessBase extends ComponentHarness {
     /** Gets the label of the form-field. */

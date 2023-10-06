@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const schematics_1 = require("@angular-devkit/schematics");
-const schematics_2 = require("@angular/cdk/schematics");
+const schematics_2 = require("@takkion/ng-cdk/schematics");
 const workspace_1 = require("@schematics/angular/utility/workspace");
 const workspace_models_1 = require("@schematics/angular/utility/workspace-models");
 const material_fonts_1 = require("./fonts/material-fonts");

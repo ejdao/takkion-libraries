@@ -1,16 +1,16 @@
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import * as i1 from '@angular/cdk/platform';
-import { getSupportedInputTypes } from '@angular/cdk/platform';
-import * as i4 from '@angular/cdk/text-field';
-import { TextFieldModule } from '@angular/cdk/text-field';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import * as i1 from '@takkion/ng-cdk/platform';
+import { getSupportedInputTypes } from '@takkion/ng-cdk/platform';
+import * as i4 from '@takkion/ng-cdk/text-field';
+import { TextFieldModule } from '@takkion/ng-cdk/text-field';
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, Optional, Self, Inject, Input, NgModule } from '@angular/core';
 import * as i2 from '@angular/forms';
 import { Validators } from '@angular/forms';
-import * as i3 from '@angular/material/core';
-import { mixinErrorState, MatCommonModule, ErrorStateMatcher } from '@angular/material/core';
-import * as i5 from '@angular/material/form-field';
-import { MAT_FORM_FIELD, MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import * as i3 from '@takkion/ng-material/core';
+import { mixinErrorState, MatCommonModule, ErrorStateMatcher } from '@takkion/ng-material/core';
+import * as i5 from '@takkion/ng-material/form-field';
+import { MAT_FORM_FIELD, MatFormFieldControl, MatFormFieldModule } from '@takkion/ng-material/form-field';
 import { Subject } from 'rxjs';
 
 /**
@@ -63,7 +63,7 @@ let nextUniqueId = 0;
 // Boilerplate for applying mixins to MatInput.
 /** @docs-private */
 const _MatInputBase = mixinErrorState(class {
-    constructor(_defaultErrorStateMatcher, _parentForm, _parentFormGroup, 
+    constructor(_defaultErrorStateMatcher, _parentForm, _parentFormGroup,
     /**
      * Form control bound to the component.
      * Implemented as part of `MatFormFieldControl`.
@@ -84,7 +84,7 @@ const _MatInputBase = mixinErrorState(class {
 });
 /** Directive that allows a native input to work inside a `MatFormField`. */
 class MatInput extends _MatInputBase {
-    constructor(_elementRef, _platform, ngControl, _parentForm, _parentFormGroup, _defaultErrorStateMatcher, inputValueAccessor, _autofillMonitor, ngZone, 
+    constructor(_elementRef, _platform, ngControl, _parentForm, _parentFormGroup, _defaultErrorStateMatcher, inputValueAccessor, _autofillMonitor, ngZone,
     // TODO: Remove this once the legacy appearance has been removed. We only need
     // to inject the form field for determining whether the placeholder has been promoted.
     _formField) {

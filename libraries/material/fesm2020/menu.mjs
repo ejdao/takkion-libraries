@@ -1,22 +1,22 @@
-import * as i1 from '@angular/cdk/a11y';
-import { FocusKeyManager, isFakeTouchstartFromScreenReader, isFakeMousedownFromScreenReader } from '@angular/cdk/a11y';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { UP_ARROW, DOWN_ARROW, RIGHT_ARROW, LEFT_ARROW, ESCAPE, hasModifierKey, ENTER, SPACE } from '@angular/cdk/keycodes';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import { FocusKeyManager, isFakeTouchstartFromScreenReader, isFakeMousedownFromScreenReader } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { UP_ARROW, DOWN_ARROW, RIGHT_ARROW, LEFT_ARROW, ESCAPE, hasModifierKey, ENTER, SPACE } from '@takkion/ng-cdk/keycodes';
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, Inject, Component, ChangeDetectionStrategy, ViewEncapsulation, Optional, Input, QueryList, EventEmitter, TemplateRef, ContentChildren, ViewChild, ContentChild, Output, Self, NgModule } from '@angular/core';
 import { Subject, Subscription, merge, of, asapScheduler } from 'rxjs';
 import { startWith, switchMap, take, takeUntil, filter, delay } from 'rxjs/operators';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { TemplatePortal, DomPortalOutlet } from '@angular/cdk/portal';
+import { TemplatePortal, DomPortalOutlet } from '@takkion/ng-cdk/portal';
 import * as i2 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
-import * as i3 from '@angular/material/core';
-import { mixinDisableRipple, mixinDisabled, MatCommonModule, MatRippleModule } from '@angular/material/core';
-import * as i3$1 from '@angular/cdk/bidi';
-import * as i1$1 from '@angular/cdk/overlay';
-import { Overlay, OverlayConfig, OverlayModule } from '@angular/cdk/overlay';
-import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
-import { CdkScrollableModule } from '@angular/cdk/scrolling';
+import * as i3 from '@takkion/ng-material/core';
+import { mixinDisableRipple, mixinDisabled, MatCommonModule, MatRippleModule } from '@takkion/ng-material/core';
+import * as i3$1 from '@takkion/ng-cdk/bidi';
+import * as i1$1 from '@takkion/ng-cdk/overlay';
+import { Overlay, OverlayConfig, OverlayModule } from '@takkion/ng-cdk/overlay';
+import { normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
+import { CdkScrollableModule } from '@takkion/ng-cdk/scrolling';
 
 /**
  * @license
@@ -371,7 +371,7 @@ function MAT_MENU_DEFAULT_OPTIONS_FACTORY() {
 let menuPanelUid = 0;
 /** Base class with all of the `MatMenu` functionality. */
 class _MatMenuBase {
-    constructor(_elementRef, _ngZone, _defaultOptions, 
+    constructor(_elementRef, _ngZone, _defaultOptions,
     // @breaking-change 15.0.0 `_changeDetectorRef` to become a required parameter.
     _changeDetectorRef) {
         this._elementRef = _elementRef;
@@ -780,7 +780,7 @@ const MENU_PANEL_TOP_PADDING = 8;
 const passiveEventListenerOptions = normalizePassiveListenerOptions({ passive: true });
 // TODO(andrewseguin): Remove the kebab versions in favor of camelCased attribute selectors
 class _MatMenuTriggerBase {
-    constructor(_overlay, _element, _viewContainerRef, scrollStrategy, parentMenu, 
+    constructor(_overlay, _element, _viewContainerRef, scrollStrategy, parentMenu,
     // `MatMenuTrigger` is commonly used in combination with a `MatMenuItem`.
     // tslint:disable-next-line: lightweight-tokens
     _menuItemInstance, _dir, _focusMonitor, _ngZone) {
@@ -972,7 +972,7 @@ class _MatMenuTriggerBase {
             if (menu.lazyContent) {
                 // Wait for the exit animation to finish before detaching the content.
                 menu._animationDone
-                    .pipe(filter(event => event.toState === 'void'), take(1), 
+                    .pipe(filter(event => event.toState === 'void'), take(1),
                 // Interrupt if the content got re-attached.
                 takeUntil(menu.lazyContent._attached))
                     .subscribe({

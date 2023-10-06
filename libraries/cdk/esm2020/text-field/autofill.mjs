@@ -5,12 +5,12 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Platform, normalizePassiveListenerOptions } from '@angular/cdk/platform';
+import { Platform, normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
 import { Directive, ElementRef, EventEmitter, Injectable, NgZone, Output, } from '@angular/core';
-import { coerceElement } from '@angular/cdk/coercion';
+import { coerceElement } from '@takkion/ng-cdk/coercion';
 import { EMPTY, Subject } from 'rxjs';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /** Options to pass to the animationstart listener. */
 const listenerOptions = normalizePassiveListenerOptions({ passive: true });
 /**

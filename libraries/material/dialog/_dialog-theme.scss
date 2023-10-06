@@ -4,7 +4,6 @@
 @use '../core/typography/typography';
 @use '../core/typography/typography-utils';
 
-
 @mixin color($config-or-theme) {
   $config: theming.get-color-config($config-or-theme);
   $background: map.get($config, background);
@@ -19,13 +18,15 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-dialog-title {
     @include typography-utils.typography-level($config, title);
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

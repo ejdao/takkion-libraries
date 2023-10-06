@@ -1,15 +1,15 @@
 import { DOCUMENT } from '@angular/common';
 import * as i0 from '@angular/core';
 import { inject, APP_ID, Injectable, Inject, QueryList, Directive, Input, InjectionToken, Optional, EventEmitter, Output, NgModule } from '@angular/core';
-import * as i1 from '@angular/cdk/platform';
-import { _getFocusedElementPierceShadowDom, normalizePassiveListenerOptions, _getEventTarget, _getShadowRoot } from '@angular/cdk/platform';
+import * as i1 from '@takkion/ng-cdk/platform';
+import { _getFocusedElementPierceShadowDom, normalizePassiveListenerOptions, _getEventTarget, _getShadowRoot } from '@takkion/ng-cdk/platform';
 import { Subject, Subscription, BehaviorSubject, of } from 'rxjs';
-import { hasModifierKey, A, Z, ZERO, NINE, END, HOME, LEFT_ARROW, RIGHT_ARROW, UP_ARROW, DOWN_ARROW, TAB, ALT, CONTROL, MAC_META, META, SHIFT } from '@angular/cdk/keycodes';
+import { hasModifierKey, A, Z, ZERO, NINE, END, HOME, LEFT_ARROW, RIGHT_ARROW, UP_ARROW, DOWN_ARROW, TAB, ALT, CONTROL, MAC_META, META, SHIFT } from '@takkion/ng-cdk/keycodes';
 import { tap, debounceTime, filter, map, take, skip, distinctUntilChanged, takeUntil } from 'rxjs/operators';
-import { coerceBooleanProperty, coerceElement } from '@angular/cdk/coercion';
-import * as i1$1 from '@angular/cdk/observers';
-import { ObserversModule } from '@angular/cdk/observers';
-import { BreakpointObserver } from '@angular/cdk/layout';
+import { coerceBooleanProperty, coerceElement } from '@takkion/ng-cdk/coercion';
+import * as i1$1 from '@takkion/ng-cdk/observers';
+import { ObserversModule } from '@takkion/ng-cdk/observers';
+import { BreakpointObserver } from '@takkion/ng-cdk/layout';
 
 /**
  * @license

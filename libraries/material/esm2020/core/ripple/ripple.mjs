@@ -5,12 +5,12 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Platform } from '@angular/cdk/platform';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { Directive, ElementRef, Inject, InjectionToken, Input, NgZone, Optional, } from '@angular/core';
 import { RippleRenderer } from './ripple-renderer';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /** Injection token that can be used to specify the global ripple options. */
 export const MAT_RIPPLE_GLOBAL_OPTIONS = new InjectionToken('mat-ripple-global-options');
 export class MatRipple {

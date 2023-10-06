@@ -4,7 +4,6 @@
 @use '../core/typography/typography-utils';
 @use '../core/style/list-common';
 
-
 @mixin color($config-or-theme) {
   $config: theming.get-color-config($config-or-theme);
   $background: map.get($config, background);
@@ -32,13 +31,16 @@
   .mat-list-option,
   .mat-nav-list .mat-list-item,
   .mat-action-list .mat-list-item {
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: theming.get-color-from-palette($background, 'hover');
     }
   }
 
   .mat-list-single-selected-option {
-    &, &:hover, &:focus {
+    &,
+    &:hover,
+    &:focus {
       background: theming.get-color-from-palette($background, hover, 0.12);
     }
   }
@@ -46,7 +48,8 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   $font-family: typography-utils.font-family($config);
 
   .mat-list-item {
@@ -96,7 +99,8 @@
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

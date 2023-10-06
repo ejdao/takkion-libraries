@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessPredicate, } from '@angular/cdk/testing';
-import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
+import { ContentContainerComponentHarness, HarnessPredicate, } from '@takkion/ng-cdk/testing';
+import { coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 /** Harness for interacting with a standard Angular Material tree node. */
 export class MatTreeNodeHarness extends ContentContainerComponentHarness {
     constructor() {

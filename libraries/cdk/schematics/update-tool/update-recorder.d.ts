@@ -7,7 +7,7 @@
  */
 /** Update recorder that can be used to apply changes to a source file. */
 export interface UpdateRecorder {
-    insertLeft(index: number, content: string): UpdateRecorder;
-    insertRight(index: number, content: string): UpdateRecorder;
-    remove(index: number, length: number): UpdateRecorder;
+  insertLeft(index: number, content: string): UpdateRecorder;
+  insertRight(index: number, content: string): UpdateRecorder;
+  remove(index: number, length: number): UpdateRecorder;
 }

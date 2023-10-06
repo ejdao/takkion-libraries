@@ -5,27 +5,27 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { DOWN_ARROW, ENTER, ESCAPE, TAB, UP_ARROW, hasModifierKey } from '@angular/cdk/keycodes';
-import { Overlay, OverlayConfig, } from '@angular/cdk/overlay';
-import { _getEventTarget } from '@angular/cdk/platform';
-import { TemplatePortal } from '@angular/cdk/portal';
-import { ViewportRuler } from '@angular/cdk/scrolling';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { DOWN_ARROW, ENTER, ESCAPE, TAB, UP_ARROW, hasModifierKey } from '@takkion/ng-cdk/keycodes';
+import { Overlay, OverlayConfig, } from '@takkion/ng-cdk/overlay';
+import { _getEventTarget } from '@takkion/ng-cdk/platform';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
+import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectorRef, Directive, ElementRef, forwardRef, Host, Inject, InjectionToken, Input, NgZone, Optional, ViewContainerRef, } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { _countGroupLabelsBeforeOption, _getOptionScrollPosition, MatOptionSelectionChange, } from '@angular/material/core';
-import { MAT_FORM_FIELD, MatFormField } from '@angular/material/form-field';
+import { _countGroupLabelsBeforeOption, _getOptionScrollPosition, MatOptionSelectionChange, } from '@takkion/ng-material/core';
+import { MAT_FORM_FIELD, MatFormField } from '@takkion/ng-material/form-field';
 import { defer, fromEvent, merge, of as observableOf, Subject, Subscription } from 'rxjs';
 import { delay, filter, map, switchMap, take, tap, startWith } from 'rxjs/operators';
 import { _MatAutocompleteBase, MAT_AUTOCOMPLETE_DEFAULT_OPTIONS, } from './autocomplete';
 import { _MatAutocompleteOriginBase } from './autocomplete-origin';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/overlay";
-import * as i2 from "@angular/cdk/bidi";
-import * as i3 from "@angular/cdk/scrolling";
-import * as i4 from "@angular/material/form-field";
+import * as i1 from "@takkion/ng-cdk/overlay";
+import * as i2 from "@takkion/ng-cdk/bidi";
+import * as i3 from "@takkion/ng-cdk/scrolling";
+import * as i4 from "@takkion/ng-material/form-field";
 /** Injection token that determines the scroll handling while the autocomplete panel is open. */
 export const MAT_AUTOCOMPLETE_SCROLL_STRATEGY = new InjectionToken('mat-autocomplete-scroll-strategy');
 /** @docs-private */
@@ -364,7 +364,7 @@ export class _MatAutocompleteTriggerBase {
      */
     _subscribeToClosingActions() {
         const firstStable = this._zone.onStable.pipe(take(1));
-        const optionChanges = this.autocomplete.options.changes.pipe(tap(() => this._positionStrategy.reapplyLastPosition()), 
+        const optionChanges = this.autocomplete.options.changes.pipe(tap(() => this._positionStrategy.reapplyLastPosition()),
         // Defer emitting to the stream until the next tick, because changing
         // bindings in here will cause "changed after checked" errors.
         delay(0));
@@ -402,7 +402,7 @@ export class _MatAutocompleteTriggerBase {
                 }
             });
             return this.panelClosingActions;
-        }), 
+        }),
         // when the first closing event occurs...
         take(1))
             // set the value, close the panel, and complete.

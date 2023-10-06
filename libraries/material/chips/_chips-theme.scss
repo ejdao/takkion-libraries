@@ -17,7 +17,6 @@ $chip-remove-font-size: 18px;
   }
 }
 
-
 // Applies the background color for a ripple element.
 // If the color value provided is not a Sass color,
 // we assume that we've been given a CSS variable.
@@ -32,8 +31,10 @@ $chip-remove-font-size: 18px;
 }
 
 @mixin _palette-styles($palette) {
-  @include _element-color(theming.get-color-from-palette($palette, default-contrast),
-    theming.get-color-from-palette($palette));
+  @include _element-color(
+    theming.get-color-from-palette($palette, default-contrast),
+    theming.get-color-from-palette($palette)
+  );
 
   .mat-ripple-element {
     @include _ripple-background($palette, default-contrast, 0.1);
@@ -91,7 +92,8 @@ $chip-remove-font-size: 18px;
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-chip {
     font-size: typography-utils.font-size($config, body-2);
     font-weight: typography-utils.font-weight($config, body-2);
@@ -103,7 +105,8 @@ $chip-remove-font-size: 18px;
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
@@ -123,5 +126,3 @@ $chip-remove-font-size: 18px;
     }
   }
 }
-
-

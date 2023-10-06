@@ -9,6 +9,6 @@ import { ResolvedResource } from '../../../update-tool/component-resource-collec
 import { DevkitMigration } from '../../devkit-migration';
 /** Migration that removes tilde symbols from imports. */
 export declare class TildeImportMigration extends DevkitMigration<null> {
-    enabled: boolean;
-    visitStylesheet(stylesheet: ResolvedResource): void;
+  enabled: boolean;
+  visitStylesheet(stylesheet: ResolvedResource): void;
 }

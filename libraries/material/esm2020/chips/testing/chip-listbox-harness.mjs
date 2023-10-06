@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessPredicate, parallel } from '@angular/cdk/testing';
+import { HarnessPredicate, parallel } from '@takkion/ng-cdk/testing';
 import { MatChipOptionHarness } from './chip-option-harness';
 import { _MatChipListHarnessBase } from './chip-list-harness';
 /** Harness for interacting with a standard selectable chip list in tests. */

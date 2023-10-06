@@ -1,14 +1,14 @@
 import * as i0 from '@angular/core';
 import { Directive, InjectionToken, Optional, SkipSelf, Inject, Injectable, inject, Injector, ViewContainerRef, EventEmitter, NgZone, ElementRef, InjectFlags, Input, Output, ContentChildren, NgModule } from '@angular/core';
-import { Overlay, OverlayConfig, STANDARD_DROPDOWN_BELOW_POSITIONS, STANDARD_DROPDOWN_ADJACENT_POSITIONS, OverlayModule } from '@angular/cdk/overlay';
-import { UP_ARROW, hasModifierKey, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, ENTER, SPACE, TAB, ESCAPE } from '@angular/cdk/keycodes';
+import { Overlay, OverlayConfig, STANDARD_DROPDOWN_BELOW_POSITIONS, STANDARD_DROPDOWN_ADJACENT_POSITIONS, OverlayModule } from '@takkion/ng-cdk/overlay';
+import { UP_ARROW, hasModifierKey, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, ENTER, SPACE, TAB, ESCAPE } from '@takkion/ng-cdk/keycodes';
 import { startWith, debounceTime, distinctUntilChanged, filter, takeUntil, mergeMap, mapTo, mergeAll, switchMap, skip } from 'rxjs/operators';
-import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
+import { UniqueSelectionDispatcher } from '@takkion/ng-cdk/collections';
 import { Subject, merge, fromEvent, defer, partition } from 'rxjs';
-import { TemplatePortal } from '@angular/cdk/portal';
-import { FocusKeyManager } from '@angular/cdk/a11y';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { Directionality } from '@angular/cdk/bidi';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 
 /**
  * @license

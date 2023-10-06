@@ -7,12 +7,12 @@
  */
 import { Injectable, Inject, NgZone } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { ViewportRuler } from '@angular/cdk/scrolling';
+import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import { DragRef } from './drag-ref';
 import { DropListRef } from './drop-list-ref';
 import { DragDropRegistry } from './drag-drop-registry';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/scrolling";
+import * as i1 from "@takkion/ng-cdk/scrolling";
 import * as i2 from "./drag-drop-registry";
 /** Default configuration to be used when creating a `DragRef`. */
 const DEFAULT_CONFIG = {

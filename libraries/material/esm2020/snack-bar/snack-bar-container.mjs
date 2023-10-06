@@ -1,14 +1,14 @@
-import { Platform } from '@angular/cdk/platform';
-import { BasePortalOutlet, CdkPortalOutlet, } from '@angular/cdk/portal';
+import { Platform } from '@takkion/ng-cdk/platform';
+import { BasePortalOutlet, CdkPortalOutlet, } from '@takkion/ng-cdk/portal';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, ElementRef, NgZone, ViewChild, ViewEncapsulation, } from '@angular/core';
 import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { matSnackBarAnimations } from './snack-bar-animations';
 import { MatSnackBarConfig } from './snack-bar-config';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 import * as i2 from "./snack-bar-config";
-import * as i3 from "@angular/cdk/portal";
+import * as i3 from "@takkion/ng-cdk/portal";
 /**
  * Base class for snack bar containers.
  * @docs-private

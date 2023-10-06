@@ -8,10 +8,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, forwardRef, Inject, Input, ViewEncapsulation, QueryList, ElementRef, NgZone, } from '@angular/core';
 import { MatDrawer, MatDrawerContainer, MatDrawerContent, MAT_DRAWER_CONTAINER } from './drawer';
 import { matDrawerAnimations } from './drawer-animations';
-import { coerceBooleanProperty, coerceNumberProperty, } from '@angular/cdk/coercion';
-import { ScrollDispatcher, CdkScrollable } from '@angular/cdk/scrolling';
+import { coerceBooleanProperty, coerceNumberProperty, } from '@takkion/ng-cdk/coercion';
+import { ScrollDispatcher, CdkScrollable } from '@takkion/ng-cdk/scrolling';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/scrolling";
+import * as i1 from "@takkion/ng-cdk/scrolling";
 import * as i2 from "@angular/common";
 export class MatSidenavContent extends MatDrawerContent {
     constructor(changeDetectorRef, container, elementRef, scrollDispatcher, ngZone) {

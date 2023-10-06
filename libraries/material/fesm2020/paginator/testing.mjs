@@ -1,6 +1,6 @@
-import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
-import { MatSelectHarness } from '@angular/material/select/testing';
-import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { ComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
+import { MatSelectHarness } from '@takkion/ng-material/select/testing';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 
 /**
  * @license

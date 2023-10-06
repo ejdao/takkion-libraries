@@ -7,10 +7,10 @@
  */
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatCommonModule } from '@angular/material/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCommonModule } from '@takkion/ng-material/core';
+import { MatButtonModule } from '@takkion/ng-material/button';
+import { MatSelectModule } from '@takkion/ng-material/select';
+import { MatTooltipModule } from '@takkion/ng-material/tooltip';
 import { MatPaginator } from './paginator';
 import { MAT_PAGINATOR_INTL_PROVIDER } from './paginator-intl';
 import * as i0 from "@angular/core";

@@ -5,13 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { AriaDescriber } from '@angular/cdk/a11y';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { AriaDescriber } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Directive, ElementRef, Inject, Input, NgZone, Optional, Renderer2, } from '@angular/core';
-import { mixinDisabled } from '@angular/material/core';
+import { mixinDisabled } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
+import * as i1 from "@takkion/ng-cdk/a11y";
 let nextId = 0;
 // Boilerplate for applying mixins to MatBadge.
 /** @docs-private */

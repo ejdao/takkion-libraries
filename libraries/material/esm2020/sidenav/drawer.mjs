@@ -1,9 +1,9 @@
-import { FocusMonitor, FocusTrapFactory, InteractivityChecker, } from '@angular/cdk/a11y';
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
-import { Platform } from '@angular/cdk/platform';
-import { CdkScrollable, ScrollDispatcher, ViewportRuler } from '@angular/cdk/scrolling';
+import { FocusMonitor, FocusTrapFactory, InteractivityChecker, } from '@takkion/ng-cdk/a11y';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { ESCAPE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
+import { Platform } from '@takkion/ng-cdk/platform';
+import { CdkScrollable, ScrollDispatcher, ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, ElementRef, EventEmitter, forwardRef, Inject, InjectionToken, Input, NgZone, Optional, Output, QueryList, ViewChild, ViewEncapsulation, } from '@angular/core';
 import { fromEvent, merge, Observable, Subject } from 'rxjs';
@@ -11,10 +11,10 @@ import { debounceTime, filter, map, startWith, take, takeUntil, distinctUntilCha
 import { matDrawerAnimations } from './drawer-animations';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/scrolling";
-import * as i2 from "@angular/cdk/a11y";
-import * as i3 from "@angular/cdk/platform";
-import * as i4 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-cdk/scrolling";
+import * as i2 from "@takkion/ng-cdk/a11y";
+import * as i3 from "@takkion/ng-cdk/platform";
+import * as i4 from "@takkion/ng-cdk/bidi";
 import * as i5 from "@angular/common";
 /**
  * Throws an exception when two MatDrawer are matching the same position.

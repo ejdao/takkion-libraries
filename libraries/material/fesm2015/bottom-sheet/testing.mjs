@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate, TestKey } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate, TestKey } from '@takkion/ng-cdk/testing';
 
 /** Harness for interacting with a standard MatBottomSheet in tests. */
 class MatBottomSheetHarness extends ContentContainerComponentHarness {

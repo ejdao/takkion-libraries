@@ -1,13 +1,13 @@
 import * as i0 from '@angular/core';
 import { inject, ElementRef, Directive, Input, ChangeDetectorRef, InjectFlags, forwardRef, Output, ContentChildren, NgModule } from '@angular/core';
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { A, hasModifierKey, SPACE, ENTER, HOME, END, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk/keycodes';
-import { coerceBooleanProperty, coerceArray } from '@angular/cdk/coercion';
-import { SelectionModel } from '@angular/cdk/collections';
+import { ActiveDescendantKeyManager } from '@takkion/ng-cdk/a11y';
+import { A, hasModifierKey, SPACE, ENTER, HOME, END, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW } from '@takkion/ng-cdk/keycodes';
+import { coerceBooleanProperty, coerceArray } from '@takkion/ng-cdk/coercion';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
 import { Subject, defer, merge } from 'rxjs';
 import { startWith, switchMap, map, takeUntil, filter } from 'rxjs/operators';
 import { Validators, NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
-import { Directionality } from '@angular/cdk/bidi';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 
 /**
  * @license

@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, HarnessPredicate, parallel } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate, parallel } from '@takkion/ng-cdk/testing';
 import { MatTabHarness } from './tab-harness';
 /** Harness for interacting with a standard mat-tab-group in tests. */
 export class MatTabGroupHarness extends ComponentHarness {

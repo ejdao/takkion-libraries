@@ -1,5 +1,5 @@
-import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness, parallel } from '@angular/cdk/testing';
-import { ɵTileCoordinator } from '@angular/material/grid-list';
+import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness, parallel } from '@takkion/ng-cdk/testing';
+import { ɵTileCoordinator } from '@takkion/ng-material/grid-list';
 
 /**
  * @license

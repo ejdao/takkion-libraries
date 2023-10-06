@@ -1,16 +1,16 @@
-import * as i1 from '@angular/cdk/a11y';
-import { A11yModule } from '@angular/cdk/a11y';
-import * as i1$1 from '@angular/cdk/overlay';
-import { Overlay, OverlayConfig, OverlayRef, OverlayModule } from '@angular/cdk/overlay';
-import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
-import * as i3 from '@angular/cdk/portal';
-import { BasePortalOutlet, CdkPortalOutlet, ComponentPortal, TemplatePortal, PortalModule } from '@angular/cdk/portal';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import { A11yModule } from '@takkion/ng-cdk/a11y';
+import * as i1$1 from '@takkion/ng-cdk/overlay';
+import { Overlay, OverlayConfig, OverlayRef, OverlayModule } from '@takkion/ng-cdk/overlay';
+import { _getFocusedElementPierceShadowDom } from '@takkion/ng-cdk/platform';
+import * as i3 from '@takkion/ng-cdk/portal';
+import { BasePortalOutlet, CdkPortalOutlet, ComponentPortal, TemplatePortal, PortalModule } from '@takkion/ng-cdk/portal';
 import { DOCUMENT } from '@angular/common';
 import * as i0 from '@angular/core';
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, Optional, Inject, ViewChild, InjectionToken, Injector, TemplateRef, InjectFlags, Injectable, SkipSelf, NgModule } from '@angular/core';
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
+import { ESCAPE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
 import { Subject, defer, of } from 'rxjs';
-import { Directionality } from '@angular/cdk/bidi';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { startWith } from 'rxjs/operators';
 
 /**

@@ -1,4 +1,4 @@
-import { coerceElement, coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
+import { coerceElement, coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 import * as i0 from '@angular/core';
 import { Injectable, EventEmitter, Directive, Output, Input, NgModule } from '@angular/core';
 import { Observable, Subject } from 'rxjs';

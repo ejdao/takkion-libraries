@@ -5,11 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { OverlayModule } from '@angular/cdk/overlay';
+import { OverlayModule } from '@takkion/ng-cdk/overlay';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatCommonModule, MatRippleModule } from '@angular/material/core';
-import { CdkScrollableModule } from '@angular/cdk/scrolling';
+import { MatCommonModule, MatRippleModule } from '@takkion/ng-material/core';
+import { CdkScrollableModule } from '@takkion/ng-cdk/scrolling';
 import { MatMenu } from './menu';
 import { MatMenuContent } from './menu-content';
 import { MatMenuItem } from './menu-item';

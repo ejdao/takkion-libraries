@@ -5,13 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { ChangeDetectionStrategy, Component, ContentChild, ContentChildren, Directive, ElementRef, Optional, QueryList, ViewEncapsulation, ChangeDetectorRef, Input, InjectionToken, Inject, } from '@angular/core';
-import { MatLine, setLines, mixinDisableRipple, mixinDisabled, } from '@angular/material/core';
+import { MatLine, setLines, mixinDisableRipple, mixinDisabled, } from '@takkion/ng-material/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/material/core";
+import * as i1 from "@takkion/ng-material/core";
 // Boilerplate for applying mixins to MatList.
 /** @docs-private */
 const _MatListBase = mixinDisabled(mixinDisableRipple(class {

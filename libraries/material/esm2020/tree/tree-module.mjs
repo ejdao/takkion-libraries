@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { NgModule } from '@angular/core';
-import { CdkTreeModule } from '@angular/cdk/tree';
-import { MatCommonModule } from '@angular/material/core';
+import { CdkTreeModule } from '@takkion/ng-cdk/tree';
+import { MatCommonModule } from '@takkion/ng-material/core';
 import { MatNestedTreeNode, MatTreeNodeDef, MatTreeNode } from './node';
 import { MatTree } from './tree';
 import { MatTreeNodeToggle } from './toggle';

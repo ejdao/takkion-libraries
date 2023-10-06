@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { _getFocusedElementPierceShadowDom } from '@takkion/ng-cdk/platform';
 import { DOCUMENT } from '@angular/common';
 import { Directive, ElementRef, Inject, Injectable, Input, NgZone, } from '@angular/core';
 import { take } from 'rxjs/operators';

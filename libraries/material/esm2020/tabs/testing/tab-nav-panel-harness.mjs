@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
 /** Harness for interacting with a standard mat-tab-nav-panel in tests. */
 export class MatTabNavPanelHarness extends ContentContainerComponentHarness {
     /**

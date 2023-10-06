@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Directive, ElementRef, Inject, InjectionToken, Input, Optional, SkipSelf, } from '@angular/core';
 import { Subject } from 'rxjs';
 import { CDK_DRAG_PARENT } from '../drag-parent';

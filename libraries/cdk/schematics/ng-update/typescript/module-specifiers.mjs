@@ -12,7 +12,7 @@ const imports_1 = require("../typescript/imports");
 /** Name of the Angular Material module specifier. */
 exports.materialModuleSpecifier = '@angular/material';
 /** Name of the Angular CDK module specifier. */
-exports.cdkModuleSpecifier = '@angular/cdk';
+exports.cdkModuleSpecifier = '@takkion/ng-cdk';
 /** Whether the specified node is part of an Angular Material or CDK import declaration. */
 function isMaterialImportDeclaration(node) {
     return isMaterialDeclaration((0, imports_1.getImportDeclaration)(node));

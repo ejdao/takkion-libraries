@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, ElementRef, Inject, InjectionToken, Input, NgZone, Optional, QueryList, ViewChild, ViewEncapsulation, } from '@angular/core';
-import { mixinColor } from '@angular/material/core';
+import { mixinColor } from '@takkion/ng-material/core';
 import { fromEvent, merge, Subject } from 'rxjs';
 import { startWith, take, takeUntil } from 'rxjs/operators';
 import { MAT_ERROR } from './error';
@@ -20,13 +20,13 @@ import { MatLabel } from './label';
 import { MatPlaceholder } from './placeholder';
 import { MAT_PREFIX } from './prefix';
 import { MAT_SUFFIX } from './suffix';
-import { Platform } from '@angular/cdk/platform';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/bidi";
-import * as i2 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/bidi";
+import * as i2 from "@takkion/ng-cdk/platform";
 import * as i3 from "@angular/common";
-import * as i4 from "@angular/cdk/observers";
+import * as i4 from "@takkion/ng-cdk/observers";
 let nextUniqueId = 0;
 const floatingLabelScale = 0.75;
 const outlineGapPadding = 5;

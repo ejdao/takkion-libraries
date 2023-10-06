@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { NgModule } from '@angular/core';
-import { OverlayModule } from '@angular/cdk/overlay';
+import { OverlayModule } from '@takkion/ng-cdk/overlay';
 import { CdkMenu } from './menu';
 import { CdkMenuBar } from './menu-bar';
 import { CdkMenuItem } from './menu-item';

@@ -5,17 +5,17 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, forwardRef, Inject, Input, NgZone, Optional, Output, ViewChild, ViewEncapsulation, Directive, } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatRipple, mixinColor, mixinDisabled, mixinDisableRipple, mixinTabIndex, } from '@angular/material/core';
+import { MatRipple, mixinColor, mixinDisabled, mixinDisableRipple, mixinTabIndex, } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { MAT_CHECKBOX_DEFAULT_OPTIONS, MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY, } from './checkbox-config';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
-import * as i2 from "@angular/material/core";
-import * as i3 from "@angular/cdk/observers";
+import * as i1 from "@takkion/ng-cdk/a11y";
+import * as i2 from "@takkion/ng-material/core";
+import * as i3 from "@takkion/ng-cdk/observers";
 // Increasing integer for generating unique ids for checkbox components.
 let nextUniqueId = 0;
 // Default checkbox configuration.

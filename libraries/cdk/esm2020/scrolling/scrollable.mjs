@@ -5,15 +5,15 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
-import { getRtlScrollAxisType, supportsScrollBehavior, } from '@angular/cdk/platform';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { getRtlScrollAxisType, supportsScrollBehavior, } from '@takkion/ng-cdk/platform';
 import { Directive, ElementRef, NgZone, Optional } from '@angular/core';
 import { fromEvent, Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ScrollDispatcher } from './scroll-dispatcher';
 import * as i0 from "@angular/core";
 import * as i1 from "./scroll-dispatcher";
-import * as i2 from "@angular/cdk/bidi";
+import * as i2 from "@takkion/ng-cdk/bidi";
 /**
  * Sends an event when the directive's element is scrolled. Registers itself with the
  * ScrollDispatcher service to include itself as part of its collection of scrolling events that it

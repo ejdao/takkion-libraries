@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { NgModule } from '@angular/core';
-import { CdkScrollableModule } from '@angular/cdk/scrolling';
+import { CdkScrollableModule } from '@takkion/ng-cdk/scrolling';
 import { CdkDropList } from './directives/drop-list';
 import { CdkDropListGroup } from './directives/drop-list-group';
 import { CdkDrag } from './directives/drag';

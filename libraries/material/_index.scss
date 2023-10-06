@@ -1,24 +1,23 @@
 // Theming APIs
-@forward './core/theming/theming' show define-light-theme, define-dark-theme,
-  define-palette, get-contrast-color-from-palette, get-color-from-palette,
-  get-color-config, get-typography-config, get-density-config,
-  $theme-ignore-duplication-warnings;
-@forward './core/theming/palette' show $red-palette, $pink-palette, $indigo-palette,
-  $purple-palette, $deep-purple-palette, $blue-palette, $light-blue-palette, $cyan-palette,
-  $teal-palette, $green-palette, $light-green-palette, $lime-palette, $yellow-palette,
-  $amber-palette, $orange-palette, $deep-orange-palette, $brown-palette, $grey-palette,
-  $gray-palette, $blue-grey-palette, $blue-gray-palette, $light-theme-background-palette,
+@forward './core/theming/theming' show define-light-theme, define-dark-theme, define-palette,
+  get-contrast-color-from-palette, get-color-from-palette, get-color-config, get-typography-config,
+  get-density-config, $theme-ignore-duplication-warnings;
+@forward './core/theming/palette' show $red-palette, $pink-palette, $indigo-palette, $purple-palette,
+  $deep-purple-palette, $blue-palette, $light-blue-palette, $cyan-palette, $teal-palette,
+  $green-palette, $light-green-palette, $lime-palette, $yellow-palette, $amber-palette,
+  $orange-palette, $deep-orange-palette, $brown-palette, $grey-palette, $gray-palette,
+  $blue-grey-palette, $blue-gray-palette, $light-theme-background-palette,
   $dark-theme-background-palette, $light-theme-foreground-palette, $dark-theme-foreground-palette;
 @forward './core/typography/typography' show define-typography-level, define-typography-config,
   typography-hierarchy;
-@forward './core/typography/typography-utils' show typography-level,
-  font-size, line-height, font-weight, letter-spacing, font-family, font-shorthand;
+@forward './core/typography/typography-utils' show typography-level, font-size, line-height,
+  font-weight, letter-spacing, font-family, font-shorthand;
 
 // Private/Internal
 @forward './core/density/private/all-density' as private-* show private-all-component-densities;
 @forward './core/theming/theming' show private-check-duplicate-theme-styles,
   private-legacy-get-theme, private-is-theme-object;
-  @forward './core/style/layout-common' as private-* show private-fill;
+@forward './core/style/layout-common' as private-* show private-fill;
 @forward './core/style/private' show private-theme-elevation, private-animation-noop;
 @forward './core/style/vendor-prefixes' as private-* show private-user-select,
   private-position-sticky, private-color-adjust, private-clip-path;
@@ -48,14 +47,13 @@
 // Component themes
 @forward './core/core-theme' as core-* show core-color, core-theme;
 @forward './core/ripple/ripple-theme' as ripple-* show ripple-color, ripple-theme;
-@forward './core/option/option-theme' as option-* show option-color, option-typography,
-  option-theme;
+@forward './core/option/option-theme' as option-* show option-color, option-typography, option-theme;
 @forward './core/option/optgroup-theme' as optgroup-* show optgroup-color, optgroup-typography,
   optgroup-theme;
-@forward './core/selection/pseudo-checkbox/pseudo-checkbox-theme' as pseudo-checkbox-* show
-  pseudo-checkbox-color, pseudo-checkbox-typography, pseudo-checkbox-theme;
-@forward './core/focus-indicators/focus-indicators-theme' as strong-focus-indicators-* show
-  strong-focus-indicators-color, strong-focus-indicators-theme;
+@forward './core/selection/pseudo-checkbox/pseudo-checkbox-theme' as pseudo-checkbox-* show pseudo-checkbox-color,
+  pseudo-checkbox-typography, pseudo-checkbox-theme;
+@forward './core/focus-indicators/focus-indicators-theme' as strong-focus-indicators-* show strong-focus-indicators-color,
+  strong-focus-indicators-theme;
 @forward './autocomplete/autocomplete-theme' as autocomplete-* show autocomplete-theme,
   autocomplete-color, autocomplete-typography;
 @forward './badge/badge-theme' as badge-* show badge-theme, badge-color, badge-typography;
@@ -87,8 +85,8 @@
   paginator-typography;
 @forward './progress-bar/progress-bar-theme' as progress-bar-* show progress-bar-theme,
   progress-bar-color, progress-bar-typography;
-@forward './progress-spinner/progress-spinner-theme' as progress-spinner-* show
-  progress-spinner-theme, progress-spinner-color, progress-spinner-typography;
+@forward './progress-spinner/progress-spinner-theme' as progress-spinner-* show progress-spinner-theme,
+  progress-spinner-color, progress-spinner-typography;
 @forward './radio/radio-theme' as radio-* show radio-theme, radio-color, radio-typography;
 @forward './select/select-theme' as select-* show select-theme, select-color, select-typography;
 @forward './sidenav/sidenav-theme' as sidenav-* show sidenav-theme, sidenav-color,
@@ -108,4 +106,3 @@
 @forward './tooltip/tooltip-theme' as tooltip-* show tooltip-theme, tooltip-color,
   tooltip-typography;
 @forward './tree/tree-theme' as tree-* show tree-theme, tree-color, tree-typography;
-

@@ -6,14 +6,14 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { ChangeDetectorRef, ContentChildren, Directive, ElementRef, forwardRef, inject, InjectFlags, Input, Output, QueryList, } from '@angular/core';
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { A, DOWN_ARROW, END, ENTER, hasModifierKey, HOME, LEFT_ARROW, RIGHT_ARROW, SPACE, UP_ARROW, } from '@angular/cdk/keycodes';
-import { coerceArray, coerceBooleanProperty } from '@angular/cdk/coercion';
-import { SelectionModel } from '@angular/cdk/collections';
+import { ActiveDescendantKeyManager } from '@takkion/ng-cdk/a11y';
+import { A, DOWN_ARROW, END, ENTER, hasModifierKey, HOME, LEFT_ARROW, RIGHT_ARROW, SPACE, UP_ARROW, } from '@takkion/ng-cdk/keycodes';
+import { coerceArray, coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
 import { defer, merge, Subject } from 'rxjs';
 import { filter, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { NG_VALIDATORS, NG_VALUE_ACCESSOR, Validators, } from '@angular/forms';
-import { Directionality } from '@angular/cdk/bidi';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import * as i0 from "@angular/core";
 /** The next id to use for creating unique DOM IDs. */
 let nextId = 0;

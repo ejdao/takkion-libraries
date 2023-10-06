@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.findHammerScriptImportElements = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 /**
  * Parses the specified HTML content and looks for "script" elements which
  * potentially import HammerJS. These elements will be returned.

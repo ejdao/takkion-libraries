@@ -1,15 +1,15 @@
-import { coerceNumberProperty, coerceElement, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceNumberProperty, coerceElement, coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import * as i0 from '@angular/core';
 import { InjectionToken, forwardRef, Directive, Input, Injectable, Optional, Inject, inject, Component, ViewEncapsulation, ChangeDetectionStrategy, Output, ViewChild, SkipSelf, ElementRef, NgModule } from '@angular/core';
 import { Subject, of, Observable, fromEvent, animationFrameScheduler, asapScheduler, Subscription, isObservable } from 'rxjs';
 import { distinctUntilChanged, auditTime, filter, takeUntil, startWith, pairwise, switchMap, shareReplay } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
-import * as i1 from '@angular/cdk/platform';
-import { getRtlScrollAxisType, supportsScrollBehavior, Platform } from '@angular/cdk/platform';
-import * as i2 from '@angular/cdk/bidi';
-import { BidiModule } from '@angular/cdk/bidi';
-import * as i2$1 from '@angular/cdk/collections';
-import { isDataSource, ArrayDataSource, _VIEW_REPEATER_STRATEGY, _RecycleViewRepeaterStrategy } from '@angular/cdk/collections';
+import * as i1 from '@takkion/ng-cdk/platform';
+import { getRtlScrollAxisType, supportsScrollBehavior, Platform } from '@takkion/ng-cdk/platform';
+import * as i2 from '@takkion/ng-cdk/bidi';
+import { BidiModule } from '@takkion/ng-cdk/bidi';
+import * as i2$1 from '@takkion/ng-cdk/collections';
+import { isDataSource, ArrayDataSource, _VIEW_REPEATER_STRATEGY, _RecycleViewRepeaterStrategy } from '@takkion/ng-cdk/collections';
 
 /**
  * @license

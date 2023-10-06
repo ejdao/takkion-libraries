@@ -15,7 +15,7 @@ export { OverlayContainer } from './overlay-container';
 export { CdkOverlayOrigin, CdkConnectedOverlay } from './overlay-directives';
 export { FullscreenOverlayContainer } from './fullscreen-overlay-container';
 export { OverlayRef } from './overlay-ref';
-export { ViewportRuler } from '@angular/cdk/scrolling';
+export { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 export { OverlayPositionBuilder } from './position/overlay-position-builder';
 export { GlobalPositionStrategy } from './position/global-position-strategy';
 export { FlexibleConnectedPositionStrategy, STANDARD_DROPDOWN_ADJACENT_POSITIONS, STANDARD_DROPDOWN_BELOW_POSITIONS, } from './position/flexible-connected-position-strategy';

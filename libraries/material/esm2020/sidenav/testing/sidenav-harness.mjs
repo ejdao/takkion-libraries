@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessPredicate } from '@angular/cdk/testing';
+import { HarnessPredicate } from '@takkion/ng-cdk/testing';
 import { MatDrawerHarnessBase } from './drawer-harness';
 /** Harness for interacting with a standard mat-sidenav in tests. */
 export class MatSidenavHarness extends MatDrawerHarnessBase {

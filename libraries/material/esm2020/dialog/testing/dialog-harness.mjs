@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessPredicate, TestKey } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate, TestKey } from '@takkion/ng-cdk/testing';
 /** Base class for the `MatDialogHarness` implementation. */
 export class _MatDialogHarnessBase
 // @breaking-change 14.0.0 change generic type to MatDialogSection.

@@ -5,20 +5,20 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty, coerceNumberProperty, } from '@angular/cdk/coercion';
-import { DOWN_ARROW, END, HOME, LEFT_ARROW, PAGE_DOWN, PAGE_UP, RIGHT_ARROW, UP_ARROW, hasModifierKey, } from '@angular/cdk/keycodes';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty, coerceNumberProperty, } from '@takkion/ng-cdk/coercion';
+import { DOWN_ARROW, END, HOME, LEFT_ARROW, PAGE_DOWN, PAGE_UP, RIGHT_ARROW, UP_ARROW, hasModifierKey, } from '@takkion/ng-cdk/keycodes';
 import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, forwardRef, Inject, Input, Optional, Output, ViewChild, ViewEncapsulation, NgZone, } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { mixinColor, mixinDisabled, mixinTabIndex, } from '@angular/material/core';
+import { mixinColor, mixinDisabled, mixinTabIndex, } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
+import { normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
 import { DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
-import * as i2 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-cdk/a11y";
+import * as i2 from "@takkion/ng-cdk/bidi";
 import * as i3 from "@angular/common";
 const activeEventOptions = normalizePassiveListenerOptions({ passive: false });
 /**

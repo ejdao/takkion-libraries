@@ -7,9 +7,9 @@
  */
 import { VersionChanges } from '../../update-tool/version-changes';
 export interface ElementSelectorUpgradeData {
-    /** The element name to replace. */
-    replace: string;
-    /** The new name for the element. */
-    replaceWith: string;
+  /** The element name to replace. */
+  replace: string;
+  /** The new name for the element. */
+  replaceWith: string;
 }
 export declare const elementSelectors: VersionChanges<ElementSelectorUpgradeData>;

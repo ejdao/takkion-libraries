@@ -1,5 +1,5 @@
-import { ContentContainerComponentHarness, TestKey, HarnessPredicate } from '@angular/cdk/testing';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { ContentContainerComponentHarness, TestKey, HarnessPredicate } from '@takkion/ng-cdk/testing';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 
 /**
  * @license

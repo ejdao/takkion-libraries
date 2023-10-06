@@ -5,13 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Platform } from '@angular/cdk/platform';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { Injectable, NgZone, Optional, Inject } from '@angular/core';
 import { Subject } from 'rxjs';
 import { auditTime } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /** Time in ms to throttle the resize events by default. */
 export const DEFAULT_RESIZE_TIME = 20;
 /**

@@ -7,13 +7,13 @@
  */
 import { Directive, ElementRef, Optional, inject, InjectionToken, Inject, Injector, InjectFlags, } from '@angular/core';
 import { NG_VALUE_ACCESSOR, NG_VALIDATORS, NgForm, FormGroupDirective, NgControl, Validators, } from '@angular/forms';
-import { mixinErrorState, MAT_DATE_FORMATS, DateAdapter, ErrorStateMatcher, } from '@angular/material/core';
-import { Directionality } from '@angular/cdk/bidi';
-import { BACKSPACE, LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk/keycodes';
+import { mixinErrorState, MAT_DATE_FORMATS, DateAdapter, ErrorStateMatcher, } from '@takkion/ng-material/core';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { BACKSPACE, LEFT_ARROW, RIGHT_ARROW } from '@takkion/ng-cdk/keycodes';
 import { MatDatepickerInputBase } from './datepicker-input-base';
 import { DateRange } from './date-selection-model';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/material/core";
+import * as i1 from "@takkion/ng-material/core";
 import * as i2 from "@angular/forms";
 /**
  * Used to provide the date range input wrapper component

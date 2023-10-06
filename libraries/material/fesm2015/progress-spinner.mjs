@@ -1,14 +1,14 @@
-import { coerceNumberProperty } from '@angular/cdk/coercion';
-import * as i1 from '@angular/cdk/platform';
-import { _getShadowRoot } from '@angular/cdk/platform';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import * as i1 from '@takkion/ng-cdk/platform';
+import { _getShadowRoot } from '@takkion/ng-cdk/platform';
 import * as i3 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { InjectionToken, Component, ChangeDetectionStrategy, ViewEncapsulation, Optional, Inject, Input, NgModule } from '@angular/core';
-import { mixinColor, MatCommonModule } from '@angular/material/core';
+import { mixinColor, MatCommonModule } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { Subscription } from 'rxjs';
-import * as i2 from '@angular/cdk/scrolling';
+import * as i2 from '@takkion/ng-cdk/scrolling';
 
 /**
  * @license
@@ -74,7 +74,7 @@ const INDETERMINATE_ANIMATION_TEMPLATE = `
  * `<mat-progress-spinner>` component.
  */
 class MatProgressSpinner extends _MatProgressSpinnerBase {
-    constructor(elementRef, _platform, _document, animationMode, defaults, 
+    constructor(elementRef, _platform, _document, animationMode, defaults,
     /**
      * @deprecated `changeDetectorRef`, `viewportRuler` and `ngZone`
      * parameters to become required.

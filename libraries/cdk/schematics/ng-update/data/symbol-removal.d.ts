@@ -7,11 +7,11 @@
  */
 import { VersionChanges } from '../../update-tool/version-changes';
 export interface SymbolRemovalUpgradeData {
-    /** Module that the symbol was removed from. */
-    module: string;
-    /** Name of the symbol being removed. */
-    name: string;
-    /** Message to log explaining why the symbol was removed. */
-    message: string;
+  /** Module that the symbol was removed from. */
+  module: string;
+  /** Name of the symbol being removed. */
+  name: string;
+  /** Message to log explaining why the symbol was removed. */
+  message: string;
 }
 export declare const symbolRemoval: VersionChanges<SymbolRemovalUpgradeData>;

@@ -1,8 +1,8 @@
 import * as i0 from '@angular/core';
 import { InjectionToken, Component, ViewEncapsulation, ChangeDetectionStrategy, Optional, Inject, Input, ContentChildren, Directive, NgModule } from '@angular/core';
-import { setLines, MatLine, MatLineModule, MatCommonModule } from '@angular/material/core';
-import { coerceNumberProperty } from '@angular/cdk/coercion';
-import * as i1 from '@angular/cdk/bidi';
+import { setLines, MatLine, MatLineModule, MatCommonModule } from '@takkion/ng-material/core';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import * as i1 from '@takkion/ng-cdk/bidi';
 
 /**
  * @license

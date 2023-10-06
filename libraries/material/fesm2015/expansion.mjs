@@ -1,20 +1,20 @@
-import { CdkAccordionItem, CdkAccordion, CdkAccordionModule } from '@angular/cdk/accordion';
-import * as i2 from '@angular/cdk/portal';
-import { TemplatePortal, PortalModule } from '@angular/cdk/portal';
+import { CdkAccordionItem, CdkAccordion, CdkAccordionModule } from '@takkion/ng-cdk/accordion';
+import * as i2 from '@takkion/ng-cdk/portal';
+import { TemplatePortal, PortalModule } from '@takkion/ng-cdk/portal';
 import * as i3 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, Inject, Optional, EventEmitter, Component, ViewEncapsulation, ChangeDetectionStrategy, SkipSelf, Input, Output, ContentChild, ViewChild, Host, Attribute, QueryList, ContentChildren, NgModule } from '@angular/core';
-import { mixinTabIndex, MatCommonModule } from '@angular/material/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import * as i2$1 from '@angular/cdk/a11y';
-import { FocusKeyManager } from '@angular/cdk/a11y';
+import { mixinTabIndex, MatCommonModule } from '@takkion/ng-material/core';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import * as i2$1 from '@takkion/ng-cdk/a11y';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
 import { distinctUntilChanged, startWith, filter, take } from 'rxjs/operators';
-import { ENTER, hasModifierKey, SPACE } from '@angular/cdk/keycodes';
+import { ENTER, hasModifierKey, SPACE } from '@takkion/ng-cdk/keycodes';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { Subject, Subscription, EMPTY, merge } from 'rxjs';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import * as i1 from '@angular/cdk/collections';
+import * as i1 from '@takkion/ng-cdk/collections';
 
 /**
  * @license

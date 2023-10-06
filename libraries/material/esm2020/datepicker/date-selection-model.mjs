@@ -6,15 +6,15 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Injectable, Optional, SkipSelf } from '@angular/core';
-import { DateAdapter } from '@angular/material/core';
+import { DateAdapter } from '@takkion/ng-material/core';
 import { Subject } from 'rxjs';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/material/core";
+import * as i1 from "@takkion/ng-material/core";
 /** A class representing a range of dates. */
 export class DateRange {
     constructor(
     /** The start date of the range. */
-    start, 
+    start,
     /** The end date of the range. */
     end) {
         this.start = start;

@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { CdkStepperNext, CdkStepperPrevious } from '@angular/cdk/stepper';
+import { CdkStepperNext, CdkStepperPrevious } from '@takkion/ng-cdk/stepper';
 import { Directive } from '@angular/core';
 import * as i0 from "@angular/core";
 /** Button that moves to the next step in a stepper workflow. */

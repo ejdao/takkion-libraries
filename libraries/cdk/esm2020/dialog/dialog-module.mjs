@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { NgModule } from '@angular/core';
-import { OverlayModule } from '@angular/cdk/overlay';
-import { PortalModule } from '@angular/cdk/portal';
-import { A11yModule } from '@angular/cdk/a11y';
+import { OverlayModule } from '@takkion/ng-cdk/overlay';
+import { PortalModule } from '@takkion/ng-cdk/portal';
+import { A11yModule } from '@takkion/ng-cdk/a11y';
 import { Dialog } from './dialog';
 import { CdkDialogContainer } from './dialog-container';
 import { DIALOG_SCROLL_STRATEGY_PROVIDER } from './dialog-injectors';

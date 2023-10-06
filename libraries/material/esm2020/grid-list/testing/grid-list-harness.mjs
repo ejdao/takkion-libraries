@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, HarnessPredicate, parallel } from '@angular/cdk/testing';
-import { ɵTileCoordinator as TileCoordinator } from '@angular/material/grid-list';
+import { ComponentHarness, HarnessPredicate, parallel } from '@takkion/ng-cdk/testing';
+import { ɵTileCoordinator as TileCoordinator } from '@takkion/ng-material/grid-list';
 import { MatGridTileHarness } from './grid-tile-harness';
 /** Harness for interacting with a standard `MatGridList` in tests. */
 export class MatGridListHarness extends ComponentHarness {

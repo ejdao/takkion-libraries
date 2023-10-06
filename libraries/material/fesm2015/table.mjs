@@ -1,10 +1,10 @@
 import * as i0 from '@angular/core';
 import { Directive, Component, ViewEncapsulation, ChangeDetectionStrategy, Input, NgModule } from '@angular/core';
-import * as i1 from '@angular/cdk/table';
-import { CdkTable, CDK_TABLE, _COALESCED_STYLE_SCHEDULER, _CoalescedStyleScheduler, STICKY_POSITIONING_LISTENER, CDK_TABLE_TEMPLATE, CdkCellDef, CdkHeaderCellDef, CdkFooterCellDef, CdkColumnDef, CdkHeaderCell, CdkFooterCell, CdkCell, CdkHeaderRowDef, CdkFooterRowDef, CdkRowDef, CdkHeaderRow, CDK_ROW_TEMPLATE, CdkFooterRow, CdkRow, CdkNoDataRow, CdkTextColumn, CdkTableModule, DataSource } from '@angular/cdk/table';
-import { _VIEW_REPEATER_STRATEGY, _RecycleViewRepeaterStrategy, _DisposeViewRepeaterStrategy } from '@angular/cdk/collections';
-import { MatCommonModule } from '@angular/material/core';
-import { _isNumberValue } from '@angular/cdk/coercion';
+import * as i1 from '@takkion/ng-cdk/table';
+import { CdkTable, CDK_TABLE, _COALESCED_STYLE_SCHEDULER, _CoalescedStyleScheduler, STICKY_POSITIONING_LISTENER, CDK_TABLE_TEMPLATE, CdkCellDef, CdkHeaderCellDef, CdkFooterCellDef, CdkColumnDef, CdkHeaderCell, CdkFooterCell, CdkCell, CdkHeaderRowDef, CdkFooterRowDef, CdkRowDef, CdkHeaderRow, CDK_ROW_TEMPLATE, CdkFooterRow, CdkRow, CdkNoDataRow, CdkTextColumn, CdkTableModule, DataSource } from '@takkion/ng-cdk/table';
+import { _VIEW_REPEATER_STRATEGY, _RecycleViewRepeaterStrategy, _DisposeViewRepeaterStrategy } from '@takkion/ng-cdk/collections';
+import { MatCommonModule } from '@takkion/ng-material/core';
+import { _isNumberValue } from '@takkion/ng-cdk/coercion';
 import { BehaviorSubject, Subject, merge, of, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 

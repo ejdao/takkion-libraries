@@ -1,6 +1,6 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { ContentContainerComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 
 /** Harness for interacting with a standard mat-button in tests. */
 class MatButtonHarness extends ContentContainerComponentHarness {

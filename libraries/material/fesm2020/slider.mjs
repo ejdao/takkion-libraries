@@ -2,14 +2,14 @@ import * as i3 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { forwardRef, EventEmitter, Component, ViewEncapsulation, ChangeDetectionStrategy, Optional, Attribute, Inject, Input, Output, ViewChild, NgModule } from '@angular/core';
-import { mixinTabIndex, mixinColor, mixinDisabled, MatCommonModule } from '@angular/material/core';
-import * as i1 from '@angular/cdk/a11y';
-import * as i2 from '@angular/cdk/bidi';
-import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
-import { hasModifierKey, DOWN_ARROW, RIGHT_ARROW, UP_ARROW, LEFT_ARROW, HOME, END, PAGE_DOWN, PAGE_UP } from '@angular/cdk/keycodes';
+import { mixinTabIndex, mixinColor, mixinDisabled, MatCommonModule } from '@takkion/ng-material/core';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import * as i2 from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import { hasModifierKey, DOWN_ARROW, RIGHT_ARROW, UP_ARROW, LEFT_ARROW, HOME, END, PAGE_DOWN, PAGE_UP } from '@takkion/ng-cdk/keycodes';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
+import { normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
 import { Subscription } from 'rxjs';
 
 /**

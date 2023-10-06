@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, HarnessPredicate, parallel } from '@angular/cdk/testing';
-import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
+import { ComponentHarness, HarnessPredicate, parallel } from '@takkion/ng-cdk/testing';
+import { coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 /** Harness for interacting with a standard mat-slider in tests. */
 export class MatSliderHarness extends ComponentHarness {
     constructor() {

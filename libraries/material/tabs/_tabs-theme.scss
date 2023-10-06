@@ -25,7 +25,8 @@
     }
   }
 
-  .mat-tab-label, .mat-tab-link {
+  .mat-tab-label,
+  .mat-tab-link {
     color: theming.get-color-from-palette($foreground, text);
 
     &.mat-tab-disabled {
@@ -48,11 +49,12 @@
     border-top: none;
   }
 
-  .mat-tab-group, .mat-tab-nav-bar {
+  .mat-tab-group,
+  .mat-tab-nav-bar {
     $theme-colors: (
       primary: $primary,
       accent: $accent,
-      warn: $warn
+      warn: $warn,
     );
 
     @each $name, $color in $theme-colors {
@@ -63,7 +65,8 @@
 
         // Override ink bar when background color is the same
         &.mat-background-#{$name} {
-          > .mat-tab-header, > .mat-tab-link-container {
+          > .mat-tab-header,
+          > .mat-tab-link-container {
             @include _ink-bar-color($color, default-contrast);
           }
         }
@@ -103,12 +106,15 @@
   // that the styles don't apply to any nested tab groups.
 
   // Set background color for the tab group
-  > .mat-tab-header, > .mat-tab-link-container, > .mat-tab-header-pagination {
+  > .mat-tab-header,
+  > .mat-tab-link-container,
+  > .mat-tab-header-pagination {
     background-color: theming.get-color-from-palette($background-color);
   }
 
   // Set labels to contrast against background
-  > .mat-tab-header .mat-tab-label, > .mat-tab-link-container .mat-tab-link {
+  > .mat-tab-header .mat-tab-label,
+  > .mat-tab-link-container .mat-tab-link {
     color: theming.get-color-from-palette($background-color, default-contrast);
 
     &.mat-tab-disabled {
@@ -144,12 +150,14 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-tab-group {
     font-family: typography-utils.font-family($config);
   }
 
-  .mat-tab-label, .mat-tab-link {
+  .mat-tab-label,
+  .mat-tab-link {
     font: {
       family: typography-utils.font-family($config, button);
       size: typography-utils.font-size($config, button);
@@ -158,7 +166,8 @@
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessPredicate, ContentContainerComponentHarness, } from '@angular/cdk/testing';
+import { HarnessPredicate, ContentContainerComponentHarness, } from '@takkion/ng-cdk/testing';
 /** Harness for interacting with a standard Angular Material table cell. */
 export class MatCellHarness extends ContentContainerComponentHarness {
     /**

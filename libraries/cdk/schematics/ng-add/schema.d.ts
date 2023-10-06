@@ -6,6 +6,6 @@
  * found in the LICENSE file at https://angular.io/license
  */
 export interface Schema {
-    /** Name of the project to target. */
-    project: string;
+  /** Name of the project to target. */
+  project: string;
 }

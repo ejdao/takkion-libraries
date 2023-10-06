@@ -1,10 +1,10 @@
-import * as i1 from '@angular/cdk/tree';
-import { CdkTreeNode, CdkTreeNodeDef, CdkNestedTreeNode, CDK_TREE_NODE_OUTLET_NODE, CdkTreeNodePadding, CdkTreeNodeOutlet, CdkTree, CdkTreeNodeToggle, CdkTreeModule } from '@angular/cdk/tree';
+import * as i1 from '@takkion/ng-cdk/tree';
+import { CdkTreeNode, CdkTreeNodeDef, CdkNestedTreeNode, CDK_TREE_NODE_OUTLET_NODE, CdkTreeNodePadding, CdkTreeNodeOutlet, CdkTree, CdkTreeNodeToggle, CdkTreeModule } from '@takkion/ng-cdk/tree';
 import * as i0 from '@angular/core';
 import { Directive, Attribute, Input, Inject, Optional, Component, ViewEncapsulation, ChangeDetectionStrategy, ViewChild, NgModule } from '@angular/core';
-import { mixinTabIndex, mixinDisabled, MatCommonModule } from '@angular/material/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { DataSource } from '@angular/cdk/collections';
+import { mixinTabIndex, mixinDisabled, MatCommonModule } from '@takkion/ng-material/core';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { DataSource } from '@takkion/ng-cdk/collections';
 import { BehaviorSubject, merge } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 

@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MiscTemplateMigration = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 /**
  * Migration that walks through every inline or external template and reports if there
  * are outdated usages of the Angular Material API that needs to be updated manually.

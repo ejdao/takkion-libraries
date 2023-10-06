@@ -1,24 +1,24 @@
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { coerceBooleanProperty, coerceStringArray } from '@angular/cdk/coercion';
+import { ActiveDescendantKeyManager } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty, coerceStringArray } from '@takkion/ng-cdk/coercion';
 import * as i0 from '@angular/core';
 import { InjectionToken, EventEmitter, TemplateRef, Directive, Inject, ViewChild, Input, Output, Component, ViewEncapsulation, ChangeDetectionStrategy, ContentChildren, forwardRef, Optional, Host, NgModule } from '@angular/core';
-import { mixinDisableRipple, MAT_OPTION_PARENT_COMPONENT, MAT_OPTGROUP, MatOption, MatOptionSelectionChange, _countGroupLabelsBeforeOption, _getOptionScrollPosition, MatOptionModule, MatCommonModule } from '@angular/material/core';
+import { mixinDisableRipple, MAT_OPTION_PARENT_COMPONENT, MAT_OPTGROUP, MatOption, MatOptionSelectionChange, _countGroupLabelsBeforeOption, _getOptionScrollPosition, MatOptionModule, MatCommonModule } from '@takkion/ng-material/core';
 import { Subscription, Subject, defer, merge, of, fromEvent } from 'rxjs';
-import * as i1 from '@angular/cdk/platform';
-import { _getEventTarget } from '@angular/cdk/platform';
+import * as i1 from '@takkion/ng-cdk/platform';
+import { _getEventTarget } from '@takkion/ng-cdk/platform';
 import * as i2 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
-import * as i1$1 from '@angular/cdk/overlay';
-import { Overlay, OverlayConfig, OverlayModule } from '@angular/cdk/overlay';
-import * as i3 from '@angular/cdk/scrolling';
-import { CdkScrollableModule } from '@angular/cdk/scrolling';
-import { hasModifierKey, ESCAPE, ENTER, UP_ARROW, DOWN_ARROW, TAB } from '@angular/cdk/keycodes';
-import { TemplatePortal } from '@angular/cdk/portal';
+import * as i1$1 from '@takkion/ng-cdk/overlay';
+import { Overlay, OverlayConfig, OverlayModule } from '@takkion/ng-cdk/overlay';
+import * as i3 from '@takkion/ng-cdk/scrolling';
+import { CdkScrollableModule } from '@takkion/ng-cdk/scrolling';
+import { hasModifierKey, ESCAPE, ENTER, UP_ARROW, DOWN_ARROW, TAB } from '@takkion/ng-cdk/keycodes';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import * as i4 from '@angular/material/form-field';
-import { MAT_FORM_FIELD } from '@angular/material/form-field';
+import * as i4 from '@takkion/ng-material/form-field';
+import { MAT_FORM_FIELD } from '@takkion/ng-material/form-field';
 import { startWith, switchMap, take, filter, map, tap, delay } from 'rxjs/operators';
-import * as i2$1 from '@angular/cdk/bidi';
+import * as i2$1 from '@takkion/ng-cdk/bidi';
 
 /**
  * @license
@@ -36,7 +36,7 @@ let _uniqueAutocompleteIdCounter = 0;
 class MatAutocompleteSelectedEvent {
     constructor(
     /** Reference to the autocomplete panel that emitted the event. */
-    source, 
+    source,
     /** Option that was selected. */
     option) {
         this.source = source;
@@ -577,7 +577,7 @@ class _MatAutocompleteTriggerBase {
      */
     _subscribeToClosingActions() {
         const firstStable = this._zone.onStable.pipe(take(1));
-        const optionChanges = this.autocomplete.options.changes.pipe(tap(() => this._positionStrategy.reapplyLastPosition()), 
+        const optionChanges = this.autocomplete.options.changes.pipe(tap(() => this._positionStrategy.reapplyLastPosition()),
         // Defer emitting to the stream until the next tick, because changing
         // bindings in here will cause "changed after checked" errors.
         delay(0));
@@ -615,7 +615,7 @@ class _MatAutocompleteTriggerBase {
                 }
             });
             return this.panelClosingActions;
-        }), 
+        }),
         // when the first closing event occurs...
         take(1))
             // set the value, close the panel, and complete.

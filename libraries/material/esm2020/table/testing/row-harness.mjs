@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, HarnessPredicate, parallel, } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate, parallel, } from '@takkion/ng-cdk/testing';
 import { MatCellHarness, MatHeaderCellHarness, MatFooterCellHarness } from './cell-harness';
 export class _MatRowHarnessBase extends ComponentHarness {
     /** Gets a list of `MatCellHarness` for all cells in the row. */

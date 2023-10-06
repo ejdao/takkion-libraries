@@ -5,11 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
-import { CdkStep, CdkStepper, STEPPER_GLOBAL_OPTIONS, } from '@angular/cdk/stepper';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { CdkStep, CdkStepper, STEPPER_GLOBAL_OPTIONS, } from '@takkion/ng-cdk/stepper';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, ElementRef, EventEmitter, forwardRef, Inject, Input, Optional, Output, QueryList, SkipSelf, ViewChildren, ViewContainerRef, ViewEncapsulation, } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { TemplatePortal } from '@angular/cdk/portal';
+import { ErrorStateMatcher } from '@takkion/ng-material/core';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil, distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
 import { MatStepHeader } from './step-header';
@@ -18,9 +18,9 @@ import { DEFAULT_HORIZONTAL_ANIMATION_DURATION, DEFAULT_VERTICAL_ANIMATION_DURAT
 import { MatStepperIcon } from './stepper-icon';
 import { MatStepContent } from './step-content';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/material/core";
-import * as i2 from "@angular/cdk/portal";
-import * as i3 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-material/core";
+import * as i2 from "@takkion/ng-cdk/portal";
+import * as i3 from "@takkion/ng-cdk/bidi";
 import * as i4 from "@angular/common";
 import * as i5 from "./step-header";
 export class MatStep extends CdkStep {

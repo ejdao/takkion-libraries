@@ -1,10 +1,10 @@
-import * as i1 from '@angular/cdk/bidi';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { _VIEW_REPEATER_STRATEGY, _RecycleViewRepeaterStrategy, isDataSource, _DisposeViewRepeaterStrategy } from '@angular/cdk/collections';
-export { DataSource } from '@angular/cdk/collections';
-import * as i2 from '@angular/cdk/platform';
-import * as i3 from '@angular/cdk/scrolling';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+import * as i1 from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { _VIEW_REPEATER_STRATEGY, _RecycleViewRepeaterStrategy, isDataSource, _DisposeViewRepeaterStrategy } from '@takkion/ng-cdk/collections';
+export { DataSource } from '@takkion/ng-cdk/collections';
+import * as i2 from '@takkion/ng-cdk/platform';
+import * as i3 from '@takkion/ng-cdk/scrolling';
+import { ScrollingModule } from '@takkion/ng-cdk/scrolling';
 import { DOCUMENT } from '@angular/common';
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, Inject, Optional, Input, ContentChild, Injectable, Component, ChangeDetectionStrategy, ViewEncapsulation, EmbeddedViewRef, EventEmitter, NgZone, Attribute, SkipSelf, Output, ViewChild, ContentChildren, NgModule } from '@angular/core';

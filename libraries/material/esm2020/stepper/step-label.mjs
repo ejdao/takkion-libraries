@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Directive } from '@angular/core';
-import { CdkStepLabel } from '@angular/cdk/stepper';
+import { CdkStepLabel } from '@takkion/ng-cdk/stepper';
 import * as i0 from "@angular/core";
 export class MatStepLabel extends CdkStepLabel {
 }

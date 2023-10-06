@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { NgModule } from '@angular/core';
-import { MatLineModule, MatCommonModule } from '@angular/material/core';
+import { MatLineModule, MatCommonModule } from '@takkion/ng-material/core';
 import { MatGridTile, MatGridTileText, MatGridTileFooterCssMatStyler, MatGridTileHeaderCssMatStyler, MatGridAvatarCssMatStyler, } from './grid-tile';
 import { MatGridList } from './grid-list';
 import * as i0 from "@angular/core";

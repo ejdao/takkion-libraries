@@ -3,7 +3,6 @@
 @use 'sass:meta';
 @use 'variables';
 
-
 // A collection of mixins and CSS classes that can be used to apply elevation to a material
 // element.
 // See: https://material.io/design/environment/elevation.html
@@ -155,17 +154,15 @@ $prefix: 'mat-elevation-z';
     @error '$zValue must be between 0 and 24';
   }
 
-  box-shadow: #{map.get(_get-umbra-map($color, $opacity), $zValue)},
-              #{map.get(_get-penumbra-map($color, $opacity), $zValue)},
-              #{map.get(_get-ambient-map($color, $opacity), $zValue)};
+  box-shadow:
+    #{map.get(_get-umbra-map($color, $opacity), $zValue)},
+    #{map.get(_get-penumbra-map($color, $opacity), $zValue)},
+    #{map.get(_get-ambient-map($color, $opacity), $zValue)};
 }
 
 // Applies the elevation to an element in a manner that allows
 // consumers to override it via the Material elevation classes.
-@mixin overridable-elevation(
-    $zValue,
-    $color: $color,
-    $opacity: $opacity) {
+@mixin overridable-elevation($zValue, $color: $color, $opacity: $opacity) {
   &:not([class*='#{$prefix}']) {
     @include elevation($zValue, $color, $opacity);
   }
@@ -179,8 +176,9 @@ $prefix: 'mat-elevation-z';
 //   transition: mat-elevation-transition-property-value(), opacity 100ms ease;
 // }
 @function private-transition-property-value(
-    $duration: $transition-duration,
-    $easing: $transition-timing-function) {
+  $duration: $transition-duration,
+  $easing: $transition-timing-function
+) {
   @return box-shadow #{$duration} #{$easing};
 }
 
@@ -190,8 +188,6 @@ $prefix: 'mat-elevation-z';
 //
 // NOTE(traviskaufman): Both this mixin and the above function use default parameters so they can
 // be used in the same way by clients.
-@mixin elevation-transition(
-    $duration: $transition-duration,
-    $easing: $transition-timing-function) {
+@mixin elevation-transition($duration: $transition-duration, $easing: $transition-timing-function) {
   transition: private-transition-property-value($duration, $easing);
 }

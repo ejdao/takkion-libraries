@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
-import { TemplatePortal } from '@angular/cdk/portal';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { ESCAPE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
 import { Directive, ElementRef, EventEmitter, Inject, InjectionToken, Input, Optional, Output, TemplateRef, ViewContainerRef, } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
@@ -17,7 +17,7 @@ import { OverlayConfig } from './overlay-config';
 import { FlexibleConnectedPositionStrategy, } from './position/flexible-connected-position-strategy';
 import * as i0 from "@angular/core";
 import * as i1 from "./overlay";
-import * as i2 from "@angular/cdk/bidi";
+import * as i2 from "@takkion/ng-cdk/bidi";
 /** Default set of positions for the overlay. Follows the behavior of a dropdown. */
 const defaultPositionList = [
     {

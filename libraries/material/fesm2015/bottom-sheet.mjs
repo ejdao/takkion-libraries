@@ -1,17 +1,17 @@
-import * as i2 from '@angular/cdk/dialog';
-import { CdkDialogContainer, DialogModule, Dialog } from '@angular/cdk/dialog';
-import * as i5 from '@angular/cdk/portal';
-import { PortalModule } from '@angular/cdk/portal';
+import * as i2 from '@takkion/ng-cdk/dialog';
+import { CdkDialogContainer, DialogModule, Dialog } from '@takkion/ng-cdk/dialog';
+import * as i5 from '@takkion/ng-cdk/portal';
+import { PortalModule } from '@takkion/ng-cdk/portal';
 import * as i0 from '@angular/core';
 import { EventEmitter, Component, ChangeDetectionStrategy, ViewEncapsulation, Optional, Inject, NgModule, InjectionToken, Injectable, SkipSelf } from '@angular/core';
-import { AnimationDurations, AnimationCurves, MatCommonModule } from '@angular/material/core';
-import * as i4 from '@angular/cdk/layout';
-import { Breakpoints } from '@angular/cdk/layout';
+import { AnimationDurations, AnimationCurves, MatCommonModule } from '@takkion/ng-material/core';
+import * as i4 from '@takkion/ng-cdk/layout';
+import { Breakpoints } from '@takkion/ng-cdk/layout';
 import { DOCUMENT } from '@angular/common';
 import { trigger, state, style, transition, group, animate, query, animateChild } from '@angular/animations';
-import * as i1 from '@angular/cdk/a11y';
-import * as i3 from '@angular/cdk/overlay';
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import * as i3 from '@takkion/ng-cdk/overlay';
+import { ESCAPE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
 import { Subject, merge } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
 
@@ -313,7 +313,7 @@ class MatBottomSheet {
     open(componentOrTemplateRef, config) {
         const _config = Object.assign(Object.assign({}, (this._defaultOptions || new MatBottomSheetConfig())), config);
         let ref;
-        this._dialog.open(componentOrTemplateRef, Object.assign(Object.assign({}, _config), { 
+        this._dialog.open(componentOrTemplateRef, Object.assign(Object.assign({}, _config), {
             // Disable closing since we need to sync it up to the animation ourselves.
             disableClose: true, maxWidth: '100%', container: MatBottomSheetContainer, scrollStrategy: _config.scrollStrategy || this._overlay.scrollStrategies.block(), positionStrategy: this._overlay.position().global().centerHorizontally().bottom('0'), templateContext: () => ({ bottomSheetRef: ref }), providers: (cdkRef, _cdkConfig, container) => {
                 ref = new MatBottomSheetRef(cdkRef, _config, container);

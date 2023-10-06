@@ -1,21 +1,21 @@
-import * as i1$1 from '@angular/cdk/overlay';
-import { OverlayModule, OverlayConfig } from '@angular/cdk/overlay';
-import * as i3$1 from '@angular/cdk/portal';
-import { BasePortalOutlet, CdkPortalOutlet, PortalModule, ComponentPortal, TemplatePortal } from '@angular/cdk/portal';
+import * as i1$1 from '@takkion/ng-cdk/overlay';
+import { OverlayModule, OverlayConfig } from '@takkion/ng-cdk/overlay';
+import * as i3$1 from '@takkion/ng-cdk/portal';
+import { BasePortalOutlet, CdkPortalOutlet, PortalModule, ComponentPortal, TemplatePortal } from '@takkion/ng-cdk/portal';
 import * as i2 from '@angular/common';
 import { CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { InjectionToken, Component, ViewEncapsulation, ChangeDetectionStrategy, Inject, Directive, ViewChild, NgModule, Injector, TemplateRef, Injectable, Optional, SkipSelf } from '@angular/core';
-import { MatCommonModule } from '@angular/material/core';
-import * as i3 from '@angular/material/button';
-import { MatButtonModule } from '@angular/material/button';
+import { MatCommonModule } from '@takkion/ng-material/core';
+import * as i3 from '@takkion/ng-material/button';
+import { MatButtonModule } from '@takkion/ng-material/button';
 import { Subject } from 'rxjs';
-import * as i1 from '@angular/cdk/platform';
+import * as i1 from '@takkion/ng-cdk/platform';
 import { take, takeUntil } from 'rxjs/operators';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import * as i2$1 from '@angular/cdk/a11y';
-import * as i3$2 from '@angular/cdk/layout';
-import { Breakpoints } from '@angular/cdk/layout';
+import * as i2$1 from '@takkion/ng-cdk/a11y';
+import * as i3$2 from '@takkion/ng-cdk/layout';
+import { Breakpoints } from '@takkion/ng-cdk/layout';
 
 /**
  * @license
@@ -208,7 +208,7 @@ const matSnackBarAnimations = {
  * @docs-private
  */
 class _MatSnackBarContainerBase extends BasePortalOutlet {
-    constructor(_ngZone, _elementRef, _changeDetectorRef, _platform, 
+    constructor(_ngZone, _elementRef, _changeDetectorRef, _platform,
     /** The snack bar configuration. */
     snackBarConfig) {
         super();

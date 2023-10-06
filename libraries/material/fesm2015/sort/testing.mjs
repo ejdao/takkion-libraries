@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
 
 /** Harness for interacting with a standard Angular Material sort header in tests. */
 class MatSortHeaderHarness extends ComponentHarness {

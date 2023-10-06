@@ -7,7 +7,7 @@
  */
 import { Injectable, NgZone, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
+import { normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
 import { merge, Observable, Subject } from 'rxjs';
 import * as i0 from "@angular/core";
 /** Event options that can be used to bind an active, capturing event. */

@@ -5,15 +5,15 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ALT, CONTROL, MAC_META, META, SHIFT } from '@angular/cdk/keycodes';
+import { ALT, CONTROL, MAC_META, META, SHIFT } from '@takkion/ng-cdk/keycodes';
 import { Inject, Injectable, InjectionToken, Optional, NgZone } from '@angular/core';
-import { normalizePassiveListenerOptions, Platform, _getEventTarget } from '@angular/cdk/platform';
+import { normalizePassiveListenerOptions, Platform, _getEventTarget } from '@takkion/ng-cdk/platform';
 import { DOCUMENT } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged, skip } from 'rxjs/operators';
 import { isFakeMousedownFromScreenReader, isFakeTouchstartFromScreenReader, } from '../fake-event-detection';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /**
  * Injectable options for the InputModalityDetector. These are shallowly merged with the default
  * options.

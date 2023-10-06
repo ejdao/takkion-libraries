@@ -9,7 +9,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HammerGesturesMigration = void 0;
 const core_1 = require("@angular-devkit/core");
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 const change_1 = require("@schematics/angular/utility/change");
 const fs_1 = require("fs");
 const ts = require("typescript");
@@ -387,7 +387,7 @@ class HammerGesturesMigration extends schematics_1.DevkitMigration {
             const importData = (0, schematics_1.getImportOfIdentifier)(node, this.typeChecker);
             if (importData &&
                 importData.symbolName === GESTURE_CONFIG_CLASS_NAME &&
-                importData.moduleName.startsWith('@angular/material/')) {
+                importData.moduleName.startsWith('@takkion/ng-material/')) {
                 this._gestureConfigReferences.push({
                     node,
                     importData,

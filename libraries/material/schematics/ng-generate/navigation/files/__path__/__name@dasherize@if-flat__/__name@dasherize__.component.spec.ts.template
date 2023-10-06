@@ -1,11 +1,11 @@
-import { LayoutModule } from '@angular/cdk/layout';
+import { LayoutModule } from '@takkion/ng-cdk/layout';
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@takkion/ng-material/button';
+import { MatIconModule } from '@takkion/ng-material/icon';
+import { MatListModule } from '@takkion/ng-material/list';
+import { MatSidenavModule } from '@takkion/ng-material/sidenav';
+import { MatToolbarModule } from '@takkion/ng-material/toolbar';
 
 import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 

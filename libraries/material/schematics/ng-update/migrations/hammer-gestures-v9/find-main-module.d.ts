@@ -10,4 +10,6 @@ import * as ts from 'typescript';
  * Finds the main Angular module within the specified source file. The first module
  * that is part of the "bootstrapModule" expression is returned.
  */
-export declare function findMainModuleExpression(mainSourceFile: ts.SourceFile): ts.Expression | null;
+export declare function findMainModuleExpression(
+  mainSourceFile: ts.SourceFile
+): ts.Expression | null;

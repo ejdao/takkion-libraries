@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessPredicate, parallel } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate, parallel } from '@takkion/ng-cdk/testing';
 /** Harness for interacting with a standard mat-snack-bar in tests. */
 export class MatSnackBarHarness extends ContentContainerComponentHarness {
     constructor() {

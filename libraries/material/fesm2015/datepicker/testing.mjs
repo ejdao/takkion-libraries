@@ -1,7 +1,7 @@
 import { __awaiter } from 'tslib';
-import { HarnessPredicate, ComponentHarness, parallel, TestKey } from '@angular/cdk/testing';
-import { MatFormFieldControlHarness } from '@angular/material/form-field/testing/control';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { HarnessPredicate, ComponentHarness, parallel, TestKey } from '@takkion/ng-cdk/testing';
+import { MatFormFieldControlHarness } from '@takkion/ng-material/form-field/testing/control';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 
 /** Sets up the filter predicates for a datepicker input harness. */
 function getInputPredicate(type, options) {

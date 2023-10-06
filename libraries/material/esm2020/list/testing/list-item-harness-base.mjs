@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, HarnessPredicate, ContentContainerComponentHarness, parallel, } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate, ContentContainerComponentHarness, parallel, } from '@takkion/ng-cdk/testing';
 const iconSelector = '.mat-list-icon';
 const avatarSelector = '.mat-list-avatar';
 /**

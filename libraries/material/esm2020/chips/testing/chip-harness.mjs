@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessPredicate, TestKey } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate, TestKey } from '@takkion/ng-cdk/testing';
 import { MatChipAvatarHarness } from './chip-avatar-harness';
 import { MatChipRemoveHarness } from './chip-remove-harness';
 /** Harness for interacting with a standard selectable Angular Material chip in tests. */

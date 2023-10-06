@@ -1,6 +1,6 @@
 import { Component<% if (!!viewEncapsulation) { %>, ViewEncapsulation<% }%><% if (changeDetection !== 'Default') { %>, ChangeDetectionStrategy<% }%> } from '@angular/core';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@takkion/ng-material/tree';
+import { FlatTreeControl } from '@takkion/ng-cdk/tree';
 import { files } from './example-data';
 
 /** File node data with possible child nodes. */

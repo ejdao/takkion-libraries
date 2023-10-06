@@ -5,21 +5,21 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
-import { ViewportRuler } from '@angular/cdk/scrolling';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, ElementRef, NgZone, Optional, QueryList, ViewChild, ViewEncapsulation, Input, Inject, Directive, } from '@angular/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { MatInkBar } from './ink-bar';
 import { MatTabLabelWrapper } from './tab-label-wrapper';
-import { Platform } from '@angular/cdk/platform';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { MatPaginatedTabHeader } from './paginated-tab-header';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/scrolling";
-import * as i2 from "@angular/cdk/bidi";
-import * as i3 from "@angular/cdk/platform";
-import * as i4 from "@angular/material/core";
-import * as i5 from "@angular/cdk/observers";
+import * as i1 from "@takkion/ng-cdk/scrolling";
+import * as i2 from "@takkion/ng-cdk/bidi";
+import * as i3 from "@takkion/ng-cdk/platform";
+import * as i4 from "@takkion/ng-material/core";
+import * as i5 from "@takkion/ng-cdk/observers";
 import * as i6 from "./ink-bar";
 /**
  * Base class with all of the `MatTabHeader` functionality.

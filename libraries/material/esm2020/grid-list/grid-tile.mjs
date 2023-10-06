@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Component, ViewEncapsulation, ElementRef, Input, Optional, ContentChildren, QueryList, Directive, ChangeDetectionStrategy, Inject, } from '@angular/core';
-import { MatLine, setLines } from '@angular/material/core';
-import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { MatLine, setLines } from '@takkion/ng-material/core';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 import { MAT_GRID_LIST } from './grid-list-base';
 import * as i0 from "@angular/core";
 export class MatGridTile {

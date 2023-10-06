@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessPredicate } from '@angular/cdk/testing';
+import { HarnessPredicate } from '@takkion/ng-cdk/testing';
 import { MatListHarnessBase } from './list-harness-base';
 import { getListItemPredicate, MatListItemHarnessBase } from './list-item-harness-base';
 /** Harness for interacting with a standard mat-action-list in tests. */

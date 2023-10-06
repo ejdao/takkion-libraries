@@ -20,14 +20,20 @@
   $is-dark-theme: map.get($config, is-dark);
 
   // Label colors. Required is used for the `*` star shown in the label.
-  $label-color:
-    theming.get-color-from-palette($foreground, secondary-text, if($is-dark-theme, 0.7, 0.6));
+  $label-color: theming.get-color-from-palette(
+    $foreground,
+    secondary-text,
+    if($is-dark-theme, 0.7, 0.6)
+  );
   $focused-label-color: theming.get-color-from-palette($primary, text);
   $required-label-color: theming.get-color-from-palette($accent, text);
 
   // Underline colors.
-  $underline-color-base:
-    theming.get-color-from-palette($foreground, divider, if($is-dark-theme, 1, 0.87));
+  $underline-color-base: theming.get-color-from-palette(
+    $foreground,
+    divider,
+    if($is-dark-theme, 1, 0.87)
+  );
   $underline-color-accent: theming.get-color-from-palette($accent, text);
   $underline-color-warn: theming.get-color-from-palette($warn, text);
   $underline-focused-color: theming.get-color-from-palette($primary, text);
@@ -125,8 +131,7 @@ $dedupe: 0;
 
 // Applies a floating label above the form field control itself.
 @mixin _label-floating($font-scale, $infix-padding, $infix-margin-top) {
-  transform: translateY(-$infix-margin-top - $infix-padding + $dedupe)
-             scale($font-scale);
+  transform: translateY(-$infix-margin-top - $infix-padding + $dedupe) scale($font-scale);
   width: math.div(100%, $font-scale) + $dedupe;
 
   $dedupe: $dedupe + 0.00001 !global;
@@ -134,7 +139,8 @@ $dedupe: 0;
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   // The unit-less line-height from the font config.
   $line-height: typography-utils.line-height($config, input);
 
@@ -148,7 +154,7 @@ $dedupe: 0;
   // The margin applied to the form-field-infix to reserve space for the floating label.
   // If the line-height is given as a unitless number, coerce it to `em`.
   $infix-margin-top: $subscript-font-scale *
-      typography-utils.private-coerce-unitless-to-em($line-height);
+    typography-utils.private-coerce-unitless-to-em($line-height);
   // Font size to use for the label and subscript text.
   $subscript-font-size: $subscript-font-scale * 100%;
   // Font size to use for the for the prefix and suffix icons.
@@ -200,16 +206,15 @@ $dedupe: 0;
   .mat-form-field-can-float {
     &.mat-form-field-should-float .mat-form-field-label,
     .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-      @include _label-floating(
-              $subscript-font-scale, $infix-padding, $infix-margin-top);
+      @include _label-floating($subscript-font-scale, $infix-padding, $infix-margin-top);
     }
 
     // Server-side rendered matInput with a label attribute but label not shown
     // (used as a pure CSS stand-in for mat-form-field-should-float).
-    .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
-        .mat-form-field-label {
-      @include _label-floating(
-              $subscript-font-scale, $infix-padding, $infix-margin-top);
+    .mat-input-server[label]:not(:label-shown)
+      + .mat-form-field-label-wrapper
+      .mat-form-field-label {
+      @include _label-floating($subscript-font-scale, $infix-padding, $infix-margin-top);
     }
   }
 

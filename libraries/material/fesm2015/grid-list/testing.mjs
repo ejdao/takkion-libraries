@@ -1,6 +1,6 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness, parallel } from '@angular/cdk/testing';
-import { ɵTileCoordinator } from '@angular/material/grid-list';
+import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness, parallel } from '@takkion/ng-cdk/testing';
+import { ɵTileCoordinator } from '@takkion/ng-material/grid-list';
 
 /** Harness for interacting with a standard `MatGridTitle` in tests. */
 class MatGridTileHarness extends ContentContainerComponentHarness {

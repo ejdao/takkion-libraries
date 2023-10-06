@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Directive } from '@angular/core';
-import { DOWN_ARROW, ESCAPE, hasModifierKey, LEFT_ARROW, RIGHT_ARROW, TAB, UP_ARROW, } from '@angular/cdk/keycodes';
+import { DOWN_ARROW, ESCAPE, hasModifierKey, LEFT_ARROW, RIGHT_ARROW, TAB, UP_ARROW, } from '@takkion/ng-cdk/keycodes';
 import { takeUntil } from 'rxjs/operators';
 import { CdkMenuGroup } from './menu-group';
 import { CDK_MENU } from './menu-interface';

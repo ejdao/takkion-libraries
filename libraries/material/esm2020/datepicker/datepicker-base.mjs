@@ -5,16 +5,16 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty, coerceStringArray } from '@angular/cdk/coercion';
-import { DOWN_ARROW, ESCAPE, hasModifierKey, LEFT_ARROW, PAGE_DOWN, PAGE_UP, RIGHT_ARROW, UP_ARROW, } from '@angular/cdk/keycodes';
-import { Overlay, OverlayConfig, FlexibleConnectedPositionStrategy, } from '@angular/cdk/overlay';
-import { ComponentPortal } from '@angular/cdk/portal';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty, coerceStringArray } from '@takkion/ng-cdk/coercion';
+import { DOWN_ARROW, ESCAPE, hasModifierKey, LEFT_ARROW, PAGE_DOWN, PAGE_UP, RIGHT_ARROW, UP_ARROW, } from '@takkion/ng-cdk/keycodes';
+import { Overlay, OverlayConfig, FlexibleConnectedPositionStrategy, } from '@takkion/ng-cdk/overlay';
+import { ComponentPortal } from '@takkion/ng-cdk/portal';
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Inject, InjectionToken, Input, NgZone, Optional, Output, ViewChild, ViewContainerRef, ViewEncapsulation, ChangeDetectorRef, Directive, inject, } from '@angular/core';
-import { DateAdapter, mixinColor } from '@angular/material/core';
+import { DateAdapter, mixinColor } from '@takkion/ng-material/core';
 import { merge, Subject, Subscription } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
-import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
+import { _getFocusedElementPierceShadowDom } from '@takkion/ng-cdk/platform';
 import { MatCalendar } from './calendar';
 import { matDatepickerAnimations } from './datepicker-animations';
 import { createMissingDateImplError } from './datepicker-errors';
@@ -24,15 +24,15 @@ import { MatDatepickerIntl } from './datepicker-intl';
 import { DOCUMENT } from '@angular/common';
 import * as i0 from "@angular/core";
 import * as i1 from "./date-selection-model";
-import * as i2 from "@angular/material/core";
+import * as i2 from "@takkion/ng-material/core";
 import * as i3 from "./datepicker-intl";
 import * as i4 from "@angular/common";
-import * as i5 from "@angular/material/button";
-import * as i6 from "@angular/cdk/a11y";
-import * as i7 from "@angular/cdk/portal";
+import * as i5 from "@takkion/ng-material/button";
+import * as i6 from "@takkion/ng-cdk/a11y";
+import * as i7 from "@takkion/ng-cdk/portal";
 import * as i8 from "./calendar";
-import * as i9 from "@angular/cdk/overlay";
-import * as i10 from "@angular/cdk/bidi";
+import * as i9 from "@takkion/ng-cdk/overlay";
+import * as i10 from "@takkion/ng-cdk/bidi";
 /** Used to generate a unique ID for each datepicker instance. */
 let datepickerUid = 0;
 /** Injection token that determines the scroll handling while the calendar is open. */

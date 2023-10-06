@@ -2,17 +2,17 @@ import * as i2 from '@angular/common';
 import { CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { InjectionToken, Component, ViewEncapsulation, ChangeDetectionStrategy, Directive, Optional, Inject, ContentChildren, ContentChild, Input, forwardRef, EventEmitter, Output, ViewChild, NgModule } from '@angular/core';
-import * as i1 from '@angular/material/core';
-import { mixinDisabled, mixinDisableRipple, setLines, MatLine, MatLineModule, MatRippleModule, MatCommonModule, MatPseudoCheckboxModule } from '@angular/material/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import * as i1 from '@takkion/ng-material/core';
+import { mixinDisabled, mixinDisableRipple, setLines, MatLine, MatLineModule, MatRippleModule, MatCommonModule, MatPseudoCheckboxModule } from '@takkion/ng-material/core';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Subject } from 'rxjs';
 import { takeUntil, startWith } from 'rxjs/operators';
-import * as i3 from '@angular/cdk/a11y';
-import { FocusKeyManager } from '@angular/cdk/a11y';
-import { SelectionModel } from '@angular/cdk/collections';
-import { hasModifierKey, A, ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk/keycodes';
+import * as i3 from '@takkion/ng-cdk/a11y';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
+import { hasModifierKey, A, ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@takkion/ng-cdk/keycodes';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatDividerModule } from '@angular/material/divider';
+import { MatDividerModule } from '@takkion/ng-material/divider';
 
 /**
  * @license
@@ -246,7 +246,7 @@ const MAT_SELECTION_LIST_VALUE_ACCESSOR = {
 class MatSelectionListChange {
     constructor(
     /** Reference to the selection list that emitted the event. */
-    source, 
+    source,
     /** Reference to the options that have been changed. */
     options) {
         this.source = source;
@@ -259,7 +259,7 @@ class MatSelectionListChange {
  * if the current item is selected.
  */
 class MatListOption extends _MatListOptionBase {
-    constructor(_element, _changeDetector, 
+    constructor(_element, _changeDetector,
     /** @docs-private */
     selectionList) {
         super();

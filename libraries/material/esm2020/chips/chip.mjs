@@ -1,21 +1,21 @@
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { BACKSPACE, DELETE, SPACE } from '@angular/cdk/keycodes';
-import { Platform } from '@angular/cdk/platform';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { BACKSPACE, DELETE, SPACE } from '@takkion/ng-cdk/keycodes';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { DOCUMENT } from '@angular/common';
 import { Attribute, ChangeDetectorRef, ContentChild, Directive, ElementRef, EventEmitter, Inject, InjectionToken, Input, NgZone, Optional, Output, } from '@angular/core';
-import { MAT_RIPPLE_GLOBAL_OPTIONS, mixinColor, mixinDisableRipple, mixinTabIndex, RippleRenderer, } from '@angular/material/core';
+import { MAT_RIPPLE_GLOBAL_OPTIONS, mixinColor, mixinDisableRipple, mixinTabIndex, RippleRenderer, } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /** Event object emitted by MatChip when selected or deselected. */
 export class MatChipSelectionChange {
     constructor(
     /** Reference to the chip that emitted the event. */
-    source, 
+    source,
     /** Whether the chip that emitted the event is selected. */
-    selected, 
+    selected,
     /** Whether the selection change was a result of a user interaction. */
     isUserInput = false) {
         this.source = source;

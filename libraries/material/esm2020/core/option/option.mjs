@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ENTER, SPACE, hasModifierKey } from '@angular/cdk/keycodes';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { ENTER, SPACE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Inject, Input, Optional, Output, ViewEncapsulation, Directive, } from '@angular/core';
 import { Subject } from 'rxjs';
 import { MatOptgroup, _MatOptgroupBase, MAT_OPTGROUP } from './optgroup';

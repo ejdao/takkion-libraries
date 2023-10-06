@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { TestKey } from '@angular/cdk/testing';
+import { TestKey } from '@takkion/ng-cdk/testing';
 import * as webdriver from 'selenium-webdriver';
 /**
  * Maps the `TestKey` constants to WebDriver's `webdriver.Key` constants.

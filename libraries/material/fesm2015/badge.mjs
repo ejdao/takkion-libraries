@@ -1,9 +1,9 @@
 import * as i0 from '@angular/core';
 import { Directive, Optional, Inject, Input, NgModule } from '@angular/core';
-import { mixinDisabled, MatCommonModule } from '@angular/material/core';
-import * as i1 from '@angular/cdk/a11y';
-import { A11yModule } from '@angular/cdk/a11y';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { mixinDisabled, MatCommonModule } from '@takkion/ng-material/core';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import { A11yModule } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 
 let nextId = 0;

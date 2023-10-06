@@ -1,7 +1,7 @@
 import { __awaiter } from 'tslib';
-import { parallel, HarnessPredicate } from '@angular/cdk/testing';
-import { MatFormFieldControlHarness } from '@angular/material/form-field/testing/control';
-import { MatOptionHarness, MatOptgroupHarness } from '@angular/material/core/testing';
+import { parallel, HarnessPredicate } from '@takkion/ng-cdk/testing';
+import { MatFormFieldControlHarness } from '@takkion/ng-material/form-field/testing/control';
+import { MatOptionHarness, MatOptgroupHarness } from '@takkion/ng-material/core/testing';
 
 class _MatSelectHarnessBase extends MatFormFieldControlHarness {
     constructor() {

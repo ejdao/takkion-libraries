@@ -5,9 +5,9 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { TemplatePortal } from '@angular/cdk/portal';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
 import { ChangeDetectionStrategy, Component, ContentChild, Input, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, InjectionToken, Inject, Optional, } from '@angular/core';
-import { mixinDisabled } from '@angular/material/core';
+import { mixinDisabled } from '@takkion/ng-material/core';
 import { Subject } from 'rxjs';
 import { MAT_TAB_CONTENT } from './tab-content';
 import { MAT_TAB_LABEL, MatTabLabel, MAT_TAB } from './tab-label';

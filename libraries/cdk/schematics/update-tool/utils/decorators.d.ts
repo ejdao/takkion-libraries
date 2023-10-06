@@ -8,15 +8,21 @@
 import * as ts from 'typescript';
 import { Import } from './imports';
 export declare type CallExpressionDecorator = ts.Decorator & {
-    expression: ts.CallExpression;
+  expression: ts.CallExpression;
 };
 export interface NgDecorator {
-    name: string;
-    node: CallExpressionDecorator;
+  name: string;
+  node: CallExpressionDecorator;
 }
 /**
  * Gets all decorators which are imported from an Angular package
  * (e.g. "@angular/core") from a list of decorators.
  */
-export declare function getAngularDecorators(typeChecker: ts.TypeChecker, decorators: readonly ts.Decorator[]): readonly NgDecorator[];
-export declare function getCallDecoratorImport(typeChecker: ts.TypeChecker, decorator: ts.Decorator): Import | null;
+export declare function getAngularDecorators(
+  typeChecker: ts.TypeChecker,
+  decorators: readonly ts.Decorator[]
+): readonly NgDecorator[];
+export declare function getCallDecoratorImport(
+  typeChecker: ts.TypeChecker,
+  decorator: ts.Decorator
+): Import | null;

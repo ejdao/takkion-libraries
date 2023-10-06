@@ -14,9 +14,9 @@ import { UpgradeData } from '../upgrade-data';
  * argument count is invalid and needs to be *manually* updated.
  */
 export declare class MethodCallArgumentsMigration extends Migration<UpgradeData> {
-    /** Change data that upgrades to the specified target version. */
-    data: MethodCallUpgradeData[];
-    enabled: boolean;
-    visitNode(node: ts.Node): void;
-    private _checkPropertyAccessMethodCall;
+  /** Change data that upgrades to the specified target version. */
+  data: MethodCallUpgradeData[];
+  enabled: boolean;
+  visitNode(node: ts.Node): void;
+  private _checkPropertyAccessMethodCall;
 }

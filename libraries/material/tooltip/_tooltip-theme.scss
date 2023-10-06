@@ -23,7 +23,8 @@ $handset-vertical-padding: math.div($handset-target-height - $handset-font-size,
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-tooltip {
     font-family: typography-utils.font-family($config);
     font-size: $font-size;
@@ -38,7 +39,8 @@ $handset-vertical-padding: math.div($handset-target-height - $handset-font-size,
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);
@@ -58,4 +60,3 @@ $handset-vertical-padding: math.div($handset-target-height - $handset-font-size,
     }
   }
 }
-

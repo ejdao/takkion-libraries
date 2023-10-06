@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { NgModule } from '@angular/core';
-import { MatCommonModule, MatRippleModule } from '@angular/material/core';
+import { MatCommonModule, MatRippleModule } from '@takkion/ng-material/core';
 import { MatAnchor, MatButton } from './button';
 import * as i0 from "@angular/core";
 export class MatButtonModule {

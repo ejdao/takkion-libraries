@@ -1,9 +1,9 @@
 import * as i0 from '@angular/core';
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, Optional, Inject, ViewChild, Input, NgModule } from '@angular/core';
-import * as i2 from '@angular/material/core';
-import { mixinColor, mixinDisabled, mixinDisableRipple, MatRipple, MatRippleModule, MatCommonModule } from '@angular/material/core';
+import * as i2 from '@takkion/ng-material/core';
+import { mixinColor, mixinDisabled, mixinDisableRipple, MatRipple, MatRippleModule, MatCommonModule } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import * as i1 from '@angular/cdk/a11y';
+import * as i1 from '@takkion/ng-cdk/a11y';
 
 /** Default color palette for round buttons (mat-fab and mat-mini-fab) */
 const DEFAULT_ROUND_BUTTON_COLOR = 'accent';
@@ -109,7 +109,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
  * Material design anchor button.
  */
 class MatAnchor extends MatButton {
-    constructor(focusMonitor, elementRef, animationMode, 
+    constructor(focusMonitor, elementRef, animationMode,
     /** @breaking-change 14.0.0 _ngZone will be required. */
     _ngZone) {
         super(elementRef, focusMonitor, animationMode);

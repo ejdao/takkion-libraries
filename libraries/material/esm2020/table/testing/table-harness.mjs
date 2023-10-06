@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessPredicate, parallel, } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate, parallel, } from '@takkion/ng-cdk/testing';
 import { MatRowHarness, MatHeaderRowHarness, MatFooterRowHarness, } from './row-harness';
 export class _MatTableHarnessBase extends ContentContainerComponentHarness {
     /** Gets all of the header rows in a table. */

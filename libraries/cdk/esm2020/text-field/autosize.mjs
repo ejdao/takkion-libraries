@@ -5,14 +5,14 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty, coerceNumberProperty, } from '@angular/cdk/coercion';
+import { coerceBooleanProperty, coerceNumberProperty, } from '@takkion/ng-cdk/coercion';
 import { Directive, ElementRef, Input, NgZone, Optional, Inject, } from '@angular/core';
-import { Platform } from '@angular/cdk/platform';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { auditTime, takeUntil } from 'rxjs/operators';
 import { fromEvent, Subject } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /** Directive to automatically resize a textarea to fit its content. */
 export class CdkTextareaAutosize {
     constructor(_elementRef, _platform, _ngZone, 

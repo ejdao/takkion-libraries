@@ -1,11 +1,11 @@
 import * as i0 from '@angular/core';
 import { InjectionToken, EventEmitter, Directive, Optional, Inject, Input, Output, Injectable, SkipSelf, Component, ViewEncapsulation, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { SPACE, ENTER } from '@angular/cdk/keycodes';
-import { mixinInitialized, mixinDisabled, AnimationDurations, AnimationCurves, MatCommonModule } from '@angular/material/core';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { SPACE, ENTER } from '@takkion/ng-cdk/keycodes';
+import { mixinInitialized, mixinDisabled, AnimationDurations, AnimationCurves, MatCommonModule } from '@takkion/ng-material/core';
 import { Subject, merge } from 'rxjs';
 import { trigger, state, style, transition, animate, keyframes, query, animateChild } from '@angular/animations';
-import * as i3 from '@angular/cdk/a11y';
+import * as i3 from '@takkion/ng-cdk/a11y';
 import * as i4 from '@angular/common';
 import { CommonModule } from '@angular/common';
 
@@ -315,10 +315,10 @@ class MatSortHeader extends _MatSortHeaderBase {
      * @deprecated `_intl` parameter isn't being used anymore and it'll be removed.
      * @breaking-change 13.0.0
      */
-    _intl, _changeDetectorRef, 
+    _intl, _changeDetectorRef,
     // `MatSort` is not optionally injected, but just asserted manually w/ better error.
     // tslint:disable-next-line: lightweight-tokens
-    _sort, _columnDef, _focusMonitor, _elementRef, 
+    _sort, _columnDef, _focusMonitor, _elementRef,
     /** @breaking-change 14.0.0 _ariaDescriber will be required. */
     _ariaDescriber, defaultOptions) {
         // Note that we use a string token for the `_columnDef`, because the value is provided both by

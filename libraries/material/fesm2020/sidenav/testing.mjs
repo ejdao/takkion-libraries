@@ -1,4 +1,4 @@
-import { ContentContainerComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
 
 /**
  * @license

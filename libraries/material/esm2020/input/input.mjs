@@ -5,22 +5,22 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { getSupportedInputTypes, Platform } from '@angular/cdk/platform';
-import { AutofillMonitor } from '@angular/cdk/text-field';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { getSupportedInputTypes, Platform } from '@takkion/ng-cdk/platform';
+import { AutofillMonitor } from '@takkion/ng-cdk/text-field';
 import { Directive, ElementRef, Inject, Input, NgZone, Optional, Self, } from '@angular/core';
 import { FormGroupDirective, NgControl, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher, mixinErrorState } from '@angular/material/core';
-import { MatFormFieldControl, MatFormField, MAT_FORM_FIELD } from '@angular/material/form-field';
+import { ErrorStateMatcher, mixinErrorState } from '@takkion/ng-material/core';
+import { MatFormFieldControl, MatFormField, MAT_FORM_FIELD } from '@takkion/ng-material/form-field';
 import { Subject } from 'rxjs';
 import { getMatInputUnsupportedTypeError } from './input-errors';
 import { MAT_INPUT_VALUE_ACCESSOR } from './input-value-accessor';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 import * as i2 from "@angular/forms";
-import * as i3 from "@angular/material/core";
-import * as i4 from "@angular/cdk/text-field";
-import * as i5 from "@angular/material/form-field";
+import * as i3 from "@takkion/ng-material/core";
+import * as i4 from "@takkion/ng-cdk/text-field";
+import * as i5 from "@takkion/ng-material/form-field";
 // Invalid input type. Using one of these will throw an MatInputUnsupportedTypeError.
 const MAT_INPUT_INVALID_TYPES = [
     'button',
@@ -37,7 +37,7 @@ let nextUniqueId = 0;
 // Boilerplate for applying mixins to MatInput.
 /** @docs-private */
 const _MatInputBase = mixinErrorState(class {
-    constructor(_defaultErrorStateMatcher, _parentForm, _parentFormGroup, 
+    constructor(_defaultErrorStateMatcher, _parentForm, _parentFormGroup,
     /**
      * Form control bound to the component.
      * Implemented as part of `MatFormFieldControl`.
@@ -58,7 +58,7 @@ const _MatInputBase = mixinErrorState(class {
 });
 /** Directive that allows a native input to work inside a `MatFormField`. */
 export class MatInput extends _MatInputBase {
-    constructor(_elementRef, _platform, ngControl, _parentForm, _parentFormGroup, _defaultErrorStateMatcher, inputValueAccessor, _autofillMonitor, ngZone, 
+    constructor(_elementRef, _platform, ngControl, _parentForm, _parentFormGroup, _defaultErrorStateMatcher, inputValueAccessor, _autofillMonitor, ngZone,
     // TODO: Remove this once the legacy appearance has been removed. We only need
     // to inject the form field for determining whether the placeholder has been promoted.
     _formField) {

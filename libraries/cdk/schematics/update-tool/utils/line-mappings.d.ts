@@ -6,13 +6,16 @@
  * found in the LICENSE file at https://angular.io/license
  */
 export interface LineAndCharacter {
-    character: number;
-    line: number;
+  character: number;
+  line: number;
 }
 /** Gets the line and character for the given position from the line starts map. */
-export declare function getLineAndCharacterFromPosition(lineStartsMap: number[], position: number): {
-    character: number;
-    line: number;
+export declare function getLineAndCharacterFromPosition(
+  lineStartsMap: number[],
+  position: number
+): {
+  character: number;
+  line: number;
 };
 /**
  * Computes the line start map of the given text. This can be used in order to

@@ -6,19 +6,19 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { ChangeDetectorRef, ElementRef, NgZone, Optional, EventEmitter, Directive, Inject, Input, } from '@angular/core';
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty, coerceNumberProperty, } from '@angular/cdk/coercion';
-import { ViewportRuler } from '@angular/cdk/scrolling';
-import { FocusKeyManager } from '@angular/cdk/a11y';
-import { ENTER, SPACE, hasModifierKey } from '@angular/cdk/keycodes';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty, coerceNumberProperty, } from '@takkion/ng-cdk/coercion';
+import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
+import { ENTER, SPACE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
 import { merge, of as observableOf, Subject, EMPTY, Observable, timer, fromEvent, } from 'rxjs';
 import { take, switchMap, startWith, skip, takeUntil, filter } from 'rxjs/operators';
-import { Platform, normalizePassiveListenerOptions } from '@angular/cdk/platform';
+import { Platform, normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/scrolling";
-import * as i2 from "@angular/cdk/bidi";
-import * as i3 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/scrolling";
+import * as i2 from "@takkion/ng-cdk/bidi";
+import * as i3 from "@takkion/ng-cdk/platform";
 /** Config used to bind passive event listeners */
 const passiveEventListenerOptions = normalizePassiveListenerOptions({
     passive: true,

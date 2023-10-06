@@ -5,16 +5,16 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
 import { ChangeDetectionStrategy, Component, ElementRef, ViewEncapsulation, Inject, Optional, Input, ChangeDetectorRef, } from '@angular/core';
-import { mixinDisabled, mixinDisableRipple, } from '@angular/material/core';
+import { mixinDisabled, mixinDisableRipple, } from '@takkion/ng-material/core';
 import { Subject } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 import { MAT_MENU_PANEL } from './menu-panel';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
+import * as i1 from "@takkion/ng-cdk/a11y";
 import * as i2 from "@angular/common";
-import * as i3 from "@angular/material/core";
+import * as i3 from "@takkion/ng-material/core";
 // Boilerplate for applying mixins to MatMenuItem.
 /** @docs-private */
 const _MatMenuItemBase = mixinDisableRipple(mixinDisabled(class {

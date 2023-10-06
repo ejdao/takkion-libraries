@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate, parallel } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate, parallel } from '@takkion/ng-cdk/testing';
 
 /** Harness for interacting with a standard mat-toolbar in tests. */
 class MatToolbarHarness extends ContentContainerComponentHarness {

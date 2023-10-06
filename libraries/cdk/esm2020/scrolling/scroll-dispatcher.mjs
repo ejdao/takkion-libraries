@@ -5,14 +5,14 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceElement } from '@angular/cdk/coercion';
-import { Platform } from '@angular/cdk/platform';
+import { coerceElement } from '@takkion/ng-cdk/coercion';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { Injectable, NgZone, Optional, Inject } from '@angular/core';
 import { fromEvent, of as observableOf, Subject, Observable } from 'rxjs';
 import { auditTime, filter } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /** Time in ms to throttle the scrolling events by default. */
 export const DEFAULT_SCROLL_TIME = 20;
 /**

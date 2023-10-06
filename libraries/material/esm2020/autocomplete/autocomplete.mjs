@@ -5,14 +5,14 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { coerceBooleanProperty, coerceStringArray } from '@angular/cdk/coercion';
-import { Platform } from '@angular/cdk/platform';
+import { ActiveDescendantKeyManager } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty, coerceStringArray } from '@takkion/ng-cdk/coercion';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, ElementRef, EventEmitter, Inject, InjectionToken, Input, Output, QueryList, TemplateRef, ViewChild, ViewEncapsulation, Directive, } from '@angular/core';
-import { MAT_OPTGROUP, MAT_OPTION_PARENT_COMPONENT, mixinDisableRipple, MatOption, } from '@angular/material/core';
+import { MAT_OPTGROUP, MAT_OPTION_PARENT_COMPONENT, mixinDisableRipple, MatOption, } from '@takkion/ng-material/core';
 import { Subscription } from 'rxjs';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 import * as i2 from "@angular/common";
 /**
  * Autocomplete IDs need to be unique across components, so this counter exists outside of
@@ -23,7 +23,7 @@ let _uniqueAutocompleteIdCounter = 0;
 export class MatAutocompleteSelectedEvent {
     constructor(
     /** Reference to the autocomplete panel that emitted the event. */
-    source, 
+    source,
     /** Option that was selected. */
     option) {
         this.source = source;

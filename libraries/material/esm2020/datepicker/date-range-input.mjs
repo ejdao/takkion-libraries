@@ -6,19 +6,19 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Component, ChangeDetectionStrategy, ViewEncapsulation, Input, Optional, ContentChild, ChangeDetectorRef, Self, ElementRef, Inject, } from '@angular/core';
-import { MatFormFieldControl, MatFormField, MAT_FORM_FIELD } from '@angular/material/form-field';
-import { DateAdapter } from '@angular/material/core';
+import { MatFormFieldControl, MatFormField, MAT_FORM_FIELD } from '@takkion/ng-material/form-field';
+import { DateAdapter } from '@takkion/ng-material/core';
 import { ControlContainer } from '@angular/forms';
 import { Subject, merge, Subscription } from 'rxjs';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { MatStartDate, MatEndDate, MAT_DATE_RANGE_INPUT_PARENT, } from './date-range-input-parts';
 import { createMissingDateImplError } from './datepicker-errors';
 import { dateInputsHaveChanged } from './datepicker-input-base';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/forms";
-import * as i2 from "@angular/material/core";
-import * as i3 from "@angular/cdk/a11y";
-import * as i4 from "@angular/material/form-field";
+import * as i2 from "@takkion/ng-material/core";
+import * as i3 from "@takkion/ng-cdk/a11y";
+import * as i4 from "@takkion/ng-material/form-field";
 let nextUniqueId = 0;
 export class MatDateRangeInput {
     constructor(_changeDetectorRef, _elementRef, control, _dateAdapter, _formField) {

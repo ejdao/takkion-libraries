@@ -7,10 +7,10 @@
  */
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatCommonModule, MatLineModule, MatPseudoCheckboxModule, MatRippleModule, } from '@angular/material/core';
+import { MatCommonModule, MatLineModule, MatPseudoCheckboxModule, MatRippleModule, } from '@takkion/ng-material/core';
 import { MatList, MatNavList, MatListAvatarCssMatStyler, MatListIconCssMatStyler, MatListItem, MatListSubheaderCssMatStyler, } from './list';
 import { MatListOption, MatSelectionList } from './selection-list';
-import { MatDividerModule } from '@angular/material/divider';
+import { MatDividerModule } from '@takkion/ng-material/divider';
 import * as i0 from "@angular/core";
 export class MatListModule {
 }

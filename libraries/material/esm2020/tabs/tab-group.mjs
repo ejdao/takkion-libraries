@@ -5,9 +5,9 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty, coerceNumberProperty, } from '@angular/cdk/coercion';
+import { coerceBooleanProperty, coerceNumberProperty, } from '@takkion/ng-cdk/coercion';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, Directive, ElementRef, EventEmitter, Inject, Input, Optional, Output, QueryList, ViewChild, ViewEncapsulation, } from '@angular/core';
-import { mixinColor, mixinDisableRipple, } from '@angular/material/core';
+import { mixinColor, mixinDisableRipple, } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { merge, Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
@@ -15,9 +15,9 @@ import { MAT_TAB_GROUP, MatTab } from './tab';
 import { MAT_TABS_CONFIG } from './tab-config';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/common";
-import * as i2 from "@angular/cdk/portal";
-import * as i3 from "@angular/material/core";
-import * as i4 from "@angular/cdk/a11y";
+import * as i2 from "@takkion/ng-cdk/portal";
+import * as i3 from "@takkion/ng-material/core";
+import * as i4 from "@takkion/ng-cdk/a11y";
 import * as i5 from "./tab-label-wrapper";
 import * as i6 from "./tab-body";
 import * as i7 from "./tab-header";

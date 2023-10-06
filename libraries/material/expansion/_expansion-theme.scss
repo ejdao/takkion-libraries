@@ -56,7 +56,8 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-expansion-panel-header {
     font: {
       family: typography-utils.font-family($config, subheading-1);
@@ -73,9 +74,15 @@
 @mixin density($config-or-theme) {
   $density-scale: theming.get-density-config($config-or-theme);
   $expanded-height: compatibility.private-density-prop-value(
-        expansion-variables.$header-density-config, $density-scale, expanded-height);
+    expansion-variables.$header-density-config,
+    $density-scale,
+    expanded-height
+  );
   $collapsed-height: compatibility.private-density-prop-value(
-      expansion-variables.$header-density-config, $density-scale, collapsed-height);
+    expansion-variables.$header-density-config,
+    $density-scale,
+    collapsed-height
+  );
 
   @include compatibility.private-density-legacy-compatibility() {
     .mat-expansion-panel-header {

@@ -5,15 +5,15 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, Directive, Input, ViewEncapsulation, ViewChild, } from '@angular/core';
-import { MatButton } from '@angular/material/button';
+import { MatButton } from '@takkion/ng-material/button';
 import { merge, of as observableOf, Subscription } from 'rxjs';
 import { MatDatepickerIntl } from './datepicker-intl';
 import * as i0 from "@angular/core";
 import * as i1 from "./datepicker-intl";
 import * as i2 from "@angular/common";
-import * as i3 from "@angular/material/button";
+import * as i3 from "@takkion/ng-material/button";
 /** Can be used to override the icon of a `matDatepickerToggle`. */
 export class MatDatepickerToggleIcon {
 }

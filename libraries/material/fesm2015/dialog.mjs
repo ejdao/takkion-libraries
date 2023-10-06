@@ -1,18 +1,18 @@
-import { CdkDialogContainer, Dialog, DialogConfig, DialogModule } from '@angular/cdk/dialog';
-import * as i1$1 from '@angular/cdk/overlay';
-import { Overlay, OverlayModule } from '@angular/cdk/overlay';
-import * as i4 from '@angular/cdk/portal';
-import { PortalModule } from '@angular/cdk/portal';
+import { CdkDialogContainer, Dialog, DialogConfig, DialogModule } from '@takkion/ng-cdk/dialog';
+import * as i1$1 from '@takkion/ng-cdk/overlay';
+import { Overlay, OverlayModule } from '@takkion/ng-cdk/overlay';
+import * as i4 from '@takkion/ng-cdk/portal';
+import { PortalModule } from '@takkion/ng-cdk/portal';
 import * as i0 from '@angular/core';
 import { EventEmitter, Component, Optional, Inject, ViewEncapsulation, ChangeDetectionStrategy, InjectionToken, Injectable, SkipSelf, Directive, Input, NgModule } from '@angular/core';
-import { MatCommonModule } from '@angular/material/core';
+import { MatCommonModule } from '@takkion/ng-material/core';
 import { Subject, merge, defer } from 'rxjs';
 import { filter, take, startWith } from 'rxjs/operators';
 import { trigger, state, style, transition, group, animate, query, animateChild } from '@angular/animations';
 import * as i2 from '@angular/common';
 import { DOCUMENT } from '@angular/common';
-import * as i1 from '@angular/cdk/a11y';
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
+import * as i1 from '@takkion/ng-cdk/a11y';
+import { ESCAPE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 
 /**
@@ -430,12 +430,12 @@ let uniqueId = 0;
  * for arbitrary dialog refs and dialog container components.
  */
 class _MatDialogBase {
-    constructor(_overlay, injector, _defaultOptions, _parentDialog, 
+    constructor(_overlay, injector, _defaultOptions, _parentDialog,
     /**
      * @deprecated No longer used. To be removed.
      * @breaking-change 15.0.0
      */
-    _overlayContainer, scrollStrategy, _dialogRefConstructor, _dialogContainerType, _dialogDataToken, 
+    _overlayContainer, scrollStrategy, _dialogRefConstructor, _dialogContainerType, _dialogDataToken,
     /**
      * @deprecated No longer used. To be removed.
      * @breaking-change 14.0.0
@@ -478,9 +478,9 @@ class _MatDialogBase {
         config = Object.assign(Object.assign({}, (this._defaultOptions || new MatDialogConfig())), config);
         config.id = config.id || `${this._idPrefix}${uniqueId++}`;
         config.scrollStrategy = config.scrollStrategy || this._scrollStrategy();
-        const cdkRef = this._dialog.open(componentOrTemplateRef, Object.assign(Object.assign({}, config), { positionStrategy: this._overlay.position().global().centerHorizontally().centerVertically(), 
+        const cdkRef = this._dialog.open(componentOrTemplateRef, Object.assign(Object.assign({}, config), { positionStrategy: this._overlay.position().global().centerHorizontally().centerVertically(),
             // Disable closing since we need to sync it up to the animation ourselves.
-            disableClose: true, 
+            disableClose: true,
             // Disable closing on destroy, because this service cleans up its open dialogs as well.
             // We want to do the cleanup here, rather than the CDK service, because the CDK destroys
             // the dialogs immediately whereas we want it to wait for the animations to finish.
@@ -554,17 +554,17 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
  * Service to open Material Design modal dialogs.
  */
 class MatDialog extends _MatDialogBase {
-    constructor(overlay, injector, 
+    constructor(overlay, injector,
     /**
      * @deprecated `_location` parameter to be removed.
      * @breaking-change 10.0.0
      */
-    _location, defaultOptions, scrollStrategy, parentDialog, 
+    _location, defaultOptions, scrollStrategy, parentDialog,
     /**
      * @deprecated No longer used. To be removed.
      * @breaking-change 15.0.0
      */
-    overlayContainer, 
+    overlayContainer,
     /**
      * @deprecated No longer used. To be removed.
      * @breaking-change 14.0.0

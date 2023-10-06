@@ -7,10 +7,10 @@
  */
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, NgZone, Optional } from '@angular/core';
-import { Platform, _getEventTarget } from '@angular/cdk/platform';
+import { Platform, _getEventTarget } from '@takkion/ng-cdk/platform';
 import { BaseOverlayDispatcher } from './base-overlay-dispatcher';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /**
  * Service for dispatching mouse click events that land on the body to appropriate overlay ref,
  * if any. It maintains a list of attached overlays to determine best suited overlay based

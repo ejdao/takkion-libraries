@@ -5,9 +5,9 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, HarnessPredicate, } from '@angular/cdk/testing';
-import { MatSelectHarness } from '@angular/material/select/testing';
-import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { ComponentHarness, HarnessPredicate, } from '@takkion/ng-cdk/testing';
+import { MatSelectHarness } from '@takkion/ng-material/select/testing';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 export class _MatPaginatorHarnessBase extends ComponentHarness {
     /** Goes to the next page in the paginator. */
     async goToNextPage() {

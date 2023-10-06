@@ -7,10 +7,10 @@
  */
 import { CdkMenuGroup } from './menu-group';
 import { ContentChildren, Directive, ElementRef, inject, InjectFlags, Input, NgZone, QueryList, } from '@angular/core';
-import { FocusKeyManager } from '@angular/cdk/a11y';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
 import { CdkMenuItem } from './menu-item';
 import { merge, Subject } from 'rxjs';
-import { Directionality } from '@angular/cdk/bidi';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { mapTo, mergeAll, mergeMap, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { MENU_STACK } from './menu-stack';
 import { PointerFocusTracker } from './pointer-focus-tracker';

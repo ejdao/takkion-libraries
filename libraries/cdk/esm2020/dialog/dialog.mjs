@@ -6,17 +6,17 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { TemplateRef, Injectable, Injector, InjectFlags, Inject, Optional, SkipSelf, } from '@angular/core';
-import { ComponentPortal, TemplatePortal } from '@angular/cdk/portal';
+import { ComponentPortal, TemplatePortal } from '@takkion/ng-cdk/portal';
 import { of as observableOf, Subject, defer } from 'rxjs';
 import { DialogRef } from './dialog-ref';
 import { DialogConfig } from './dialog-config';
-import { Directionality } from '@angular/cdk/bidi';
-import { Overlay, OverlayRef, OverlayConfig, OverlayContainer, } from '@angular/cdk/overlay';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { Overlay, OverlayRef, OverlayConfig, OverlayContainer, } from '@takkion/ng-cdk/overlay';
 import { startWith } from 'rxjs/operators';
 import { DEFAULT_DIALOG_CONFIG, DIALOG_DATA, DIALOG_SCROLL_STRATEGY } from './dialog-injectors';
 import { CdkDialogContainer } from './dialog-container';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/overlay";
+import * as i1 from "@takkion/ng-cdk/overlay";
 import * as i2 from "./dialog-config";
 /** Unique id for the created dialog. */
 let uniqueId = 0;

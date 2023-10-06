@@ -1,16 +1,16 @@
-import * as i4 from '@angular/cdk/observers';
-import { ObserversModule } from '@angular/cdk/observers';
+import * as i4 from '@takkion/ng-cdk/observers';
+import { ObserversModule } from '@takkion/ng-cdk/observers';
 import * as i3 from '@angular/common';
 import { CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, Attribute, Input, Component, ViewEncapsulation, ChangeDetectionStrategy, Optional, Inject, ViewChild, ContentChild, ContentChildren, NgModule } from '@angular/core';
-import { mixinColor, MatCommonModule } from '@angular/material/core';
-import * as i1 from '@angular/cdk/bidi';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { mixinColor, MatCommonModule } from '@takkion/ng-material/core';
+import * as i1 from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Subject, merge, fromEvent } from 'rxjs';
 import { startWith, takeUntil, take } from 'rxjs/operators';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import * as i2 from '@angular/cdk/platform';
+import * as i2 from '@takkion/ng-cdk/platform';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 
 /**

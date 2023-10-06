@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
 
 class _MatTooltipHarnessBase extends ComponentHarness {
     /** Shows the tooltip. */

@@ -11,8 +11,8 @@ import { SymbolRemovalUpgradeData } from '../data';
 import { UpgradeData } from '../upgrade-data';
 /** Migration that flags imports for symbols that have been removed. */
 export declare class SymbolRemovalMigration extends Migration<UpgradeData> {
-    /** Change data that upgrades to the specified target version. */
-    data: SymbolRemovalUpgradeData[];
-    enabled: boolean;
-    visitNode(node: ts.Node): void;
+  /** Change data that upgrades to the specified target version. */
+  data: SymbolRemovalUpgradeData[];
+  enabled: boolean;
+  visitNode(node: ts.Node): void;
 }

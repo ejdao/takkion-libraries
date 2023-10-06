@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Directive, Input, ContentChildren, QueryList, } from '@angular/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { CdkAccordion } from '@angular/cdk/accordion';
-import { FocusKeyManager } from '@angular/cdk/a11y';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { CdkAccordion } from '@takkion/ng-cdk/accordion';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
 import { startWith } from 'rxjs/operators';
 import { MAT_ACCORDION, } from './accordion-base';
 import { MatExpansionPanelHeader } from './expansion-panel-header';

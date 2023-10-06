@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const schematics_1 = require("@angular-devkit/schematics");
-const schematics_2 = require("@angular/cdk/schematics");
+const schematics_2 = require("@takkion/ng-cdk/schematics");
 /**
  * Scaffolds a new table component.
  * Internally it bootstraps the base component schematic
@@ -29,11 +29,11 @@ exports.default = default_1;
 function addFormModulesToModule(options) {
     return async (host) => {
         const modulePath = (await (0, schematics_2.findModuleFromOptions)(host, options));
-        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatInputModule', '@angular/material/input');
-        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatButtonModule', '@angular/material/button');
-        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatSelectModule', '@angular/material/select');
-        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatRadioModule', '@angular/material/radio');
-        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatCardModule', '@angular/material/card');
+        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatInputModule', '@takkion/ng-material/input');
+        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatButtonModule', '@takkion/ng-material/button');
+        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatSelectModule', '@takkion/ng-material/select');
+        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatRadioModule', '@takkion/ng-material/radio');
+        (0, schematics_2.addModuleImportToModule)(host, modulePath, 'MatCardModule', '@takkion/ng-material/card');
         (0, schematics_2.addModuleImportToModule)(host, modulePath, 'ReactiveFormsModule', '@angular/forms');
     };
 }

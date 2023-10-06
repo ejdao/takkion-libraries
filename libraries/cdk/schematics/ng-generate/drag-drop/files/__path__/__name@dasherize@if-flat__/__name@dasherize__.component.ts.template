@@ -1,5 +1,5 @@
 import { Component<% if(!!viewEncapsulation) { %>, ViewEncapsulation<% }%><% if(changeDetection !== 'Default') { %>, ChangeDetectionStrategy<% }%> } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@takkion/ng-cdk/drag-drop';
 
 @Component({
   selector: '<%= selector %>',<% if(inlineTemplate) { %>

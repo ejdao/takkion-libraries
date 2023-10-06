@@ -1,28 +1,28 @@
-import { SPACE, BACKSPACE, DELETE, TAB, hasModifierKey, ENTER } from '@angular/cdk/keycodes';
+import { SPACE, BACKSPACE, DELETE, TAB, hasModifierKey, ENTER } from '@takkion/ng-cdk/keycodes';
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, EventEmitter, Optional, Inject, Attribute, ContentChild, Input, Output, Component, ViewEncapsulation, ChangeDetectionStrategy, Self, ContentChildren, NgModule } from '@angular/core';
-import * as i3 from '@angular/material/core';
-import { mixinTabIndex, mixinColor, mixinDisableRipple, RippleRenderer, MAT_RIPPLE_GLOBAL_OPTIONS, mixinErrorState, MatCommonModule, ErrorStateMatcher } from '@angular/material/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import * as i3 from '@takkion/ng-material/core';
+import { mixinTabIndex, mixinColor, mixinDisableRipple, RippleRenderer, MAT_RIPPLE_GLOBAL_OPTIONS, mixinErrorState, MatCommonModule, ErrorStateMatcher } from '@takkion/ng-material/core';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { DOCUMENT } from '@angular/common';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { Subject, merge } from 'rxjs';
 import { take, takeUntil, startWith } from 'rxjs/operators';
-import * as i1 from '@angular/cdk/platform';
-import { FocusKeyManager } from '@angular/cdk/a11y';
-import { SelectionModel } from '@angular/cdk/collections';
+import * as i1 from '@takkion/ng-cdk/platform';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
 import * as i2 from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { MatFormFieldControl } from '@angular/material/form-field';
-import * as i1$1 from '@angular/cdk/bidi';
+import { MatFormFieldControl } from '@takkion/ng-material/form-field';
+import * as i1$1 from '@takkion/ng-cdk/bidi';
 
 /** Event object emitted by MatChip when selected or deselected. */
 class MatChipSelectionChange {
     constructor(
     /** Reference to the chip that emitted the event. */
-    source, 
+    source,
     /** Whether the chip that emitted the event is selected. */
-    selected, 
+    selected,
     /** Whether the selection change was a result of a user interaction. */
     isUserInput = false) {
         this.source = source;
@@ -649,7 +649,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
 // Boilerplate for applying mixins to MatChipList.
 /** @docs-private */
 const _MatChipListBase = mixinErrorState(class {
-    constructor(_defaultErrorStateMatcher, _parentForm, _parentFormGroup, 
+    constructor(_defaultErrorStateMatcher, _parentForm, _parentFormGroup,
     /**
      * Form control bound to the component.
      * Implemented as part of `MatFormFieldControl`.
@@ -674,7 +674,7 @@ let nextUniqueId = 0;
 class MatChipListChange {
     constructor(
     /** Chip list that emitted the event. */
-    source, 
+    source,
     /** Value of the chip list when the event was emitted. */
     value) {
         this.source = source;

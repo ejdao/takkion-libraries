@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness } from '@takkion/ng-cdk/testing';
 
 /** Harness for interacting with a standard Angular Material step in tests. */
 class MatStepHarness extends ContentContainerComponentHarness {

@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ComponentHarness, HarnessPredicate, } from '@angular/cdk/testing';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { ComponentHarness, HarnessPredicate, } from '@takkion/ng-cdk/testing';
 export class _MatCheckboxHarnessBase extends ComponentHarness {
     /** Whether the checkbox is checked. */
     async isChecked() {

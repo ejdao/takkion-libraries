@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
+import { UniqueSelectionDispatcher } from '@takkion/ng-cdk/collections';
 import { Directive, inject } from '@angular/core';
 import { CdkMenuItemSelectable } from './menu-item-selectable';
 import { CdkMenuItem } from './menu-item';

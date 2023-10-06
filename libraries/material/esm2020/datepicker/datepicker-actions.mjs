@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { ChangeDetectionStrategy, Component, Directive, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, } from '@angular/core';
-import { TemplatePortal } from '@angular/cdk/portal';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
 import { MatDatepickerBase } from './datepicker-base';
 import * as i0 from "@angular/core";
 import * as i1 from "./datepicker-base";

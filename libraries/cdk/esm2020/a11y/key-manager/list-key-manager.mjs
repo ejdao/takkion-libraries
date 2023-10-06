@@ -7,7 +7,7 @@
  */
 import { QueryList } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
-import { UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, TAB, A, Z, ZERO, NINE, hasModifierKey, HOME, END, } from '@angular/cdk/keycodes';
+import { UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, TAB, A, Z, ZERO, NINE, hasModifierKey, HOME, END, } from '@takkion/ng-cdk/keycodes';
 import { debounceTime, filter, map, tap } from 'rxjs/operators';
 /**
  * This class manages keyboard events for selectable lists. If you pass it a query list

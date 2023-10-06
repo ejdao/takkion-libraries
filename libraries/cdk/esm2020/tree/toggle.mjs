@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Directive, Input } from '@angular/core';
 import { CdkTree, CdkTreeNode } from './tree';
 import * as i0 from "@angular/core";

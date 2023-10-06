@@ -7,9 +7,9 @@
  */
 import { VersionChanges } from '../../update-tool/version-changes';
 export interface ClassNameUpgradeData {
-    /** The Class name to replace. */
-    replace: string;
-    /** The new name for the Class. */
-    replaceWith: string;
+  /** The Class name to replace. */
+  replace: string;
+  /** The new name for the Class. */
+  replaceWith: string;
 }
 export declare const classNames: VersionChanges<ClassNameUpgradeData>;

@@ -39,13 +39,20 @@
   $mat-slider-off-color: theming.get-color-from-palette($foreground, slider-off);
   $mat-slider-off-focused-color: theming.get-color-from-palette($foreground, slider-off-active);
   $mat-slider-disabled-color: theming.get-color-from-palette($foreground, slider-off);
-  $mat-slider-labeled-min-value-thumb-color:
-    theming.get-color-from-palette($foreground, slider-min);
-  $mat-slider-labeled-min-value-thumb-label-color:
-    theming.get-color-from-palette($foreground, slider-off);
+  $mat-slider-labeled-min-value-thumb-color: theming.get-color-from-palette(
+    $foreground,
+    slider-min
+  );
+  $mat-slider-labeled-min-value-thumb-label-color: theming.get-color-from-palette(
+    $foreground,
+    slider-off
+  );
   $mat-slider-tick-opacity: 0.7;
-  $mat-slider-tick-color:
-    theming.get-color-from-palette($foreground, base, $mat-slider-tick-opacity);
+  $mat-slider-tick-color: theming.get-color-from-palette(
+    $foreground,
+    base,
+    $mat-slider-tick-opacity
+  );
   $mat-slider-tick-size: 2px;
 
   .mat-slider-track-background {
@@ -144,12 +151,22 @@
   }
 
   .mat-slider-horizontal .mat-slider-ticks {
-    background-image: repeating-linear-gradient(to right, $mat-slider-tick-color,
-        $mat-slider-tick-color $mat-slider-tick-size, transparent 0, transparent);
+    background-image: repeating-linear-gradient(
+      to right,
+      $mat-slider-tick-color,
+      $mat-slider-tick-color $mat-slider-tick-size,
+      transparent 0,
+      transparent
+    );
     // Firefox doesn't draw the gradient correctly with 'to right'
     // (see https://bugzilla.mozilla.org/show_bug.cgi?id=1314319).
-    background-image: -moz-repeating-linear-gradient(0.0001deg, $mat-slider-tick-color,
-        $mat-slider-tick-color $mat-slider-tick-size, transparent 0, transparent);
+    background-image: -moz-repeating-linear-gradient(
+      0.0001deg,
+      $mat-slider-tick-color,
+      $mat-slider-tick-color $mat-slider-tick-size,
+      transparent 0,
+      transparent
+    );
 
     // `mat-color` uses `rgba` for the opacity which won't work with
     // CSS variables so we need to use `opacity` as a fallback.
@@ -159,8 +176,13 @@
   }
 
   .mat-slider-vertical .mat-slider-ticks {
-    background-image: repeating-linear-gradient(to bottom, $mat-slider-tick-color,
-        $mat-slider-tick-color $mat-slider-tick-size, transparent 0, transparent);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      $mat-slider-tick-color,
+      $mat-slider-tick-color $mat-slider-tick-size,
+      transparent 0,
+      transparent
+    );
 
     // `mat-color` uses `rgba` for the opacity which won't work with
     // CSS variables so we need to use `opacity` as a fallback.
@@ -172,7 +194,8 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-slider-thumb-label-text {
     font: {
       family: typography-utils.font-family($config);
@@ -182,7 +205,8 @@
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

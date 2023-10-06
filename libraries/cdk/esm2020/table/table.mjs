@@ -5,11 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { _DisposeViewRepeaterStrategy, _RecycleViewRepeaterStrategy, isDataSource, _VIEW_REPEATER_STRATEGY, } from '@angular/cdk/collections';
-import { Platform } from '@angular/cdk/platform';
-import { ViewportRuler } from '@angular/cdk/scrolling';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { _DisposeViewRepeaterStrategy, _RecycleViewRepeaterStrategy, isDataSource, _VIEW_REPEATER_STRATEGY, } from '@takkion/ng-cdk/collections';
+import { Platform } from '@takkion/ng-cdk/platform';
+import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import { DOCUMENT } from '@angular/common';
 import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, Directive, ElementRef, EmbeddedViewRef, EventEmitter, Inject, Input, IterableDiffers, NgZone, Optional, Output, QueryList, SkipSelf, ViewChild, ViewContainerRef, ViewEncapsulation, } from '@angular/core';
 import { BehaviorSubject, isObservable, of as observableOf, Subject, } from 'rxjs';
@@ -22,9 +22,9 @@ import { getTableDuplicateColumnNameError, getTableMissingMatchingRowDefError, g
 import { STICKY_POSITIONING_LISTENER } from './sticky-position-listener';
 import { CDK_TABLE } from './tokens';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/bidi";
-import * as i2 from "@angular/cdk/platform";
-import * as i3 from "@angular/cdk/scrolling";
+import * as i1 from "@takkion/ng-cdk/bidi";
+import * as i2 from "@takkion/ng-cdk/platform";
+import * as i3 from "@takkion/ng-cdk/scrolling";
 import * as i4 from "./coalesced-style-scheduler";
 /**
  * Enables the recycle view repeater strategy, which reduces rendering latency. Not compatible with

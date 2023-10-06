@@ -1,11 +1,11 @@
-import { isDataSource } from '@angular/cdk/collections';
+import { isDataSource } from '@takkion/ng-cdk/collections';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, Directive, ElementRef, Input, IterableDiffers, QueryList, ViewChild, ViewEncapsulation, } from '@angular/core';
 import { BehaviorSubject, isObservable, of as observableOf, Subject, } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { CdkTreeNodeDef, CdkTreeNodeOutletContext } from './node';
 import { CdkTreeNodeOutlet } from './outlet';
 import { getTreeControlFunctionsMissingError, getTreeControlMissingError, getTreeMissingMatchingNodeDefError, getTreeMultipleDefaultNodeDefsError, getTreeNoValidDataSourceError, } from './tree-errors';
-import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 import * as i0 from "@angular/core";
 import * as i1 from "./outlet";
 /**

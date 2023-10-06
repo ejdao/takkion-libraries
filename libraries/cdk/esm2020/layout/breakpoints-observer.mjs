@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceArray } from '@angular/cdk/coercion';
+import { coerceArray } from '@takkion/ng-cdk/coercion';
 import { Injectable, NgZone } from '@angular/core';
 import { combineLatest, concat, Observable, Subject } from 'rxjs';
 import { debounceTime, map, skip, startWith, take, takeUntil } from 'rxjs/operators';

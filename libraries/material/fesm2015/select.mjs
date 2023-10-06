@@ -1,26 +1,26 @@
-import * as i8 from '@angular/cdk/overlay';
-import { Overlay, CdkConnectedOverlay, OverlayModule } from '@angular/cdk/overlay';
+import * as i8 from '@takkion/ng-cdk/overlay';
+import { Overlay, CdkConnectedOverlay, OverlayModule } from '@takkion/ng-cdk/overlay';
 import * as i7 from '@angular/common';
 import { CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, EventEmitter, Optional, Inject, Self, Attribute, Input, ViewChild, Output, Component, ViewEncapsulation, ChangeDetectionStrategy, ContentChildren, ContentChild, NgModule } from '@angular/core';
-import * as i2 from '@angular/material/core';
-import { mixinDisableRipple, mixinTabIndex, mixinDisabled, mixinErrorState, _countGroupLabelsBeforeOption, _getOptionScrollPosition, MAT_OPTION_PARENT_COMPONENT, MatOption, MAT_OPTGROUP, MatOptionModule, MatCommonModule } from '@angular/material/core';
-import * as i6 from '@angular/material/form-field';
-import { MAT_FORM_FIELD, MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
-import * as i1 from '@angular/cdk/scrolling';
-import { CdkScrollableModule } from '@angular/cdk/scrolling';
-import * as i5 from '@angular/cdk/a11y';
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
-import { SelectionModel } from '@angular/cdk/collections';
-import { DOWN_ARROW, UP_ARROW, LEFT_ARROW, RIGHT_ARROW, ENTER, SPACE, hasModifierKey, A } from '@angular/cdk/keycodes';
+import * as i2 from '@takkion/ng-material/core';
+import { mixinDisableRipple, mixinTabIndex, mixinDisabled, mixinErrorState, _countGroupLabelsBeforeOption, _getOptionScrollPosition, MAT_OPTION_PARENT_COMPONENT, MatOption, MAT_OPTGROUP, MatOptionModule, MatCommonModule } from '@takkion/ng-material/core';
+import * as i6 from '@takkion/ng-material/form-field';
+import { MAT_FORM_FIELD, MatFormFieldControl, MatFormFieldModule } from '@takkion/ng-material/form-field';
+import * as i1 from '@takkion/ng-cdk/scrolling';
+import { CdkScrollableModule } from '@takkion/ng-cdk/scrolling';
+import * as i5 from '@takkion/ng-cdk/a11y';
+import { ActiveDescendantKeyManager } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
+import { DOWN_ARROW, UP_ARROW, LEFT_ARROW, RIGHT_ARROW, ENTER, SPACE, hasModifierKey, A } from '@takkion/ng-cdk/keycodes';
 import * as i4 from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { Subject, defer, merge } from 'rxjs';
 import { startWith, switchMap, take, filter, map, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { trigger, transition, query, animateChild, state, style, animate } from '@angular/animations';
-import * as i3 from '@angular/cdk/bidi';
+import * as i3 from '@takkion/ng-cdk/bidi';
 
 /**
  * @license
@@ -163,7 +163,7 @@ const MAT_SELECT_SCROLL_STRATEGY_PROVIDER = {
 class MatSelectChange {
     constructor(
     /** Reference to the select that emitted the change event. */
-    source, 
+    source,
     /** Current value of the select that emitted the event. */
     value) {
         this.source = source;
@@ -173,7 +173,7 @@ class MatSelectChange {
 // Boilerplate for applying mixins to MatSelect.
 /** @docs-private */
 const _MatSelectMixinBase = mixinDisableRipple(mixinTabIndex(mixinDisabled(mixinErrorState(class {
-    constructor(_elementRef, _defaultErrorStateMatcher, _parentForm, _parentFormGroup, 
+    constructor(_elementRef, _defaultErrorStateMatcher, _parentForm, _parentFormGroup,
     /**
      * Form control bound to the component.
      * Implemented as part of `MatFormFieldControl`.

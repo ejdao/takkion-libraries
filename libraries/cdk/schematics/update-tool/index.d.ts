@@ -18,53 +18,59 @@ import { TargetVersion } from './target-version';
  * the context can provide the necessary specifics to the migrations in a type-safe way.
  */
 export declare class UpdateProject<Context> {
+  /** Context provided to all migrations. */
+  private _context;
+  /** TypeScript program using workspace paths. */
+  private _program;
+  /** File system used for reading, writing and editing files. */
+  private _fileSystem;
+  /**
+   * Set of analyzed files. Used for avoiding multiple migration runs if
+   * files overlap between targets.
+   */
+  private _analyzedFiles;
+  /** Logger used for printing messages. */
+  private _logger;
+  private readonly _typeChecker;
+  constructor(
     /** Context provided to all migrations. */
-    private _context;
+    _context: Context,
     /** TypeScript program using workspace paths. */
-    private _program;
+    _program: ts.Program,
     /** File system used for reading, writing and editing files. */
-    private _fileSystem;
+    _fileSystem: FileSystem,
     /**
      * Set of analyzed files. Used for avoiding multiple migration runs if
      * files overlap between targets.
      */
-    private _analyzedFiles;
+    _analyzedFiles?: Set<WorkspacePath>,
     /** Logger used for printing messages. */
-    private _logger;
-    private readonly _typeChecker;
-    constructor(
-    /** Context provided to all migrations. */
-    _context: Context, 
-    /** TypeScript program using workspace paths. */
-    _program: ts.Program, 
-    /** File system used for reading, writing and editing files. */
-    _fileSystem: FileSystem, 
-    /**
-     * Set of analyzed files. Used for avoiding multiple migration runs if
-     * files overlap between targets.
-     */
-    _analyzedFiles?: Set<WorkspacePath>, 
-    /** Logger used for printing messages. */
-    _logger?: UpdateLogger);
-    /**
-     * Migrates the project to the specified target version.
-     * @param migrationTypes Migrations that should be run.
-     * @param target Version the project should be updated to.
-     * @param data Upgrade data that is passed to all migration rules.
-     * @param additionalStylesheetPaths Additional stylesheets that should be migrated, if not
-     *   referenced in an Angular component. This is helpful for global stylesheets in a project.
-     */
-    migrate<Data>(migrationTypes: MigrationCtor<Data, Context>[], target: TargetVersion, data: Data, additionalStylesheetPaths?: string[]): {
-        hasFailures: boolean;
-    };
-    /**
-     * Creates instances of the given migrations with the specified target
-     * version and data.
-     */
-    private _createMigrations;
-    /**
-     * Creates a program form the specified tsconfig and patches the host
-     * to read files and directories through the given file system.
-     */
-    static createProgramFromTsconfig(tsconfigPath: WorkspacePath, fs: FileSystem): ts.Program;
+    _logger?: UpdateLogger
+  );
+  /**
+   * Migrates the project to the specified target version.
+   * @param migrationTypes Migrations that should be run.
+   * @param target Version the project should be updated to.
+   * @param data Upgrade data that is passed to all migration rules.
+   * @param additionalStylesheetPaths Additional stylesheets that should be migrated, if not
+   *   referenced in an Angular component. This is helpful for global stylesheets in a project.
+   */
+  migrate<Data>(
+    migrationTypes: MigrationCtor<Data, Context>[],
+    target: TargetVersion,
+    data: Data,
+    additionalStylesheetPaths?: string[]
+  ): {
+    hasFailures: boolean;
+  };
+  /**
+   * Creates instances of the given migrations with the specified target
+   * version and data.
+   */
+  private _createMigrations;
+  /**
+   * Creates a program form the specified tsconfig and patches the host
+   * to read files and directories through the given file system.
+   */
+  static createProgramFromTsconfig(tsconfigPath: WorkspacePath, fs: FileSystem): ts.Program;
 }

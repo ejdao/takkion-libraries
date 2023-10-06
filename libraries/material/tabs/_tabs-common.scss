@@ -1,4 +1,4 @@
-@use '@angular/cdk';
+@use '@takkion/ng-cdk';
 
 @use '../core/style/variables';
 @use '../core/style/private';
@@ -106,7 +106,8 @@ $tab-animation-duration: 500ms !default;
   }
 
   // The pagination control that is displayed on the left side of the tab header.
-  .mat-tab-header-pagination-before, .mat-tab-header-rtl .mat-tab-header-pagination-after {
+  .mat-tab-header-pagination-before,
+  .mat-tab-header-rtl .mat-tab-header-pagination-after {
     padding-left: 4px;
     .mat-tab-header-pagination-chevron {
       transform: rotate(-135deg);
@@ -114,7 +115,8 @@ $tab-animation-duration: 500ms !default;
   }
 
   // The pagination control that is displayed on the right side of the tab header.
-  .mat-tab-header-rtl .mat-tab-header-pagination-before, .mat-tab-header-pagination-after {
+  .mat-tab-header-rtl .mat-tab-header-pagination-before,
+  .mat-tab-header-pagination-after {
     padding-right: 4px;
     .mat-tab-header-pagination-chevron {
       transform: rotate(45deg);

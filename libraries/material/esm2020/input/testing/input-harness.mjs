@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessPredicate, parallel } from '@angular/cdk/testing';
-import { MatFormFieldControlHarness } from '@angular/material/form-field/testing/control';
+import { HarnessPredicate, parallel } from '@takkion/ng-cdk/testing';
+import { MatFormFieldControlHarness } from '@takkion/ng-material/form-field/testing/control';
 /** Harness for interacting with a standard Material inputs in tests. */
 export class MatInputHarness extends MatFormFieldControlHarness {
     /**

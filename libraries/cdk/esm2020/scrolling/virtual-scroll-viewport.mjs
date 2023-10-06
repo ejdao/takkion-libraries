@@ -5,19 +5,19 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, inject, Inject, Input, NgZone, Optional, Output, ViewChild, ViewEncapsulation, } from '@angular/core';
-import { Platform } from '@angular/cdk/platform';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { animationFrameScheduler, asapScheduler, Observable, Subject, Subscription, } from 'rxjs';
 import { auditTime, startWith, takeUntil } from 'rxjs/operators';
 import { ScrollDispatcher } from './scroll-dispatcher';
 import { CdkScrollable } from './scrollable';
 import { VIRTUAL_SCROLL_STRATEGY } from './virtual-scroll-strategy';
 import { ViewportRuler } from './viewport-ruler';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { CdkVirtualScrollable, VIRTUAL_SCROLLABLE } from './virtual-scrollable';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-cdk/bidi";
 import * as i2 from "./scroll-dispatcher";
 import * as i3 from "./viewport-ruler";
 import * as i4 from "./virtual-scrollable";

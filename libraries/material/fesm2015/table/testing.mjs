@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness, parallel } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness, parallel } from '@takkion/ng-cdk/testing';
 
 /** Harness for interacting with a standard Angular Material table cell. */
 class MatCellHarness extends ContentContainerComponentHarness {

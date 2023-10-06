@@ -5,13 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { Directive, ElementRef, NgZone, Optional } from '@angular/core';
 import { ScrollDispatcher } from './scroll-dispatcher';
 import { CdkVirtualScrollable, VIRTUAL_SCROLLABLE } from './virtual-scrollable';
 import * as i0 from "@angular/core";
 import * as i1 from "./scroll-dispatcher";
-import * as i2 from "@angular/cdk/bidi";
+import * as i2 from "@takkion/ng-cdk/bidi";
 /**
  * Provides a virtual scrollable for the element it is attached to.
  */

@@ -8,11 +8,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isMaterialExportDeclaration = exports.isMaterialImportDeclaration = exports.cdkModuleSpecifier = exports.materialModuleSpecifier = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 /** Name of the Angular Material module specifier. */
 exports.materialModuleSpecifier = '@angular/material';
 /** Name of the Angular CDK module specifier. */
-exports.cdkModuleSpecifier = '@angular/cdk';
+exports.cdkModuleSpecifier = '@takkion/ng-cdk';
 /** Whether the specified node is part of an Angular Material or CDK import declaration. */
 function isMaterialImportDeclaration(node) {
     return isMaterialDeclaration((0, schematics_1.getImportDeclaration)(node));

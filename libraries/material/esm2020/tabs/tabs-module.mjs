@@ -5,12 +5,12 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { A11yModule } from '@angular/cdk/a11y';
-import { ObserversModule } from '@angular/cdk/observers';
-import { PortalModule } from '@angular/cdk/portal';
+import { A11yModule } from '@takkion/ng-cdk/a11y';
+import { ObserversModule } from '@takkion/ng-cdk/observers';
+import { PortalModule } from '@takkion/ng-cdk/portal';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatCommonModule, MatRippleModule } from '@angular/material/core';
+import { MatCommonModule, MatRippleModule } from '@takkion/ng-material/core';
 import { MatInkBar } from './ink-bar';
 import { MatTab } from './tab';
 import { MatTabBody, MatTabBodyPortal } from './tab-body';

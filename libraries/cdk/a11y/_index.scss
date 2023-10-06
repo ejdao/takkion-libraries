@@ -46,8 +46,7 @@
 @mixin _optionally-nest-content($selector-context) {
   @if ($selector-context == '') {
     @content;
-  }
-  @else {
+  } @else {
     #{$selector-context} {
       @content;
     }

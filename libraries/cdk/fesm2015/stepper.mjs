@@ -1,13 +1,13 @@
-import { FocusKeyManager } from '@angular/cdk/a11y';
-import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
-import { hasModifierKey, SPACE, ENTER } from '@angular/cdk/keycodes';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import { hasModifierKey, SPACE, ENTER } from '@takkion/ng-cdk/keycodes';
 import * as i0 from '@angular/core';
 import { Directive, InjectionToken, EventEmitter, forwardRef, TemplateRef, Component, ViewEncapsulation, ChangeDetectionStrategy, Inject, Optional, ContentChild, ViewChild, Input, Output, QueryList, ContentChildren, NgModule } from '@angular/core';
-import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
+import { _getFocusedElementPierceShadowDom } from '@takkion/ng-cdk/platform';
 import { Subject, of } from 'rxjs';
 import { startWith, takeUntil } from 'rxjs/operators';
-import * as i1 from '@angular/cdk/bidi';
-import { BidiModule } from '@angular/cdk/bidi';
+import * as i1 from '@takkion/ng-cdk/bidi';
+import { BidiModule } from '@takkion/ng-cdk/bidi';
 
 /**
  * @license

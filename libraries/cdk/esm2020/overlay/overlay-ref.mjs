@@ -7,7 +7,7 @@
  */
 import { Subject, merge, Subscription } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
-import { coerceCssPixelValue, coerceArray } from '@angular/cdk/coercion';
+import { coerceCssPixelValue, coerceArray } from '@takkion/ng-cdk/coercion';
 /**
  * Reference to an overlay that has been created with the Overlay service.
  * Used to manipulate or dispose of said overlay.

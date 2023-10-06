@@ -5,12 +5,12 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { CDK_TREE_NODE_OUTLET_NODE, CdkNestedTreeNode, CdkTree, CdkTreeNode, CdkTreeNodeDef, } from '@angular/cdk/tree';
+import { CDK_TREE_NODE_OUTLET_NODE, CdkNestedTreeNode, CdkTree, CdkTreeNode, CdkTreeNodeDef, } from '@takkion/ng-cdk/tree';
 import { Attribute, Directive, ElementRef, Input, IterableDiffers, } from '@angular/core';
-import { mixinDisabled, mixinTabIndex } from '@angular/material/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { mixinDisabled, mixinTabIndex } from '@takkion/ng-material/core';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/tree";
+import * as i1 from "@takkion/ng-cdk/tree";
 const _MatTreeNodeBase = mixinTabIndex(mixinDisabled(CdkTreeNode));
 /**
  * Wrapper for the CdkTree node with Material design styles.

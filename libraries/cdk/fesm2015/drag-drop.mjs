@@ -1,14 +1,14 @@
 import * as i0 from '@angular/core';
 import { Injectable, Inject, InjectionToken, Directive, Input, EventEmitter, Optional, SkipSelf, Output, Self, ContentChildren, ContentChild, NgModule } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { _getEventTarget, normalizePassiveListenerOptions, _getShadowRoot } from '@angular/cdk/platform';
-import { coerceBooleanProperty, coerceElement, coerceArray, coerceNumberProperty } from '@angular/cdk/coercion';
-import { isFakeTouchstartFromScreenReader, isFakeMousedownFromScreenReader } from '@angular/cdk/a11y';
+import { _getEventTarget, normalizePassiveListenerOptions, _getShadowRoot } from '@takkion/ng-cdk/platform';
+import { coerceBooleanProperty, coerceElement, coerceArray, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import { isFakeTouchstartFromScreenReader, isFakeMousedownFromScreenReader } from '@takkion/ng-cdk/a11y';
 import { Subject, Subscription, interval, animationFrameScheduler, Observable, merge } from 'rxjs';
 import { takeUntil, startWith, map, take, tap, switchMap } from 'rxjs/operators';
-import * as i1 from '@angular/cdk/scrolling';
-import { CdkScrollableModule } from '@angular/cdk/scrolling';
-import * as i3 from '@angular/cdk/bidi';
+import * as i1 from '@takkion/ng-cdk/scrolling';
+import { CdkScrollableModule } from '@takkion/ng-cdk/scrolling';
+import * as i3 from '@takkion/ng-cdk/bidi';
 
 /**
  * @license

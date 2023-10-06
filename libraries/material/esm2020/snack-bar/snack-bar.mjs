@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
-import { ComponentPortal, TemplatePortal } from '@angular/cdk/portal';
+import { LiveAnnouncer } from '@takkion/ng-cdk/a11y';
+import { BreakpointObserver, Breakpoints } from '@takkion/ng-cdk/layout';
+import { Overlay, OverlayConfig } from '@takkion/ng-cdk/overlay';
+import { ComponentPortal, TemplatePortal } from '@takkion/ng-cdk/portal';
 import { Inject, Injectable, InjectionToken, Injector, Optional, SkipSelf, TemplateRef, } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { SimpleSnackBar } from './simple-snack-bar';
@@ -17,9 +17,9 @@ import { MatSnackBarContainer } from './snack-bar-container';
 import { MatSnackBarModule } from './snack-bar-module';
 import { MatSnackBarRef } from './snack-bar-ref';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/overlay";
-import * as i2 from "@angular/cdk/a11y";
-import * as i3 from "@angular/cdk/layout";
+import * as i1 from "@takkion/ng-cdk/overlay";
+import * as i2 from "@takkion/ng-cdk/a11y";
+import * as i3 from "@takkion/ng-cdk/layout";
 import * as i4 from "./snack-bar-config";
 /** Injection token that can be used to specify default snack bar. */
 export const MAT_SNACK_BAR_DEFAULT_OPTIONS = new InjectionToken('mat-snack-bar-default-options', {

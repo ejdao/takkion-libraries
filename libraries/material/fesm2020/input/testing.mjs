@@ -1,5 +1,5 @@
-import { HarnessPredicate, parallel, ComponentHarness } from '@angular/cdk/testing';
-import { MatFormFieldControlHarness } from '@angular/material/form-field/testing/control';
+import { HarnessPredicate, parallel, ComponentHarness } from '@takkion/ng-cdk/testing';
+import { MatFormFieldControlHarness } from '@takkion/ng-material/form-field/testing/control';
 
 /**
  * @license

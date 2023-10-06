@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessPredicate } from '@angular/cdk/testing';
-import { MatFormFieldControlHarness } from '@angular/material/form-field/testing/control';
+import { HarnessPredicate } from '@takkion/ng-cdk/testing';
+import { MatFormFieldControlHarness } from '@takkion/ng-material/form-field/testing/control';
 /** Sets up the filter predicates for a datepicker input harness. */
 export function getInputPredicate(type, options) {
     return new HarnessPredicate(type, options)

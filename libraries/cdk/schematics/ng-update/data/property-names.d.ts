@@ -7,14 +7,14 @@
  */
 import { VersionChanges } from '../../update-tool/version-changes';
 export interface PropertyNameUpgradeData {
-    /** The property name to replace. */
-    replace: string;
-    /** The new name for the property. */
-    replaceWith: string;
-    /** Controls which classes in which this replacement is made. */
-    limitedTo: {
-        /** Replace the property only when its type is one of the given Classes. */
-        classes: string[];
-    };
+  /** The property name to replace. */
+  replace: string;
+  /** The new name for the property. */
+  replaceWith: string;
+  /** Controls which classes in which this replacement is made. */
+  limitedTo: {
+    /** Replace the property only when its type is one of the given Classes. */
+    classes: string[];
+  };
 }
 export declare const propertyNames: VersionChanges<PropertyNameUpgradeData>;

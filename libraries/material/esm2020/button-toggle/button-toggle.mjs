@@ -5,15 +5,15 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { SelectionModel } from '@angular/cdk/collections';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
 import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, Directive, ElementRef, EventEmitter, forwardRef, Input, Optional, Output, QueryList, ViewChild, ViewEncapsulation, InjectionToken, Inject, } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { mixinDisableRipple } from '@angular/material/core';
+import { mixinDisableRipple } from '@takkion/ng-material/core';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
-import * as i2 from "@angular/material/core";
+import * as i1 from "@takkion/ng-cdk/a11y";
+import * as i2 from "@takkion/ng-material/core";
 /**
  * Injection token that can be used to configure the
  * default options for all button toggles within an app.
@@ -41,7 +41,7 @@ let uniqueIdCounter = 0;
 export class MatButtonToggleChange {
     constructor(
     /** The MatButtonToggle that emits the event. */
-    source, 
+    source,
     /** The value assigned to the MatButtonToggle. */
     value) {
         this.source = source;

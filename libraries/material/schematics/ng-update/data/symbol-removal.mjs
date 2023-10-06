@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.symbolRemoval = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 exports.symbolRemoval = {
     [schematics_1.TargetVersion.V13]: [
         {
@@ -22,7 +22,7 @@ exports.symbolRemoval = {
                 'HasTabIndexCtor',
             ].map(name => ({
                 name,
-                module: '@angular/material/core',
+                module: '@takkion/ng-material/core',
                 message: `\`${name}\` is no longer necessary and has been removed.`,
             })),
         },

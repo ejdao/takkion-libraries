@@ -1,31 +1,31 @@
-import * as i5 from '@angular/cdk/a11y';
-import { A11yModule } from '@angular/cdk/a11y';
-import * as i9 from '@angular/cdk/overlay';
-import { Overlay, FlexibleConnectedPositionStrategy, OverlayConfig, OverlayModule } from '@angular/cdk/overlay';
-import * as i6 from '@angular/cdk/portal';
-import { ComponentPortal, TemplatePortal, PortalModule } from '@angular/cdk/portal';
+import * as i5 from '@takkion/ng-cdk/a11y';
+import { A11yModule } from '@takkion/ng-cdk/a11y';
+import * as i9 from '@takkion/ng-cdk/overlay';
+import { Overlay, FlexibleConnectedPositionStrategy, OverlayConfig, OverlayModule } from '@takkion/ng-cdk/overlay';
+import * as i6 from '@takkion/ng-cdk/portal';
+import { ComponentPortal, TemplatePortal, PortalModule } from '@takkion/ng-cdk/portal';
 import * as i1 from '@angular/common';
 import { DOCUMENT, CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { Injectable, EventEmitter, Component, ViewEncapsulation, ChangeDetectionStrategy, Input, Output, Optional, SkipSelf, InjectionToken, Inject, ViewChild, forwardRef, inject, Directive, Attribute, ContentChild, InjectFlags, Self, TemplateRef, NgModule } from '@angular/core';
-import * as i3 from '@angular/material/button';
-import { MatButtonModule } from '@angular/material/button';
-import { CdkScrollableModule } from '@angular/cdk/scrolling';
-import * as i1$1 from '@angular/material/core';
-import { DateAdapter, MAT_DATE_FORMATS, mixinColor, mixinErrorState, MatCommonModule } from '@angular/material/core';
+import * as i3 from '@takkion/ng-material/button';
+import { MatButtonModule } from '@takkion/ng-material/button';
+import { CdkScrollableModule } from '@takkion/ng-cdk/scrolling';
+import * as i1$1 from '@takkion/ng-material/core';
+import { DateAdapter, MAT_DATE_FORMATS, mixinColor, mixinErrorState, MatCommonModule } from '@takkion/ng-material/core';
 import { Subject, Subscription, merge, of } from 'rxjs';
-import { ESCAPE, hasModifierKey, SPACE, ENTER, PAGE_DOWN, PAGE_UP, END, HOME, DOWN_ARROW, UP_ARROW, RIGHT_ARROW, LEFT_ARROW, BACKSPACE } from '@angular/cdk/keycodes';
-import * as i2 from '@angular/cdk/bidi';
-import { Directionality } from '@angular/cdk/bidi';
+import { ESCAPE, hasModifierKey, SPACE, ENTER, PAGE_DOWN, PAGE_UP, END, HOME, DOWN_ARROW, UP_ARROW, RIGHT_ARROW, LEFT_ARROW, BACKSPACE } from '@takkion/ng-cdk/keycodes';
+import * as i2 from '@takkion/ng-cdk/bidi';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { take, startWith, filter } from 'rxjs/operators';
-import { coerceBooleanProperty, coerceStringArray } from '@angular/cdk/coercion';
-import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
+import { coerceBooleanProperty, coerceStringArray } from '@takkion/ng-cdk/coercion';
+import { _getFocusedElementPierceShadowDom } from '@takkion/ng-cdk/platform';
 import { trigger, transition, animate, keyframes, style, state } from '@angular/animations';
 import * as i2$2 from '@angular/forms';
 import { NG_VALUE_ACCESSOR, NG_VALIDATORS, Validators, NgControl } from '@angular/forms';
-import * as i2$1 from '@angular/material/form-field';
-import { MAT_FORM_FIELD, MatFormFieldControl } from '@angular/material/form-field';
-import { MAT_INPUT_VALUE_ACCESSOR } from '@angular/material/input';
+import * as i2$1 from '@takkion/ng-material/form-field';
+import { MAT_FORM_FIELD, MatFormFieldControl } from '@takkion/ng-material/form-field';
+import { MAT_INPUT_VALUE_ACCESSOR } from '@takkion/ng-material/input';
 
 /**
  * @license
@@ -453,7 +453,7 @@ function isInRange(value, start, end, rangeEnabled) {
 class DateRange {
     constructor(
     /** The start date of the range. */
-    start, 
+    start,
     /** The end date of the range. */
     end) {
         this.start = start;
@@ -2699,7 +2699,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
 class MatDatepickerInputEvent {
     constructor(
     /** Reference to the datepicker input component that emitted the event. */
-    target, 
+    target,
     /** Reference to the native input element associated with the datepicker input. */
     targetElement) {
         this.target = target;

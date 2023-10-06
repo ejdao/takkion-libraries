@@ -15,12 +15,12 @@ import { UpgradeData } from '../upgrade-data';
  * in order to switch deprecated attribute selectors to the updated selector.
  */
 export declare class AttributeSelectorsMigration extends Migration<UpgradeData> {
-    /** Required upgrade changes for specified target version. */
-    data: AttributeSelectorUpgradeData[];
-    enabled: boolean;
-    visitNode(node: ts.Node): void;
-    visitTemplate(template: ResolvedResource): void;
-    visitStylesheet(stylesheet: ResolvedResource): void;
-    private _visitStringLiteralLike;
-    private _replaceSelector;
+  /** Required upgrade changes for specified target version. */
+  data: AttributeSelectorUpgradeData[];
+  enabled: boolean;
+  visitNode(node: ts.Node): void;
+  visitTemplate(template: ResolvedResource): void;
+  visitStylesheet(stylesheet: ResolvedResource): void;
+  private _visitStringLiteralLike;
+  private _replaceSelector;
 }

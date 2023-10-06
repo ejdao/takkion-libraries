@@ -5,13 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
 import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, ViewEncapsulation, Optional, Inject, Input, NgZone, } from '@angular/core';
-import { MatRipple, mixinColor, mixinDisabled, mixinDisableRipple, } from '@angular/material/core';
+import { MatRipple, mixinColor, mixinDisabled, mixinDisableRipple, } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
-import * as i2 from "@angular/material/core";
+import * as i1 from "@takkion/ng-cdk/a11y";
+import * as i2 from "@takkion/ng-material/core";
 /** Default color palette for round buttons (mat-fab and mat-mini-fab) */
 const DEFAULT_ROUND_BUTTON_COLOR = 'accent';
 /**
@@ -114,7 +114,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.0", ngImpor
  * Material design anchor button.
  */
 export class MatAnchor extends MatButton {
-    constructor(focusMonitor, elementRef, animationMode, 
+    constructor(focusMonitor, elementRef, animationMode,
     /** @breaking-change 14.0.0 _ngZone will be required. */
     _ngZone) {
         super(elementRef, focusMonitor, animationMode);

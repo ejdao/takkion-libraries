@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceElement } from '@angular/cdk/coercion';
+import { coerceElement } from '@takkion/ng-cdk/coercion';
 import { moveItemInArray } from '../drag-utils';
 import { combineTransforms } from '../dom/styling';
 import { adjustClientRect, getMutableClientRect, isInsideClientRect } from '../dom/client-rect';

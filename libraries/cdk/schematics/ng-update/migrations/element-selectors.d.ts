@@ -15,12 +15,12 @@ import { UpgradeData } from '../upgrade-data';
  * to migrate outdated element selectors to the new one.
  */
 export declare class ElementSelectorsMigration extends Migration<UpgradeData> {
-    /** Change data that upgrades to the specified target version. */
-    data: ElementSelectorUpgradeData[];
-    enabled: boolean;
-    visitNode(node: ts.Node): void;
-    visitTemplate(template: ResolvedResource): void;
-    visitStylesheet(stylesheet: ResolvedResource): void;
-    private _visitStringLiteralLike;
-    private _replaceSelector;
+  /** Change data that upgrades to the specified target version. */
+  data: ElementSelectorUpgradeData[];
+  enabled: boolean;
+  visitNode(node: ts.Node): void;
+  visitTemplate(template: ResolvedResource): void;
+  visitStylesheet(stylesheet: ResolvedResource): void;
+  private _visitStringLiteralLike;
+  private _replaceSelector;
 }

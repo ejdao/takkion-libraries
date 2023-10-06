@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessPredicate } from '@angular/cdk/testing';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { HarnessPredicate } from '@takkion/ng-cdk/testing';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { DatepickerTriggerHarnessBase } from './datepicker-trigger-harness-base';
 /** Harness for interacting with a standard Material datepicker toggle in tests. */
 export class MatDatepickerToggleHarness extends DatepickerTriggerHarnessBase {

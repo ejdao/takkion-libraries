@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { CDK_ROW_TEMPLATE, CdkFooterRow, CdkFooterRowDef, CdkHeaderRow, CdkHeaderRowDef, CdkRow, CdkRowDef, CdkNoDataRow, } from '@angular/cdk/table';
+import { CDK_ROW_TEMPLATE, CdkFooterRow, CdkFooterRowDef, CdkHeaderRow, CdkHeaderRowDef, CdkRow, CdkRowDef, CdkNoDataRow, } from '@takkion/ng-cdk/table';
 import { ChangeDetectionStrategy, Component, Directive, ViewEncapsulation } from '@angular/core';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/table";
+import * as i1 from "@takkion/ng-cdk/table";
 /**
  * Header row definition for the mat-table.
  * Captures the header row's template and other header properties such as the columns to display.

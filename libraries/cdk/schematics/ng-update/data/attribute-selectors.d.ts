@@ -7,9 +7,9 @@
  */
 import { VersionChanges } from '../../update-tool/version-changes';
 export interface AttributeSelectorUpgradeData {
-    /** The attribute name to replace. */
-    replace: string;
-    /** The new name for the attribute. */
-    replaceWith: string;
+  /** The attribute name to replace. */
+  replace: string;
+  /** The new name for the attribute. */
+  replaceWith: string;
 }
 export declare const attributeSelectors: VersionChanges<AttributeSelectorUpgradeData>;

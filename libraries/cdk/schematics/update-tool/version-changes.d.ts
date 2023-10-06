@@ -7,11 +7,11 @@
  */
 import { TargetVersion } from './target-version';
 export declare type VersionChanges<T> = {
-    [target in TargetVersion]?: ReadableChange<T>[];
+  [target in TargetVersion]?: ReadableChange<T>[];
 };
 export declare type ReadableChange<T> = {
-    pr: string;
-    changes: T[];
+  pr: string;
+  changes: T[];
 };
 /** Conditional type that unwraps the value of a version changes type. */
 export declare type ValueOfChanges<T> = T extends VersionChanges<infer X> ? X : null;

@@ -1,6 +1,6 @@
 import { Component<% if(!!viewEncapsulation) { %>, ViewEncapsulation<% }%><% if(changeDetection !== 'Default') { %>, ChangeDetectionStrategy<% }%> } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { Breakpoints, BreakpointObserver } from '@takkion/ng-cdk/layout';
 
 @Component({
   selector: '<%= selector %>',<% if(inlineTemplate) { %>

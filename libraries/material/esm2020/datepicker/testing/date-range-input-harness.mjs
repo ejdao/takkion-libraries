@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessPredicate, parallel, TestKey } from '@angular/cdk/testing';
+import { HarnessPredicate, parallel, TestKey } from '@takkion/ng-cdk/testing';
 import { MatDatepickerInputHarnessBase, getInputPredicate } from './datepicker-input-harness-base';
 import { DatepickerTriggerHarnessBase } from './datepicker-trigger-harness-base';
 /** Harness for interacting with a standard Material date range start input in tests. */

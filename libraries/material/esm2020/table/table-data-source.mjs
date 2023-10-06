@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { _isNumberValue } from '@angular/cdk/coercion';
-import { DataSource } from '@angular/cdk/table';
+import { _isNumberValue } from '@takkion/ng-cdk/coercion';
+import { DataSource } from '@takkion/ng-cdk/table';
 import { BehaviorSubject, combineLatest, merge, of as observableOf, Subject, } from 'rxjs';
 import { map } from 'rxjs/operators';
 /**

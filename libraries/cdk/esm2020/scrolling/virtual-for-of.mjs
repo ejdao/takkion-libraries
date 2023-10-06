@@ -5,15 +5,15 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ArrayDataSource, isDataSource, _RecycleViewRepeaterStrategy, _VIEW_REPEATER_STRATEGY, } from '@angular/cdk/collections';
+import { ArrayDataSource, isDataSource, _RecycleViewRepeaterStrategy, _VIEW_REPEATER_STRATEGY, } from '@takkion/ng-cdk/collections';
 import { Directive, Inject, Input, IterableDiffers, NgZone, SkipSelf, TemplateRef, ViewContainerRef, } from '@angular/core';
-import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 import { Subject, of as observableOf, isObservable } from 'rxjs';
 import { pairwise, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { CdkVirtualScrollViewport } from './virtual-scroll-viewport';
 import * as i0 from "@angular/core";
 import * as i1 from "./virtual-scroll-viewport";
-import * as i2 from "@angular/cdk/collections";
+import * as i2 from "@takkion/ng-cdk/collections";
 /** Helper to extract the offset of a DOM Node in a certain direction. */
 function getOffset(orientation, direction, node) {
     const el = node;

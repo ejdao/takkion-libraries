@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { CdkScrollableModule } from '@angular/cdk/scrolling';
+import { CdkScrollableModule } from '@takkion/ng-cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatCommonModule } from '@angular/material/core';
+import { MatCommonModule } from '@takkion/ng-material/core';
 import { MatDrawer, MatDrawerContainer, MatDrawerContent } from './drawer';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from './sidenav';
 import * as i0 from "@angular/core";

@@ -1,7 +1,7 @@
 import * as i0 from '@angular/core';
 import { Directive, Component, ChangeDetectionStrategy, ViewEncapsulation, Inject, ContentChildren, NgModule } from '@angular/core';
-import { mixinColor, MatCommonModule } from '@angular/material/core';
-import * as i1 from '@angular/cdk/platform';
+import { mixinColor, MatCommonModule } from '@takkion/ng-material/core';
+import * as i1 from '@takkion/ng-cdk/platform';
 import { DOCUMENT } from '@angular/common';
 
 /**

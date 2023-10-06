@@ -24,11 +24,11 @@ function default_1() {
         // though, it could happen that this schematic runs outside of the CLI `ng add` command, or
         // the CDK is only listed as a dev dependency. If that is the case, we insert a version based
         // on the current build version (substituted version placeholder).
-        if ((0, package_config_1.getPackageVersionFromPackageJson)(host, '@angular/cdk') === null) {
+        if ((0, package_config_1.getPackageVersionFromPackageJson)(host, '@takkion/ng-cdk') === null) {
             // In order to align the CDK version with other Angular dependencies that are setup by
             // `@schematics/angular`, we use tilde instead of caret. This is default for Angular
             // dependencies in new CLI projects.
-            (0, package_config_1.addPackageToPackageJson)(host, '@angular/cdk', `~14.2.7`);
+            (0, package_config_1.addPackageToPackageJson)(host, '@takkion/ng-cdk', `~14.2.7`);
             // Add a task to run the package manager. This is necessary because we updated the
             // workspace "package.json" file and we want lock files to reflect the new version range.
             context.addTask(new tasks_1.NodePackageInstallTask());

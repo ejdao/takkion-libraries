@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { CdkTreeNodeToggle } from '@angular/cdk/tree';
+import { CdkTreeNodeToggle } from '@takkion/ng-cdk/tree';
 import { Directive } from '@angular/core';
 import * as i0 from "@angular/core";
 /**

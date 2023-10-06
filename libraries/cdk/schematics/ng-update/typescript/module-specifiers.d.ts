@@ -7,9 +7,9 @@
  */
 import * as ts from 'typescript';
 /** Name of the Angular Material module specifier. */
-export declare const materialModuleSpecifier = "@angular/material";
+export declare const materialModuleSpecifier = '@angular/material';
 /** Name of the Angular CDK module specifier. */
-export declare const cdkModuleSpecifier = "@angular/cdk";
+export declare const cdkModuleSpecifier = '@takkion/ng-cdk';
 /** Whether the specified node is part of an Angular Material or CDK import declaration. */
 export declare function isMaterialImportDeclaration(node: ts.Node): boolean;
 /** Whether the specified node is part of an Angular Material or CDK import declaration. */

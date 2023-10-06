@@ -5,15 +5,15 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Dialog } from '@angular/cdk/dialog';
-import { Overlay } from '@angular/cdk/overlay';
+import { Dialog } from '@takkion/ng-cdk/dialog';
+import { Overlay } from '@takkion/ng-cdk/overlay';
 import { Injectable, Optional, SkipSelf, InjectionToken, Inject, Injector, } from '@angular/core';
 import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetConfig } from './bottom-sheet-config';
 import { MatBottomSheetContainer } from './bottom-sheet-container';
 import { MatBottomSheetModule } from './bottom-sheet-module';
 import { MatBottomSheetRef } from './bottom-sheet-ref';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/overlay";
+import * as i1 from "@takkion/ng-cdk/overlay";
 import * as i2 from "./bottom-sheet-config";
 /** Injection token that can be used to specify default bottom sheet options. */
 export const MAT_BOTTOM_SHEET_DEFAULT_OPTIONS = new InjectionToken('mat-bottom-sheet-default-options');

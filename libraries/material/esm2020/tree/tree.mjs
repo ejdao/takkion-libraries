@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { CdkTree } from '@angular/cdk/tree';
+import { CdkTree } from '@takkion/ng-cdk/tree';
 import { ChangeDetectionStrategy, Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatTreeNodeOutlet } from './outlet';
 import * as i0 from "@angular/core";

@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { handleAutoChangeDetectionStatus, HarnessEnvironment, stopHandlingAutoChangeDetectionStatus, } from '@angular/cdk/testing';
+import { handleAutoChangeDetectionStatus, HarnessEnvironment, stopHandlingAutoChangeDetectionStatus, } from '@takkion/ng-cdk/testing';
 import { flush } from '@angular/core/testing';
 import { takeWhile } from 'rxjs/operators';
 import { TaskStateZoneInterceptor } from './task-state-zone-interceptor';

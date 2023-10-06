@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ContentContainerComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
 
 /** Harness for interacting with a standard mat-card in tests. */
 class MatCardHarness extends ContentContainerComponentHarness {

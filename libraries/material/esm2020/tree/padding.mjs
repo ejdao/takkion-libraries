@@ -1,4 +1,4 @@
-import { CdkTreeNodePadding } from '@angular/cdk/tree';
+import { CdkTreeNodePadding } from '@takkion/ng-cdk/tree';
 import { Directive, Input } from '@angular/core';
 import * as i0 from "@angular/core";
 /**

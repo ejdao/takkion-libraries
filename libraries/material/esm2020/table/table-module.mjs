@@ -7,11 +7,11 @@
  */
 import { NgModule } from '@angular/core';
 import { MatRecycleRows, MatTable } from './table';
-import { CdkTableModule } from '@angular/cdk/table';
+import { CdkTableModule } from '@takkion/ng-cdk/table';
 import { MatCell, MatCellDef, MatColumnDef, MatFooterCell, MatFooterCellDef, MatHeaderCell, MatHeaderCellDef, } from './cell';
 import { MatFooterRow, MatFooterRowDef, MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef, MatNoDataRow, } from './row';
 import { MatTextColumn } from './text-column';
-import { MatCommonModule } from '@angular/material/core';
+import { MatCommonModule } from '@takkion/ng-material/core';
 import * as i0 from "@angular/core";
 const EXPORTED_DECLARATIONS = [
     // Table
@@ -60,7 +60,7 @@ MatTableModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version:
         MatRow,
         MatFooterRow,
         MatNoDataRow,
-        MatTextColumn], imports: [CdkTableModule, MatCommonModule], exports: [MatCommonModule, 
+        MatTextColumn], imports: [CdkTableModule, MatCommonModule], exports: [MatCommonModule,
         // Table
         MatTable,
         MatRecycleRows,

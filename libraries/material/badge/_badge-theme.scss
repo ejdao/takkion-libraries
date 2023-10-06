@@ -5,7 +5,7 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:math';
-@use '@angular/cdk';
+@use '@takkion/ng-cdk';
 
 @use '../core/theming/theming';
 @use '../core/typography/typography';
@@ -200,8 +200,7 @@ $_badge-structure-emitted: false !default;
       @if (meta.type-of($badge-color) == color and meta.type-of($app-background) == color) {
         $badge-opacity: opacity($badge-color);
         background: color.mix($app-background, rgba($badge-color, 1), (1 - $badge-opacity) * 100%);
-      }
-      @else {
+      } @else {
         background: $badge-color;
       }
 
@@ -212,7 +211,8 @@ $_badge-structure-emitted: false !default;
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   .mat-badge-content {
     font-weight: $font-weight;
     font-size: $font-size;
@@ -229,7 +229,8 @@ $_badge-structure-emitted: false !default;
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

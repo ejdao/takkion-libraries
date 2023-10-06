@@ -39,7 +39,6 @@ $_emitted-density: () !default;
   @return map.get(map.get($palette, contrast), $hue);
 }
 
-
 /// Creates a map of hues to colors for a theme. This is used to define a theme palette in terms
 /// of the Material Design hues.
 /// @param {Map} $base-palette Map of hue keys to color values for the basis for this palette.
@@ -48,29 +47,38 @@ $_emitted-density: () !default;
 /// @param {String | Number} $darker "darker" hue for this palette.
 /// @param {String | Number} $text "text" hue for this palette.
 /// @returns {Map} A complete Angular Material theming palette.
-@function define-palette($base-palette, $default: 500, $lighter: 100, $darker: 700,
-  $text: $default) {
-  $result: map.merge($base-palette, (
-    default: _get-color-from-palette($base-palette, $default),
-    lighter: _get-color-from-palette($base-palette, $lighter),
-    darker: _get-color-from-palette($base-palette, $darker),
-    text: _get-color-from-palette($base-palette, $text),
-
-    default-contrast: get-contrast-color-from-palette($base-palette, $default),
-    lighter-contrast: get-contrast-color-from-palette($base-palette, $lighter),
-    darker-contrast: get-contrast-color-from-palette($base-palette, $darker)
-  ));
+@function define-palette(
+  $base-palette,
+  $default: 500,
+  $lighter: 100,
+  $darker: 700,
+  $text: $default
+) {
+  $result: map.merge(
+    $base-palette,
+    (
+      default: _get-color-from-palette($base-palette, $default),
+      lighter: _get-color-from-palette($base-palette, $lighter),
+      darker: _get-color-from-palette($base-palette, $darker),
+      text: _get-color-from-palette($base-palette, $text),
+      default-contrast: get-contrast-color-from-palette($base-palette, $default),
+      lighter-contrast: get-contrast-color-from-palette($base-palette, $lighter),
+      darker-contrast: get-contrast-color-from-palette($base-palette, $darker),
+    )
+  );
 
   // For each hue in the palette, add a "-contrast" color to the map.
   @each $hue, $color in $base-palette {
-    $result: map.merge($result, (
-      '#{$hue}-contrast': get-contrast-color-from-palette($base-palette, $hue)
-    ));
+    $result: map.merge(
+      $result,
+      (
+        '#{$hue}-contrast': get-contrast-color-from-palette($base-palette, $hue),
+      )
+    );
   }
 
   @return $result;
 }
-
 
 /// Gets a color from a theme palette (the output of mat-palette).
 /// The hue can be one of the standard values (500, A400, etc.), one of the three preconfigured
@@ -109,11 +117,9 @@ $_emitted-density: () !default;
     $color: map.get($theme, color);
     @if not map.get($color, primary) {
       @error 'Theme does not define a valid "primary" palette.';
-    }
-    @else if not map.get($color, accent) {
+    } @else if not map.get($color, accent) {
       @error 'Theme does not define a valid "accent" palette.';
-    }
-    @else if not map.get($color, warn) {
+    } @else if not map.get($color, warn) {
       @error 'Theme does not define a valid "warn" palette.';
     }
   }
@@ -129,7 +135,7 @@ $_emitted-density: () !default;
     warn: if($warn != null, $warn, define-palette(palette.$red-palette)),
     is-dark: false,
     foreground: palette.$light-theme-foreground-palette,
-    background: palette.$light-theme-background-palette,
+    background: palette.$light-theme-background-palette
   );
 }
 
@@ -142,7 +148,7 @@ $_emitted-density: () !default;
     warn: if($warn != null, $warn, define-palette(palette.$red-palette)),
     is-dark: true,
     foreground: palette.$dark-theme-foreground-palette,
-    background: palette.$dark-theme-background-palette,
+    background: palette.$dark-theme-background-palette
   );
 }
 
@@ -167,10 +173,14 @@ $_emitted-density: () !default;
   // If the legacy pattern is used, we generate a container object only with a light-themed
   // configuration for the `color` theming part.
   @if $accent != null {
-    @return private-create-backwards-compatibility-theme(_mat-validate-theme((
-      _is-legacy-theme: true,
-      color: _mat-create-light-color-config($primary, $accent, $warn),
-    )));
+    @return private-create-backwards-compatibility-theme(
+      _mat-validate-theme(
+        (
+          _is-legacy-theme: true,
+          color: _mat-create-light-color-config($primary, $accent, $warn),
+        )
+      )
+    );
   }
   // If the map pattern is used (1), we just pass-through the configurations for individual
   // parts of the theming system, but update the `color` configuration if set. As explained
@@ -181,7 +191,12 @@ $_emitted-density: () !default;
     $primary: map.get($color-settings, primary);
     $accent: map.get($color-settings, accent);
     $warn: map.get($color-settings, warn);
-    $result: map.merge($result, (color: _mat-create-light-color-config($primary, $accent, $warn)));
+    $result: map.merge(
+      $result,
+      (
+        color: _mat-create-light-color-config($primary, $accent, $warn),
+      )
+    );
   }
   @return private-create-backwards-compatibility-theme(_mat-validate-theme($result));
 }
@@ -207,10 +222,14 @@ $_emitted-density: () !default;
   // If the legacy pattern is used, we generate a container object only with a dark-themed
   // configuration for the `color` theming part.
   @if $accent != null {
-    @return private-create-backwards-compatibility-theme(_mat-validate-theme((
-      _is-legacy-theme: true,
-      color: _mat-create-dark-color-config($primary, $accent, $warn),
-    )));
+    @return private-create-backwards-compatibility-theme(
+      _mat-validate-theme(
+        (
+          _is-legacy-theme: true,
+          color: _mat-create-dark-color-config($primary, $accent, $warn),
+        )
+      )
+    );
   }
   // If the map pattern is used (1), we just pass-through the configurations for individual
   // parts of the theming system, but update the `color` configuration if set. As explained
@@ -221,7 +240,12 @@ $_emitted-density: () !default;
     $primary: map.get($color-settings, primary);
     $accent: map.get($color-settings, accent);
     $warn: map.get($color-settings, warn);
-    $result: map.merge($result, (color: _mat-create-dark-color-config($primary, $accent, $warn)));
+    $result: map.merge(
+      $result,
+      (
+        color: _mat-create-dark-color-config($primary, $accent, $warn),
+      )
+    );
   }
   @return private-create-backwards-compatibility-theme(_mat-validate-theme($result));
 }
@@ -289,7 +313,6 @@ $_emitted-density: () !default;
   @return $default;
 }
 
-
 //
 // Private APIs
 //
@@ -320,8 +343,10 @@ $_emitted-density: () !default;
 
   // Check if the color configuration has been generated before.
   @if $color-config != null {
-    @if list.index($previous-color, $color-config) != null and
-        not $theme-ignore-duplication-warnings {
+    @if list.index($previous-color, $color-config) !=
+      null and not
+      $theme-ignore-duplication-warnings
+    {
       @warn 'The same color styles are generated multiple times. ' + $_duplicate-warning;
     }
     $previous-color: list.append($previous-color, $color-config);
@@ -329,8 +354,10 @@ $_emitted-density: () !default;
 
   // Check if the typography configuration has been generated before.
   @if $typography-config != null {
-    @if list.index($previous-typography, $typography-config) != null and
-        not $theme-ignore-duplication-warnings {
+    @if list.index($previous-typography, $typography-config) !=
+      null and not
+      $theme-ignore-duplication-warnings
+    {
       @warn 'The same typography styles are generated multiple times. ' + $_duplicate-warning;
     }
     $previous-typography: list.append($previous-typography, $typography-config);
@@ -344,17 +371,31 @@ $_emitted-density: () !default;
       // of default density styles. We don't want to report a warning in those cases.
       @if private-is-legacy-constructed-theme($theme) {
         $duplicate-legacy-density: true;
-      }
-      @else if not $theme-ignore-duplication-warnings {
+      } @else if not $theme-ignore-duplication-warnings {
         @warn 'The same density styles are generated multiple times. ' + $_duplicate-warning;
       }
     }
     $previous-density: list.append($previous-density, $density-config);
   }
 
-  $_emitted-color: map.merge($_emitted-color, ($id: $previous-color)) !global;
-  $_emitted-density: map.merge($_emitted-density, ($id: $previous-density)) !global;
-  $_emitted-typography: map.merge($_emitted-typography, ($id: $previous-typography)) !global;
+  $_emitted-color: map.merge(
+    $_emitted-color,
+    (
+      $id: $previous-color,
+    )
+  ) !global;
+  $_emitted-density: map.merge(
+    $_emitted-density,
+    (
+      $id: $previous-density,
+    )
+  ) !global;
+  $_emitted-typography: map.merge(
+    $_emitted-typography,
+    (
+      $id: $previous-typography,
+    )
+  ) !global;
 
   // Optionally, consumers of this mixin can wrap contents inside so that nested
   // duplicate style checks do not report another warning. e.g. if developers include
@@ -383,12 +424,11 @@ $_emitted-density: () !default;
 // Checks whether the given value resolves to a theme object. Theme objects are always
 // of type `map` and can optionally only specify `color`, `density` or `typography`.
 @function private-is-theme-object($value) {
-  @return meta.type-of($value) == 'map' and (
-    map.has-key($value, color) or
-    map.has-key($value, density) or
-    map.has-key($value, typography) or
-    list.length($value) == 0
-  );
+  @return meta.type-of($value) == 'map' and
+    (
+      map.has-key($value, color) or map.has-key($value, density) or map.has-key($value, typography)
+        or list.length($value) == 0
+    );
 }
 
 // Checks whether a given value corresponds to a legacy constructed theme.
@@ -432,12 +472,13 @@ $_emitted-density: () !default;
   @if private-is-theme-object($theme-or-color-config) {
     @return $theme-or-color-config;
   }
-  @return private-create-backwards-compatibility-theme((
-    _is-legacy-theme: true,
-    color: $theme-or-color-config
-  ));
+  @return private-create-backwards-compatibility-theme(
+    (
+      _is-legacy-theme: true,
+      color: $theme-or-color-config,
+    )
+  );
 }
-
 
 // Approximates an rgba color into a solid hex color, given a background color.
 @function private-rgba-to-hex($color, $background-color) {

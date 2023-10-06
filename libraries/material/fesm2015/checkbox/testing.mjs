@@ -1,6 +1,6 @@
 import { __awaiter } from 'tslib';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { ComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
 
 class _MatCheckboxHarnessBase extends ComponentHarness {
     /** Whether the checkbox is checked. */

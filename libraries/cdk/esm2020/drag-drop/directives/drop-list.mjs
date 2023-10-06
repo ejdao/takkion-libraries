@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceArray, coerceNumberProperty, coerceBooleanProperty, } from '@angular/cdk/coercion';
+import { coerceArray, coerceNumberProperty, coerceBooleanProperty, } from '@takkion/ng-cdk/coercion';
 import { ElementRef, EventEmitter, Input, Output, Optional, Directive, ChangeDetectorRef, SkipSelf, Inject, InjectionToken, } from '@angular/core';
-import { Directionality } from '@angular/cdk/bidi';
-import { ScrollDispatcher } from '@angular/cdk/scrolling';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { ScrollDispatcher } from '@takkion/ng-cdk/scrolling';
 import { CDK_DROP_LIST_GROUP, CdkDropListGroup } from './drop-list-group';
 import { DragDrop } from '../drag-drop';
 import { CDK_DRAG_CONFIG } from './config';
@@ -17,8 +17,8 @@ import { startWith, takeUntil } from 'rxjs/operators';
 import { assertElementNode } from './assertions';
 import * as i0 from "@angular/core";
 import * as i1 from "../drag-drop";
-import * as i2 from "@angular/cdk/scrolling";
-import * as i3 from "@angular/cdk/bidi";
+import * as i2 from "@takkion/ng-cdk/scrolling";
+import * as i3 from "@takkion/ng-cdk/bidi";
 import * as i4 from "./drop-list-group";
 /** Counter used to generate unique ids for drop zones. */
 let _uniqueIdCounter = 0;

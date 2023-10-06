@@ -1,18 +1,18 @@
-import * as i2$1 from '@angular/cdk/portal';
-import { TemplatePortal, PortalModule } from '@angular/cdk/portal';
-import { CdkStepLabel, CdkStepHeader, CdkStep, STEPPER_GLOBAL_OPTIONS, CdkStepper, CdkStepperNext, CdkStepperPrevious, CdkStepperModule } from '@angular/cdk/stepper';
+import * as i2$1 from '@takkion/ng-cdk/portal';
+import { TemplatePortal, PortalModule } from '@takkion/ng-cdk/portal';
+import { CdkStepLabel, CdkStepHeader, CdkStep, STEPPER_GLOBAL_OPTIONS, CdkStepper, CdkStepperNext, CdkStepperPrevious, CdkStepperModule } from '@takkion/ng-cdk/stepper';
 import * as i3 from '@angular/common';
 import { CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
 import { Directive, Injectable, Optional, SkipSelf, Component, ViewEncapsulation, ChangeDetectionStrategy, Input, forwardRef, Inject, ContentChild, QueryList, EventEmitter, ViewChildren, ContentChildren, Output, NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import * as i1 from '@angular/material/core';
-import { mixinColor, ErrorStateMatcher, MatCommonModule, MatRippleModule } from '@angular/material/core';
-import * as i4 from '@angular/material/icon';
-import { MatIconModule } from '@angular/material/icon';
-import * as i2 from '@angular/cdk/a11y';
+import { MatButtonModule } from '@takkion/ng-material/button';
+import * as i1 from '@takkion/ng-material/core';
+import { mixinColor, ErrorStateMatcher, MatCommonModule, MatRippleModule } from '@takkion/ng-material/core';
+import * as i4 from '@takkion/ng-material/icon';
+import { MatIconModule } from '@takkion/ng-material/icon';
+import * as i2 from '@takkion/ng-cdk/a11y';
 import { Subject, Subscription } from 'rxjs';
-import * as i3$1 from '@angular/cdk/bidi';
+import * as i3$1 from '@takkion/ng-cdk/bidi';
 import { switchMap, map, startWith, takeUntil, distinctUntilChanged } from 'rxjs/operators';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 

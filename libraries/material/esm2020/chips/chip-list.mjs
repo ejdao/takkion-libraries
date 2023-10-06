@@ -5,25 +5,25 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusKeyManager } from '@angular/cdk/a11y';
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { SelectionModel } from '@angular/cdk/collections';
+import { FocusKeyManager } from '@takkion/ng-cdk/a11y';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, ElementRef, EventEmitter, Input, Optional, Output, QueryList, Self, ViewEncapsulation, } from '@angular/core';
 import { FormGroupDirective, NgControl, NgForm, Validators, } from '@angular/forms';
-import { ErrorStateMatcher, mixinErrorState } from '@angular/material/core';
-import { MatFormFieldControl } from '@angular/material/form-field';
+import { ErrorStateMatcher, mixinErrorState } from '@takkion/ng-material/core';
+import { MatFormFieldControl } from '@takkion/ng-material/form-field';
 import { merge, Subject } from 'rxjs';
 import { startWith, takeUntil } from 'rxjs/operators';
 import { MatChip } from './chip';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-cdk/bidi";
 import * as i2 from "@angular/forms";
-import * as i3 from "@angular/material/core";
+import * as i3 from "@takkion/ng-material/core";
 // Boilerplate for applying mixins to MatChipList.
 /** @docs-private */
 const _MatChipListBase = mixinErrorState(class {
-    constructor(_defaultErrorStateMatcher, _parentForm, _parentFormGroup, 
+    constructor(_defaultErrorStateMatcher, _parentForm, _parentFormGroup,
     /**
      * Form control bound to the component.
      * Implemented as part of `MatFormFieldControl`.
@@ -48,7 +48,7 @@ let nextUniqueId = 0;
 export class MatChipListChange {
     constructor(
     /** Chip list that emitted the event. */
-    source, 
+    source,
     /** Value of the chip list when the event was emitted. */
     value) {
         this.source = source;

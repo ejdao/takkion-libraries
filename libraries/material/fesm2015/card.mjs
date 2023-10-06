@@ -1,7 +1,7 @@
 import * as i0 from '@angular/core';
 import { Directive, Input, Component, ViewEncapsulation, ChangeDetectionStrategy, Optional, Inject, NgModule } from '@angular/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import { MatCommonModule } from '@angular/material/core';
+import { MatCommonModule } from '@takkion/ng-material/core';
 
 /**
  * @license

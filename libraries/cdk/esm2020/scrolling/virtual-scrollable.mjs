@@ -5,13 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
+import { Directionality } from '@takkion/ng-cdk/bidi';
 import { Directive, ElementRef, InjectionToken, NgZone, Optional } from '@angular/core';
 import { ScrollDispatcher } from './scroll-dispatcher';
 import { CdkScrollable } from './scrollable';
 import * as i0 from "@angular/core";
 import * as i1 from "./scroll-dispatcher";
-import * as i2 from "@angular/cdk/bidi";
+import * as i2 from "@takkion/ng-cdk/bidi";
 export const VIRTUAL_SCROLLABLE = new InjectionToken('VIRTUAL_SCROLLABLE');
 /**
  * Extending the {@link CdkScrollable} to be used as scrolling container for virtual scrolling.

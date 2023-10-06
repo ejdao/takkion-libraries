@@ -5,12 +5,12 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentObserver } from '@angular/cdk/observers';
+import { ContentObserver } from '@takkion/ng-cdk/observers';
 import { DOCUMENT } from '@angular/common';
 import { Directive, ElementRef, Inject, Injectable, Input, NgZone, Optional, } from '@angular/core';
 import { LIVE_ANNOUNCER_ELEMENT_TOKEN, LIVE_ANNOUNCER_DEFAULT_OPTIONS, } from './live-announcer-tokens';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/observers";
+import * as i1 from "@takkion/ng-cdk/observers";
 export class LiveAnnouncer {
     constructor(elementToken, _ngZone, _document, _defaultOptions) {
         this._ngZone = _ngZone;

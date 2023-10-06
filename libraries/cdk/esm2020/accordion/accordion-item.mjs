@@ -6,12 +6,12 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Output, Directive, EventEmitter, Input, Optional, ChangeDetectorRef, SkipSelf, Inject, } from '@angular/core';
-import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
+import { UniqueSelectionDispatcher } from '@takkion/ng-cdk/collections';
 import { CDK_ACCORDION, CdkAccordion } from './accordion';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { Subscription } from 'rxjs';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/collections";
+import * as i1 from "@takkion/ng-cdk/collections";
 import * as i2 from "./accordion";
 /** Used to generate unique ID for each accordion item. */
 let nextId = 0;

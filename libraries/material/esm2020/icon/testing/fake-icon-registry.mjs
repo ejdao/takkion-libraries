@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Injectable, NgModule } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
+import { MatIconRegistry } from '@takkion/ng-material/icon';
 import { of as observableOf } from 'rxjs';
 import * as i0 from "@angular/core";
 /**

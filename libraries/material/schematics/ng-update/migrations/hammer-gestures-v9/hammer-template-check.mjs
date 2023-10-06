@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isHammerJsUsedInTemplate = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 /** List of known events which are supported by the "HammerGesturesPlugin". */
 const STANDARD_HAMMERJS_EVENTS = [
     // Events supported by the "HammerGesturesPlugin". See:

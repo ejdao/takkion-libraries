@@ -5,7 +5,6 @@
 @use '../core/typography/typography';
 @use '../core/typography/typography-utils';
 
-
 @mixin color($config-or-theme) {
   $config: theming.get-color-config($config-or-theme);
   $foreground: map.get($config, foreground);
@@ -66,7 +65,8 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
+    theming.get-typography-config($config-or-theme)
+  );
   // The unit-less line-height from the font config.
   $line-height: typography-utils.line-height($config, input);
 
@@ -79,7 +79,8 @@
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

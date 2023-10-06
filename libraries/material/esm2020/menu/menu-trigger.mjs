@@ -5,13 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { isFakeMousedownFromScreenReader, isFakeTouchstartFromScreenReader, } from '@angular/cdk/a11y';
-import { Directionality } from '@angular/cdk/bidi';
-import { ENTER, LEFT_ARROW, RIGHT_ARROW, SPACE } from '@angular/cdk/keycodes';
-import { Overlay, OverlayConfig, } from '@angular/cdk/overlay';
-import { TemplatePortal } from '@angular/cdk/portal';
+import { isFakeMousedownFromScreenReader, isFakeTouchstartFromScreenReader, } from '@takkion/ng-cdk/a11y';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { ENTER, LEFT_ARROW, RIGHT_ARROW, SPACE } from '@takkion/ng-cdk/keycodes';
+import { Overlay, OverlayConfig, } from '@takkion/ng-cdk/overlay';
+import { TemplatePortal } from '@takkion/ng-cdk/portal';
 import { Directive, ElementRef, EventEmitter, Inject, InjectionToken, Input, NgZone, Optional, Output, Self, ViewContainerRef, } from '@angular/core';
-import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
+import { normalizePassiveListenerOptions } from '@takkion/ng-cdk/platform';
 import { asapScheduler, merge, of as observableOf, Subscription } from 'rxjs';
 import { delay, filter, take, takeUntil } from 'rxjs/operators';
 import { _MatMenuBase } from './menu';
@@ -19,10 +19,10 @@ import { throwMatMenuRecursiveError } from './menu-errors';
 import { MatMenuItem } from './menu-item';
 import { MAT_MENU_PANEL } from './menu-panel';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/overlay";
+import * as i1 from "@takkion/ng-cdk/overlay";
 import * as i2 from "./menu-item";
-import * as i3 from "@angular/cdk/bidi";
-import * as i4 from "@angular/cdk/a11y";
+import * as i3 from "@takkion/ng-cdk/bidi";
+import * as i4 from "@takkion/ng-cdk/a11y";
 /** Injection token that determines the scroll handling while the menu is open. */
 export const MAT_MENU_SCROLL_STRATEGY = new InjectionToken('mat-menu-scroll-strategy');
 /** @docs-private */

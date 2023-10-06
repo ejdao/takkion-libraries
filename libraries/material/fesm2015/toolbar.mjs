@@ -1,8 +1,8 @@
 import * as i0 from '@angular/core';
 import { Directive, Component, ChangeDetectionStrategy, ViewEncapsulation, Inject, ContentChildren, NgModule } from '@angular/core';
-import { mixinColor, MatCommonModule } from '@angular/material/core';
+import { mixinColor, MatCommonModule } from '@takkion/ng-material/core';
 import { DOCUMENT } from '@angular/common';
-import * as i1 from '@angular/cdk/platform';
+import * as i1 from '@takkion/ng-cdk/platform';
 
 // Boilerplate for applying mixins to MatToolbar.
 /** @docs-private */

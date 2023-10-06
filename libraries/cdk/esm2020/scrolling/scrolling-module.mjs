@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { BidiModule } from '@angular/cdk/bidi';
+import { BidiModule } from '@takkion/ng-cdk/bidi';
 import { NgModule } from '@angular/core';
 import { CdkFixedSizeVirtualScroll } from './fixed-size-virtual-scroll';
 import { CdkScrollable } from './scrollable';

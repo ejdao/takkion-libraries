@@ -78,7 +78,10 @@ $_ripple-opacity: 0.1;
     #{$property}: theming.get-color-from-palette($warn, $hue);
   }
 
-  &.mat-primary, &.mat-accent, &.mat-warn, &.mat-button-disabled {
+  &.mat-primary,
+  &.mat-accent,
+  &.mat-warn,
+  &.mat-button-disabled {
     &.mat-button-disabled {
       $palette: if($property == 'color', $foreground, $background);
       #{$property}: theming.get-color-from-palette($palette, disabled-button);
@@ -94,7 +97,9 @@ $_ripple-opacity: 0.1;
   $background: map.get($config, background);
   $foreground: map.get($config, foreground);
 
-  .mat-button, .mat-icon-button, .mat-stroked-button {
+  .mat-button,
+  .mat-icon-button,
+  .mat-stroked-button {
     // Buttons without a background color should inherit the font color. This is necessary to
     // ensure that the button is readable on custom background colors. It's wrong to always assume
     // that those buttons are always placed inside of containers with the default background
@@ -124,7 +129,10 @@ $_ripple-opacity: 0.1;
     border-color: theming.get-color-from-palette($foreground, divider);
   }
 
-  .mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+  .mat-flat-button,
+  .mat-raised-button,
+  .mat-fab,
+  .mat-mini-fab {
     // Default font and background color when not using any color palette.
     color: theming.get-color-from-palette($foreground, text);
     background-color: theming.get-color-from-palette($background, raised-button);
@@ -134,7 +142,8 @@ $_ripple-opacity: 0.1;
     @include _ripple-color($config, default-contrast);
   }
 
-  .mat-stroked-button, .mat-flat-button {
+  .mat-stroked-button,
+  .mat-flat-button {
     @include private.private-theme-overridable-elevation(0, $config);
   }
 
@@ -150,7 +159,8 @@ $_ripple-opacity: 0.1;
     }
   }
 
-  .mat-fab, .mat-mini-fab {
+  .mat-fab,
+  .mat-mini-fab {
     @include private.private-theme-overridable-elevation(6, $config);
 
     &:not(.mat-button-disabled):active {
@@ -165,9 +175,15 @@ $_ripple-opacity: 0.1;
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
-  .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button,
-  .mat-flat-button, .mat-fab, .mat-mini-fab {
+    theming.get-typography-config($config-or-theme)
+  );
+  .mat-button,
+  .mat-raised-button,
+  .mat-icon-button,
+  .mat-stroked-button,
+  .mat-flat-button,
+  .mat-fab,
+  .mat-mini-fab {
     font: {
       family: typography-utils.font-family($config, button);
       size: typography-utils.font-size($config, button);
@@ -176,7 +192,8 @@ $_ripple-opacity: 0.1;
   }
 }
 
-@mixin _density($config-or-theme) {}
+@mixin _density($config-or-theme) {
+}
 
 @mixin theme($theme-or-color-config) {
   $theme: theming.private-legacy-get-theme($theme-or-color-config);

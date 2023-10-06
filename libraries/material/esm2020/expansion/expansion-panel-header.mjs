@@ -5,18 +5,18 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
-import { ENTER, hasModifierKey, SPACE } from '@angular/cdk/keycodes';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
+import { ENTER, hasModifierKey, SPACE } from '@takkion/ng-cdk/keycodes';
 import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, ElementRef, Host, Inject, Input, Optional, ViewEncapsulation, } from '@angular/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import { mixinTabIndex } from '@angular/material/core';
+import { mixinTabIndex } from '@takkion/ng-material/core';
 import { EMPTY, merge, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { matExpansionAnimations } from './expansion-animations';
 import { MatExpansionPanel, MAT_EXPANSION_PANEL_DEFAULT_OPTIONS, } from './expansion-panel';
 import * as i0 from "@angular/core";
 import * as i1 from "./expansion-panel";
-import * as i2 from "@angular/cdk/a11y";
+import * as i2 from "@takkion/ng-cdk/a11y";
 import * as i3 from "@angular/common";
 // Boilerplate for applying mixins to MatExpansionPanelHeader.
 /** @docs-private */

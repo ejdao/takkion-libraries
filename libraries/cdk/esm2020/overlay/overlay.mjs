@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Directionality } from '@angular/cdk/bidi';
-import { DomPortalOutlet } from '@angular/cdk/portal';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { DomPortalOutlet } from '@takkion/ng-cdk/portal';
 import { DOCUMENT, Location } from '@angular/common';
 import { ApplicationRef, ComponentFactoryResolver, Inject, Injectable, Injector, NgZone, ANIMATION_MODULE_TYPE, Optional, } from '@angular/core';
 import { OverlayKeyboardDispatcher } from './dispatchers/overlay-keyboard-dispatcher';
@@ -21,7 +21,7 @@ import * as i1 from "./scroll/index";
 import * as i2 from "./overlay-container";
 import * as i3 from "./position/overlay-position-builder";
 import * as i4 from "./dispatchers/overlay-keyboard-dispatcher";
-import * as i5 from "@angular/cdk/bidi";
+import * as i5 from "@takkion/ng-cdk/bidi";
 import * as i6 from "@angular/common";
 import * as i7 from "./dispatchers/overlay-outside-click-dispatcher";
 /** Next overlay unique ID. */

@@ -5,26 +5,26 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
-import { SPACE } from '@angular/cdk/keycodes';
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { Platform } from '@angular/cdk/platform';
-import { ViewportRuler } from '@angular/cdk/scrolling';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
+import { SPACE } from '@takkion/ng-cdk/keycodes';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { Platform } from '@takkion/ng-cdk/platform';
+import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, Directive, ElementRef, forwardRef, Inject, Input, NgZone, Optional, QueryList, ViewChild, ViewEncapsulation, } from '@angular/core';
-import { MAT_RIPPLE_GLOBAL_OPTIONS, mixinDisabled, mixinDisableRipple, mixinTabIndex, RippleRenderer, } from '@angular/material/core';
+import { MAT_RIPPLE_GLOBAL_OPTIONS, mixinDisabled, mixinDisableRipple, mixinTabIndex, RippleRenderer, } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import { startWith, takeUntil } from 'rxjs/operators';
 import { MatInkBar } from '../ink-bar';
 import { MatPaginatedTabHeader } from '../paginated-tab-header';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/bidi";
-import * as i2 from "@angular/cdk/scrolling";
-import * as i3 from "@angular/cdk/platform";
-import * as i4 from "@angular/material/core";
-import * as i5 from "@angular/cdk/observers";
+import * as i1 from "@takkion/ng-cdk/bidi";
+import * as i2 from "@takkion/ng-cdk/scrolling";
+import * as i3 from "@takkion/ng-cdk/platform";
+import * as i4 from "@takkion/ng-material/core";
+import * as i5 from "@takkion/ng-cdk/observers";
 import * as i6 from "../ink-bar";
-import * as i7 from "@angular/cdk/a11y";
+import * as i7 from "@takkion/ng-cdk/a11y";
 // Increasing integer for generating unique ids for tab nav components.
 let nextUniqueId = 0;
 /**
@@ -168,7 +168,7 @@ const _MatTabLinkMixinBase = mixinTabIndex(mixinDisableRipple(mixinDisabled(clas
 })));
 /** Base class with all of the `MatTabLink` functionality. */
 export class _MatTabLinkBase extends _MatTabLinkMixinBase {
-    constructor(_tabNavBar, 
+    constructor(_tabNavBar,
     /** @docs-private */ elementRef, globalRippleOptions, tabIndex, _focusMonitor, animationMode) {
         super();
         this._tabNavBar = _tabNavBar;

@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { HarnessPredicate, ComponentHarness } from '@angular/cdk/testing';
+import { HarnessPredicate, ComponentHarness } from '@takkion/ng-cdk/testing';
 /** Harness for interacting with a standard Material chip inputs in tests. */
 export class MatChipInputHarness extends ComponentHarness {
     /**

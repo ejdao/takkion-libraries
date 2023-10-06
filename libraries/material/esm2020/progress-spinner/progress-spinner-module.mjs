@@ -7,7 +7,7 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCommonModule } from '@angular/material/core';
+import { MatCommonModule } from '@takkion/ng-material/core';
 import { MatProgressSpinner } from './progress-spinner';
 import * as i0 from "@angular/core";
 export class MatProgressSpinnerModule {

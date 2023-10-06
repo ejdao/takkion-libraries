@@ -5,16 +5,16 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Platform } from '@angular/cdk/platform';
-import { ViewportRuler } from '@angular/cdk/scrolling';
+import { Platform } from '@takkion/ng-cdk/platform';
+import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { OverlayContainer } from '../overlay-container';
 import { FlexibleConnectedPositionStrategy, } from './flexible-connected-position-strategy';
 import { GlobalPositionStrategy } from './global-position-strategy';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/scrolling";
-import * as i2 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/scrolling";
+import * as i2 from "@takkion/ng-cdk/platform";
 import * as i3 from "../overlay-container";
 /** Builder for overlay position strategy. */
 export class OverlayPositionBuilder {

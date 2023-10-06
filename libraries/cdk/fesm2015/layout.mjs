@@ -1,9 +1,9 @@
 import * as i0 from '@angular/core';
 import { NgModule, Injectable } from '@angular/core';
-import { coerceArray } from '@angular/cdk/coercion';
+import { coerceArray } from '@takkion/ng-cdk/coercion';
 import { Subject, combineLatest, concat, Observable } from 'rxjs';
 import { take, skip, debounceTime, map, startWith, takeUntil } from 'rxjs/operators';
-import * as i1 from '@angular/cdk/platform';
+import * as i1 from '@takkion/ng-cdk/platform';
 
 /**
  * @license

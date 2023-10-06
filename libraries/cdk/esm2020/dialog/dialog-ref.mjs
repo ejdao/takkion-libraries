@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
+import { ESCAPE, hasModifierKey } from '@takkion/ng-cdk/keycodes';
 import { Subject } from 'rxjs';
 /**
  * Reference to a dialog opened via the Dialog service.

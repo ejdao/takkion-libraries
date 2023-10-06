@@ -96,7 +96,8 @@
     }
   }
 
-  .mat-stepper-horizontal, .mat-stepper-vertical {
+  .mat-stepper-horizontal,
+  .mat-stepper-vertical {
     background-color: theming.get-color-from-palette($background, card);
   }
 
@@ -113,8 +114,10 @@
 
 @mixin typography($config-or-theme) {
   $config: typography.private-typography-to-2014-config(
-      theming.get-typography-config($config-or-theme));
-  .mat-stepper-vertical, .mat-stepper-horizontal {
+    theming.get-typography-config($config-or-theme)
+  );
+  .mat-stepper-vertical,
+  .mat-stepper-horizontal {
     font-family: typography-utils.font-family($config);
   }
 
@@ -122,7 +125,7 @@
     font: {
       size: typography-utils.font-size($config, body-1);
       weight: typography-utils.font-weight($config, body-1);
-    };
+    }
   }
 
   .mat-step-sub-label-error {
@@ -137,14 +140,17 @@
     font: {
       size: typography-utils.font-size($config, body-2);
       weight: typography-utils.font-weight($config, body-2);
-    };
+    }
   }
 }
 
 @mixin density($config-or-theme) {
   $density-scale: theming.get-density-config($config-or-theme);
-  $height: compatibility.private-density-prop-value(stepper-variables.$density-config,
-    $density-scale, height);
+  $height: compatibility.private-density-prop-value(
+    stepper-variables.$density-config,
+    $density-scale,
+    height
+  );
   $vertical-padding: math.div($height - stepper-variables.$label-header-height, 2);
 
   @include compatibility.private-density-legacy-compatibility() {
@@ -166,7 +172,8 @@
 
     // Ensures that the horizontal lines for the step header are centered vertically.
     .mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
-      &::after, &::before {
+      &::after,
+      &::before {
         top: $vertical-padding + math.div(stepper-variables.$label-header-height, 2);
       }
     }

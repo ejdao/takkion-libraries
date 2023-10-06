@@ -5,9 +5,9 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentPortal } from '@angular/cdk/portal';
+import { ComponentPortal } from '@takkion/ng-cdk/portal';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, forwardRef, Inject, Input, Optional, Output, ViewChild, ViewEncapsulation, } from '@angular/core';
-import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
+import { DateAdapter, MAT_DATE_FORMATS } from '@takkion/ng-material/core';
 import { Subject } from 'rxjs';
 import { createMissingDateImplError } from './datepicker-errors';
 import { MatDatepickerIntl } from './datepicker-intl';
@@ -17,11 +17,11 @@ import { MatYearView } from './year-view';
 import { MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER, DateRange } from './date-selection-model';
 import * as i0 from "@angular/core";
 import * as i1 from "./datepicker-intl";
-import * as i2 from "@angular/material/core";
-import * as i3 from "@angular/material/button";
+import * as i2 from "@takkion/ng-material/core";
+import * as i3 from "@takkion/ng-material/button";
 import * as i4 from "@angular/common";
-import * as i5 from "@angular/cdk/a11y";
-import * as i6 from "@angular/cdk/portal";
+import * as i5 from "@takkion/ng-cdk/a11y";
+import * as i6 from "@takkion/ng-cdk/portal";
 import * as i7 from "./month-view";
 import * as i8 from "./year-view";
 import * as i9 from "./multi-year-view";

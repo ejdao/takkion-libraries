@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MiscPropertyNamesMigration = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 const ts = require("typescript");
 /**
  * Migration that walks through every property access expression and and reports a failure if

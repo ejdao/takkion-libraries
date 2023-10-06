@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MiscImportsMigration = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 const ts = require("typescript");
 /**
  * Migration that detects import declarations that refer to outdated identifiers from

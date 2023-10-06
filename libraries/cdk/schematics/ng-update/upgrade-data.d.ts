@@ -7,7 +7,18 @@
  */
 import { Migration } from '../update-tool/migration';
 import { ValueOfChanges, VersionChanges } from '../update-tool/version-changes';
-import { AttributeSelectorUpgradeData, ClassNameUpgradeData, ConstructorChecksUpgradeData, CssSelectorUpgradeData, ElementSelectorUpgradeData, InputNameUpgradeData, MethodCallUpgradeData, OutputNameUpgradeData, PropertyNameUpgradeData, SymbolRemovalUpgradeData } from './data';
+import {
+  AttributeSelectorUpgradeData,
+  ClassNameUpgradeData,
+  ConstructorChecksUpgradeData,
+  CssSelectorUpgradeData,
+  ElementSelectorUpgradeData,
+  InputNameUpgradeData,
+  MethodCallUpgradeData,
+  OutputNameUpgradeData,
+  PropertyNameUpgradeData,
+  SymbolRemovalUpgradeData,
+} from './data';
 /** Upgrade data for the Angular CDK. */
 export declare const cdkUpgradeData: UpgradeData;
 /**
@@ -15,20 +26,23 @@ export declare const cdkUpgradeData: UpgradeData;
  * upgrade rules.
  */
 export interface UpgradeData {
-    attributeSelectors: VersionChanges<AttributeSelectorUpgradeData>;
-    classNames: VersionChanges<ClassNameUpgradeData>;
-    constructorChecks: VersionChanges<ConstructorChecksUpgradeData>;
-    cssSelectors: VersionChanges<CssSelectorUpgradeData>;
-    elementSelectors: VersionChanges<ElementSelectorUpgradeData>;
-    inputNames: VersionChanges<InputNameUpgradeData>;
-    methodCallChecks: VersionChanges<MethodCallUpgradeData>;
-    outputNames: VersionChanges<OutputNameUpgradeData>;
-    propertyNames: VersionChanges<PropertyNameUpgradeData>;
-    symbolRemoval: VersionChanges<SymbolRemovalUpgradeData>;
+  attributeSelectors: VersionChanges<AttributeSelectorUpgradeData>;
+  classNames: VersionChanges<ClassNameUpgradeData>;
+  constructorChecks: VersionChanges<ConstructorChecksUpgradeData>;
+  cssSelectors: VersionChanges<CssSelectorUpgradeData>;
+  elementSelectors: VersionChanges<ElementSelectorUpgradeData>;
+  inputNames: VersionChanges<InputNameUpgradeData>;
+  methodCallChecks: VersionChanges<MethodCallUpgradeData>;
+  outputNames: VersionChanges<OutputNameUpgradeData>;
+  propertyNames: VersionChanges<PropertyNameUpgradeData>;
+  symbolRemoval: VersionChanges<SymbolRemovalUpgradeData>;
 }
 /**
  * Gets the reduced upgrade data for the specified data key. The function reads out the
  * target version and upgrade data object from the migration and resolves the specified
  * data portion that is specifically tied to the target version.
  */
-export declare function getVersionUpgradeData<T extends keyof UpgradeData, U = ValueOfChanges<UpgradeData[T]>>(migration: Migration<UpgradeData>, dataName: T): U[];
+export declare function getVersionUpgradeData<
+  T extends keyof UpgradeData,
+  U = ValueOfChanges<UpgradeData[T]>,
+>(migration: Migration<UpgradeData>, dataName: T): U[];

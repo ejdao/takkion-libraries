@@ -5,14 +5,14 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { DOWN_ARROW } from '@angular/cdk/keycodes';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { DOWN_ARROW } from '@takkion/ng-cdk/keycodes';
 import { Directive, ElementRef, EventEmitter, Inject, Input, Optional, Output, } from '@angular/core';
-import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
+import { DateAdapter, MAT_DATE_FORMATS } from '@takkion/ng-material/core';
 import { Subscription, Subject } from 'rxjs';
 import { createMissingDateImplError } from './datepicker-errors';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/material/core";
+import * as i1 from "@takkion/ng-material/core";
 /**
  * An event used for datepicker input and change events. We don't always have access to a native
  * input or change event because the event may have been triggered by the user clicking on the
@@ -21,7 +21,7 @@ import * as i1 from "@angular/material/core";
 export class MatDatepickerInputEvent {
     constructor(
     /** Reference to the datepicker input component that emitted the event. */
-    target, 
+    target,
     /** Reference to the native input element associated with the datepicker input. */
     targetElement) {
         this.target = target;

@@ -8,7 +8,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.constructorChecks = void 0;
-const schematics_1 = require("@angular/cdk/schematics");
+const schematics_1 = require("@takkion/ng-cdk/schematics");
 /**
  * List of class names for which the constructor signature has been changed. The new constructor
  * signature types don't need to be stored here because the signature will be determined

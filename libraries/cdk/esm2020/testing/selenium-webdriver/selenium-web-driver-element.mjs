@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { _getTextWithExcludedElements, getNoKeysSpecifiedError, } from '@angular/cdk/testing';
+import { _getTextWithExcludedElements, getNoKeysSpecifiedError, } from '@takkion/ng-cdk/testing';
 import * as webdriver from 'selenium-webdriver';
 import { getSeleniumWebDriverModifierKeys, seleniumWebDriverKeyMap } from './selenium-webdriver-keys';
 /** A `TestElement` implementation for WebDriver. */

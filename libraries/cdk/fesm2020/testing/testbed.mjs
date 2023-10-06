@@ -1,9 +1,9 @@
-import { getNoKeysSpecifiedError, TestKey, _getTextWithExcludedElements, handleAutoChangeDetectionStatus, stopHandlingAutoChangeDetectionStatus, HarnessEnvironment } from '@angular/cdk/testing';
+import { getNoKeysSpecifiedError, TestKey, _getTextWithExcludedElements, handleAutoChangeDetectionStatus, stopHandlingAutoChangeDetectionStatus, HarnessEnvironment } from '@takkion/ng-cdk/testing';
 import { flush } from '@angular/core/testing';
 import { takeWhile } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
-import * as keyCodes from '@angular/cdk/keycodes';
-import { PERIOD } from '@angular/cdk/keycodes';
+import * as keyCodes from '@takkion/ng-cdk/keycodes';
+import { PERIOD } from '@takkion/ng-cdk/keycodes';
 
 /**
  * @license

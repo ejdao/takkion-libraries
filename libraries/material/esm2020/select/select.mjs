@@ -5,30 +5,30 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ActiveDescendantKeyManager, LiveAnnouncer } from '@angular/cdk/a11y';
-import { Directionality } from '@angular/cdk/bidi';
-import { coerceBooleanProperty, coerceNumberProperty, } from '@angular/cdk/coercion';
-import { SelectionModel } from '@angular/cdk/collections';
-import { A, DOWN_ARROW, ENTER, hasModifierKey, LEFT_ARROW, RIGHT_ARROW, SPACE, UP_ARROW, } from '@angular/cdk/keycodes';
-import { CdkConnectedOverlay, Overlay, } from '@angular/cdk/overlay';
-import { ViewportRuler } from '@angular/cdk/scrolling';
+import { ActiveDescendantKeyManager, LiveAnnouncer } from '@takkion/ng-cdk/a11y';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { coerceBooleanProperty, coerceNumberProperty, } from '@takkion/ng-cdk/coercion';
+import { SelectionModel } from '@takkion/ng-cdk/collections';
+import { A, DOWN_ARROW, ENTER, hasModifierKey, LEFT_ARROW, RIGHT_ARROW, SPACE, UP_ARROW, } from '@takkion/ng-cdk/keycodes';
+import { CdkConnectedOverlay, Overlay, } from '@takkion/ng-cdk/overlay';
+import { ViewportRuler } from '@takkion/ng-cdk/scrolling';
 import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, Directive, ElementRef, EventEmitter, Inject, InjectionToken, Input, NgZone, Optional, Output, QueryList, Self, ViewChild, ViewEncapsulation, } from '@angular/core';
 import { FormGroupDirective, NgControl, NgForm, Validators, } from '@angular/forms';
-import { _countGroupLabelsBeforeOption, _getOptionScrollPosition, ErrorStateMatcher, MAT_OPTGROUP, MAT_OPTION_PARENT_COMPONENT, MatOption, mixinDisabled, mixinDisableRipple, mixinErrorState, mixinTabIndex, } from '@angular/material/core';
-import { MAT_FORM_FIELD, MatFormField, MatFormFieldControl } from '@angular/material/form-field';
+import { _countGroupLabelsBeforeOption, _getOptionScrollPosition, ErrorStateMatcher, MAT_OPTGROUP, MAT_OPTION_PARENT_COMPONENT, MatOption, mixinDisabled, mixinDisableRipple, mixinErrorState, mixinTabIndex, } from '@takkion/ng-material/core';
+import { MAT_FORM_FIELD, MatFormField, MatFormFieldControl } from '@takkion/ng-material/form-field';
 import { defer, merge, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, filter, map, startWith, switchMap, take, takeUntil, } from 'rxjs/operators';
 import { matSelectAnimations } from './select-animations';
 import { getMatSelectDynamicMultipleError, getMatSelectNonArrayValueError, getMatSelectNonFunctionValueError, } from './select-errors';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/scrolling";
-import * as i2 from "@angular/material/core";
-import * as i3 from "@angular/cdk/bidi";
+import * as i1 from "@takkion/ng-cdk/scrolling";
+import * as i2 from "@takkion/ng-material/core";
+import * as i3 from "@takkion/ng-cdk/bidi";
 import * as i4 from "@angular/forms";
-import * as i5 from "@angular/cdk/a11y";
-import * as i6 from "@angular/material/form-field";
+import * as i5 from "@takkion/ng-cdk/a11y";
+import * as i6 from "@takkion/ng-material/form-field";
 import * as i7 from "@angular/common";
-import * as i8 from "@angular/cdk/overlay";
+import * as i8 from "@takkion/ng-cdk/overlay";
 let nextUniqueId = 0;
 /**
  * The following style constants are necessary to save here in order
@@ -77,7 +77,7 @@ export const MAT_SELECT_SCROLL_STRATEGY_PROVIDER = {
 export class MatSelectChange {
     constructor(
     /** Reference to the select that emitted the change event. */
-    source, 
+    source,
     /** Current value of the select that emitted the event. */
     value) {
         this.source = source;
@@ -87,7 +87,7 @@ export class MatSelectChange {
 // Boilerplate for applying mixins to MatSelect.
 /** @docs-private */
 const _MatSelectMixinBase = mixinDisableRipple(mixinTabIndex(mixinDisabled(mixinErrorState(class {
-    constructor(_elementRef, _defaultErrorStateMatcher, _parentForm, _parentFormGroup, 
+    constructor(_elementRef, _defaultErrorStateMatcher, _parentForm, _parentFormGroup,
     /**
      * Form control bound to the component.
      * Implemented as part of `MatFormFieldControl`.

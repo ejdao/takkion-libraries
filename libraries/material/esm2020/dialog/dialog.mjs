@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Overlay, OverlayContainer } from '@angular/cdk/overlay';
+import { Overlay, OverlayContainer } from '@takkion/ng-cdk/overlay';
 import { Location } from '@angular/common';
 import { Inject, Injectable, InjectionToken, Injector, Optional, SkipSelf, Type, } from '@angular/core';
 import { defer, Subject } from 'rxjs';
@@ -14,9 +14,9 @@ import { MatDialogConfig } from './dialog-config';
 import { MatDialogContainer } from './dialog-container';
 import { MatDialogRef } from './dialog-ref';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import { Dialog, DialogConfig } from '@angular/cdk/dialog';
+import { Dialog, DialogConfig } from '@takkion/ng-cdk/dialog';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/overlay";
+import * as i1 from "@takkion/ng-cdk/overlay";
 import * as i2 from "@angular/common";
 import * as i3 from "./dialog-config";
 /** Injection token that can be used to access the data that was passed in to a dialog. */

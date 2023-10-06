@@ -23,50 +23,50 @@ import { UpdateRecorder } from './update-recorder';
  *      is not synced into g3. We want to be able to run migrations in g3 if needed.
  */
 export declare type WorkspacePath = string & {
-    __PRIVATE_DEVKIT_PATH: void;
+  __PRIVATE_DEVKIT_PATH: void;
 };
 /** Interface that describes a directory. */
 export interface DirectoryEntry {
-    /** List of directories inside the directory. */
-    directories: string[];
-    /** List of files inside the directory. */
-    files: string[];
+  /** List of directories inside the directory. */
+  directories: string[];
+  /** List of files inside the directory. */
+  files: string[];
 }
 /**
  * Abstraction of the file system that migrations can use to record and apply
  * changes. This is necessary to support virtual file systems as used in the CLI devkit.
  */
 export declare abstract class FileSystem {
-    /** Checks whether the given file exists. */
-    abstract fileExists(path: WorkspacePath): boolean;
-    /** Checks whether the given directory exists. */
-    abstract directoryExists(path: WorkspacePath): boolean;
-    /** Gets the contents of the given file. */
-    abstract read(filePath: WorkspacePath): string | null;
-    /** Reads the given directory to retrieve children. */
-    abstract readDirectory(dirPath: WorkspacePath): DirectoryEntry;
-    /**
-     * Creates an update recorder for the given file. Edits can be recorded and
-     * committed in batches. Changes are not applied automatically because otherwise
-     * migrations would need to re-read files, or account for shifted file contents.
-     */
-    abstract edit(filePath: WorkspacePath): UpdateRecorder;
-    /** Applies all changes which have been recorded in update recorders. */
-    abstract commitEdits(): void;
-    /** Creates a new file with the given content. */
-    abstract create(filePath: WorkspacePath, content: string): void;
-    /** Overwrites an existing file with the given content. */
-    abstract overwrite(filePath: WorkspacePath, content: string): void;
-    /** Deletes the given file. */
-    abstract delete(filePath: WorkspacePath): void;
-    /**
-     * Resolves given paths to a resolved path in the file system. For example, the devkit
-     * tree considers the actual workspace directory as file system root.
-     *
-     * Follows the same semantics as the native path `resolve` method. i.e. segments
-     * are processed in reverse. The last segment is considered the target and the
-     * function will iterate from the target through other segments until it finds an
-     * absolute path segment.
-     */
-    abstract resolve(...segments: string[]): WorkspacePath;
+  /** Checks whether the given file exists. */
+  abstract fileExists(path: WorkspacePath): boolean;
+  /** Checks whether the given directory exists. */
+  abstract directoryExists(path: WorkspacePath): boolean;
+  /** Gets the contents of the given file. */
+  abstract read(filePath: WorkspacePath): string | null;
+  /** Reads the given directory to retrieve children. */
+  abstract readDirectory(dirPath: WorkspacePath): DirectoryEntry;
+  /**
+   * Creates an update recorder for the given file. Edits can be recorded and
+   * committed in batches. Changes are not applied automatically because otherwise
+   * migrations would need to re-read files, or account for shifted file contents.
+   */
+  abstract edit(filePath: WorkspacePath): UpdateRecorder;
+  /** Applies all changes which have been recorded in update recorders. */
+  abstract commitEdits(): void;
+  /** Creates a new file with the given content. */
+  abstract create(filePath: WorkspacePath, content: string): void;
+  /** Overwrites an existing file with the given content. */
+  abstract overwrite(filePath: WorkspacePath, content: string): void;
+  /** Deletes the given file. */
+  abstract delete(filePath: WorkspacePath): void;
+  /**
+   * Resolves given paths to a resolved path in the file system. For example, the devkit
+   * tree considers the actual workspace directory as file system root.
+   *
+   * Follows the same semantics as the native path `resolve` method. i.e. segments
+   * are processed in reverse. The last segment is considered the target and the
+   * function will iterate from the target through other segments until it finds an
+   * absolute path segment.
+   */
+  abstract resolve(...segments: string[]): WorkspacePath;
 }

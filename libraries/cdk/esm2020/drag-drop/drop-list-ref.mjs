@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceElement } from '@angular/cdk/coercion';
-import { _getShadowRoot } from '@angular/cdk/platform';
+import { coerceElement } from '@takkion/ng-cdk/coercion';
+import { _getShadowRoot } from '@takkion/ng-cdk/platform';
 import { Subject, Subscription, interval, animationFrameScheduler } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { isPointerNearClientRect, isInsideClientRect } from './dom/client-rect';

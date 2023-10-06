@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate } from '@takkion/ng-cdk/testing';
 import { MatStepHarness } from './step-harness';
 /** Harness for interacting with a standard Material stepper in tests. */
 export class MatStepperHarness extends ComponentHarness {

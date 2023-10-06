@@ -6,9 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { Directive, inject, Injectable, InjectFlags, Input } from '@angular/core';
-import { Directionality } from '@angular/cdk/bidi';
-import { Overlay, OverlayConfig, STANDARD_DROPDOWN_BELOW_POSITIONS, } from '@angular/cdk/overlay';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { Directionality } from '@takkion/ng-cdk/bidi';
+import { Overlay, OverlayConfig, STANDARD_DROPDOWN_BELOW_POSITIONS, } from '@takkion/ng-cdk/overlay';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
 import { merge, partition } from 'rxjs';
 import { skip, takeUntil } from 'rxjs/operators';
 import { MENU_STACK, MenuStack } from './menu-stack';

@@ -5,17 +5,17 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { FocusMonitor } from '@angular/cdk/a11y';
-import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
-import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
+import { FocusMonitor } from '@takkion/ng-cdk/a11y';
+import { coerceBooleanProperty, coerceNumberProperty } from '@takkion/ng-cdk/coercion';
+import { UniqueSelectionDispatcher } from '@takkion/ng-cdk/collections';
 import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, Directive, ElementRef, EventEmitter, forwardRef, Inject, InjectionToken, Input, Optional, Output, QueryList, ViewChild, ViewEncapsulation, } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { mixinDisableRipple, mixinTabIndex, } from '@angular/material/core';
+import { mixinDisableRipple, mixinTabIndex, } from '@takkion/ng-material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/a11y";
-import * as i2 from "@angular/cdk/collections";
-import * as i3 from "@angular/material/core";
+import * as i1 from "@takkion/ng-cdk/a11y";
+import * as i2 from "@takkion/ng-cdk/collections";
+import * as i3 from "@takkion/ng-material/core";
 export const MAT_RADIO_DEFAULT_OPTIONS = new InjectionToken('mat-radio-default-options', {
     providedIn: 'root',
     factory: MAT_RADIO_DEFAULT_OPTIONS_FACTORY,
@@ -41,7 +41,7 @@ export const MAT_RADIO_GROUP_CONTROL_VALUE_ACCESSOR = {
 export class MatRadioChange {
     constructor(
     /** The MatRadioButton that emits the change event. */
-    source, 
+    source,
     /** The value of the MatRadioButton. */
     value) {
         this.source = source;

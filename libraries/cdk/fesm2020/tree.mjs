@@ -1,10 +1,10 @@
-import { SelectionModel, isDataSource } from '@angular/cdk/collections';
+import { SelectionModel, isDataSource } from '@takkion/ng-cdk/collections';
 import { isObservable, Subject, BehaviorSubject, of } from 'rxjs';
 import { take, filter, takeUntil } from 'rxjs/operators';
 import * as i0 from '@angular/core';
 import { InjectionToken, Directive, Inject, Optional, Component, ViewEncapsulation, ChangeDetectionStrategy, Input, ViewChild, ContentChildren, NgModule } from '@angular/core';
-import { coerceNumberProperty, coerceBooleanProperty } from '@angular/cdk/coercion';
-import * as i2 from '@angular/cdk/bidi';
+import { coerceNumberProperty, coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import * as i2 from '@takkion/ng-cdk/bidi';
 
 /**
  * @license

@@ -7,7 +7,6 @@
 @use './selection/pseudo-checkbox/pseudo-checkbox-theme';
 @use './style/elevation';
 
-
 @mixin color($config-or-theme) {
   $config: theming.get-color-config($config-or-theme);
   // Wrapper element that provides the theme background when the user's content isn't

@@ -6,11 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { inject, Inject, Injectable } from '@angular/core';
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { Platform } from '@angular/cdk/platform';
+import { BreakpointObserver } from '@takkion/ng-cdk/layout';
+import { Platform } from '@takkion/ng-cdk/platform';
 import { DOCUMENT } from '@angular/common';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 /** CSS class applied to the document body when in black-on-white high-contrast mode. */
 export const BLACK_ON_WHITE_CSS_CLASS = 'cdk-high-contrast-black-on-white';
 /** CSS class applied to the document body when in white-on-black high-contrast mode. */

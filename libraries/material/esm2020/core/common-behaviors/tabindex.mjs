@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { coerceNumberProperty } from '@angular/cdk/coercion';
+import { coerceNumberProperty } from '@takkion/ng-cdk/coercion';
 export function mixinTabIndex(base, defaultTabIndex = 0) {
     return class extends base {
         constructor(...args) {

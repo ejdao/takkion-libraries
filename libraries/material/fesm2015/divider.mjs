@@ -1,7 +1,7 @@
 import * as i0 from '@angular/core';
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, Input, NgModule } from '@angular/core';
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { MatCommonModule } from '@angular/material/core';
+import { coerceBooleanProperty } from '@takkion/ng-cdk/coercion';
+import { MatCommonModule } from '@takkion/ng-material/core';
 
 /**
  * @license

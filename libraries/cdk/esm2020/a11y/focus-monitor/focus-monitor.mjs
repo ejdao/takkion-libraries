@@ -5,15 +5,15 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Platform, normalizePassiveListenerOptions, _getShadowRoot, _getEventTarget, } from '@angular/cdk/platform';
+import { Platform, normalizePassiveListenerOptions, _getShadowRoot, _getEventTarget, } from '@takkion/ng-cdk/platform';
 import { Directive, ElementRef, EventEmitter, Inject, Injectable, InjectionToken, NgZone, Optional, Output, } from '@angular/core';
 import { of as observableOf, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { coerceElement } from '@angular/cdk/coercion';
+import { coerceElement } from '@takkion/ng-cdk/coercion';
 import { DOCUMENT } from '@angular/common';
 import { InputModalityDetector, TOUCH_BUFFER_MS } from '../input-modality/input-modality-detector';
 import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/platform";
+import * as i1 from "@takkion/ng-cdk/platform";
 import * as i2 from "../input-modality/input-modality-detector";
 /** InjectionToken for FocusMonitorOptions. */
 export const FOCUS_MONITOR_DEFAULT_OPTIONS = new InjectionToken('cdk-focus-monitor-default-options');

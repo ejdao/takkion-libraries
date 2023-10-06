@@ -5,8 +5,8 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import * as keyCodes from '@angular/cdk/keycodes';
-import { _getTextWithExcludedElements, TestKey, } from '@angular/cdk/testing';
+import * as keyCodes from '@takkion/ng-cdk/keycodes';
+import { _getTextWithExcludedElements, TestKey, } from '@takkion/ng-cdk/testing';
 import { clearElement, createFakeEvent, dispatchFakeEvent, dispatchMouseEvent, dispatchPointerEvent, isTextInput, triggerBlur, triggerFocus, typeInElement, dispatchEvent, } from './fake-events';
 /** Maps `TestKey` constants to the `keyCode` and `key` values used by native browser events. */
 const keyMap = {
