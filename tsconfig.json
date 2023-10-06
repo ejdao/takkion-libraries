@@ -19,11 +19,12 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"],
-  /*   "paths": {
-      "@takkion/ng-material/*": ["libraries/material/*"],
-      "@takkion/ng-cdk/*": ["libraries/cdk/*"]
-    } */
+    "lib": ["ES2022", "dom"]
+    /*   "paths": {
+      "@takkion/ng-material/*": ["libraries/ng-material/*"],
+      "@takkion/ng-cdk/*": ["libraries/ng-cdk/*"]
+    }
+    */
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
