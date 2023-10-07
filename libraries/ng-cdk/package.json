@@ -222,17 +222,11 @@
     }
   },
   "peerDependencies": {
-    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0",
-    "@angular/common": "^14.0.0 || ^15.0.0 || ^16.0.0",
-    "rxjs": "^6.5.3 || ^7.4.0 || ^7.8.0"
-  },
-  "optionalDependencies": {
-    "parse5": "^5.0.0"
+    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
+    "@angular/common": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
+    "rxjs": "^6.5.3 || ^7.4.0 || ^7.8.0 || ^8.0.0"
   },
   "schematics": "./schematics/collection.json",
-  "ng-update": {
-    "migrations": "./schematics/migration.json"
-  },
   "sideEffects": false,
   "fesm2020": "./fesm2020/cdk.mjs",
   "fesm2015": "./fesm2015/cdk.mjs",

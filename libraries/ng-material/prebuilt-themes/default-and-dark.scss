@@ -3073,7 +3073,7 @@ td.tak-footer-cell {
 .tak-tab-label.tak-tab-disabled {
   color: var(--tak-dark-color-700);
 }
-.disabled-tab .tak-tab-group .tak-ink-bar,
-.tak-tab-group.not-ink-bar .tak-ink-bar {
+.tak-disabled-tab .tak-tab-group .tak-ink-bar,
+.tak-tab-group.tak-not-ink-bar .tak-ink-bar {
   background-color: transparent;
 }

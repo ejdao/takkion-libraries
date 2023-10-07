@@ -8,4 +8,14 @@ Google only provides docs, it is not responsable about this package, you can che
 
 Tested in v14.2.7, v15.2.4 and v16.2.5 without problems.
 
-Original released at Sept/09/23.
+Original (@angular/cdk@14.2.7) released at Sept/09/23.
+
+## Used and checked
+
+Tested in ng `14.2.7`, `15.2.4` and `16.2.5` without problems.
+
+## Warnings
+
+Need to be used more in `^17.0.0` but it work in `17.0.0-next.7` so I wanna believe it still be compatible.
+
+Same for `rxjs@^8.0.0`, maybe work, maybe not, but it's not worth publishing just to add one more approved version.

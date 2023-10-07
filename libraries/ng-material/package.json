@@ -333,25 +333,15 @@
     }
   },
   "peerDependencies": {
-    "@angular/animations": "^14.0.0 || ^15.0.0 || ^16.0.0",
-    "@takkion/ng-cdk": "14.2.7",
-    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0",
-    "@angular/common": "^14.0.0 || ^15.0.0 || ^16.0.0",
-    "@angular/forms": "^14.0.0 || ^15.0.0 || ^16.0.0",
-    "@angular/platform-browser": "^14.0.0 || ^15.0.0 || ^16.0.0",
-    "rxjs": "^6.5.3 || ^7.4.0 || ^7.8.0"
+    "@angular/animations": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
+    "@takkion/ng-cdk": "1.0.0",
+    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
+    "@angular/common": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
+    "@angular/forms": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
+    "@angular/platform-browser": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
+    "rxjs": "^6.5.3 || ^7.4.0 || ^7.8.0 || ^8.0.0"
   },
   "schematics": "./schematics/collection.json",
-  "ng-update": {
-    "migrations": "./schematics/migration.json",
-    "packageGroup": [
-      "@takkion/ng-material",
-      "@takkion/ng-cdk",
-      "@takkion/ng-material-moment-adapter",
-      "@takkion/ng-material-luxon-adapter",
-      "@takkion/ng-material-date-fns-adapter"
-    ]
-  },
   "sideEffects": false,
   "fesm2020": "./fesm2020/material.mjs",
   "fesm2015": "./fesm2015/material.mjs",
