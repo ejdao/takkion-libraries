@@ -1,6 +1,6 @@
 {
-  "name": "@angular/material",
-  "version": "14.2.7",
+  "name": "@takkion/ng-material",
+  "version": "1.0.0",
   "description": "Angular Material",
   "repository": {
     "type": "git",
@@ -333,26 +333,23 @@
     }
   },
   "peerDependencies": {
-    "@angular/animations": "^14.0.0 || ^15.0.0",
-    "@angular/cdk": "14.2.7",
-    "@angular/core": "^14.0.0 || ^15.0.0",
-    "@angular/common": "^14.0.0 || ^15.0.0",
-    "@angular/forms": "^14.0.0 || ^15.0.0",
-    "@angular/platform-browser": "^14.0.0 || ^15.0.0",
-    "rxjs": "^6.5.3 || ^7.4.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
+    "@angular/animations": "^14.0.0 || ^15.0.0 || ^16.0.0",
+    "@takkion/ng-cdk": "14.2.7",
+    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0",
+    "@angular/common": "^14.0.0 || ^15.0.0 || ^16.0.0",
+    "@angular/forms": "^14.0.0 || ^15.0.0 || ^16.0.0",
+    "@angular/platform-browser": "^14.0.0 || ^15.0.0 || ^16.0.0",
+    "rxjs": "^6.5.3 || ^7.4.0 || ^7.8.0"
   },
   "schematics": "./schematics/collection.json",
   "ng-update": {
     "migrations": "./schematics/migration.json",
     "packageGroup": [
-      "@angular/material",
-      "@angular/cdk",
-      "@angular/material-moment-adapter",
-      "@angular/material-luxon-adapter",
-      "@angular/material-date-fns-adapter"
+      "@takkion/ng-material",
+      "@takkion/ng-cdk",
+      "@takkion/ng-material-moment-adapter",
+      "@takkion/ng-material-luxon-adapter",
+      "@takkion/ng-material-date-fns-adapter"
     ]
   },
   "sideEffects": false,

@@ -102,7 +102,7 @@ export class TakDatepickerInputBase {
     }
     // Update the displayed date when the locale changes.
     this._localeSubscription = _dateAdapter.localeChanges.subscribe(() => {
-      this._assignValueProgramtakically(this.value);
+      this._assignValueProgrammatically(this.value);
     });
   }
   /** The value of the input. */
@@ -110,7 +110,7 @@ export class TakDatepickerInputBase {
     return this._model ? this._getValueFromModel(this._model.selection) : this._pendingValue;
   }
   set value(value) {
-    this._assignValueProgramtakically(value);
+    this._assignValueProgrammatically(value);
   }
   /** Whether the datepicker-input is disabled. */
   get disabled() {
@@ -180,7 +180,7 @@ export class TakDatepickerInputBase {
   }
   // Implemented as part of ControlValueAccessor.
   writeValue(value) {
-    this._assignValueProgramtakically(value);
+    this._assignValueProgrammatically(value);
   }
   // Implemented as part of ControlValueAccessor.
   registerOnChange(fn) {
@@ -264,8 +264,8 @@ export class TakDatepickerInputBase {
   _parentDisabled() {
     return false;
   }
-  /** Programtakically assigns a value to the input. */
-  _assignValueProgramtakically(value) {
+  /** Programmatically assigns a value to the input. */
+  _assignValueProgrammatically(value) {
     value = this._dateAdapter.deserialize(value);
     this._lastValueValid = this._isValidValue(value);
     value = this._dateAdapter.getValidDateOrNull(value);

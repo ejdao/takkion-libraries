@@ -1220,8 +1220,8 @@ declare abstract class TakDatepickerInputBase<S, D = ExtractDateTypeFromSelectio
    * by inputs extending this one which can be placed inside of a group that can be disabled.
    */
   protected _parentDisabled(): boolean;
-  /** Programtakically assigns a value to the input. */
-  protected _assignValueProgramtakically(value: D | null): void;
+  /** Programmatically assigns a value to the input. */
+  protected _assignValueProgrammatically(value: D | null): void;
   /** Gets whether a value matches the current date filter. */
   _matchesFilter(value: D | null): boolean;
   static ɵfac: i0.ɵɵFactoryDeclaration<
@@ -1679,7 +1679,7 @@ declare abstract class TakDateRangeInputPartBase<D>
   protected _getDateFilter(): DateFilterFn<D>;
   protected _parentDisabled(): boolean;
   protected _shouldHandleChangeEvent({ source }: DateSelectionModelChange<DateRange<D>>): boolean;
-  protected _assignValueProgramtakically(value: D | null): void;
+  protected _assignValueProgrammatically(value: D | null): void;
   static ɵfac: i0.ɵɵFactoryDeclaration<
     TakDateRangeInputPartBase<any>,
     [

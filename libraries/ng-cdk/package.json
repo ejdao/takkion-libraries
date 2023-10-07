@@ -1,6 +1,6 @@
 {
-  "name": "@angular/cdk",
-  "version": "14.2.7",
+  "name": "@takkion/ng-cdk",
+  "version": "1.0.0",
   "description": "Angular Material Component Development Kit",
   "repository": {
     "type": "git",
@@ -222,12 +222,9 @@
     }
   },
   "peerDependencies": {
-    "@angular/core": "^14.0.0 || ^15.0.0",
-    "@angular/common": "^14.0.0 || ^15.0.0",
-    "rxjs": "^6.5.3 || ^7.4.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
+    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0",
+    "@angular/common": "^14.0.0 || ^15.0.0 || ^16.0.0",
+    "rxjs": "^6.5.3 || ^7.4.0 || ^7.8.0"
   },
   "optionalDependencies": {
     "parse5": "^5.0.0"

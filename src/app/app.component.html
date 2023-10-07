@@ -1,1 +1,282 @@
-<p matTooltip="Hey Joe">app works</p>
+<tak-sidenav-container class="tak-admin-layout-container" (backdropClick)="close()">
+  <tak-sidenav class="tak-sidenav" #sidenav (keydown.escape)="close()" disableClose>
+    <p><button tak-button (click)="close()">Toggle</button></p>
+  </tak-sidenav>
+
+  <tak-sidenav-content>
+    <tak-toolbar color="primary" class="tak-admin-layout-header">
+      <button tak-icon-button (click)="open()"><tak-icon>menu</tak-icon></button>
+
+      <button tak-icon-button (click)="toggleTheme()"><tak-icon>dark_mode</tak-icon></button>
+    </tak-toolbar>
+
+    <div class="tak-container">
+      <!------------------------------------------------------------------------------------------>
+      <!------------------------------------------------------------------------------------------>
+      <!------------------------------------------------------------------------------------------>
+      <tak-tab-group>
+        <tak-tab label="First">
+          <tak-form-field class="example-user-input" appearance="fill">
+            <tak-label>Tooltip position</tak-label>
+            <tak-select [formControl]="position">
+              <tak-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
+                {{ positionOption }}
+              </tak-option>
+            </tak-select>
+          </tak-form-field>
+
+          <button
+            tak-raised-button
+            takTooltip="Info about the action"
+            [takTooltipPosition]="position.value!"
+            aria-label="Button that displays a tooltip in various positions"
+          >
+            Action
+          </button>
+
+          <button tak-button [takMenuTriggerFor]="menu">Menu</button>
+          <tak-menu #menu="takMenu">
+            <button tak-menu-item (click)="a = 'Item 1'">Item 1</button>
+            <button tak-menu-item (click)="a = 'Item 2'">Item 2</button>
+          </tak-menu>
+
+          {{ a }}
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo ea dignissimos
+          pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam
+          accusantium nesciunt excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Dolores quo ea dignissimos pariatur nobis
+          consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt
+          excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores quo ea dignissimos pariatur nobis consequuntur rem tempora
+          quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt excepturi nisi et beatae,
+          distinctio voluptates! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+          quo ea dignissimos pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur
+          recusandae ipsam accusantium nesciunt excepturi nisi et beatae, distinctio voluptates!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo ea dignissimos
+          pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam
+          accusantium nesciunt excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Dolores quo ea dignissimos pariatur nobis
+          consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt
+          excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores quo ea dignissimos pariatur nobis consequuntur rem tempora
+          quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt excepturi nisi et beatae,
+          distinctio voluptates! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+          quo ea dignissimos pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur
+          recusandae ipsam accusantium nesciunt excepturi nisi et beatae, distinctio voluptates!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo ea dignissimos
+          pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam
+          accusantium nesciunt excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Dolores quo ea dignissimos pariatur nobis
+          consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt
+          excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores quo ea dignissimos pariatur nobis consequuntur rem tempora
+          quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt excepturi nisi et beatae,
+          distinctio voluptates! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+          quo ea dignissimos pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur
+          recusandae ipsam accusantium nesciunt excepturi nisi et beatae, distinctio voluptates!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo ea dignissimos
+          pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam
+          accusantium nesciunt excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Dolores quo ea dignissimos pariatur nobis
+          consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt
+          excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores quo ea dignissimos pariatur nobis consequuntur rem tempora
+          quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt excepturi nisi et beatae,
+          distinctio voluptates! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+          quo ea dignissimos pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur
+          recusandae ipsam accusantium nesciunt excepturi nisi et beatae, distinctio voluptates!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo ea dignissimos
+          pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam
+          accusantium nesciunt excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Dolores quo ea dignissimos pariatur nobis
+          consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt
+          excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores quo ea dignissimos pariatur nobis consequuntur rem tempora
+          quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt excepturi nisi et beatae,
+          distinctio voluptates! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+          quo ea dignissimos pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur
+          recusandae ipsam accusantium nesciunt excepturi nisi et beatae, distinctio voluptates!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo ea dignissimos
+          pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam
+          accusantium nesciunt excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Dolores quo ea dignissimos pariatur nobis
+          consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt
+          excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores quo ea dignissimos pariatur nobis consequuntur rem tempora
+          quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt excepturi nisi et beatae,
+          distinctio voluptates! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+          quo ea dignissimos pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur
+          recusandae ipsam accusantium nesciunt excepturi nisi et beatae, distinctio voluptates!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo ea dignissimos
+          pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam
+          accusantium nesciunt excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Dolores quo ea dignissimos pariatur nobis
+          consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt
+          excepturi nisi et beatae, distinctio voluptates! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores quo ea dignissimos pariatur nobis consequuntur rem tempora
+          quibusdam. Odio pariatur recusandae ipsam accusantium nesciunt excepturi nisi et beatae,
+          distinctio voluptates! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+          quo ea dignissimos pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur
+          recusandae ipsam accusantium nesciunt excepturi nisi et beatae, distinctio voluptates!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quo ea dignissimos
+          pariatur nobis consequuntur rem tempora quibusdam. Odio pariatur recusandae ipsam
+          accusantium nesciunt excepturi nisi et beatae, distinctio voluptates!
+        </tak-tab>
+        <tak-tab label="Toolbars">
+          <p>
+            <tak-toolbar>
+              <span>My Application</span>
+            </tak-toolbar>
+          </p>
+
+          <p>
+            <tak-toolbar>
+              <button
+                tak-icon-button
+                class="example-icon"
+                aria-label="Example icon-button with menu icon"
+              >
+                <tak-icon>menu</tak-icon>
+              </button>
+              <span>My App</span>
+              <span class="example-spacer"></span>
+              <button
+                tak-icon-button
+                class="example-icon favorite-icon"
+                aria-label="Example icon-button with heart icon"
+              >
+                <tak-icon>favorite</tak-icon>
+              </button>
+              <button
+                tak-icon-button
+                class="example-icon"
+                aria-label="Example icon-button with share icon"
+              >
+                <tak-icon>share</tak-icon>
+              </button>
+            </tak-toolbar>
+          </p>
+
+          <p>
+            <tak-toolbar color="primary">
+              <button
+                tak-icon-button
+                class="example-icon"
+                aria-label="Example icon-button with menu icon"
+              >
+                <tak-icon>menu</tak-icon>
+              </button>
+              <span>My App</span>
+              <span class="example-spacer"></span>
+              <button
+                tak-icon-button
+                class="example-icon favorite-icon"
+                aria-label="Example icon-button with heart icon"
+              >
+                <tak-icon>favorite</tak-icon>
+              </button>
+              <button
+                tak-icon-button
+                class="example-icon"
+                aria-label="Example icon-button with share icon"
+              >
+                <tak-icon>share</tak-icon>
+              </button>
+            </tak-toolbar>
+          </p>
+
+          <p>
+            <tak-toolbar color="primary">
+              <tak-toolbar-row>
+                <span>My App</span>
+                <span class="example-spacer"></span>
+                <button
+                  tak-icon-button
+                  class="example-icon"
+                  aria-label="Example icon-button with menu icon"
+                >
+                  <tak-icon>menu</tak-icon>
+                </button>
+              </tak-toolbar-row>
+
+              <tak-toolbar-row>
+                <span>Second Line</span>
+                <span class="example-spacer"></span>
+                <button
+                  tak-icon-button
+                  class="example-icon favorite-icon"
+                  aria-label="Example icon-button with heart icon"
+                >
+                  <tak-icon>favorite</tak-icon>
+                </button>
+                <button
+                  tak-icon-button
+                  class="example-icon"
+                  aria-label="Example icon-button with share icon"
+                >
+                  <tak-icon>share</tak-icon>
+                </button>
+              </tak-toolbar-row>
+            </tak-toolbar>
+          </p>
+        </tak-tab>
+        <tak-tab label="Tables">
+          <tak-form-field appearance="standard">
+            <tak-label>Filter</tak-label>
+            <input takInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input />
+          </tak-form-field>
+          <tak-paginator
+            class="top"
+            [pageSizeOptions]="[5, 10, 25, 100]"
+            aria-label="Select page of users"
+          ></tak-paginator>
+
+          <section class="tak-table-container tak-elevation-z8" tabindex="0">
+            <table tak-table [dataSource]="dataSource" takSort>
+              <ng-container takColumnDef="id">
+                <th tak-header-cell *takHeaderCellDef tak-sort-header>ID</th>
+                <td tak-cell *takCellDef="let row">{{ row.id }}</td>
+                <td tak-footer-cell *takFooterCellDef>Total</td>
+              </ng-container>
+
+              <ng-container takColumnDef="progress">
+                <th tak-header-cell *takHeaderCellDef tak-sort-header>Progress</th>
+                <td tak-cell *takCellDef="let row">{{ row.progress }}%</td>
+                <td tak-footer-cell *takFooterCellDef>100%</td>
+              </ng-container>
+
+              <ng-container takColumnDef="name">
+                <th tak-header-cell *takHeaderCellDef tak-sort-header>Name</th>
+                <td tak-cell *takCellDef="let row">{{ row.name }}</td>
+                <td tak-footer-cell *takFooterCellDef></td>
+              </ng-container>
+
+              <ng-container takColumnDef="fruit">
+                <th tak-header-cell *takHeaderCellDef tak-sort-header>Fruit</th>
+                <td tak-cell *takCellDef="let row">{{ row.fruit }}</td>
+                <td tak-footer-cell *takFooterCellDef></td>
+              </ng-container>
+
+              <tr tak-header-row *takHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr tak-footer-row *takFooterRowDef="displayedColumns; sticky: true"></tr>
+              <tr tak-row *takRowDef="let row; columns: displayedColumns"></tr>
+
+              <tr class="tak-row" *takNoDataRow>
+                <td class="tak-cell" colspan="4">
+                  No data takching the filter "{{ input.value }}"
+                </td>
+              </tr>
+            </table>
+          </section>
+        </tak-tab>
+      </tak-tab-group>
+
+      <!------------------------------------------------------------------------------------------>
+      <!------------------------------------------------------------------------------------------>
+      <!------------------------------------------------------------------------------------------>
+    </div>
+
+    <tak-toolbar color="primary" class="tak-admin-layout-footer"> footer works </tak-toolbar>
+  </tak-sidenav-content>
+</tak-sidenav-container>

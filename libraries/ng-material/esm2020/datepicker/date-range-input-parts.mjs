@@ -124,8 +124,8 @@ class TakDateRangeInputPartBase extends TakDatepickerInputBase {
   _shouldHandleChangeEvent({ source }) {
     return source !== this._rangeInput._startInput && source !== this._rangeInput._endInput;
   }
-  _assignValueProgramtakically(value) {
-    super._assignValueProgramtakically(value);
+  _assignValueProgrammatically(value) {
+    super._assignValueProgrammatically(value);
     const opposite =
       this === this._rangeInput._startInput
         ? this._rangeInput._endInput

@@ -56,19 +56,19 @@ export class NativeDateAdapter extends DateAdapter {
     return date.getDay();
   }
   getMonthNames(style) {
-    const dtf = new Intl.DateTimeFortak(this.locale, { month: style, timeZone: 'utc' });
+    const dtf = new Intl.DateTimeFormat(this.locale, { month: style, timeZone: 'utc' });
     return range(12, i => this._format(dtf, new Date(2017, i, 1)));
   }
   getDateNames() {
-    const dtf = new Intl.DateTimeFortak(this.locale, { day: 'numeric', timeZone: 'utc' });
+    const dtf = new Intl.DateTimeFormat(this.locale, { day: 'numeric', timeZone: 'utc' });
     return range(31, i => this._format(dtf, new Date(2017, 0, i + 1)));
   }
   getDayOfWeekNames(style) {
-    const dtf = new Intl.DateTimeFortak(this.locale, { weekday: style, timeZone: 'utc' });
+    const dtf = new Intl.DateTimeFormat(this.locale, { weekday: style, timeZone: 'utc' });
     return range(7, i => this._format(dtf, new Date(2017, 0, i + 1)));
   }
   getYearName(date) {
-    const dtf = new Intl.DateTimeFortak(this.locale, { year: 'numeric', timeZone: 'utc' });
+    const dtf = new Intl.DateTimeFormat(this.locale, { year: 'numeric', timeZone: 'utc' });
     return this._format(dtf, date);
   }
   getFirstDayOfWeek() {
@@ -116,7 +116,7 @@ export class NativeDateAdapter extends DateAdapter {
     if (!this.isValid(date)) {
       throw Error('NativeDateAdapter: Cannot format invalid date.');
     }
-    const dtf = new Intl.DateTimeFortak(this.locale, { ...displayFortak, timeZone: 'utc' });
+    const dtf = new Intl.DateTimeFormat(this.locale, { ...displayFortak, timeZone: 'utc' });
     return this._format(dtf, date);
   }
   addCalendarYears(date, years) {
@@ -204,7 +204,7 @@ export class NativeDateAdapter extends DateAdapter {
    * very frequently, and the current valid rule is not always valid in previous years though.
    * We work around this problem building a new Date object which has its internal UTC
    * representation with the local date and time.
-   * @param dtf Intl.DateTimeFortak object, containing the desired string format. It must have
+   * @param dtf Intl.DateTimeFormat object, containing the desired string format. It must have
    *    timeZone set to 'utc' to work fine.
    * @param date Date from which we want to get the string representation according to dtf
    * @returns A Date object with its UTC representation based on the passed in date info

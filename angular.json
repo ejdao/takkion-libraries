@@ -27,7 +27,11 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/@takkion/ng-material/prebuilt-themes/icons.css",
+              "node_modules/@takkion/ng-material/prebuilt-themes/default-and-dark.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -40,8 +44,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "4kb",
+                  "maximumError": "8kb"
                 }
               ],
               "outputHashing": "all"
@@ -87,5 +91,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f78a159f-d244-4ce1-85b3-530fb8ea126b"
   }
 }
