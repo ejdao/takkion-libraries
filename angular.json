@@ -6,8 +6,7 @@
     "@schematics/angular:component": {
       "style": "scss",
       "skipTests": true,
-      "viewEncapsulation": "None",
-      "changeDetection": "OnPush"
+      "viewEncapsulation": "None"
     }
   },
   "projects": {
