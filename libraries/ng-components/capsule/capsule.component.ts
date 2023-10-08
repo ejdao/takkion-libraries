@@ -1,11 +1,10 @@
-import { Component, ElementRef, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 export type TakPredefinedGrid = 'small' | 'medium' | 'big' | undefined;
 
 @Component({
   selector: 'tak-capsule',
   templateUrl: './capsule.component.html',
-  styleUrls: ['./capsule.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class TakCapsule {
@@ -14,10 +13,6 @@ export class TakCapsule {
 
   private _gridsOnSides = '';
   private _gridPrincipal = '';
-
-  constructor(private _href: ElementRef<HTMLElement>) {
-    _href.nativeElement.classList.add('tak-capsule');
-  }
 
   public ngOnInit(): void {
     const gridsGenerated = this._generateGridsFromArray(this.grids, this.predefinedGrid);
