@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { CustomPreloadingStrategy } from './app.preloading';
 import { MaterialModule } from './layouts/material/material.module';
+import { TakSnackBarModule } from '@takkion/ng-material/snack-bar';
+import { TakDialogModule } from '@takkion/ng-material/dialog';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +18,8 @@ import { MaterialModule } from './layouts/material/material.module';
       scrollPositionRestoration: 'enabled',
     }),
     AppRoutingModule,
+    TakSnackBarModule,
+    TakDialogModule,
     MaterialModule,
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
