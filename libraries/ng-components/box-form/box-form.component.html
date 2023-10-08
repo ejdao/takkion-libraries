@@ -1,0 +1,57 @@
+<tak-card>
+  <form [formGroup]="formGroup" #ngForm="ngForm">
+    <section class="tak-box-form__branding" *ngIf="hasBackButton || takTitle || takSubtitle">
+      <div style="margin-right: 5px; float: left" *ngIf="hasBackButton">
+        <button tak-icon-button type="button" (click)="onBack.emit()">
+          <tak-icon>arrow_back</tak-icon>
+        </button>
+      </div>
+
+      <span class="tak-box-form__branding__title">{{ takTitle }}</span>
+      <span class="tak-box-form__branding__subtitle" *ngIf="takSubtitle">{{ takSubtitle }}</span>
+    </section>
+
+    <tak-divider *ngIf="hasBackButton || takTitle || takSubtitle"></tak-divider>
+
+    <div
+      class="tak-box-form__branding"
+      *ngIf="!takTitle && !takSubtitle && !hasBackButton && hasBranding"
+    >
+      <ng-content select="[custom-branding]"></ng-content>
+    </div>
+
+    <tak-divider *ngIf="!takTitle && !takSubtitle && !hasBackButton && hasBranding"></tak-divider>
+
+    <div class="tak-box-form__scroll" attr.style="max-height: calc(100vh - {{ exedentInPx }}px)">
+      <div class="tak-box-form__content" #content>
+        <ng-content></ng-content>
+      </div>
+    </div>
+
+    <tak-divider [style.margin-bottom.px]="!isLoading ? 4 : 0"></tak-divider>
+    <tak-progress-bar mode="indeterminate" *ngIf="isLoading"></tak-progress-bar>
+  </form>
+
+  <tak-card-actions>
+    <button
+      tak-button
+      type="button"
+      color="accent"
+      class="tak-bolder"
+      [disabled]="formGroup.invalid || isLoading"
+      (click)="formGroup ? ngSubmit.emit(formGroup.value) : ngSubmit.emit()"
+    >
+      {{ orSubmitButton }}
+    </button>
+    <button
+      *ngIf="hasResetButton"
+      tak-button
+      type="button"
+      color="warn"
+      class="tak-bolder"
+      (click)="clickOnReset()"
+    >
+      {{ orResetButton }}
+    </button>
+  </tak-card-actions>
+</tak-card>

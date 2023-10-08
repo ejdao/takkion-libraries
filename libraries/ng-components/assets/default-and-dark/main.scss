@@ -1,0 +1,23 @@
+@import 'card';
+
+@media only screen and (min-width: calc($MD_RESOLUTION - 1px)) {
+  .tak-dialog-container,
+  .tak-select-panel,
+  .tak-autocomplete-panel,
+  .tak-box-form__scroll {
+    &::-webkit-scrollbar {
+      background-color: var(--tak-scrollbar-thumb-background-color-500);
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      color: var(--tak-hover-scrollbar-thumb-color-500);
+      box-shadow: inset 0 0 0 5px;
+      border-radius: 10px;
+    }
+  }
+  .tak-select-panel {
+    &::-webkit-scrollbar {
+      width: 6px !important;
+    }
+  }
+}

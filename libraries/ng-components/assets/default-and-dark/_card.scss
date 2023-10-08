@@ -1,0 +1,17 @@
+.tak-card {
+  font-family: 'bodycommerce' !important;
+}
+
+.tak-box-form {
+  &__branding {
+    &__title {
+      color: var(--tak-primary-500);
+    }
+    &__subtitle {
+      color: var(--tak-primary-100);
+    }
+  }
+  &__scroll {
+    color: var(--tak-dark-color-700);
+  }
+}
