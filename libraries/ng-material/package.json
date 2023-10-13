@@ -1,6 +1,6 @@
 {
   "name": "@takkion/ng-material",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Angular Material",
   "repository": {
     "type": "git",
@@ -333,13 +333,7 @@
     }
   },
   "peerDependencies": {
-    "@angular/animations": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
-    "@takkion/ng-cdk": "1.0.0",
-    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
-    "@angular/common": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
-    "@angular/forms": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
-    "@angular/platform-browser": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
-    "rxjs": "^6.5.3 || ^7.4.0 || ^7.8.0 || ^8.0.0"
+    "@takkion/ng-cdk": "1.0.2"
   },
   "schematics": "./schematics/collection.json",
   "sideEffects": false,

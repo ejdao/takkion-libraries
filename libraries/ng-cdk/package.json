@@ -1,6 +1,6 @@
 {
   "name": "@takkion/ng-cdk",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Angular Material Component Development Kit",
   "repository": {
     "type": "git",
@@ -220,11 +220,6 @@
       "node": "./fesm2015/tree.mjs",
       "default": "./fesm2020/tree.mjs"
     }
-  },
-  "peerDependencies": {
-    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
-    "@angular/common": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
-    "rxjs": "^6.5.3 || ^7.4.0 || ^7.8.0 || ^8.0.0"
   },
   "schematics": "./schematics/collection.json",
   "sideEffects": false,

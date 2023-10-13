@@ -29,8 +29,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
-              "node_modules/@takkion/ng-material/prebuilt-themes/icons.css",
-              "node_modules/@takkion/ng-material/prebuilt-themes/default-and-dark.scss"
+              "node_modules/@takkion/ng-material/prebuilt-themes/default-and-dark.css"
             ],
             "scripts": []
           },
