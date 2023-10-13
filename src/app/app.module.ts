@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { CustomPreloadingStrategy } from './app.preloading';
 import { MaterialModule } from './layouts/material/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { MaterialModule } from './layouts/material/material.module';
       scrollPositionRestoration: 'enabled',
     }),
     AppRoutingModule,
+    HttpClientModule,
     MaterialModule,
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
