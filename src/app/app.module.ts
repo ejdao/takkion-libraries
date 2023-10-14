@@ -21,6 +21,7 @@ import { AdminLayoutModule } from './layouts/custom/layout.module';
       scrollPositionRestoration: 'enabled',
     }),
     AppRoutingModule,
+    HttpClientModule,
     TakSnackBarModule,
     HttpClientModule,
     TakDialogModule,
