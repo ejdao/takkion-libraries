@@ -11,7 +11,10 @@ export interface TakSnavItems {
   objects?: TakSnavItems[];
   authorities?: string[];
   disableOnContexts?: string[];
-  showContent?: boolean;
+  showCollectionContent?: boolean;
+  forceDisabledContent?: boolean;
+  disabledOnMobile?: boolean;
+  disabledOnWeb?: boolean;
   isOpened?: boolean;
 }
 
@@ -21,6 +24,9 @@ export interface TakSnavDropdownLink {
   urlIsNotAutoCompleted?: boolean;
   authorities?: string[];
   disableOnContexts?: string[];
+  forceDisabledContent?: boolean;
+  disabledOnMobile?: boolean;
+  disabledOnWeb?: boolean;
 }
 
 export interface TakSnav {

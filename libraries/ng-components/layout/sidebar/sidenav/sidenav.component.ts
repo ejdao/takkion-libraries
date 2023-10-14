@@ -34,7 +34,7 @@ export class TakSidenav implements OnInit {
 
   public ngOnInit(): void {
     this.navigation.items.map(item => {
-      if (item.showContent === undefined) item.showContent = false;
+      if (item.showCollectionContent === undefined) item.showCollectionContent = false;
     });
   }
 
@@ -49,11 +49,11 @@ export class TakSidenav implements OnInit {
   public toggleModule(index: number) {
     if (!this.disableHiddenCollections)
       this.navigation.items.map((item, i) => {
-        if (index === i && item.showContent === false) item.showContent = true;
-        else if (index === i && item.showContent === true) {
-          item.showContent = false;
+        if (index === i && item.showCollectionContent === false) item.showCollectionContent = true;
+        else if (index === i && item.showCollectionContent === true) {
+          item.showCollectionContent = false;
         } else if (this.accordionInCollections) {
-          item.showContent = false;
+          item.showCollectionContent = false;
         }
       });
   }

@@ -6,7 +6,9 @@
         *ngIf="item.type === 'link'"
         class="tak__txt-dec-none"
         [class.tak__admin-layout__not-exist]="
-          [authorities, item.disableOnContexts!] | validateAccess: [context, item.authorities!]
+          ([authorities, item.disableOnContexts!] | validateAccess: [context, item.authorities!]) ||
+          item.forceDisabledContent ||
+          item.disabledOnWeb
         "
         routerLink="{{ item.url }}"
         routerLinkActive="tak__snav-link-active"
@@ -21,7 +23,9 @@
       <tak-layout-expansion-panel
         *ngIf="item.type === 'dropdown'"
         [class.tak__admin-layout__not-exist]="
-          [authorities, item.disableOnContexts!] | validateAccess: [context, item.authorities!]
+          ([authorities, item.disableOnContexts!] | validateAccess: [context, item.authorities!]) ||
+          item.forceDisabledContent ||
+          item.disabledOnWeb
         "
       >
         <tak-layout-expansion-panel-header class="tak__sidenav__accordion__header">
@@ -31,13 +35,16 @@
         <div
           *ngFor="let link of item.dropdownLinks"
           [class.tak__admin-layout__not-exist]="
-            [authorities, link.disableOnContexts!] | validateAccess: [context, link.authorities!]
+            ([authorities, link.disableOnContexts!]
+              | validateAccess: [context, link.authorities!]) ||
+            link.forceDisabledContent ||
+            link.disabledOnWeb
           "
         >
           <div takRipple class="tak__sidenav__accordion__link-container">
             <a
               class="tak__txt-dec-none"
-              routerLink="{{ link.urlIsNotAutoCompleted ? link.url : item.url }}/{{ link.url }}"
+              routerLink="{{ link.urlIsNotAutoCompleted ? link.url : item.url + '/' + link.url }}"
               routerLinkActive="tak__snav-link-active"
               (click)="onCloseSidebar()"
             >
@@ -54,7 +61,10 @@
       <section *ngIf="item.type === 'collection'">
         <div
           [class.tak__admin-layout__not-exist]="
-            [authorities, item.disableOnContexts!] | validateAccess: [context, item.authorities!]
+            ([authorities, item.disableOnContexts!]
+              | validateAccess: [context, item.authorities!]) ||
+            item.forceDisabledContent ||
+            item.disabledOnWeb
           "
         >
           <tak-layout-expansion-panel-header
@@ -64,7 +74,7 @@
             <span class="material-icons tak__min-wdh-32 icon-link is-module">
               {{
                 !disableHiddenCollections
-                  ? item.showContent
+                  ? item.showCollectionContent
                     ? 'visibility'
                     : 'visibility_off'
                   : 'radio_button_checked'
@@ -75,14 +85,20 @@
           <div
             class="tak-divider"
             [class.tak__admin-layout__not-exist]="
-              [authorities, item.disableOnContexts!] | validateAccess: [context, item.authorities!]
+              ([authorities, item.disableOnContexts!]
+                | validateAccess: [context, item.authorities!]) ||
+              item.forceDisabledContent ||
+              item.disabledOnWeb
             "
           ></div>
-          <div *ngFor="let el of item.objects" [hidden]="!item.showContent">
+          <div *ngFor="let el of item.objects" [hidden]="!item.showCollectionContent">
             <a
               class="tak__txt-dec-none"
               [class.tak__admin-layout__not-exist]="
-                [authorities, el.disableOnContexts!] | validateAccess: [context, el.authorities!]
+                ([authorities, el.disableOnContexts!]
+                  | validateAccess: [context, el.authorities!]) ||
+                el.forceDisabledContent ||
+                el.disabledOnWeb
               "
               routerLink="{{ !el.urlIsNotAutoCompleted ? item.url + '/' + el.url : el.url }}"
               routerLinkActive="tak__snav-link-active"
@@ -100,7 +116,10 @@
             <tak-layout-expansion-panel
               *ngIf="el.type === 'dropdown'"
               [class.tak__admin-layout__not-exist]="
-                [authorities, el.disableOnContexts!] | validateAccess: [context, el.authorities!]
+                ([authorities, el.disableOnContexts!]
+                  | validateAccess: [context, el.authorities!]) ||
+                el.forceDisabledContent ||
+                el.disabledOnWeb
               "
             >
               <tak-layout-expansion-panel-header class="tak__sidenav__accordion__header">
@@ -110,8 +129,10 @@
               <div
                 *ngFor="let link of el.dropdownLinks"
                 [class.tak__admin-layout__not-exist]="
-                  [authorities, link.disableOnContexts!]
-                    | validateAccess: [context, link.authorities!]
+                  ([authorities, link.disableOnContexts!]
+                    | validateAccess: [context, link.authorities!]) ||
+                  link.forceDisabledContent ||
+                  link.disabledOnWeb
                 "
               >
                 <div takRipple class="tak__sidenav__accordion__link-container">
