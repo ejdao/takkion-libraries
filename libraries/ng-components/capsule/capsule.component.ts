@@ -45,28 +45,28 @@ export class TakCapsule {
 
       if (r >= 1 && r <= 12) {
         if (counter === 0) {
-          onSides = `col-t-${(12 - r) / 2}`;
-          principal = `col-t-${r}`;
+          onSides = `col-bt-${(12 - r) / 2}`;
+          principal = `col-bt-${r}`;
         }
         if (counter === 1) {
-          onSides = `${onSides} col-t-sm-${(12 - r) / 2}`;
-          principal = `${principal} col-t-sm-${r}`;
+          onSides = `${onSides} col-bt-sm-${(12 - r) / 2}`;
+          principal = `${principal} col-bt-sm-${r}`;
         }
         if (counter === 2) {
-          onSides = `${onSides} col-t-md-${(12 - r) / 2}`;
-          principal = `${principal} col-t-md-${r}`;
+          onSides = `${onSides} col-bt-md-${(12 - r) / 2}`;
+          principal = `${principal} col-bt-md-${r}`;
         }
         if (counter === 3) {
-          onSides = `${onSides} col-t-lg-${(12 - r) / 2}`;
-          principal = `${principal} col-t-lg-${r}`;
+          onSides = `${onSides} col-bt-lg-${(12 - r) / 2}`;
+          principal = `${principal} col-bt-lg-${r}`;
         }
         if (counter === 4) {
-          onSides = `${onSides} col-t-xl-${(12 - r) / 2}`;
-          principal = `${principal} col-t-xl-${r}`;
+          onSides = `${onSides} col-bt-xl-${(12 - r) / 2}`;
+          principal = `${principal} col-bt-xl-${r}`;
         }
         if (counter === 5) {
-          onSides = `${onSides} col-t-xxl-${(12 - r) / 2}`;
-          principal = `${principal} col-t-xxl-${r}`;
+          onSides = `${onSides} col-bt-xxl-${(12 - r) / 2}`;
+          principal = `${principal} col-bt-xxl-${r}`;
         }
       }
       counter++;

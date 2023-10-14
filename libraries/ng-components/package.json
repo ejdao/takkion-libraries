@@ -1,9 +1,11 @@
 {
   "name": "@takkion/ng-components",
-  "version": "1.0.0",
+  "version": "1.0.0-rc",
   "peerDependencies": {
     "@angular/common": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
-    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
+    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
+    "@takkion/ng-cdk": "^1.0.0",
+    "@takkion/ng-material": "^1.0.1"
   },
   "sideEffects": false
 }
