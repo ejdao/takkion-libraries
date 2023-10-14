@@ -62,3 +62,10 @@
 .icon-decryted-password-button {
   width: 32px !important;
 }
+
+.tak-calendar-body-disabled
+  > .tak-calendar-body-cell-content:not(.tak-calendar-body-selected):not(
+    .tak-calendar-body-comparison-identical
+  ) {
+  background-color: rgba(0, 0, 0, 0.12);
+}
