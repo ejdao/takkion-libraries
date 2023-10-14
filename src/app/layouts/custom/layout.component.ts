@@ -32,10 +32,10 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
     this.navigation.items
       .filter(el => el.type === 'collection')
       .map(item => {
-        item.showContent = true;
+        item.showCollectionContent = false;
         this.accordionInCollections = false;
       });
-    this.disableHiddenCollections = true;
+    //this.disableHiddenCollections = true;
 
     this.resourcesLoaded = true;
 

@@ -39,6 +39,8 @@ export class HomeComponent implements OnInit {
   fieldsForm = new FieldsForm();
   private _unsubscribe$ = new Subject<void>();
   public suggestions = PRODUCTOS;
+  nowDate = new Date();
+  endDate = new Date(new Date().getTime() + 432000000);
 
   constructor(
     private _cd: ChangeDetectorRef,
@@ -57,7 +59,7 @@ export class HomeComponent implements OnInit {
     this.isLoading = true;
     // setTimeout(() => {
     this.isLoading = false;
-    console.log(this.fieldsForm.model);
+    console.log(this.fieldsForm.model.number);
     this._toast.notification('Submitted correctly!');
     this._cd.markForCheck();
     //}, 500);

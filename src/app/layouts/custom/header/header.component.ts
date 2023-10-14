@@ -22,11 +22,23 @@ export class HeaderComponent {
   }
 
   public onLogout(): void {
-    this._modal.confirm('¿Desea cerrar su sesión?', '¿Seguro?').subscribe(result => {
-      if (result) {
-        localStorage.clear();
-        location.reload();
-      }
-    });
+    this._modal
+      .confirm(
+        '¿Desea cerrar su sesión?',
+        '¿Seguro?' /* , {
+        dialogOptions: {
+          maxWidth: '100vw',
+          maxHeight: '100vh',
+          height: '100%',
+          width: '100%',
+        },
+      } */
+      )
+      .subscribe(result => {
+        if (result) {
+          localStorage.clear();
+          location.reload();
+        }
+      });
   }
 }

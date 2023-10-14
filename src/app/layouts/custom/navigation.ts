@@ -19,6 +19,7 @@ export const SIDE_NAV: TakSnav = {
         {
           name: 'Gestionar permisos por usuario',
           url: 'gestionar-permisos-usuario',
+          urlIsNotAutoCompleted: true,
         },
         {
           name: 'Gestionar permisos por rol',
@@ -30,19 +31,19 @@ export const SIDE_NAV: TakSnav = {
       type: 'collection',
       name: 'Hospitalización',
       url: 'hospitalizacion',
-      //showContent: false,
-      disableOnContexts: ['BOGOTA'],
-      authorities: ['1'],
+      showCollectionContent: false,
       objects: [
         {
           type: 'dropdown',
           name: 'Gestión Clinica',
           url: 'gestion-clinica',
           icon: 'manage_accounts',
+          urlIsNotAutoCompleted: true,
           dropdownLinks: [
             {
               name: 'Gestionar areas',
               url: 'gestionar-areas',
+              urlIsNotAutoCompleted: true,
             },
             {
               name: 'Administrar gestiones',
@@ -108,7 +109,7 @@ export const SIDE_NAV: TakSnav = {
     },
     {
       type: 'collection',
-      //showContent: false,
+      showCollectionContent: false,
       name: 'Historia Clinica',
       url: 'hcn',
       objects: [
@@ -157,7 +158,7 @@ export const SIDE_NAV: TakSnav = {
     },
     {
       type: 'collection',
-      //showContent: false,
+      showCollectionContent: false,
       name: 'Facturación',
       url: 'sln',
 
@@ -204,7 +205,7 @@ export const SIDE_NAV: TakSnav = {
         },
         {
           type: 'collection',
-          //showContent: false,
+          showCollectionContent: false,
           name: 'Hospitalización',
           url: 'hospitalizacion',
           objects: [
@@ -284,7 +285,7 @@ export const SIDE_NAV: TakSnav = {
     },
     {
       type: 'collection',
-      //showContent: false,
+      showCollectionContent: false,
       name: 'Inventario',
       url: 'inn',
       objects: [
@@ -351,7 +352,7 @@ export const SIDE_NAV: TakSnav = {
     },
     {
       type: 'collection',
-      //showContent: false,
+      showCollectionContent: false,
       name: 'Cartera',
       url: 'crn',
       objects: [

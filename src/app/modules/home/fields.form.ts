@@ -46,7 +46,7 @@ export class FieldsForm extends FormGroup {
       start: new FormControl(null),
       end: new FormControl(null),
       query: new FormControl(null),
-      autocomplete: new FormControl(null, [Validators.required]),
+      autocomplete: new FormControl(null),
     });
   }
 
