@@ -23,26 +23,25 @@ import { FloatLabelType, TakFormFieldAppearance } from '@takkion/ng-material/for
 import { ThemePalette } from '@takkion/ng-material/core';
 
 @Component({
-  selector: 'tak-general-field',
-  templateUrl: './general-field.component.html',
+  selector: 'tak-number-field',
+  templateUrl: './number-field.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TakGeneralField implements OnInit, OnDestroy, ControlValueAccessor {
+export class TakNumberField implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() autocomplete: 'off' | 'on' = 'off';
 
   @Input() appearance: TakFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;
-  @Input() type: TakGeneralFieldType = 'text';
   @Input() floatLabel: FloatLabelType = 'auto';
   @Input() color: ThemePalette = 'primary';
   @Input() actionIcon = 'search';
 
-  @Input() defaultFilterStyle = true;
   @Input() hasActionButton = false;
   @Input() hasClearButton = false;
   @Input() countCaracters = false;
   @Input() disabled = false;
   @Input() placeholder = '';
-
+  @Input() min!: number;
+  @Input() max!: number;
   @Input() maxLength!: number;
 
   @Output() onExecuteAction = new EventEmitter();
@@ -57,7 +56,6 @@ export class TakGeneralField implements OnInit, OnDestroy, ControlValueAccessor 
   public value = '';
 
   private _subscription!: Subscription;
-  private _decrypted = false;
 
   constructor(
     @Self() @Optional() private _control: NgControl,
@@ -77,20 +75,14 @@ export class TakGeneralField implements OnInit, OnDestroy, ControlValueAccessor 
   public ngOnInit(): void {
     const form: any = this.control;
 
-    if (this.type === 'filter' && this.defaultFilterStyle) {
-      this.control.removeValidators(Validators.required);
-      this.appearance = 'legacy';
-      this.floatLabel = 'never';
-      if (!this.placeholder) this.placeholder = 'Buscar';
-      this.hasClearButton = true;
-      this._cd.markForCheck();
-    }
-
     if (form?._rawValidators) {
       form._rawValidators.forEach((r: any) => {
         if (r.name.includes('required')) this.required = true;
       });
     }
+
+    if (this.min) this.control.addValidators(Validators.min(this.min));
+    if (this.max) this.control.addValidators(Validators.max(this.max));
   }
 
   public writeValue(value: string): void {
@@ -110,17 +102,10 @@ export class TakGeneralField implements OnInit, OnDestroy, ControlValueAccessor 
 
   public onChange(event: any): void {
     this.value = event.target.value;
-    this.onChangeFn(event.target.value);
-    if (!this.control.value && this.type === 'password') this._decrypted = false;
+    this.onChangeFn(
+      ['', null, undefined].indexOf(event.target.value) < 0 ? +event.target.value : null
+    );
     if (this.control.touched) this._onValidate();
-    if (this.type === 'filter') this.onKeyUp.emit(this.control.value);
-  }
-
-  public showPassword(): void {
-    if (this.type === 'password') {
-      if (this._decrypted) this._decrypted = false;
-      else this._decrypted = true;
-    }
   }
 
   public onFocusOut(): void {
@@ -150,9 +135,5 @@ export class TakGeneralField implements OnInit, OnDestroy, ControlValueAccessor 
 
   get directive(): FormGroupDirective {
     return this._formGroupDirective as FormGroupDirective;
-  }
-
-  get decrypted() {
-    return this._decrypted;
   }
 }

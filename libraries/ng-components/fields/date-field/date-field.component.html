@@ -10,6 +10,8 @@
     </tak-label>
     <input
       takInput
+      [min]="minDate"
+      [max]="maxDate"
       [autocomplete]="autocomplete"
       [takDatepicker]="picker"
       [value]="value"
@@ -40,6 +42,8 @@
     <tak-form-field [color]="color">
       <input
         takInput
+        [min]="minDate"
+        [max]="maxDate"
         autocomplete="off"
         [takDatepicker]="picker"
         [value]="value"

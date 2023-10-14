@@ -21,6 +21,7 @@ import { TakMoneyField } from './money-field/money-field.component';
 import { TakGeneralField } from './general-field/general-field.component';
 import { TakTextareaField } from './textarea-field/textarea-field.component';
 import { TakProgressSpinnerModule } from '@takkion/ng-material/progress-spinner';
+import { TakNumberField } from './number-field/number-field.component';
 
 const components = [
   TakSelectField,
@@ -30,6 +31,7 @@ const components = [
   TakGeneralField,
   TakMoneyField,
   TakTextareaField,
+  TakNumberField,
 ];
 
 @NgModule({

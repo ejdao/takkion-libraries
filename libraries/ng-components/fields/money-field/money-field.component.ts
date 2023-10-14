@@ -42,8 +42,7 @@ export class TakMoneyField implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() countCaracters = false;
   @Input() disabled = false;
   @Input() placeholder = '';
-
-  @Input() maxLength = 99999;
+  @Input() maxLength!: number;
 
   @Output() onExecuteAction = new EventEmitter();
   @Output() onKeyUp = new EventEmitter();

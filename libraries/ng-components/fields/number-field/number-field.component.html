@@ -10,8 +10,10 @@
       }}<span class="tak-field__danger-x" *ngIf="required">*</span>
     </tak-label>
     <input
-      class="tak-bolder"
+      type="number"
       takInput
+      [min]="min"
+      [max]="max"
       [autocomplete]="autocomplete"
       [value]="value"
       (keyup)="onChange($event)"

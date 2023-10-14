@@ -31,6 +31,9 @@ export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlVa
   @Input() disabled = false;
   @Input() notInput = false;
 
+  @Input() minDate!: Date | string;
+  @Input() maxDate!: Date | string;
+
   public onChangeFn = (_: any) => {};
   public onTouchFn = (_: any) => {};
 

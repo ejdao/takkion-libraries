@@ -10,9 +10,7 @@
       }}<span class="tak-field__danger-x" *ngIf="required">*</span>
     </tak-label>
     <input
-      [type]="
-        type === 'number' ? 'number' : type === 'password' && !decrypted ? 'password' : 'text'
-      "
+      [type]="type === 'password' && !decrypted ? 'password' : 'text'"
       takInput
       [autocomplete]="autocomplete"
       [value]="value"
@@ -21,7 +19,6 @@
       [disabled]="disabled"
       [attr.maxLength]="maxLength"
       (focusout)="onFocusOut()"
-      (keydown)="onKeyDown($event)"
     />
     <button
       tak-icon-button

@@ -36,6 +36,7 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
   @Input() hasClearButton = true;
   @Input() suggestions: any[] = [];
   @Input() disabled = false;
+  @Input() maxLength!: number;
 
   @Input() isLoading = false;
   @Input() isRemoteSearch = false;

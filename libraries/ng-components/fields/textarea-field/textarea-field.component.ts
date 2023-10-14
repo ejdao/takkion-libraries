@@ -11,15 +11,9 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormGroupDirective,
-  FormControl,
-  NgControl,
-  Validators,
-} from '@angular/forms';
+import { ControlValueAccessor, FormGroupDirective, FormControl, NgControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { TAK_DEFAULT_APPEARANCE_FORM, TakGeneralFieldType } from '../fields.common';
+import { TAK_DEFAULT_APPEARANCE_FORM } from '../fields.common';
 import { FloatLabelType, TakFormFieldAppearance } from '@takkion/ng-material/form-field';
 import { ThemePalette } from '@takkion/ng-material/core';
 
@@ -43,8 +37,7 @@ export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor
   @Input() isTextArea = false;
   @Input() disabled = false;
   @Input() placeholder = '';
-
-  @Input() maxLength = 99999;
+  @Input() maxLength!: number;
 
   @Output() onExecuteAction = new EventEmitter();
   @Output() onKeyUp = new EventEmitter();
