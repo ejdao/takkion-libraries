@@ -30,6 +30,7 @@ export class TakBoxForm {
   @Input() takTitle = '';
   @Input() takSubtitle = '';
 
+  @Input() showActionButtons = true;
   @Input() hasResetButton = false;
   @Input() hasBackButton = false;
   @Input() hasBranding = true;
@@ -56,6 +57,8 @@ export class TakBoxForm {
     this._formGroupSubs = this.formGroup.statusChanges.subscribe(() => {
       this._cd.markForCheck();
     });
+
+    if (!this.showActionButtons) this.exedentInPx -= 58;
 
     this._submitButton = this.submitButton
       ? this.submitButton

@@ -1,4 +1,4 @@
-<tak-card>
+<tak-card [class.actions-hidden]="!showActionButtons">
   <form [formGroup]="formGroup" #ngForm="ngForm">
     <section class="tak-box-form__branding" *ngIf="hasBackButton || takTitle || takSubtitle">
       <div style="margin-right: 5px; float: left" *ngIf="hasBackButton">
@@ -13,12 +13,7 @@
 
     <tak-divider *ngIf="hasBackButton || takTitle || takSubtitle"></tak-divider>
 
-    <div
-      class="tak-box-form__branding"
-      *ngIf="!takTitle && !takSubtitle && !hasBackButton && hasBranding"
-    >
-      <ng-content select="[custom-branding]"></ng-content>
-    </div>
+    <ng-content select="[tak-custom-branding]"></ng-content>
 
     <tak-divider *ngIf="!takTitle && !takSubtitle && !hasBackButton && hasBranding"></tak-divider>
 
@@ -32,7 +27,7 @@
     <tak-progress-bar mode="indeterminate" *ngIf="isLoading"></tak-progress-bar>
   </form>
 
-  <tak-card-actions>
+  <tak-card-actions *ngIf="showActionButtons">
     <button
       tak-button
       type="button"
