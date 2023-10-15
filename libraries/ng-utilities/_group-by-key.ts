@@ -1,8 +1,6 @@
-export type TakCanBeKey = string | number | Date;
-
 export interface TakGrouped<T> {
-  key: TakCanBeKey;
-  name: TakCanBeKey;
+  key: any;
+  name: any;
   rows: T[];
 }
 
