@@ -36,7 +36,7 @@ export class TakBoxForm {
   @Input() hasBranding = true;
   @Input() isLoading = false;
 
-  @Input() exedentInPx = 295;
+  @Input() exedentInPx = 265;
 
   @Input() submitButton = '';
   @Input() resetButton = '';
@@ -66,6 +66,10 @@ export class TakBoxForm {
     this._resetButton = this.resetButton
       ? this.resetButton
       : TAK_BOX_FORM_CONFIG.value?.resetButton || 'Reset';
+
+    if (TAK_BOX_FORM_CONFIG.value?.hasBreadcrumbs) {
+      this.exedentInPx = this.exedentInPx + 45;
+    }
   }
 
   public clickOnReset() {
