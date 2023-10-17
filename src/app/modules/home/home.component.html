@@ -11,12 +11,6 @@
   >
     <!-- <section tak-custom-branding>Hey Joe</section> -->
 
-    <tak-form-field appearance="standard">
-      <tak-label>Outline form field</tak-label>
-      <input takInput placeholder="Placeholder" formControlName="text" />
-      <tak-error>sadsdasda</tak-error>
-    </tak-form-field>
-
     <button tak-button (click)="openToast('notification', 'notification')" type="button">
       NOTIFICATION
     </button>
@@ -25,6 +19,14 @@
 
     <button tak-button (click)="openModal()" type="button">MODAL</button>
 
+    <button
+      tak-button
+      (click)="enable ? (enable = false) : (enable = true); toggleEnable()"
+      type="button"
+    >
+      toggle Enable
+    </button>
+
     <div class="container">
       <div class="row">
         <div class="col-50">
@@ -32,6 +34,7 @@
             [formControl]="fieldsForm.text"
             [countCaracters]="true"
             [maxLength]="100"
+            [hasClearButton]="true"
           >
             Text field
           </tak-general-field>
@@ -50,20 +53,20 @@
           <tak-general-field type="filter" [formControl]="fieldsForm.filter"></tak-general-field>
         </div>
         <div class="col-100">
-          <tak-textarea-field
+          <tak-textarea
             [formControl]="fieldsForm.textarea"
             [countCaracters]="true"
-            [maxLength]="100"
+            [maxLength]="300"
           >
             Textarea
-          </tak-textarea-field>
+          </tak-textarea>
         </div>
 
         <div class="col-50">
           <tak-select-field
             [formControl]="fieldsForm.select"
             [suggestions]="suggestions"
-            option="nombreCompleto"
+            option="descripcion"
             (selectAction)="onSelect($event)"
           >
             Producto
@@ -119,10 +122,9 @@
           <tak-autocomplete-field
             #autocomplete
             formControlName="autocomplete"
-            [isRemoteSearch]="true"
+            [isRemoteSearch]="false"
             [isLoading]="isLoading"
             option="descripcion"
-            extraInfo="codigo"
             (onSearch)="onChange($event)"
           >
             Tipo de Gestión

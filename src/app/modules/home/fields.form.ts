@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class Producto {
   constructor(
     private _id: number,
-    private _nombreCompleto: string,
+    private _descripcion: string,
     private _precio: number
   ) {}
 
@@ -11,8 +11,8 @@ export class Producto {
     return this._id;
   }
 
-  get nombreCompleto(): string {
-    return this._nombreCompleto;
+  get descripcion(): string {
+    return this._descripcion;
   }
 
   get precio(): number {
@@ -36,17 +36,17 @@ export const PRODUCTOS = [
 export class FieldsForm extends FormGroup {
   constructor() {
     super({
-      text: new FormControl(null),
-      textarea: new FormControl(null),
-      filter: new FormControl(null),
-      number: new FormControl(null),
-      select: new FormControl(null),
-      money: new FormControl(null),
-      date: new FormControl(null),
-      start: new FormControl(null),
-      end: new FormControl(null),
-      query: new FormControl(null),
-      autocomplete: new FormControl(null),
+      text: new FormControl({ value: null, disabled: false }),
+      textarea: new FormControl({ value: null, disabled: false }),
+      filter: new FormControl({ value: null, disabled: false }),
+      number: new FormControl({ value: null, disabled: false }),
+      select: new FormControl({ value: null, disabled: false }),
+      money: new FormControl({ value: null, disabled: false }),
+      date: new FormControl({ value: null, disabled: false }),
+      start: new FormControl({ value: null, disabled: false }),
+      end: new FormControl({ value: null, disabled: false }),
+      query: new FormControl({ value: null, disabled: false }),
+      autocomplete: new FormControl({ value: '', disabled: false }),
     });
   }
 
@@ -86,6 +86,32 @@ export class FieldsForm extends FormGroup {
 
   public get autocomplete(): FormControl {
     return this.get('autocomplete') as FormControl;
+  }
+
+  public enableAll() {
+    this.text.enable();
+    this.textarea.enable();
+    this.filter.enable();
+    this.number.enable();
+    this.select.enable();
+    this.money.enable();
+    this.date.enable();
+    this.start.enable();
+    this.end.enable();
+    this.autocomplete.enable();
+  }
+
+  public disableAll() {
+    this.text.disable();
+    this.textarea.disable();
+    this.filter.disable();
+    this.number.disable();
+    this.select.disable();
+    this.money.disable();
+    this.date.disable();
+    this.start.disable();
+    this.end.disable();
+    this.autocomplete.disable();
   }
 
   public get model() {

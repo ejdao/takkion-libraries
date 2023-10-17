@@ -42,6 +42,8 @@ export class HomeComponent implements OnInit {
   nowDate = new Date();
   endDate = new Date(new Date().getTime() + 432000000);
 
+  enable = true;
+
   constructor(
     private _cd: ChangeDetectorRef,
     private _toast: TakToast,
@@ -49,7 +51,15 @@ export class HomeComponent implements OnInit {
     private _http: HttpClient
   ) {}
 
+  toggleEnable() {
+    if (this.enable) this.fieldsForm.enableAll();
+    else this.fieldsForm.disableAll();
+  }
+
   ngOnInit(): void {
+    setTimeout(() => {
+      this.autocomplete.onUpdateSuggestions(PRODUCTOS);
+    }, 100);
     /*   setTimeout(() => {
       this.autocomplete.updateSuggestions([]);
     }, 3000); */
@@ -59,7 +69,7 @@ export class HomeComponent implements OnInit {
     this.isLoading = true;
     // setTimeout(() => {
     this.isLoading = false;
-    console.log(this.fieldsForm.model.number);
+    console.log(this.fieldsForm.model);
     this._toast.notification('Submitted correctly!');
     this._cd.markForCheck();
     //}, 500);
@@ -92,15 +102,21 @@ export class HomeComponent implements OnInit {
   }
 
   async onChange(el: any) {
-    this.isLoading = true;
-    const values = await this.execute(el);
+    /*  this.isLoading = true;
+    try {
+      const values = await this.execute(el);
 
-    values.map(el => {
-      el.nombreCompleto = `${el.codigo} - ${el.descripcion}`;
-    });
+      values.map(el => {
+        el.nombreCompleto = `${el.codigo} - ${el.descripcion}`;
+      });
+
+      this.autocomplete.onUpdateSuggestions(values);
+    } catch (error: any) {
+      this._toast.danger(error.error.message);
+    }
 
     this.isLoading = false;
-    this.autocomplete.onUpdateSuggestions(values);
+    this._cd.markForCheck(); */
   }
 
   public execute(pattern: string): Promise<ProductoResponse[]> {
