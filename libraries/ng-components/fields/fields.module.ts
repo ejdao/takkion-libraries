@@ -19,9 +19,9 @@ import { TakErrorModule } from './error/error.module';
 import { TakDateRangeField } from './date-range-field/date-range-field.component';
 import { TakMoneyField } from './money-field/money-field.component';
 import { TakGeneralField } from './general-field/general-field.component';
-import { TakTextareaField } from './textarea-field/textarea-field.component';
 import { TakProgressSpinnerModule } from '@takkion/ng-material/progress-spinner';
 import { TakNumberField } from './number-field/number-field.component';
+import { TakTextarea } from './text-area/textarea.component';
 
 const components = [
   TakSelectField,
@@ -30,7 +30,7 @@ const components = [
   TakDateRangeField,
   TakGeneralField,
   TakMoneyField,
-  TakTextareaField,
+  TakTextarea,
   TakNumberField,
 ];
 

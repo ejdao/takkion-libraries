@@ -13,9 +13,11 @@
       takInput
       [autocomplete]="autocomplete"
       [value]="value"
+      [style.height.px]="heightInPx"
       (keyup)="onChange($event)"
       (change)="onChange($event)"
       [disabled]="disabled"
+      [attr.minLength]="minLength"
       [attr.maxLength]="maxLength"
       (focusout)="onFocusOut()"
     ></textarea>
@@ -23,7 +25,7 @@
       tak-icon-button
       type="button"
       takSuffix
-      *ngIf="control.value && hasClearButton"
+      *ngIf="control.value && hasClearButton && !disabled"
       (click)="onClearControl()"
     >
       <tak-icon class="tak-suffix-icon-button">close</tak-icon>

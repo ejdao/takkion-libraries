@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   ChangeDetectorRef,
   OnDestroy,
   Component,
@@ -20,7 +19,6 @@ import { TakAutocompleteFieldType, TAK_DEFAULT_APPEARANCE_FORM } from '../fields
 @Component({
   selector: 'tak-select-field',
   templateUrl: './select-field.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakSelectField implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() autocomplete: TakAutocompleteFieldType = 'off';
@@ -32,7 +30,6 @@ export class TakSelectField implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() option = 'option';
 
   @Input() hasDefaultValue = false;
-  @Input() disabled = false;
 
   @Output() onSelect = new EventEmitter<any>();
 
@@ -44,11 +41,11 @@ export class TakSelectField implements OnInit, OnDestroy, ControlValueAccessor {
   private _unsubscribe$ = new Subject<void>();
 
   constructor(
-    @Self() @Optional() private _control: NgControl,
+    @Self() @Optional() private _ngControl: NgControl,
     @Optional() private _formGroupDirective: FormGroupDirective,
     private _cd: ChangeDetectorRef
   ) {
-    if (_control) this._control.valueAccessor = this;
+    if (_ngControl) this._ngControl.valueAccessor = this;
     if (_formGroupDirective) {
       _formGroupDirective.ngSubmit.pipe(takeUntil(this._unsubscribe$)).subscribe(() => {
         this.isSubmitted = true;
@@ -59,7 +56,7 @@ export class TakSelectField implements OnInit, OnDestroy, ControlValueAccessor {
 
   public ngOnInit(): void {
     if (this.suggestions.length && this.hasDefaultValue) {
-      this._control.control?.setValue(this.suggestions[0]);
+      this._ngControl.control?.setValue(this.suggestions[0]);
     }
   }
 
@@ -105,10 +102,14 @@ export class TakSelectField implements OnInit, OnDestroy, ControlValueAccessor {
   }
 
   get control(): FormControl {
-    return this._control?.control as FormControl;
+    return this._ngControl?.control as FormControl;
   }
 
   get directive(): FormGroupDirective {
     return this._formGroupDirective as FormGroupDirective;
+  }
+
+  get disabled() {
+    return this._ngControl.disabled;
   }
 }

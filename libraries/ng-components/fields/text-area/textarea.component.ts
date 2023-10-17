@@ -1,6 +1,4 @@
-import { NgIf } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   OnDestroy,
@@ -18,11 +16,10 @@ import { FloatLabelType, TakFormFieldAppearance } from '@takkion/ng-material/for
 import { ThemePalette } from '@takkion/ng-material/core';
 
 @Component({
-  selector: 'tak-textarea-field',
-  templateUrl: './textarea-field.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'tak-textarea',
+  templateUrl: './textarea.component.html',
 })
-export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor {
+export class TakTextarea implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() autocomplete: 'off' | 'on' = 'off';
 
   @Input() appearance: TakFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;
@@ -35,8 +32,10 @@ export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor
   @Input() hasClearButton = false;
   @Input() countCaracters = false;
   @Input() isTextArea = false;
-  @Input() disabled = false;
   @Input() placeholder = '';
+  @Input() heightInPx = 60;
+
+  @Input() minLength!: number;
   @Input() maxLength!: number;
 
   @Output() onExecuteAction = new EventEmitter();
@@ -45,24 +44,24 @@ export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor
   public onChangeFn = (_: any) => {};
   public onTouchFn = (_: any) => {};
 
-  public isSubmitted = false;
-  public isInvalid = false;
-  public required = false;
-  public value = '';
+  public _isSubmitted = false;
+  public _isInvalid = false;
+  public _required = false;
+  public _value = '';
 
   private _subscription!: Subscription;
   private _decrypted = false;
 
   constructor(
-    @Self() @Optional() private _control: NgControl,
+    @Self() @Optional() private _ngControl: NgControl,
     @Optional() private _formGroupDirective: FormGroupDirective,
     private _cd: ChangeDetectorRef
   ) {
-    if (_control) this._control.valueAccessor = this;
+    if (_ngControl) this._ngControl.valueAccessor = this;
 
     if (_formGroupDirective) {
       this._subscription = _formGroupDirective.ngSubmit.subscribe(() => {
-        this.isSubmitted = true;
+        this._isSubmitted = true;
         _cd.markForCheck();
       });
     }
@@ -73,17 +72,17 @@ export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor
 
     if (form?._rawValidators) {
       form._rawValidators.forEach((r: any) => {
-        if (r.name.includes('required')) this.required = true;
+        if (r.name.includes('required')) this._required = true;
       });
     }
   }
 
   public writeValue(value: string): void {
     if (value === null) {
-      this.isInvalid = false;
+      this._isInvalid = false;
     }
-    this.value = value;
-    this.isSubmitted = false;
+    this._value = value;
+    this._isSubmitted = false;
     this._cd.markForCheck();
   }
 
@@ -96,7 +95,7 @@ export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor
   }
 
   public onChange(event: any): void {
-    this.value = event.target.value;
+    this._value = event.target.value;
     this.onChangeFn(event.target.value);
     if (this.control.touched) this._onValidate();
   }
@@ -107,8 +106,8 @@ export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor
   }
 
   private _onValidate(): void {
-    if (this.control.invalid) this.isInvalid = true;
-    else this.isInvalid = false;
+    if (this.control.invalid) this._isInvalid = true;
+    else this._isInvalid = false;
   }
 
   public onClearControl(): void {
@@ -118,7 +117,7 @@ export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor
       this.control.setValue('');
     }
 
-    this.value = '';
+    this._value = '';
   }
 
   public ngOnDestroy(): void {
@@ -126,7 +125,7 @@ export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor
   }
 
   get control(): FormControl {
-    return this._control.control as FormControl;
+    return this._ngControl.control as FormControl;
   }
 
   get directive(): FormGroupDirective {
@@ -135,5 +134,25 @@ export class TakTextareaField implements OnInit, OnDestroy, ControlValueAccessor
 
   get decrypted() {
     return this._decrypted;
+  }
+
+  get disabled() {
+    return this._ngControl.disabled;
+  }
+
+  get isSubmitted() {
+    return this._isSubmitted;
+  }
+
+  get isInvalid() {
+    return this._isInvalid;
+  }
+
+  get required() {
+    return this._required;
+  }
+
+  get value() {
+    return this._value;
   }
 }

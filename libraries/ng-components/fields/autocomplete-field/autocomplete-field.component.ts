@@ -23,7 +23,6 @@ import {
 @Component({
   selector: 'tak-autocomplete-field',
   templateUrl: './autocomplete-field.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAccessor {
   private _unsubscribe$ = new Subject<void>();
@@ -35,8 +34,6 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
   @Input() color: ThemePalette = 'primary';
   @Input() hasClearButton = true;
   @Input() suggestions: any[] = [];
-  @Input() disabled = false;
-  @Input() maxLength!: number;
 
   @Input() isLoading = false;
   @Input() isRemoteSearch = false;
@@ -48,26 +45,23 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
   public onChangeFn = (_: any) => {};
   public onTouchFn = (_: any) => {};
 
-  public isSubmitted = false;
-  public isInvalid = false;
-  public required = false;
-  public value = '';
-
-  public filteredOptions!: Observable<any[]>;
-
-  public notSuggestions = false;
-
+  private _isSubmitted = false;
+  private _isInvalid = false;
+  private _required = false;
+  private _value = '';
+  private _filteredOptions!: Observable<any[]>;
+  private _notSuggestions = false;
   private _lastValue = '';
 
   constructor(
-    @Self() @Optional() private _control: NgControl,
+    @Self() @Optional() private _ngControl: NgControl,
     @Optional() private _formGroupDirective: FormGroupDirective,
     private _cd: ChangeDetectorRef
   ) {
-    if (_control) this._control.valueAccessor = this;
+    if (_ngControl) this._ngControl.valueAccessor = this;
     if (_formGroupDirective) {
       _formGroupDirective.ngSubmit.pipe(takeUntil(this._unsubscribe$)).subscribe(() => {
-        this.isSubmitted = true;
+        this._isSubmitted = true;
         _cd.markForCheck();
       });
     }
@@ -78,11 +72,11 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
 
     if (form?._rawValidators) {
       form._rawValidators.map((r: any) => {
-        if (r.name.includes('required')) this.required = true;
+        if (r.name.includes('required')) this._required = true;
       });
     }
 
-    this.filteredOptions = this.control.valueChanges.pipe(
+    this._filteredOptions = this.control.valueChanges.pipe(
       takeUntil(this._unsubscribe$),
       map(() => this._filter())
     );
@@ -91,25 +85,27 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
       this.control.valueChanges
         .pipe(takeUntil(this._unsubscribe$), debounceTime(this.debounceTimeForRemoteSearch))
         .subscribe(() => {
-          if (this._lastValue !== this.value && this.value && !this.control.value) {
-            this.onSearch.emit(this.value);
-            this._setValue(this.value);
+          if (this._lastValue !== `${this._value}` && `${this._value}` && !this.control.value) {
+            this.onSearch.emit(`${this._value}`);
+            this._setValue(`${this._value}`);
           }
 
-          this._lastValue = this.value;
+          this._lastValue = `${this._value}`;
         });
     }
   }
 
   private _filter(): any[] {
-    if (this.value) {
+    if (`${this._value}`) {
       const value =
-        typeof this.value === 'string'
-          ? this.value.toLowerCase()
-          : this.control.value[this.option].toLowerCase();
-      const option = this.suggestions.filter(res => res[this.option].toLowerCase().includes(value));
-      if (!option.length) this.notSuggestions = true;
-      else this.notSuggestions = false;
+        typeof `${this._value}` === 'string'
+          ? `${this._value}`.toLowerCase()
+          : `${this.control.value[this.option]}`.toLowerCase();
+      const option = this.suggestions.filter(res =>
+        `${res[this.option]}`.toLowerCase().includes(value)
+      );
+      if (!option.length) this._notSuggestions = true;
+      else this._notSuggestions = false;
       return option;
     } else {
       return [];
@@ -117,9 +113,9 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
   }
 
   public writeValue(value: string): void {
-    if (value === null) this.isInvalid = false;
-    this.value = value;
-    this.isSubmitted = false;
+    if (value === null) this._isInvalid = false;
+    this._value = value;
+    this._isSubmitted = false;
     this._cd.markForCheck();
   }
 
@@ -132,14 +128,14 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
   }
 
   public onChange(event: any): void {
-    if (event.target.value !== this.value) {
-      this.value = event.target.value;
+    if (event.target.value !== `${this._value}`) {
+      this._value = event.target.value;
 
-      if (!this.isRemoteSearch) this._setValue(this.value);
+      if (!this.isRemoteSearch) this._setValue(`${this._value}`);
 
       this.onChangeFn(
         this.suggestions.filter(
-          sug => sug[this.option].toLowerCase() === this.value.toLowerCase()
+          sug => `${sug[this.option]}`.toLowerCase() === `${`${this._value}`}`.toLowerCase()
         )[0] || null
       );
 
@@ -154,8 +150,7 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
       const suggestionsFiltered = value
         ? this.suggestions.filter(
             el =>
-              el[this.option].toLocaleLowerCase().trim() ===
-              (value as string).toLocaleLowerCase().trim()
+              `${el[this.option]}`.toLowerCase().trim() === (value as string).toLowerCase().trim()
           )
         : [];
 
@@ -173,18 +168,23 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
   }
 
   public emit(el: TakOptionSelectionChange) {
-    if (el && el.isUserInput) this.isInvalid = false;
+    if (el && el.isUserInput) this._isInvalid = false;
   }
 
   public emitWithClick(suggestionOption: any) {
     this.control.setValue(suggestionOption);
-    this.value = suggestionOption[this.option];
-    this.isInvalid = false;
+    this._value = `${suggestionOption[this.option]}`;
+    this._isInvalid = false;
   }
 
   public onFocusout(): void {
     this.onTouchFn(true);
     this._onValidate();
+  }
+
+  public setValue(value: any) {
+    this.control.setValue(value);
+    this._value = `${value[this.option]}`;
   }
 
   public onUpdateSuggestions(suggestions: any[]) {
@@ -193,35 +193,26 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
 
     this.onChangeFn(
       this.suggestions.filter(
-        sug => sug[this.option].toLowerCase() === this.value.toLowerCase()
+        sug => `${sug[this.option]}`.toLowerCase() === `${this._value}`.toLowerCase()
       )[0] || null
     );
-
-    console.log(this.control.value);
   }
 
   private _onValidate(): void {
-    if (this.control.invalid) this.isInvalid = true;
-    else this.isInvalid = false;
+    if (this.control.invalid) this._isInvalid = true;
+    else this._isInvalid = false;
   }
-  /*
-  public onUpdate(suggestion: any) {
-    this.control.setValue(suggestion);
-    this.value = suggestion[this.option];
-    this._setValue(suggestion[this.option]);
-    this._onValidate();
-  } */
 
   public onFocus() {
-    if (!this.value) {
+    if (!`${this._value}`) {
       this.control.setValue('');
-      this.value = '';
+      this._value = '';
     }
   }
 
   public onClearControl(): void {
     this.control.setValue('', { emitEvent: false });
-    this.value = '';
+    this._value = '';
   }
 
   public ngOnDestroy(): void {
@@ -230,10 +221,42 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
   }
 
   get control(): FormControl {
-    return this._control?.control as FormControl;
+    return this._ngControl?.control as FormControl;
   }
 
   get directive(): FormGroupDirective {
     return this._formGroupDirective as FormGroupDirective;
+  }
+
+  get disabled() {
+    return this._ngControl.disabled;
+  }
+
+  get isSubmitted() {
+    return this._isSubmitted;
+  }
+
+  get isInvalid() {
+    return this._isInvalid;
+  }
+
+  get required() {
+    return this._required;
+  }
+
+  get value() {
+    return `${this._value}`;
+  }
+
+  get filteredOptions() {
+    return this._filteredOptions;
+  }
+
+  get notSuggestions() {
+    return this._notSuggestions;
+  }
+
+  get lastValue() {
+    return this._lastValue;
   }
 }

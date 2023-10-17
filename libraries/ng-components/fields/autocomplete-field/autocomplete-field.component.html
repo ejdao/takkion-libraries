@@ -15,7 +15,6 @@
       (keyup)="onChange($event)"
       (change)="onChange($event)"
       [disabled]="disabled"
-      [attr.maxLength]="maxLength"
       (focus)="onFocus()"
       (focusout)="onFocusout()"
     />
@@ -30,7 +29,7 @@
       tak-icon-button
       takSuffix
       type="button"
-      *ngIf="(control.value || value) && hasClearButton"
+      *ngIf="(control.value || value) && hasClearButton && !disabled"
       (click)="onClearControl()"
     >
       <tak-icon>close</tak-icon>

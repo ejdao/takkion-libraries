@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   ChangeDetectorRef,
   AfterViewInit,
   OnDestroy,
@@ -19,7 +18,6 @@ import { TAK_DEFAULT_APPEARANCE_FORM, TakAutocompleteFieldType } from '../fields
 @Component({
   selector: 'tak-date-field',
   templateUrl: './date-field.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor {
   private _unsubscribe$ = new Subject<void>();
@@ -28,7 +26,6 @@ export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlVa
   @Input() autocomplete: TakAutocompleteFieldType = 'off';
   @Input() color: ThemePalette = 'primary';
   @Input() placeholder = '';
-  @Input() disabled = false;
   @Input() notInput = false;
 
   @Input() minDate!: Date | string;
@@ -37,20 +34,20 @@ export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlVa
   public onChangeFn = (_: any) => {};
   public onTouchFn = (_: any) => {};
 
-  public isSubmitted = false;
-  public isInvalid = false;
-  public required = false;
-  public value = '';
+  private _isSubmitted = false;
+  private _isInvalid = false;
+  private _required = false;
+  private _value = '';
 
   constructor(
-    @Self() @Optional() private _control: NgControl,
+    @Self() @Optional() private _ngControl: NgControl,
     @Optional() private _formGroupDirective: FormGroupDirective,
     private _cd: ChangeDetectorRef
   ) {
-    if (_control) this._control.valueAccessor = this;
+    if (_ngControl) this._ngControl.valueAccessor = this;
     if (_formGroupDirective) {
       _formGroupDirective.ngSubmit.pipe(takeUntil(this._unsubscribe$)).subscribe(() => {
-        this.isSubmitted = true;
+        this._isSubmitted = true;
         _cd.markForCheck();
       });
     }
@@ -61,7 +58,7 @@ export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlVa
     if (form?._rawValidators) {
       form._rawValidators.map((r: any) => {
         if (r.name.includes('required')) {
-          this.required = true;
+          this._required = true;
         }
       });
     }
@@ -74,8 +71,8 @@ export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlVa
   }
 
   public writeValue(value: string): void {
-    if (value === null) this.isInvalid = false;
-    this.value = value;
+    if (value === null) this._isInvalid = false;
+    this._value = value;
   }
 
   public registerOnChange(fn: any): void {
@@ -87,7 +84,7 @@ export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlVa
   }
 
   public onChange(event: any): void {
-    this.value = event.target.value;
+    this._value = event.target.value;
     this.onChangeFn(event.target.value);
     if (this.control.touched) this._onValidate();
   }
@@ -110,9 +107,9 @@ export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlVa
         this.control.valid &&
         isNaN(isValidDate))
     ) {
-      this.isInvalid = true;
+      this._isInvalid = true;
     } else {
-      this.isInvalid = false;
+      this._isInvalid = false;
     }
   }
 
@@ -122,10 +119,30 @@ export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlVa
   }
 
   get control(): FormControl {
-    return this._control?.control as FormControl;
+    return this._ngControl?.control as FormControl;
   }
 
   get directive(): FormGroupDirective {
     return this._formGroupDirective as FormGroupDirective;
+  }
+
+  get disabled() {
+    return this._ngControl.disabled;
+  }
+
+  get isSubmitted() {
+    return this._isSubmitted;
+  }
+
+  get isInvalid() {
+    return this._isInvalid;
+  }
+
+  get required() {
+    return this._required;
+  }
+
+  get value() {
+    return this._value;
   }
 }
