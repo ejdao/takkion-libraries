@@ -6,8 +6,7 @@
     [color]="color"
   >
     <tak-label>
-      <ng-content></ng-content>{{ placeholder }}{{ ' '
-      }}<span class="tak-field__danger-x" *ngIf="required">*</span>
+      <ng-content></ng-content>{{ ' ' }}<span class="tak-field__danger-x" *ngIf="required">*</span>
     </tak-label>
     <input
       type="number"
@@ -17,6 +16,7 @@
       [autocomplete]="autocomplete"
       [value]="value"
       (keyup)="onChange($event)"
+      [placeholder]="placeholder"
       (change)="onChange($event)"
       [disabled]="disabled"
       [attr.minLength]="minLength"
@@ -36,7 +36,7 @@
       tak-icon-button
       type="button"
       takSuffix
-      *ngIf="control.value && hasActionButton"
+      *ngIf="control.value && hasActionButton && !disabled"
       (click)="onExecuteAction.emit(control.value)"
     >
       <tak-icon class="tak-suffix-icon-button">{{ actionIcon }}</tak-icon>

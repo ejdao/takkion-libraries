@@ -57,12 +57,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
+    /*  setTimeout(() => {
       this.autocomplete.onUpdateSuggestions(PRODUCTOS);
-    }, 100);
-    /*   setTimeout(() => {
-      this.autocomplete.updateSuggestions([]);
-    }, 3000); */
+    }, 100); */
   }
 
   onSubmit() {
@@ -102,7 +99,7 @@ export class HomeComponent implements OnInit {
   }
 
   async onChange(el: any) {
-    /*  this.isLoading = true;
+    this.isLoading = true;
     try {
       const values = await this.execute(el);
 
@@ -116,12 +113,12 @@ export class HomeComponent implements OnInit {
     }
 
     this.isLoading = false;
-    this._cd.markForCheck(); */
+    this._cd.markForCheck();
   }
 
   public execute(pattern: string): Promise<ProductoResponse[]> {
     return firstValueFrom(
-      this._http.get<any[]>(`https://eklipse.grupoclinicamedicos.com:4000/v1/inn/ctc/productos`, {
+      this._http.get<any[]>(`https://eklipse.grupoclinicamedicos.com:4000/v10/inn/ctc/productos`, {
         params: {
           tipos: [0],
           pattern,

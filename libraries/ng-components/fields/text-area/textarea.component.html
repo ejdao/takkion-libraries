@@ -6,14 +6,14 @@
     [color]="color"
   >
     <tak-label>
-      <ng-content></ng-content>{{ placeholder }}{{ ' '
-      }}<span class="tak-field__danger-x" *ngIf="required">*</span>
+      <ng-content></ng-content>{{ ' ' }}<span class="tak-field__danger-x" *ngIf="required">*</span>
     </tak-label>
     <textarea
       takInput
       [autocomplete]="autocomplete"
       [value]="value"
       [style.height.px]="heightInPx"
+      [placeholder]="placeholder"
       (keyup)="onChange($event)"
       (change)="onChange($event)"
       [disabled]="disabled"

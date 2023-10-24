@@ -26,7 +26,6 @@ export class TakSelectField implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() color: ThemePalette = 'primary';
   @Input() suggestions: any[] = [];
 
-  @Input() placeholder = '';
   @Input() option = 'option';
 
   @Input() hasDefaultValue = false;
@@ -60,12 +59,7 @@ export class TakSelectField implements OnInit, OnDestroy, ControlValueAccessor {
     }
   }
 
-  public writeValue(value: string): void {
-    if (value === null) {
-      this.isInvalid = false;
-      this._cd.markForCheck();
-    }
-  }
+  public writeValue(value: string): void {}
 
   public registerOnChange(fn: any): void {
     this.onChangeFn = fn;

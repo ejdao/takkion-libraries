@@ -24,18 +24,15 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
   public context = 'BOGOTA';
 
   public accordionInCollections = true;
-  public disableHiddenCollections = false;
-
-  constructor() {}
+  public disableHiddenCollections = true;
 
   public ngOnInit(): void {
     this.navigation.items
       .filter(el => el.type === 'collection')
       .map(item => {
-        item.showCollectionContent = false;
+        item.showCollectionContent = true;
         this.accordionInCollections = false;
       });
-    //this.disableHiddenCollections = true;
 
     this.resourcesLoaded = true;
 

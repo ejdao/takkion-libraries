@@ -45,12 +45,19 @@
             [countCaracters]="true"
             type="password"
             [maxLength]="100"
+            [hasClearButton]="true"
           >
             Password field
           </tak-general-field>
         </div>
         <div class="col-50">
-          <tak-general-field type="filter" [formControl]="fieldsForm.filter"></tak-general-field>
+          <tak-general-field
+            type="filter"
+            [formControl]="fieldsForm.filter"
+            [hasClearButton]="true"
+          >
+            Buscar
+          </tak-general-field>
         </div>
         <div class="col-100">
           <tak-textarea
@@ -73,13 +80,19 @@
           </tak-select-field>
         </div>
         <div class="col-50">
-          <tak-number-field [formControl]="fieldsForm.number">
-            Number field (200-500)
+          <tak-number-field
+            [formControl]="fieldsForm.number"
+            placeholder="(200-500)"
+            [hasClearButton]="true"
+          >
+            Number field
           </tak-number-field>
         </div>
 
         <div class="col-100">
-          <tak-money-field [formControl]="fieldsForm.money"> Money field </tak-money-field>
+          <tak-money-field [formControl]="fieldsForm.money" [hasClearButton]="true">
+            Money field
+          </tak-money-field>
         </div>
 
         <div class="col-80">
@@ -121,13 +134,15 @@
         <div class="col-100">
           <tak-autocomplete-field
             #autocomplete
-            formControlName="autocomplete"
+            [formControl]="fieldsForm.autocomplete"
             [isRemoteSearch]="false"
+            [suggestions]="suggestions"
             [isLoading]="isLoading"
             option="descripcion"
             (onSearch)="onChange($event)"
+            [hasClearButton]="true"
           >
-            Tipo de Gestión
+            autocomplete
           </tak-autocomplete-field>
         </div>
       </div>

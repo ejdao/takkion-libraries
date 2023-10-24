@@ -96,25 +96,21 @@ export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAcce
   }
 
   private _filter(): any[] {
-    if (`${this._value}`) {
-      const value =
-        typeof `${this._value}` === 'string'
-          ? `${this._value}`.toLowerCase()
-          : `${this.control.value[this.option]}`.toLowerCase();
-      const option = this.suggestions.filter(res =>
-        `${res[this.option]}`.toLowerCase().includes(value)
-      );
-      if (!option.length) this._notSuggestions = true;
-      else this._notSuggestions = false;
-      return option;
-    } else {
-      return [];
-    }
+    const value =
+      typeof `${this._value}` === 'string'
+        ? `${this._value}`.toLowerCase()
+        : `${this.control.value[this.option]}`.toLowerCase();
+    const option = this.suggestions.filter(res =>
+      `${res[this.option]}`.toLowerCase().includes(value)
+    );
+    if (!option.length) this._notSuggestions = true;
+    else this._notSuggestions = false;
+    return option;
   }
 
   public writeValue(value: string): void {
     if (value === null) this._isInvalid = false;
-    this._value = value;
+    this._value = value || '';
     this._isSubmitted = false;
     this._cd.markForCheck();
   }

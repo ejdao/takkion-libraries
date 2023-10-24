@@ -83,7 +83,7 @@
             <span class="tak__sidenav__link-name accordion">{{ item.name }}</span>
           </tak-layout-expansion-panel-header>
           <div
-            class="tak-divider"
+            class="tak-divider custom"
             [class.tak__admin-layout__not-exist]="
               ([authorities, item.disableOnContexts!]
                 | validateAccess: [context, item.authorities!]) ||

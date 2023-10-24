@@ -6,8 +6,7 @@
     [color]="color"
   >
     <tak-label>
-      <ng-content></ng-content>{{ placeholder }}{{ ' '
-      }}<span class="tak-field__danger-x" *ngIf="required">*</span>
+      <ng-content></ng-content>{{ ' ' }}<span class="tak-field__danger-x" *ngIf="required">*</span>
     </tak-label>
     <input
       [type]="type === 'password' && !decrypted ? 'password' : 'text'"
@@ -16,6 +15,7 @@
       [value]="value"
       (keyup)="onChange($event)"
       (change)="onChange($event)"
+      [placeholder]="placeholder"
       [disabled]="disabled"
       [attr.minLength]="minLength"
       [attr.maxLength]="maxLength"
@@ -34,7 +34,7 @@
       tak-icon-button
       type="button"
       takSuffix
-      *ngIf="control.value && hasActionButton"
+      *ngIf="control.value && hasActionButton && !disabled"
       (click)="onExecuteAction.emit(control.value)"
     >
       <tak-icon class="tak-suffix-icon-button">{{ actionIcon }}</tak-icon>
@@ -43,7 +43,7 @@
       tak-icon-button
       takSuffix
       type="button"
-      *ngIf="control?.value && type === 'password'"
+      *ngIf="control?.value && type === 'password' && !disabled"
       (click)="showPassword()"
     >
       <tak-icon class="tak-suffix-icon-button">{{

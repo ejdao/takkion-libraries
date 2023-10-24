@@ -283,12 +283,8 @@
 }
 
 @include customizedGrids(col);
-.d-none {
-  display: none !important;
-}
-.d-block {
-  display: block !important;
-}
+@include bootstrapGrids(col-t);
+@include display(d-);
 
 @media only screen and (min-width: $SM_RESOLUTION) {
   @include customizedGrids(col-sm);
