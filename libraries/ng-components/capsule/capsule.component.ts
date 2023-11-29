@@ -7,7 +7,7 @@ export type TakPredefinedGrid = 'small' | 'medium' | 'big' | undefined;
   templateUrl: './capsule.component.html',
   encapsulation: ViewEncapsulation.None,
 })
-export class TakCapsule {
+export class TakCapsuleComponent {
   @Input() predefinedGrid: TakPredefinedGrid;
   @Input() grids!: number[];
 

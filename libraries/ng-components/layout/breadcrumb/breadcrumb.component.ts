@@ -14,7 +14,7 @@ import { RoutePartsService } from '../services';
   templateUrl: './breadcrumb.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TakBreadcrumb implements OnInit, OnDestroy {
+export class TakBreadcrumbComponent implements OnInit, OnDestroy {
   private _routeParts!: any[];
   private _routerEventSub!: Subscription;
 

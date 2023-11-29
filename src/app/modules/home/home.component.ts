@@ -9,7 +9,7 @@ import {
 import { TakModal } from '@takkion/ng-components/modal';
 import { TakToast, TakToastType } from '@takkion/ng-components/toast';
 import { FieldsForm, PRODUCTOS } from './fields.form';
-import { TakAutocompleteField } from '@takkion/ng-components/fields';
+import { TakAutocompleteFieldComponent } from '@takkion/ng-components/fields';
 import { HttpClient } from '@angular/common/http';
 import { Subject, debounceTime, firstValueFrom, map, distinctUntilChanged, takeUntil } from 'rxjs';
 
@@ -32,7 +32,7 @@ export interface ProductoResponse {
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('autocomplete') autocomplete!: TakAutocompleteField;
+  @ViewChild('autocomplete') autocomplete!: TakAutocompleteFieldComponent;
 
   isLoading = false;
 

@@ -10,28 +10,28 @@ import { TakInputModule } from '@takkion/ng-material/input';
 import { TakIconModule } from '@takkion/ng-material/icon';
 import { TakDatepickerModule } from '@takkion/ng-material/datepicker';
 
-import { TakSelectField } from './select-field/select-field.component';
-import { TakDateField } from './date-field/date-field.component';
+import { TakSelectFieldComponent } from './select-field/select-field.component';
+import { TakDateFieldComponent } from './date-field/date-field.component';
 
-import { TakAutocompleteField } from './autocomplete-field/autocomplete-field.component';
+import { TakAutocompleteFieldComponent } from './autocomplete-field/autocomplete-field.component';
 import { TakAutocompleteModule } from '@takkion/ng-material/autocomplete';
 import { TakErrorModule } from './error/error.module';
-import { TakDateRangeField } from './date-range-field/date-range-field.component';
-import { TakMoneyField } from './money-field/money-field.component';
-import { TakGeneralField } from './general-field/general-field.component';
+import { TakDateRangeFieldComponent } from './date-range-field/date-range-field.component';
+import { TakMoneyFieldComponent } from './money-field/money-field.component';
+import { TakGeneralFieldComponent } from './general-field/general-field.component';
 import { TakProgressSpinnerModule } from '@takkion/ng-material/progress-spinner';
-import { TakNumberField } from './number-field/number-field.component';
-import { TakTextarea } from './text-area/textarea.component';
+import { TakNumberFieldComponent } from './number-field/number-field.component';
+import { TakTextareaComponent } from './text-area/textarea.component';
 
 const components = [
-  TakSelectField,
-  TakDateField,
-  TakAutocompleteField,
-  TakDateRangeField,
-  TakGeneralField,
-  TakMoneyField,
-  TakTextarea,
-  TakNumberField,
+  TakSelectFieldComponent,
+  TakDateFieldComponent,
+  TakAutocompleteFieldComponent,
+  TakDateRangeFieldComponent,
+  TakGeneralFieldComponent,
+  TakMoneyFieldComponent,
+  TakTextareaComponent,
+  TakNumberFieldComponent,
 ];
 
 @NgModule({

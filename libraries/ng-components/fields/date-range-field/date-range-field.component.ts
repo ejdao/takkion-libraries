@@ -8,7 +8,7 @@ import { TakAutocompleteFieldType, TAK_DEFAULT_APPEARANCE_FORM } from '../fields
   selector: 'tak-date-range-field',
   templateUrl: './date-range-field.component.html',
 })
-export class TakDateRangeField implements OnInit {
+export class TakDateRangeFieldComponent implements OnInit {
   @Input() autocomplete: TakAutocompleteFieldType = 'off';
   @Input() startPlaceholder: string = 'Inicio';
   @Input() endPlaceholder: string = 'Fin';

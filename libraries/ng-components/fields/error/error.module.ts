@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TakErrorEqualsPipe } from './error-equals.pipe';
 import { TakErrorMsgPipe } from './error.msg.pipe';
-import { TakError } from './error.component';
+import { TakErrorComponent } from './error.component';
 
 @NgModule({
-  declarations: [TakErrorEqualsPipe, TakErrorMsgPipe, TakError],
+  declarations: [TakErrorEqualsPipe, TakErrorMsgPipe, TakErrorComponent],
   imports: [FormsModule, CommonModule, ReactiveFormsModule],
-  exports: [TakError],
+  exports: [TakErrorComponent],
 })
 export class TakErrorModule {}

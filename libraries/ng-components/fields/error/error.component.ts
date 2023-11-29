@@ -5,7 +5,7 @@ import { FormControl, ValidationErrors } from '@angular/forms';
   selector: 'tak-error',
   templateUrl: './error.component.html',
 })
-export class TakError implements AfterViewInit {
+export class TakErrorComponent implements AfterViewInit {
   @ViewChild('error') error: ElementRef | undefined;
 
   @Input() control!: FormControl;

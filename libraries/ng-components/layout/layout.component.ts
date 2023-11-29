@@ -30,7 +30,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TakLayout implements OnInit, AfterViewInit, OnDestroy {
+export class TakLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('scrollLayout') scrollLayout!: ElementRef;
 
   private _routerSubs!: Subscription;

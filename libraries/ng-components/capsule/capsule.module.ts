@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TakCapsule } from './capsule.component';
+import { TakCapsuleComponent } from './capsule.component';
 
 @NgModule({
-  declarations: [TakCapsule],
+  declarations: [TakCapsuleComponent],
   imports: [CommonModule],
-  exports: [TakCapsule],
+  exports: [TakCapsuleComponent],
 })
 export class TakCapsuleModule {}

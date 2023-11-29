@@ -25,7 +25,7 @@ import { ThemePalette } from '@takkion/ng-material/core';
   selector: 'tak-money-field',
   templateUrl: './money-field.component.html',
 })
-export class TakMoneyField implements OnInit, OnDestroy, ControlValueAccessor {
+export class TakMoneyFieldComponent implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() autocomplete: 'off' | 'on' = 'off';
 
   @Input() appearance: TakFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;

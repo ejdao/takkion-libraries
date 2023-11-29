@@ -20,7 +20,7 @@ import { TakAutocompleteFieldType, TAK_DEFAULT_APPEARANCE_FORM } from '../fields
   selector: 'tak-select-field',
   templateUrl: './select-field.component.html',
 })
-export class TakSelectField implements OnInit, OnDestroy, ControlValueAccessor {
+export class TakSelectFieldComponent implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() autocomplete: TakAutocompleteFieldType = 'off';
   @Input() appearance: TakFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;
   @Input() color: ThemePalette = 'primary';

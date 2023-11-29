@@ -1,0 +1,28 @@
+.tak-tab-group.tak-primary .tak-tab-label:active,
+.tak-tab-group.tak-primary .tak-tab-label.tak-tab-label-active {
+  color: var(--tak-primary-500);
+}
+.tak-tab-group.tak-accent .tak-tab-label:active,
+.tak-tab-group.tak-accent .tak-tab-label.tak-tab-label-active,
+.tak-tab-group .tak-tab-label:active,
+.tak-tab-group .tak-tab-label.tak-tab-label-active {
+  color: var(--tak-accent-500);
+}
+.tak-tab-group.tak-warn .tak-tab-label:active,
+.tak-tab-group.tak-warn .tak-tab-label.tak-tab-label-active {
+  color: var(--tak-warn-500);
+}
+.tak-tab-label .tak-tab-label-content {
+  font-weight: bolder !important;
+}
+tak-tab-group {
+  height: 100%;
+  overflow-y: auto;
+}
+.tak-tab-label.tak-tab-disabled {
+  color: var(--tak-dark-color-700) !important;
+}
+.tak-disabled-tab .tak-tab-group .tak-ink-bar,
+.tak-tab-group.not-ink-bar .tak-ink-bar {
+  background-color: transparent !important;
+}

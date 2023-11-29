@@ -25,7 +25,7 @@ import { ThemePalette } from '@takkion/ng-material/core';
   selector: 'tak-number-field',
   templateUrl: './number-field.component.html',
 })
-export class TakNumberField implements OnInit, OnDestroy, ControlValueAccessor {
+export class TakNumberFieldComponent implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() autocomplete: 'off' | 'on' = 'off';
 
   @Input() appearance: TakFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;

@@ -25,7 +25,7 @@ import { ThemePalette } from '@takkion/ng-material/core';
   selector: 'tak-general-field',
   templateUrl: './general-field.component.html',
 })
-export class TakGeneralField implements OnInit, OnDestroy, ControlValueAccessor {
+export class TakGeneralFieldComponent implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() autocomplete: 'off' | 'on' = 'off';
 
   @Input() appearance: TakFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;

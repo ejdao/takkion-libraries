@@ -16,7 +16,7 @@ import { TakSnav } from '../navigation-interfaces';
   templateUrl: './sidebar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TakSidebar implements AfterViewInit {
+export class TakSidebarComponent implements AfterViewInit {
   @ViewChild('checkbox') checkbox!: ElementRef;
 
   @Output() blockSidebar: EventEmitter<any> = new EventEmitter();

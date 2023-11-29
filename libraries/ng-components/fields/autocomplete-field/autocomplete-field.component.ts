@@ -24,7 +24,7 @@ import {
   selector: 'tak-autocomplete-field',
   templateUrl: './autocomplete-field.component.html',
 })
-export class TakAutocompleteField implements OnInit, OnDestroy, ControlValueAccessor {
+export class TakAutocompleteFieldComponent implements OnInit, OnDestroy, ControlValueAccessor {
   private _unsubscribe$ = new Subject<void>();
 
   @Input() option = 'option';

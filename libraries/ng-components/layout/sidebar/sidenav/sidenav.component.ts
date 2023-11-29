@@ -14,7 +14,7 @@ import { TakSnav } from '../../navigation-interfaces';
   templateUrl: './sidenav.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TakSidenav implements OnInit {
+export class TakSidenavComponent implements OnInit {
   @Input() navigation: TakSnav = {
     typeSnavIcons: 'material-icon',
     items: [],

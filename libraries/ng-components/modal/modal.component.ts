@@ -31,7 +31,7 @@ export class TakModalComponent implements OnInit {
 
     const confirmButton = this.data.options?.confirmButton
       ? this.data.options.confirmButton
-      : TAK_MODAL_CONFIG.value?.confirmButton || 'YES';
+      : TAK_MODAL_CONFIG.value?.confirmButton || 'SI';
 
     const deniedButton = this.data.options?.deniedButton
       ? this.data.options.deniedButton

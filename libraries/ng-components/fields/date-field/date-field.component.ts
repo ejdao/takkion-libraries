@@ -19,7 +19,9 @@ import { TAK_DEFAULT_APPEARANCE_FORM, TakAutocompleteFieldType } from '../fields
   selector: 'tak-date-field',
   templateUrl: './date-field.component.html',
 })
-export class TakDateField implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor {
+export class TakDateFieldComponent
+  implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor
+{
   private _unsubscribe$ = new Subject<void>();
 
   @Input() appearance: TakFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;

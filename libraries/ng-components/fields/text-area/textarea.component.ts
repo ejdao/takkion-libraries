@@ -19,7 +19,7 @@ import { ThemePalette } from '@takkion/ng-material/core';
   selector: 'tak-textarea',
   templateUrl: './textarea.component.html',
 })
-export class TakTextarea implements OnInit, OnDestroy, ControlValueAccessor {
+export class TakTextareaComponent implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() autocomplete: 'off' | 'on' = 'off';
 
   @Input() appearance: TakFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;

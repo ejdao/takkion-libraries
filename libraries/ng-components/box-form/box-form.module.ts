@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TakCardModule } from '@takkion/ng-material/card';
-import { TakBoxForm } from './box-form.component';
+import { TakBoxFormComponent } from './box-form.component';
 import { TakIconModule } from '@takkion/ng-material/icon';
 import { TakProgressBarModule } from '@takkion/ng-material/progress-bar';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +9,7 @@ import { TakButtonModule } from '@takkion/ng-material/button';
 import { TakDividerModule } from '@takkion/ng-material/divider';
 
 @NgModule({
-  declarations: [TakBoxForm],
+  declarations: [TakBoxFormComponent],
   imports: [
     CommonModule,
     TakCardModule,
@@ -19,6 +19,6 @@ import { TakDividerModule } from '@takkion/ng-material/divider';
     TakDividerModule,
     TakProgressBarModule,
   ],
-  exports: [TakBoxForm],
+  exports: [TakBoxFormComponent],
 })
 export class TakBoxFormModule {}

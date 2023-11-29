@@ -15,7 +15,7 @@ import { LAYOUT_CONTAINER } from '../services/toggle-sidebar';
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TakHeader implements AfterViewInit {
+export class TakHeaderComponent implements AfterViewInit {
   @Output() toggleSidebar: EventEmitter<any> = new EventEmitter();
 
   @Input() mdWidth = 640;

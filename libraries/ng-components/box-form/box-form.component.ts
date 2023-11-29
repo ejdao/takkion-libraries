@@ -18,7 +18,7 @@ import { TAK_BOX_FORM_CONFIG } from './common';
   styleUrls: ['./box-form.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class TakBoxForm {
+export class TakBoxFormComponent {
   @ViewChild('content') content!: ElementRef;
 
   @Output() ngSubmit = new EventEmitter();
@@ -32,6 +32,7 @@ export class TakBoxForm {
 
   @Input() showActionButtons = true;
   @Input() hasResetButton = false;
+  @Input() hasBreadcrumbs = false;
   @Input() hasBackButton = false;
   @Input() hasBranding = true;
   @Input() isLoading = false;
@@ -62,12 +63,12 @@ export class TakBoxForm {
 
     this._submitButton = this.submitButton
       ? this.submitButton
-      : TAK_BOX_FORM_CONFIG.value?.submitButton || 'Submit';
+      : TAK_BOX_FORM_CONFIG.value?.submitButton || 'ENVIAR';
     this._resetButton = this.resetButton
       ? this.resetButton
-      : TAK_BOX_FORM_CONFIG.value?.resetButton || 'Reset';
+      : TAK_BOX_FORM_CONFIG.value?.resetButton || 'REINICIAR';
 
-    if (TAK_BOX_FORM_CONFIG.value?.hasBreadcrumbs) {
+    if (TAK_BOX_FORM_CONFIG.value?.hasBreadcrumbs || this.hasBreadcrumbs) {
       this.exedentInPx = this.exedentInPx + 45;
     }
   }
