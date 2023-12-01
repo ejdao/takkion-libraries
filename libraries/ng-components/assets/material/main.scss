@@ -12,7 +12,6 @@
       width: 8px;
     }
     &::-webkit-scrollbar-thumb {
-      box-shadow: inset 0 0 0 5px;
       border-radius: 10px;
     }
   }
@@ -21,17 +20,4 @@
       width: 6px !important;
     }
   }
-}
-
-.tak-input-element,
-.tak-date-range-input-inner,
-.tak-select-value,
-.tak-form-field-infix,
-.tak-hint,
-.tak-button-base,
-.tak-simple-snack-bar-content,
-.tak-button-wrapper,
-.tak-card,
-.tak-menu-item {
-  font-family: 'bodycommerce' !important;
 }

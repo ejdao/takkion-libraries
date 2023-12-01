@@ -1,12 +1,10 @@
 .tak-select-panel {
-  color: transparent;
   overflow-y: overlay !important;
 }
 .tak-autocomplete-not-records {
   font-size: 12px;
 }
 .tak-custom-error {
-  font-family: 'bodycommerce';
   line-height: 12px;
   margin-top: -17px;
   max-width: 100%;
@@ -37,7 +35,6 @@
 }
 .tak-option {
   height: 36px !important;
-  font-family: 'bodycommerce' !important;
   &-extra {
     height: 48px !important;
     line-height: 16px !important;
@@ -50,9 +47,6 @@
 .tak-form-field {
   width: 100%;
 }
-.tak-input-element {
-  caret-color: inherit !important;
-}
 .tak-form-field-appearance-standard {
   margin-top: -15px;
 }
@@ -61,11 +55,4 @@
 }
 .icon-decryted-password-button {
   width: 32px !important;
-}
-
-.tak-calendar-body-disabled
-  > .tak-calendar-body-cell-content:not(.tak-calendar-body-selected):not(
-    .tak-calendar-body-comparison-identical
-  ) {
-  background-color: rgba(0, 0, 0, 0.12);
 }
