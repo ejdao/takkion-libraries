@@ -284,7 +284,7 @@
 
 @include customizedGrids(col);
 @include bootstrapGrids(col-t);
-@include display(d-);
+@include display(d);
 
 @media only screen and (min-width: $SM_RESOLUTION) {
   @include customizedGrids(col-sm);
