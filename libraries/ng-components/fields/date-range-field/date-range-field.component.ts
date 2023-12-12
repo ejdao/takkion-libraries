@@ -20,6 +20,8 @@ export class TakDateRangeFieldComponent implements OnInit {
   @Input() end!: FormControl;
   @Input() notInput = false;
 
+  @Input() disabled = false;
+
   private _required = false;
 
   public ngOnInit(): void {
@@ -35,13 +37,17 @@ export class TakDateRangeFieldComponent implements OnInit {
         if (r.name.includes('required')) this._required = true;
       });
     }
+    if (this.disabled) {
+      this.start.disable();
+      this.end.disable();
+    }
   }
 
   get required() {
     return this._required;
   }
 
-  get disabled() {
+  get isDisabled() {
     return this.start.disabled || this.end.disabled;
   }
 }

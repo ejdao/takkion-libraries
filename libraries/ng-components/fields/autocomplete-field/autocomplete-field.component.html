@@ -14,20 +14,16 @@
       [value]="value"
       (keyup)="onChange($event)"
       (change)="onChange($event)"
-      [disabled]="disabled"
+      [disabled]="isDisabled"
       (focus)="onFocus()"
       (focusout)="onFocusout()"
     />
-    <button tak-icon-button takSuffix>
-      <tak-spinner
-        [diameter]="15"
-        mode="indeterminate"
-        *ngIf="isRemoteSearch && isLoading"
-      ></tak-spinner>
+    <button takSuffix tak-icon-button type="button" *ngIf="isRemoteSearch && isLoading">
+      <tak-spinner [diameter]="15" mode="indeterminate"></tak-spinner>
     </button>
     <button
-      tak-icon-button
       takSuffix
+      tak-icon-button
       type="button"
       *ngIf="(control.value || value) && hasClearButton && !disabled"
       (click)="onClearControl()"

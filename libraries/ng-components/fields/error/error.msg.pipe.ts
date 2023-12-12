@@ -3,8 +3,9 @@ import * as lang from './lang';
 
 @Pipe({ name: 'errorMsg' })
 export class TakErrorMsgPipe implements PipeTransform {
-  transform(parameter: string): string {
+  transform(parameter: string, aditionalValue?: any): string {
     let resources = lang.es;
-    return resources[parameter];
+    if (aditionalValue) return resources[parameter](aditionalValue);
+    else return resources[parameter];
   }
 }

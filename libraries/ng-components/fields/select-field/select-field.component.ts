@@ -25,6 +25,9 @@ export class TakSelectFieldComponent implements OnInit, OnDestroy, ControlValueA
   @Input() appearance: TakFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;
   @Input() color: ThemePalette = 'primary';
   @Input() suggestions: any[] = [];
+  @Input() disabled = false;
+  @Input() type: 'menu' | 'select' = 'select';
+  @Input() tooltip = '';
 
   @Input() option = 'option';
 
@@ -57,6 +60,8 @@ export class TakSelectFieldComponent implements OnInit, OnDestroy, ControlValueA
     if (this.suggestions.length && this.hasDefaultValue) {
       this._ngControl.control?.setValue(this.suggestions[0]);
     }
+
+    if (this.disabled) this.control.disable();
   }
 
   public writeValue(value: string): void {}
@@ -81,6 +86,12 @@ export class TakSelectFieldComponent implements OnInit, OnDestroy, ControlValueA
     }
   }
 
+  public justEmit(el: any) {
+    this.control.setValue(el);
+    this.onSelect.emit(el);
+    this.isInvalid = false;
+  }
+
   public onFocusOut() {
     this._onValidate();
   }
@@ -103,7 +114,7 @@ export class TakSelectFieldComponent implements OnInit, OnDestroy, ControlValueA
     return this._formGroupDirective as FormGroupDirective;
   }
 
-  get disabled() {
+  get isDisabled() {
     return this._ngControl.disabled;
   }
 }

@@ -9,6 +9,7 @@ import { TakNativeDateModule, TakOptionModule } from '@takkion/ng-material/core'
 import { TakInputModule } from '@takkion/ng-material/input';
 import { TakIconModule } from '@takkion/ng-material/icon';
 import { TakDatepickerModule } from '@takkion/ng-material/datepicker';
+import { TakTooltipModule } from '@takkion/ng-material/tooltip';
 
 import { TakSelectFieldComponent } from './select-field/select-field.component';
 import { TakDateFieldComponent } from './date-field/date-field.component';
@@ -22,6 +23,7 @@ import { TakGeneralFieldComponent } from './general-field/general-field.componen
 import { TakProgressSpinnerModule } from '@takkion/ng-material/progress-spinner';
 import { TakNumberFieldComponent } from './number-field/number-field.component';
 import { TakTextareaComponent } from './text-area/textarea.component';
+import { TakMenuModule } from '@takkion/ng-material/menu';
 
 const components = [
   TakSelectFieldComponent,
@@ -50,6 +52,8 @@ const components = [
     TakInputModule,
     TakOptionModule,
     TakSelectModule,
+    TakTooltipModule,
+    TakMenuModule,
   ],
   exports: [
     ReactiveFormsModule,

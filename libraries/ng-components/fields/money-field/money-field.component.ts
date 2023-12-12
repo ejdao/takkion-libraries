@@ -39,8 +39,13 @@ export class TakMoneyFieldComponent implements OnInit, OnDestroy, ControlValueAc
   @Input() countCaracters = false;
   @Input() placeholder = '';
 
+  @Input() maxlength!: number;
+  @Input() minlength!: number;
+
   @Input() maxLength!: number;
   @Input() minLength!: number;
+
+  @Input() disabled = false;
 
   @Output() onExecuteAction = new EventEmitter();
   @Output() onKeyUp = new EventEmitter();
@@ -82,6 +87,10 @@ export class TakMoneyFieldComponent implements OnInit, OnDestroy, ControlValueAc
     this.control.addValidators(Validators.pattern(/^[0-9.,-]+$/));
 
     if (['', null, undefined, '-'].indexOf(this.control.value) < 0) this._addCurrencyMask();
+
+    if (this.minlength && !this.minLength) this.minLength = this.minlength;
+    if (this.maxlength && !this.maxLength) this.maxLength = this.maxlength;
+    if (this.disabled) this.control.disable();
   }
 
   public writeValue(value: string): void {
@@ -162,7 +171,7 @@ export class TakMoneyFieldComponent implements OnInit, OnDestroy, ControlValueAc
     return this._formGroupDirective as FormGroupDirective;
   }
 
-  get disabled() {
+  get isDisabled() {
     return this._ngControl.disabled;
   }
 

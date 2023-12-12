@@ -40,8 +40,13 @@ export class TakGeneralFieldComponent implements OnInit, OnDestroy, ControlValue
   @Input() countCaracters = false;
   @Input() placeholder = '';
 
+  @Input() maxlength!: number;
+  @Input() minlength!: number;
+
   @Input() maxLength!: number;
   @Input() minLength!: number;
+
+  @Input() disabled = false;
 
   @Output() onExecuteAction = new EventEmitter();
   @Output() onKeyUp = new EventEmitter();
@@ -89,6 +94,10 @@ export class TakGeneralFieldComponent implements OnInit, OnDestroy, ControlValue
         if (r.name.includes('required')) this._required = true;
       });
     }
+
+    if (this.minlength && !this.minLength) this.minLength = this.minlength;
+    if (this.maxlength && !this.maxLength) this.maxLength = this.maxlength;
+    if (this.disabled) this.control.disable();
   }
 
   public writeValue(value: string): void {
@@ -154,7 +163,7 @@ export class TakGeneralFieldComponent implements OnInit, OnDestroy, ControlValue
     return this._decrypted;
   }
 
-  get disabled() {
+  get isDisabled() {
     return this._ngControl.disabled;
   }
 

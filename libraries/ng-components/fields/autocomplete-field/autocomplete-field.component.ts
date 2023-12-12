@@ -34,6 +34,7 @@ export class TakAutocompleteFieldComponent implements OnInit, OnDestroy, Control
   @Input() color: ThemePalette = 'primary';
   @Input() hasClearButton = true;
   @Input() suggestions: any[] = [];
+  @Input() disabled = false;
 
   @Input() isLoading = false;
   @Input() isRemoteSearch = false;
@@ -93,6 +94,7 @@ export class TakAutocompleteFieldComponent implements OnInit, OnDestroy, Control
           this._lastValue = `${this._value}`;
         });
     }
+    if (this.disabled) this.control.disable();
   }
 
   private _filter(): any[] {
@@ -224,7 +226,7 @@ export class TakAutocompleteFieldComponent implements OnInit, OnDestroy, Control
     return this._formGroupDirective as FormGroupDirective;
   }
 
-  get disabled() {
+  get isDisabled() {
     return this._ngControl.disabled;
   }
 

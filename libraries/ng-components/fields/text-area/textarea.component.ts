@@ -35,8 +35,13 @@ export class TakTextareaComponent implements OnInit, OnDestroy, ControlValueAcce
   @Input() placeholder = '';
   @Input() heightInPx = 60;
 
+  @Input() maxlength!: number;
+  @Input() minlength!: number;
+
   @Input() minLength!: number;
   @Input() maxLength!: number;
+
+  @Input() disabled = false;
 
   @Output() onExecuteAction = new EventEmitter();
   @Output() onKeyUp = new EventEmitter();
@@ -75,6 +80,10 @@ export class TakTextareaComponent implements OnInit, OnDestroy, ControlValueAcce
         if (r.name.includes('required')) this._required = true;
       });
     }
+
+    if (this.minlength && !this.minLength) this.minLength = this.minlength;
+    if (this.maxlength && !this.maxLength) this.maxLength = this.maxlength;
+    if (this.disabled) this.control.disable();
   }
 
   public writeValue(value: string): void {
@@ -136,7 +145,7 @@ export class TakTextareaComponent implements OnInit, OnDestroy, ControlValueAcce
     return this._decrypted;
   }
 
-  get disabled() {
+  get isDisabled() {
     return this._ngControl.disabled;
   }
 

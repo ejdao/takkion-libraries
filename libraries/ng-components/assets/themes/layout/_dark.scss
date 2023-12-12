@@ -1,9 +1,9 @@
 @mixin darkThemeTakLayout() {
-  --tak-header-background-color: rgb(54, 57, 76);
+  --tak-header-background-color: rgb(1, 4, 9);
   --tak-header-container-box-shadow: none;
   --tak-footer-background-color: rgb(54, 57, 76);
-  --tak-sidebar-after-background-color: rgba(42, 49, 66, 0.95);
-  --tak-sidebar-background-color: rgb(42, 49, 66);
+  --tak-sidebar-after-background-color: rgba(1, 4, 9, 0.95);
+  --tak-sidebar-background-color: rgb(1, 4, 9);
   --tak-sidebar-slide-toggle-bar-background-color: rgba(255, 255, 255, 0.38);
   --tak-sidenav-scrollbar-thumb-hover-color: rgba(192, 192, 192, 0.862);
   --tak-sidenav-hover-scrollbar-thumb-color: rgba(192, 192, 192, 0.562);
@@ -15,7 +15,7 @@
   --tak-breadcrumb-color: #d1d1d1;
   --tak-breadcrumb-active-color: #ececec;
   --tak-breadcrumb-title-color: #ececec;
-  --tak-layout-container: rgb(37, 39, 53);
+  --tak-layout-container: rgb(13, 17, 23);
   --tak-loader-overlay-backdrop-background-color: rgba(73, 73, 73, 0.3);
   --tak-divider-border-top-light-color: rgba(214, 214, 214, 0.12);
   --tak-sidebar-container-border-right: rgb(95, 95, 95, 0.4);
@@ -29,10 +29,4 @@
 
 .tak-layout.tak-dark-theme {
   @include darkThemeTakLayout();
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include darkThemeTakLayout();
-  }
 }

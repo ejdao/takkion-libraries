@@ -16,7 +16,7 @@
       [placeholder]="placeholder"
       (keyup)="onChange($event)"
       (change)="onChange($event)"
-      [disabled]="disabled"
+      [disabled]="isDisabled"
       [attr.minLength]="minLength"
       [attr.maxLength]="maxLength"
       (focusout)="onFocusOut()"
@@ -25,7 +25,7 @@
       tak-icon-button
       type="button"
       takSuffix
-      *ngIf="control.value && hasClearButton && !disabled"
+      *ngIf="control.value && hasClearButton && !isDisabled"
       (click)="onClearControl()"
     >
       <tak-icon class="tak-suffix-icon-button">close</tak-icon>

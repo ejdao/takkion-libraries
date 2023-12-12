@@ -10,17 +10,17 @@
       isNumberField ? 'El campo solo debe contener caracteres numericos' : ('patternMsg' | errorMsg)
     }}
   </div>
-  <div *ngIf="control !== undefined && control.errors | errorEquals: maxlength">
-    {{ 'maxLengthMsg' | errorMsg }}
-  </div>
   <div *ngIf="control !== undefined && control.errors | errorEquals: max">
-    {{ 'maxMsg' | errorMsg }}
-  </div>
-  <div *ngIf="control !== undefined && control.errors | errorEquals: minlength">
-    {{ 'minLengthMsg' | errorMsg }}
+    {{ 'maxMsg' | errorMsg: max.max }}
   </div>
   <div *ngIf="control !== undefined && control.errors | errorEquals: min">
-    {{ 'minMsg' | errorMsg }}
+    {{ 'minMsg' | errorMsg: min.min }}
+  </div>
+  <div *ngIf="control !== undefined && control.errors | errorEquals: maxlength">
+    {{ 'maxLengthMsg' | errorMsg: maxlength.requiredLength }}
+  </div>
+  <div *ngIf="control !== undefined && control.errors | errorEquals: minlength">
+    {{ 'minLengthMsg' | errorMsg: minlength.requiredLength }}
   </div>
   <div *ngIf="control !== undefined && control.errors | errorEquals: email">
     {{ 'EmailMsg' | errorMsg }}

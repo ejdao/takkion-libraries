@@ -33,6 +33,8 @@ export class TakDateFieldComponent
   @Input() minDate!: Date | string;
   @Input() maxDate!: Date | string;
 
+  @Input() disabled = false;
+
   public onChangeFn = (_: any) => {};
   public onTouchFn = (_: any) => {};
 
@@ -64,6 +66,7 @@ export class TakDateFieldComponent
         }
       });
     }
+    if (this.disabled) this.control.disable();
   }
 
   public ngAfterViewInit(): void {
@@ -128,7 +131,7 @@ export class TakDateFieldComponent
     return this._formGroupDirective as FormGroupDirective;
   }
 
-  get disabled() {
+  get isDisabled() {
     return this._ngControl.disabled;
   }
 

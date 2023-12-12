@@ -18,25 +18,25 @@
       (keyup)="onChange($event)"
       [placeholder]="placeholder"
       (change)="onChange($event)"
-      [disabled]="disabled"
+      [disabled]="isDisabled"
       [attr.minLength]="minLength"
       [attr.maxLength]="maxLength"
       (focusout)="onFocusOut()"
     />
     <button
+      takSuffix
       tak-icon-button
       type="button"
-      takSuffix
-      *ngIf="control.value && hasClearButton && !disabled"
+      *ngIf="control.value && hasClearButton && !isDisabled"
       (click)="onClearControl()"
     >
       <tak-icon class="tak-suffix-icon-button">close</tak-icon>
     </button>
     <button
+      takSuffix
       tak-icon-button
       type="button"
-      takSuffix
-      *ngIf="control.value && hasActionButton && !disabled"
+      *ngIf="control.value && hasActionButton && !isDisabled"
       (click)="onExecuteAction.emit(control.value)"
     >
       <tak-icon class="tak-suffix-icon-button">{{ actionIcon }}</tak-icon>

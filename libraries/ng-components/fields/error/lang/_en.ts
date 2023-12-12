@@ -1,8 +1,8 @@
 export const en: any = {
-  minLengthMsg: 'The field contains fewer characters than required',
-  maxLengthMsg: 'The field contains more characters than allowed',
-  minMsg: 'The number is less than the minimum allowed',
-  maxMsg: 'The number exceeds the maximum allowed',
+  minLengthMsg: (length: number) => `The field contains fewer than ${length} characters`,
+  maxLengthMsg: (length: number) => `The field contains more than ${length} characters`,
+  minMsg: (min: number) => `The number must be bigger than ${min}`,
+  maxMsg: (max: number) => `The number must be lower than ${max}`,
   patternMsg: 'One or more characters not allowed',
   requiredMsg: 'This field is required',
   EmailMsg: 'This field must be an email',

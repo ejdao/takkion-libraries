@@ -1,11 +1,11 @@
-import { AfterViewInit, ElementRef, Component, ViewChild, Input } from '@angular/core';
+import { ElementRef, Component, ViewChild, Input } from '@angular/core';
 import { FormControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'tak-error',
   templateUrl: './error.component.html',
 })
-export class TakErrorComponent implements AfterViewInit {
+export class TakErrorComponent {
   @ViewChild('error') error: ElementRef | undefined;
 
   @Input() control!: FormControl;
@@ -20,12 +20,6 @@ export class TakErrorComponent implements AfterViewInit {
 
   public hasPatternError: boolean = false;
 
-  public ngAfterViewInit(): void {
-    /* setTimeout(() => {
-      this.error?.nativeElement.classList.add('show');
-    }, 1);*/
-  }
-
   get required(): ValidationErrors {
     return this.control?.errors?.['required'];
   }
@@ -34,20 +28,20 @@ export class TakErrorComponent implements AfterViewInit {
     return this.control?.errors?.['pattern'];
   }
 
-  get maxlength(): ValidationErrors {
-    return this.control?.errors?.['maxlength'];
-  }
-
-  get max(): ValidationErrors {
+  get max() {
     return this.control?.errors?.['max'];
   }
 
-  get minlength(): ValidationErrors {
-    return this.control?.errors?.['minlength'];
+  get min() {
+    return this.control?.errors?.['min'];
   }
 
-  get min(): ValidationErrors {
-    return this.control?.errors?.['min'];
+  get maxlength() {
+    return this.control?.errors?.['maxlength'];
+  }
+
+  get minlength() {
+    return this.control?.errors?.['minlength'];
   }
 
   get email(): ValidationErrors {

@@ -37,10 +37,17 @@ export class TakNumberFieldComponent implements OnInit, OnDestroy, ControlValueA
   @Input() hasClearButton = false;
   @Input() countCaracters = false;
   @Input() placeholder = '';
+
   @Input() min!: number;
   @Input() max!: number;
+
+  @Input() maxlength!: number;
+  @Input() minlength!: number;
+
   @Input() minLength!: number;
   @Input() maxLength!: number;
+
+  @Input() disabled = false;
 
   @Output() onExecuteAction = new EventEmitter();
   @Output() onKeyUp = new EventEmitter();
@@ -81,6 +88,10 @@ export class TakNumberFieldComponent implements OnInit, OnDestroy, ControlValueA
 
     if (this.min) this.control.addValidators(Validators.min(this.min));
     if (this.max) this.control.addValidators(Validators.max(this.max));
+
+    if (this.minlength && !this.minLength) this.minLength = this.minlength;
+    if (this.maxlength && !this.maxLength) this.maxLength = this.maxlength;
+    if (this.disabled) this.control.disable();
   }
 
   public writeValue(value: string): void {
@@ -135,7 +146,7 @@ export class TakNumberFieldComponent implements OnInit, OnDestroy, ControlValueA
     return this._formGroupDirective as FormGroupDirective;
   }
 
-  get disabled() {
+  get isDisabled() {
     return this._ngControl.disabled;
   }
 

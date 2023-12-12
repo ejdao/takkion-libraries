@@ -18,7 +18,7 @@
       (keyup)="onChange($event)"
       (dateChange)="onChange($event)"
       [placeholder]="placeholder"
-      [disabled]="disabled"
+      [disabled]="isDisabled"
       (focusout)="onFocusout()"
     />
     <tak-datepicker-toggle takSuffix [for]="picker"></tak-datepicker-toggle>
@@ -34,7 +34,7 @@
 
 <div *ngIf="notInput">
   <div class="tak__date-not-input__picker-container">
-    <tak-datepicker-toggle takSuffix [for]="picker" class="not-input-field"></tak-datepicker-toggle>
+    <tak-datepicker-toggle takSuffix [for]="picker"></tak-datepicker-toggle>
     <tak-datepicker (closed)="onCloseDatePicker()" #picker></tak-datepicker>
   </div>
 
@@ -49,7 +49,7 @@
         [value]="value"
         (keyup)="onChange($event)"
         (dateChange)="onChange($event)"
-        [disabled]="disabled"
+        [disabled]="isDisabled"
         (focusout)="onFocusout()"
       />
     </tak-form-field>
