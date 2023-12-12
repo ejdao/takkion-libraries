@@ -11,6 +11,7 @@ import { TakCapsuleModule } from '@takkion/ng-components/capsule';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TakButtonModule } from '@takkion/ng-material/button';
 import { TakFieldsModule } from '@takkion/ng-components/fields';
+import { TakProgressSpinnerModule } from '@takkion/ng-material/progress-spinner';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -22,6 +23,7 @@ import { TakFieldsModule } from '@takkion/ng-components/fields';
     TakBoxFormModule,
     TakButtonModule,
     TakFormFieldModule,
+    TakProgressSpinnerModule,
     TakInputModule,
     TakDividerModule,
     TakFieldsModule,
