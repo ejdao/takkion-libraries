@@ -6,7 +6,10 @@
     [color]="color"
   >
     <tak-label>
-      <ng-content></ng-content>{{ ' ' }}<span class="tak-field__danger-x" *ngIf="required">*</span>
+      <ng-content></ng-content>{{ ' ' }}
+      @if (required) {
+        <span class="tak-field__danger-x">*</span>
+      }
     </tak-label>
     <input
       class="tak-bolder"
@@ -22,32 +25,23 @@
       [attr.maxLength]="maxLength"
       (focusout)="onFocusOut()"
     />
-    <button
-      takSuffix
-      tak-icon-button
-      type="button"
-      *ngIf="control.value && hasClearButton && !isDisabled"
-      (click)="onClearControl()"
-    >
-      <tak-icon class="tak-suffix-icon-button">close</tak-icon>
-    </button>
-    <button
-      takSuffix
-      tak-icon-button
-      type="button"
-      *ngIf="control.value && hasActionButton && !isDisabled"
-      (click)="onExecuteAction.emit(control.value)"
-    >
-      <tak-icon class="tak-suffix-icon-button">{{ actionIcon }}</tak-icon>
-    </button>
-    <tak-hint align="end" *ngIf="countCaracters">
-      {{ control.value?.length || 0 }}/{{ maxLength }}
-    </tak-hint>
+    @if (control.value && hasClearButton && !isDisabled) {
+      <button takSuffix tak-icon-button type="button" (click)="onClearControl()">
+        <tak-icon class="tak-suffix-icon-button">close</tak-icon>
+      </button>
+    }
+    @if (control.value && hasActionButton && !isDisabled) {
+      <button takSuffix tak-icon-button type="button" (click)="onExecuteAction.emit(control.value)">
+        <tak-icon class="tak-suffix-icon-button">{{ actionIcon }}</tak-icon>
+      </button>
+    }
+    @if (countCaracters) {
+      <tak-hint align="end"> {{ control.value?.length || 0 }}/{{ maxLength }} </tak-hint>
+    }
   </tak-form-field>
   <div [style.maxWidth]="countCaracters ? '80%' : '100%'">
-    <tak-error
-      [control]="control"
-      *ngIf="isInvalid || (isSubmitted && control.invalid)"
-    ></tak-error>
+    @if (isInvalid || (isSubmitted && control.invalid)) {
+      <tak-error [control]="control"></tak-error>
+    }
   </div>
 </div>

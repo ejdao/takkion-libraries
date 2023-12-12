@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TakExpansionPanelHeaderComponent } from './sidebar/sidenav/expansion/expansion-panel-header.component';
@@ -29,7 +28,7 @@ import { RoutePartsService } from './services';
     TakLoader,
   ],
 
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [ReactiveFormsModule, RouterModule],
   exports: [TakLayoutComponent, TakLoader],
   providers: [RoutePartsService],
 })

@@ -5,7 +5,10 @@
     [color]="color"
   >
     <tak-label>
-      <ng-content></ng-content>{{ ' ' }}<span class="tak-field__danger-x" *ngIf="required">*</span>
+      <ng-content></ng-content>{{ ' ' }}
+      @if (required) {
+        <span class="tak-field__danger-x">*</span>
+      }
     </tak-label>
     <input
       takInput
@@ -18,34 +21,39 @@
       (focus)="onFocus()"
       (focusout)="onFocusout()"
     />
-    <button takSuffix tak-icon-button type="button" *ngIf="isRemoteSearch && isLoading">
-      <tak-spinner [diameter]="15" mode="indeterminate"></tak-spinner>
-    </button>
-    <button
-      takSuffix
-      tak-icon-button
-      type="button"
-      *ngIf="(control.value || value) && hasClearButton && !disabled"
-      (click)="onClearControl()"
-    >
-      <tak-icon>close</tak-icon>
-    </button>
+    @if (isRemoteSearch && isLoading) {
+      <button takSuffix tak-icon-button type="button">
+        <tak-spinner [diameter]="15" mode="indeterminate"></tak-spinner>
+      </button>
+    }
+    @if ((control.value || value) && hasClearButton && !disabled) {
+      <button takSuffix tak-icon-button type="button" (click)="onClearControl()">
+        <tak-icon>close</tak-icon>
+      </button>
+    }
     <tak-autocomplete #auto="takAutocomplete">
-      <tak-option
-        *ngFor="let suggestion of filteredOptions | async"
-        [value]="suggestion[option]"
-        [class.tak-option-extra]="extraInfo"
-        (onSelectionChange)="emit($event)"
-        (click)="emitWithClick(suggestion)"
-        title="{{ suggestion[option] }} {{ extraInfo ? '(' + suggestion[extraInfo] + ')' : '' }}"
-      >
-        <span>{{ suggestion[option] }}</span>
-        <span *ngIf="extraInfo" class="tak-option-span-extra">{{ suggestion[extraInfo] }}</span>
-      </tak-option>
-      <tak-option *ngIf="notSuggestions">
-        <span class="tak-autocomplete-not-records"> No se encuentran resultados </span>
-      </tak-option>
+      @for (suggestion of filteredOptions | async; track suggestion) {
+        <tak-option
+          [value]="suggestion[option]"
+          [class.tak-option-extra]="extraInfo"
+          (onSelectionChange)="emit($event)"
+          (click)="emitWithClick(suggestion)"
+          title="{{ suggestion[option] }} {{ extraInfo ? '(' + suggestion[extraInfo] + ')' : '' }}"
+        >
+          <span>{{ suggestion[option] }}</span>
+          @if (extraInfo) {
+            <span class="tak-option-span-extra">{{ suggestion[extraInfo] }}</span>
+          }
+        </tak-option>
+      }
+      @if (notSuggestions) {
+        <tak-option>
+          <span class="tak-autocomplete-not-records"> No se encuentran resultados </span>
+        </tak-option>
+      }
     </tak-autocomplete>
   </tak-form-field>
-  <tak-error [control]="control" *ngIf="isInvalid || (isSubmitted && control.invalid)"></tak-error>
+  @if (isInvalid || (isSubmitted && control.invalid)) {
+    <tak-error [control]="control"></tak-error>
+  }
 </div>

@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TakCardModule } from '@takkion/ng-material/card';
 import { TakBoxFormComponent } from './box-form.component';
 import { TakIconModule } from '@takkion/ng-material/icon';
@@ -11,7 +10,6 @@ import { TakDividerModule } from '@takkion/ng-material/divider';
 @NgModule({
   declarations: [TakBoxFormComponent],
   imports: [
-    CommonModule,
     TakCardModule,
     ReactiveFormsModule,
     TakIconModule,

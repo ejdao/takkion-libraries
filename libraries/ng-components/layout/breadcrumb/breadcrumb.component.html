@@ -5,7 +5,9 @@
       <li class="tak-breadcrumb-item">
         <span>{{ base }}</span>
       </li>
-      <li class="tak-breadcrumb-item active" *ngIf="!singleRoute">{{ title }}</li>
+      @if (!singleRoute) {
+        <li class="tak-breadcrumb-item active">{{ title }}</li>
+      }
     </ol>
   </nav>
 </div>

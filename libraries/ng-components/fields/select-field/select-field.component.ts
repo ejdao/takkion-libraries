@@ -26,8 +26,10 @@ export class TakSelectFieldComponent implements OnInit, OnDestroy, ControlValueA
   @Input() color: ThemePalette = 'primary';
   @Input() suggestions: any[] = [];
   @Input() disabled = false;
+
   @Input() type: 'menu' | 'select' = 'select';
   @Input() tooltip = '';
+  @Input() icon = 'filter_list';
 
   @Input() option = 'option';
 

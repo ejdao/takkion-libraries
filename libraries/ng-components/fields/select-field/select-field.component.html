@@ -3,31 +3,32 @@
     <tak-form-field [appearance]="appearance" [color]="color">
       <tak-label><ng-content></ng-content></tak-label>
       <tak-select [formControl]="control" (focusout)="onFocusOut()">
-        <tak-option
-          *ngFor="let item of suggestions"
-          [value]="item"
-          (onSelectionChange)="emit($event)"
-        >
-          {{ item[option] }}
-        </tak-option>
+        @for (item of suggestions; track item) {
+          <tak-option [value]="item" (onSelectionChange)="emit($event)">
+            {{ item[option] }}
+          </tak-option>
+        }
       </tak-select>
     </tak-form-field>
-    <tak-error
-      [control]="control"
-      *ngIf="isInvalid || (isSubmitted && control.invalid)"
-    ></tak-error>
+    @if (isInvalid || (isSubmitted && control.invalid)) {
+      <tak-error [control]="control"></tak-error>
+    }
   </div>
 } @else {
   <div [takTooltip]="tooltip">
-    <span *ngIf="type === 'menu'">
-      <button tak-icon-button type="button" [takMenuTriggerFor]="menu">
-        <tak-icon>filter_list</tak-icon>
-      </button>
-      <tak-menu #menu="takMenu">
-        <a tak-menu-item *ngFor="let item of suggestions" (click)="justEmit(item)">
-          {{ item[option] }}
-        </a>
-      </tak-menu>
-    </span>
+    @if (type === 'menu') {
+      <span>
+        <button tak-icon-button type="button" [takMenuTriggerFor]="menu" [disabled]="isDisabled">
+          <tak-icon>{{ icon }}</tak-icon>
+        </button>
+        <tak-menu #menu="takMenu">
+          @for (item of suggestions; track item) {
+            <a tak-menu-item (click)="justEmit(item)">
+              {{ item[option] }}
+            </a>
+          }
+        </tak-menu>
+      </span>
+    }
   </div>
 }

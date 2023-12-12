@@ -88,8 +88,8 @@ export class HomeComponent implements OnInit {
     type === 'notification'
       ? this._toast.notification(message, { verticalPosition: 'top' })
       : type === 'danger'
-      ? this._toast.danger(message, { horizontalPosition: 'end' })
-      : this._toast.success(message, { horizontalPosition: 'left' });
+        ? this._toast.danger(message, { horizontalPosition: 'end' })
+        : this._toast.success(message, { horizontalPosition: 'left' });
   }
 
   openModal() {

@@ -36,17 +36,17 @@ export const PRODUCTOS = [
 export class FieldsForm extends FormGroup {
   constructor() {
     super({
-      text: new FormControl({ value: null, disabled: false }),
-      textarea: new FormControl({ value: null, disabled: false }),
-      filter: new FormControl({ value: null, disabled: false }),
-      number: new FormControl({ value: 999, disabled: false }),
-      select: new FormControl({ value: null, disabled: false }),
-      money: new FormControl({ value: 3000, disabled: false }),
-      date: new FormControl({ value: new Date(), disabled: false }),
-      start: new FormControl({ value: new Date(), disabled: false }),
-      end: new FormControl({ value: new Date(), disabled: false }),
-      query: new FormControl({ value: null, disabled: false }),
-      autocomplete: new FormControl({ value: '', disabled: false }),
+      text: new FormControl({ value: null, disabled: false }, [Validators.required]),
+      textarea: new FormControl({ value: null, disabled: false }, [Validators.required]),
+      filter: new FormControl({ value: null, disabled: false }, [Validators.required]),
+      number: new FormControl({ value: 999, disabled: false }, [Validators.required]),
+      select: new FormControl({ value: null, disabled: false }, [Validators.required]),
+      money: new FormControl({ value: 3000, disabled: false }, [Validators.required]),
+      date: new FormControl({ value: new Date(), disabled: false }, [Validators.required]),
+      start: new FormControl({ value: new Date(), disabled: false }, [Validators.required]),
+      end: new FormControl({ value: new Date(), disabled: false }, [Validators.required]),
+      query: new FormControl({ value: null, disabled: false }, [Validators.required]),
+      autocomplete: new FormControl({ value: '', disabled: false }, [Validators.required]),
     });
   }
 

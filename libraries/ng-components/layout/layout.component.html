@@ -29,12 +29,14 @@
     <div class="tak__scroll" #scrollLayout>
       <div class="tak__content">
         <!-- View Loader -->
-        <div class="view-loader" style="position: fixed" *ngIf="isModuleLoading">
-          <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
+        @if (isModuleLoading) {
+          <div class="view-loader" style="position: fixed">
+            <div class="spinner">
+              <div class="double-bounce1"></div>
+              <div class="double-bounce2"></div>
+            </div>
           </div>
-        </div>
+        }
         <div class="tak__outlet">
           <tak-breadcrumb [class.tak-breadcrumb-hidden]="!includeBreadcrumbs"></tak-breadcrumb>
           <div>
