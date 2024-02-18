@@ -4,13 +4,15 @@
   height: 120px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
-  border: 16px solid var(--tak-progress-circle-border-color);
-  border-top: 16px solid var(--tak-primary-500);
+  border: 16px solid var(--tak-primary-500);
+  border-top: 16px solid var(--tak-progress-circle-border-color);
   &[color='accent'] {
-    border-top: 16px solid var(--tak-accent-500);
+    border: 16px solid var(--tak-accent-500);
+    border-top: 16px solid var(--tak-progress-circle-border-color);
   }
   &[color='warn'] {
-    border-top: 16px solid var(--tak-warn-500);
+    border: 16px solid var(--tak-warn-500);
+    border-top: 16px solid var(--tak-progress-circle-border-color);
   }
 }
 
