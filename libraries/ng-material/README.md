@@ -10,7 +10,7 @@ Original (@angular/cdk@14.2.7) released at Sept/11/22.
 
 ## Used and checked
 
-Tested in ng `14.2.7`, `15.2.4` and `16.2.5` without problems, you can try in superior versions, but it's not recommended.
+Tested in ng `14.2.7`, `15.2.4`, `16.2.5`, `17.2.3` without problems, you can try in superior versions, but it's not recommended.
 
 ## Peer dependencies
 
