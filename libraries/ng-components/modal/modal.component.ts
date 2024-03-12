@@ -1,6 +1,6 @@
 import { Component, ElementRef, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { TakDialogRef, TAK_DIALOG_DATA } from '@takkion/ng-material/dialog';
-import { TAK_MODAL_CONFIG, TakModalConfig, TakModalType } from './config';
+import { TakModalConfig, TakModalType } from './config';
 
 @Component({
   selector: 'tak-modal',
@@ -17,33 +17,25 @@ export class TakModalComponent implements OnInit {
   private _hasTopCloseButton = true;
 
   constructor(
-    private _href: ElementRef<HTMLElement>,
+    href: ElementRef<HTMLElement>,
     private _dialogRef: TakDialogRef<TakModalComponent>,
     @Inject(TAK_DIALOG_DATA)
     public data: { content: string; title: string; options?: TakModalConfig; type: TakModalType }
   ) {
-    _href.nativeElement.classList.add('tak-modal');
+    href.nativeElement.classList.add('tak-modal');
   }
 
   public ngOnInit(): void {
     if (this.data.type === 'alert') this._isAlert = true;
     else this._isAlert = false;
 
-    const confirmButton = this.data.options?.confirmButton
-      ? this.data.options.confirmButton
-      : TAK_MODAL_CONFIG.value?.confirmButton || 'SI';
-
-    const deniedButton = this.data.options?.deniedButton
-      ? this.data.options.deniedButton
-      : TAK_MODAL_CONFIG.value?.deniedButton || 'NO';
-
-    const okButton = this.data.options?.okButton
-      ? this.data.options.okButton
-      : TAK_MODAL_CONFIG.value?.okButton || 'OK';
-
-    const hasTopCloseButton = this.data.options?.hasTopCloseButton
-      ? this.data.options.hasTopCloseButton
-      : TAK_MODAL_CONFIG.value?.hasTopCloseButton || true;
+    const confirmButton = this.data.options?.confirmButton ? this.data.options.confirmButton : 'SI';
+    const deniedButton = this.data.options?.deniedButton ? this.data.options.deniedButton : 'NO';
+    const okButton = this.data.options?.okButton ? this.data.options.okButton : 'OK';
+    const hasTopCloseButton =
+      this.data.options?.hasTopCloseButton !== undefined
+        ? this.data.options.hasTopCloseButton
+        : true;
 
     this._confirmButton = confirmButton;
     this._deniedButton = deniedButton;
@@ -57,6 +49,10 @@ export class TakModalComponent implements OnInit {
 
   public onClose(): void {
     this._dialogRef.close(false);
+  }
+
+  public onCloseFromButton(): void {
+    this._dialogRef.close(undefined);
   }
 
   get isAlert(): boolean {

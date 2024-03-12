@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { TakModal } from '@takkion/ng-components/modal';
 
 @Component({
@@ -23,17 +23,10 @@ export class HeaderComponent {
 
   public onLogout(): void {
     this._modal
-      .confirm(
-        '¿Desea cerrar su sesión?',
-        '¿Seguro?' /* , {
-        dialogOptions: {
-          maxWidth: '100vw',
-          maxHeight: '100vh',
-          height: '100%',
-          width: '100%',
-        },
-      } */
-      )
+      .confirm('¿Desea cerrar su sesión?', '¿Seguro?', {
+        confirmButton: 'A',
+        deniedButton: 'B',
+      })
       .subscribe(result => {
         if (result) {
           localStorage.clear();

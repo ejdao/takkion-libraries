@@ -4,16 +4,16 @@
       @if (data.title !== '') {
         <h1 class="tak-modal__title">{{ data.title }}</h1>
       }
-      @if (hasTopCloseButton) {
-        <div>
-          <button tak-icon-button (click)="onClose()"><tak-icon>close</tak-icon></button>
-        </div>
-      }
+      <div>
+        <button tak-icon-button (click)="onCloseFromButton()"><tak-icon>close</tak-icon></button>
+      </div>
     </div>
   </div>
 }
 <div tak-dialog-content>
-  <tak-divider></tak-divider>
+  @if (hasTopCloseButton) {
+    <tak-divider></tak-divider>
+  }
   <p class="tak-modal__content">{{ data.content }}</p>
   <tak-divider></tak-divider>
 </div>

@@ -1,4 +1,3 @@
-import { FormControl } from '@angular/forms';
 import { TakDialogConfig } from '@takkion/ng-material/dialog';
 
 export type TakModalType = 'confirm' | 'alert';
@@ -10,5 +9,3 @@ export interface TakModalConfig {
   hasTopCloseButton?: boolean;
   dialogOptions?: TakDialogConfig;
 }
-
-export const TAK_MODAL_CONFIG = new FormControl<TakModalConfig | null>(null);

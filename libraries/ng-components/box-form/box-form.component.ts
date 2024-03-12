@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { TAK_BOX_FORM_CONFIG } from './common';
 
 @Component({
   selector: 'tak-box-form',
@@ -61,16 +60,10 @@ export class TakBoxFormComponent {
 
     if (!this.showActionButtons) this.exedentInPx -= 58;
 
-    this._submitButton = this.submitButton
-      ? this.submitButton
-      : TAK_BOX_FORM_CONFIG.value?.submitButton || 'ENVIAR';
-    this._resetButton = this.resetButton
-      ? this.resetButton
-      : TAK_BOX_FORM_CONFIG.value?.resetButton || 'REINICIAR';
+    this._submitButton = this.submitButton ? this.submitButton : 'ENVIAR';
+    this._resetButton = this.resetButton ? this.resetButton : 'REINICIAR';
 
-    if (TAK_BOX_FORM_CONFIG.value?.hasBreadcrumbs || this.hasBreadcrumbs) {
-      this.exedentInPx = this.exedentInPx + 45;
-    }
+    if (this.hasBreadcrumbs) this.exedentInPx = this.exedentInPx + 45;
   }
 
   public clickOnReset() {

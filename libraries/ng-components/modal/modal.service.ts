@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TakDialog, TakDialogConfig } from '@takkion/ng-material/dialog';
-import { Observable } from 'rxjs';
+import { TakDialog } from '@takkion/ng-material/dialog';
 import { TakModalComponent } from './modal.component';
 import { TakModalConfig, TakModalType } from './config';
 
@@ -22,12 +21,7 @@ export class TakModal {
     type: TakModalType,
     options?: TakModalConfig
   ) {
-    if (options) options.dialogOptions!.data = { content, title, options, type };
-
-    const dialog = this.dialog.open(
-      TakModalComponent,
-      options?.dialogOptions ? options.dialogOptions : { data: { content, title, options, type } }
-    );
+    const dialog = this.dialog.open(TakModalComponent, { data: { content, title, options, type } });
     return dialog.afterClosed();
   }
 }
