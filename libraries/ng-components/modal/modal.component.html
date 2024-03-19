@@ -14,7 +14,18 @@
   @if (hasTopCloseButton) {
     <tak-divider></tak-divider>
   }
-  <p class="tak-modal__content">{{ data.content }}</p>
+  <div class="tak-modal__content">
+    <p>{{ data.content }}</p>
+
+    @if (hasTextArea) {
+      <tak-divider style="margin-bottom: 10px"></tak-divider>
+
+      <tak-textarea [(ngModel)]="textArea" [countCaracters]="true" [maxLength]="textAreaLength">{{
+        textAreaLabel
+      }}</tak-textarea>
+    }
+  </div>
+
   <tak-divider></tak-divider>
 </div>
 <tak-dialog-actions align="end">

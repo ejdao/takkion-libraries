@@ -8,4 +8,7 @@ export interface TakModalConfig {
   okButton?: string;
   hasTopCloseButton?: boolean;
   dialogOptions?: TakDialogConfig;
+  hasTextArea?: boolean;
+  textAreaLabel?: string;
+  textAreaLength?: number;
 }

@@ -26,9 +26,11 @@ export class HeaderComponent {
       .confirm('¿Desea cerrar su sesión?', '¿Seguro?', {
         confirmButton: 'A',
         deniedButton: 'B',
+        hasTextArea: true,
       })
       .subscribe(result => {
-        if (result) {
+        console.log(result);
+        if (result && result.success) {
           localStorage.clear();
           location.reload();
         }

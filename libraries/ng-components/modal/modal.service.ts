@@ -21,7 +21,17 @@ export class TakModal {
     type: TakModalType,
     options?: TakModalConfig
   ) {
-    const dialog = this.dialog.open(TakModalComponent, { data: { content, title, options, type } });
+    if (options && !options.textAreaLabel) options.textAreaLabel = 'Observaciones';
+    if (options && !options.textAreaLength) options.textAreaLength = 500;
+
+    const dialog = this.dialog.open(TakModalComponent, {
+      data: {
+        content,
+        title,
+        options,
+        type,
+      },
+    });
     return dialog.afterClosed();
   }
 }
