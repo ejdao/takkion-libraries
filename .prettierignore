@@ -6,3 +6,5 @@ build
 coverage
 dist
 node_modules
+libraries/ng-cdk
+libraries/ng-material

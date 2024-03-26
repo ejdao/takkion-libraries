@@ -1,0 +1,26 @@
+<div class="tak-elevation-z8">
+  <table tak-table class="full-width-table" takSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container takColumnDef="id">
+      <th tak-header-cell *takHeaderCellDef tak-sort-header>Id</th>
+      <td tak-cell *takCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container takColumnDef="name">
+      <th tak-header-cell *takHeaderCellDef tak-sort-header>Name</th>
+      <td tak-cell *takCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <tr tak-header-row *takHeaderRowDef="displayedColumns"></tr>
+    <tr tak-row *takRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <tak-paginator #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </tak-paginator>
+</div>
