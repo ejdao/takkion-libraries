@@ -6,6 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "allowJs": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -25,6 +26,7 @@
       "@takkion/ng-cdk/*": ["libraries/ng-cdk/*"],
       "@takkion/ng-material/*": ["libraries/ng-material/*"],
       "@takkion/ng-material": ["libraries/ng-material"],
+      "@takkion/ng-utilities": ["libraries/ng-utilities"],
       "@takkion/ng-components/*": ["libraries/ng-components/*"]
     }
   },
