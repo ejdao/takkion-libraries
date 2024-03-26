@@ -1,0 +1,100 @@
+@use 'sass:map';
+@use '../core/theming/theming';
+@use '../core/typography/typography';
+@use '../core/typography/typography-utils';
+
+@mixin _color($palette) {
+  &.tak-radio-checked .tak-radio-outer-circle {
+    border-color: theming.get-color-from-palette($palette);
+  }
+
+  .tak-radio-inner-circle,
+  .tak-radio-ripple .tak-ripple-element:not(.tak-radio-persistent-ripple),
+  &.tak-radio-checked .tak-radio-persistent-ripple,
+  &:active .tak-radio-persistent-ripple {
+    background-color: theming.get-color-from-palette($palette);
+  }
+}
+
+@mixin color($config-or-theme) {
+  $config: theming.get-color-config($config-or-theme);
+  $primary: map.get($config, primary);
+  $accent: map.get($config, accent);
+  $warn: map.get($config, warn);
+  $background: map.get($config, background);
+  $foreground: map.get($config, foreground);
+
+  .tak-radio-outer-circle {
+    border-color: theming.get-color-from-palette($foreground, secondary-text);
+  }
+
+  .tak-radio-button {
+    &.tak-primary {
+      @include _color($primary);
+    }
+
+    &.tak-accent {
+      @include _color($accent);
+    }
+
+    &.tak-warn {
+      @include _color($warn);
+    }
+
+    // This needs extra specificity, because the classes above are combined
+    // (e.g. `.tak-radio-button.tak-accent`) which increases their specificity a lot.
+    // TODO: consider making the selectors into descendants (`.tak-primary .tak-radio-button`).
+    &.tak-radio-disabled {
+      &.tak-radio-checked .tak-radio-outer-circle,
+      .tak-radio-outer-circle {
+        border-color: theming.get-color-from-palette($foreground, disabled);
+      }
+
+      .tak-radio-ripple .tak-ripple-element,
+      .tak-radio-inner-circle {
+        background-color: theming.get-color-from-palette($foreground, disabled);
+      }
+
+      .tak-radio-label-content {
+        color: theming.get-color-from-palette($foreground, disabled);
+      }
+    }
+
+    // Switch this to a solid color since we're using `opacity`
+    // to control how opaque the ripple should be.
+    .tak-ripple-element {
+      background-color: map.get($foreground, base);
+    }
+  }
+}
+
+@mixin typography($config-or-theme) {
+  $config: typography.private-typography-to-2014-config(
+    theming.get-typography-config($config-or-theme)
+  );
+  .tak-radio-button {
+    font-family: typography-utils.font-family($config);
+  }
+}
+
+@mixin _density($config-or-theme) {
+}
+
+@mixin theme($theme-or-color-config) {
+  $theme: theming.private-legacy-get-theme($theme-or-color-config);
+  @include theming.private-check-duplicate-theme-styles($theme, 'tak-radio') {
+    $color: theming.get-color-config($theme);
+    $density: theming.get-density-config($theme);
+    $typography: theming.get-typography-config($theme);
+
+    @if $color != null {
+      @include color($color);
+    }
+    @if $density != null {
+      @include _density($density);
+    }
+    @if $typography != null {
+      @include typography($typography);
+    }
+  }
+}

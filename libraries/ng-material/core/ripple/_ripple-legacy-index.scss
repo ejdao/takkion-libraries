@@ -1,0 +1,3 @@
+@forward 'ripple' as tak-* hide $tak-color-opacity;
+@forward 'ripple' as tak-ripple-* hide tak-ripple-ripple;
+@forward 'ripple-theme' as tak-ripple-*;

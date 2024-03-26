@@ -21,7 +21,11 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@takkion/ng-components/*": ["dist/ng-components/*"]
+      "@takkion/ng-cdk": ["libraries/ng-cdk"],
+      "@takkion/ng-cdk/*": ["libraries/ng-cdk/*"],
+      "@takkion/ng-material/*": ["libraries/ng-material/*"],
+      "@takkion/ng-material": ["libraries/ng-material"],
+      "@takkion/ng-components/*": ["libraries/ng-components/*"]
     }
   },
   "angularCompilerOptions": {
