@@ -1,6 +1,6 @@
 {
   "name": "@takkion/ng-cdk",
-  "version": "17.3.1",
+  "version": "1.0.2",
   "description": "Angular Material Component Development Kit",
   "repository": {
     "type": "git",
@@ -201,21 +201,7 @@
       "default": "./fesm2022/tree.mjs"
     }
   },
-  "peerDependencies": {
-    "@angular/core": "^17.0.0 || ^18.0.0",
-    "@angular/common": "^17.0.0 || ^18.0.0",
-    "rxjs": "^6.5.3 || ^7.4.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "optionalDependencies": {
-    "parse5": "^7.1.2"
-  },
   "schematics": "./schematics/collection.json",
-  "ng-update": {
-    "migrations": "./schematics/migration.json"
-  },
   "sideEffects": false,
   "module": "./fesm2022/cdk.mjs",
   "typings": "./index.d.ts",
