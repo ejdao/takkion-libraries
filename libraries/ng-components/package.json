@@ -1,9 +1,9 @@
 {
   "name": "@takkion/ng-components",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "peerDependencies": {
-    "@takkion/ng-cdk": "^1.0.2",
-    "@takkion/ng-material": "^1.0.4"
+    "@takkion/ng-cdk": "^2.0.0",
+    "@takkion/ng-material": "^2.0.0"
   },
   "sideEffects": false
 }
