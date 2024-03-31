@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { TakAdminLayoutConfig } from '@takkion/ng-components/layouts/admin';
 
 @Component({
   selector: 'app-layout',
@@ -7,4 +8,14 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AdminLayoutComponent {}
+export class AdminLayoutComponent {
+  public config: TakAdminLayoutConfig = {
+    topSegmentTitle: 'ejdao Dev S.A',
+    topSegmentSubtitle: 'ejdao Location',
+    topSegmentIconUrl: 'favicon.ico',
+    mobileResolution: '900px',
+    hasFooter: true,
+    contexts: undefined,
+    authorities: undefined,
+  };
+}

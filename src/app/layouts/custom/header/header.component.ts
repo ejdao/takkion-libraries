@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +8,10 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
+  constructor(href: ElementRef<HTMLElement>) {
+    href.nativeElement.classList.add('app-header');
+  }
+
   public toggleMode() {
     const body = document.getElementsByTagName('html')[0];
     if (body.classList.contains('dark-theme')) {

@@ -1,0 +1,50 @@
+<div
+  class="tak-admin-layout__sidebar"
+  (mouseover)="mouseOnSidebar('over')"
+  (mouseleave)="mouseOnSidebar('leave')"
+  #sidebar
+>
+  <div class="top-segment">
+    <div class="sg1">
+      <img class="logo" [src]="config.topSegmentIconUrl" />
+    </div>
+
+    <div class="sg2">
+      <h1 class="title">{{ config.topSegmentTitle }}</h1>
+      <h2 class="subtitle">{{ config.topSegmentSubtitle }}</h2>
+    </div>
+
+    <div class="sg3">
+      <mat-slide-toggle
+        class="fixed-toggle"
+        color="primary"
+        [checked]="sidebarIsFixed"
+        (change)="clickOnSetSidebar()"
+      >
+      </mat-slide-toggle>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  sidebar works
+</div>
+
+<div class="tak-admin-layout__container" #container>
+  <header class="tak-admin-layout__header">
+    <div>
+      <button class="menu-button" mat-icon-button (click)="clickOnSetSidebar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <ng-content select="[tak-custom-header]"></ng-content>
+  </header>
+
+  <div class="tak-admin-layout__content">
+    <ng-content></ng-content>
+  </div>
+
+  @if (config.hasFooter) {
+    <footer class="tak-admin-layout__footer">
+      <ng-content select="[tak-custom-footer]"></ng-content>
+    </footer>
+  }
+</div>
