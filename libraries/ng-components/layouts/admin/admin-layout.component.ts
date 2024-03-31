@@ -20,6 +20,8 @@ export class AdminLayoutComponent {
     hasFooter: true,
     contexts: undefined,
     authorities: undefined,
+    navigation: [],
+    multiDropdowns: false,
   };
 
   public sidebarIsFixed = false;

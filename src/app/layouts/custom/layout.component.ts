@@ -17,5 +17,52 @@ export class AdminLayoutComponent {
     hasFooter: true,
     contexts: undefined,
     authorities: undefined,
+    navigation: [
+      {
+        type: 'link',
+        name: 'home',
+        url: 'home1',
+        icon: 'home',
+      },
+      {
+        type: 'dropdown',
+        name: 'home',
+        url: 'home3',
+        icon: 'home',
+        dropdownLinks: [
+          {
+            name: 'home',
+            url: 'home1',
+          },
+        ],
+      },
+      {
+        type: 'collection',
+        name: 'home',
+        objects: [
+          {
+            type: 'link',
+            name: 'home',
+            url: 'home2',
+            icon: 'favicon.ico',
+            iconType: 'img',
+            iconMarginLeft: '2px',
+            iconMarginRight: '7px',
+          },
+          {
+            type: 'dropdown',
+            name: 'home',
+            url: 'home3',
+            icon: 'home',
+            dropdownLinks: [
+              {
+                name: 'home',
+                url: 'home1',
+              },
+            ],
+          },
+        ],
+      },
+    ],
   };
 }

@@ -25,7 +25,85 @@
     </div>
   </div>
   <mat-divider></mat-divider>
-  sidebar works
+
+  <mat-accordion [multi]="config.multiDropdowns || false">
+    @for (item of config.navigation; track $index) {
+      @if (item.type === 'link') {
+        <a [routerLink]="item.url" routerLinkActive="active">
+          <div class="link">
+            <tak-admin-layout-link [item]="item"></tak-admin-layout-link>
+          </div>
+        </a>
+      }
+
+      @if (item.type === 'dropdown') {
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <tak-admin-layout-link class="dropdown-link" [item]="item"></tak-admin-layout-link>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          @for (link of item.dropdownLinks; track $index) {
+            <a
+              [routerLink]="link.urlIsNotAutoCompleted ? link.url : item.url + '/' + link.url"
+              routerLinkActive="active"
+            >
+              <div class="link">
+                <tak-admin-layout-link [item]="link"></tak-admin-layout-link>
+              </div>
+            </a>
+          }
+        </mat-expansion-panel>
+      }
+
+      @if (item.type === 'collection') {
+        <div class="link disabled">
+          <tak-admin-layout-link [item]="item" [isCollection]="true"></tak-admin-layout-link>
+        </div>
+        <mat-divider></mat-divider>
+
+        @for (object of item.objects; track $index) {
+          @if (object.type === 'link') {
+            <a
+              [routerLink]="object.urlIsNotAutoCompleted ? object.url : item.url + '/' + object.url"
+              routerLinkActive="active"
+            >
+              <div class="link">
+                <tak-admin-layout-link [item]="object"></tak-admin-layout-link>
+              </div>
+            </a>
+          }
+
+          @if (object.type === 'dropdown') {
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <tak-admin-layout-link
+                    class="dropdown-link"
+                    [item]="object"
+                  ></tak-admin-layout-link>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              @for (link of object.dropdownLinks; track $index) {
+                <a
+                  [routerLink]="
+                    link.urlIsNotAutoCompleted
+                      ? link.url
+                      : item.url + '/' + object.url + '/' + link.url
+                  "
+                  routerLinkActive="active"
+                >
+                  <div class="link">
+                    <tak-admin-layout-link [item]="link"></tak-admin-layout-link>
+                  </div>
+                </a>
+              }
+            </mat-expansion-panel>
+          }
+        }
+      }
+    }
+  </mat-accordion>
 </div>
 
 <div class="tak-admin-layout__container" #container>
