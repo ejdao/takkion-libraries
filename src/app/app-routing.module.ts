@@ -23,6 +23,14 @@ const routes: Routes = [
             path: 'badge',
             loadChildren: () => import('./modules/components').then(m => m.BadgeModule),
           },
+          {
+            path: 'checkbox',
+            loadChildren: () => import('./modules/components').then(m => m.CheckboxModule),
+          },
+          {
+            path: 'datepicker',
+            loadChildren: () => import('./modules/components').then(m => m.DatepickerModule),
+          },
         ],
       },
     ],

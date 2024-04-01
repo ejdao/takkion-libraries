@@ -10,7 +10,7 @@ import { AddTokenInterceptor } from './interceptors/add-token';
 import { AdminLayoutModule } from './layouts/custom/layout.module';
 import { MatSnackBarModule } from '@takkion/ng-material/snack-bar';
 import { MatDialogModule } from '@takkion/ng-material/dialog';
-import { MAT_DATE_LOCALE } from '@takkion/ng-material/core';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@takkion/ng-material/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +25,7 @@ import { MAT_DATE_LOCALE } from '@takkion/ng-material/core';
     MatSnackBarModule,
     HttpClientModule,
     MatDialogModule,
+    MatNativeDateModule,
     AdminLayoutModule,
   ],
   providers: [

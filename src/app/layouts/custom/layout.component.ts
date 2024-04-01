@@ -41,6 +41,18 @@ export class AdminLayoutComponent {
             url: 'badge',
             icon: 'format_color_fill',
           },
+          {
+            type: 'link',
+            name: 'Checkbox + Chips + Divider',
+            url: 'checkbox',
+            icon: 'format_color_fill',
+          },
+          {
+            type: 'link',
+            name: 'Datepicker + Dialog + Expansion Panel',
+            url: 'datepicker',
+            icon: 'format_color_fill',
+          },
         ],
       },
     ],
