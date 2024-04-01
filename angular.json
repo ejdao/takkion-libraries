@@ -4,10 +4,11 @@
   "newProjectRoot": "libraries",
   "schematics": {
     "@schematics/angular:component": {
-      "style": "scss",
+      "changeDetection": "OnPush",
       "skipTests": true,
-      "viewEncapsulation": "None",
-      "standalone": false
+      "standalone": false,
+      "style": "scss",
+      "viewEncapsulation": "None"
     }
   },
   "projects": {

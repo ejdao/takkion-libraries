@@ -21,45 +21,25 @@ export class AdminLayoutComponent {
       {
         type: 'link',
         name: 'home',
-        url: 'home1',
+        url: 'home',
         icon: 'home',
-      },
-      {
-        type: 'dropdown',
-        name: 'home',
-        url: 'home3',
-        icon: 'home',
-        dropdownLinks: [
-          {
-            name: 'home',
-            url: 'home1',
-          },
-        ],
       },
       {
         type: 'collection',
-        name: 'home',
+        name: 'Material Components',
+        url: 'components',
         objects: [
           {
             type: 'link',
-            name: 'home',
-            url: 'home2',
-            icon: 'favicon.ico',
-            iconType: 'img',
-            iconMarginLeft: '2px',
-            iconMarginRight: '7px',
+            name: 'Autocomplete + Button + Button Toggle',
+            url: 'autocomplete',
+            icon: 'format_color_fill',
           },
           {
-            type: 'dropdown',
-            name: 'home',
-            url: 'home3',
-            icon: 'home',
-            dropdownLinks: [
-              {
-                name: 'home',
-                url: 'home1',
-              },
-            ],
+            type: 'link',
+            name: 'Badge + Bottom Sheet + Card',
+            url: 'badge',
+            icon: 'format_color_fill',
           },
         ],
       },

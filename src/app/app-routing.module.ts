@@ -12,6 +12,19 @@ const routes: Routes = [
         path: 'home',
         loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
       },
+      {
+        path: 'components',
+        children: [
+          {
+            path: 'autocomplete',
+            loadChildren: () => import('./modules/components').then(m => m.AutocompleteModule),
+          },
+          {
+            path: 'badge',
+            loadChildren: () => import('./modules/components').then(m => m.BadgeModule),
+          },
+        ],
+      },
     ],
   },
 ];

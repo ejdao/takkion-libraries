@@ -234,6 +234,7 @@ html {
       align-items: center;
       position: sticky;
       display: flex;
+      z-index: 998;
       top: 0;
       @media (min-width: $MOBILE_RESOLUTION) {
         & .menu-button {
