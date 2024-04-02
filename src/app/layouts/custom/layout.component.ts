@@ -53,6 +53,12 @@ export class AdminLayoutComponent {
             url: 'datepicker',
             icon: 'format_color_fill',
           },
+          {
+            type: 'link',
+            name: 'Form field + Grid List + Icon + Input + List + Menu',
+            url: 'form-field',
+            icon: 'format_color_fill',
+          },
         ],
       },
     ],

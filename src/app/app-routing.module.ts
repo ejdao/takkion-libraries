@@ -31,6 +31,10 @@ const routes: Routes = [
             path: 'datepicker',
             loadChildren: () => import('./modules/components').then(m => m.DatepickerModule),
           },
+          {
+            path: 'form-field',
+            loadChildren: () => import('./modules/components').then(m => m.FormFieldModule),
+          },
         ],
       },
     ],
