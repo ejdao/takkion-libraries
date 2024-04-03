@@ -1,0 +1,253 @@
+<mat-card class="example-card">
+  <mat-card-content>
+    <h2 class="example-h2">Progress bar configuration</h2>
+
+    <section class="example-section">
+      <label class="example-margin">Color:</label>
+      <mat-radio-group [(ngModel)]="color">
+        <mat-radio-button class="example-margin" value="primary"> Primary </mat-radio-button>
+        <mat-radio-button class="example-margin" value="accent"> Accent </mat-radio-button>
+        <mat-radio-button class="example-margin" value="warn"> Warn </mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+      <label class="example-margin">Mode:</label>
+      <mat-radio-group [(ngModel)]="mode">
+        <mat-radio-button class="example-margin" value="determinate">
+          Determinate
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="indeterminate">
+          Indeterminate
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="buffer"> Buffer </mat-radio-button>
+        <mat-radio-button class="example-margin" value="query"> Query </mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    @if (mode === 'determinate' || mode === 'buffer') {
+      <section class="example-section">
+        <label class="example-margin">Progress:</label>
+        <mat-slider class="example-margin">
+          <input type="range" [(ngModel)]="value" matSliderThumb />
+        </mat-slider>
+      </section>
+    }
+    @if (mode === 'buffer') {
+      <section class="example-section">
+        <label class="example-margin">Buffer:</label>
+        <mat-slider class="example-margin">
+          <input type="range" [(ngModel)]="bufferValue" matSliderThumb />
+        </mat-slider>
+      </section>
+    }
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-content>
+    <h2 class="example-h2">Result</h2>
+
+    <section class="example-section">
+      <mat-progress-bar
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue"
+      >
+      </mat-progress-bar>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<br />
+
+<mat-card class="example-card">
+  <mat-card-content>
+    <h2 class="example-h2">Progress spinner configuration</h2>
+
+    <section class="example-section">
+      <label class="example-margin">Color:</label>
+      <mat-radio-group [(ngModel)]="color2">
+        <mat-radio-button class="example-margin" value="primary"> Primary </mat-radio-button>
+        <mat-radio-button class="example-margin" value="accent"> Accent </mat-radio-button>
+        <mat-radio-button class="example-margin" value="warn"> Warn </mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+      <label class="example-margin">Mode:</label>
+      <mat-radio-group [(ngModel)]="mode2">
+        <mat-radio-button class="example-margin" value="determinate">
+          Determinate
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="indeterminate">
+          Indeterminate
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    @if (mode === 'determinate') {
+      <section class="example-section">
+        <label class="example-margin">Progress:</label>
+        <mat-slider class="example-margin">
+          <input type="range" [(ngModel)]="value2" matSliderThumb />
+        </mat-slider>
+      </section>
+    }
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-content>
+    <h2 class="example-h2">Result</h2>
+
+    <mat-progress-spinner class="example-margin" [color]="color2" [mode]="mode2" [value]="value2">
+    </mat-progress-spinner>
+  </mat-card-content>
+</mat-card>
+
+<br />
+
+<label id="example-radio-group-label">Pick your favorite season</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="favoriteSeason"
+>
+  @for (season of seasons; track season) {
+    <mat-radio-button class="example-radio-button" [value]="season">{{ season }}</mat-radio-button>
+  }
+</mat-radio-group>
+<div>Your favorite season is: {{ favoriteSeason }}</div>
+
+<br />
+
+<mat-checkbox [(ngModel)]="centered" class="example-ripple-checkbox">Centered</mat-checkbox>
+<mat-checkbox [(ngModel)]="disabled" class="example-ripple-checkbox">Disabled</mat-checkbox>
+<mat-checkbox [(ngModel)]="unbounded" class="example-ripple-checkbox">Unbounded</mat-checkbox>
+
+<mat-form-field class="example-ripple-form-field">
+  <mat-label>Radius</mat-label>
+  <input matInput [(ngModel)]="radius" type="number" />
+</mat-form-field>
+<mat-form-field class="example-ripple-form-field">
+  <mat-label>Color</mat-label>
+  <input matInput [(ngModel)]="color3" type="text" />
+</mat-form-field>
+
+<div
+  class="example-ripple-container mat-elevation-z4"
+  matRipple
+  [matRippleCentered]="centered"
+  [matRippleDisabled]="disabled"
+  [matRippleUnbounded]="unbounded"
+  [matRippleRadius]="radius"
+  [matRippleColor]="color3"
+>
+  Click me
+</div>
+
+<br />
+
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Slider configuration</h2>
+
+    <section class="example-section">
+      <label class="example-margin">Color:</label>
+      <mat-radio-group [(ngModel)]="color4">
+        <mat-radio-button class="example-margin" value="primary"> Primary </mat-radio-button>
+        <mat-radio-button class="example-margin" value="accent"> Accent </mat-radio-button>
+        <mat-radio-button class="example-margin" value="warn"> Warn </mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="disabled4">Disabled</mat-checkbox>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="result">
+  <mat-card-content>
+    <h2 class="example-h2">Result</h2>
+
+    <section class="example-section">
+      <mat-slide-toggle
+        class="example-margin"
+        [color]="color4"
+        [checked]="checked"
+        [disabled]="disabled4"
+      >
+        Slide me!
+      </mat-slide-toggle>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<br />
+
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Slider configuration</h2>
+
+    <section class="example-section">
+      <mat-form-field class="example-margin example-width">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [(ngModel)]="value5" />
+      </mat-form-field>
+      <mat-form-field class="example-margin example-width">
+        <mat-label>Min value</mat-label>
+        <input matInput type="number" [(ngModel)]="min" />
+      </mat-form-field>
+      <mat-form-field class="example-margin example-width">
+        <mat-label>Max value</mat-label>
+        <input matInput type="number" [(ngModel)]="max" />
+      </mat-form-field>
+      <mat-form-field class="example-margin example-width">
+        <mat-label>Step size</mat-label>
+        <input matInput type="number" [(ngModel)]="step" />
+      </mat-form-field>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox [(ngModel)]="showTicks">Show ticks</mat-checkbox>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox [(ngModel)]="thumbLabel">Show thumb label</mat-checkbox>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox [(ngModel)]="disabled5">Disabled</mat-checkbox>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-result-card">
+  <mat-card-content>
+    <h2>Result</h2>
+
+    <div class="example-label-container">
+      <label id="example-name-label" class="example-name-label">Value</label>
+      <label class="example-value-label">{{ slider.value }}</label>
+    </div>
+    <mat-slider
+      class="example-margin"
+      [disabled]="disabled5"
+      [max]="max"
+      [min]="min"
+      [step]="step"
+      [discrete]="thumbLabel"
+      [showTickMarks]="showTicks"
+    >
+      <input matSliderThumb [(ngModel)]="value5" #slider />
+    </mat-slider>
+  </mat-card-content>
+</mat-card>

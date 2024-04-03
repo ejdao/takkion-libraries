@@ -7,6 +7,7 @@ import { MatBadgeModule } from '@takkion/ng-material/badge';
 import { MatIconModule } from '@takkion/ng-material/icon';
 import { MatListModule } from '@takkion/ng-material/list';
 import { MatCardModule } from '@takkion/ng-material/card';
+import { MatTreeModule } from '@takkion/ng-material/tree';
 
 @NgModule({
   declarations: [BadgeComponent, BottomSheetExampleComponent],
@@ -17,6 +18,7 @@ import { MatCardModule } from '@takkion/ng-material/card';
     MatListModule,
     MatDividerModule,
     MatCardModule,
+    MatTreeModule,
     BadgeRouting,
   ],
 })

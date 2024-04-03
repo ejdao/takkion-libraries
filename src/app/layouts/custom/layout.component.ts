@@ -55,8 +55,26 @@ export class AdminLayoutComponent {
           },
           {
             type: 'link',
-            name: 'Form field + Grid List + Icon + Input + List + Menu',
+            name: 'Form field + Grid list + Icon + Input + List + Menu',
             url: 'form-field',
+            icon: 'format_color_fill',
+          },
+          {
+            type: 'link',
+            name: 'Progress bar + Progress spinner + Radio button + Ripples + Slide toggle + Slider',
+            url: 'progress-bar',
+            icon: 'format_color_fill',
+          },
+          {
+            type: 'link',
+            name: 'Paginator + Sort header + Table',
+            url: 'tables',
+            icon: 'format_color_fill',
+          },
+          {
+            type: 'link',
+            name: 'Select + Sidenav + Snackbar + Stepper + Tabs + Toolbar + Tooltip',
+            url: 'select',
             icon: 'format_color_fill',
           },
         ],

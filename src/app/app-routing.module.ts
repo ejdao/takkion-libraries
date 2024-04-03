@@ -35,6 +35,18 @@ const routes: Routes = [
             path: 'form-field',
             loadChildren: () => import('./modules/components').then(m => m.FormFieldModule),
           },
+          {
+            path: 'progress-bar',
+            loadChildren: () => import('./modules/components').then(m => m.ProgressBarModule),
+          },
+          {
+            path: 'tables',
+            loadChildren: () => import('./modules/components').then(m => m.TablesModule),
+          },
+          {
+            path: 'select',
+            loadChildren: () => import('./modules/components').then(m => m.SelectModule),
+          },
         ],
       },
     ],
