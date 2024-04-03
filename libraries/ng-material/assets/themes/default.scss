@@ -1,8 +1,4 @@
-@import 'dark';
-
 html {
-  --mat-body-color: rgb(0, 0, 0);
-  --mat-body-background-color: rgb(241, 244, 246);
   --mat-ripple-color: rgba(0, 0, 0, 0.1);
   --mat-option-selected-state-label-text-color: rgb(10, 161, 174);
   --mat-option-label-text-color: rgba(0, 0, 0, 0.87);
@@ -72,7 +68,7 @@ html {
   --mdc-filled-text-field-focus-active-indicator-color: rgb(10, 161, 174);
   --mdc-filled-text-field-focus-label-text-color: rgba(10, 161, 174, 0.87);
   --mdc-filled-text-field-container-color: inherit;
-  --mdc-filled-text-field-disabled-container-color: rgb(250, 250, 250);
+  --mdc-filled-text-field-disabled-container-color: inherit;
   --mdc-filled-text-field-label-text-color: rgba(0, 0, 0, 0.6);
   --mdc-filled-text-field-hover-label-text-color: rgba(0, 0, 0, 0.6);
   --mdc-filled-text-field-disabled-label-text-color: rgba(0, 0, 0, 0.38);
@@ -85,7 +81,7 @@ html {
   --mdc-filled-text-field-error-caret-color: rgb(255, 0, 0);
   --mdc-filled-text-field-active-indicator-color: rgba(0, 0, 0, 0.42);
   --mdc-filled-text-field-disabled-active-indicator-color: rgba(0, 0, 0, 0.06);
-  --mdc-filled-text-field-hover-active-indicator-color: rgba(0, 0, 0, 0.87);
+  --mdc-filled-text-field-hover-active-indicator-color: rgba(85, 85, 85, 0.87);
   --mdc-filled-text-field-error-active-indicator-color: rgb(255, 0, 0);
   --mdc-filled-text-field-error-focus-active-indicator-color: rgb(255, 0, 0);
   --mdc-filled-text-field-error-hover-active-indicator-color: rgb(255, 0, 0);
@@ -104,7 +100,7 @@ html {
   --mdc-outlined-text-field-error-hover-label-text-color: rgb(255, 0, 0);
   --mdc-outlined-text-field-outline-color: rgba(0, 0, 0, 0.38);
   --mdc-outlined-text-field-disabled-outline-color: rgba(0, 0, 0, 0.06);
-  --mdc-outlined-text-field-hover-outline-color: rgba(0, 0, 0, 0.87);
+  --mdc-outlined-text-field-hover-outline-color: rgba(85, 85, 85, 0.87);
   --mdc-outlined-text-field-error-focus-outline-color: rgb(255, 0, 0);
   --mdc-outlined-text-field-error-hover-outline-color: rgb(255, 0, 0);
   --mdc-outlined-text-field-error-outline-color: rgb(255, 0, 0);
@@ -232,17 +228,17 @@ html {
   --mat-switch-selected-track-outline-width: 1px;
   --mat-switch-disabled-unselected-track-outline-width: 1px;
   --mat-switch-disabled-unselected-track-outline-color: transparent;
-  --mdc-switch-selected-focus-state-layer-color: rgb(57, 73, 171);
-  --mdc-switch-selected-handle-color: rgb(57, 73, 171);
-  --mdc-switch-selected-hover-state-layer-color: rgb(57, 73, 171);
-  --mdc-switch-selected-pressed-state-layer-color: rgb(57, 73, 171);
-  --mdc-switch-selected-focus-handle-color: rgb(26, 35, 126);
-  --mdc-switch-selected-hover-handle-color: rgb(26, 35, 126);
-  --mdc-switch-selected-pressed-handle-color: rgb(26, 35, 126);
-  --mdc-switch-selected-focus-track-color: rgb(121, 134, 203);
-  --mdc-switch-selected-hover-track-color: rgb(121, 134, 203);
-  --mdc-switch-selected-pressed-track-color: rgb(121, 134, 203);
-  --mdc-switch-selected-track-color: rgb(121, 134, 203);
+  --mdc-switch-selected-focus-state-layer-color: rgb(57, 185, 197);
+  --mdc-switch-selected-handle-color: rgb(57, 185, 197);
+  --mdc-switch-selected-hover-state-layer-color: rgb(57, 185, 197);
+  --mdc-switch-selected-pressed-state-layer-color: rgb(57, 185, 197);
+  --mdc-switch-selected-focus-handle-color: rgb(10, 161, 174);
+  --mdc-switch-selected-hover-handle-color: rgb(10, 161, 174);
+  --mdc-switch-selected-pressed-handle-color: rgb(10, 161, 174);
+  --mdc-switch-selected-focus-track-color: rgb(126, 206, 214);
+  --mdc-switch-selected-hover-track-color: rgb(126, 206, 214);
+  --mdc-switch-selected-pressed-track-color: rgb(126, 206, 214);
+  --mdc-switch-selected-track-color: rgb(126, 206, 214);
   --mdc-switch-disabled-selected-handle-color: rgb(66, 66, 66);
   --mdc-switch-disabled-selected-icon-color: rgb(255, 255, 255);
   --mdc-switch-disabled-selected-track-color: rgb(66, 66, 66);
@@ -685,12 +681,12 @@ html {
   --mat-legacy-button-toggle-disabled-state-background-color: rgb(238, 238, 238);
   --mat-legacy-button-toggle-disabled-selected-state-background-color: rgb(189, 189, 189);
   --mat-standard-button-toggle-text-color: rgba(0, 0, 0, 0.87);
-  --mat-standard-button-toggle-background-color: rgb(255, 255, 255);
+  --mat-standard-button-toggle-background-color: inherit;
   --mat-standard-button-toggle-state-layer-color: rgb(0, 0, 0);
   --mat-standard-button-toggle-selected-state-background-color: rgb(224, 224, 224);
   --mat-standard-button-toggle-selected-state-text-color: rgba(0, 0, 0, 0.87);
   --mat-standard-button-toggle-disabled-state-text-color: rgba(0, 0, 0, 0.26);
-  --mat-standard-button-toggle-disabled-state-background-color: rgb(255, 255, 255);
+  --mat-standard-button-toggle-disabled-state-background-color: inherit;
   --mat-standard-button-toggle-disabled-selected-state-text-color: rgba(0, 0, 0, 0.87);
   --mat-standard-button-toggle-disabled-selected-state-background-color: rgb(189, 189, 189);
   --mat-standard-button-toggle-divider-color: rgb(224, 224, 224);
@@ -796,7 +792,7 @@ html {
   --mat-stepper-header-done-state-icon-foreground-color: rgb(255, 255, 255);
   --mat-stepper-header-edit-state-icon-background-color: rgb(10, 161, 174);
   --mat-stepper-header-edit-state-icon-foreground-color: rgb(255, 255, 255);
-  --mat-stepper-container-color: rgb(255, 255, 255);
+  --mat-stepper-container-color: inherit;
   --mat-stepper-line-color: rgba(0, 0, 0, 0.12);
   --mat-stepper-header-hover-state-layer-color: rgba(0, 0, 0, 0.04);
   --mat-stepper-header-focus-state-layer-color: rgba(0, 0, 0, 0.04);
@@ -825,7 +821,7 @@ html {
   --mat-toolbar-title-text-size: 20px;
   --mat-toolbar-title-text-tracking: 0.0125em;
   --mat-toolbar-title-text-weight: 500;
-  --mat-tree-container-background-color: rgb(255, 255, 255);
+  --mat-tree-container-background-color: inherit;
   --mat-tree-node-text-color: rgba(0, 0, 0, 0.87);
   --mat-tree-node-min-height: 48px;
   --mat-tree-node-text-font: Roboto, sans-serif;
@@ -1251,30 +1247,30 @@ html {
     --mdc-form-field-label-text-color: rgba(0, 0, 0, 0.87);
   }
   .mat-mdc-slide-toggle.mat-accent {
-    --mdc-switch-selected-focus-state-layer-color: rgb(216, 27, 96);
-    --mdc-switch-selected-handle-color: rgb(216, 27, 96);
-    --mdc-switch-selected-hover-state-layer-color: rgb(216, 27, 96);
-    --mdc-switch-selected-pressed-state-layer-color: rgb(216, 27, 96);
-    --mdc-switch-selected-focus-handle-color: rgb(136, 14, 79);
-    --mdc-switch-selected-hover-handle-color: rgb(136, 14, 79);
-    --mdc-switch-selected-pressed-handle-color: rgb(136, 14, 79);
-    --mdc-switch-selected-focus-track-color: rgb(240, 98, 146);
-    --mdc-switch-selected-hover-track-color: rgb(240, 98, 146);
-    --mdc-switch-selected-pressed-track-color: rgb(240, 98, 146);
-    --mdc-switch-selected-track-color: rgb(240, 98, 146);
+    --mdc-switch-selected-focus-state-layer-color: rgb(58, 196, 138);
+    --mdc-switch-selected-handle-color: rgb(58, 196, 138);
+    --mdc-switch-selected-hover-state-layer-color: rgb(58, 196, 138);
+    --mdc-switch-selected-pressed-state-layer-color: rgb(58, 196, 138);
+    --mdc-switch-selected-focus-handle-color: rgb(24, 182, 116);
+    --mdc-switch-selected-hover-handle-color: rgb(24, 182, 116);
+    --mdc-switch-selected-pressed-handle-color: rgb(24, 182, 116);
+    --mdc-switch-selected-focus-track-color: rgb(141, 206, 179);
+    --mdc-switch-selected-hover-track-color: rgb(141, 206, 179);
+    --mdc-switch-selected-pressed-track-color: rgb(141, 206, 179);
+    --mdc-switch-selected-track-color: rgb(141, 206, 179);
   }
   .mat-mdc-slide-toggle.mat-warn {
-    --mdc-switch-selected-focus-state-layer-color: rgb(229, 57, 53);
-    --mdc-switch-selected-handle-color: rgb(229, 57, 53);
-    --mdc-switch-selected-hover-state-layer-color: rgb(229, 57, 53);
-    --mdc-switch-selected-pressed-state-layer-color: rgb(229, 57, 53);
-    --mdc-switch-selected-focus-handle-color: rgb(183, 28, 28);
-    --mdc-switch-selected-hover-handle-color: rgb(183, 28, 28);
-    --mdc-switch-selected-pressed-handle-color: rgb(183, 28, 28);
-    --mdc-switch-selected-focus-track-color: rgb(229, 115, 115);
-    --mdc-switch-selected-hover-track-color: rgb(229, 115, 115);
-    --mdc-switch-selected-pressed-track-color: rgb(229, 115, 115);
-    --mdc-switch-selected-track-color: rgb(229, 115, 115);
+    --mdc-switch-selected-focus-state-layer-color: rgb(255, 35, 35);
+    --mdc-switch-selected-handle-color: rgb(255, 35, 35);
+    --mdc-switch-selected-hover-state-layer-color: rgb(255, 35, 35);
+    --mdc-switch-selected-pressed-state-layer-color: rgb(255, 35, 35);
+    --mdc-switch-selected-focus-handle-color: rgb(255, 0, 0);
+    --mdc-switch-selected-hover-handle-color: rgb(255, 0, 0);
+    --mdc-switch-selected-pressed-handle-color: rgb(255, 0, 0);
+    --mdc-switch-selected-focus-track-color: rgb(255, 111, 111);
+    --mdc-switch-selected-hover-track-color: rgb(255, 111, 111);
+    --mdc-switch-selected-pressed-track-color: rgb(255, 111, 111);
+    --mdc-switch-selected-track-color: rgb(255, 111, 111);
   }
   .mat-mdc-slide-toggle {
     --mdc-form-field-label-text-font: Roboto, sans-serif;
