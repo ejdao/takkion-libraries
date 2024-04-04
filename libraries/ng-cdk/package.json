@@ -1,6 +1,6 @@
 {
   "name": "@takkion/ng-cdk",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Angular Material Component Development Kit",
   "repository": {
     "type": "git",
@@ -169,24 +169,6 @@
       "esm2022": "./esm2022/table/table_public_index.mjs",
       "esm": "./esm2022/table/table_public_index.mjs",
       "default": "./fesm2022/table.mjs"
-    },
-    "./testing": {
-      "types": "./testing/index.d.ts",
-      "esm2022": "./esm2022/testing/index.mjs",
-      "esm": "./esm2022/testing/index.mjs",
-      "default": "./fesm2022/testing.mjs"
-    },
-    "./testing/selenium-webdriver": {
-      "types": "./testing/selenium-webdriver/index.d.ts",
-      "esm2022": "./esm2022/testing/selenium-webdriver/index.mjs",
-      "esm": "./esm2022/testing/selenium-webdriver/index.mjs",
-      "default": "./fesm2022/testing/selenium-webdriver.mjs"
-    },
-    "./testing/testbed": {
-      "types": "./testing/testbed/index.d.ts",
-      "esm2022": "./esm2022/testing/testbed/index.mjs",
-      "esm": "./esm2022/testing/testbed/index.mjs",
-      "default": "./fesm2022/testing/testbed.mjs"
     },
     "./text-field": {
       "types": "./text-field/index.d.ts",
