@@ -1,14 +1,22 @@
-import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { MediaMatcher } from '@takkion/ng-cdk/layout';
 import { TakAdminLayoutConfig } from './interfaces';
 
 @Component({
   selector: 'tak-admin-layout',
   templateUrl: './admin-layout.component.html',
-  styleUrl: './admin-layout.component.scss',
+  styleUrls: ['./admin-layout.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AdminLayoutComponent {
+export class AdminLayoutComponent implements OnInit, OnDestroy {
   @ViewChild('sidebar') sidebar!: ElementRef<HTMLElement>;
   @ViewChild('container') container!: ElementRef<HTMLElement>;
 
@@ -31,6 +39,12 @@ export class AdminLayoutComponent {
   constructor(href: ElementRef<HTMLElement>, media: MediaMatcher) {
     href.nativeElement.classList.add('tak-admin-layout');
     this._mediaQuery = media.matchMedia(`(min-width: ${this.config.mobileResolution})`);
+  }
+  ngOnInit(): void {
+    document.body.style.overflow = 'hidden';
+  }
+  ngOnDestroy(): void {
+    document.body.style.overflow = 'auto';
   }
 
   public mouseOnSidebar(action: 'over' | 'leave') {

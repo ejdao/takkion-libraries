@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HomeRoutingModule } from './home-routing.module';
+import { HomeRouting } from './home.routing';
 import { HomeComponent } from './home.component';
+import { TakCapsuleModule } from '@takkion/ng-components/capsule';
+import { TakBoxFormModule } from '@takkion/ng-components/box-form';
+import { TakFieldsModule } from '@takkion/ng-components/fields';
+import { MatButtonModule } from '@takkion/ng-material/button';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, HomeRoutingModule],
+  imports: [TakCapsuleModule, TakBoxFormModule, TakFieldsModule, MatButtonModule, HomeRouting],
 })
 export class HomeModule {}

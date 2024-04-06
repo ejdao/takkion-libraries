@@ -1,0 +1,42 @@
+@import 'grids';
+@import 'fields';
+@import 'fade-in';
+
+.tak-snackbar-danger {
+  .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+    color: var(--tak-snackbar-danger-action-color) !important;
+  }
+  .mdc-snackbar__surface {
+    color: var(--tak-snackbar-danger-color) !important;
+    background-color: var(--tak-snackbar-danger-background-color) !important;
+  }
+}
+.tak-snackbar-success {
+  .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+    color: var(--tak-snackbar-success-color) !important;
+  }
+  .mdc-snackbar__surface {
+    color: var(--tak-snackbar-success-action-color) !important;
+    background-color: var(--tak-snackbar-success-background-color) !important;
+  }
+}
+
+@media only screen and (min-width: calc($MOBILE_RESOLUTION)) {
+  .tak-admin-layout > .tak-container,
+  .tak-sidebar__container,
+  .tak-box-form__scroll,
+  .mat-mdc-select-panel,
+  .mat-mdc-autocomplete-panel,
+  .mat-mdc-form-field-textarea-control,
+  .mdc-dialog__content {
+    &::-webkit-scrollbar {
+      background-color: rgba(192, 192, 192, 0.185);
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(192, 192, 192, 0.562);
+      border-radius: 10px;
+    }
+  }
+}

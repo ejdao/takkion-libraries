@@ -43,8 +43,11 @@ export class FieldsForm extends FormGroup {
       select: new FormControl({ value: null, disabled: false }, [Validators.required]),
       money: new FormControl({ value: 3000, disabled: false }, [Validators.required]),
       date: new FormControl({ value: new Date(), disabled: false }, [Validators.required]),
+      dateNI: new FormControl({ value: new Date(), disabled: false }, [Validators.required]),
       start: new FormControl({ value: new Date(), disabled: false }, [Validators.required]),
       end: new FormControl({ value: new Date(), disabled: false }, [Validators.required]),
+      startNI: new FormControl({ value: new Date(), disabled: false }, [Validators.required]),
+      endNI: new FormControl({ value: new Date(), disabled: false }, [Validators.required]),
       query: new FormControl({ value: null, disabled: false }, [Validators.required]),
       autocomplete: new FormControl({ value: '', disabled: false }, [Validators.required]),
     });
@@ -76,12 +79,24 @@ export class FieldsForm extends FormGroup {
     return this.get('date') as FormControl;
   }
 
+  public get dateNI(): FormControl {
+    return this.get('dateNI') as FormControl;
+  }
+
   public get start(): FormControl {
     return this.get('start') as FormControl;
   }
 
   public get end(): FormControl {
     return this.get('end') as FormControl;
+  }
+
+  public get startNI(): FormControl {
+    return this.get('startNI') as FormControl;
+  }
+
+  public get endNI(): FormControl {
+    return this.get('endNI') as FormControl;
   }
 
   public get autocomplete(): FormControl {
@@ -98,6 +113,9 @@ export class FieldsForm extends FormGroup {
     this.date.enable();
     this.start.enable();
     this.end.enable();
+    this.dateNI.enable();
+    this.startNI.enable();
+    this.endNI.enable();
     this.autocomplete.enable();
   }
 
@@ -111,6 +129,9 @@ export class FieldsForm extends FormGroup {
     this.date.disable();
     this.start.disable();
     this.end.disable();
+    this.dateNI.disable();
+    this.startNI.disable();
+    this.endNI.disable();
     this.autocomplete.disable();
   }
 
@@ -125,6 +146,9 @@ export class FieldsForm extends FormGroup {
       date: this.date.value,
       start: this.start.value,
       end: this.end.value,
+      dateNI: this.dateNI.value,
+      startNI: this.startNI.value,
+      endNI: this.endNI.value,
       autocomplete: this.autocomplete.value,
     };
   }

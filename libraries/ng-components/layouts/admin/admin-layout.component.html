@@ -1,5 +1,5 @@
 <div
-  class="tak-admin-layout__sidebar"
+  class="tak-sidebar"
   (mouseover)="mouseOnSidebar('over')"
   (mouseleave)="mouseOnSidebar('leave')"
   #sidebar
@@ -22,75 +22,39 @@
         (change)="clickOnSetSidebar()"
       >
       </mat-slide-toggle>
+
+      <button class="fixed-menu-button" mat-icon-button (click)="clickOnSetSidebar()">
+        <mat-icon>menu</mat-icon>
+      </button>
     </div>
   </div>
   <mat-divider></mat-divider>
 
-  <mat-accordion [multi]="config.multiDropdowns || false">
-    @for (item of config.navigation; track $index) {
-      @if (item.type === 'link') {
-        <a [routerLink]="item.url" routerLinkActive="active">
-          <div class="link">
-            <tak-admin-layout-link [item]="item"></tak-admin-layout-link>
-          </div>
-        </a>
-      }
-
-      @if (item.type === 'dropdown') {
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <tak-admin-layout-link class="dropdown-link" [item]="item"></tak-admin-layout-link>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          @for (link of item.dropdownLinks; track $index) {
-            <a
-              [routerLink]="link.urlIsNotAutoCompleted ? link.url : item.url + '/' + link.url"
-              routerLinkActive="active"
-            >
+  <div class="tak-sidebar__container">
+    <div class="tak-sidebar__content">
+      <mat-accordion [multi]="config.multiDropdowns || false">
+        @for (item of config.navigation; track $index) {
+          @if (item.type === 'link') {
+            <a [routerLink]="item.url" routerLinkActive="active">
               <div class="link">
-                <tak-admin-layout-link [item]="link"></tak-admin-layout-link>
-              </div>
-            </a>
-          }
-        </mat-expansion-panel>
-      }
-
-      @if (item.type === 'collection') {
-        <div class="link disabled">
-          <tak-admin-layout-link [item]="item" [isCollection]="true"></tak-admin-layout-link>
-        </div>
-        <mat-divider></mat-divider>
-
-        @for (object of item.objects; track $index) {
-          @if (object.type === 'link') {
-            <a
-              [routerLink]="object.urlIsNotAutoCompleted ? object.url : item.url + '/' + object.url"
-              routerLinkActive="active"
-            >
-              <div class="link">
-                <tak-admin-layout-link [item]="object"></tak-admin-layout-link>
+                <tak-admin-layout-link [item]="item"></tak-admin-layout-link>
               </div>
             </a>
           }
 
-          @if (object.type === 'dropdown') {
+          @if (item.type === 'dropdown') {
             <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   <tak-admin-layout-link
                     class="dropdown-link"
-                    [item]="object"
+                    [item]="item"
                   ></tak-admin-layout-link>
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              @for (link of object.dropdownLinks; track $index) {
+              @for (link of item.dropdownLinks; track $index) {
                 <a
-                  [routerLink]="
-                    link.urlIsNotAutoCompleted
-                      ? link.url
-                      : item.url + '/' + object.url + '/' + link.url
-                  "
+                  [routerLink]="link.urlIsNotAutoCompleted ? link.url : item.url + '/' + link.url"
                   routerLinkActive="active"
                 >
                   <div class="link">
@@ -100,28 +64,77 @@
               }
             </mat-expansion-panel>
           }
+
+          @if (item.type === 'collection') {
+            <div class="link disabled">
+              <tak-admin-layout-link [item]="item" [isCollection]="true"></tak-admin-layout-link>
+            </div>
+            <mat-divider></mat-divider>
+
+            @for (object of item.objects; track $index) {
+              @if (object.type === 'link') {
+                <a
+                  [routerLink]="
+                    object.urlIsNotAutoCompleted ? object.url : item.url + '/' + object.url
+                  "
+                  routerLinkActive="active"
+                >
+                  <div class="link">
+                    <tak-admin-layout-link [item]="object"></tak-admin-layout-link>
+                  </div>
+                </a>
+              }
+
+              @if (object.type === 'dropdown') {
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <tak-admin-layout-link
+                        class="dropdown-link"
+                        [item]="object"
+                      ></tak-admin-layout-link>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  @for (link of object.dropdownLinks; track $index) {
+                    <a
+                      [routerLink]="
+                        link.urlIsNotAutoCompleted
+                          ? link.url
+                          : item.url + '/' + object.url + '/' + link.url
+                      "
+                      routerLinkActive="active"
+                    >
+                      <div class="link">
+                        <tak-admin-layout-link [item]="link"></tak-admin-layout-link>
+                      </div>
+                    </a>
+                  }
+                </mat-expansion-panel>
+              }
+            }
+          }
         }
-      }
-    }
-  </mat-accordion>
+      </mat-accordion>
+      <br />
+    </div>
+  </div>
 </div>
 
-<div class="tak-admin-layout__container" #container>
-  <header class="tak-admin-layout__header">
-    <div>
-      <button class="menu-button" mat-icon-button (click)="clickOnSetSidebar()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-    <ng-content select="[tak-custom-header]"></ng-content>
-  </header>
+<header class="tak-header">
+  <div>
+    <button class="menu-button" mat-icon-button (click)="clickOnSetSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <ng-content select="[tak-custom-header]"></ng-content>
+</header>
 
-  <div class="tak-admin-layout__content">
+<div class="tak-container" #container>
+  <div class="tak-content">
     <ng-content></ng-content>
   </div>
-
   @if (config.hasFooter) {
-    <footer class="tak-admin-layout__footer">
+    <footer class="tak-footer">
       <ng-content select="[tak-custom-footer]"></ng-content>
     </footer>
   }

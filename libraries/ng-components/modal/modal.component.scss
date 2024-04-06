@@ -1,0 +1,42 @@
+.tak-modal {
+  .mat-mdc-dialog-title {
+    padding: 0;
+  }
+  .mdc-dialog__content {
+    padding: 0;
+  }
+  [mat-button] {
+    font-weight: bolder;
+  }
+  [mat-dialog-title] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  &__content {
+    padding: 0 24px;
+    font-size: 14px;
+    color: var(--mdc-dialog-subhead-color);
+  }
+  &__buttons {
+    display: flex;
+    & button {
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+    &.tak-modal-one {
+      justify-content: end;
+    }
+    &.tak-modal-two {
+      justify-content: space-between;
+    }
+  }
+  .tak-dialog-content {
+    padding: 0;
+  }
+}
