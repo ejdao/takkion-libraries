@@ -5,7 +5,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { SIDE_NAV } from './origin.navigation';
+import { SIDE_NAV } from './navigation';
 
 @Component({
   selector: 'app-layout',
@@ -19,7 +19,18 @@ export class AdminLayoutComponent implements OnInit {
 
   public resourcesLoaded = false;
 
-  public permissions = ['1', '2', '3'];
+  public permissions = [
+    //
+    '000',
+    '001',
+    '001002',
+    '002',
+    //'002001',
+    '002002',
+    '002003',
+    '002003001',
+    '002003002',
+  ];
 
   public context = 'BOGOTA';
 

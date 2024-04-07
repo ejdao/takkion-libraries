@@ -53,7 +53,7 @@ export class ValidateAccessPipe implements PipeTransform {
       if (userAuthorities) {
         permissionsIsValid = false;
 
-        userAuthorities.map(userAuthority => {
+        userAuthorities.forEach(userAuthority => {
           if (authorities!.indexOf(userAuthority) >= 0) permissionsIsValid = true;
         });
       }

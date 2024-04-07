@@ -4,4 +4,5 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Versions
 
-`1x` Use `@takkion/ng-cdk` & `@takkion/ng-material` 1.0.2, based in `@angular/material@14.2.6`.
+`1x` Use `@takkion/ng-cdk@1.0.2` & `@takkion/ng-material@1.0.4`, based in `@angular/material@14.2.6`.
+`1x` Use `@takkion/ng-cdk@2.0.0` & `@takkion/ng-material@2.0.0` , based in `@angular/material@17.3.1`.

@@ -25,8 +25,6 @@ export interface TakSnavDropdownLink {
   authorities?: string[];
   disableOnContexts?: string[];
   forceDisabledContent?: boolean;
-  disabledOnMobile?: boolean;
-  disabledOnWeb?: boolean;
 }
 
 export interface TakSnav {

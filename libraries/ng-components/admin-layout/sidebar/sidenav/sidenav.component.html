@@ -40,9 +40,7 @@
               <div
                 [class.tak__admin-layout__not-exist]="
                   ([authorities, link.disableOnContexts!]
-                    | validateAccess: [context, link.authorities!]) ||
-                  link.forceDisabledContent ||
-                  link.disabledOnWeb
+                    | validateAccess: [context, link.authorities!]) || link.forceDisabledContent
                 "
               >
                 <div takRipple class="tak__sidenav__accordion__link-container">
@@ -141,8 +139,7 @@
                           [class.tak__admin-layout__not-exist]="
                             ([authorities, link.disableOnContexts!]
                               | validateAccess: [context, link.authorities!]) ||
-                            link.forceDisabledContent ||
-                            link.disabledOnWeb
+                            link.forceDisabledContent
                           "
                         >
                           <div takRipple class="tak__sidenav__accordion__link-container">
