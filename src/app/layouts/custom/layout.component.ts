@@ -5,7 +5,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { TakAdminLayoutConfig } from '@takkion/ng-components/layouts/admin';
+import { SIDE_NAV } from './origin.navigation';
 
 @Component({
   selector: 'app-layout',
@@ -15,184 +15,34 @@ import { TakAdminLayoutConfig } from '@takkion/ng-components/layouts/admin';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminLayoutComponent implements OnInit {
-  public isLoading = true;
+  public navigation = SIDE_NAV;
+
+  public resourcesLoaded = false;
+
+  public permissions = ['1', '2', '3'];
+
+  public context = 'BOGOTA';
+
+  public accordionInCollections = true;
+  public disableHiddenCollections = true;
 
   constructor(private _cd: ChangeDetectorRef) {}
+
   public ngOnInit(): void {
-    setTimeout(() => {
-      this.isLoading = false;
-      this._cd.markForCheck();
-    }, 500);
+    this.resourcesLoaded = true;
+
+    this._setTheme();
   }
 
-  public config: TakAdminLayoutConfig = {
-    topSegmentTitle: 'ejdao Dev S.A',
-    topSegmentSubtitle: 'ejdao Location',
-    topSegmentIconUrl: 'favicon.ico',
-    mobileResolution: '900px',
-    hasFooter: true,
-    contexts: undefined,
-    authorities: undefined,
-    disableAppLoader: true,
-    disableChangePageTitle: true,
-    navigation: [
-      {
-        type: 'link',
-        name: 'home',
-        url: 'home',
-        icon: 'home',
-      },
-      {
-        type: 'collection',
-        name: 'Material Components',
-        url: 'components',
-        objects: [
-          {
-            type: 'link',
-            name: 'Autocomplete + Button + Button Toggle',
-            url: 'autocomplete',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Badge + Bottom Sheet + Card',
-            url: 'badge',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Checkbox + Chips + Divider',
-            url: 'checkbox',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Datepicker + Dialog + Expansion Panel',
-            url: 'datepicker',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Form field + Grid list + Icon + Input + List + Menu',
-            url: 'form-field',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Progress bar + Progress spinner + Radio button + Ripples + Slide toggle + Slider',
-            url: 'progress-bar',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Paginator + Sort header + Table',
-            url: 'tables',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Select + Sidenav + Snackbar + Stepper + Tabs + Toolbar + Tooltip',
-            url: 'select',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Autocomplete + Button + Button Toggle',
-            url: 'autocomplete',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Badge + Bottom Sheet + Card',
-            url: 'badge',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Checkbox + Chips + Divider',
-            url: 'checkbox',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Datepicker + Dialog + Expansion Panel',
-            url: 'datepicker',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Form field + Grid list + Icon + Input + List + Menu',
-            url: 'form-field',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Progress bar + Progress spinner + Radio button + Ripples + Slide toggle + Slider',
-            url: 'progress-bar',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Paginator + Sort header + Table',
-            url: 'tables',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Select + Sidenav + Snackbar + Stepper + Tabs + Toolbar + Tooltip',
-            url: 'select',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Autocomplete + Button + Button Toggle',
-            url: 'autocomplete',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Badge + Bottom Sheet + Card',
-            url: 'badge',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Checkbox + Chips + Divider',
-            url: 'checkbox',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Datepicker + Dialog + Expansion Panel',
-            url: 'datepicker',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Form field + Grid list + Icon + Input + List + Menu',
-            url: 'form-field',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Progress bar + Progress spinner + Radio button + Ripples + Slide toggle + Slider',
-            url: 'progress-bar',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Paginator + Sort header + Table',
-            url: 'tables',
-            icon: 'format_color_fill',
-          },
-          {
-            type: 'link',
-            name: 'Select + Sidenav + Snackbar + Stepper + Tabs + Toolbar + Tooltip',
-            url: 'select',
-            icon: 'format_color_fill',
-          },
-        ],
-      },
-    ],
-  };
+  public ngOnDestroy(): void {
+    document.getElementsByTagName('body')[0].classList.remove('dark-theme');
+  }
+
+  private _setTheme(): void {
+    if (localStorage.getItem('dark-theme') !== null) {
+      document.getElementsByTagName('body')[0].classList.add('dark-theme');
+    }
+  }
+
+  public isLoading = true;
 }

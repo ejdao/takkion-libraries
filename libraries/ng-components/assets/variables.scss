@@ -5,14 +5,3 @@ $XL_RESOLUTION: 961px;
 $XXL_RESOLUTION: 1201px;
 
 $MOBILE_RESOLUTION: 900px;
-
-:root {
-  --tak-admin-layout-header-height: 50px;
-  --tak-admin-layout-footer-height: 30px;
-  --tak-admin-layout-content-padding: 20px;
-  --tak-admin-layout-sidebar-closed-width: 0px;
-  --tak-admin-layout-sidebar-opened-width: 240px;
-  @media (min-width: $MOBILE_RESOLUTION) {
-    --tak-admin-layout-sidebar-closed-width: 50px;
-  }
-}
