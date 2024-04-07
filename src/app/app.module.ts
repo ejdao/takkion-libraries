@@ -18,7 +18,6 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@takkion/ng-material/core'
     BrowserAnimationsModule,
     RouterModule.forRoot([], {
       preloadingStrategy: CustomPreloadingStrategy,
-      scrollPositionRestoration: 'enabled',
     }),
     AppRoutingModule,
     HttpClientModule,

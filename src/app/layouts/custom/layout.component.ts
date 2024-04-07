@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 import { TakAdminLayoutConfig } from '@takkion/ng-components/layouts/admin';
 
 @Component({
@@ -8,7 +14,17 @@ import { TakAdminLayoutConfig } from '@takkion/ng-components/layouts/admin';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AdminLayoutComponent {
+export class AdminLayoutComponent implements OnInit {
+  public isLoading = true;
+
+  constructor(private _cd: ChangeDetectorRef) {}
+  public ngOnInit(): void {
+    setTimeout(() => {
+      this.isLoading = false;
+      this._cd.markForCheck();
+    }, 500);
+  }
+
   public config: TakAdminLayoutConfig = {
     topSegmentTitle: 'ejdao Dev S.A',
     topSegmentSubtitle: 'ejdao Location',
@@ -17,6 +33,8 @@ export class AdminLayoutComponent {
     hasFooter: true,
     contexts: undefined,
     authorities: undefined,
+    disableAppLoader: true,
+    disableChangePageTitle: true,
     navigation: [
       {
         type: 'link',

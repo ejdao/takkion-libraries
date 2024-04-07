@@ -1,5 +1,14 @@
-<tak-admin-layout [config]="config">
-  <app-header tak-custom-header></app-header>
-  <router-outlet></router-outlet>
-  <app-footer tak-custom-footer></app-footer>
-</tak-admin-layout>
+@if (isLoading) {
+  <div class="tak-app-loader">
+    <div class="tak-loader-spinner">
+      <div class="tak-double-bounce1"></div>
+      <div class="tak-double-bounce2"></div>
+    </div>
+  </div>
+} @else {
+  <tak-admin-layout [config]="config">
+    <app-header tak-custom-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer tak-custom-footer></app-footer>
+  </tak-admin-layout>
+}

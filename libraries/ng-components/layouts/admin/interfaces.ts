@@ -8,6 +8,8 @@ export interface TakAdminLayoutConfig {
   authorities?: string[];
   navigation: TakAdminLayoutSnavItems[];
   multiDropdowns?: boolean;
+  disableAppLoader?: boolean;
+  disableChangePageTitle?: boolean;
 }
 
 export type TakAdminLayoutSnavIconsType = 'material-icon' | 'img';

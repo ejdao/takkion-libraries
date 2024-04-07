@@ -131,6 +131,14 @@
 
 <div class="tak-container" #container>
   <div class="tak-content">
+    @if (isModuleLoading) {
+      <div class="tak-view-loader" style="position: fixed">
+        <div class="tak-loader-spinner">
+          <div class="tak-double-bounce1"></div>
+          <div class="tak-double-bounce2"></div>
+        </div>
+      </div>
+    }
     <ng-content></ng-content>
   </div>
   @if (config.hasFooter) {
