@@ -1,8 +1,8 @@
-import { TakSnavItems } from '@takkion/components/layouts/origin';
+import { TakAdminLayoutSnavItems } from '@takkion/components/layouts/admin';
 
-const ADMIN = '000';
+const ADMIN = '0000';
 
-export const SIDE_NAV: TakSnavItems[] = [
+export const SIDE_NAV: TakAdminLayoutSnavItems[] = [
   {
     type: 'link',
     name: 'Home',

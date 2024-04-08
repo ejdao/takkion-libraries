@@ -6,6 +6,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { SIDE_NAV } from './navigation';
+import { TakAdminLayoutConfig } from '@takkion/components/layouts/admin';
 
 @Component({
   selector: 'app-layout',
@@ -32,6 +33,19 @@ export class AdminLayoutComponent implements OnInit {
     '002003002',
   ];
 
+  public config: TakAdminLayoutConfig = {
+    topSegmentTitle: 'ejdao Dev S.A',
+    topSegmentSubtitle: 'ejdao Location',
+    topSegmentIconUrl: 'favicon.ico',
+    mobileResolution: '900px',
+    hasFooter: true,
+    contexts: undefined,
+    authorities: undefined,
+    disableAppLoader: true,
+    disableChangePageTitle: true,
+    navigation: SIDE_NAV,
+  };
+
   public context = 'BOGOTA';
 
   public accordionInCollections = true;
@@ -54,6 +68,4 @@ export class AdminLayoutComponent implements OnInit {
       document.getElementsByTagName('body')[0].classList.add('dark-theme');
     }
   }
-
-  public isLoading = true;
 }

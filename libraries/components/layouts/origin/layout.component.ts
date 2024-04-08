@@ -21,7 +21,7 @@ import {
   Router,
 } from '@angular/router';
 import { debounceTime, filter, Subscription } from 'rxjs';
-import { TakSnavItems } from './navigation-interfaces';
+import { TakOriginSnavItems } from './navigation-interfaces';
 import { RoutePartsService, ToggleSidebar } from './services';
 import { FormControl } from '@angular/forms';
 
@@ -37,7 +37,7 @@ export class TakOriginLayoutComponent implements OnInit, AfterViewInit, OnDestro
   private _routerChangeTitleSubs!: Subscription;
   private _sidebarStatus!: Subscription;
 
-  @Input() navigation: TakSnavItems[] = [];
+  @Input() navigation: TakOriginSnavItems[] = [];
 
   @Input() appIcon = 'favicon.ico';
   @Input() appTitle = 'eklipse Devs';

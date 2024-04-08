@@ -7,7 +7,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { ToggleSidebar } from '../../services/toggle-sidebar';
-import { TakSnavItems } from '../../navigation-interfaces';
+import { TakOriginSnavItems } from '../../navigation-interfaces';
 
 @Component({
   selector: 'tak-sidenav',
@@ -15,7 +15,7 @@ import { TakSnavItems } from '../../navigation-interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakSidenavComponent implements OnInit {
-  @Input() navigation: TakSnavItems[] = [];
+  @Input() navigation: TakOriginSnavItems[] = [];
   @Input() authorities: any[] = [];
   @Input() context: any;
   @Input() mdWidth = 900;

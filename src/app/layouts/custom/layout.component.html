@@ -1,20 +1,14 @@
-@if (resourcesLoaded) {
-  <tak-origin-layout
-    appTitle="Takkion"
-    appSidebarTitle="Ejdao Dev S.A"
-    appSidebarSubtitle="Example context"
-    [navigation]="navigation"
-    [authorities]="permissions"
-    [context]="context"
-    [isDinamicSidebar]="true"
-    [sidebarDebounceTime]="200"
-    [accordionInCollections]="accordionInCollections"
-    [disableHiddenCollections]="disableHiddenCollections"
-    [hasFooter]="false"
-    [mdWidth]="900"
-  >
-    <section tak-custom-header><app-header></app-header></section>
-    <section tak-custom-footer><app-footer></app-footer></section>
+@if (!resourcesLoaded) {
+  <div class="tak-app-loader">
+    <div class="tak-loader-spinner">
+      <div class="tak-double-bounce1"></div>
+      <div class="tak-double-bounce2"></div>
+    </div>
+  </div>
+} @else {
+  <tak-admin-layout [config]="config">
+    <app-header tak-custom-header></app-header>
     <router-outlet></router-outlet>
-  </tak-origin-layout>
+    <app-footer tak-custom-footer></app-footer>
+  </tak-admin-layout>
 }

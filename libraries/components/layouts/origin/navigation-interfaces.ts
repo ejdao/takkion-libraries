@@ -1,13 +1,13 @@
-export type TakSnavItemType = 'link' | 'collection' | 'dropdown';
+export type TakOriginSnavItemType = 'link' | 'collection' | 'dropdown';
 
-export interface TakSnavItems {
-  type: TakSnavItemType;
+export interface TakOriginSnavItems {
+  type: TakOriginSnavItemType;
   icon?: string;
   name: string;
   url?: string;
   urlIsNotAutoCompleted?: boolean;
-  dropdownLinks?: TakSnavDropdownLink[];
-  objects?: TakSnavItems[];
+  dropdownLinks?: TakOriginSnavDropdownLink[];
+  objects?: TakOriginSnavItems[];
   authorities?: string[];
   disableOnContexts?: string[];
   showCollectionContent?: boolean;
@@ -17,7 +17,7 @@ export interface TakSnavItems {
   isOpened?: boolean;
 }
 
-export interface TakSnavDropdownLink {
+export interface TakOriginSnavDropdownLink {
   name: string;
   url: string;
   urlIsNotAutoCompleted?: boolean;
