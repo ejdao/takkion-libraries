@@ -1,4 +1,3 @@
-export type TakSnavIconsType = 'material-icon' | 'img';
 export type TakSnavItemType = 'link' | 'collection' | 'dropdown';
 
 export interface TakSnavItems {
@@ -25,9 +24,4 @@ export interface TakSnavDropdownLink {
   authorities?: string[];
   disableOnContexts?: string[];
   forceDisabledContent?: boolean;
-}
-
-export interface TakSnav {
-  typeSnavIcons: TakSnavIconsType;
-  items: TakSnavItems[];
 }

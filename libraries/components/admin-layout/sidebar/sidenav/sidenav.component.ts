@@ -7,7 +7,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { ToggleSidebar } from '../../services/toggle-sidebar';
-import { TakSnav } from '../../navigation-interfaces';
+import { TakSnavItems } from '../../navigation-interfaces';
 
 @Component({
   selector: 'tak-sidenav',
@@ -15,10 +15,7 @@ import { TakSnav } from '../../navigation-interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakSidenavComponent implements OnInit {
-  @Input() navigation: TakSnav = {
-    typeSnavIcons: 'material-icon',
-    items: [],
-  };
+  @Input() navigation: TakSnavItems[] = [];
   @Input() authorities: any[] = [];
   @Input() context: any;
   @Input() mdWidth = 900;
@@ -33,7 +30,7 @@ export class TakSidenavComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    this.navigation.items.map(item => {
+    this.navigation.map(item => {
       if (item.showCollectionContent === undefined) {
         if (this.disableHiddenCollections) item.showCollectionContent = true;
         else item.showCollectionContent = false;
@@ -99,7 +96,7 @@ export class TakSidenavComponent implements OnInit {
 
   public toggleModule(index: number) {
     if (!this.disableHiddenCollections) {
-      this.navigation.items.map((item, i) => {
+      this.navigation.map((item, i) => {
         if (index === i && item.showCollectionContent === false) item.showCollectionContent = true;
         else if (index === i && item.showCollectionContent === true) {
           item.showCollectionContent = false;

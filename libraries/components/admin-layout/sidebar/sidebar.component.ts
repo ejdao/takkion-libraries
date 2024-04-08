@@ -9,7 +9,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { TakSnav } from '../navigation-interfaces';
+import { TakSnavItems } from '../navigation-interfaces';
 
 @Component({
   selector: 'tak-sidebar',
@@ -26,10 +26,7 @@ export class TakSidebarComponent implements AfterViewInit {
   @Input() appTitle!: string;
   @Input() appSubtitle!: string;
   @Input() mdWidth = 900;
-  @Input() navigation: TakSnav = {
-    items: [],
-    typeSnavIcons: 'material-icon',
-  };
+  @Input() navigation: TakSnavItems[] = [];
   @Input() authorities: any[] = [];
   @Input() context: any;
   @Input() isToggleShow = false;

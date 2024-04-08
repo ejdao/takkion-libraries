@@ -21,7 +21,7 @@ import {
   Router,
 } from '@angular/router';
 import { debounceTime, filter, Subscription } from 'rxjs';
-import { TakSnav } from './navigation-interfaces';
+import { TakSnavItems } from './navigation-interfaces';
 import { RoutePartsService, ToggleSidebar } from './services';
 import { FormControl } from '@angular/forms';
 
@@ -37,10 +37,7 @@ export class TakAdminLayoutComponent implements OnInit, AfterViewInit, OnDestroy
   private _routerChangeTitleSubs!: Subscription;
   private _sidebarStatus!: Subscription;
 
-  @Input() navigation: TakSnav = {
-    items: [],
-    typeSnavIcons: 'material-icon',
-  };
+  @Input() navigation: TakSnavItems[] = [];
 
   @Input() appIcon = 'favicon.ico';
   @Input() appTitle = 'eklipse Devs';

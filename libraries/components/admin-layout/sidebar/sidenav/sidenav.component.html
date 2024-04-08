@@ -1,6 +1,6 @@
 <div class="tak__sidenav__container">
   <tak-layout-accordion>
-    @for (item of navigation.items; track item; let i = $index) {
+    @for (item of navigation; track item; let i = $index) {
       <div>
         <!-- Links -->
         @if (item.type === 'link') {
