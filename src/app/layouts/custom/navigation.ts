@@ -1,4 +1,4 @@
-import { TakSnavItems } from '@takkion/components/admin-layout';
+import { TakSnavItems } from '@takkion/components/layouts/origin';
 
 const ADMIN = '000';
 

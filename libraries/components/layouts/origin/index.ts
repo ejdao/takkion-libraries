@@ -1,5 +1,5 @@
 /*
- * Public API Surface of @takkion/components/admin-layout
+ * Public API Surface of @takkion/components/layouts/origin
  */
 
 export * from './footer/footer.component';

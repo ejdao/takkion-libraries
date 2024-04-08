@@ -26,11 +26,11 @@ import { RoutePartsService, ToggleSidebar } from './services';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'tak-layout',
+  selector: 'tak-origin-layout',
   templateUrl: './layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TakAdminLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
+export class TakOriginLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('scrollLayout') scrollLayout!: ElementRef;
 
   private _routerSubs!: Subscription;

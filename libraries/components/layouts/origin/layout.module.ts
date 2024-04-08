@@ -9,7 +9,7 @@ import { TakSidenavComponent } from './sidebar/sidenav/sidenav.component';
 import { TakSidebarComponent } from './sidebar/sidebar.component';
 import { TakHeaderComponent } from './header/header.component';
 import { TakFooterComponent } from './footer/footer.component';
-import { TakAdminLayoutComponent, TakLoader } from './layout.component';
+import { TakOriginLayoutComponent, TakLoader } from './layout.component';
 import { ValidateAccessPipe } from './services/validate-access.pipe';
 import { RoutePartsService } from './services';
 
@@ -22,14 +22,14 @@ import { RoutePartsService } from './services';
     TakAccordionComponent,
     TakSidebarComponent,
     TakSidenavComponent,
-    TakAdminLayoutComponent,
+    TakOriginLayoutComponent,
     TakHeaderComponent,
     TakFooterComponent,
     TakLoader,
   ],
 
   imports: [ReactiveFormsModule, RouterModule],
-  exports: [TakAdminLayoutComponent, TakLoader],
+  exports: [TakOriginLayoutComponent, TakLoader],
   providers: [RoutePartsService],
 })
-export class TakAdminLayoutModule {}
+export class TakOriginLayoutModule {}

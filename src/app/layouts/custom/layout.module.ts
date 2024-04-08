@@ -6,10 +6,10 @@ import { FooterComponent } from './footer/footer.component';
 import { MatButtonModule } from '@takkion/material/button';
 import { MatIconModule } from '@takkion/material/icon';
 import { MatMenuModule } from '@takkion/material/menu';
-import { TakAdminLayoutModule } from '@takkion/components/admin-layout';
+import { TakOriginLayoutModule } from '@takkion/components/layouts/origin';
 
 @NgModule({
   declarations: [AdminLayoutComponent, HeaderComponent, FooterComponent],
-  imports: [RouterModule, MatButtonModule, MatIconModule, MatMenuModule, TakAdminLayoutModule],
+  imports: [RouterModule, MatButtonModule, MatIconModule, MatMenuModule, TakOriginLayoutModule],
 })
 export class AdminLayoutModule {}
