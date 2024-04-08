@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, ViewEncapsulation } from '@angular/core';
-import { FlatTreeControl } from '@takkion/ng-cdk/tree';
-import { MatBottomSheet, MatBottomSheetRef } from '@takkion/ng-material/bottom-sheet';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@takkion/ng-material/tree';
+import { FlatTreeControl } from '@takkion/cdk/tree';
+import { MatBottomSheet, MatBottomSheetRef } from '@takkion/material/bottom-sheet';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@takkion/material/tree';
 
 /**
  * Food data with nested structure.

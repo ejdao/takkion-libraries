@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { ProgressBarMode } from '@takkion/ng-material/progress-bar';
-import { ThemePalette } from '@takkion/ng-material/core';
-import { ProgressSpinnerMode } from '@takkion/ng-material/progress-spinner';
+import { ProgressBarMode } from '@takkion/material/progress-bar';
+import { ThemePalette } from '@takkion/material/core';
+import { ProgressSpinnerMode } from '@takkion/material/progress-spinner';
 
 @Component({
   selector: 'app-progress-bar',

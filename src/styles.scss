@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/main';
-@import 'node_modules/@takkion/ng-material/assets/themes/default';
-@import 'node_modules/@takkion/ng-material/assets/themes/dark';
-@import 'node_modules/@takkion/ng-material/assets/icons/local';
+@import 'node_modules/@takkion/material/assets/themes/default';
+@import 'node_modules/@takkion/material/assets/themes/dark';
+@import 'node_modules/@takkion/material/assets/icons/local';
 
-@import 'libraries/ng-components/assets/variables';
-@import 'libraries/ng-components/assets/main';
-@import 'libraries/ng-components/assets/themes/dark';
-@import 'libraries/ng-components/assets/themes/default';
-@import 'libraries/ng-components/assets/admin-layout/main';
+@import 'libraries/components/assets/variables';
+@import 'libraries/components/assets/main';
+@import 'libraries/components/assets/themes/dark';
+@import 'libraries/components/assets/themes/default';
+@import 'libraries/components/assets/admin-layout/main';

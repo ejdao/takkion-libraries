@@ -1,0 +1,19 @@
+@media only screen and (min-width: calc($MOBILE_RESOLUTION)) {
+  .tak-admin-layout > .tak-container,
+  .tak-sidebar__container,
+  .tak-box-form__scroll,
+  .mat-mdc-select-panel,
+  .mat-mdc-autocomplete-panel,
+  .mat-mdc-form-field-textarea-control,
+  .mdc-dialog__content {
+    &::-webkit-scrollbar {
+      background-color: rgba(192, 192, 192, 0.185);
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(192, 192, 192, 0.562);
+      border-radius: 10px;
+    }
+  }
+}

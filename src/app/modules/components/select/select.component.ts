@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { MatSnackBar } from '@takkion/ng-material/snack-bar';
-import { TooltipPosition } from '@takkion/ng-material/tooltip';
+import { MatSnackBar } from '@takkion/material/snack-bar';
+import { TooltipPosition } from '@takkion/material/tooltip';
 
 @Component({
   selector: 'app-select',

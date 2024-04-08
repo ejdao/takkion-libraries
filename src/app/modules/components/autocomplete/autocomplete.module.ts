@@ -3,13 +3,13 @@ import { AsyncPipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AutocompleteComponent } from './autocomplete.component';
 import { AutocompleteRouting } from './autocomplete.routing';
-import { MatButtonToggleModule } from '@takkion/ng-material/button-toggle';
-import { MatAutocompleteModule } from '@takkion/ng-material/autocomplete';
-import { MatFormFieldModule } from '@takkion/ng-material/form-field';
-import { MatDividerModule } from '@takkion/ng-material/divider';
-import { MatButtonModule } from '@takkion/ng-material/button';
-import { MatInputModule } from '@takkion/ng-material/input';
-import { MatIconModule } from '@takkion/ng-material/icon';
+import { MatButtonToggleModule } from '@takkion/material/button-toggle';
+import { MatAutocompleteModule } from '@takkion/material/autocomplete';
+import { MatFormFieldModule } from '@takkion/material/form-field';
+import { MatDividerModule } from '@takkion/material/divider';
+import { MatButtonModule } from '@takkion/material/button';
+import { MatInputModule } from '@takkion/material/input';
+import { MatIconModule } from '@takkion/material/icon';
 
 @NgModule({
   declarations: [AutocompleteComponent],

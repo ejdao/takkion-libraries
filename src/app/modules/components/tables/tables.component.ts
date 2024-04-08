@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatPaginator } from '@takkion/ng-material/paginator';
-import { MatSort } from '@takkion/ng-material/sort';
-import { MatTableDataSource } from '@takkion/ng-material/table';
+import { MatPaginator } from '@takkion/material/paginator';
+import { MatSort } from '@takkion/material/sort';
+import { MatTableDataSource } from '@takkion/material/table';
 
 export interface UserData {
   id: string;

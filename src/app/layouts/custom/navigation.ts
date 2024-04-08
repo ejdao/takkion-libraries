@@ -1,6 +1,6 @@
-import { TakSnav } from '@takkion/ng-components/admin-layout';
+import { TakSnav } from '@takkion/components/admin-layout';
 
-const ADMIN = '0000';
+const ADMIN = '000';
 
 export const SIDE_NAV: TakSnav = {
   typeSnavIcons: 'material-icon',
@@ -26,7 +26,6 @@ export const SIDE_NAV: TakSnav = {
         {
           name: 'Badge + Bottom Sheet + Card',
           url: 'badge',
-          disableOnContexts: ['BOGOTA'],
           authorities: [ADMIN, '001002'],
         },
       ],

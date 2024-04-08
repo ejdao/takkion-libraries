@@ -3,10 +3,10 @@ import { AdminLayoutComponent } from './layout.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MatButtonModule } from '@takkion/ng-material/button';
-import { MatIconModule } from '@takkion/ng-material/icon';
-import { MatMenuModule } from '@takkion/ng-material/menu';
-import { TakAdminLayoutModule } from '@takkion/ng-components/admin-layout';
+import { MatButtonModule } from '@takkion/material/button';
+import { MatIconModule } from '@takkion/material/icon';
+import { MatMenuModule } from '@takkion/material/menu';
+import { TakAdminLayoutModule } from '@takkion/components/admin-layout';
 
 @NgModule({
   declarations: [AdminLayoutComponent, HeaderComponent, FooterComponent],

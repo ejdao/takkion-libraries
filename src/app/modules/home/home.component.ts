@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { TakAutocompleteFieldComponent } from '@takkion/ng-components/fields';
-import { TakModal } from '@takkion/ng-components/modal';
-import { TakToast, TakToastType } from '@takkion/ng-components/toast';
+import { TakAutocompleteFieldComponent } from '@takkion/components/fields';
+import { TakModal } from '@takkion/components/modal';
+import { TakToast, TakToastType } from '@takkion/components/toast';
 import { Subject, firstValueFrom } from 'rxjs';
 import { FieldsForm, PRODUCTOS } from './fields.form';
 import { HttpClient } from '@angular/common/http';
