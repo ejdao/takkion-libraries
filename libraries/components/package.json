@@ -1,6 +1,6 @@
 {
   "name": "@takkion/components",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "peerDependencies": {
     "@takkion/cdk": "^1.0.0",
     "@takkion/material": "^1.0.1"

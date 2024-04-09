@@ -32,6 +32,7 @@ export class TakSelectFieldComponent implements OnInit, OnDestroy, ControlValueA
   @Input() icon = 'filter_list';
 
   @Input() option = 'option';
+  @Input() extraInfo = '';
 
   @Input() hasDefaultValue = false;
 

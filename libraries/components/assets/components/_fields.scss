@@ -53,10 +53,23 @@
           border-bottom-color: var(--tak-form-field-error-color) !important;
         }
       }
+      .mdc-notched-outline__leading {
+        border-color: var(--tak-form-field-error-color) !important;
+      }
+      .mdc-notched-outline__notch {
+        border-top-color: var(--tak-form-field-error-color) !important;
+        border-bottom-color: var(--tak-form-field-error-color) !important;
+      }
+      .mdc-notched-outline__trailing {
+        border-color: var(--tak-form-field-error-color) !important;
+      }
     }
   }
   &-autocomplete-not-records {
     color: var(--tak-form-field-error-color);
+  }
+  &-option-span-extra {
+    color: gray;
   }
 }
 

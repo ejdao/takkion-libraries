@@ -51,6 +51,7 @@
             [formControl]="fieldsForm.select"
             [suggestions]="suggestions"
             option="descripcion"
+            extraInfo="precio"
             (selectAction)="onSelect($event)"
           >
             Producto
@@ -123,6 +124,7 @@
             option="descripcion"
             (onSearch)="onChange($event)"
             [hasClearButton]="true"
+            extraInfo="precio"
           >
             autocomplete
           </tak-autocomplete-field>
