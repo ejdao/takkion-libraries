@@ -1,0 +1,231 @@
+$TAK_TABLE_PAGINATOR_HEIGHT: 56px;
+$TAK_TABLE_HEADER_HEIGHT: 70px;
+$TAK_TABLE_BORDER_RADIUS: 10px;
+
+.mat-mdc-paginator-range-label {
+  color: var(--tak-paginator-range-label-color);
+}
+
+.tak-cell__subcontent {
+  color: var(--tak-table-row-subcontent-color);
+  &::before {
+    content: '\A';
+    white-space: pre;
+  }
+}
+
+.tak-table {
+  &__container {
+    box-shadow: var(--tak-table-container-box-shadow);
+    border: 1px solid var(--tak-table-container-border-color);
+    border-radius: $TAK_TABLE_BORDER_RADIUS;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Roboto, sans-serif;
+    &--left {
+      padding: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      & > .tak-table-title {
+        font-size: 16px;
+        font-weight: bolder;
+      }
+      & > .tak-table-subtitle {
+        font-size: 13px;
+        font-weight: bolder;
+        &::before {
+          content: '\A';
+          white-space: pre;
+        }
+      }
+    }
+    &--right {
+      white-space: nowrap;
+      display: flex;
+    }
+    color: var(--tak-table-header-color);
+    height: $TAK_TABLE_HEADER_HEIGHT;
+    border-top-left-radius: $TAK_TABLE_BORDER_RADIUS;
+    border-top-right-radius: $TAK_TABLE_BORDER_RADIUS;
+    background-color: var(--tak-table-header-background-color);
+    ~ .tak-table__sub-header {
+      ~ .tak-table__content {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        max-height: calc(
+          100vh -
+            (
+              (
+                  var(--tak-header-height) + var(--tak-footer-height) +
+                    (var(--tak-layout-outlet-padding) * 2)
+                ) + $TAK_TABLE_PAGINATOR_HEIGHT + $TAK_TABLE_HEADER_HEIGHT + 4px
+            )
+        );
+        &.paginator-bottom {
+          max-height: calc(
+            100vh -
+              (
+                (
+                    var(--tak-header-height) + var(--tak-footer-height) +
+                      (var(--tak-layout-outlet-padding) * 2)
+                  ) + $TAK_TABLE_PAGINATOR_HEIGHT + $TAK_TABLE_HEADER_HEIGHT +
+                  $TAK_TABLE_PAGINATOR_HEIGHT + 4px
+              )
+          );
+        }
+      }
+
+      ~ .tak-table__paginator ~ .tak-table__content {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        max-height: calc(
+          100vh -
+            (
+              (
+                  var(--tak-header-height) + var(--tak-footer-height) +
+                    (var(--tak-layout-outlet-padding) * 2)
+                ) + $TAK_TABLE_PAGINATOR_HEIGHT + $TAK_TABLE_HEADER_HEIGHT +
+                $TAK_TABLE_PAGINATOR_HEIGHT + 4px
+            )
+        );
+      }
+    }
+
+    ~ .tak-table__content {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      max-height: calc(
+        100vh -
+          (
+            (
+                var(--tak-header-height) + var(--tak-footer-height) +
+                  (var(--tak-layout-outlet-padding) * 2)
+              ) + $TAK_TABLE_HEADER_HEIGHT + 4px
+          )
+      );
+      &.paginator-bottom {
+        max-height: calc(
+          100vh -
+            (
+              (
+                  var(--tak-header-height) + var(--tak-footer-height) +
+                    (var(--tak-layout-outlet-padding) * 2)
+                ) + $TAK_TABLE_PAGINATOR_HEIGHT + $TAK_TABLE_HEADER_HEIGHT + 4px
+            )
+        );
+      }
+      ~ .tak-table__paginator {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: $TAK_TABLE_BORDER_RADIUS;
+        border-bottom-right-radius: $TAK_TABLE_BORDER_RADIUS;
+        & > mat-paginator {
+          border-top-left-radius: 0px;
+          border-top-right-radius: 0px;
+          border-bottom-left-radius: $TAK_TABLE_BORDER_RADIUS;
+          border-bottom-right-radius: $TAK_TABLE_BORDER_RADIUS;
+        }
+      }
+    }
+    ~ .tak-table__paginator {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+    ~ .tak-table__paginator ~ .tak-table__content {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      max-height: calc(
+        100vh -
+          (
+            (
+                var(--tak-header-height) + var(--tak-footer-height) +
+                  (var(--tak-layout-outlet-padding) * 2)
+              ) + $TAK_TABLE_PAGINATOR_HEIGHT + $TAK_TABLE_HEADER_HEIGHT + 4px
+          )
+      );
+    }
+  }
+  &__sub-header {
+    font-family: Roboto, sans-serif;
+    height: $TAK_TABLE_PAGINATOR_HEIGHT;
+    background-color: var(--tak-paginator-container-background-color);
+  }
+  &__paginator {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--tak-paginator-container-background-color);
+    align-items: center;
+    border-top-left-radius: $TAK_TABLE_BORDER_RADIUS;
+    border-top-right-radius: $TAK_TABLE_BORDER_RADIUS;
+    & > mat-paginator {
+      border-top-left-radius: $TAK_TABLE_BORDER_RADIUS;
+      border-top-right-radius: $TAK_TABLE_BORDER_RADIUS;
+    }
+    ~ .tak-table__content {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      max-height: calc(
+        100vh -
+          (
+            (
+                var(--tak-header-height) + var(--tak-footer-height) +
+                  (var(--tak-layout-outlet-padding) * 2)
+              ) + $TAK_TABLE_PAGINATOR_HEIGHT + 4px
+          )
+      );
+    }
+  }
+  &__content {
+    border-radius: $TAK_TABLE_BORDER_RADIUS;
+    &.paginator-bottom {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      max-height: calc(
+        100vh -
+          (
+            (
+                var(--tak-header-height) + var(--tak-footer-height) +
+                  (var(--tak-layout-outlet-padding) * 2)
+              ) + $TAK_TABLE_PAGINATOR_HEIGHT + 4px
+          )
+      );
+    }
+    overflow: auto;
+    max-height: calc(
+      100vh -
+        (
+          (
+              var(--tak-header-height) + var(--tak-footer-height) +
+                (var(--tak-layout-outlet-padding) * 2)
+            ) + 2px
+        )
+    );
+    table {
+      width: 100%;
+      .mat-mdc-row {
+        height: 30px;
+      }
+      [mat-row].unbordered .mat-mdc-cell {
+        border: none;
+      }
+      [mat-row].selectable {
+        &:hover {
+          background-color: var(--tak-table-selectable-hover-color);
+          cursor: pointer;
+          transition: ease 0.3s;
+        }
+      }
+    }
+    &,
+    table {
+      border-radius: $TAK_TABLE_BORDER_RADIUS;
+    }
+  }
+  &-expandible-row {
+    height: 0px !important;
+  }
+}

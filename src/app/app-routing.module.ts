@@ -13,6 +13,17 @@ const routes: Routes = [
         loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
       },
       {
+        path: 'home',
+        loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+      },
+      {
+        path: 'takkion-components',
+        loadChildren: () =>
+          import('./modules/takkion-components/takkion-components.module').then(
+            m => m.TakkionComponentsModule
+          ),
+      },
+      {
         path: 'components',
         children: [
           {

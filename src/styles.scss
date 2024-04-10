@@ -8,3 +8,6 @@
 @import 'libraries/components/assets/main';
 @import 'libraries/components/assets/themes/main';
 @import 'libraries/components/assets/layouts/origin';
+html {
+  --tak-footer-height: 0px;
+}

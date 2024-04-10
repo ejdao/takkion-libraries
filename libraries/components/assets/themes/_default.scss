@@ -9,4 +9,13 @@ html {
   --tak-form-field-hint-color: gray;
   --tak-box-form-title-color: rgb(10, 161, 174);
   --tak-box-form-subtitle-color: rgb(120, 203, 211);
+  --tak-table-header-color: white;
+  --tak-table-header-background-color: rgb(25, 27, 60);
+  --tak-table-row-subcontent-color: gray;
+  --tak-table-selectable-hover-color: rgba(0, 0, 0, 0.12);
+  --tak-table-container-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --tak-table-container-border-color: none;
+  --tak-paginator-container-background-color: white;
+  --tak-paginator-range-label-color: gray;
 }

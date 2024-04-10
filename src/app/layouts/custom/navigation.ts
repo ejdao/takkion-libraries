@@ -11,20 +11,25 @@ export const SIDE_NAV: TakSnavItems[] = [
   },
   {
     type: 'dropdown',
-    name: 'Components',
-    url: 'components',
-    authorities: [ADMIN, '001'],
+    name: 'Takkion components',
+    url: 'takkion-components',
     icon: 'shield',
     dropdownLinks: [
       {
-        name: 'Autocomplete + Button + Button Toggle',
-        url: 'autocomplete',
-        authorities: [ADMIN, '001001'],
+        name: 'Cards',
+        url: 'cards',
       },
       {
-        name: 'Badge + Bottom Sheet + Card',
-        url: 'badge',
-        authorities: [ADMIN, '001002'],
+        name: 'Dialogs',
+        url: 'dialogs',
+      },
+      {
+        name: 'Pretty box',
+        url: 'pretty-box',
+      },
+      {
+        name: 'Tables',
+        url: 'tables',
       },
     ],
   },
@@ -106,6 +111,25 @@ export const SIDE_NAV: TakSnavItems[] = [
             name: 'Form field + Grid list + Icon + Input + List + Menu',
             url: 'form-field',
             authorities: [ADMIN, '002004004'],
+          },
+        ],
+      },
+      {
+        type: 'dropdown',
+        name: 'Components 3',
+        url: 'components',
+        authorities: [ADMIN, '001'],
+        icon: 'shield',
+        dropdownLinks: [
+          {
+            name: 'Autocomplete + Button + Button Toggle',
+            url: 'autocomplete',
+            authorities: [ADMIN, '001001'],
+          },
+          {
+            name: 'Badge + Bottom Sheet + Card',
+            url: 'badge',
+            authorities: [ADMIN, '001002'],
           },
         ],
       },
