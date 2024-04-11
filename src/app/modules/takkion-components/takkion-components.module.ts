@@ -9,6 +9,7 @@ import { MatPaginatorIntl } from '@takkion/material/paginator';
 import { MatIconModule } from '@takkion/material/icon';
 import { MatButtonModule } from '@takkion/material/button';
 import { TakPrettyBoxModule } from '@takkion/components/pretty-box';
+import { TakCardsModule } from '@takkion/components/cards';
 
 @NgModule({
   declarations: [TablesComponent, CardsComponent, DialogsComponent, PrettyBoxComponent],
@@ -17,6 +18,7 @@ import { TakPrettyBoxModule } from '@takkion/components/pretty-box';
     MatIconModule,
     MatButtonModule,
     TakPrettyBoxModule,
+    TakCardsModule,
     TakkionComponentsRouting,
   ],
   providers: [{ provide: MatPaginatorIntl, useValue: getSpanishMatPaginatorIntl() }],
