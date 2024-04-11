@@ -5,8 +5,6 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   templateUrl: './pretty-box.component.html',
   styleUrl: './pretty-box.component.scss',
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PrettyBoxComponent {
-
-}
+export class PrettyBoxComponent {}
