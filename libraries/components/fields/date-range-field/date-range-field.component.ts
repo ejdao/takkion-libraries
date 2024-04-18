@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatFormFieldAppearance } from '@takkion/material/form-field';
-import { ThemePalette } from '@takkion/material/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { ThemePalette } from '@angular/material/core';
 import { TakAutocompleteFieldType, TAK_DEFAULT_APPEARANCE_FORM } from '../fields.common';
 
 @Component({

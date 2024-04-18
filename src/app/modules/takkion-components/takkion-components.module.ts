@@ -5,9 +5,9 @@ import { CardsComponent } from './cards/cards.component';
 import { DialogsComponent } from './dialogs/dialogs.component';
 import { PrettyBoxComponent } from './pretty-box/pretty-box.component';
 import { TakTablesModule, getSpanishMatPaginatorIntl } from '@takkion/components/tables';
-import { MatPaginatorIntl } from '@takkion/material/paginator';
-import { MatIconModule } from '@takkion/material/icon';
-import { MatButtonModule } from '@takkion/material/button';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { TakPrettyBoxModule } from '@takkion/components/pretty-box';
 
 @NgModule({

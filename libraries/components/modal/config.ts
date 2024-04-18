@@ -1,4 +1,4 @@
-import { MatDialogConfig } from '@takkion/material/dialog';
+import { MatDialogConfig } from '@angular/material/dialog';
 
 export type TakModalType = 'confirm' | 'alert';
 

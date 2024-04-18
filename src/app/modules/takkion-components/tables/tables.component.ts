@@ -6,9 +6,9 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { MatPaginator } from '@takkion/material/paginator';
-import { MatSort } from '@takkion/material/sort';
-import { MatTableDataSource } from '@takkion/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
   name: string;

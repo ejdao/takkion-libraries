@@ -8,9 +8,9 @@ import { CustomPreloadingStrategy } from './app.preloading';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AddTokenInterceptor } from './interceptors/add-token';
 import { AdminLayoutModule } from './layouts/custom/layout.module';
-import { MatSnackBarModule } from '@takkion/material/snack-bar';
-import { MatDialogModule } from '@takkion/material/dialog';
-import { MAT_DATE_LOCALE, MatNativeDateModule } from '@takkion/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [AppComponent],

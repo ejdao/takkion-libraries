@@ -1,5 +1,5 @@
 @mixin customizedTakFadeIn($size) {
-  .tak-fade-in__#{$size} {
+  .tak-fade-in--#{$size} {
     animation: takFadeIn ease $size;
     -webkit-animation: takFadeIn ease $size;
     -moz-animation: takFadeIn ease $size;

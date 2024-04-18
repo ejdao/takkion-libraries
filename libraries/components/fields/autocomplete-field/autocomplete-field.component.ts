@@ -11,8 +11,8 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, FormGroupDirective, FormControl, NgControl } from '@angular/forms';
 import { debounceTime, map, Observable, Subject, takeUntil } from 'rxjs';
-import { MatFormFieldAppearance } from '@takkion/material/form-field';
-import { MatOptionSelectionChange, ThemePalette } from '@takkion/material/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatOptionSelectionChange, ThemePalette } from '@angular/material/core';
 import {
   TakAutocompleteFieldType,
   TAK_DEFAULT_APPEARANCE_FORM,

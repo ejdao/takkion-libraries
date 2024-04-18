@@ -1,19 +1,6 @@
 @import 'loader';
 
 html {
-  background-color: var(--tak-body-background-color);
-  color: var(--tak-body-color);
-}
-
-html {
-  --tak-header-height: 50px;
-  --tak-footer-height: 30px;
-  --tak-sidebar-compact-width: 50px;
-  --tak-sidebar-full-width: 240px;
-  --tak-layout-outlet-padding: 20px;
-}
-
-html {
   --tak-body-color: rgb(0, 0, 0);
   --tak-body-background-color: rgb(241, 244, 246);
   --tak-loader-double-bounce1: #fcc02e;
@@ -82,6 +69,14 @@ html.dark-theme {
   --tak-breadcrumb-title-color: #ececec;
   --tak-divider-border-top-light-color: rgba(214, 214, 214, 0.12);
   --tak-divider-border-top-dark-color: rgb(95, 95, 95, 0.4);
+}
+
+html {
+  --tak-header-height: 50px;
+  --tak-footer-height: 30px;
+  --tak-sidebar-compact-width: 50px;
+  --tak-sidebar-full-width: 240px;
+  --tak-layout-outlet-padding: 20px;
 }
 
 html {

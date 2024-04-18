@@ -7,8 +7,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@takkion/material/dialog';
-import { MatAccordion } from '@takkion/material/expansion';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatAccordion } from '@angular/material/expansion';
 
 const today = new Date();
 const month = today.getMonth();

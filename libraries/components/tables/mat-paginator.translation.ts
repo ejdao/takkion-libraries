@@ -1,4 +1,4 @@
-import { MatPaginatorIntl } from '@takkion/material/paginator';
+import { MatPaginatorIntl } from '@angular/material/paginator';
 
 const typeEntity = 'item(s)';
 

@@ -10,8 +10,8 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ThemePalette } from '@takkion/material/core';
-import { MatFormFieldAppearance } from '@takkion/material/form-field';
+import { ThemePalette } from '@angular/material/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { ControlValueAccessor, FormControl, FormGroupDirective, NgControl } from '@angular/forms';
 import { TAK_DEFAULT_APPEARANCE_FORM, TakAutocompleteFieldType } from '../fields.common';
 

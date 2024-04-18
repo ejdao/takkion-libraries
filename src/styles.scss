@@ -1,13 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/main';
-@import 'node_modules/@takkion/material/assets/themes/default';
-@import 'node_modules/@takkion/material/assets/themes/dark';
-@import 'node_modules/@takkion/material/assets/icons/local';
+@import 'libraries/components/assets/material/themes/default';
+@import 'libraries/components/assets/material/themes/dark';
+@import 'libraries/components/assets/material/icons/local';
 
 @import 'libraries/components/assets/variables';
 @import 'libraries/components/assets/main';
 @import 'libraries/components/assets/themes/main';
 @import 'libraries/components/assets/layouts/origin';
+
 html {
   --tak-footer-height: 0px;
 }
