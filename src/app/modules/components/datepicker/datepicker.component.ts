@@ -40,7 +40,7 @@ export class DatepickerComponent {
   });
 
   animal!: string;
-  name!: string;
+  name = 'Enrique';
 
   constructor(
     public dialog: MatDialog,
@@ -53,7 +53,7 @@ export class DatepickerComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('The dialog was closed', result);
       this.animal = result;
       this._cd.markForCheck();
     });
@@ -71,6 +71,6 @@ export class DialogExampleComponent {
   ) {}
 
   public onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 }

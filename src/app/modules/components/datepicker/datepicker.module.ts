@@ -14,10 +14,12 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { TakDialogModule } from '@takkion/components/dialogs';
 
 @NgModule({
   declarations: [DatepickerComponent, DialogExampleComponent],
   imports: [
+    TakDialogModule,
     MatFormFieldModule,
     MatDatepickerModule,
     FormsModule,

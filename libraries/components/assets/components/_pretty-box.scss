@@ -32,10 +32,9 @@
     border-bottom-right-radius: 10px;
   }
 }
-
-[gcm-pretty-box-header=''],
-[gcm-pretty-box-content=''],
-[gcm-pretty-box-footer=''] {
+[tak-pretty-box-header],
+[tak-pretty-box-content],
+[tak-pretty-box-footer] {
   padding: 0 10px 0 10px;
   text-overflow: ellipsis;
   overflow: hidden;
