@@ -1,9 +1,9 @@
 {
   "name": "@takkion/components",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0-rc.5",
   "peerDependencies": {
-    "@takkion/cdk": "^17.0.0 || ^18.0.0",
-    "@takkion/material": "^17.0.0 || ^18.0.0"
+    "@takkion/cdk": "^14.2.7",
+    "@takkion/material": "^14.2.7"
   },
   "sideEffects": false
 }

@@ -2,7 +2,7 @@ $TAK_TABLE_PAGINATOR_HEIGHT: 56px;
 $TAK_TABLE_HEADER_HEIGHT: 70px;
 $TAK_TABLE_BORDER_RADIUS: 10px;
 
-.mat-mdc-paginator-range-label {
+.mat-paginator-range-label {
   color: var(--tak-paginator-range-label-color);
 }
 
@@ -206,10 +206,10 @@ $TAK_TABLE_BORDER_RADIUS: 10px;
     );
     table {
       width: 100%;
-      .mat-mdc-row {
+      .mat-row {
         height: 30px;
       }
-      [mat-row].unbordered .mat-mdc-cell {
+      [mat-row].unbordered .mat-cell {
         border: none;
       }
       [mat-row].selectable {

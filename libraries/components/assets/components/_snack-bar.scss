@@ -1,17 +1,17 @@
 .tak-snackbar-danger {
-  .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+  .mat-button.mat-snack-bar-action:not(:disabled) {
     color: var(--tak-snackbar-danger-action-color) !important;
   }
-  .mdc-snackbar__surface {
+  .mat-snackbar__surface {
     color: var(--tak-snackbar-danger-color) !important;
     background-color: var(--tak-snackbar-danger-background-color) !important;
   }
 }
 .tak-snackbar-success {
-  .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+  .mat-button.mat-snack-bar-action:not(:disabled) {
     color: var(--tak-snackbar-success-action-color) !important;
   }
-  .mdc-snackbar__surface {
+  .mat-snackbar__surface {
     color: var(--tak-snackbar-success-color) !important;
     background-color: var(--tak-snackbar-success-background-color) !important;
   }
