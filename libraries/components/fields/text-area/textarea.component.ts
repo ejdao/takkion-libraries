@@ -12,8 +12,8 @@ import {
 import { ControlValueAccessor, FormGroupDirective, FormControl, NgControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TAK_DEFAULT_APPEARANCE_FORM } from '../fields.common';
-import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field';
-import { ThemePalette } from '@angular/material/core';
+import { FloatLabelType, MatFormFieldAppearance } from '@takkion/material/form-field';
+import { ThemePalette } from '@takkion/material/core';
 
 @Component({
   selector: 'tak-textarea',

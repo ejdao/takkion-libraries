@@ -22,18 +22,12 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@takkion/utilities": ["libraries/utilities"],
-      "@takkion/components/*": ["libraries/components/*"],
-      "@takkion/ng-cdk": ["libraries/ng-cdk"],
-      "@takkion/ng-cdk/*": ["libraries/ng-cdk/*"],
-      "@takkion/ng-material/*": ["libraries/ng-material/*"],
-      "@takkion/ng-material": ["libraries/ng-material"],
       "@takkion/cdk": ["libraries/cdk"],
       "@takkion/cdk/*": ["libraries/cdk/*"],
       "@takkion/material/*": ["libraries/material/*"],
       "@takkion/material": ["libraries/material"],
-      "@takkion/ng-utilities": ["libraries/ng-utilities"],
-      "@takkion/ng-components/*": ["libraries/ng-components/*"]
+      "@takkion/utilities": ["libraries/utilities"],
+      "@takkion/components/*": ["libraries/components/*"]
     }
   },
   "angularCompilerOptions": {

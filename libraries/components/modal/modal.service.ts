@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@takkion/material/dialog';
 import { TakModalComponent } from './modal.component';
 import { TakModalConfig, TakModalType } from './config';
 import { Observable } from 'rxjs';

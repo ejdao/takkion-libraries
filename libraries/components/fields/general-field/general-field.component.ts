@@ -18,8 +18,8 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TAK_DEFAULT_APPEARANCE_FORM, TakGeneralFieldType } from '../fields.common';
-import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field';
-import { ThemePalette } from '@angular/material/core';
+import { FloatLabelType, MatFormFieldAppearance } from '@takkion/material/form-field';
+import { ThemePalette } from '@takkion/material/core';
 
 @Component({
   selector: 'tak-general-field',
@@ -30,7 +30,7 @@ export class TakGeneralFieldComponent implements OnInit, OnDestroy, ControlValue
 
   @Input() appearance: MatFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;
   @Input() type: TakGeneralFieldType = 'text';
-  @Input() floatLabel: FloatLabelType = 'auto';
+  @Input() floatLabel: FloatLabelType = 'never';
   @Input() color: ThemePalette = 'primary';
   @Input() actionIcon = 'search';
 
@@ -79,8 +79,8 @@ export class TakGeneralFieldComponent implements OnInit, OnDestroy, ControlValue
 
     if (this.type === 'filter' && this.defaultFilterStyle) {
       this.control.removeValidators(Validators.required);
-      this.appearance = 'fill';
-      this.floatLabel = 'auto';
+      this.appearance = 'legacy';
+      this.floatLabel = 'never';
       if (!this.placeholder) this.placeholder = 'Buscar';
       this.hasClearButton = true;
       this._cd.markForCheck();

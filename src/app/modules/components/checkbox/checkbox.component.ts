@@ -6,9 +6,9 @@ import {
   inject,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { MatChipInputEvent } from '@angular/material/chips';
-import { ThemePalette } from '@angular/material/core';
+import { LiveAnnouncer } from '@takkion/cdk/a11y';
+import { MatChipInputEvent } from '@takkion/material/chips';
+import { ThemePalette } from '@takkion/material/core';
 
 export interface Task {
   name: string;

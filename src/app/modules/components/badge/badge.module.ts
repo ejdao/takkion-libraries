@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BadgeRouting } from './badge.routing';
 import { BadgeComponent, BottomSheetExampleComponent } from './badge.component';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatCardModule } from '@angular/material/card';
-import { MatTreeModule } from '@angular/material/tree';
+import { MatBottomSheetModule } from '@takkion/material/bottom-sheet';
+import { MatDividerModule } from '@takkion/material/divider';
+import { MatButtonModule } from '@takkion/material/button';
+import { MatBadgeModule } from '@takkion/material/badge';
+import { MatIconModule } from '@takkion/material/icon';
+import { MatListModule } from '@takkion/material/list';
+import { MatCardModule } from '@takkion/material/card';
+import { MatTreeModule } from '@takkion/material/tree';
 
 @NgModule({
   declarations: [BadgeComponent, BottomSheetExampleComponent],
@@ -19,6 +20,7 @@ import { MatTreeModule } from '@angular/material/tree';
     MatDividerModule,
     MatCardModule,
     MatTreeModule,
+    MatBottomSheetModule,
     BadgeRouting,
   ],
 })

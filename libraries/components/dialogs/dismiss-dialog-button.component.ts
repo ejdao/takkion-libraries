@@ -5,7 +5,7 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef } from '@takkion/material/dialog';
 
 @Component({
   selector: 'tak-dismiss-dialog-button',

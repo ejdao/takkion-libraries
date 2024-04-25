@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 import { TakCapsuleModule } from '@takkion/components/capsule';
 import { TakBoxFormModule } from '@takkion/components/box-form';
 import { TakFieldsModule } from '@takkion/components/fields';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@takkion/material/button';
 
 @NgModule({
   declarations: [HomeComponent],

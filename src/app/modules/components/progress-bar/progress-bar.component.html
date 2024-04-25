@@ -239,14 +239,14 @@
       <label class="example-value-label">{{ slider.value }}</label>
     </div>
     <mat-slider
-      class="example-margin"
       [disabled]="disabled5"
       [max]="max"
       [min]="min"
       [step]="step"
-      [discrete]="thumbLabel"
-      [showTickMarks]="showTicks"
+    
     >
+    <!-- [discrete]="thumbLabel"
+    [showTickMarks]="showTicks" -->
       <input matSliderThumb [(ngModel)]="value5" #slider />
     </mat-slider>
   </mat-card-content>

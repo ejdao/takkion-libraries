@@ -6,10 +6,10 @@
   .tak-pretty-box--scroll,
   .tak-pretty-box--header,
   .tak-pretty-box--footer,
-  .mat-mdc-select-panel,
-  .mat-mdc-autocomplete-panel,
-  .mat-mdc-form-field-textarea-control,
-  .mdc-dialog__content {
+  .mat-select-panel,
+  .mat-autocomplete-panel,
+  textarea,
+  .mat-dialog-content {
     &::-webkit-scrollbar {
       background-color: rgba(192, 192, 192, 0.072);
       width: 8px;

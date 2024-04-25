@@ -18,7 +18,7 @@
     }
     &__field-container {
       margin-top: -18px;
-      & .mat-mdc-form-field {
+      & .mat-form-field {
         visibility: hidden;
         width: 1px !important;
         font-size: 1px !important;
@@ -29,6 +29,7 @@
     mat-form-field {
       width: calc(100% - 10px);
     }
+
     .money-input {
       font-weight: bolder !important;
     }
@@ -36,34 +37,34 @@
       .tak-hint {
         color: var(--tak-form-field-error-color) !important;
       }
-      .mat-mdc-text-field-wrapper {
-        .mat-mdc-floating-label,
-        .mat-mdc-floating-label:hover,
-        .mat-mdc-form-field-icon-suffix,
-        .mdc-text-field,
-        .mdc-text-field__input,
-        .mat-mdc-button-ripple {
+      .mat-text-field-wrapper {
+        .mat-floating-label,
+        .mat-floating-label:hover,
+        .mat-form-field-icon-suffix,
+        .mat-text-field,
+        .mat-text-field__input,
+        .mat-button-ripple {
           color: var(--tak-form-field-error-color) !important;
         }
-        & .mat-mdc-form-field-flex .mat-datepicker-toggle .mat-mdc-icon-button {
+        & .mat-form-field-flex .mat-datepicker-toggle .mat-icon-button {
           color: var(--tak-form-field-error-color) !important;
         }
       }
-      .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-        .mdc-line-ripple::before,
-        .mdc-line-ripple::after,
-        .mdc-line-ripple:hover {
+      .mat-text-field--filled:not(.mat-text-field--disabled) {
+        .mat-line-ripple::before,
+        .mat-line-ripple::after,
+        .mat-line-ripple:hover {
           border-bottom-color: var(--tak-form-field-error-color) !important;
         }
       }
-      .mdc-notched-outline__leading {
+      .mat-notched-outline__leading {
         border-color: var(--tak-form-field-error-color) !important;
       }
-      .mdc-notched-outline__notch {
+      .mat-notched-outline__notch {
         border-top-color: var(--tak-form-field-error-color) !important;
         border-bottom-color: var(--tak-form-field-error-color) !important;
       }
-      .mdc-notched-outline__trailing {
+      .mat-notched-outline__trailing {
         border-color: var(--tak-form-field-error-color) !important;
       }
     }
@@ -73,13 +74,14 @@
   }
   &-option-span-extra {
     color: gray;
+    &::before { content: '\A'; white-space: pre;}
   }
 }
 
-.mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label,
-.mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused
-  .mdc-floating-label--float-above {
-  .mat-mdc-form-field-required-marker,
+.mat-text-field--filled:not(.mat-text-field--disabled).mat-text-field--focused .mat-floating-label,
+.mat-text-field--filled:not(.mat-text-field--disabled).mat-text-field--focused
+  .mat-floating-label--float-above {
+  .mat-form-field-required-marker,
   .tak-field__danger-x {
     color: var(--tak-form-field-error-color) !important;
   }
@@ -87,6 +89,9 @@
 
 .tak__date-not-input__picker-container.mat-form-field-invalid
   .mat-datepicker-toggle
-  .mat-mdc-icon-button {
+  .mat-icon-button {
   color: var(--tak-form-field-error-color) !important;
+}
+mat-option {
+  line-height: 20px !important;
 }
