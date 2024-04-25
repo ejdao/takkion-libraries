@@ -1,8 +1,7 @@
-.app {
-  &__header__container {
-    height: var(--header-height);
-    justify-content: flex-end;
-    align-items: center;
+.app-header {
+  &__container {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 }

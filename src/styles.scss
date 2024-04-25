@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-/* Layout */
-@import 'libraries/ng-components/assets/layout/variables';
-$SIDEBAR_MD_RESOLUTION: 981px;
-@import 'libraries/ng-components/assets/layout/main';
-/* Ng Components */
-@import 'libraries/ng-components/assets/variables';
-@import 'libraries/ng-components/assets/main';
-@import 'libraries/ng-components/assets/fonts/main';
-/* Custom Css*/
 @import 'assets/main';
-@import 'libraries/ng-material/prebuilt-themes/material-icons.css';
+@import 'libraries/components/assets/material/themes/default';
+@import 'libraries/components/assets/material/themes/dark';
+@import 'libraries/components/assets/material/icons/local';
+
+@import 'libraries/components/assets/variables';
+@import 'libraries/components/assets/main';
+@import 'libraries/components/assets/themes/main';
+@import 'libraries/components/assets/layouts/origin';
+
+html {
+  --tak-footer-height: 0px;
+}

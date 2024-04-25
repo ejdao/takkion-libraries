@@ -22,6 +22,8 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
+      "@takkion/utilities": ["libraries/utilities"],
+      "@takkion/components/*": ["libraries/components/*"],
       "@takkion/ng-cdk": ["libraries/ng-cdk"],
       "@takkion/ng-cdk/*": ["libraries/ng-cdk/*"],
       "@takkion/ng-material/*": ["libraries/ng-material/*"],

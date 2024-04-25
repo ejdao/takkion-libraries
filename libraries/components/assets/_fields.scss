@@ -1,0 +1,76 @@
+.tak {
+  &-custom-error {
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--tak-form-field-error-color);
+  }
+  &-hint {
+    color: var(--tak-form-field-hint-color);
+  }
+  &__date-not-input {
+    input {
+      display: none !important;
+    }
+    &__picker-container {
+      margin-top: 5px;
+    }
+    &__field-container {
+      margin-top: -18px;
+      & .mat-mdc-form-field {
+        visibility: hidden;
+        width: 1px !important;
+        font-size: 1px !important;
+      }
+    }
+  }
+  &-form-container {
+    mat-form-field {
+      width: calc(100% - 10px);
+    }
+    .money-input {
+      font-weight: bolder !important;
+    }
+    .mat-form-field-invalid {
+      .tak-hint {
+        color: var(--tak-form-field-error-color) !important;
+      }
+      .mat-mdc-text-field-wrapper {
+        .mat-mdc-floating-label,
+        .mat-mdc-floating-label:hover,
+        .mat-mdc-form-field-icon-suffix,
+        .mdc-text-field,
+        .mdc-text-field__input,
+        .mat-mdc-button-ripple {
+          color: var(--tak-form-field-error-color) !important;
+        }
+        & .mat-mdc-form-field-flex .mat-datepicker-toggle .mat-mdc-icon-button {
+          color: var(--tak-form-field-error-color) !important;
+        }
+      }
+      .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        .mdc-line-ripple::before,
+        .mdc-line-ripple::after,
+        .mdc-line-ripple:hover {
+          border-bottom-color: var(--tak-form-field-error-color) !important;
+        }
+      }
+    }
+  }
+  &-autocomplete-not-records {
+    color: var(--tak-form-field-error-color);
+  }
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label,
+.mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-floating-label--float-above {
+  .mat-mdc-form-field-required-marker,
+  .tak-field__danger-x {
+    color: var(--tak-form-field-error-color) !important;
+  }
+}
+
+.tak__date-not-input__picker-container.mat-form-field-invalid
+  .mat-datepicker-toggle
+  .mat-mdc-icon-button {
+  color: var(--tak-form-field-error-color) !important;
+}

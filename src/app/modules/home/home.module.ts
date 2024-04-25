@@ -1,33 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HomeRoutingModule } from './home-routing.module';
+import { HomeRouting } from './home.routing';
 import { HomeComponent } from './home.component';
-import { TakDividerModule } from '@takkion/ng-material/divider';
-import { TakCardModule } from '@takkion/ng-material/card';
-import { TakFormFieldModule } from '@takkion/ng-material/form-field';
-import { TakInputModule } from '@takkion/ng-material/input';
-import { TakBoxFormModule } from '@takkion/ng-components/box-form';
-import { TakCapsuleModule } from '@takkion/ng-components/capsule';
-import { ReactiveFormsModule } from '@angular/forms';
-import { TakButtonModule } from '@takkion/ng-material/button';
-import { TakFieldsModule } from '@takkion/ng-components/fields';
-import { TakProgressSpinnerModule } from '@takkion/ng-material/progress-spinner';
+import { TakCapsuleModule } from '@takkion/components/capsule';
+import { TakBoxFormModule } from '@takkion/components/box-form';
+import { TakFieldsModule } from '@takkion/components/fields';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    HomeRoutingModule,
-    TakCardModule,
-    TakBoxFormModule,
-    TakButtonModule,
-    TakFormFieldModule,
-    TakProgressSpinnerModule,
-    TakInputModule,
-    TakDividerModule,
-    TakFieldsModule,
-    TakCapsuleModule,
-  ],
+  imports: [TakCapsuleModule, TakBoxFormModule, TakFieldsModule, MatButtonModule, HomeRouting],
 })
 export class HomeModule {}

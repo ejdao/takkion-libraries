@@ -4,8 +4,10 @@
   "newProjectRoot": "libraries",
   "schematics": {
     "@schematics/angular:component": {
-      "style": "scss",
+      "changeDetection": "OnPush",
       "skipTests": true,
+      "standalone": false,
+      "style": "scss",
       "viewEncapsulation": "None"
     }
   },
@@ -86,23 +88,23 @@
         }
       }
     },
-    "ng-components": {
+    "components": {
       "projectType": "library",
-      "root": "libraries/ng-components",
-      "sourceRoot": "libraries/ng-components",
+      "root": "libraries/components",
+      "sourceRoot": "libraries/components",
       "prefix": "tak",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "libraries/ng-components/ng-package.json"
+            "project": "libraries/components/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libraries/ng-components/tsconfig.lib.prod.json"
+              "tsConfig": "libraries/components/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "libraries/ng-components/tsconfig.lib.json"
+              "tsConfig": "libraries/components/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -110,29 +112,29 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "libraries/ng-components/tsconfig.spec.json",
+            "tsConfig": "libraries/components/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
     },
-    "ng-utilities": {
+    "utilities": {
       "projectType": "library",
-      "root": "libraries/ng-utilities",
-      "sourceRoot": "libraries/ng-utilities",
+      "root": "libraries/utilities",
+      "sourceRoot": "libraries/utilities",
       "prefix": "tak",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "libraries/ng-utilities/ng-package.json"
+            "project": "libraries/utilities/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libraries/ng-utilities/tsconfig.lib.prod.json"
+              "tsConfig": "libraries/utilities/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "libraries/ng-utilities/tsconfig.lib.json"
+              "tsConfig": "libraries/utilities/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -140,7 +142,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "libraries/ng-utilities/tsconfig.spec.json",
+            "tsConfig": "libraries/utilities/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
         }

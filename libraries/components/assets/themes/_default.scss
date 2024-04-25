@@ -1,0 +1,30 @@
+html {
+  --tak-snackbar-success-color: rgb(0, 0, 0);
+  --tak-snackbar-success-action-color: rgb(255, 0, 0);
+  --tak-snackbar-success-background-color: rgb(24, 182, 116);
+  --tak-snackbar-danger-color: rgb(255, 255, 255);
+  --tak-snackbar-danger-action-color: rgb(24, 182, 116);
+  --tak-snackbar-danger-background-color: rgb(255, 0, 0);
+  --tak-form-field-error-color: rgb(255, 0, 0);
+  --tak-form-field-hint-color: rgb(128, 128, 128);
+  --tak-box-form-title-color: rgb(10, 161, 174);
+  --tak-box-form-subtitle-color: rgb(120, 203, 211);
+  --tak-table-header-color: rgb(255, 255, 255);
+  --tak-table-header-background-color: rgb(25, 27, 60);
+  --tak-table-row-subcontent-color: rgb(128, 128, 128);
+  --tak-table-selectable-hover-color: rgba(0, 0, 0, 0.12);
+  --tak-table-container-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --tak-table-container-border-color: none;
+  --tak-paginator-container-background-color: rgb(255, 255, 255);
+  --tak-paginator-range-label-color: rgb(128, 128, 128);
+  --tak-pretty-box-border-color: rgba(0, 0, 0, 0.12);
+  --tak-card-border-color: rgba(0, 0, 0, 0.12);
+  --tak-card-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --tak-card-background-color: rgb(255, 255, 255);
+  --tak-card-default-top-color: rgb(10, 161, 174);
+  /* TAKKION MATERIAL */
+  --mat-select-container-elevation-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}

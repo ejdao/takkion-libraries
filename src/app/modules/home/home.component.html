@@ -1,4 +1,4 @@
-<tak-capsule>
+<tak-capsule [grids]="[12, 12, 10, 10, 8, 6]">
   <tak-box-form
     takTitle="Hey Joee"
     takSubtitle="Hello again"
@@ -9,16 +9,16 @@
     (onBack)="onBack()"
     [hasBackButton]="true"
   >
-    <button tak-button (click)="openToast('notification', 'notification')" type="button">
+    <button mat-button (click)="openToast('notification', 'notification')" type="button">
       NOTIFICATION
     </button>
-    <button tak-button (click)="openToast('success', 'success')" type="button">SUCCESS</button>
-    <button tak-button (click)="openToast('danger', 'danger')" type="button">DANGER</button>
+    <button mat-button (click)="openToast('success', 'success')" type="button">SUCCESS</button>
+    <button mat-button (click)="openToast('danger', 'danger')" type="button">DANGER</button>
 
-    <button tak-button (click)="openModal()" type="button">MODAL</button>
+    <button mat-button (click)="openModal()" type="button">MODAL</button>
 
     <button
-      tak-button
+      mat-button
       (click)="enable ? (enable = false) : (enable = true); toggleEnable()"
       type="button"
     >
@@ -27,28 +27,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-50">
-          <tak-general-field
-            [formControl]="fieldsForm.text"
-            [countCaracters]="true"
-            [maxLength]="100"
-            [hasClearButton]="true"
-          >
-            Text field
-          </tak-general-field>
-        </div>
-        <div class="col-50">
-          <tak-general-field
-            [formControl]="fieldsForm.text"
-            [countCaracters]="true"
-            type="password"
-            [maxLength]="100"
-            [hasClearButton]="true"
-          >
-            Password field
-          </tak-general-field>
-        </div>
-        <div class="col-50">
+        <div class="col-100">
           <tak-general-field
             type="filter"
             [formControl]="fieldsForm.filter"
@@ -57,7 +36,8 @@
             Buscar
           </tak-general-field>
         </div>
-        <div class="col-100">
+
+        <div class="col-50">
           <tak-textarea
             [formControl]="fieldsForm.textarea"
             [countCaracters]="true"
@@ -66,56 +46,61 @@
             Textarea
           </tak-textarea>
         </div>
-
         <div class="col-50">
           <tak-select-field
             [formControl]="fieldsForm.select"
             [suggestions]="suggestions"
             option="descripcion"
+            extraInfo="precio"
             (selectAction)="onSelect($event)"
           >
             Producto
           </tak-select-field>
         </div>
+
         <div class="col-50">
           <tak-number-field
             [formControl]="fieldsForm.number"
             placeholder="(200-500)"
             [hasClearButton]="true"
+            [min]="200"
+            [max]="500"
           >
             Number field
           </tak-number-field>
         </div>
-
-        <div class="col-100">
+        <div class="col-50">
           <tak-money-field [formControl]="fieldsForm.money" [hasClearButton]="true">
             Money field
           </tak-money-field>
         </div>
 
-        <div class="col-80">
+        <div class="col-50">
           <tak-date-field [formControl]="fieldsForm.date" [minDate]="nowDate" [maxDate]="endDate">
             Date field
           </tak-date-field>
         </div>
-        <div class="col-20">
+        <div class="col-50">
           <tak-date-field
             [minDate]="nowDate"
             [maxDate]="endDate"
-            [formControl]="fieldsForm.date"
+            [formControl]="fieldsForm.dateNI"
             color="warn"
             [notInput]="true"
           ></tak-date-field>
         </div>
 
-        <div class="col-80">
+        <div class="col-50">
           <tak-date-range-field [start]="fieldsForm.start" [end]="fieldsForm.end" color="accent">
             Date Range field
           </tak-date-range-field>
         </div>
-
-        <div class="col-20">
-          <tak-date-range-field [start]="fieldsForm.start" [end]="fieldsForm.end" [notInput]="true">
+        <div class="col-50">
+          <tak-date-range-field
+            [start]="fieldsForm.startNI"
+            [end]="fieldsForm.endNI"
+            [notInput]="true"
+          >
           </tak-date-range-field>
         </div>
 
@@ -124,12 +109,12 @@
             [hasActionButton]="true"
             formControlName="query"
             (onExecuteAction)="onQuery($event)"
+            [maxLength]="10"
           >
             Query field
           </tak-general-field>
         </div>
-
-        <div class="col-100">
+        <div class="col-50">
           <tak-autocomplete-field
             #autocomplete
             [formControl]="fieldsForm.autocomplete"
@@ -139,6 +124,7 @@
             option="descripcion"
             (onSearch)="onChange($event)"
             [hasClearButton]="true"
+            extraInfo="precio"
           >
             autocomplete
           </tak-autocomplete-field>
@@ -147,3 +133,35 @@
     </div>
   </tak-box-form>
 </tak-capsule>
+
+<tak-capsule [grids]="[6]">
+  <div style="background-color: beige">
+    <button (click)="clickOnOpenModal()">Modal</button>
+    <br />
+    <br />
+    <button (click)="clickOnOpenToast()">Toast</button>
+  </div>
+</tak-capsule>
+
+<br />
+<br />
+
+<div class="container">
+  <div class="row">
+    <div class="col-t-3" style="background-color: yellow">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sequi itaque provident nihil
+      repudiandae non vitae inventore, dolor animi libero dolorum numquam. Ipsam ipsum totam
+      molestiae corrupti saepe omnis in.
+    </div>
+    <div class="col-t-6" style="background-color: blue">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, hic suscipit nobis quod
+      magni soluta voluptates? Esse repellat quos, corrupti, doloremque voluptate quis nulla facere
+      ea deserunt mollitia quasi! Magnam.
+    </div>
+    <div class="col-t-3" style="background-color: red">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi explicabo sit, deleniti
+      quasi aliquam dicta soluta voluptas consequuntur esse perspiciatis sint non doloremque, autem
+      voluptate possimus, earum sed? Ad, quaerat.
+    </div>
+  </div>
+</div>

@@ -1,7 +1,8 @@
 @if (resourcesLoaded) {
-  <tak-layout
+  <tak-origin-layout
     appTitle="Takkion"
-    appSidebarTitle="JASR Desarrollo Web"
+    appSidebarTitle="Ejdao Dev S.A"
+    appSidebarSubtitle="Example context"
     [navigation]="navigation"
     [authorities]="permissions"
     [context]="context"
@@ -9,10 +10,11 @@
     [sidebarDebounceTime]="200"
     [accordionInCollections]="accordionInCollections"
     [disableHiddenCollections]="disableHiddenCollections"
-    [mdWidth]="980"
+    [hasFooter]="false"
+    [mdWidth]="900"
   >
     <section tak-custom-header><app-header></app-header></section>
     <section tak-custom-footer><app-footer></app-footer></section>
     <router-outlet></router-outlet>
-  </tak-layout>
+  </tak-origin-layout>
 }

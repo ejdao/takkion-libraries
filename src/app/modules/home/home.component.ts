@@ -1,17 +1,10 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-  ViewChild,
-  ViewEncapsulation,
-} from '@angular/core';
-import { TakModal } from '@takkion/ng-components/modal';
-import { TakToast, TakToastType } from '@takkion/ng-components/toast';
+import { ChangeDetectorRef, Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { TakAutocompleteFieldComponent } from '@takkion/components/fields';
+import { TakModal } from '@takkion/components/modal';
+import { TakToast, TakToastType } from '@takkion/components/toast';
+import { Subject, firstValueFrom } from 'rxjs';
 import { FieldsForm, PRODUCTOS } from './fields.form';
-import { TakAutocompleteFieldComponent } from '@takkion/ng-components/fields';
 import { HttpClient } from '@angular/common/http';
-import { Subject, debounceTime, firstValueFrom, map, distinctUntilChanged, takeUntil } from 'rxjs';
 
 export interface ProductoResponse {
   id: number;
@@ -31,7 +24,7 @@ export interface ProductoResponse {
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   @ViewChild('autocomplete') autocomplete!: TakAutocompleteFieldComponent;
 
   isLoading = false;
@@ -45,11 +38,27 @@ export class HomeComponent implements OnInit {
   enable = true;
 
   constructor(
-    private _cd: ChangeDetectorRef,
-    private _toast: TakToast,
+    private _http: HttpClient,
     private _modal: TakModal,
-    private _http: HttpClient
+    private _toast: TakToast,
+    private _cd: ChangeDetectorRef
   ) {}
+
+  clickOnOpenModal() {
+    this._modal.confirm('Desea cerrar esta sesión?', 'Seguro?').subscribe(el => {
+      console.log(el);
+    });
+  }
+
+  clickOnOpenToast() {
+    this._toast.notification('asdds', { horizontalPosition: 'left', duration: 2000 });
+    setTimeout(() => {
+      this._toast.danger('asdds', { horizontalPosition: 'center', duration: 2000 });
+    }, 2000);
+    setTimeout(() => {
+      this._toast.success('asdds', { horizontalPosition: 'right', duration: 2000 });
+    }, 4000);
+  }
 
   toggleEnable() {
     if (this.enable) this.fieldsForm.enableAll();

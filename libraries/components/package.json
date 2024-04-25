@@ -1,0 +1,9 @@
+{
+  "name": "@takkion/components",
+  "version": "1.0.0-rc.3",
+  "peerDependencies": {
+    "@angular/cdk": "^17.0.0 || ^18.0.0",
+    "@angular/material": "^17.0.0 || ^18.0.0"
+  },
+  "sideEffects": false
+}

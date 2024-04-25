@@ -1,7 +1,7 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
-  OnDestroy,
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
@@ -14,26 +14,32 @@ import { SIDE_NAV } from './navigation';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AdminLayoutComponent implements OnInit, OnDestroy {
+export class AdminLayoutComponent implements OnInit {
   public navigation = SIDE_NAV;
 
   public resourcesLoaded = false;
 
-  public permissions = ['1', '2', '3'];
+  public permissions = [
+    //
+    '000',
+    '001',
+    '001002',
+    '002',
+    //'002001',
+    '002002',
+    '002003',
+    '002003001',
+    '002003002',
+  ];
 
   public context = 'BOGOTA';
 
   public accordionInCollections = true;
   public disableHiddenCollections = true;
 
-  public ngOnInit(): void {
-    this.navigation.items
-      .filter(el => el.type === 'collection')
-      .map(item => {
-        item.showCollectionContent = true;
-        this.accordionInCollections = false;
-      });
+  constructor(private _cd: ChangeDetectorRef) {}
 
+  public ngOnInit(): void {
     this.resourcesLoaded = true;
 
     this._setTheme();
@@ -48,4 +54,6 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
       document.getElementsByTagName('body')[0].classList.add('dark-theme');
     }
   }
+
+  public isLoading = true;
 }
