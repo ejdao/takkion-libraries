@@ -1,16 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/main';
 
-@import 'libraries/components/assets/material/themes/default'; 
-@import 'libraries/components/assets/material/themes/dark'; 
-@import 'libraries/components/assets/material/themes/main'; 
-@import 'libraries/components/assets/material/icons/local'; 
+@import 'libraries/components/assets/material/themes/default';
+@import 'libraries/components/assets/material/themes/dark';
+@import 'libraries/components/assets/material/themes/main';
+@import 'libraries/components/assets/material/icons/local';
 
 @import 'libraries/components/assets/variables';
 @import 'libraries/components/assets/main';
 @import 'libraries/components/assets/themes/main';
 @import 'libraries/components/assets/layouts/origin';
+@import 'libraries/components/assets/fonts/main';
 
 html {
   --tak-footer-height: 0px;
+}
+
+body {
+  font-family: 'titlecommerce';
 }

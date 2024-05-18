@@ -40,9 +40,9 @@ export class TakOriginLayoutComponent implements OnInit, AfterViewInit, OnDestro
   @Input() navigation: TakSnavItems[] = [];
 
   @Input() appIcon = 'favicon.ico';
-  @Input() appTitle = 'eklipse Devs';
-  @Input() appSidebarTitle = 'eklipse Devs (Sidebar title)';
-  @Input() appSidebarSubtitle = 'eklipse Devs (Sidebar subtitle)';
+  @Input() appTitle = 'Takkion Devs';
+  @Input() appSidebarTitle = 'Takkion (Sidebar)';
+  @Input() appSidebarSubtitle = 'Takkion (Sidebar)';
   @Input() sidebarDebounceTime = 250;
   @Input() mdWidth = 640;
   @Input() isDinamicSidebar = true;

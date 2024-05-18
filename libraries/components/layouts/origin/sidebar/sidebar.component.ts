@@ -25,7 +25,7 @@ export class TakSidebarComponent implements AfterViewInit {
   @Input() appIcon!: string;
   @Input() appTitle!: string;
   @Input() appSubtitle!: string;
-  @Input() mdWidth = 900;
+  @Input() mdWidth = 640;
   @Input() navigation: TakSnavItems[] = [];
   @Input() authorities: any[] = [];
   @Input() context: any;

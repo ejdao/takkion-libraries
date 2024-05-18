@@ -1,3 +1,4 @@
+@import 'buttons';
 @import 'cards';
 @import 'dialogs';
 @import 'fields';
@@ -6,3 +7,19 @@
 @import 'scroll-bar';
 @import 'snack-bar';
 @import 'tables';
+@import 'tabs';
+
+.cdk-overlay-dark-backdrop {
+  backdrop-filter: blur(3px);
+}
+
+.mat-menu-panel {
+  color: var(--tak-layout-dark-color);
+}
+
+.mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled='true']),
+.mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled='true']),
+.mat-expansion-panel:not(.mat-expanded)
+  .mat-expansion-panel-header:hover:not([aria-disabled='true']) {
+  background: transparent;
+}

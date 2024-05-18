@@ -6,7 +6,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { ToggleSidebar } from '../../services/toggle-sidebar';
+import { ToggleSidebar } from '../../services';
 import { TakSnavItems } from '../../navigation-interfaces';
 
 @Component({
@@ -18,7 +18,7 @@ export class TakSidenavComponent implements OnInit {
   @Input() navigation: TakSnavItems[] = [];
   @Input() authorities: any[] = [];
   @Input() context: any;
-  @Input() mdWidth = 900;
+  @Input() mdWidth = 640;
   @Input() accordionInCollections = true;
   @Input() disableHiddenCollections = false;
 
@@ -95,7 +95,7 @@ export class TakSidenavComponent implements OnInit {
   }
 
   public toggleModule(index: number) {
-    if (!this.disableHiddenCollections) {
+    if (!this.disableHiddenCollections)
       this.navigation.map((item, i) => {
         if (index === i && item.showCollectionContent === false) item.showCollectionContent = true;
         else if (index === i && item.showCollectionContent === true) {
@@ -104,7 +104,6 @@ export class TakSidenavComponent implements OnInit {
           item.showCollectionContent = false;
         }
       });
-    }
   }
 
   @HostListener('window:resize', ['$event'])

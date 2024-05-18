@@ -1,3 +1,4 @@
+export type TakSnavIconsType = 'material-icon' | 'img';
 export type TakSnavItemType = 'link' | 'collection' | 'dropdown';
 
 export interface TakSnavItems {
@@ -12,8 +13,6 @@ export interface TakSnavItems {
   disableOnContexts?: string[];
   showCollectionContent?: boolean;
   forceDisabledContent?: boolean;
-  disabledOnMobile?: boolean;
-  disabledOnWeb?: boolean;
   isOpened?: boolean;
 }
 

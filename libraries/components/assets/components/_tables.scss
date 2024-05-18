@@ -229,3 +229,7 @@ $TAK_TABLE_BORDER_RADIUS: 10px;
     height: 0px !important;
   }
 }
+
+.mat-paginator .mat-paginator-outer-container {
+  border: none;
+}

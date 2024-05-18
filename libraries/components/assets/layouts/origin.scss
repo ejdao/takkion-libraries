@@ -290,7 +290,7 @@ $TOGGLE_SBAR_BTN_CONTINR_WIDTH: 40px;
     overflow-y: overlay;
     color: transparent;
     overflow-x: hidden;
-    @media only screen and (min-width: calc($MOBILE_RESOLUTION - 1px)) {
+    @media only screen and (min-width: calc($MOBILE_RESOLUTION)) {
       &::-webkit-scrollbar {
         background-color: var(--tak-layout-scrollbar-thumb-background-color);
         width: 8px;
