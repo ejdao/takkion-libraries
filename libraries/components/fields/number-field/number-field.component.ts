@@ -18,8 +18,8 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TAK_DEFAULT_APPEARANCE_FORM } from '../fields.common';
-import { FloatLabelType, MatFormFieldAppearance } from '@takkion/material/form-field';
-import { ThemePalette } from '@takkion/material/core';
+import { FloatLabelType, MatFormFieldAppearance } from '@kato-lee/material/form-field';
+import { ThemePalette } from '@kato-lee/material/core';
 
 @Component({
   selector: 'tak-number-field',

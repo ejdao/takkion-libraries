@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@takkion/material/button';
-import { MatIconModule } from '@takkion/material/icon';
+import { MatButtonModule } from '@kato-lee/material/button';
+import { MatIconModule } from '@kato-lee/material/icon';
 import { TakModalComponent } from './modal.component';
-import { MatDividerModule } from '@takkion/material/divider';
-import { TakDialogModule } from '@takkion/components/dialogs';
+import { MatDividerModule } from '@kato-lee/material/divider';
+import { TakDialogModule } from '@kato-lee/components/dialogs';
 
 @NgModule({
   declarations: [TakModalComponent],

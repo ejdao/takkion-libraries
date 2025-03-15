@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { MatPaginatorModule } from '@takkion/material/paginator';
-import { MatSortModule } from '@takkion/material/sort';
-import { MatTableModule } from '@takkion/material/table';
+import { MatPaginatorModule } from '@kato-lee/material/paginator';
+import { MatSortModule } from '@kato-lee/material/sort';
+import { MatTableModule } from '@kato-lee/material/table';
 
 const modules = [MatTableModule, MatSortModule, MatPaginatorModule];
 

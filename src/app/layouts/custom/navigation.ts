@@ -1,4 +1,4 @@
-import { TakSnavItems } from '@takkion/components/layouts/origin';
+import { TakSnavItems } from '@kato-lee/components/layouts/origin';
 
 const ADMIN = '000';
 

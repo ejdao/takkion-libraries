@@ -22,8 +22,8 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@takkion/utilities": ["libraries/utilities"],
-      "@takkion/components/*": ["libraries/components/*"]
+      "@kato-lee/utilities": ["libraries/utilities"],
+      "@kato-lee/components/*": ["libraries/components/*"]
     }
   },
   "angularCompilerOptions": {

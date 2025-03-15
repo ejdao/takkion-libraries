@@ -1,5 +1,5 @@
 /*
- * Public API Surface of @takkion/components/fields
+ * Public API Surface of @kato-lee/components/fields
  */
 
 export * from './error/error-equals.pipe';

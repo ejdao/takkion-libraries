@@ -1,4 +1,4 @@
 /*
- * Public API Surface of @takkion/components
+ * Public API Surface of @kato-lee/components
  */
 export {};

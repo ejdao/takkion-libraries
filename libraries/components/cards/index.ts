@@ -1,5 +1,5 @@
 /*
- * Public API Surface of @takkion/components/cards
+ * Public API Surface of @kato-lee/components/cards
  */
 
 export * from './cards.module';

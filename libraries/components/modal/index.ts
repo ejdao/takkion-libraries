@@ -1,5 +1,5 @@
 /*
- * Public API Surface of @takkion/components/modal
+ * Public API Surface of @kato-lee/components/modal
  */
 
 export * from './config';

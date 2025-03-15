@@ -1,4 +1,4 @@
 /*
- * Public API Surface of @takkion/components/pretty-box
+ * Public API Surface of @kato-lee/components/pretty-box
  */
 export * from './pretty-box.component';

@@ -1,5 +1,5 @@
-import { ESCAPE } from '@takkion/cdk/keycodes';
-import { MatFormFieldAppearance } from '@takkion/material/form-field';
+import { ESCAPE } from '@kato-lee/cdk/keycodes';
+import { MatFormFieldAppearance } from '@kato-lee/material/form-field';
 
 export const TAK_DEFAULT_APPEARANCE_FORM: MatFormFieldAppearance = 'standard';
 

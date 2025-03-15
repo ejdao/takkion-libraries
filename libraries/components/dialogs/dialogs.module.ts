@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { TakDismissDialogButtonComponent } from './dismiss-dialog-button.component';
-import { MatButtonModule } from '@takkion/material/button';
-import { MatDialogModule } from '@takkion/material/dialog';
-import { MatIconModule } from '@takkion/material/icon';
-import { MatDividerModule } from '@takkion/material/divider';
+import { MatButtonModule } from '@kato-lee/material/button';
+import { MatDialogModule } from '@kato-lee/material/dialog';
+import { MatIconModule } from '@kato-lee/material/icon';
+import { MatDividerModule } from '@kato-lee/material/divider';
 
 const components = [TakDismissDialogButtonComponent];
 

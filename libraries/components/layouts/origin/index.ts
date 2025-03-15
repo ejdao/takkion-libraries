@@ -1,5 +1,5 @@
 /*
- * Public API Surface of @takkion/components/layouts/origin
+ * Public API Surface of @kato-lee/components/layouts/origin
  */
 
 export * from './footer/footer.component';

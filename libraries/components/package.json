@@ -1,9 +1,9 @@
 {
-  "name": "@takkion/components",
-  "version": "1.0.0-rc.6",
+  "name": "@kato-lee/components",
+  "version": "1.0.3",
   "peerDependencies": {
-    "@takkion/cdk": "^14.2.7",
-    "@takkion/material": "^14.2.7"
+    "@kato-lee/cdk": "^14.2.7",
+    "@kato-lee/material": "^14.2.7"
   },
   "sideEffects": false
 }

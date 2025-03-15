@@ -1,5 +1,5 @@
 /*
- * Public API Surface of @takkion/utilities
+ * Public API Surface of @kato-lee/utilities
  */
 
 export * from './_group-by-key';

@@ -1,4 +1,4 @@
 /*
- * Public API Surface of @takkion/components/toast
+ * Public API Surface of @kato-lee/components/toast
  */
 export * from './toast.service';

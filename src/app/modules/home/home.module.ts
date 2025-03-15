@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { HomeRouting } from './home.routing';
 import { HomeComponent } from './home.component';
-import { TakCapsuleModule } from '@takkion/components/capsule';
-import { TakBoxFormModule } from '@takkion/components/box-form';
-import { TakFieldsModule } from '@takkion/components/fields';
-import { MatButtonModule } from '@takkion/material/button';
+import { TakCapsuleModule } from '@kato-lee/components/capsule';
+import { TakBoxFormModule } from '@kato-lee/components/box-form';
+import { TakFieldsModule } from '@kato-lee/components/fields';
+import { MatButtonModule } from '@kato-lee/material/button';
 
 @NgModule({
   declarations: [HomeComponent],

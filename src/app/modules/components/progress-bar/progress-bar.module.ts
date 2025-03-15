@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProgressBarRouting } from './progress-bar.routing';
 import { ProgressBarComponent } from './progress-bar.component';
-import { MatProgressBarModule } from '@takkion/material/progress-bar';
-import { MatSliderModule } from '@takkion/material/slider';
-import { MatRadioModule } from '@takkion/material/radio';
-import { MatCardModule } from '@takkion/material/card';
-import { MatProgressSpinnerModule } from '@takkion/material/progress-spinner';
-import { MatRippleModule } from '@takkion/material/core';
-import { MatInputModule } from '@takkion/material/input';
-import { MatFormFieldModule } from '@takkion/material/form-field';
-import { MatSlideToggleModule } from '@takkion/material/slide-toggle';
-import { MatCheckboxModule } from '@takkion/material/checkbox';
+import { MatProgressBarModule } from '@kato-lee/material/progress-bar';
+import { MatSliderModule } from '@kato-lee/material/slider';
+import { MatRadioModule } from '@kato-lee/material/radio';
+import { MatCardModule } from '@kato-lee/material/card';
+import { MatProgressSpinnerModule } from '@kato-lee/material/progress-spinner';
+import { MatRippleModule } from '@kato-lee/material/core';
+import { MatInputModule } from '@kato-lee/material/input';
+import { MatFormFieldModule } from '@kato-lee/material/form-field';
+import { MatSlideToggleModule } from '@kato-lee/material/slide-toggle';
+import { MatCheckboxModule } from '@kato-lee/material/checkbox';
 
 @NgModule({
   declarations: [ProgressBarComponent],

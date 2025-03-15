@@ -1,5 +1,5 @@
 /*
- * Public API Surface of @takkion/components/dialogs
+ * Public API Surface of @kato-lee/components/dialogs
  */
 
 export * from './dialogs.module';
