@@ -7,6 +7,7 @@ export * from './error/error.component';
 export * from './error/error.msg.pipe';
 export * from './fields.common';
 export * from './fields.module';
+export * from './fields.validators';
 export * from './select-field/select-field.component';
 export * from './date-field/date-field.component';
 export * from './autocomplete-field/autocomplete-field.component';

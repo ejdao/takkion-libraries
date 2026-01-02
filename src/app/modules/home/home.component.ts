@@ -51,12 +51,12 @@ export class HomeComponent {
   }
 
   clickOnOpenToast() {
-    this._toast.notification('asdds', { horizontalPosition: 'left', duration: 2000 });
+    this._toast.notification('asdds', { horizontalPosition: 'left', duration: 200000 });
     setTimeout(() => {
-      this._toast.danger('asdds', { horizontalPosition: 'center', duration: 2000 });
+      this._toast.danger('asdds', { horizontalPosition: 'center', duration: 200000 });
     }, 2000);
     setTimeout(() => {
-      this._toast.success('asdds', { horizontalPosition: 'right', duration: 2000 });
+      this._toast.success('asdds', { horizontalPosition: 'right', duration: 200000 });
     }, 4000);
   }
 

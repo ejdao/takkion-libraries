@@ -5,7 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@kato-lee/material/form-field';
 import { MatSelectModule } from '@kato-lee/material/select';
 import { MatButtonModule } from '@kato-lee/material/button';
-import { MatNativeDateModule, MatOptionModule } from '@kato-lee/material/core';
+import { MAT_DATE_LOCALE, MatNativeDateModule, MatOptionModule } from '@kato-lee/material/core';
 import { MatInputModule } from '@kato-lee/material/input';
 import { MatIconModule } from '@kato-lee/material/icon';
 import { MatDatepickerModule } from '@kato-lee/material/datepicker';
@@ -41,6 +41,7 @@ const components = [
   imports: [
     FormsModule,
     CommonModule,
+    MatNativeDateModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
@@ -62,5 +63,6 @@ const components = [
     MatNativeDateModule,
     ...components,
   ],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
 })
 export class TakFieldsModule {}

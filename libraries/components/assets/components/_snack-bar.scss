@@ -1,18 +1,17 @@
+.tak-snackbar-notification {
+  background-color: var(--tak-snackbar-notification-background-color) !important;
+}
 .tak-snackbar-danger {
-  .mat-button.mat-snack-bar-action:not(:disabled) {
+  .mat-button:not(:disabled) {
     color: var(--tak-snackbar-danger-action-color) !important;
   }
-  .mat-snackbar__surface {
-    color: var(--tak-snackbar-danger-color) !important;
-    background-color: var(--tak-snackbar-danger-background-color) !important;
-  }
+  color: var(--tak-snackbar-danger-color) !important;
+  background-color: var(--tak-snackbar-danger-background-color) !important;
 }
 .tak-snackbar-success {
-  .mat-button.mat-snack-bar-action:not(:disabled) {
+  .mat-button:not(:disabled) {
     color: var(--tak-snackbar-success-action-color) !important;
   }
-  .mat-snackbar__surface {
-    color: var(--tak-snackbar-success-color) !important;
-    background-color: var(--tak-snackbar-success-background-color) !important;
-  }
+  color: var(--tak-snackbar-success-color) !important;
+  background-color: var(--tak-snackbar-success-background-color) !important;
 }
