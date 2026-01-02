@@ -24,6 +24,7 @@ import { MatProgressSpinnerModule } from '@kato-lee/material/progress-spinner';
 import { TakNumberFieldComponent } from './number-field/number-field.component';
 import { TakTextareaComponent } from './text-area/textarea.component';
 import { MatMenuModule } from '@kato-lee/material/menu';
+import { TakRemoteAutocompleteFieldComponent } from './remote-autocomplete-field/remote-autocomplete-field.component';
 
 const components = [
   TakSelectFieldComponent,
@@ -55,12 +56,14 @@ const components = [
     MatSelectModule,
     MatTooltipModule,
     MatMenuModule,
+    TakRemoteAutocompleteFieldComponent,
   ],
   exports: [
     ReactiveFormsModule,
     MatAutocompleteModule,
     FormsModule,
     MatNativeDateModule,
+    TakRemoteAutocompleteFieldComponent,
     ...components,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],

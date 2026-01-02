@@ -40,7 +40,8 @@ html {
   --tak-divider-border-top-light-color: rgba(214, 214, 214, 0.12);
 }
 
-html.dark-theme {
+html.dark-theme,
+html[data-theme='dark'] {
   --tak-body-color: rgb(255, 255, 255);
   --tak-body-background-color: rgb(13, 17, 23);
   --tak-loader-overlay-backdrop-background-color: rgba(255, 255, 255, 0.048);

@@ -1,6 +1,6 @@
 {
   "name": "@kato-lee/components",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "peerDependencies": {
     "@kato-lee/cdk": "^14.2.7",
     "@kato-lee/material": "^14.2.7"

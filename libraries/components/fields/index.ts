@@ -16,3 +16,4 @@ export * from './money-field/money-field.component';
 export * from './text-area/textarea.component';
 export * from './date-range-field/date-range-field.component';
 export * from './number-field/number-field.component';
+export * from './remote-autocomplete-field/remote-autocomplete-field.component';
