@@ -1,0 +1,11 @@
+{
+  "name": "@kato-lee/admin-layout",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@kato-lee/utilities": "^1.0.1",
+    "@ionic/angular": "^8.2.9"
+  },
+  "sideEffects": false
+}
