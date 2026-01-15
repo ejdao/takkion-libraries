@@ -1,20 +1,3 @@
 @if (resourcesLoaded) {
-  <tak-origin-layout
-    appTitle="KatoLee"
-    appSidebarTitle="Ejdao Dev S.A"
-    appSidebarSubtitle="Example context"
-    [navigation]="navigation"
-    [authorities]="permissions"
-    [context]="context"
-    [isDinamicSidebar]="true"
-    [sidebarDebounceTime]="200"
-    [accordionInCollections]="accordionInCollections"
-    [disableHiddenCollections]="disableHiddenCollections"
-    [hasFooter]="false"
-    [mdWidth]="900"
-  >
-    <section tak-custom-header><app-header></app-header></section>
-    <section tak-custom-footer><app-footer></app-footer></section>
-    <router-outlet></router-outlet>
-  </tak-origin-layout>
+  <router-outlet></router-outlet>
 }

@@ -283,35 +283,35 @@
 }
 
 @include customizedGrids(col);
-@include bootstrapGrids(col-t);
+@include bootstrapGrids(col-bt);
 @include display(d);
 
 @media only screen and (min-width: $SM_RESOLUTION) {
   @include customizedGrids(col-sm);
-  @include bootstrapGrids(col-t-sm);
+  @include bootstrapGrids(col-bt-sm);
   @include display(d-sm);
 }
 
 @media only screen and (min-width: $MD_RESOLUTION) {
   @include customizedGrids(col-md);
-  @include bootstrapGrids(col-t-md);
+  @include bootstrapGrids(col-bt-md);
   @include display(d-md);
 }
 
 @media only screen and (min-width: $LG_RESOLUTION) {
   @include customizedGrids(col-lg);
-  @include bootstrapGrids(col-t-lg);
+  @include bootstrapGrids(col-bt-lg);
   @include display(d-lg);
 }
 
 @media only screen and (min-width: $XL_RESOLUTION) {
   @include customizedGrids(col-xl);
-  @include bootstrapGrids(col-t-xl);
+  @include bootstrapGrids(col-bt-xl);
   @include display(d-xl);
 }
 
 @media only screen and (min-width: $XXL_RESOLUTION) {
   @include customizedGrids(col-xxl);
-  @include bootstrapGrids(col-t-xxl);
+  @include bootstrapGrids(col-bt-xxl);
   @include display(d-xxl);
 }

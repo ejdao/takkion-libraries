@@ -3,6 +3,6 @@
  */
 
 export * from './config';
-export * from './modal.component';
-export * from './modal.module';
-export * from './modal.service';
+export * from './component';
+export * from './module';
+export * from './service';

@@ -9,13 +9,15 @@
 @import 'libraries/components/assets/variables';
 @import 'libraries/components/assets/main';
 @import 'libraries/components/assets/themes/main';
-@import 'libraries/components/assets/layouts/origin';
-@import 'libraries/components/assets/fonts/main';
+@import 'libraries/components/assets/fonts/fonts';
 
 html {
   --tak-footer-height: 0px;
 }
 
 body {
-  font-family: 'titlecommerce';
+  font-family:
+    Roboto,
+    Helvetica Neue,
+    sans-serif;
 }

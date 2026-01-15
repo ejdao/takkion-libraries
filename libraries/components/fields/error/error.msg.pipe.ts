@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import * as lang from './lang';
 
-@Pipe({ name: 'errorMsg' })
+@Pipe({ standalone: true, name: 'errorMsg' })
 export class TakErrorMsgPipe implements PipeTransform {
   transform(parameter: string, aditionalValue?: any): string {
     let resources = lang.es;

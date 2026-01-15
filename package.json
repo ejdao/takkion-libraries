@@ -23,6 +23,7 @@
     "@angular/router": "^17.0.0",
     "@ionic/angular": "^8.2.9",
     "@kato-lee/cdk": "^14.2.7",
+    "@kato-lee/components": "^1.0.8",
     "@kato-lee/material": "^14.2.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"

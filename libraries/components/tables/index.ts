@@ -3,4 +3,4 @@
  */
 export * from './mat-paginator.translation';
 export * from './no-records.component';
-export * from './tables.module';
+export * from './module';

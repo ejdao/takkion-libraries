@@ -1,8 +1,6 @@
-import { TakSnavItems } from '@kato-lee/components/layouts/origin';
-
 const ADMIN = '000';
 
-export const SIDE_NAV: TakSnavItems[] = [
+export const SIDE_NAV: any[] = [
   {
     type: 'link',
     name: 'Home',

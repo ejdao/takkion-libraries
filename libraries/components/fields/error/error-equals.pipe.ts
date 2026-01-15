@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'errorEquals' })
+@Pipe({ standalone: true, name: 'errorEquals' })
 export class TakErrorEqualsPipe implements PipeTransform {
   transform(errors: any, error: any, args?: any): any {
     if (!errors) return false;
