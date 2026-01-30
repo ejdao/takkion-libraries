@@ -12,7 +12,6 @@ import {
   IonLabel,
   IonMenu,
   IonMenuButton,
-  IonRouterOutlet,
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
@@ -37,7 +36,6 @@ import { RouterModule } from '@angular/router';
     IonMenuButton,
     ValidateAccessPipe,
     RouterModule,
-    IonRouterOutlet,
   ],
   selector: 'app-admin-layout--mobile',
   templateUrl: './layout.component.html',
