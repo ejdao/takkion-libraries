@@ -8,7 +8,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { _LAYOUT_CONTAINER } from '../services/toggle-sidebar';
+import { LAYOUT_CONTAINER } from '../services/toggle-sidebar';
 
 @Component({
   standalone: true,
@@ -16,7 +16,7 @@ import { _LAYOUT_CONTAINER } from '../services/toggle-sidebar';
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class _TakHeaderComponent implements AfterViewInit {
+export class TakHeaderComponent implements AfterViewInit {
   @Output() toggleSidebar: EventEmitter<any> = new EventEmitter();
 
   @Input() mdWidth = 640;
@@ -34,7 +34,7 @@ export class _TakHeaderComponent implements AfterViewInit {
 
   public onToggleSidebar(): void {
     const isOpen = document
-      .getElementsByClassName(_LAYOUT_CONTAINER)[0]
+      .getElementsByClassName(LAYOUT_CONTAINER)[0]
       .classList.contains('compact');
 
     if (isOpen) {

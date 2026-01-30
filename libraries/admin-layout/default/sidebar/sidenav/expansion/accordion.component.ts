@@ -16,7 +16,7 @@ import {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class _TakAccordionComponent implements AfterViewInit {
+export class TakAccordionComponent implements AfterViewInit {
   @ViewChild('accordion') accordion: ElementRef | any;
 
   public ngAfterViewInit(): void {

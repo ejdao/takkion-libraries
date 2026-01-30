@@ -10,16 +10,16 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { CtmSnavItems } from '../../navigation-interfaces';
-import { _TakSidenavComponent } from './sidenav/sidenav.component';
+import { TakSidenavComponent } from './sidenav/sidenav.component';
 
 @Component({
   standalone: true,
-  imports: [_TakSidenavComponent],
+  imports: [TakSidenavComponent],
   selector: 'tak-sidebar',
   templateUrl: './sidebar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class _TakSidebarComponent implements AfterViewInit {
+export class TakSidebarComponent implements AfterViewInit {
   @ViewChild('checkbox') checkbox!: ElementRef;
 
   @Output() blockSidebar: EventEmitter<any> = new EventEmitter();

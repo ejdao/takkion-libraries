@@ -10,7 +10,7 @@ interface IRoutePart {
 }
 
 @Injectable()
-export class _RoutePartsService {
+export class RoutePartsService {
   public generateRouteParts(snapshot: ActivatedRouteSnapshot): IRoutePart[] {
     var routeParts = <IRoutePart[]>[];
     if (snapshot) {

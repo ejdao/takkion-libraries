@@ -11,7 +11,7 @@ interface PayloadFromSystem {
 }
 
 @Pipe({ standalone: true, name: 'validateAccess' })
-export class _ValidateAccessPipe implements PipeTransform {
+export class ValidateAccessPipe implements PipeTransform {
   transform(_valuesToCompare: any[], _user: any[]) {
     const valuesToCompare: PayloadFromSystem = {
       authorities: _valuesToCompare[0],

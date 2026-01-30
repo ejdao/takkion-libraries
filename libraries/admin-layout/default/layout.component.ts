@@ -22,20 +22,20 @@ import {
 import { FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { debounceTime, filter, Subscription } from 'rxjs';
-import { _RoutePartsService, _ToggleSidebar } from './services';
+import { RoutePartsService, ToggleSidebar } from './services';
 import { CtmSnavItems } from '../navigation-interfaces';
-import { _TakSidebarComponent } from './sidebar/sidebar.component';
-import { _TakHeaderComponent } from './header/header.component';
+import { TakSidebarComponent } from './sidebar/sidebar.component';
+import { TakHeaderComponent } from './header/header.component';
 
 @Component({
   standalone: true,
-  imports: [_TakSidebarComponent, _TakHeaderComponent],
-  providers: [_RoutePartsService, _ToggleSidebar],
-  selector: 'app-admin-layout--web',
+  imports: [TakSidebarComponent, TakHeaderComponent],
+  providers: [RoutePartsService, ToggleSidebar],
+  selector: 'app-admin-layout',
   templateUrl: './layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestroy {
+export class DefaultLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('scrollLayout') scrollLayout!: ElementRef;
 
   private _routerSubs!: Subscription;
@@ -74,8 +74,8 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
   public sidebarRespForm = new FormControl();
 
   constructor(
-    private _routePartsService: _RoutePartsService,
-    private _toggleSidebar: _ToggleSidebar,
+    private _routePartsService: RoutePartsService,
+    private _toggleSidebar: ToggleSidebar,
     private _activeRoute: ActivatedRoute,
     private _cd: ChangeDetectorRef,
     private _router: Router,
@@ -207,4 +207,4 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
   </div>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class _TakLoader {}
+export class TakLoader {}

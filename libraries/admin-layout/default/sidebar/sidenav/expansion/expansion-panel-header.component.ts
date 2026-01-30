@@ -22,7 +22,7 @@ import {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class _TakExpansionPanelHeaderComponent implements AfterViewInit {
+export class TakExpansionPanelHeaderComponent implements AfterViewInit {
   @ViewChild('expansionPanelHeader') expansionPanelHeader!: ElementRef;
 
   @Input() style: string = '';

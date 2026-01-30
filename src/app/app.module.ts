@@ -26,6 +26,7 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@kato-lee/material/core';
     MatDialogModule,
     MatNativeDateModule,
     AdminLayoutModule,
+    RouterModule,
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

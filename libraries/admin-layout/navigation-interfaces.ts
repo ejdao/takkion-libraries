@@ -13,7 +13,9 @@ export interface CtmSnavItems {
   showCollectionContent?: boolean;
   forceDisabledContent?: boolean;
   isOpened?: boolean;
+  /** @deprecated NO DEBERIA DISTINGUIR */
   showForMobile?: boolean;
+  /** @deprecated NO DEBERIA DISTINGUIR */
   showForWeb?: boolean;
 }
 

@@ -5,27 +5,27 @@ import {
   Component,
   Input,
 } from '@angular/core';
-import { _ToggleSidebar, _ValidateAccessPipe } from '../../services';
+import { ToggleSidebar, ValidateAccessPipe } from '../../services';
 import { CtmSnavItems } from '../../../navigation-interfaces';
-import { _TakExpansionPanelHeaderComponent } from './expansion/expansion-panel-header.component';
-import { _TakExpansionPanelComponent } from './expansion/expansion-panel.component';
-import { _TakAccordionComponent } from './expansion/accordion.component';
+import { TakExpansionPanelHeaderComponent } from './expansion/expansion-panel-header.component';
+import { TakExpansionPanelComponent } from './expansion/expansion-panel.component';
+import { TakAccordionComponent } from './expansion/accordion.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
   imports: [
+    ValidateAccessPipe,
     RouterModule,
-    _ValidateAccessPipe,
-    _TakExpansionPanelHeaderComponent,
-    _TakExpansionPanelComponent,
-    _TakAccordionComponent,
+    TakExpansionPanelHeaderComponent,
+    TakExpansionPanelComponent,
+    TakAccordionComponent,
   ],
   selector: 'tak-sidenav',
   templateUrl: './sidenav.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class _TakSidenavComponent {
+export class TakSidenavComponent {
   @Input() navigation: CtmSnavItems[] = [];
   @Input() authorities: any[] = [];
   @Input() context!: any;
@@ -36,7 +36,7 @@ export class _TakSidenavComponent {
   private _isMobile = false;
 
   constructor(
-    private _toggleSidebar: _ToggleSidebar,
+    private _toggleSidebar: ToggleSidebar,
     private _cd: ChangeDetectorRef
   ) {}
 
