@@ -22,6 +22,7 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
+      "@kato-lee/components/*": ["libraries/components/*"],
       "@kato-lee/utilities": ["libraries/utilities"],
       "@kato-lee/admin-layout": ["libraries/admin-layout"],
     }

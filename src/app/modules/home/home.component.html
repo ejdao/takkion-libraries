@@ -1,3 +1,34 @@
+<div class="min-h-screen flex items-center justify-center bg-basebg transition-colors duration-300">
+  <div
+    class="w-80 rounded-2xl p-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur shadow-lg dark:shadow-black/40 border border-gray-200 dark:border-gray-700 transition-colors duration-300"
+  >
+    <div class="flex items-center gap-4 mb-4">
+      <div
+        class="w-12 h-12 rounded-full bg-indigo-500 dark:bg-indigo-400 flex items-center justify-center text-white font-bold"
+      >
+        EA
+      </div>
+      <div>
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Enrique de Armas</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Desarrollador Frontend</p>
+      </div>
+    </div>
+
+    <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+      Card adaptable a tema claro y oscuro usando Tailwind en Angular. Los colores cambian
+      automáticamente al activar la clase
+      <code class="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-700"> dark </code>
+      en el &lt;html&gt;.
+    </p>
+
+    <button
+      class="w-full py-2 rounded-xl font-medium bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white transition-colors duration-200"
+    >
+      Cambiar tema
+    </button>
+  </div>
+</div>
+
 <tak-capsule [grids]="[12, 12, 10, 10, 8, 6]">
   <tak-box-form
     takTitle="Hey Joee"

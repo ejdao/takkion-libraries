@@ -96,13 +96,13 @@ export class AdminLayoutComponent implements OnInit {
   }
 
   public toggleMode(): void {
-    const body = document.getElementsByTagName('html')[0];
-    if (body.classList.contains(this._darkThemeClassName)) {
-      body.classList.remove(this._darkThemeClassName);
+    const html = document.getElementsByTagName('html')[0];
+    if (html.classList.contains(this._darkThemeClassName)) {
+      html.classList.remove(this._darkThemeClassName);
       localStorage.removeItem(this._localStorageThemeKey);
     } else {
       localStorage.setItem(this._localStorageThemeKey, 'true');
-      body.classList.add(this._darkThemeClassName);
+      html.classList.add(this._darkThemeClassName);
     }
   }
 
