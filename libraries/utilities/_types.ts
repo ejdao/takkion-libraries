@@ -18,8 +18,8 @@ export class CtmType<T> {
   }
 }
 
-export interface CtmTypeRes {
-  code: number;
+export interface CtmTypeRes<T = number> {
+  code: T;
   forHumans: string;
   abbreviation?: string;
 }
