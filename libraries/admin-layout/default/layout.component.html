@@ -1,5 +1,6 @@
 <div class="tak__layout__container {{ isSidebarCompact ? 'compact' : 'full' }}">
   <tak-sidebar
+    [config]="config"
     [isCompact]="isSidebarCompact"
     [isMd]="isMd"
     [navigation]="navigation"
@@ -30,18 +31,17 @@
     <div class="tak__scroll" #scrollLayout>
       <div class="tak__content">
         <!-- View Loader (El preloading lo hace innecesario) -->
-        <!-- @if (isModuleLoading) {
-          <div class="tak-view-loader" style="position: fixed">
+        @if (isModuleLoading) {
+          <div class="tak-view-loader remove-view-loader-on-preloading" style="position: fixed">
             <div class="tak-spinner">
               <div class="tak-double-bounce1"></div>
               <div class="tak-double-bounce2"></div>
             </div>
           </div>
-        } -->
-        <div class="tak__outlet">
-          <div>
-            <ng-content />
-          </div>
+        }
+        <div class="tak__outlet remove-padding">
+          <ng-content />
+          <div class="footer-on-mobile"></div>
         </div>
       </div>
     </div>

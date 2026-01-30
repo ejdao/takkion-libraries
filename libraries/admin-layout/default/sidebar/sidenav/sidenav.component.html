@@ -1,3 +1,41 @@
+<div style="display: flex; justify-content: space-between">
+  <div class="d-none-on-compact"></div>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+      color: var(--tak-sidenav-color);
+    "
+  >
+    <img
+      class="tak__sidenav__user-profile--img"
+      src="{{ config.userImage || 'favicon.ico' }}"
+      style="max-width: 32px; border-radius: 50%"
+    />
+    <div
+      class="tak__sidenav__user-profile d-none-on-compact"
+      style="max-width: 180px; overflow: hidden; text-overflow: ellipsis"
+    >
+      <span
+        class="tak__sidenav__username"
+        style="font-size: 12px; margin-left: 10px; white-space: nowrap"
+      >
+        Enrique de Armas Osia
+      </span>
+      <br />
+      <a (click)="onSetDarkMode.emit()" style="cursor: pointer">
+        <span class="material-icons" style="font-size: 18px">dark_mode</span>
+      </a>
+      <a (click)="onLogout.emit()" style="cursor: pointer; margin-left: 10px">
+        <span class="material-icons" style="font-size: 18px">logout</span>
+      </a>
+    </div>
+  </div>
+  <div class="d-none-on-compact"></div>
+</div>
+<div class="tak__sidebar__divider" style="padding: 0"></div>
 <div class="tak__sidenav__container">
   <tak-layout-accordion>
     @for (item of navigation; track item; let i = $index) {
@@ -17,7 +55,7 @@
             (click)="onCloseSidebar()"
           >
             <tak-layout-expansion-panel-header class="tak__sidenav__accordion__header is-link">
-              <span class="material-icons tak__min-wdh-32 icon-link">{{ item.icon }}</span>
+              <span class="material-icons icon-link">{{ item.icon }}</span>
               <span class="tak__sidenav__link-name accordion">{{ item.name }}</span>
             </tak-layout-expansion-panel-header>
           </a>
@@ -33,7 +71,7 @@
             "
           >
             <tak-layout-expansion-panel-header class="tak__sidenav__accordion__header">
-              <span class="material-icons tak__min-wdh-32 icon-link">{{ item.icon }}</span>
+              <span class="material-icons icon-link">{{ item.icon }}</span>
               <span class="tak__sidenav__link-name accordion">{{ item.name }}</span>
             </tak-layout-expansion-panel-header>
             @for (link of item.dropdownLinks; track link) {
@@ -80,7 +118,7 @@
                 (click)="toggleModule(i)"
                 class="tak__sidenav__accordion__header is-module"
               >
-                <span class="material-icons tak__min-wdh-32 icon-link is-module">
+                <span class="material-icons icon-link is-module">
                   {{
                     !disableHiddenCollections
                       ? item.showCollectionContent
@@ -118,7 +156,7 @@
                       <tak-layout-expansion-panel-header
                         class="tak__sidenav__accordion__header is-link"
                       >
-                        <span class="material-icons tak__min-wdh-32 icon-link">{{ el.icon }}</span>
+                        <span class="material-icons icon-link">{{ el.icon }}</span>
                         <span class="tak__sidenav__link-name accordion">{{ el.name }}</span>
                       </tak-layout-expansion-panel-header>
                     }
@@ -133,7 +171,7 @@
                       "
                     >
                       <tak-layout-expansion-panel-header class="tak__sidenav__accordion__header">
-                        <span class="material-icons tak__min-wdh-32 icon-link">{{ el.icon }}</span>
+                        <span class="material-icons icon-link">{{ el.icon }}</span>
                         <span class="tak__sidenav__link-name accordion">{{ el.name }}</span>
                       </tak-layout-expansion-panel-header>
                       @for (link of el.dropdownLinks; track link) {

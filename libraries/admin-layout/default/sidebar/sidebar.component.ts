@@ -9,7 +9,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { CtmSnavItems } from '../../navigation-interfaces';
+import { AdminLayoutConfig, CtmSnavItems } from '../../navigation-interfaces';
 import { TakSidenavComponent } from './sidenav/sidenav.component';
 
 @Component({
@@ -24,6 +24,8 @@ export class TakSidebarComponent implements AfterViewInit {
 
   @Output() blockSidebar: EventEmitter<any> = new EventEmitter();
   @Output() toggleSidebar: EventEmitter<any> = new EventEmitter();
+
+  @Input() config!: AdminLayoutConfig;
 
   @Input() appIcon!: string;
   @Input() appTitle!: string;

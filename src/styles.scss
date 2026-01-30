@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-:root {
+/* :root {
   --bg: #ffffff;
   --text: #111111;
 }
@@ -11,11 +11,11 @@
 .dark-theme {
   --bg: rgb(13, 17, 23);
   --text: #ffffff;
-}
+} */
 
 @import 'assets/main';
 
-@import 'libraries/admin-layout/styles';
+@import 'libraries/admin-layout/default';
 
 @import 'libraries/components/assets/material/themes/default';
 @import 'libraries/components/assets/material/themes/dark';
@@ -36,4 +36,15 @@ body {
     Roboto,
     Helvetica Neue,
     sans-serif;
+  min-height: 100svh;
+  min-width: 100svw;
+  -webkit-font-smoothing: antialiased;
+  position: fixed;
+}
+
+.remove-view-loader-on-preloading {
+  display: none;
+}
+.tak__outlet.remove-padding {
+  padding: 0px;
 }

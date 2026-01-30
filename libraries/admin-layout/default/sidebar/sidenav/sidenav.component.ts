@@ -4,9 +4,13 @@ import {
   HostListener,
   Component,
   Input,
+  ElementRef,
+  ViewEncapsulation,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 import { ToggleSidebar, ValidateAccessPipe } from '../../services';
-import { CtmSnavItems } from '../../../navigation-interfaces';
+import { AdminLayoutConfig, CtmSnavItems } from '../../../navigation-interfaces';
 import { TakExpansionPanelHeaderComponent } from './expansion/expansion-panel-header.component';
 import { TakExpansionPanelComponent } from './expansion/expansion-panel.component';
 import { TakAccordionComponent } from './expansion/accordion.component';
@@ -15,30 +19,39 @@ import { RouterModule } from '@angular/router';
 @Component({
   standalone: true,
   imports: [
-    ValidateAccessPipe,
     RouterModule,
+    ValidateAccessPipe,
     TakExpansionPanelHeaderComponent,
     TakExpansionPanelComponent,
     TakAccordionComponent,
   ],
   selector: 'tak-sidenav',
   templateUrl: './sidenav.component.html',
+  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakSidenavComponent {
   @Input() navigation: CtmSnavItems[] = [];
+  @Input() config!: AdminLayoutConfig;
+
   @Input() authorities: any[] = [];
   @Input() context!: any;
   @Input() mdWidth = 640;
   @Input() accordionInCollections = true;
   @Input() disableHiddenCollections = false;
 
+  @Output() onLogout = new EventEmitter();
+  @Output() onSetDarkMode = new EventEmitter();
+
   private _isMobile = false;
 
   constructor(
+    href: ElementRef<HTMLElement>,
     private _toggleSidebar: ToggleSidebar,
     private _cd: ChangeDetectorRef
-  ) {}
+  ) {
+    href.nativeElement.classList.add('app-default-admin-layout');
+  }
 
   public onCloseSidebar() {
     const matches = window.matchMedia(`(max-width:${this.mdWidth}px)`).matches;

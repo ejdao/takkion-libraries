@@ -7,6 +7,7 @@ import {
   HostListener,
   Input,
   Output,
+  ViewEncapsulation,
 } from '@angular/core';
 import { LAYOUT_CONTAINER } from '../services/toggle-sidebar';
 
@@ -14,6 +15,7 @@ import { LAYOUT_CONTAINER } from '../services/toggle-sidebar';
   standalone: true,
   selector: 'tak-header',
   templateUrl: './header.component.html',
+  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakHeaderComponent implements AfterViewInit {

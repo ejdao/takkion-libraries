@@ -7,21 +7,30 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { TakModal } from '@kato-lee/components/modal';
+import { MatMenuModule } from '@kato-lee/material/menu';
 import { MatIconModule } from '@kato-lee/material/icon';
 import { MatDialogModule } from '@kato-lee/material/dialog';
 import { MatButtonModule } from '@kato-lee/material/button';
-import { DefaultLayoutComponent } from '@kato-lee/admin-layout';
+import { AdminLayoutConfig, DefaultLayoutComponent } from '@kato-lee/admin-layout';
 import { SIDE_NAV } from './app.snav';
 
 @Component({
   standalone: true,
-  imports: [DefaultLayoutComponent, MatButtonModule, MatDialogModule, MatIconModule, RouterModule],
+  imports: [
+    DefaultLayoutComponent,
+    MatButtonModule,
+    MatDialogModule,
+    MatIconModule,
+    RouterModule,
+    MatMenuModule,
+  ],
   selector: 'gcm-admin-layout',
   template: `
     @if (resourcesLoaded()) {
       <app-admin-layout
+        [config]="config"
         appTitle="{{ appTitle }}"
         appSidebarTitle="{{ sidebarTitle }}"
         appSidebarSubtitle="{{ sidebarSubtitle }}"
@@ -37,19 +46,18 @@ import { SIDE_NAV } from './app.snav';
       >
         <section tak-custom-header>
           <div class="gcm-admin-layout__header--container">
-            <b class="app__header__user-full-name" [title]="userFullName">{{
-              userFullNameSliced
-            }}</b>
-
-            @if (wasOpenedOnMobile) {
-              <button mat-icon-button (click)="clickOnChangeVersion('mobile')">
-                <mat-icon>phone_iphone</mat-icon>
+            <div>
+              <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
               </button>
-            }
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="clickOnLogout()">
+                  <mat-icon>logout</mat-icon>
+                  <span>Cerrar sesión</span>
+                </button>
+              </mat-menu>
+            </div>
 
-            <button mat-icon-button (click)="clickOnLogout()">
-              <mat-icon>logout</mat-icon>
-            </button>
             <button mat-icon-button (click)="toggleMode()"><mat-icon>dark_mode</mat-icon></button>
           </div>
         </section>
@@ -61,9 +69,13 @@ import { SIDE_NAV } from './app.snav';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminLayoutComponent implements OnInit {
+  public config: AdminLayoutConfig = {
+    userImage: 'assets/images/generic-user-profile.jpg',
+  };
+
   public appTitle = 'Eklipse GCM';
   public sidebarTitle = 'Grupo Clínica Médicos';
-  public sidebarSubtitle = 'Alta complejidad / Medicos Centro';
+  public sidebarSubtitle = 'clinica valledupar';
   public tabName = 'Home';
   public accordionInCollections = true;
   public disableHiddenCollections = false;
@@ -83,7 +95,6 @@ export class AdminLayoutComponent implements OnInit {
 
   constructor(
     href: ElementRef<HTMLElement>,
-    private _router: Router,
     private _modal: TakModal,
     private _cd: ChangeDetectorRef
   ) {
@@ -130,29 +141,6 @@ export class AdminLayoutComponent implements OnInit {
 
   public ngOnDestroy(): void {
     document.getElementsByTagName('html')[0].classList.remove(this._darkThemeClassName);
-  }
-
-  public async clickOnChangeVersion(version: 'mobile' | 'web'): Promise<void> {
-    if (version === 'web') {
-      this._modal
-        .confirm(
-          '¿Está segur@ que desea ir a la versión de escritorio?',
-          'Cambiar a versión de escritorio'
-        )
-        .subscribe(result => {
-          if (result) {
-            location.reload();
-          }
-        });
-    } else {
-      this._modal
-        .confirm('¿Está segur@ que desea ir a la versión movil?', 'Cambiar a versión movil')
-        .subscribe(result => {
-          if (result) {
-            location.reload();
-          }
-        });
-    }
   }
 
   get wasOpenedOnMobile() {

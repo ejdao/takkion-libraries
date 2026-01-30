@@ -29,3 +29,7 @@ export interface CtmSnavDropdownLink {
   disableOnContexts?: any[];
   forceDisabledContent?: boolean;
 }
+
+export interface AdminLayoutConfig {
+  userImage?: string;
+}

@@ -9,6 +9,7 @@ import {
   OnDestroy,
   OnInit,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import {
   ActivatedRoute,
@@ -23,7 +24,7 @@ import { FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { debounceTime, filter, Subscription } from 'rxjs';
 import { RoutePartsService, ToggleSidebar } from './services';
-import { CtmSnavItems } from '../navigation-interfaces';
+import { AdminLayoutConfig, CtmSnavItems } from '../navigation-interfaces';
 import { TakSidebarComponent } from './sidebar/sidebar.component';
 import { TakHeaderComponent } from './header/header.component';
 
@@ -43,6 +44,8 @@ export class DefaultLayoutComponent implements OnInit, AfterViewInit, OnDestroy 
   private _sidebarStatus!: Subscription;
 
   @Input() navigation: CtmSnavItems[] = [];
+
+  @Input() config!: AdminLayoutConfig;
 
   @Input() appIcon = 'favicon.ico';
   @Input() appTitle = 'Takkion Devs';
@@ -74,13 +77,16 @@ export class DefaultLayoutComponent implements OnInit, AfterViewInit, OnDestroy 
   public sidebarRespForm = new FormControl();
 
   constructor(
+    href: ElementRef<HTMLElement>,
     private _routePartsService: RoutePartsService,
     private _toggleSidebar: ToggleSidebar,
     private _activeRoute: ActivatedRoute,
     private _cd: ChangeDetectorRef,
     private _router: Router,
     private _title: Title
-  ) {}
+  ) {
+    href.nativeElement.classList.add('app-default-admin-layout');
+  }
 
   public ngOnInit(): void {
     this._title.setTitle(this.appTitle);
