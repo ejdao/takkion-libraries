@@ -10,7 +10,7 @@ import {
   EventEmitter,
 } from '@angular/core';
 import { ToggleSidebar, ValidateAccessPipe } from '../../services';
-import { AdminLayoutConfig, CtmSnavItems } from '../../../navigation-interfaces';
+import { AdminLayoutConfig } from '../../navigation-interfaces';
 import { TakExpansionPanelHeaderComponent } from './expansion/expansion-panel-header.component';
 import { TakExpansionPanelComponent } from './expansion/expansion-panel.component';
 import { TakAccordionComponent } from './expansion/accordion.component';

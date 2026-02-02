@@ -13,13 +13,13 @@ import { MatMenuModule } from '@kato-lee/material/menu';
 import { MatIconModule } from '@kato-lee/material/icon';
 import { MatDialogModule } from '@kato-lee/material/dialog';
 import { MatButtonModule } from '@kato-lee/material/button';
-import { AdminLayoutConfig, DefaultLayoutComponent } from '@kato-lee/admin-layout';
+import { AdminLayoutConfig, CustomLayoutComponent } from '@kato-lee/admin-layout';
 import { SIDE_NAV } from './app.snav';
 
 @Component({
   standalone: true,
   imports: [
-    DefaultLayoutComponent,
+    CustomLayoutComponent,
     MatButtonModule,
     MatDialogModule,
     MatIconModule,

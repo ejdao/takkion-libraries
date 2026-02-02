@@ -16,9 +16,7 @@ import {
       <div class="tak-layout-expansion-panel {{ class }}" style="{{ style }}" #expansionPanelHeader>
         <ng-content select="tak-layout-expansion-panel-header" />
       </div>
-      <div class="tak-layout-expansion-panel-body">
-        <ng-content />
-      </div>
+      <div class="tak-layout-expansion-panel-body"><ng-content /></div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

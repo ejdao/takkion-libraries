@@ -9,7 +9,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { AdminLayoutConfig, CtmSnavItems } from '../../navigation-interfaces';
+import { AdminLayoutConfig } from '../navigation-interfaces';
 import { TakSidenavComponent } from './sidenav/sidenav.component';
 
 @Component({

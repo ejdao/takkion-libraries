@@ -9,11 +9,7 @@ import {
 @Component({
   standalone: true,
   selector: 'tak-layout-accordion',
-  template: `
-    <div #accordion>
-      <ng-content />
-    </div>
-  `,
+  template: ` <div #accordion><ng-content /></div> `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakAccordionComponent implements AfterViewInit {

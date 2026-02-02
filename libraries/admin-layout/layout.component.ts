@@ -4,10 +4,12 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
   Input,
   OnDestroy,
   OnInit,
+  Output,
   ViewChild,
 } from '@angular/core';
 import {
@@ -22,68 +24,55 @@ import {
 import { FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { debounceTime, filter, Subscription } from 'rxjs';
-import { _RoutePartsService, _ToggleSidebar } from './services';
-import { CtmSnavItems } from '../navigation-interfaces';
-import { _TakSidebarComponent } from './sidebar/sidebar.component';
-import { _TakHeaderComponent } from './header/header.component';
+import { RoutePartsService, ToggleSidebar } from './services';
+import { AdminLayoutConfig } from './navigation-interfaces';
+import { TakSidebarComponent } from './sidebar/sidebar.component';
+import { TakHeaderComponent } from './header/header.component';
 
 @Component({
   standalone: true,
-  imports: [_TakSidebarComponent, _TakHeaderComponent],
-  providers: [_RoutePartsService, _ToggleSidebar],
-  selector: 'app-admin-layout--web',
+  imports: [TakSidebarComponent, TakHeaderComponent],
+  providers: [RoutePartsService, ToggleSidebar],
+  selector: 'app-admin-layout',
   templateUrl: './layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestroy {
+export class CustomLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('scrollLayout') scrollLayout!: ElementRef;
 
   private _routerSubs!: Subscription;
   private _routerChangeTitleSubs!: Subscription;
   private _sidebarStatus!: Subscription;
 
-  @Input() navigation: CtmSnavItems[] = [];
+  @Input() config!: AdminLayoutConfig;
 
-  @Input() appIcon = 'favicon.ico';
-  @Input() appTitle = 'Takkion Devs';
-  @Input() appSidebarTitle = 'Takkion (Sidebar)';
-  @Input() appSidebarSubtitle = 'Takkion (Sidebar)';
-  @Input() sidebarDebounceTime = 250;
-  @Input() mdWidth = 640;
-  @Input() isDinamicSidebar = true;
-  @Input() includeBreadcrumbs = false;
-
-  @Input() accordionInCollections = true;
-  @Input() disableHiddenCollections = false;
-
-  @Input() hasFooter = true;
-
-  @Input() authorities: any[] = [];
-  @Input() context!: any;
+  @Output() onLogout = new EventEmitter();
+  @Output() onSetDarkMode = new EventEmitter();
 
   private _isModuleLoading: boolean = false;
-
   private _pageTitle = '';
 
   private _isSidebarCompact: boolean =
     localStorage.getItem('tak-sidebar-is-compact') === 'true' ? true : false;
+
   public isSidebarFixed: boolean = false;
-
   public isMd: boolean = false;
-
   public sidebarRespForm = new FormControl();
 
   constructor(
-    private _routePartsService: _RoutePartsService,
-    private _toggleSidebar: _ToggleSidebar,
+    href: ElementRef<HTMLElement>,
+    private _routePartsService: RoutePartsService,
+    private _toggleSidebar: ToggleSidebar,
     private _activeRoute: ActivatedRoute,
     private _cd: ChangeDetectorRef,
     private _router: Router,
     private _title: Title
-  ) {}
+  ) {
+    href.nativeElement.classList.add('app-default-admin-layout');
+  }
 
   public ngOnInit(): void {
-    this._title.setTitle(this.appTitle);
+    this._title.setTitle(this.config.appTitle);
 
     this._changePageTitle();
 
@@ -101,14 +90,14 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
   }
 
   public ngAfterViewInit(): void {
-    if (window.matchMedia(`(max-width:${this.mdWidth}px)`).matches) {
+    if (window.matchMedia(`(max-width:${this.config.mdWidth}px)`).matches) {
       this._toggleSidebar.closeSidebar();
     }
     this.onResize();
 
-    if (this.isDinamicSidebar) {
+    if (this.config.isDinamicSidebar) {
       this._sidebarStatus = this.sidebarRespForm.valueChanges
-        .pipe(debounceTime(this.sidebarDebounceTime))
+        .pipe(debounceTime(this.config.sidebarDebounceTime))
         .subscribe(_ => {
           if (!this.isMd && _) this._toggleSidebar.openSidebar();
         });
@@ -117,7 +106,7 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
 
   @HostListener('window:resize')
   public onResize() {
-    this.isMd = window.matchMedia(`(max-width:${this.mdWidth}px)`).matches;
+    this.isMd = window.matchMedia(`(max-width:${this.config.mdWidth}px)`).matches;
     if (this.isMd) {
       this._toggleSidebar.toggleMobile(true);
     } else {
@@ -127,7 +116,8 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
       } else {
         this._toggleSidebar.closeSidebar();
       }
-      if (!this.isDinamicSidebar) this._toggleSidebar.expansionButton(this.isDinamicSidebar);
+      if (!this.config.isDinamicSidebar)
+        this._toggleSidebar.expansionButton(this.config.isDinamicSidebar);
     }
     this._cd.markForCheck();
   }
@@ -175,7 +165,7 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
             .reduce((partA, partI) => {
               return `${partA} > ${partI}`;
             });
-          this._pageTitle = `${this.appTitle} | ${this._pageTitle}`;
+          this._pageTitle = `${this.config.appTitle} | ${this._pageTitle}`;
           this._title.setTitle(this._pageTitle);
         }
       });
@@ -207,4 +197,4 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
   </div>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class _TakLoader {}
+export class TakLoader {}
