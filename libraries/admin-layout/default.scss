@@ -16,21 +16,21 @@ html {
 
 html {
   --tak-body-color: rgb(0, 0, 0);
-  --tak-body-background-color: rgb(241, 244, 246);
+  --tak-body-background-color: #f9f9f9;
   --tak-loader-double-bounce1: #fcc02e;
   --tak-loader-double-bounce2: #03a9f4;
   --tak-loader-overlay-backdrop-background-color: rgba(0, 0, 0, 0.048);
   --tak-layout-hover-scrollbar-thumb-color: rgba(192, 192, 192, 0.562);
   --tak-layout-scrollbar-thumb-background-color: #f1f4f6;
-  --tak-layout-container: rgb(241, 244, 246);
+  --tak-layout-container: #f9f9f9;
   --tak-layout-overlay-backdrop-background-color: rgba(0, 0, 0, 0.32);
   --tak-layout-scrollbar-thumb-background-color: #f1f4f6;
   --tak-layout-light-color: #fff;
-  --tak-layout-dark-color: rgba(0, 0, 0, 0.87);
+  --tak-layout-dark-color: #0d0d0d;
   --tak-layout-opacity-dark-color: rgba(0, 0, 0, 0.12);
   --tak-layout-hover-scrollbar-thumb-color: rgba(192, 192, 192, 0.562);
-  --tak-header-light-color: #fff;
-  --tak-header-background-color: rgb(10, 161, 174);
+  --tak-header-light-color: #000;
+  --tak-header-background-color: inherit;
   --tak-header-container-box-shadow: 0 0.46875rem 2.1875rem rgb(4 9 20 / 3%),
     0 0.9375rem 1.40625rem rgb(4 9 20 / 3%), 0 0.25rem 0.53125rem rgb(4 9 20 / 5%),
     0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
@@ -42,7 +42,7 @@ html {
   --tak-sidebar-slide-button-knobs-opacity-background-color: rgb(10, 161, 174, 0.3);
   --tak-sidebar-slide-toggle-bar-background-color: rgba(0, 0, 0, 0.38);
   --tak-sidebar-after-background-color: #fafafa;
-  --tak-sidebar-background-color: #fafafa;
+  --tak-sidebar-background-color: #f9f9f9;
   --tak-sidebar-branding-title-color: rgb(10, 161, 174);
   --tak-sidebar-branding-subtitle-color: rgb(120, 203, 211);
   --tak-sidebar-container-border-right: rgba(0, 0, 0, 0.12);
@@ -65,11 +65,12 @@ html.dark-theme {
   --tak-layout-scrollbar-thumb-background-color: #333947af;
   --tak-layout-overlay-backdrop-background-color: rgba(73, 73, 73, 0.32);
   --tak-layout-scrollbar-thumb-background-color: #333947af;
-  --tak-layout-light-color: #000;
-  --tak-layout-dark-color: #cecece;
+  --tak-layout-light-color: #0d0d0d;
+  --tak-layout-dark-color: oklch(86.686% 0.0001 271.152);
   --tak-layout-opacity-dark-color: rgba(255, 255, 255, 0.12);
   --tak-header-background-color: rgb(1, 4, 9);
   --tak-header-container-box-shadow: none;
+  --tak-header-light-color: #fff;
   --tak-footer-background-color: rgb(54, 57, 76);
   --tak-sidebar-after-background-color: rgba(1, 4, 9, 0.95);
   --tak-sidebar-background-color: rgb(1, 4, 9);
@@ -192,10 +193,10 @@ html.dark-theme {
   &-pagetitle {
     margin-bottom: 10px;
     & h1 {
+      @extend .default-lcl-layout-default-font-family;
       font-size: 20px;
       margin-bottom: 0;
       font-weight: 600;
-      font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
       color: var(--tak-breadcrumb-title-color);
       margin-top: 0px;
     }
@@ -269,7 +270,7 @@ html.dark-theme {
       margin-right: 3px;
     }
     &:not(.is-module):not(.is-link)::after {
-      font-family: Roboto, 'Helvetica Neue', sans-serif;
+      @extend .default-lcl-layout-default-font-family;
       transition: transform 0.3s ease;
       font-size: 18px !important;
       position: absolute;
@@ -300,6 +301,7 @@ html.dark-theme {
     background-color: var(--tak-header-background-color);
     height: var(--tak-header-height);
     color: var(--tak-header-light-color);
+    border-bottom: 1px solid var(--tak-layout-opacity-dark-color);
     display: flex;
     &__toggle-sbar-btn {
       &__container {
@@ -372,9 +374,9 @@ html.dark-theme {
     }
   }
 }
-.tak__header-container {
+/* .tak__header-container {
   box-shadow: var(--tak-header-container-box-shadow);
-}
+} */
 .tak__layout__container {
   background-color: var(--tak-layout-container);
 }
@@ -400,6 +402,7 @@ html.dark-theme {
     top: 0;
   }
   &__branding {
+    @extend .default-lcl-layout-default-font-family;
     background-color: var(--tak-sidebar-background-color);
     height: var(--tak-header-height);
     display: flex;
@@ -408,7 +411,6 @@ html.dark-theme {
     white-space: nowrap;
     font-weight: bolder;
     font-size: 12.5px;
-    font-family: Arial, Helvetica, sans-serif;
     &__container {
       width: calc(100% - 90px);
       margin: 0 5px;
@@ -656,11 +658,19 @@ html.dark-theme {
   color: gray;
 } */
 
+.default-lcl-layout-default-font-family {
+  font-family:
+    Roboto,
+    Helvetica Neue,
+    sans-serif;
+}
+
 .tak__sidenav {
   &__link-name,
   &__accordion__link-button,
   &__username {
-    font-family: 'Geist', sans-serif;
+    @extend .default-lcl-layout-default-font-family;
+    /* font-family: 'Geist', sans-serif; */
     font-size: 12px;
     font-weight: 400;
   }

@@ -4,12 +4,13 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
   Input,
   OnDestroy,
   OnInit,
+  Output,
   ViewChild,
-  ViewEncapsulation,
 } from '@angular/core';
 import {
   ActivatedRoute,
@@ -43,37 +44,19 @@ export class DefaultLayoutComponent implements OnInit, AfterViewInit, OnDestroy 
   private _routerChangeTitleSubs!: Subscription;
   private _sidebarStatus!: Subscription;
 
-  @Input() navigation: CtmSnavItems[] = [];
-
   @Input() config!: AdminLayoutConfig;
 
-  @Input() appIcon = 'favicon.ico';
-  @Input() appTitle = 'Takkion Devs';
-  @Input() appSidebarTitle = 'Takkion (Sidebar)';
-  @Input() appSidebarSubtitle = 'Takkion (Sidebar)';
-  @Input() sidebarDebounceTime = 250;
-  @Input() mdWidth = 640;
-  @Input() isDinamicSidebar = true;
-  @Input() includeBreadcrumbs = false;
-
-  @Input() accordionInCollections = true;
-  @Input() disableHiddenCollections = false;
-
-  @Input() hasFooter = true;
-
-  @Input() authorities: any[] = [];
-  @Input() context!: any;
+  @Output() onLogout = new EventEmitter();
+  @Output() onSetDarkMode = new EventEmitter();
 
   private _isModuleLoading: boolean = false;
-
   private _pageTitle = '';
 
   private _isSidebarCompact: boolean =
     localStorage.getItem('tak-sidebar-is-compact') === 'true' ? true : false;
+
   public isSidebarFixed: boolean = false;
-
   public isMd: boolean = false;
-
   public sidebarRespForm = new FormControl();
 
   constructor(
@@ -89,7 +72,7 @@ export class DefaultLayoutComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   public ngOnInit(): void {
-    this._title.setTitle(this.appTitle);
+    this._title.setTitle(this.config.appTitle);
 
     this._changePageTitle();
 
@@ -107,14 +90,14 @@ export class DefaultLayoutComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   public ngAfterViewInit(): void {
-    if (window.matchMedia(`(max-width:${this.mdWidth}px)`).matches) {
+    if (window.matchMedia(`(max-width:${this.config.mdWidth}px)`).matches) {
       this._toggleSidebar.closeSidebar();
     }
     this.onResize();
 
-    if (this.isDinamicSidebar) {
+    if (this.config.isDinamicSidebar) {
       this._sidebarStatus = this.sidebarRespForm.valueChanges
-        .pipe(debounceTime(this.sidebarDebounceTime))
+        .pipe(debounceTime(this.config.sidebarDebounceTime))
         .subscribe(_ => {
           if (!this.isMd && _) this._toggleSidebar.openSidebar();
         });
@@ -123,7 +106,7 @@ export class DefaultLayoutComponent implements OnInit, AfterViewInit, OnDestroy 
 
   @HostListener('window:resize')
   public onResize() {
-    this.isMd = window.matchMedia(`(max-width:${this.mdWidth}px)`).matches;
+    this.isMd = window.matchMedia(`(max-width:${this.config.mdWidth}px)`).matches;
     if (this.isMd) {
       this._toggleSidebar.toggleMobile(true);
     } else {
@@ -133,7 +116,8 @@ export class DefaultLayoutComponent implements OnInit, AfterViewInit, OnDestroy 
       } else {
         this._toggleSidebar.closeSidebar();
       }
-      if (!this.isDinamicSidebar) this._toggleSidebar.expansionButton(this.isDinamicSidebar);
+      if (!this.config.isDinamicSidebar)
+        this._toggleSidebar.expansionButton(this.config.isDinamicSidebar);
     }
     this._cd.markForCheck();
   }
@@ -181,7 +165,7 @@ export class DefaultLayoutComponent implements OnInit, AfterViewInit, OnDestroy 
             .reduce((partA, partI) => {
               return `${partA} > ${partI}`;
             });
-          this._pageTitle = `${this.appTitle} | ${this._pageTitle}`;
+          this._pageTitle = `${this.config.appTitle} | ${this._pageTitle}`;
           this._title.setTitle(this._pageTitle);
         }
       });

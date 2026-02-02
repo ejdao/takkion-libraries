@@ -31,18 +31,8 @@ import { SIDE_NAV } from './app.snav';
     @if (resourcesLoaded()) {
       <app-admin-layout
         [config]="config"
-        appTitle="{{ appTitle }}"
-        appSidebarTitle="{{ sidebarTitle }}"
-        appSidebarSubtitle="{{ sidebarSubtitle }}"
-        [navigation]="navigation"
-        [authorities]="authorities"
-        [context]="context!"
-        [isDinamicSidebar]="true"
-        [sidebarDebounceTime]="200"
-        [accordionInCollections]="accordionInCollections"
-        [disableHiddenCollections]="disableHiddenCollections"
-        [hasFooter]="false"
-        [mdWidth]="900"
+        (onLogout)="clickOnLogout()"
+        (onSetDarkMode)="toggleMode()"
       >
         <section tak-custom-header>
           <div class="gcm-admin-layout__header--container">
@@ -58,7 +48,9 @@ import { SIDE_NAV } from './app.snav';
               </mat-menu>
             </div>
 
-            <button mat-icon-button (click)="toggleMode()"><mat-icon>dark_mode</mat-icon></button>
+            <button mat-icon-button (click)="toggleMode()">
+              <mat-icon>dark_mode</mat-icon>
+            </button>
           </div>
         </section>
         <router-outlet />
@@ -70,15 +62,22 @@ import { SIDE_NAV } from './app.snav';
 })
 export class AdminLayoutComponent implements OnInit {
   public config: AdminLayoutConfig = {
+    appIcon: 'favicon.ico',
     userImage: 'assets/images/generic-user-profile.jpg',
+    appTitle: 'Eklipse GCM',
+    appSidebarTitle: 'Grupo Clínica Médicos',
+    appSidebarSubtitle: 'clinica valledupar',
+    disableHiddenCollections: false,
+    navigation: SIDE_NAV,
+    authorities: [],
+    context: [],
+    isDinamicSidebar: true,
+    sidebarDebounceTime: 1,
+    hasFooter: false,
+    mdWidth: 900,
+    accordionInCollections: true,
+    includeBreadcrumbs: false,
   };
-
-  public appTitle = 'Eklipse GCM';
-  public sidebarTitle = 'Grupo Clínica Médicos';
-  public sidebarSubtitle = 'clinica valledupar';
-  public tabName = 'Home';
-  public accordionInCollections = true;
-  public disableHiddenCollections = false;
 
   public navigation = SIDE_NAV;
 

@@ -25,20 +25,14 @@ export class TakSidebarComponent implements AfterViewInit {
   @Output() blockSidebar: EventEmitter<any> = new EventEmitter();
   @Output() toggleSidebar: EventEmitter<any> = new EventEmitter();
 
+  @Output() onLogout = new EventEmitter();
+  @Output() onSetDarkMode = new EventEmitter();
+
   @Input() config!: AdminLayoutConfig;
 
-  @Input() appIcon!: string;
-  @Input() appTitle!: string;
-  @Input() appSubtitle!: string;
-  @Input() mdWidth = 640;
-  @Input() navigation: CtmSnavItems[] = [];
-  @Input() authorities: any[] = [];
-  @Input() context!: any;
   @Input() isToggleShow = false;
-  @Input() isCompact: boolean = false;
-  @Input() isMd: boolean = false;
-  @Input() accordionInCollections = true;
-  @Input() disableHiddenCollections = false;
+  @Input() isCompact = false;
+  @Input() isMd = false;
 
   hideSidebar = new FormControl(true);
 

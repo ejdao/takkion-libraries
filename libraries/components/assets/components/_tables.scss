@@ -274,7 +274,6 @@ $CTM_TABLE_VAL_6: -18px;
     }
   }
   &__content {
-    tr,
     tr[selectable],
     .selectable {
       & .mat-cell {
@@ -411,7 +410,6 @@ $CTM_TABLE_VAL_6: -18px;
           border-bottom-color: var(--tak-dark-color-100) !important;
         }
       }
-      tr,
       tr[selectable],
       .selectable {
         & .mat-cell {

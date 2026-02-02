@@ -31,14 +31,7 @@ import { RouterModule } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakSidenavComponent {
-  @Input() navigation: CtmSnavItems[] = [];
   @Input() config!: AdminLayoutConfig;
-
-  @Input() authorities: any[] = [];
-  @Input() context!: any;
-  @Input() mdWidth = 640;
-  @Input() accordionInCollections = true;
-  @Input() disableHiddenCollections = false;
 
   @Output() onLogout = new EventEmitter();
   @Output() onSetDarkMode = new EventEmitter();
@@ -54,7 +47,7 @@ export class TakSidenavComponent {
   }
 
   public onCloseSidebar() {
-    const matches = window.matchMedia(`(max-width:${this.mdWidth}px)`).matches;
+    const matches = window.matchMedia(`(max-width:${this.config.mdWidth}px)`).matches;
     if (matches) this._toggleSidebar.closeSidebar();
     else this._isMobile = false;
 
@@ -62,15 +55,16 @@ export class TakSidenavComponent {
   }
 
   public toggleModule(index: number) {
-    if (!this.disableHiddenCollections)
-      this.navigation.map((item, i) => {
-        if (index === i && item.showCollectionContent === false) item.showCollectionContent = true;
-        else if (index === i && item.showCollectionContent === true) {
-          item.showCollectionContent = false;
-        } else if (this.accordionInCollections) {
-          item.showCollectionContent = false;
+    if (!this.config.disableHiddenCollections) {
+      this.config.navigation.map((item, i) => {
+        if (index === i) {
+          if (item.showCollectionContent) item.showCollectionContent = false;
+          else item.showCollectionContent = true;
+        } else {
+          if (this.config.accordionInCollections) item.showCollectionContent = false;
         }
       });
+    }
   }
 
   @HostListener('window:resize')

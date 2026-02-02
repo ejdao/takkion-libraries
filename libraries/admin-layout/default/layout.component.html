@@ -3,27 +3,20 @@
     [config]="config"
     [isCompact]="isSidebarCompact"
     [isMd]="isMd"
-    [navigation]="navigation"
-    [authorities]="authorities"
-    [appIcon]="appIcon"
-    [appTitle]="appSidebarTitle"
-    [appSubtitle]="appSidebarSubtitle"
-    [isToggleShow]="isDinamicSidebar"
-    [mdWidth]="mdWidth"
-    [context]="context"
-    [accordionInCollections]="accordionInCollections"
-    [disableHiddenCollections]="disableHiddenCollections"
-    (mouseenter)="isDinamicSidebar ? sidebarMouseEnter() : ''"
-    (mouseleave)="isDinamicSidebar ? sidebarMouseLeave() : ''"
+    [isToggleShow]="config.isDinamicSidebar"
+    (mouseenter)="config.isDinamicSidebar ? sidebarMouseEnter() : ''"
+    (mouseleave)="config.isDinamicSidebar ? sidebarMouseLeave() : ''"
     (blockSidebar)="onBlockSidebar($event)"
     (toggleSidebar)="toggleSidebar($event)"
-  ></tak-sidebar>
+    (onLogout)="onLogout.emit()"
+    (onSetDarkMode)="onSetDarkMode.emit()"
+  />
   <div class="tak__container">
     <div class="tak__header-container">
       <tak-header
         (toggleSidebar)="toggleSidebar($event)"
-        [mdWidth]="mdWidth"
-        [isActionButton]="isDinamicSidebar"
+        [mdWidth]="config.mdWidth"
+        [isActionButton]="config.isDinamicSidebar"
       >
         <ng-content tak-custom-header select="[tak-custom-header]"></ng-content>
       </tak-header>
@@ -39,7 +32,7 @@
             </div>
           </div>
         }
-        <div class="tak__outlet remove-padding">
+        <div class="tak__outlet">
           <ng-content />
           <div class="footer-on-mobile"></div>
         </div>

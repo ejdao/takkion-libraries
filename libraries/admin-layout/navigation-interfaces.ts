@@ -23,13 +23,29 @@ export interface CtmSnavDropdownLink {
   name: string;
   url: string;
   urlIsNotAutoCompleted?: boolean;
-  showForMobile?: boolean;
   showForWeb?: boolean;
   authorities?: string[];
   disableOnContexts?: any[];
   forceDisabledContent?: boolean;
+  /** @deprecated NO DEBERIA DISTINGUIR */
+  showForMobile?: boolean;
+  /** @deprecated NO DEBERIA DISTINGUIR */
 }
 
 export interface AdminLayoutConfig {
   userImage?: string;
+  appIcon: string;
+  appTitle: string;
+  appSidebarTitle: string;
+  appSidebarSubtitle: string;
+  navigation: CtmSnavItems[];
+  authorities: string[];
+  context: any[];
+  isDinamicSidebar: boolean;
+  sidebarDebounceTime: number;
+  accordionInCollections: boolean;
+  disableHiddenCollections: boolean;
+  hasFooter: boolean;
+  mdWidth: number;
+  includeBreadcrumbs: boolean;
 }
