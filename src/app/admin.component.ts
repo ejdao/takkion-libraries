@@ -29,14 +29,10 @@ import { SIDE_NAV } from './app.snav';
   selector: 'gcm-admin-layout',
   template: `
     @if (resourcesLoaded()) {
-      <app-admin-layout
-        [config]="config"
-        (onLogout)="clickOnLogout()"
-        (onSetDarkMode)="toggleMode()"
-      >
+      <app-admin-layout [config]="config" (onLogout)="clickOnLogout()">
         <section tak-custom-header>
           <div class="gcm-admin-layout__header--container">
-            <div>
+            <div style="margin-right: 10px;">
               <button mat-icon-button [matMenuTriggerFor]="menu">
                 <mat-icon>more_vert</mat-icon>
               </button>
@@ -47,10 +43,6 @@ import { SIDE_NAV } from './app.snav';
                 </button>
               </mat-menu>
             </div>
-
-            <button mat-icon-button (click)="toggleMode()">
-              <mat-icon>dark_mode</mat-icon>
-            </button>
           </div>
         </section>
         <router-outlet />
@@ -89,9 +81,6 @@ export class AdminLayoutComponent implements OnInit {
 
   public resourcesLoaded = signal(false);
 
-  private readonly _darkThemeClassName = 'dark-theme';
-  private readonly _localStorageThemeKey = 'ekl-dk-th';
-
   constructor(
     href: ElementRef<HTMLElement>,
     private _modal: TakModal,
@@ -101,19 +90,7 @@ export class AdminLayoutComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this._setInitialTheme();
     this._loadInitialResources();
-  }
-
-  public toggleMode(): void {
-    const html = document.getElementsByTagName('html')[0];
-    if (html.classList.contains(this._darkThemeClassName)) {
-      html.classList.remove(this._darkThemeClassName);
-      localStorage.removeItem(this._localStorageThemeKey);
-    } else {
-      localStorage.setItem(this._localStorageThemeKey, 'true');
-      html.classList.add(this._darkThemeClassName);
-    }
   }
 
   public clickOnLogout(): void {
@@ -122,24 +99,9 @@ export class AdminLayoutComponent implements OnInit {
     });
   }
 
-  private _setInitialTheme(): void {
-    const isDarkModeActived = window.matchMedia('(prefers-color-scheme: dark)');
-
-    if (
-      localStorage.getItem(this._localStorageThemeKey) === 'true' ||
-      (isDarkModeActived.matches && localStorage.getItem(this._localStorageThemeKey) !== 'false')
-    ) {
-      document.getElementsByTagName('html')[0].classList.add(this._darkThemeClassName);
-    }
-  }
-
   private async _loadInitialResources(): Promise<void> {
     this.resourcesLoaded.set(true);
     this._cd.markForCheck();
-  }
-
-  public ngOnDestroy(): void {
-    document.getElementsByTagName('html')[0].classList.remove(this._darkThemeClassName);
   }
 
   get wasOpenedOnMobile() {

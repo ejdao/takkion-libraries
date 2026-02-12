@@ -374,9 +374,6 @@ html.dark-theme {
     }
   }
 }
-/* .tak__header-container {
-  box-shadow: var(--tak-header-container-box-shadow);
-} */
 .tak__layout__container {
   background-color: var(--tak-layout-container);
 }
@@ -426,6 +423,7 @@ html.dark-theme {
       margin-left: 6px;
     }
     &__title {
+      white-space: normal;
       max-width: 210px;
       max-height: 42px;
       color: var(--tak-sidebar-branding-title-color);
@@ -588,7 +586,7 @@ html.dark-theme {
     height: calc(
       100vh -
         (
-          var(--tak-header-height) + $USER_PROFILE_HEIGHT + $SNAV_CONTAINER_PADDING_BOTTOM +
+          (var(--tak-header-height) * 2) + $USER_PROFILE_HEIGHT + $SNAV_CONTAINER_PADDING_BOTTOM +
             $SNAV_CONTAINER_PADDING_TOP + 1px
         )
     );
@@ -654,10 +652,6 @@ html.dark-theme {
     }
   }
 }
-/* .is-module.tak-layout-expansion-panel-header {
-  color: gray;
-} */
-
 .default-lcl-layout-default-font-family {
   font-family:
     Roboto,
@@ -670,7 +664,6 @@ html.dark-theme {
   &__accordion__link-button,
   &__username {
     @extend .default-lcl-layout-default-font-family;
-    /* font-family: 'Geist', sans-serif; */
     font-size: 12px;
     font-weight: 400;
   }
@@ -882,4 +875,23 @@ html.dark-theme {
 .tak__sidenav__accordion__link-button > span,
 .tak-layout-expansion-panel-header {
   text-align: left;
+}
+
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-footer-text {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #9e9e9e;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin: 0px;
+}
+img.icon-link {
+  max-width: 20px;
 }

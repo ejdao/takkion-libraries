@@ -3,6 +3,10 @@ export type CtmSnavItemType = 'link' | 'collection' | 'dropdown';
 export interface CtmSnavItems {
   type: CtmSnavItemType;
   icon?: string;
+  iconType?: 'material' | 'img';
+  imgIconVisibility?: string;
+  imgIconVisibilityOff?: string;
+  imgIconRadioButton?: string;
   name: string;
   url?: string;
   urlIsNotAutoCompleted?: boolean;
@@ -13,10 +17,6 @@ export interface CtmSnavItems {
   showCollectionContent?: boolean;
   forceDisabledContent?: boolean;
   isOpened?: boolean;
-  /** @deprecated NO DEBERIA DISTINGUIR */
-  showForMobile?: boolean;
-  /** @deprecated NO DEBERIA DISTINGUIR */
-  showForWeb?: boolean;
 }
 
 export interface CtmSnavDropdownLink {
@@ -27,9 +27,6 @@ export interface CtmSnavDropdownLink {
   authorities?: string[];
   disableOnContexts?: any[];
   forceDisabledContent?: boolean;
-  /** @deprecated NO DEBERIA DISTINGUIR */
-  showForMobile?: boolean;
-  /** @deprecated NO DEBERIA DISTINGUIR */
 }
 
 export interface AdminLayoutConfig {

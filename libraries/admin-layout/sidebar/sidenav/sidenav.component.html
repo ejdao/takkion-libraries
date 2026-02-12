@@ -25,9 +25,6 @@
         Enrique de Armas Osia
       </span>
       <br />
-      <a (click)="onSetDarkMode.emit()" style="cursor: pointer">
-        <span class="material-icons" style="font-size: 18px">dark_mode</span>
-      </a>
       <a (click)="onLogout.emit()" style="cursor: pointer; margin-left: 10px">
         <span class="material-icons" style="font-size: 18px">logout</span>
       </a>
@@ -53,7 +50,11 @@
             (click)="onCloseSidebar()"
           >
             <tak-layout-expansion-panel-header class="tak__sidenav__accordion__header is-link">
-              <span class="material-icons icon-link">{{ item.icon }}</span>
+              @if (!item.iconType || item.iconType === 'material') {
+                <span class="material-icons icon-link">{{ item.icon }}</span>
+              } @else {
+                <img class="icon-link" [src]="item.icon" />
+              }
               <span class="tak__sidenav__link-name accordion">{{ item.name }}</span>
             </tak-layout-expansion-panel-header>
           </a>
@@ -67,7 +68,11 @@
             "
           >
             <tak-layout-expansion-panel-header class="tak__sidenav__accordion__header">
-              <span class="material-icons icon-link">{{ item.icon }}</span>
+              @if (!item.iconType || item.iconType === 'material') {
+                <span class="material-icons icon-link">{{ item.icon }}</span>
+              } @else {
+                <img class="icon-link" [src]="item.icon" />
+              }
               <span class="tak__sidenav__link-name accordion">{{ item.name }}</span>
             </tak-layout-expansion-panel-header>
             @for (link of item.dropdownLinks; track link) {
@@ -112,15 +117,34 @@
                 (click)="toggleModule(i)"
                 class="tak__sidenav__accordion__header is-module"
               >
-                <span class="material-icons icon-link is-module">
-                  {{
-                    !config.disableHiddenCollections
-                      ? item.showCollectionContent
-                        ? 'visibility'
-                        : 'visibility_off'
-                      : 'radio_button_checked'
-                  }}
-                </span>
+                @if (!item.iconType || item.iconType === 'material') {
+                  <span class="material-icons icon-link is-module">
+                    {{
+                      !config.disableHiddenCollections
+                        ? item.showCollectionContent
+                          ? 'visibility'
+                          : 'visibility_off'
+                        : 'radio_button_checked'
+                    }}
+                  </span>
+                } @else {
+                  <img
+                    class="icon-link"
+                    [src]="
+                      !config.disableHiddenCollections
+                        ? item.showCollectionContent
+                          ? item.imgIconVisibility
+                            ? item.imgIconVisibility
+                            : 'assets/images/sidebar-icons/visibility.png'
+                          : item.imgIconVisibilityOff
+                            ? item.imgIconVisibilityOff
+                            : 'assets/images/sidebar-icons/visibility_off.png'
+                        : item.imgIconRadioButton
+                          ? item.imgIconRadioButton
+                          : 'assets/images/sidebar-icons/radio_button_checked.png'
+                    "
+                  />
+                }
                 <span class="tak__sidenav__link-name accordion">{{ item.name }}</span>
               </tak-layout-expansion-panel-header>
               <div
@@ -148,7 +172,11 @@
                       <tak-layout-expansion-panel-header
                         class="tak__sidenav__accordion__header is-link"
                       >
-                        <span class="material-icons icon-link">{{ el.icon }}</span>
+                        @if (!el.iconType || el.iconType === 'material') {
+                          <span class="material-icons icon-link">{{ el.icon }}</span>
+                        } @else {
+                          <img class="icon-link" [src]="el.icon" />
+                        }
                         <span class="tak__sidenav__link-name accordion">{{ el.name }}</span>
                       </tak-layout-expansion-panel-header>
                     }
@@ -162,7 +190,11 @@
                       "
                     >
                       <tak-layout-expansion-panel-header class="tak__sidenav__accordion__header">
-                        <span class="material-icons icon-link">{{ el.icon }}</span>
+                        @if (!el.iconType || el.iconType === 'material') {
+                          <span class="material-icons icon-link">{{ el.icon }}</span>
+                        } @else {
+                          <img class="icon-link" [src]="el.icon" />
+                        }
                         <span class="tak__sidenav__link-name accordion">{{ el.name }}</span>
                       </tak-layout-expansion-panel-header>
                       @for (link of el.dropdownLinks; track link) {
@@ -203,4 +235,8 @@
       </div>
     }
   </tak-layout-accordion>
+</div>
+<div class="tak__sidebar__divider" style="padding: 0"></div>
+<div class="sidebar-footer d-none-on-compact">
+  <h2 class="sidebar-footer-text">{{ config.appSidebarSubtitle }}</h2>
 </div>
