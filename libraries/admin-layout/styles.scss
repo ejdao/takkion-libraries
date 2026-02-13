@@ -8,6 +8,7 @@ html {
   background-color: var(--tak-body-background-color);
   color: var(--tak-body-color);
   --tak-header-height: 50px;
+  --tak-sidebar-branding-height: 50px;
   --tak-footer-height: 30px;
   --tak-sidebar-compact-width: 40px;
   --tak-sidebar-full-width: 223px;
@@ -26,7 +27,7 @@ html {
   --tak-layout-overlay-backdrop-background-color: rgba(0, 0, 0, 0.32);
   --tak-layout-scrollbar-thumb-background-color: #f1f4f6;
   --tak-layout-light-color: #fff;
-  --tak-layout-dark-color: #0d0d0d;
+  --tak-layout-dark-color: #3b3b3b;
   --tak-layout-opacity-dark-color: rgba(0, 0, 0, 0.12);
   --tak-layout-hover-scrollbar-thumb-color: rgba(192, 192, 192, 0.562);
   --tak-header-light-color: #000;
@@ -57,9 +58,11 @@ html {
   --tak-divider-border-top-light-color: rgba(214, 214, 214, 0.12);
 }
 
-html.dark-theme {
+html.dark-theme,
+html[theme='dark'] {
   --tak-body-color: rgb(255, 255, 255);
   --tak-body-background-color: rgb(13, 17, 23);
+  --tak-sidebar-background-color: var(--tak-body-background-color);
   --tak-loader-overlay-backdrop-background-color: rgba(255, 255, 255, 0.048);
   --tak-layout-container: rgb(13, 17, 23);
   --tak-layout-scrollbar-thumb-background-color: #333947af;
@@ -88,6 +91,14 @@ html.dark-theme {
   --tak-breadcrumb-title-color: #ececec;
   --tak-divider-border-top-light-color: rgba(214, 214, 214, 0.12);
   --tak-divider-border-top-dark-color: rgb(95, 95, 95, 0.4);
+  .icon-link.invert-color {
+    filter: invert(70%);
+  }
+  .tak-layout-expansion-panel-header:hover {
+    .icon-link.invert-color {
+      filter: invert(0%);
+    }
+  }
 }
 
 @media only screen and (max-width: calc($MOBILE_RESOLUTION)) {
@@ -306,7 +317,7 @@ html.dark-theme {
     &__toggle-sbar-btn {
       &__container {
         width: $TOGGLE_SBAR_BTN_CONTINR_WIDTH;
-        height: var(--tak-header-height);
+        height: var(--tak-sidebar-branding-height);
         align-items: center;
         display: flex;
         & > button {
@@ -385,6 +396,7 @@ html.dark-theme {
   display: flex;
   float: right;
 }
+
 .tak__sidebar {
   &__container {
     border-right-color: var(--tak-sidebar-container-border-right);
@@ -401,7 +413,7 @@ html.dark-theme {
   &__branding {
     @extend .default-lcl-layout-default-font-family;
     background-color: var(--tak-sidebar-background-color);
-    height: var(--tak-header-height);
+    height: var(--tak-sidebar-branding-height);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -423,6 +435,7 @@ html.dark-theme {
       margin-left: 6px;
     }
     &__title {
+      font-weight: 500;
       white-space: normal;
       max-width: 210px;
       max-height: 42px;
@@ -586,14 +599,17 @@ html.dark-theme {
     height: calc(
       100vh -
         (
-          (var(--tak-header-height) * 2) + $USER_PROFILE_HEIGHT + $SNAV_CONTAINER_PADDING_BOTTOM +
-            $SNAV_CONTAINER_PADDING_TOP + 1px
+          (var(--tak-sidebar-branding-height) * 2) + $USER_PROFILE_HEIGHT +
+            $SNAV_CONTAINER_PADDING_BOTTOM + $SNAV_CONTAINER_PADDING_TOP + 1px
         )
     );
     transition: color ease 0.2s;
     overflow-y: auto;
     overflow-x: hidden;
     color: transparent;
+    img.icon-link {
+      max-width: 20px;
+    }
     .icon-link:not(.is-module) {
       display: none;
     }
@@ -735,7 +751,7 @@ html.dark-theme {
   }
   @media (min-width: $MOBILE_RESOLUTION) {
     .tak__container.sidebar-fixed {
-      margin-left: 240px;
+      margin-left: var(--tak-sidebar-full-width);
       transition: margin-left ease 0.3s;
     }
   }
@@ -877,14 +893,14 @@ html.dark-theme {
   text-align: left;
 }
 
-.sidebar-footer {
+.tak-sidebar-footer {
   padding: 16px 20px;
   border-top: 1px solid var(--gray-300);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.sidebar-footer-text {
+.tak-sidebar-footer-text {
   text-transform: uppercase;
   font-size: 12px;
   color: #9e9e9e;
@@ -892,6 +908,9 @@ html.dark-theme {
   letter-spacing: 0.02em;
   margin: 0px;
 }
-img.icon-link {
-  max-width: 20px;
+
+@media (min-width: $MOBILE_RESOLUTION) {
+  .tak__disapear-on-web {
+    display: none;
+  }
 }

@@ -12,15 +12,27 @@
     (onSetDarkMode)="onSetDarkMode.emit()"
   />
   <div class="tak__container">
-    <div class="tak__header-container">
-      <tak-header
-        (toggleSidebar)="toggleSidebar($event)"
-        [mdWidth]="config.mdWidth"
-        [isActionButton]="config.isDinamicSidebar"
+    @if (config.showHeader) {
+      <div class="tak__header-container">
+        <tak-header
+          (toggleSidebar)="toggleSidebar($event)"
+          [mdWidth]="config.mdWidth"
+          [isActionButton]="config.isDinamicSidebar"
+        >
+          <ng-content tak-custom-header select="[tak-custom-header]" />
+        </tak-header>
+      </div>
+    } @else {
+      <div
+        class="tak__header__toggle-sbar-btn__container tak__disapear-on-web"
+        style="position: absolute; top: -15px; left: -8px"
       >
-        <ng-content tak-custom-header select="[tak-custom-header]"></ng-content>
-      </tak-header>
-    </div>
+        <button mat-icon-button (click)="onToggleSidebar()">
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    }
+
     <div class="tak__scroll" #scrollLayout>
       <div class="tak__content">
         <!-- View Loader (El preloading lo hace innecesario) -->

@@ -30,7 +30,10 @@ export interface CtmSnavDropdownLink {
 }
 
 export interface AdminLayoutConfig {
+  showHeader?: boolean;
+  showSidebarDarkModeBtn?: boolean;
   userImage?: string;
+  userName?: string;
   appIcon: string;
   appTitle: string;
   appSidebarTitle: string;

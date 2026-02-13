@@ -24,7 +24,7 @@ import {
 import { FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { debounceTime, filter, Subscription } from 'rxjs';
-import { RoutePartsService, ToggleSidebar } from './services';
+import { LAYOUT_CONTAINER, RoutePartsService, ToggleSidebar } from './services';
 import { AdminLayoutConfig } from './navigation-interfaces';
 import { TakSidebarComponent } from './sidebar/sidebar.component';
 import { TakHeaderComponent } from './header/header.component';
@@ -69,6 +69,18 @@ export class CustomLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     private _title: Title
   ) {
     href.nativeElement.classList.add('app-default-admin-layout');
+  }
+
+  public onToggleSidebar(): void {
+    const isOpen = document
+      .getElementsByClassName(LAYOUT_CONTAINER)[0]
+      .classList.contains('compact');
+
+    if (isOpen) {
+      this.toggleSidebar(false);
+    } else {
+      this.toggleSidebar(true);
+    }
   }
 
   public ngOnInit(): void {

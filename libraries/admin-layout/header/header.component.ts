@@ -34,18 +34,6 @@ export class TakHeaderComponent implements AfterViewInit {
     this._cd.markForCheck();
   }
 
-  public onToggleSidebar(): void {
-    const isOpen = document
-      .getElementsByClassName(LAYOUT_CONTAINER)[0]
-      .classList.contains('compact');
-
-    if (isOpen) {
-      this.toggleSidebar.emit(false);
-    } else {
-      this.toggleSidebar.emit(true);
-    }
-  }
-
   public ngAfterViewInit(): void {
     this.onResize();
   }

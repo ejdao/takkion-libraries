@@ -1,4 +1,7 @@
-<div style="display: flex; justify-content: space-between">
+<div
+  class="tak__sidenav__user-profile--container"
+  style="display: flex; justify-content: space-between"
+>
   <div class="d-none-on-compact"></div>
   <div
     style="
@@ -22,12 +25,17 @@
         class="tak__sidenav__username"
         style="font-size: 12px; margin-left: 10px; white-space: nowrap"
       >
-        Enrique de Armas Osia
+        {{ config.userName || 'Usuario autenticado' }}
       </span>
       <br />
       <a (click)="onLogout.emit()" style="cursor: pointer; margin-left: 10px">
         <span class="material-icons" style="font-size: 18px">logout</span>
       </a>
+      @if (config.showSidebarDarkModeBtn) {
+        <a (click)="onSetDarkMode.emit()" style="cursor: pointer; margin-left: 10px">
+          <span class="material-icons" style="font-size: 18px">dark_mode</span>
+        </a>
+      }
     </div>
   </div>
   <div class="d-none-on-compact"></div>
@@ -129,7 +137,7 @@
                   </span>
                 } @else {
                   <img
-                    class="icon-link"
+                    class="icon-link invert-color"
                     [src]="
                       !config.disableHiddenCollections
                         ? item.showCollectionContent
@@ -237,6 +245,6 @@
   </tak-layout-accordion>
 </div>
 <div class="tak__sidebar__divider" style="padding: 0"></div>
-<div class="sidebar-footer d-none-on-compact">
-  <h2 class="sidebar-footer-text">{{ config.appSidebarSubtitle }}</h2>
+<div class="tak-sidebar-footer d-none-on-compact">
+  <h2 class="tak-sidebar-footer-text">{{ config.appSidebarSubtitle }}</h2>
 </div>

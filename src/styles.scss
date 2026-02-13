@@ -1,21 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
-/* :root {
-  --bg: #ffffff;
-  --text: #111111;
-}
-
-.dark-theme {
-  --bg: rgb(13, 17, 23);
-  --text: #ffffff;
-} */
-
 @import 'assets/main';
 
 @import 'libraries/admin-layout/styles';
+
+html {
+  --tak-footer-height: 0px;
+  --tak-header-height: 0px;
+  --tak-sidebar-background-color: white;
+  --tak-body-background-color: white;
+}
+.tak__sidenav__user-profile--container,
+.tak__sidenav__container,
+.tak-sidebar-footer,
+.tak__outlet,
+body {
+  background-color: var(--tak-body-background-color);
+}
 
 @import 'libraries/components/assets/material/themes/default';
 @import 'libraries/components/assets/material/themes/dark';
@@ -26,10 +26,6 @@
 @import 'libraries/components/assets/main';
 @import 'libraries/components/assets/themes/main';
 @import 'libraries/components/assets/fonts/fonts';
-
-html {
-  --tak-footer-height: 0px;
-}
 
 body {
   font-family:

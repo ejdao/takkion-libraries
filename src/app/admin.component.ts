@@ -29,7 +29,11 @@ import { SIDE_NAV } from './app.snav';
   selector: 'gcm-admin-layout',
   template: `
     @if (resourcesLoaded()) {
-      <app-admin-layout [config]="config" (onLogout)="clickOnLogout()">
+      <app-admin-layout
+        [config]="config"
+        (onLogout)="clickOnLogout()"
+        (onSetDarkMode)="clickOnSetDarkMode()"
+      >
         <section tak-custom-header>
           <div class="gcm-admin-layout__header--container">
             <div style="margin-right: 10px;">
@@ -54,8 +58,11 @@ import { SIDE_NAV } from './app.snav';
 })
 export class AdminLayoutComponent implements OnInit {
   public config: AdminLayoutConfig = {
-    appIcon: 'favicon.ico',
+    showHeader: false,
+    showSidebarDarkModeBtn: true,
+    appIcon: 'assets/images/sidebar-icons/sidebar-branding.png',
     userImage: 'assets/images/generic-user-profile.jpg',
+    userName: this.nombreFormateado,
     appTitle: 'Eklipse GCM',
     appSidebarTitle: 'Grupo Clínica Médicos',
     appSidebarSubtitle: 'clinica valledupar',
@@ -99,6 +106,10 @@ export class AdminLayoutComponent implements OnInit {
     });
   }
 
+  public clickOnSetDarkMode(): void {
+    document.getElementsByTagName('html')[0].classList.toggle('dark-theme');
+  }
+
   private async _loadInitialResources(): Promise<void> {
     this.resourcesLoaded.set(true);
     this._cd.markForCheck();
@@ -106,5 +117,17 @@ export class AdminLayoutComponent implements OnInit {
 
   get wasOpenedOnMobile() {
     return window.matchMedia(`(max-width:640px)`).matches;
+  }
+
+  get nombreFormateado() {
+    const w = 'eNRIque JOse dE ARmAs OsIA';
+    const splt = w.split(' ');
+    const fw = splt[0];
+    splt[0] = fw.length <= 2 ? fw.toLowerCase() : fw[0].toUpperCase() + fw.slice(1).toLowerCase();
+    const wFt = splt.reduce(
+      (a, b) =>
+        a + ` ${b.length <= 2 ? b.toLowerCase() : b[0].toUpperCase() + b.slice(1).toLowerCase()}`
+    );
+    return wFt;
   }
 }
