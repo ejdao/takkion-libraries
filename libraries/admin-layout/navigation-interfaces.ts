@@ -23,7 +23,6 @@ export interface CtmSnavDropdownLink {
   name: string;
   url: string;
   urlIsNotAutoCompleted?: boolean;
-  showForWeb?: boolean;
   authorities?: string[];
   disableOnContexts?: any[];
   forceDisabledContent?: boolean;

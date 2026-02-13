@@ -1,10 +1,10 @@
 import {
   ChangeDetectionStrategy,
+  AfterViewInit,
   ElementRef,
   Component,
   ViewChild,
   Input,
-  AfterViewInit,
 } from '@angular/core';
 
 @Component({

@@ -1,20 +1,19 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  Component,
+  ViewEncapsulation,
+  AfterViewInit,
   EventEmitter,
   HostListener,
-  Input,
+  Component,
   Output,
-  ViewEncapsulation,
+  Input,
 } from '@angular/core';
-import { LAYOUT_CONTAINER } from '../services/toggle-sidebar';
 
 @Component({
   standalone: true,
   selector: 'tak-header',
-  templateUrl: './header.component.html',
+  templateUrl: './component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

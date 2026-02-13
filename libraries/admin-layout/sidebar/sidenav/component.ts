@@ -1,19 +1,19 @@
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  HostListener,
-  Component,
-  Input,
-  ElementRef,
   ViewEncapsulation,
-  Output,
   EventEmitter,
+  HostListener,
+  ElementRef,
+  Component,
+  Output,
+  Input,
 } from '@angular/core';
 import { ToggleSidebar, ValidateAccessPipe } from '../../services';
 import { AdminLayoutConfig } from '../../navigation-interfaces';
-import { TakExpansionPanelHeaderComponent } from './expansion/expansion-panel-header.component';
-import { TakExpansionPanelComponent } from './expansion/expansion-panel.component';
-import { TakAccordionComponent } from './expansion/accordion.component';
+import { TakExpansionPanelHeaderComponent } from './expansion/expansion-panel-header';
+import { TakExpansionPanelComponent } from './expansion/expansion-panel';
+import { TakAccordionComponent } from './expansion/accordion';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
     TakAccordionComponent,
   ],
   selector: 'tak-sidenav',
-  templateUrl: './sidenav.component.html',
+  templateUrl: './component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

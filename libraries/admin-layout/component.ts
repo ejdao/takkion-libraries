@@ -26,15 +26,15 @@ import { Title } from '@angular/platform-browser';
 import { debounceTime, filter, Subscription } from 'rxjs';
 import { LAYOUT_CONTAINER, RoutePartsService, ToggleSidebar } from './services';
 import { AdminLayoutConfig } from './navigation-interfaces';
-import { TakSidebarComponent } from './sidebar/sidebar.component';
-import { TakHeaderComponent } from './header/header.component';
+import { TakSidebarComponent } from './sidebar/component';
+import { TakHeaderComponent } from './header/component';
 
 @Component({
   standalone: true,
   imports: [TakSidebarComponent, TakHeaderComponent],
   providers: [RoutePartsService, ToggleSidebar],
   selector: 'app-admin-layout',
-  templateUrl: './layout.component.html',
+  templateUrl: './component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomLayoutComponent implements OnInit, AfterViewInit, OnDestroy {

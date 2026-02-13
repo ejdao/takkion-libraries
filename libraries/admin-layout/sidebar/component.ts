@@ -10,13 +10,13 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { AdminLayoutConfig } from '../navigation-interfaces';
-import { TakSidenavComponent } from './sidenav/sidenav.component';
+import { TakSidenavComponent } from './sidenav/component';
 
 @Component({
   standalone: true,
   imports: [TakSidenavComponent],
   selector: 'tak-sidebar',
-  templateUrl: './sidebar.component.html',
+  templateUrl: './component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TakSidebarComponent implements AfterViewInit {
