@@ -30,11 +30,11 @@ html {
   --tak-layout-dark-color: #3b3b3b;
   --tak-layout-opacity-dark-color: rgba(0, 0, 0, 0.12);
   --tak-layout-hover-scrollbar-thumb-color: rgba(192, 192, 192, 0.562);
-  --tak-header-light-color: #000;
-  --tak-header-background-color: inherit;
-  --tak-header-container-box-shadow: 0 0.46875rem 2.1875rem rgb(4 9 20 / 3%),
-    0 0.9375rem 1.40625rem rgb(4 9 20 / 3%), 0 0.25rem 0.53125rem rgb(4 9 20 / 5%),
-    0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
+  --tak-header-color: #ffffff;
+  --tak-header-background-color: rgb(10, 161, 174);
+  --tak-header-container-box-shadow:
+    0 0.46875rem 2.1875rem rgb(4 9 20 / 3%), 0 0.9375rem 1.40625rem rgb(4 9 20 / 3%),
+    0 0.25rem 0.53125rem rgb(4 9 20 / 5%), 0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
   --tak-footer-background-color: rgb(10, 161, 174);
   --tak-breadcrumb-color: rgb(8, 119, 129, 0.3);
   --tak-breadcrumb-title-color: rgb(10, 161, 174);
@@ -56,49 +56,6 @@ html {
   --tak-sidenav-link-icon-color: rgb(50, 50, 50);
   --tak-divider-border-top-dark-color: rgba(0, 0, 0, 0.12);
   --tak-divider-border-top-light-color: rgba(214, 214, 214, 0.12);
-}
-
-html.dark-theme,
-html[theme='dark'] {
-  --tak-body-color: rgb(255, 255, 255);
-  --tak-body-background-color: rgb(13, 17, 23);
-  --tak-sidebar-background-color: var(--tak-body-background-color);
-  --tak-loader-overlay-backdrop-background-color: rgba(255, 255, 255, 0.048);
-  --tak-layout-container: rgb(13, 17, 23);
-  --tak-layout-scrollbar-thumb-background-color: #333947af;
-  --tak-layout-overlay-backdrop-background-color: rgba(73, 73, 73, 0.32);
-  --tak-layout-scrollbar-thumb-background-color: #333947af;
-  --tak-layout-light-color: #0d0d0d;
-  --tak-layout-dark-color: oklch(86.686% 0.0001 271.152);
-  --tak-layout-opacity-dark-color: rgba(255, 255, 255, 0.12);
-  --tak-header-background-color: rgb(1, 4, 9);
-  --tak-header-container-box-shadow: none;
-  --tak-header-light-color: #fff;
-  --tak-footer-background-color: rgb(54, 57, 76);
-  --tak-sidebar-after-background-color: rgba(1, 4, 9, 0.95);
-  --tak-sidebar-background-color: rgb(1, 4, 9);
-  --tak-sidebar-slide-toggle-bar-background-color: rgba(255, 255, 255, 0.38);
-  --tak-sidebar-container-border-right: rgb(95, 95, 95, 0.4);
-  --tak-sidenav-scrollbar-thumb-hover-color: rgba(192, 192, 192, 0.862);
-  --tak-sidenav-hover-scrollbar-thumb-color: rgba(192, 192, 192, 0.562);
-  --tak-sidenav-link-active-background-color: rgba(218, 218, 218, 0.15);
-  --tak-sidenav-link-hover-background-color: rgb(184, 184, 184);
-  --tak-sidenav-color: oklch(86.686% 0.0001 271.152);
-  --tak-sidenav-link-icon-color: rgb(50, 50, 50);
-  --tak-sidenav-link-icon-color: rgb(218, 218, 218);
-  --tak-breadcrumb-color: #d1d1d1;
-  --tak-breadcrumb-active-color: #ececec;
-  --tak-breadcrumb-title-color: #ececec;
-  --tak-divider-border-top-light-color: rgba(214, 214, 214, 0.12);
-  --tak-divider-border-top-dark-color: rgb(95, 95, 95, 0.4);
-  .icon-link.invert-color {
-    filter: invert(70%);
-  }
-  .tak-layout-expansion-panel-header:hover {
-    .icon-link.invert-color {
-      filter: invert(0%);
-    }
-  }
 }
 
 @media only screen and (max-width: calc($MOBILE_RESOLUTION)) {
@@ -311,7 +268,7 @@ html[theme='dark'] {
     width: 100%;
     background-color: var(--tak-header-background-color);
     height: var(--tak-header-height);
-    color: var(--tak-header-light-color);
+    color: var(--tak-header-color);
     border-bottom: 1px solid var(--tak-layout-opacity-dark-color);
     display: flex;
     &__toggle-sbar-btn {

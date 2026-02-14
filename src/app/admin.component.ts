@@ -37,7 +37,11 @@ import { SIDE_NAV } from './app.snav';
         <section tak-custom-header>
           <div class="gcm-admin-layout__header--container">
             <div style="margin-right: 10px;">
-              <button mat-icon-button [matMenuTriggerFor]="menu">
+              <button
+                mat-icon-button
+                [matMenuTriggerFor]="menu"
+                style="color: var(--tak-header-color);"
+              >
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
@@ -58,7 +62,7 @@ import { SIDE_NAV } from './app.snav';
 })
 export class AdminLayoutComponent implements OnInit {
   public config: AdminLayoutConfig = {
-    showHeader: false,
+    showHeader: true,
     showSidebarDarkModeBtn: true,
     appIcon: 'assets/images/sidebar-icons/sidebar-branding.png',
     userImage: 'assets/images/generic-user-profile.jpg',
