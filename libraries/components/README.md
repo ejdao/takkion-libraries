@@ -4,4 +4,4 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Versions
 
-`1x` Use `@kato-lee/cdk@14.2.7` & `@kato-lee/material@14.2.7`.
+`1x` Use `@kato-lee/cdk@14.2.7` & `@angular/material@14.2.7`.

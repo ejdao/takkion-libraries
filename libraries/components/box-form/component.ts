@@ -11,11 +11,11 @@ import {
 import { Subscription } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatProgressBarModule } from '@kato-lee/material/progress-bar';
-import { MatDividerModule } from '@kato-lee/material/divider';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatCardModule } from '@kato-lee/material/card';
-import { MatIconModule } from '@kato-lee/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   standalone: true,
@@ -62,7 +62,7 @@ export class TakBoxFormComponent {
   private _formGroupSubs!: Subscription;
 
   constructor(
-    private _href: ElementRef<HTMLElement>,
+    private _href: ElementRef,
     private _cd: ChangeDetectorRef
   ) {
     _href.nativeElement.classList.add('tak-box-form');

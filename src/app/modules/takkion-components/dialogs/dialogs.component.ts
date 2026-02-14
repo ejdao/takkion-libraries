@@ -7,8 +7,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@kato-lee/material/dialog';
-import { MatAccordion } from '@kato-lee/material/expansion';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatAccordion } from '@angular/material/expansion';
 
 const today = new Date();
 const month = today.getMonth();
@@ -20,6 +20,7 @@ export interface DialogData {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-dialogs',
   templateUrl: './dialogs.component.html',
   styleUrl: './dialogs.component.scss',
@@ -61,6 +62,7 @@ export class DialogsComponent {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-dialog-example-2',
   templateUrl: './dialog-example.html',
 })

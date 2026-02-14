@@ -6,9 +6,9 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { MatPaginator } from '@kato-lee/material/paginator';
-import { MatSort } from '@kato-lee/material/sort';
-import { MatTableDataSource } from '@kato-lee/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
   name: string;
@@ -70,6 +70,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
+  standalone: false,
   selector: 'app-tables',
   templateUrl: './tables.component.html',
   styleUrl: './tables.component.scss',

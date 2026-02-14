@@ -19,19 +19,19 @@ import {
 } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { MatFormFieldAppearance } from '@kato-lee/material/form-field';
-import { MatOptionSelectionChange, ThemePalette } from '@kato-lee/material/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatOptionSelectionChange, ThemePalette } from '@angular/material/core';
 import { TakAutocompleteFieldType, TAK_DEFAULT_APPEARANCE_FORM } from '../common';
 import { CommonModule } from '@angular/common';
-import { MatFormFieldModule } from '@kato-lee/material/form-field';
-import { MatTooltipModule } from '@kato-lee/material/tooltip';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { TakErrorComponent } from '../error/component';
-import { MatSelectModule } from '@kato-lee/material/select';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatOptionModule } from '@kato-lee/material/core';
-import { MatInputModule } from '@kato-lee/material/input';
-import { MatIconModule } from '@kato-lee/material/icon';
-import { MatMenuModule } from '@kato-lee/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatOptionModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   standalone: true,

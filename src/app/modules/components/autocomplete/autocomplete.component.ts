@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'app-autocomplete',
   templateUrl: './autocomplete.component.html',
   styleUrl: './autocomplete.component.scss',

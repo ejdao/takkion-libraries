@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MAT_DATE_LOCALE, MatNativeDateModule } from '@kato-lee/material/core';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { TakSelectFieldComponent } from './select/component';
 import { TakDateFieldComponent } from './date/component';
 import { TakAutocompleteFieldComponent } from './autocomplete/component';
-import { MatAutocompleteModule } from '@kato-lee/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { TakDateRangeFieldComponent } from './date-range/component';
 import { TakMoneyFieldComponent } from './money/component';
 import { TakGeneralFieldComponent } from './general/component';

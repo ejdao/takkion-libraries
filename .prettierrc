@@ -1,4 +1,12 @@
 {
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ],
   "arrowParens": "avoid",
   "bracketSameLine": false,
   "bracketSpacing": true,

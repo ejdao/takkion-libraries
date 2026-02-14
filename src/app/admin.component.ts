@@ -9,10 +9,10 @@ import {
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TakModal } from '@kato-lee/components/modal';
-import { MatMenuModule } from '@kato-lee/material/menu';
-import { MatIconModule } from '@kato-lee/material/icon';
-import { MatDialogModule } from '@kato-lee/material/dialog';
-import { MatButtonModule } from '@kato-lee/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { AdminLayoutConfig, CustomLayoutComponent } from '@kato-lee/admin-layout';
 import { SIDE_NAV } from './app.snav';
 
@@ -89,7 +89,7 @@ export class AdminLayoutComponent implements OnInit {
   public resourcesLoaded = signal(false);
 
   constructor(
-    href: ElementRef<HTMLElement>,
+    href: ElementRef,
     private _modal: TakModal,
     private _cd: ChangeDetectorRef
   ) {
@@ -110,7 +110,7 @@ export class AdminLayoutComponent implements OnInit {
     document.getElementsByTagName('html')[0].classList.toggle('dark-theme');
   }
 
-  private async _loadInitialResources(): Promise<void> {
+  private async _loadInitialResources(): Promise<any> {
     this.resourcesLoaded.set(true);
     this._cd.markForCheck();
   }

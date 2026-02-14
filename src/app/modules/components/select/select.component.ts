@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { MatSnackBar } from '@kato-lee/material/snack-bar';
-import { TooltipPosition } from '@kato-lee/material/tooltip';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TooltipPosition } from '@angular/material/tooltip';
 
 @Component({
+  standalone: false,
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',

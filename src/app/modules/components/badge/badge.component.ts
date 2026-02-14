@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, ViewEncapsulation } from '@angular/core';
-import { FlatTreeControl } from '@kato-lee/cdk/tree';
-import { MatBottomSheet, MatBottomSheetRef } from '@kato-lee/material/bottom-sheet';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@kato-lee/material/tree';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 
 /**
  * Food data with nested structure.
@@ -40,6 +40,7 @@ interface ExampleFlatNode {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-badge',
   templateUrl: './badge.component.html',
   styleUrl: './badge.component.scss',
@@ -73,7 +74,7 @@ export class BadgeComponent {
 
   constructor(
     private _bottomSheet: MatBottomSheet,
-    href: ElementRef<HTMLElement>
+    href: ElementRef
   ) {
     href.nativeElement.classList.add('app-badge');
     this.dataSource.data = TREE_DATA;
@@ -91,11 +92,12 @@ export class BadgeComponent {
 }
 
 @Component({
+  standalone: false,
   selector: 'bottom-sheet-overview-example-sheet',
   templateUrl: 'bottom-sheet.html',
 })
 export class BottomSheetExampleComponent {
-  constructor(private _bottomSheetRef: MatBottomSheetRef<BottomSheetExampleComponent>) {}
+  constructor(private _bottomSheetRef: MatBottomSheetRef) {}
 
   public openLink(event: MouseEvent): void {
     this._bottomSheetRef.dismiss();

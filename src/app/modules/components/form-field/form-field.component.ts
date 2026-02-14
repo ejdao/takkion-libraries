@@ -9,6 +9,7 @@ export interface Tile {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-form-field',
   templateUrl: './form-field.component.html',
   styleUrl: './form-field.component.scss',

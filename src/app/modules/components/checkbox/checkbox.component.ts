@@ -6,9 +6,9 @@ import {
   inject,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { LiveAnnouncer } from '@kato-lee/cdk/a11y';
-import { MatChipInputEvent } from '@kato-lee/material/chips';
-import { ThemePalette } from '@kato-lee/material/core';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { ThemePalette } from '@angular/material/core';
 
 export interface Task {
   name: string;
@@ -18,6 +18,7 @@ export interface Task {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.scss',
@@ -43,7 +44,7 @@ export class CheckboxComponent {
 
   public announcer = inject(LiveAnnouncer);
 
-  constructor(href: ElementRef<HTMLElement>) {
+  constructor(href: ElementRef) {
     href.nativeElement.classList.add('app-checkbox');
   }
 

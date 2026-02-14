@@ -20,14 +20,14 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TAK_DEFAULT_APPEARANCE_FORM, TakGeneralFieldType } from '../common';
-import { FloatLabelType, MatFormFieldAppearance } from '@kato-lee/material/form-field';
-import { ThemePalette } from '@kato-lee/material/core';
+import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field';
+import { ThemePalette } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
-import { MatFormFieldModule } from '@kato-lee/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { TakErrorComponent } from '../error/component';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatInputModule } from '@kato-lee/material/input';
-import { MatIconModule } from '@kato-lee/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   standalone: true,
@@ -49,7 +49,7 @@ export class TakGeneralFieldComponent implements OnInit, OnDestroy, ControlValue
 
   @Input() appearance: MatFormFieldAppearance = TAK_DEFAULT_APPEARANCE_FORM;
   @Input() type: TakGeneralFieldType = 'text';
-  @Input() floatLabel: FloatLabelType = 'never';
+  @Input() floatLabel: FloatLabelType = 'auto';
   @Input() color: ThemePalette = 'primary';
   @Input() actionIcon = 'search';
 
@@ -98,8 +98,8 @@ export class TakGeneralFieldComponent implements OnInit, OnDestroy, ControlValue
 
     if (this.type === 'filter' && this.defaultFilterStyle) {
       this.control.removeValidators(Validators.required);
-      this.appearance = 'legacy';
-      this.floatLabel = 'never';
+      this.appearance = 'fill';
+      this.floatLabel = 'auto';
       if (!this.placeholder) this.placeholder = 'Buscar';
       this.hasClearButton = true;
       this._cd.markForCheck();

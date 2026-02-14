@@ -8,6 +8,7 @@ import {
 import { SIDE_NAV } from './navigation';
 
 @Component({
+  standalone: false,
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],

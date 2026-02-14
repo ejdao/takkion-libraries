@@ -1,9 +1,9 @@
 import { Component, ElementRef, Inject, OnInit, ViewEncapsulation } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@kato-lee/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { TakModalConfig, TakModalType } from './config';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatIconModule } from '@kato-lee/material/icon';
-import { MatDividerModule } from '@kato-lee/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   standalone: true,
@@ -22,7 +22,7 @@ export class TakModalComponent implements OnInit {
   private _hasTopCloseButton = true;
 
   constructor(
-    href: ElementRef<HTMLElement>,
+    href: ElementRef,
     private _dialogRef: MatDialogRef<TakModalComponent>,
     @Inject(MAT_DIALOG_DATA)
     public data: { content: string; title: string; options?: TakModalConfig; type: TakModalType }

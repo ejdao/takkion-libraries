@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 
-@Component({
+@Component({standalone:false,
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss',

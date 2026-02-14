@@ -1,6 +1,8 @@
 # NgMaterial
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5 at 05/10/2023.
+
+Updated to version 20.3.0 at 14/02/2026.
 
 ## Development server
 

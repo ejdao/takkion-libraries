@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { TablesRouting } from './tables.routing';
 import { TablesComponent } from './tables.component';
-import { MatFormFieldModule } from '@kato-lee/material/form-field';
-import { MatPaginatorModule } from '@kato-lee/material/paginator';
-import { MatInputModule } from '@kato-lee/material/input';
-import { MatTableModule } from '@kato-lee/material/table';
-import { MatSortModule } from '@kato-lee/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [TablesComponent],

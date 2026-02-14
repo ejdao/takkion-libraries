@@ -18,21 +18,21 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { debounceTime, map, Observable, Subject, takeUntil } from 'rxjs';
-import { MatFormFieldAppearance } from '@kato-lee/material/form-field';
-import { MatOptionSelectionChange, ThemePalette } from '@kato-lee/material/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatOptionSelectionChange, ThemePalette } from '@angular/material/core';
 import {
   TakAutocompleteFieldType,
   TAK_DEFAULT_APPEARANCE_FORM,
   TAK_PRESS_ESC_KEY,
 } from '../common';
 import { CommonModule } from '@angular/common';
-import { MatProgressSpinnerModule } from '@kato-lee/material/progress-spinner';
-import { MatAutocompleteModule } from '@kato-lee/material/autocomplete';
-import { MatFormFieldModule } from '@kato-lee/material/form-field';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { TakErrorComponent } from '../error/component';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatInputModule } from '@kato-lee/material/input';
-import { MatIconModule } from '@kato-lee/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   standalone: true,
@@ -78,7 +78,7 @@ export class TakAutocompleteFieldComponent implements OnInit, OnDestroy, Control
   private _isInvalid = false;
   private _required = false;
   private _value = '';
-  private _filteredOptions!: Observable<any[]>;
+  private _filteredOptions!: Observable<any>;
   private _notSuggestions = false;
   private _lastValue = '';
 

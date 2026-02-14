@@ -1,7 +1,7 @@
-import { ESCAPE } from '@kato-lee/cdk/keycodes';
-import { MatFormFieldAppearance } from '@kato-lee/material/form-field';
+import { ESCAPE } from '@angular/cdk/keycodes';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 
-export const TAK_DEFAULT_APPEARANCE_FORM: MatFormFieldAppearance = 'standard';
+export const TAK_DEFAULT_APPEARANCE_FORM: MatFormFieldAppearance = 'fill';
 
 export type TakGeneralFieldType = 'text' | 'password' | 'filter';
 export type TakAutocompleteFieldType = 'off' | 'on';

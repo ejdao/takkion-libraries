@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { ProgressBarMode } from '@kato-lee/material/progress-bar';
-import { ThemePalette } from '@kato-lee/material/core';
-import { ProgressSpinnerMode } from '@kato-lee/material/progress-spinner';
+import { ProgressBarMode } from '@angular/material/progress-bar';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 
 @Component({
+  standalone: false,
   selector: 'app-progress-bar',
   templateUrl: './progress-bar.component.html',
   styleUrl: './progress-bar.component.scss',

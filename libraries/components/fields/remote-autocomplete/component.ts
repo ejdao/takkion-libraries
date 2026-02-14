@@ -22,12 +22,12 @@ import {
 } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { MatProgressSpinnerModule } from '@kato-lee/material/progress-spinner';
-import { MatAutocompleteModule } from '@kato-lee/material/autocomplete';
-import { MatFormFieldModule } from '@kato-lee/material/form-field';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatInputModule } from '@kato-lee/material/input';
-import { MatIconModule } from '@kato-lee/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { TAK_PRESS_ESC_KEY } from '../common';
 
 @Component({
@@ -79,7 +79,7 @@ export class TakRemoteAutocompleteFieldComponent implements OnInit, OnDestroy {
   private _isLoadingItem = false;
   private _isRequired = true;
 
-  private _filteredOptions!: Observable<any[]>;
+  private _filteredOptions!: Observable<any>;
   private _value = '';
   private _notSuggestions = false;
 
@@ -91,7 +91,7 @@ export class TakRemoteAutocompleteFieldComponent implements OnInit, OnDestroy {
     private _toast: TakToast
   ) {}
 
-  public async ngOnInit(): Promise<void> {
+  public async ngOnInit(): Promise<any> {
     if (!this.justOneLoad) {
       this.autocomplete.valueChanges
         .pipe(takeUntil(this._unsubscribe$), debounceTime(500), distinctUntilChanged())

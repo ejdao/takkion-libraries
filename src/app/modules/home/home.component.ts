@@ -19,6 +19,7 @@ export interface ProductoResponse {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -102,7 +103,7 @@ export class HomeComponent {
   }
 
   openModal() {
-    this._modal.confirm('Desea cerrar esta sesión?', 'Seguro?').subscribe(el => {
+    this._modal.confirm('Desea cerrar esta sesión?', 'Seguro?').subscribe((el:any) => {
       console.log(el);
     });
   }

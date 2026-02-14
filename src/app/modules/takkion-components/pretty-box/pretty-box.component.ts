@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-pretty-box',
   templateUrl: './pretty-box.component.html',
   styleUrl: './pretty-box.component.scss',
