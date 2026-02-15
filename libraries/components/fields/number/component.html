@@ -27,12 +27,18 @@
       (focusout)="onFocusOut()"
     />
     @if (control.value && hasClearButton && !isDisabled) {
-      <button matSuffix mat-icon-button type="button" (click)="onClearControl()">
+      <button matSuffix mat-icon-button color="no-theme" type="button" (click)="onClearControl()">
         <mat-icon class="tak-suffix-icon-button">close</mat-icon>
       </button>
     }
     @if (control.value && hasActionButton && !isDisabled) {
-      <button matSuffix mat-icon-button type="button" (click)="onExecuteAction.emit(control.value)">
+      <button
+        matSuffix
+        mat-icon-button
+        color="no-theme"
+        type="button"
+        (click)="onExecuteAction.emit(control.value)"
+      >
         <mat-icon class="tak-suffix-icon-button">{{ actionIcon }}</mat-icon>
       </button>
     }

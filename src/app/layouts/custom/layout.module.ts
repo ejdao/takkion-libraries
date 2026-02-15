@@ -3,9 +3,9 @@ import { AdminLayoutComponent } from './layout.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@kato-lee/material/button';
+import { MatIconModule } from '@kato-lee/material/icon';
+import { MatMenuModule } from '@kato-lee/material/menu';
 
 @NgModule({
   declarations: [AdminLayoutComponent, HeaderComponent, FooterComponent],

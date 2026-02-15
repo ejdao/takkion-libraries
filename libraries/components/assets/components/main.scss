@@ -1,13 +1,12 @@
-@import 'buttons';
-@import 'cards';
-@import 'dialogs';
-@import 'fields';
-@import 'material';
-@import 'pretty-box';
-@import 'scroll-bar';
-@import 'snack-bar';
-@import 'tables';
-@import 'tabs';
+@use 'buttons';
+@use 'cards';
+@use 'checkbox';
+@use 'dialogs';
+@use 'fields';
+@use 'pretty-box';
+@use 'scroll-bar';
+@use 'snack-bar';
+@use 'tabs';
 
 .cdk-overlay-dark-backdrop {
   backdrop-filter: blur(3px);

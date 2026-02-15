@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxRouting } from './checkbox.routing';
 import { CheckboxComponent } from './checkbox.component';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@kato-lee/material/checkbox';
+import { MatDividerModule } from '@kato-lee/material/divider';
+import { MatButtonModule } from '@kato-lee/material/button';
+import { MatFormFieldModule } from '@kato-lee/material/form-field';
+import { MatChipsModule } from '@kato-lee/material/chips';
+import { MatIconModule } from '@kato-lee/material/icon';
 
 @NgModule({
   declarations: [CheckboxComponent],

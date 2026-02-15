@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { TakDismissDialogButtonComponent } from './dismiss-dialog-button.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@kato-lee/material/dialog';
 
 const components = [TakDismissDialogButtonComponent];
 

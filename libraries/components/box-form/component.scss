@@ -1,17 +1,20 @@
 $DEFAULT_PADDING: 10px;
 .tak-box-form {
-  .mat-card.actions-hidden {
+  .mat-mdc-card {
+    background-color: var(--tak-card-background-color);
+  }
+  .mdc-card.actions-hidden {
     padding: 0;
   }
-  .mat-card > .mat-card-actions:last-child {
+  .mdc-card > .mdc-card-actions:last-child {
     margin-bottom: -8px;
     padding: 8px;
   }
-  .mat-card-actions {
+  .mat-mdc-card-actions {
     margin-left: 0px;
     margin-right: 0px;
   }
-  .mat-card {
+  .mdc-card {
     padding: 0 0 8px 0;
   }
   .tak-box-form {
@@ -44,7 +47,11 @@ $DEFAULT_PADDING: 10px;
   .action-button {
     font-weight: bolder !important;
   }
-  .mat-card__actions {
+  .mdc-card__actions {
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 10px;
   }
 }

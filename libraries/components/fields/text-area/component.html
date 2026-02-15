@@ -25,12 +25,18 @@
       (focusout)="onFocusOut()"
     ></textarea>
     @if (control.value && hasClearButton && !isDisabled) {
-      <button mat-icon-button type="button" matSuffix (click)="onClearControl()">
+      <button mat-icon-button color="no-theme" type="button" matSuffix (click)="onClearControl()">
         <mat-icon class="tak-suffix-icon-button">close</mat-icon>
       </button>
     }
     @if (control.value && hasActionButton) {
-      <button mat-icon-button type="button" matSuffix (click)="onExecuteAction.emit(control.value)">
+      <button
+        mat-icon-button
+        color="no-theme"
+        type="button"
+        matSuffix
+        (click)="onExecuteAction.emit(control.value)"
+      >
         <mat-icon class="tak-suffix-icon-button">{{ actionIcon }}</mat-icon>
       </button>
     }

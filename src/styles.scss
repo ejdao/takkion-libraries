@@ -1,16 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-
-@use 'assets/main';
-
+@use 'libraries/components/assets/bundle' as components;
+@use 'libraries/admin-layout/assets/bundle' as adminLayout;
+/* 
 @use 'libraries/admin-layout/assets/styles';
-
 @use 'libraries/components/assets/material/theme';
-@use 'libraries/components/assets/material/icons/local';
-
+@use 'libraries/components/assets/material/icons/remote';
 @use 'libraries/components/assets/assets';
 @use 'libraries/components/assets/colors';
 @use 'libraries/components/assets/fonts/fonts';
-
+body {
+  font-family:
+    Roboto,
+    Helvetica Neue,
+    sans-serif;
+  min-height: 100svh;
+  min-width: 100svw;
+  -webkit-font-smoothing: antialiased;
+  position: fixed;
+  margin: 0;
+}  
 html {
   --tak-footer-height: 0px;
   --tak-sidebar-background-color: white;
@@ -22,21 +30,10 @@ html {
 body {
   background-color: var(--tak-body-background-color);
 }
-
-body {
-  font-family:
-    Roboto,
-    Helvetica Neue,
-    sans-serif;
-  min-height: 100svh;
-  min-width: 100svw;
-  -webkit-font-smoothing: antialiased;
-  position: fixed;
-}
-
 .remove-view-loader-on-preloading {
   display: none;
 }
 .tak__outlet.remove-padding {
   padding: 0px;
 }
+ */

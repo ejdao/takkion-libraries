@@ -8,3 +8,5 @@ dist
 node_modules
 libraries/cdk
 libraries/material
+libraries/admin-layout/assets/bundle.css
+libraries/components/assets/bundle.css

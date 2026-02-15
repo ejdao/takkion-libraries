@@ -52,13 +52,7 @@ export class HomeComponent {
   }
 
   clickOnOpenToast() {
-    this._toast.notification('asdds', { horizontalPosition: 'left', duration: 200000 });
-    setTimeout(() => {
-      this._toast.danger('asdds', { horizontalPosition: 'center', duration: 200000 });
-    }, 2000);
-    setTimeout(() => {
-      this._toast.success('asdds', { horizontalPosition: 'right', duration: 200000 });
-    }, 4000);
+    this._toast.danger('asdds', { horizontalPosition: 'left', duration: 20000000 });
   }
 
   toggleEnable() {
@@ -103,7 +97,7 @@ export class HomeComponent {
   }
 
   openModal() {
-    this._modal.confirm('Desea cerrar esta sesión?', 'Seguro?').subscribe((el:any) => {
+    this._modal.confirm('Desea cerrar esta sesión?', 'Seguro?').subscribe((el: any) => {
       console.log(el);
     });
   }

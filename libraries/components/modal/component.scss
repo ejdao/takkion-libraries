@@ -1,10 +1,7 @@
+.mat-mdc-dialog-container-with-actions .mat-mdc-dialog-content {
+  padding: 0 !important;
+}
 .tak-modal {
-  .mat-dialog-title {
-    padding: 0;
-  }
-  .mat-dialog__content {
-    padding: 0;
-  }
   [mat-button] {
     font-weight: bolder;
   }
@@ -14,9 +11,9 @@
     justify-content: space-between;
   }
   &__title {
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bolder;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
   }
   &__content {
     padding: 0 24px;

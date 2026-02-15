@@ -1,4 +1,4 @@
-import { MatDialogConfig } from '@angular/material/dialog';
+import { MatDialogConfig } from '@kato-lee/material/dialog';
 
 export type TakModalType = 'confirm' | 'alert';
 
@@ -8,4 +8,5 @@ export interface TakModalConfig {
   okButton?: string;
   hasTopCloseButton?: boolean;
   dialogOptions?: MatDialogConfig;
+  textAlign?: 'left' | 'right' | 'center' | 'justify';
 }

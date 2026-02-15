@@ -3,7 +3,7 @@ import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
-} from '@angular/material/snack-bar';
+} from '@kato-lee/material/snack-bar';
 
 export type TakToastType = 'notification' | 'danger' | 'success';
 

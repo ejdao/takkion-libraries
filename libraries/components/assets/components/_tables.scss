@@ -1,12 +1,13 @@
+// is a example
 html {
   --tak-table-border: 1px solid var(--tak-dark-color-100);
   --tak-header-table-background-color: rgba(25, 42, 86, 1);
-  --tak-paginator-container-background-color: rgb(255, 255, 255);
+  --tak-table-background-color: rgb(255, 255, 255);
   --tak-table-header-color: rgb(255, 255, 255);
   --tak-table-row-subcontent-color: rgb(128, 128, 128);
   --tak-table-selectable-hover-color: rgba(0, 0, 0, 0.12);
-  --tak-table-container-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --tak-table-container-box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   --tak-table-container-border-color: none;
   --tak-table-selectable-row-hover: rgba(204, 204, 204, 0.4);
   --tak-table-not-selectable-row: #f5b5c0c4;
@@ -23,47 +24,22 @@ html {
   --tak-table-border-color: none;
 }
 
-html.dark-theme,
-html[data-theme='dark'] {
-  --tak-table-border: 1px solid var(--tak-dark-color-100);
-  --tak-paginator-container-background-color: rgb(13, 17, 23);
-  --tak-table-selectable-row-hover: rgba(124, 124, 124, 0.4);
-  --tak-table-selectable-hover-color: rgba(255, 255, 255, 0.12);
-  --tak-table-container-box-shadow: none;
-  --tak-table-container-border-color: rgba(255, 255, 255, 0.12);
-  --tak-table-not-selectable-row: #c45366c4;
-  --tak-table-not-selectable-row-hover: #cc3c54ea;
-  --tak-table-success-row: #73c453c4;
-  --tak-table-success-row-hover: #54cc3cea;
-  --tak-table-priority-1: #c7f5b5e1;
-  --tak-table-priority-1-hover: #aaf082ea;
-  --tak-table-priority-2: #f5f4b5ea;
-  --tak-table-priority-2-hover: #f3f574ea;
-  --tak-table-priority-3: #f5d9b5ea;
-  --tak-table-priority-3-hover: #f3c385ea;
-  --tak-table-header-background-color: rgb(13, 17, 23);
-  --tak-table-border-color: var(--tak-dark-color-100);
-
-  .excel-icon,
-  .pdf-icon,
-  .text-icon {
-    filter: invert(100%);
-  }
-}
-
 $CTM_TABLE_PAGINATOR_HEIGHT: 56px;
 $CTM_TABLE_HEADER_HEIGHT: 70px;
 $CTM_TABLE_BORDER_RADIUS: 10px;
 
-$CTM_TABLE_VAL_1: -28px;
-$CTM_TABLE_VAL_2: -28px;
-$CTM_TABLE_VAL_3: -28px;
-$CTM_TABLE_VAL_4: -32px;
-$CTM_TABLE_VAL_5: -32px;
-$CTM_TABLE_VAL_6: -18px;
+$CTM_TABLE_VAL_1: 28px;
+$CTM_TABLE_VAL_2: 28px;
+$CTM_TABLE_VAL_3: 28px;
+$CTM_TABLE_VAL_4: 32px;
+$CTM_TABLE_VAL_5: 32px;
+$CTM_TABLE_VAL_6: 18px;
 
 .mat-paginator-range-label {
   color: var(--tak-paginator-range-label-color);
+}
+.mat-mdc-paginator-container {
+  background-color: var(--tak-table-background-color);
 }
 .mat-paginator .mat-paginator-outer-container {
   border: none;
@@ -82,6 +58,9 @@ $CTM_TABLE_VAL_6: -18px;
     border-radius: $CTM_TABLE_BORDER_RADIUS;
   }
   &__header {
+    & mat-icon {
+      color: var(--tak-table-header-color) !important;
+    }
     .mat-datepicker-toggle:not(.not-input-field),
     .mat-datepicker-content .mat-calendar-next-button,
     .mat-datepicker-content .mat-calendar-previous-button {
@@ -91,6 +70,11 @@ $CTM_TABLE_VAL_6: -18px;
     align-items: center;
     justify-content: space-between;
     font-family: Roboto, sans-serif;
+    color: var(--tak-table-header-color);
+    height: $CTM_TABLE_HEADER_HEIGHT;
+    border-top-left-radius: $CTM_TABLE_BORDER_RADIUS;
+    border-top-right-radius: $CTM_TABLE_BORDER_RADIUS;
+    background-color: var(--tak-table-header-background-color);
     & .tak-table-title {
       font-size: 16px;
       font-weight: bolder;
@@ -112,11 +96,6 @@ $CTM_TABLE_VAL_6: -18px;
     &--right {
       padding: 10px;
     }
-    color: var(--tak-table-header-color);
-    height: $CTM_TABLE_HEADER_HEIGHT;
-    border-top-left-radius: $CTM_TABLE_BORDER_RADIUS;
-    border-top-right-radius: $CTM_TABLE_BORDER_RADIUS;
-    background-color: var(--tak-table-header-background-color);
     ~ .tak-table__sub-header {
       ~ .tak-table__content {
         border-top-left-radius: 0px;
@@ -127,7 +106,8 @@ $CTM_TABLE_VAL_6: -18px;
               (
                   var(--tak-header-height) + var(--tak-footer-height) +
                     (var(--tak-layout-outlet-padding) * 2)
-                ) + $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_6
+                ) +
+                $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_6
             )
         );
         &.paginator-bottom {
@@ -137,7 +117,8 @@ $CTM_TABLE_VAL_6: -18px;
                 (
                     var(--tak-header-height) + var(--tak-footer-height) +
                       (var(--tak-layout-outlet-padding) * 2)
-                  ) + $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT +
+                  ) +
+                  $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT +
                   $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_VAL_6
               )
           );
@@ -152,7 +133,8 @@ $CTM_TABLE_VAL_6: -18px;
               (
                   var(--tak-header-height) + var(--tak-footer-height) +
                     (var(--tak-layout-outlet-padding) * 2)
-                ) + $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT +
+                ) +
+                $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT +
                 $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_VAL_1
             )
         );
@@ -168,7 +150,8 @@ $CTM_TABLE_VAL_6: -18px;
             (
                 var(--tak-header-height) + var(--tak-footer-height) +
                   (var(--tak-layout-outlet-padding) * 2)
-              ) + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_1
+              ) +
+              $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_1
           )
       );
       &.paginator-bottom {
@@ -178,7 +161,8 @@ $CTM_TABLE_VAL_6: -18px;
               (
                   var(--tak-header-height) + var(--tak-footer-height) +
                     (var(--tak-layout-outlet-padding) * 2)
-                ) + $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_1
+                ) +
+                $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_1
             )
         );
         ~ .tak-table__paginator {
@@ -208,7 +192,8 @@ $CTM_TABLE_VAL_6: -18px;
             (
                 var(--tak-header-height) + var(--tak-footer-height) +
                   (var(--tak-layout-outlet-padding) * 2)
-              ) + $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_1
+              ) +
+              $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_1
           )
       );
     }
@@ -218,7 +203,7 @@ $CTM_TABLE_VAL_6: -18px;
     align-items: center;
     justify-content: space-between;
     font-family: Roboto, sans-serif;
-    background-color: var(--tak-paginator-container-background-color);
+    background-color: var(--tak-table-background-color);
     ~ .tak-table__content {
       border-top-left-radius: 0px;
       border-top-right-radius: 0px;
@@ -228,7 +213,8 @@ $CTM_TABLE_VAL_6: -18px;
             (
                 var(--tak-header-height) + var(--tak-footer-height) +
                   (var(--tak-layout-outlet-padding) * 2)
-              ) + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_4
+              ) +
+              $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_4
           )
       );
       &.paginator-bottom {
@@ -238,7 +224,8 @@ $CTM_TABLE_VAL_6: -18px;
               (
                   var(--tak-header-height) + var(--tak-footer-height) +
                     (var(--tak-layout-outlet-padding) * 2)
-                ) + $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_5
+                ) +
+                $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_HEADER_HEIGHT + $CTM_TABLE_VAL_5
             )
         );
       }
@@ -251,7 +238,7 @@ $CTM_TABLE_VAL_6: -18px;
   &__paginator {
     display: flex;
     justify-content: space-between;
-    background-color: var(--tak-paginator-container-background-color);
+    background-color: var(--tak-table-background-color);
     align-items: center;
     border-top-left-radius: $CTM_TABLE_BORDER_RADIUS;
     border-top-right-radius: $CTM_TABLE_BORDER_RADIUS;
@@ -268,45 +255,49 @@ $CTM_TABLE_VAL_6: -18px;
             (
                 var(--tak-header-height) + var(--tak-footer-height) +
                   (var(--tak-layout-outlet-padding) * 2)
-              ) + $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_VAL_1
+              ) +
+              $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_VAL_1
           )
       );
     }
   }
   &__content {
+    .mat-mdc-table {
+      background-color: var(--tak-table-background-color);
+    }
     tr[selectable],
     .selectable {
-      & .mat-cell {
+      & .mat-mdc-cell {
         cursor: pointer;
       }
-      &:hover .mat-cell {
+      &:hover .mat-mdc-cell {
         background: var(--tak-table-selectable-row-hover) !important;
         transition: ease 0.3s !important;
       }
       &.unselectable {
-        & .mat-cell {
+        & .mat-mdc-cell {
           background-color: var(--tak-table-not-selectable-row) !important;
         }
-        &:hover .mat-cell {
+        &:hover .mat-mdc-cell {
           background-color: var(--tak-table-not-selectable-row-hover) !important;
         }
       }
       &.success-row {
-        & .mat-cell {
+        & .mat-mdc-cell {
           background-color: var(--tak-table-success-row) !important;
         }
-        &:hover .mat-cell {
+        &:hover .mat-mdc-cell {
           background-color: var(--tak-table-success-row-hover) !important;
         }
       }
     }
     width: 100%;
-    .mat-cell,
+    .mat-mdc-cell,
     .mat-footer-cell {
       font-size: 12px;
     }
-    & .mat-header-cell,
-    & .mat-footer-cell {
+    & .mat-mdc-header-cell,
+    & .mat-mdc-footer-cell {
       font-weight: bolder;
       color: var(--tak-dark-color-500);
     }
@@ -318,7 +309,8 @@ $CTM_TABLE_VAL_6: -18px;
             (
                 var(--tak-header-height) + var(--tak-footer-height) +
                   (var(--tak-layout-outlet-padding) * 2)
-              ) + $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_VAL_3
+              ) +
+              $CTM_TABLE_PAGINATOR_HEIGHT + $CTM_TABLE_VAL_3
           )
       );
     }
@@ -329,19 +321,20 @@ $CTM_TABLE_VAL_6: -18px;
           (
               var(--tak-header-height) + var(--tak-footer-height) +
                 (var(--tak-layout-outlet-padding) * 2)
-            ) + $CTM_TABLE_VAL_2
+            ) +
+            $CTM_TABLE_VAL_2
         )
     );
     table {
       width: 100%;
-      .mat-row,
-      .mat-row:not(.tak-table__detail-row) {
+      .mat-mdc-row,
+      .mat-mdc-row:not(.tak-table__detail-row) {
         height: 30px;
       }
-      [mat-row].unbordered .mat-cell {
-        border: none;
+      [mat-row].unbordered .mat-mdc-cell {
+        border: none !important;
       }
-      .mat-cell {
+      .mat-mdc-cell {
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -350,14 +343,14 @@ $CTM_TABLE_VAL_6: -18px;
       border-radius: $CTM_TABLE_BORDER_RADIUS;
     }
     th.mat-header-cell:first-of-type,
-    td.mat-cell:first-of-type,
+    td.mat-mdc-cell:first-of-type,
     td.mat-footer-cell:first-of-type {
       padding-left: 24px !important;
     }
   }
   &__detail-row {
     height: 0 !important;
-    & .mat-cell {
+    & .mat-mdc-cell {
       border-bottom: none !important;
     }
   }
@@ -393,11 +386,11 @@ $CTM_TABLE_VAL_6: -18px;
       width: 100%;
       border: 1px solid var(--tak-dark-color-100);
       & .mat-sort-header-content,
-      & .mat-footer-cell {
+      & .mat-mdc-footer-cell {
         font-weight: bolder;
         color: var(--tak-dark-color-500);
       }
-      .mat-cell {
+      .mat-mdc-cell {
         border-bottom-color: transparent !important;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -406,38 +399,38 @@ $CTM_TABLE_VAL_6: -18px;
       }
       tr[has-lines],
       .has-lines {
-        & .mat-cell {
+        & .mat-mdc-cell {
           border-bottom-color: var(--tak-dark-color-100) !important;
         }
       }
       tr[selectable],
       .selectable {
-        & .mat-cell {
+        & .mat-mdc-cell {
           cursor: pointer;
         }
-        &:hover .mat-cell {
+        &:hover .mat-mdc-cell {
           background: var(--tak-table-selectable-row-hover) !important;
           transition: ease 0.3s !important;
         }
         &.unselectable {
-          & .mat-cell {
+          & .mat-mdc-cell {
             background-color: var(--tak-table-not-selectable-row) !important;
           }
-          &:hover .mat-cell {
+          &:hover .mat-mdc-cell {
             background-color: var(--tak-table-not-selectable-row-hover) !important;
           }
         }
         &.success-row {
-          & .mat-cell {
+          & .mat-mdc-cell {
             background-color: var(--tak-table-success-row) !important;
           }
-          &:hover .mat-cell {
+          &:hover .mat-mdc-cell {
             background-color: var(--tak-table-success-row-hover) !important;
           }
         }
       }
-      tr.mat-row:not(.tak-table__detail-row),
-      tr.mat-footer-row {
+      tr.mat-mdc-row:not(.tak-table__detail-row),
+      tr.mat-mdc-footer-row {
         height: 30px;
         & td {
           font-size: 12px;

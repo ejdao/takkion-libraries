@@ -17,6 +17,7 @@ export interface CtmSnavItems {
   showCollectionContent?: boolean;
   forceDisabledContent?: boolean;
   isOpened?: boolean;
+  notAddAdminAuthority?: boolean;
 }
 
 export interface CtmSnavDropdownLink {
@@ -26,6 +27,7 @@ export interface CtmSnavDropdownLink {
   authorities?: string[];
   disableOnContexts?: any[];
   forceDisabledContent?: boolean;
+  notAddAdminAuthority?: boolean;
 }
 
 export interface AdminLayoutConfig {
@@ -39,7 +41,8 @@ export interface AdminLayoutConfig {
   appSidebarSubtitle: string;
   navigation: CtmSnavItems[];
   authorities: string[];
-  context: any[];
+  adminAuthority?: string;
+  context: any;
   isDinamicSidebar: boolean;
   sidebarDebounceTime: number;
   accordionInCollections: boolean;
