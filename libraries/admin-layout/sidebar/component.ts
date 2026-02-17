@@ -47,7 +47,7 @@ export class TakSidebarComponent implements AfterViewInit {
   public onBlockSidebar(checked?: boolean): void {
     const isChecked = checked || this.checkbox.nativeElement.checked;
 
-    localStorage.setItem('tak-sidebar-is-compact', isChecked);
+    localStorage.setItem('new-tak-sidebar-is-compact', isChecked);
     this.blockSidebar.emit(isChecked);
   }
 }

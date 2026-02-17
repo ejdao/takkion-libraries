@@ -53,7 +53,7 @@ export class CustomLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   private _pageTitle = '';
 
   private _isSidebarCompact: boolean =
-    localStorage.getItem('tak-sidebar-is-compact') === 'true' ? true : false;
+    localStorage.getItem('new-tak-sidebar-is-compact') === 'true' ? true : false;
 
   public isSidebarFixed: boolean = false;
   public isMd: boolean = false;
@@ -102,7 +102,7 @@ export class CustomLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public ngAfterViewInit(): void {
-    if (window.matchMedia(`(max-width:${this.config.mdWidth}px)`).matches) {
+    if (window.matchMedia(`(max-width:5000px)`).matches) {
       this._toggleSidebar.closeSidebar();
     }
     this.onResize();
@@ -118,7 +118,7 @@ export class CustomLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @HostListener('window:resize')
   public onResize() {
-    this.isMd = window.matchMedia(`(max-width:${this.config.mdWidth}px)`).matches;
+    this.isMd = window.matchMedia(`(max-width:5000px)`).matches;
     if (this.isMd) {
       this._toggleSidebar.toggleMobile(true);
     } else {

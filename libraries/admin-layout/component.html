@@ -13,36 +13,35 @@
   />
   <div class="tak__container">
     @if (config.showHeader) {
-      <div class="tak__header-container">
-        <tak-header
-          (toggleSidebar)="toggleSidebar($event)"
-          [mdWidth]="config.mdWidth"
-          [isActionButton]="config.isDinamicSidebar"
-        >
-          <ng-content tak-custom-header select="[tak-custom-header]" />
-        </tak-header>
-      </div>
-    } @else {
-      <div
-        class="tak__header__toggle-sbar-btn__container tak__disapear-on-web"
-        style="position: absolute; top: -15px; left: -8px"
+    <div class="tak__header-container">
+      <tak-header
+        (toggleSidebar)="toggleSidebar($event)"
+        [isActionButton]="config.isDinamicSidebar"
       >
-        <button mat-icon-button (click)="onToggleSidebar()">
-          <span class="material-icons">menu</span>
-        </button>
-      </div>
+        <ng-content tak-custom-header select="[tak-custom-header]" />
+      </tak-header>
+    </div>
+    } @else {
+    <div
+      class="tak__header__toggle-sbar-btn__container tak__disapear-on-web"
+      style="position: absolute; top: -15px; left: -8px"
+    >
+      <button mat-icon-button (click)="onToggleSidebar()">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
     }
 
     <div class="tak__scroll" #scrollLayout>
       <div class="tak__content">
         <!-- View Loader (El preloading lo hace innecesario) -->
         @if (isModuleLoading) {
-          <div class="tak-view-loader remove-view-loader-on-preloading" style="position: fixed">
-            <div class="tak-spinner">
-              <div class="tak-double-bounce1"></div>
-              <div class="tak-double-bounce2"></div>
-            </div>
+        <div class="tak-view-loader remove-view-loader-on-preloading" style="position: fixed">
+          <div class="tak-spinner">
+            <div class="tak-double-bounce1"></div>
+            <div class="tak-double-bounce2"></div>
           </div>
+        </div>
         }
         <div class="tak__outlet">
           <ng-content />

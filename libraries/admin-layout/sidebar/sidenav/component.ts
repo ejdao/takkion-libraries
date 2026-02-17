@@ -47,7 +47,7 @@ export class TakSidenavComponent {
   }
 
   public onCloseSidebar() {
-    const matches = window.matchMedia(`(max-width:${this.config.mdWidth}px)`).matches;
+    const matches = window.matchMedia(`(max-width:5000px)`).matches;
     if (matches) this._toggleSidebar.closeSidebar();
     else this._isMobile = false;
 

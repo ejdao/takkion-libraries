@@ -20,7 +20,7 @@ import {
 export class TakHeaderComponent implements AfterViewInit {
   @Output() toggleSidebar: EventEmitter<any> = new EventEmitter();
 
-  @Input() mdWidth = 640;
+  @Input() mdWidth = 5000;
   @Input() isActionButton = false;
 
   public isScreenMd = false;

@@ -48,6 +48,5 @@ export interface AdminLayoutConfig {
   accordionInCollections: boolean;
   disableHiddenCollections: boolean;
   hasFooter: boolean;
-  mdWidth: number;
   includeBreadcrumbs: boolean;
 }

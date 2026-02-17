@@ -77,7 +77,6 @@ export class AdminLayoutComponent implements OnInit {
     isDinamicSidebar: true,
     sidebarDebounceTime: 1,
     hasFooter: false,
-    mdWidth: 900,
     accordionInCollections: true,
     includeBreadcrumbs: false,
   };
