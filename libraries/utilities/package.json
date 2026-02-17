@@ -1,5 +1,12 @@
 {
   "name": "@kato-lee/utilities",
-  "version": "1.0.2",
-  "sideEffects": false
+  "version": "2.0.1",
+  "sideEffects": false,
+  "peerDependencies": {
+    "file-saver": "^2.0.5",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.7"
+  }
 }
