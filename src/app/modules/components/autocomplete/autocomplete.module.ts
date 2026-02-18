@@ -3,13 +3,13 @@ import { AsyncPipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AutocompleteComponent } from './autocomplete.component';
 import { AutocompleteRouting } from './autocomplete.routing';
-import { MatButtonToggleModule } from '@kato-lee/material/button-toggle';
-import { MatAutocompleteModule } from '@kato-lee/material/autocomplete';
-import { MatFormFieldModule } from '@kato-lee/material/form-field';
-import { MatDividerModule } from '@kato-lee/material/divider';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatInputModule } from '@kato-lee/material/input';
-import { MatIconModule } from '@kato-lee/material/icon';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AutocompleteComponent],

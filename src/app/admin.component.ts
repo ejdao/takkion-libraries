@@ -9,10 +9,10 @@ import {
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TakModal } from '@kato-lee/components/modal';
-import { MatMenuModule } from '@kato-lee/material/menu';
-import { MatIconModule } from '@kato-lee/material/icon';
-import { MatDialogModule } from '@kato-lee/material/dialog';
-import { MatButtonModule } from '@kato-lee/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { AdminLayoutConfig, CustomLayoutComponent } from '@kato-lee/admin-layout';
 import { SIDE_NAV } from './app.snav';
 

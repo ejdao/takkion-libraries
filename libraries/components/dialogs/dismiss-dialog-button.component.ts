@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, ViewEncapsulation, Component } from '@angular/core';
-import { MatDialogRef } from '@kato-lee/material/dialog';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatIconModule } from '@kato-lee/material/icon';
-import { MatDividerModule } from '@kato-lee/material/divider';
-import { MatDialogModule } from '@kato-lee/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   standalone: true,

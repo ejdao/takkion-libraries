@@ -148,3 +148,19 @@ mat-form-field {
     text-overflow: ellipsis;
   }
 }
+.mat-mdc-menu-content {
+  background-color: white;
+}
+
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
+    .mat-mdc-option-multiple
+  ) {
+  background-color: var(
+    --mat-option-focus-state-layer-color,
+    color-mix(
+      in srgb,
+      var(--mat-sys-on-surface) calc(var(--mat-sys-focus-state-layer-opacity) * 100%),
+      transparent
+    )
+  ) !important;
+}

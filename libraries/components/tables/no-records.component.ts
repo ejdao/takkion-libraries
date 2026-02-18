@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { MatProgressSpinnerModule } from '@kato-lee/material/progress-spinner';
-import { MatTableDataSource } from '@kato-lee/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   standalone: true,

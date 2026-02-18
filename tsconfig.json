@@ -24,7 +24,8 @@
     "paths": {
       "@kato-lee/components/*": ["libraries/components/*"],
       "@kato-lee/utilities": ["libraries/utilities"],
-      "@kato-lee/admin-layout": ["libraries/admin-layout"],
+      "@kato-lee/utilities/*": ["libraries/utilities/*"],
+      "@kato-lee/admin-layout": ["libraries/admin-layout"]
     }
   },
   "angularCompilerOptions": {

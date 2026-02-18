@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@kato-lee/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { TakModalComponent } from './component';
 import { TakModalConfig, TakModalType } from './config';
 import { Observable } from 'rxjs';
@@ -15,7 +15,7 @@ export class TakModal {
   public confirm(
     content: string,
     title: string = '',
-    options?: TakModalConfig,
+    options?: TakModalConfig
   ): Observable<boolean> {
     return this._generateDialog(content, title, 'confirm', options);
   }
@@ -24,7 +24,7 @@ export class TakModal {
     content: string,
     title: string,
     type: TakModalType,
-    options?: TakModalConfig,
+    options?: TakModalConfig
   ) {
     if (!options) options = {};
     if (!options.textAlign) options.textAlign = 'justify';

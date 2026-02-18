@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { SelectRouting } from './select.routing';
 import { SelectComponent } from './select.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@kato-lee/material/form-field';
-import { MatSelectModule } from '@kato-lee/material/select';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatSidenavModule } from '@kato-lee/material/sidenav';
-import { MatSnackBarModule } from '@kato-lee/material/snack-bar';
-import { MatInputModule } from '@kato-lee/material/input';
-import { MatStepperModule } from '@kato-lee/material/stepper';
-import { MatTabsModule } from '@kato-lee/material/tabs';
-import { MatToolbarModule } from '@kato-lee/material/toolbar';
-import { MatIconModule } from '@kato-lee/material/icon';
-import { MatTooltipModule } from '@kato-lee/material/tooltip';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [SelectComponent],

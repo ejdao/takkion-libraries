@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, ViewEncapsulation } from '@angular/core';
-import { FlatTreeControl } from '@kato-lee/cdk/tree';
-import { MatBottomSheet, MatBottomSheetRef } from '@kato-lee/material/bottom-sheet';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@kato-lee/material/tree';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 
 /**
  * Food data with nested structure.

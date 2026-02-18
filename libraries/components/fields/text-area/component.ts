@@ -19,14 +19,14 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TAK_DEFAULT_APPEARANCE_FORM } from '../common';
-import { FloatLabelType, MatFormFieldAppearance } from '@kato-lee/material/form-field';
-import { ThemePalette } from '@kato-lee/material/core';
+import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field';
+import { ThemePalette } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
-import { MatFormFieldModule } from '@kato-lee/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { TakErrorComponent } from '../error/component';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatInputModule } from '@kato-lee/material/input';
-import { MatIconModule } from '@kato-lee/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   standalone: true,

@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 import { TakCapsuleModule } from '@kato-lee/components/capsule';
 import { TakBoxFormModule } from '@kato-lee/components/box-form';
 import { TakFieldsModule } from '@kato-lee/components/fields';
-import { MatButtonModule } from '@kato-lee/material/button';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [HomeComponent],

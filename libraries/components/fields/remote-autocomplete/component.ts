@@ -22,12 +22,12 @@ import {
 } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { MatProgressSpinnerModule } from '@kato-lee/material/progress-spinner';
-import { MatAutocompleteModule } from '@kato-lee/material/autocomplete';
-import { MatFormFieldModule } from '@kato-lee/material/form-field';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatInputModule } from '@kato-lee/material/input';
-import { MatIconModule } from '@kato-lee/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { TAK_PRESS_ESC_KEY } from '../common';
 
 @Component({

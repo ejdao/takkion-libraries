@@ -8,9 +8,9 @@ import { CustomPreloadingStrategy } from './app.preloading';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AddTokenInterceptor } from './interceptors/add-token';
 import { AdminLayoutModule } from './layouts/custom/layout.module';
-import { MatSnackBarModule } from '@kato-lee/material/snack-bar';
-import { MatDialogModule } from '@kato-lee/material/dialog';
-import { MAT_DATE_LOCALE, MatNativeDateModule } from '@kato-lee/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [AppComponent],
