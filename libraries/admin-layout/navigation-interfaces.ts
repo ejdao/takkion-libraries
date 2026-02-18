@@ -3,7 +3,7 @@ export type CtmSnavItemType = 'link' | 'collection' | 'dropdown';
 export interface CtmSnavItems {
   type: CtmSnavItemType;
   icon?: string;
-  iconType?: 'material' | 'img';
+  iconType?: 'material' | 'img' | 'lucide';
   imgIconVisibility?: string;
   imgIconVisibilityOff?: string;
   imgIconRadioButton?: string;
