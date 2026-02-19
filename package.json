@@ -25,6 +25,7 @@
     "@kato-lee/cdk": "^14.2.7",
     "@kato-lee/components": "^1.0.8",
     "@kato-lee/material": "^14.2.7",
+    "lucide-angular": "^0.575.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },

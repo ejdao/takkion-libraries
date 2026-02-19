@@ -1,26 +1,10 @@
 <div class="tak__layout__container {{ isSidebarCompact ? 'compact' : 'full' }}">
-  <tak-sidebar
-    [isCompact]="isSidebarCompact"
-    [isMd]="isMd"
-    [navigation]="navigation"
-    [authorities]="authorities"
-    [appIcon]="appIcon"
-    [appTitle]="appSidebarTitle"
-    [appSubtitle]="appSidebarSubtitle"
-    [isToggleShow]="isDinamicSidebar"
-    [mdWidth]="mdWidth"
-    [context]="context"
-    [accordionInCollections]="accordionInCollections"
-    [disableHiddenCollections]="disableHiddenCollections"
-    (mouseenter)="isDinamicSidebar ? sidebarMouseEnter() : ''"
-    (mouseleave)="isDinamicSidebar ? sidebarMouseLeave() : ''"
-    (blockSidebar)="onBlockSidebar($event)"
-    (toggleSidebar)="toggleSidebar($event)"
-  ></tak-sidebar>
   <div class="tak__container">
     <div class="tak__header-container">
       <tak-header
-        (toggleSidebar)="toggleSidebar($event)"
+        (toggleSidebar)="toggleSidebar.emit()"
+        (logout)="logout.emit()"
+        (backToMenu)="backToMenu.emit()"
         [mdWidth]="mdWidth"
         [isActionButton]="isDinamicSidebar"
       >

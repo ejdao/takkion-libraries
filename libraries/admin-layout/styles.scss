@@ -8,7 +8,7 @@ html {
   --tak-loader-overlay-backdrop-background-color: rgba(0, 0, 0, 0.048);
   --tak-layout-hover-scrollbar-thumb-color: rgba(192, 192, 192, 0.562);
   --tak-layout-scrollbar-thumb-background-color: #f1f4f6;
-  --tak-layout-container: rgb(241, 244, 246);
+  --tak-layout-container: #f8fafa;
   --tak-layout-overlay-backdrop-background-color: rgba(0, 0, 0, 0.32);
   --tak-layout-scrollbar-thumb-background-color: #f1f4f6;
   --tak-layout-light-color: #fff;
@@ -74,8 +74,8 @@ html.dark-theme {
 html {
   --tak-header-height: 50px;
   --tak-footer-height: 30px;
-  --tak-sidebar-compact-width: 50px;
-  --tak-sidebar-full-width: 240px;
+  --tak-sidebar-compact-width: 0px;
+  --tak-sidebar-full-width: 0px;
   --tak-layout-outlet-padding: 20px;
 }
 
@@ -305,6 +305,7 @@ $TOGGLE_SBAR_BTN_CONTINR_WIDTH: 40px;
     height: var(--tak-header-height);
     color: var(--tak-layout-dark-color);
     display: flex;
+    justify-content: space-between;
     &__toggle-sbar-btn {
       &__container {
         width: $TOGGLE_SBAR_BTN_CONTINR_WIDTH;
@@ -667,7 +668,7 @@ $SNAV_CNTNR_PDNG_TOP: 10px;
   }
   @media (min-width: $MOBILE_RESOLUTION) {
     .tak__container.sidebar-fixed {
-      margin-left: 240px;
+      margin-left: var(--tak-sidebar-full-width);
       transition: margin-left ease 0.3s;
     }
   }
@@ -710,7 +711,7 @@ $SNAV_CNTNR_PDNG_TOP: 10px;
   }
   @media (min-width: $MOBILE_RESOLUTION) {
     .tak__container.sidebar-fixed {
-      margin-left: 240px;
+      margin-left: var(--tak-sidebar-full-width);
       transition: margin-left ease 0.3s;
     }
   }

@@ -1,3 +1,18 @@
 @if (resourcesLoaded) {
-  <router-outlet></router-outlet>
+  <app-admin-layout--web
+    appTitle="{{ appTitle }}"
+    appSidebarTitle="{{ sidebarTitle }}"
+    appSidebarSubtitle="{{ sidebarSubtitle }}"
+    [navigation]="navigation"
+    [authorities]="[]"
+    [context]="context!"
+    [isDinamicSidebar]="true"
+    [sidebarDebounceTime]="200"
+    [accordionInCollections]="accordionInCollections"
+    [disableHiddenCollections]="disableHiddenCollections"
+    [hasFooter]="false"
+    [mdWidth]="900"
+  >
+    <router-outlet></router-outlet>
+  </app-admin-layout--web>
 }

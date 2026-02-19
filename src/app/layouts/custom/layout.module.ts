@@ -3,12 +3,10 @@ import { AdminLayoutComponent } from './layout.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MatButtonModule } from '@kato-lee/material/button';
-import { MatIconModule } from '@kato-lee/material/icon';
-import { MatMenuModule } from '@kato-lee/material/menu';
+import { CustomLayoutWebComponent } from '@kato-lee/admin-layout';
 
 @NgModule({
   declarations: [AdminLayoutComponent, HeaderComponent, FooterComponent],
-  imports: [RouterModule, MatButtonModule, MatIconModule, MatMenuModule],
+  imports: [RouterModule, CustomLayoutWebComponent],
 })
 export class AdminLayoutModule {}

@@ -8,6 +8,7 @@ import {
 import { SIDE_NAV } from './navigation';
 
 @Component({
+  standalone: false,
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
@@ -15,6 +16,13 @@ import { SIDE_NAV } from './navigation';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminLayoutComponent implements OnInit {
+  public appTitle = 'Eklipse GCM';
+  public sidebarTitle = 'Grupo Clínica Médicos';
+  public sidebarSubtitle = 'Alta complejidad / Medicos Centro';
+  public tabName = 'Home';
+  public accordionInCollections = true;
+  public disableHiddenCollections = false;
+
   public navigation = SIDE_NAV;
 
   public resourcesLoaded = false;
@@ -34,8 +42,6 @@ export class AdminLayoutComponent implements OnInit {
 
   public context = 'BOGOTA';
 
-  public accordionInCollections = true;
-  public disableHiddenCollections = true;
 
   constructor(private _cd: ChangeDetectorRef) {}
 

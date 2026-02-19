@@ -1,13 +1,13 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   ElementRef,
-  HostListener,
+  EventEmitter,
   Input,
   OnDestroy,
   OnInit,
+  Output,
   ViewChild,
 } from '@angular/core';
 import {
@@ -21,21 +21,20 @@ import {
 } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
-import { debounceTime, filter, Subscription } from 'rxjs';
-import { RoutePartsService, ToggleSidebar } from './services';
+import { filter, Subscription } from 'rxjs';
+import { RoutePartsService } from './services';
 import { CtmSnavItems } from '../navigation-interfaces';
-import { TakSidebarComponent } from './sidebar/sidebar.component';
 import { TakHeaderComponent } from './header/header.component';
 
 @Component({
   standalone: true,
-  imports: [TakSidebarComponent, TakHeaderComponent],
-  providers: [RoutePartsService, ToggleSidebar],
+  imports: [TakHeaderComponent],
+  providers: [RoutePartsService],
   selector: 'app-admin-layout--web',
   templateUrl: './layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestroy {
+export class CustomLayoutWebComponent implements OnInit, OnDestroy {
   @ViewChild('scrollLayout') scrollLayout!: ElementRef;
 
   private _routerSubs!: Subscription;
@@ -61,6 +60,10 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
   @Input() authorities: any[] = [];
   @Input() context!: any;
 
+  @Output() toggleSidebar: EventEmitter<any> = new EventEmitter();
+  @Output() logout: EventEmitter<any> = new EventEmitter();
+  @Output() backToMenu: EventEmitter<any> = new EventEmitter();
+
   private _isModuleLoading: boolean = false;
 
   private _pageTitle = '';
@@ -75,7 +78,6 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
 
   constructor(
     private _routePartsService: RoutePartsService,
-    private _toggleSidebar: ToggleSidebar,
     private _activeRoute: ActivatedRoute,
     private _cd: ChangeDetectorRef,
     private _router: Router,
@@ -100,55 +102,8 @@ export class CustomLayoutWebComponent implements OnInit, AfterViewInit, OnDestro
     document.getElementsByTagName('body')[0].classList.add('tak-layout');
   }
 
-  public ngAfterViewInit(): void {
-    if (window.matchMedia(`(max-width:${this.mdWidth}px)`).matches) {
-      this._toggleSidebar.closeSidebar();
-    }
-    this.onResize();
-
-    if (this.isDinamicSidebar) {
-      this._sidebarStatus = this.sidebarRespForm.valueChanges
-        .pipe(debounceTime(this.sidebarDebounceTime))
-        .subscribe(_ => {
-          if (!this.isMd && _) this._toggleSidebar.openSidebar();
-        });
-    }
-  }
-
-  @HostListener('window:resize')
-  public onResize() {
-    this.isMd = window.matchMedia(`(max-width:${this.mdWidth}px)`).matches;
-    if (this.isMd) {
-      this._toggleSidebar.toggleMobile(true);
-    } else {
-      this._toggleSidebar.toggleMobile(false);
-      if (this.isSidebarFixed) {
-        this._toggleSidebar.openSidebar();
-      } else {
-        this._toggleSidebar.closeSidebar();
-      }
-      if (!this.isDinamicSidebar) this._toggleSidebar.expansionButton(this.isDinamicSidebar);
-    }
-    this._cd.markForCheck();
-  }
-
   public sidebarMouseEnter(): void {
     this.sidebarRespForm.setValue(true);
-  }
-
-  public sidebarMouseLeave(): void {
-    if (!this.isSidebarFixed && !this.isMd) {
-      this.sidebarRespForm.setValue(false);
-      this._toggleSidebar.closeSidebar();
-    }
-  }
-
-  public toggleSidebar(event: boolean): void {
-    if (event) {
-      this._toggleSidebar.closeSidebar();
-    } else {
-      this._toggleSidebar.openSidebar();
-    }
   }
 
   public onBlockSidebar(event: boolean): void {

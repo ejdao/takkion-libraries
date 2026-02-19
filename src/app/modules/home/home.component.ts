@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { TakAutocompleteFieldComponent } from '@kato-lee/components/fields/autocomplete-field';
+import { TakAutocompleteFieldComponent } from '@kato-lee/components/fields';
 import { TakModal } from '@kato-lee/components/modal';
 import { TakToast, TakToastType } from '@kato-lee/components/toast';
 import { Subject, firstValueFrom } from 'rxjs';

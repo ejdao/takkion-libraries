@@ -1,12 +1,48 @@
 <header class="tak__header">
-  @if (!isActionButton || isScreenMd) {
-    <div class="tak__header__toggle-sbar-btn__container">
-      <button mat-icon-button (click)="onToggleSidebar()">
-        <span class="material-icons">menu</span>
-      </button>
+  <div class="topbar-left-group">
+    <button class="home-link" aria-label="Abrir menú" (click)="toggleSidebar.emit()">
+      <lucide-icon [img]="icons.Menu" [size]="18" />
+    </button>
+
+    <div class="topbar-divider"></div>
+
+    <div class="alert-content">
+      <svg
+        style="color: #856404; margin: 3px"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-info h-4 w-4 shrink-0"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 16v-4"></path>
+        <path d="M12 8h.01"></path>
+      </svg>
+      <span class="alert web-alert">
+        <span style="font-weight: 600">Versión heredada:</span> Este módulo corresponde a una
+        versión anterior del sistema. Actualmente se encuentra en desarrollo la actualización.
+      </span>
+      <span class="alert mobile-alert">
+        <span style="font-weight: 600">Versión heredada:</span> Actualización en desarrollo.
+      </span>
     </div>
-  }
-  <div class="tak__header__custom__container">
-    <ng-content select="[tak-custom-header]"></ng-content>
+  </div>
+
+  <div class="topbar-right-group">
+    <a class="menu-button" (click)="backToMenu.emit()">
+      <lucide-icon [img]="icons.LayoutGrid" [size]="16" />
+      Volver al menu
+    </a>
+
+    <button class="topbar-btn" aria-label="Cerrar sesión" (click)="logout.emit()">
+      <lucide-icon [img]="icons.LogOutIcon" [size]="18" />
+    </button>
   </div>
 </header>

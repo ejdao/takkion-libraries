@@ -8,7 +8,7 @@ import { TakTablesModule, getSpanishMatPaginatorIntl } from '@kato-lee/component
 import { MatPaginatorIntl } from '@kato-lee/material/paginator';
 import { MatIconModule } from '@kato-lee/material/icon';
 import { MatButtonModule } from '@kato-lee/material/button';
-import { TakPrettyBoxComponent } from '@kato-lee/components/pretty-box';
+import { TakPrettyBoxModule } from '@kato-lee/components/pretty-box';
 import { TakCardsModule } from '@kato-lee/components/cards';
 import { TakDialogModule } from '@kato-lee/components/dialogs';
 import { MatFormFieldModule } from '@kato-lee/material/form-field';
@@ -27,7 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TakTablesModule,
     MatIconModule,
     MatButtonModule,
-    TakPrettyBoxComponent,
+    TakPrettyBoxModule,
     TakCardsModule,
     TakDialogModule,
     MatFormFieldModule,
