@@ -6,7 +6,9 @@ import {
   EventEmitter,
   HostListener,
   Input,
+  OnDestroy,
   Output,
+  signal,
 } from '@angular/core';
 import { LAYOUT_CONTAINER } from '../services/toggle-sidebar';
 import {
@@ -21,6 +23,8 @@ import {
   LogOutIcon,
   Activity,
 } from 'lucide-angular';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -100,64 +104,48 @@ import {
     .topbar-right-group {
       padding: 0 32px;
     }
-    .alert {
-      font-size: 0.875rem;
-      color: #856404;
-      margin: 3px 5px;
-    }
-    .alert-content {
-      background: #fff3cd;
-      max-height: 40px;
-      display: flex;
-      align-items: center;
-      border: 1px solid #ffc1074d;
-      border-radius: 10px;
-      max-width: 530px;
-    }
-    .mobile-alert {
-      display: none;
-    }
-
-    @media (max-width: 920px) {
-      .alert-content {
-        max-width: 450px;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .web-alert {
-        display: none !important;
-      }
-      .mobile-alert {
-        display: block !important;
-      }
-    }
-
     @media (max-width: 768px) {
       .topbar-left-group,
       .topbar-right-group {
         padding: 0 16px;
       }
     }
-
-    @media (max-width: 660px) {
-      .alert-content {
-        max-width: 270px;
+    .topbar-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .topbar-bc-segment {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .topbar-bc-link {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition:
+        background var(--transition),
+        color var(--transition);
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
       }
     }
-
-    @media (max-width: 595px) {
-      .alert-content {
-        max-width: 205px;
-      }
+    .topbar-bc-current {
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 8px;
     }
-
-    @media (max-width: 530px) {
-      .alert-content {
-        display: none !important;
-      }
+    .topbar-bc-sep {
+      color: rgba(255, 255, 255, 0.35);
+      flex-shrink: 0;
+      margin: 0 2px;
     }
-
     .topbar-divider {
       width: 1px;
       height: 28px;
@@ -166,13 +154,19 @@ import {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TakHeaderComponent implements AfterViewInit {
+export class TakHeaderComponent implements AfterViewInit, OnDestroy {
   @Output() toggleSidebar: EventEmitter<any> = new EventEmitter();
   @Output() logout: EventEmitter<any> = new EventEmitter();
   @Output() backToMenu: EventEmitter<any> = new EventEmitter();
 
   @Input() mdWidth = 640;
   @Input() isActionButton = false;
+
+  module = signal('Modulo');
+  subModule = signal('SubModulo');
+  route = signal('Ruta');
+
+  private _routerSubs!: Subscription;
 
   public isScreenMd = false;
 
@@ -188,7 +182,11 @@ export class TakHeaderComponent implements AfterViewInit {
     Activity,
   };
 
-  constructor(private _cd: ChangeDetectorRef) {}
+  constructor(
+    private _cd: ChangeDetectorRef,
+    private _activeRoute: ActivatedRoute,
+    private _router: Router
+  ) {}
 
   @HostListener('window:resize')
   public onResize() {
@@ -208,7 +206,36 @@ export class TakHeaderComponent implements AfterViewInit {
     }
   }
 
+  private _execute() {
+    try {
+      let count = 0;
+      let current = this._activeRoute;
+
+      while (current.firstChild) {
+        current = current.firstChild;
+      }
+
+      if (!count) {
+        const splitted = (current.snapshot.data['title'] as string).split('|');
+        if (splitted[0]) this.module.set(splitted[0]);
+        if (splitted[1]) this.subModule.set(splitted[1]);
+        if (splitted[2]) this.route.set(splitted[2]);
+        count++;
+      }
+    } catch (error) {}
+  }
+
   public ngAfterViewInit(): void {
     this.onResize();
+
+    this._execute();
+
+    this._routerSubs = this._router.events.subscribe(() => {
+      this._execute();
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this._routerSubs) this._routerSubs.unsubscribe();
   }
 }
